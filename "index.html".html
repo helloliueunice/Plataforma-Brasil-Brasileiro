@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="pt-BR"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Plataforma de Fundos Públicos - Brasil&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { font-family: -apple-system, Arial, sans-serif; background: #f5f5f5; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header { background: white; border-bottom: 2px solid #ddd; padding: 0; position: sticky; top: 0; z-index: 100; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.header-content { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.logo { background: #0066cc; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 18px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav button { background: none; border: none; padding: 15px 20px; margin: 0 5px; cursor: pointer; font-size: 16px; border-bottom: 3px solid transparent; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav button.active { border-bottom-color: #0066cc; color: #0066cc; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.hero { background: linear-gradient(to right, #0066cc, #0044aa); color: white; padding: 60px 40px; border-radius: 12px; margin: 30px 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.hero h1 { font-size: 42px; margin-bottom: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.hero p { font-size: 20px; margin-bottom: 30px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.hero button { background: white; color: #0066cc; border: none; padding: 15px 35px; font-size: 18px; border-radius: 8px; cursor: pointer; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.stat-card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.stat-card h3 { color: #666; font-size: 14px; margin-bottom: 10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.stat-card p { color: #0066cc; font-size: 36px; font-weight: 700; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.page { display: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.page.active { display: block; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn { background: #0066cc; color: white; border: none; padding: 14px 28px; border-radius: 8px; cursor: pointer; font-size: 16px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn:disabled { background: #ccc; cursor: not-allowed; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.alert { background: #fff3cd; border-left: 4px solid #ffc107; padding: 16px 20px; margin: 20px 0; border-radius: 6px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.success-alert { background: #d4edda; border-left-color: #28a745; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.search-section { background: white; padding: 25px; border-radius: 10px; margin: 25px 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.search-section input { width: 100%; padding: 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; margin-bottom: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.filters { display: flex; flex-wrap: wrap; gap: 10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.filter-btn { padding: 10px 18px; border: 2px solid #e0e0e0; background: white; border-radius: 20px; cursor: pointer; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.filter-btn.active { background: #0066cc; color: white; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.edital-card { background: white; padding: 30px; border-radius: 12px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.edital-card h3 { color: #333; margin-bottom: 12px; font-size: 22px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tag { display: inline-block; padding: 6px 14px; background: #e3f2fd; color: #0066cc; border-radius: 20px; font-size: 13px; margin: 4px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tag.privado { background: #f3e5f5; color: #7b1fa2; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.edital-info { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 20px 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.link-btn { display: inline-block; background: #0066cc; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1 { font-size: 36px; margin: 30px 0 20px; color: #333; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="header-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="logo"&gt;FD - Fundos Públicos&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;nav&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="mudarPagina(1)" id="btn1" class="active"&gt;Início&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="mudarPagina(2)" id="btn2"&gt;Editais&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="mudarPagina(3)" id="btn3"&gt;Propostas&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="mudarPagina(4)" id="btn4"&gt;Recursos&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="mudarPagina(5)" id="btn5"&gt;Dashboard&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/nav&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="pagina1" class="page active"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="hero"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h1&gt;Encontre Fundos para Projetos Públicos&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Busca automática em 20+ fontes nacionais e internacionais&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="mudarPagina(2)"&gt;Explorar Editais&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="stats"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Fontes&lt;/h3&gt;&lt;p&gt;20+&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Editais&lt;/h3&gt;&lt;p id="totalEditais"&gt;12&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Valor Total&lt;/h3&gt;&lt;p&gt;R$ 300M+&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Atualização&lt;/h3&gt;&lt;p style="font-size: 18px;" id="ultimaAtualizacao"&gt;Agora&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="pagina2" class="page"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Editais Disponíveis&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn" onclick="buscarEditais()" id="btnBuscar"&gt;Buscar Editais&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="alert" id="alerta"&gt;Clique em Buscar Editais para encontrar oportunidades&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="search-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="inputBusca" placeholder="Buscar..." onkeyup="filtrarEditais()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="filters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn active" data-tag="todos" onclick="filtrarPorTag('todos')"&gt;Todos&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn" data-tag="Pesquisa" onclick="filtrarPorTag('Pesquisa')"&gt;Pesquisa&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn" data-tag="Educação" onclick="filtrarPorTag('Educação')"&gt;Educação&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn" data-tag="Saúde" onclick="filtrarPorTag('Saúde')"&gt;Saúde&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="listaEditais"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="pagina3" class="page"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Minhas Propostas&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="stats" style="grid-template-columns: repeat(3, 1fr);"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Rascunho&lt;/h3&gt;&lt;p style="color: #ffc107;"&gt;2&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Enviadas&lt;/h3&gt;&lt;p style="color: #17a2b8;"&gt;3&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="stat-card"&gt;&lt;h3&gt;Aprovadas&lt;/h3&gt;&lt;p style="color: #28a745;"&gt;1&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="pagina4" class="page"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Centro de Aprendizado&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p style="color: #666; font-size: 18px; margin-bottom: 40px;"&gt;Guias e recursos&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="pagina5" class="page"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Dashboard&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="edital-card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Fontes Monitoradas&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;CNPq, CAPES, FINEP, BNDES, Banco Mundial, BID, Horizonte Europa&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var todosEditais = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var tagSelecionada = 'todos';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var editaisBase = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'CNPq - Bolsas', orgao: 'CNPq', tipo: 'Público', tag: 'Pesquisa', descricao: 'Bolsas produtividade', min: 'Variável', max: 'Categoria', prazo: '30d', link: 'https://www.cnpq.br'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'CAPES - PosGrad', orgao: 'CAPES', tipo: 'Público', tag: 'Educação', descricao: 'Apoio pos-grad', min: 'R$ 50K', max: 'R$ 500K', prazo: '45d', link: 'https://www.capes.gov.br'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'FINEP - Inovacao', orgao: 'FINEP', tipo: 'Público', tag: 'Tecnologia', descricao: 'Credito inovacao', min: 'R$ 1M', max: 'R$ 50M', prazo: 'Continuo', link: 'https://www.finep.gov.br'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'BNDES - Clima', orgao: 'BNDES', tipo: 'Público', tag: 'Meio Ambiente', descricao: 'Projetos clima', min: 'R$ 500K', max: 'R$ 100M', prazo: 'Continuo', link: 'https://www.bndes.gov.br'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'MS - PROADI', orgao: 'Saude', tipo: 'Público', tag: 'Saúde', descricao: 'Desenvolvimento SUS', min: 'Variavel', max: 'Variavel', prazo: '60d', link: 'https://www.gov.br/saude'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'FAPESP - Pesquisa', orgao: 'FAPESP', tipo: 'Público', tag: 'Pesquisa', descricao: 'Pesquisa SP', min: 'R$ 30K', max: 'R$ 2M', prazo: 'Continuo', link: 'https://fapesp.br'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'Petrobras - Cultural', orgao: 'Petrobras', tipo: 'Privado', tag: 'Cultura', descricao: 'Projetos culturais', min: 'R$ 50K', max: 'R$ 3M', prazo: 'Edital', link: 'https://petrobras.com.br'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'World Bank - Clima', orgao: 'World Bank', tipo: 'Internacional', tag: 'Meio Ambiente', descricao: 'Projetos climaticos', min: 'USD 1M', max: 'USD 100M', prazo: '90d', link: 'https://www.worldbank.org'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'BID - Social', orgao: 'BID', tipo: 'Internacional', tag: 'Infraestrutura', descricao: 'Infraestrutura social', min: 'USD 500K', max: 'USD 50M', prazo: '120d', link: 'https://www.iadb.org'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'Horizonte Europa', orgao: 'UE', tipo: 'Internacional', tag: 'Pesquisa', descricao: 'Pesquisa Europa', min: 'EUR 1.5M', max: 'EUR 2M', prazo: '180d', link: 'https://erc.europa.eu'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'Gates Foundation', orgao: 'Gates', tipo: 'Privado', tag: 'Saúde', descricao: 'Saude global', min: 'USD 100K', max: 'USD 10M', prazo: 'Continuo', link: 'https://www.gatesfoundation.org'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{titulo: 'Green Fund', orgao: 'GCF', tipo: 'Internacional', tag: 'Meio Ambiente', descricao: 'Projetos clima', min: 'USD 1M', max: 'USD 3M', prazo: '60d', link: 'https://www.greenclimate.fund'}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function buscarEditais() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var btn = document.getElementById('btnBuscar');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var alerta = document.getElementById('alerta');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btn.disabled = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btn.textContent = 'Buscando...';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>alerta.innerHTML = 'Buscando editais...';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(function() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>todosEditais = editaisBase;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>mostrarEditais(todosEditais);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>btn.disabled = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>btn.textContent = 'Buscar Editais';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>alerta.className = 'alert success-alert';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>alerta.innerHTML = 'Encontrados 12 editais';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('totalEditais').textContent = '12';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('ultimaAtualizacao').textContent = new Date().toLocaleTimeString('pt-BR');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}, 2000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function mostrarEditais(editais) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var lista = document.getElementById('listaEditais');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var html = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (editais.length === 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>html = '&lt;div class="edital-card"&gt;&lt;p&gt;Nenhum edital&lt;/p&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>for (var i = 0; i &lt; editais.length; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>var e = editais[i];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div class="edital-card"&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;h3&gt;' + e.titulo + '&lt;/h3&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;p&gt;&lt;strong&gt;' + e.orgao + '&lt;/strong&gt;&lt;/p&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;p&gt;' + e.descricao + '&lt;/p&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div&gt;&lt;span class="tag"&gt;' + e.tag + '&lt;/span&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;span class="tag privado"&gt;' + e.tipo + '&lt;/span&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div class="edital-info"&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div&gt;&lt;small&gt;Min&lt;/small&gt;&lt;br&gt;&lt;strong&gt;' + e.min + '&lt;/strong&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div&gt;&lt;small&gt;Max&lt;/small&gt;&lt;br&gt;&lt;strong&gt;' + e.max + '&lt;/strong&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div&gt;&lt;small&gt;Prazo&lt;/small&gt;&lt;br&gt;&lt;strong&gt;' + e.prazo + '&lt;/strong&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;div&gt;&lt;a href="' + e.link + '" target="_blank" class="link-btn"&gt;Acessar&lt;/a&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>html += '&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>lista.innerHTML = html;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function filtrarEditais() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var busca = document.getElementById('inputBusca').value.toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var filtrados = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (var i = 0; i &lt; todosEditais.length; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>var e = todosEditais[i];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>var passaTag = tagSelecionada === 'todos' || e.tag === tagSelecionada;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>var passaBusca = busca === '' || e.titulo.toLowerCase().indexOf(busca) &gt;= 0 || e.orgao.toLowerCase().indexOf(busca) &gt;= 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (passaTag &amp;&amp; passaBusca) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>filtrados.push(e);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>mostrarEditais(filtrados);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function filtrarPorTag(tag) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>tagSelecionada = tag;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>var botoes = document.querySelectorAll('.filter-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (var i = 0; i &lt; botoes.length; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (botoes[i].getAttribute('data-tag') === tag) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>botoes[i].className = 'filter-btn active';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>botoes[i].className = 'filter-btn';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>filtrarEditais();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function mudarPagina(num) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (var i = 1; i &lt;= 5; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('pagina' + i).className = 'page';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('btn' + i).className = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('pagina' + num).className = 'page active';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('btn' + num).className = 'active';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
