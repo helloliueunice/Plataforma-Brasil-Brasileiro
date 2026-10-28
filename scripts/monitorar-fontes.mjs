@@ -45,6 +45,12 @@ const UA = 'Mozilla/5.0 (compatible; FundosBrasilMonitor/1.0; +https://github.co
 const PUBLICOS = ['pesquisador', 'ict', 'empresa', 'osc', 'municipio', 'estado'];
 const AREAS = ['Tecnologia', 'Saúde', 'Educação', 'Meio Ambiente', 'Infraestrutura', 'Cultura', 'Agronegocio', 'Energia', 'Segurança', 'Desenvolvimento'];
 const DIAGNOSTICO = process.argv.includes('--diagnostico'); // só lista os links de cada fonte, sem alterar nada
+// No GitHub Actions, o resultado também vira anotação visível na página da execução
+const anotar = (titulo, texto, tipo = 'notice') => {
+    if (!process.env.GITHUB_ACTIONS) return;
+    const e = v => String(v).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+    console.log(`::${tipo} title=${e(titulo).replace(/[:,]/g, ' ')}::${e(texto.slice(0, 60000))}`);
+};
 const lerJSON = (f, padrao) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_) { return padrao; } };
 const gravarJSON = (f, d) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(d, null, 2) + '\n'); };
 const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -258,8 +264,9 @@ for (const f of fontes) {
         if (pg.tipo !== 'html') throw new Error('a fonte não é uma página HTML');
         const links = linksDe(pg.html, pg.url, f);
         if (DIAGNOSTICO) {
-            console.log(`\n## ${f.nome}\n${f.url} → ${links.length} link(s)`);
-            for (const l of links) console.log(`  ${estado.vistos[l.url] ? '·' : conhecidos.has(l.url) ? '=' : '+'} ${l.texto}  <${l.url}>`);
+            const lista = links.map(l => `${estado.vistos[l.url] ? '·' : conhecidos.has(l.url) ? '=' : '+'} ${l.texto}  <${l.url}>`);
+            console.log(`\n## ${f.nome}\n${f.url} → ${links.length} link(s)\n${lista.map(x => '  ' + x).join('\n')}`);
+            anotar(`${f.nome}: ${links.length} link(s)`, [f.url, ...lista].join('\n'));
             continue;
         }
         if (!links.length) rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: 'nenhum link de chamada encontrado (o layout pode ter mudado)' });
@@ -270,7 +277,7 @@ for (const f of fontes) {
 }
 
 if (DIAGNOSTICO) {
-    for (const f of rel.falhasFonte) console.log(`\n⚠️ ${f.fonte}: ${f.erro}`);
+    for (const f of rel.falhasFonte) { console.log(`\n⚠️ ${f.fonte}: ${f.erro}`); anotar(`Falha: ${f.fonte}`, `${f.url}\n${f.erro}`, 'warning'); }
     console.log('\nLegenda: + novo · já visto · = já está na base');
     process.exit(0);
 }
