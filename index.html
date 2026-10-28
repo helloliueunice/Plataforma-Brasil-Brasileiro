@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundos de Financiamento Brasil 🇧🇷 - Plataforma Integrada</title>
+    <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
+    <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (9 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
+    <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
+    <meta name="theme-color" content="#1351B4">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Fundos Brasil">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Fundos Brasil — editais, propostas e prestação de contas">
+    <meta property="og:description" content="Editais abertos, compatibilidade com seu perfil, checklist de documentos, prazos na agenda e prestação de contas.">
+    <meta property="og:url" content="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
+    <meta property="og:image" content="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR"}</script>
+    <!-- seo:fim -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
@@ -1524,6 +1541,8 @@
         }
 
         [hidden] { display: none !important; }
+        .site-footer { text-align: center; padding: 24px 16px 40px; font-size: 14px; display: grid; gap: 6px; border-top: 1px solid #E5E5E5; background: var(--white); }
+        .site-footer a { color: var(--primary); font-weight: 600; }
         .span-2 { grid-column: span 2; }
         @media (max-width: 768px) { .span-2 { grid-column: auto; } .badge { white-space: normal; max-width: 100%; } }
     </style>
@@ -2081,6 +2100,19 @@
     </div>
 
     </main>
+
+    <footer class="site-footer">
+        <nav aria-label="Páginas para consulta">
+            <a href="editais/">Todos os editais</a> ·
+            <a href="instituicoes/">Instituições financiadoras</a> ·
+            <a href="#ajuda">Ajuda e glossário</a> ·
+            <a href="https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro" target="_blank" rel="noopener noreferrer">Código aberto</a>
+        </nav>
+        <p class="nota">Fundos Brasil — confirme sempre datas, valores e requisitos no edital oficial da instituição.</p>
+    </footer>
+    <noscript>
+        <p style="padding:16px;text-align:center;">Esta plataforma precisa de JavaScript para os filtros e o acompanhamento. Você pode consultar a <a href="editais/">lista de editais</a> e as <a href="instituicoes/">instituições</a> sem ele.</p>
+    </noscript>
 
     <!-- MODAL: DETALHES DO EDITAL -->
     <dialog id="editalModal" class="modal" aria-labelledby="editalModalTitle">
@@ -2688,6 +2720,7 @@
                     <div class="modal-actions">
                         <a class="btn btn-primary btn-small" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer">🔗 Portal oficial</a>
                         ${st !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}">📅 Adicionar à agenda</button>` : ''}
+                        <button class="btn btn-outline btn-small" data-action="whatsapp" data-id="${e.id}">📲 WhatsApp</button>
                         <button class="btn btn-outline btn-small" data-action="share" data-id="${e.id}">🔗 Compartilhar</button>
                         <button class="btn btn-outline btn-small" data-action="fav" data-id="${e.id}" aria-pressed="${fav}">${fav ? '★ Favorito' : '☆ Favoritar'}</button>
                         ${agencias[e.agencia] ? `<button class="btn btn-outline btn-small" data-action="agencia" data-key="${e.agencia}">🏛️ Ver instituição</button>` : ''}
@@ -2772,9 +2805,28 @@
         }
 
 
+        // Mesma regra de slugEdital() em scripts/gerar-paginas.mjs
+        function slugEdital(e) {
+            const base = norm(e.titulo).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70).replace(/-+$/, '');
+            return `${base}-${e.id}`;
+        }
+
+        // Página pública indexável (com prévia para WhatsApp) quando o site está publicado; senão, o link interno
+        function linkPublico(e) {
+            const base = location.href.split('#')[0];
+            if (/^https?:$/.test(location.protocol) && !e.custom) return new URL(`editais/${slugEdital(e)}/`, base).href;
+            return `${base}#edital-${e.id}`;
+        }
+
+        function whatsappEdital(id) {
+            const e = editais.find(x => x.id === id);
+            const texto = `${e.titulo} (${e.instituicao}) — até ${fmtValor(e.valorMax, e.moeda)} por proposta. Inscrições até ${fmtDate(e.encerramento)}: ${linkPublico(e)}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+        }
+
         async function shareEdital(id) {
             const e = editais.find(x => x.id === id);
-            const url = `${location.origin}${location.pathname}#edital-${id}`;
+            const url = linkPublico(e);
             if (navigator.share) {
                 try { await navigator.share({ title: e.titulo, text: `${e.titulo} — ${e.instituicao}. Prazo: ${fmtDate(e.encerramento)}`, url }); } catch (_) { /* cancelado */ }
                 return;
@@ -4581,6 +4633,7 @@
                 case 'export-json': exportJSON(el.dataset.escopo); break;
                 case 'reset-custom': resetCustom(); break;
                 case 'print': window.print(); break;
+                case 'whatsapp': whatsappEdital(id); break;
                 case 'open-login': openLogin(); break;
                 case 'logout': logout(); break;
                 case 'show-alertas': showAlertas(); break;

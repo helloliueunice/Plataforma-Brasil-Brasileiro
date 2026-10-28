@@ -74,6 +74,24 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
 
+## Páginas indexáveis (SEO) e compartilhamento
+
+A plataforma em si é uma página só; para o Google e para o WhatsApp, cada edital e cada instituição também ganham uma **página estática própria**, gerada a partir do `editais.json`:
+
+- `editais/` (lista) e `editais/<titulo>-<id>/` (um por edital), `instituicoes/` e `instituicoes/<id>/`;
+- título e descrição otimizados, `canonical`, prévia para WhatsApp e redes (Open Graph, imagem `assets/og-image.jpg`), dados estruturados (schema.org), links entre editais relacionados;
+- `sitemap.xml`, `robots.txt` e `404.html`;
+- metatags da página inicial (bloco entre `<!-- seo:inicio -->` e `<!-- seo:fim -->`).
+
+Para gerar: `node scripts/gerar-paginas.mjs` (Node 18+, sem dependências). A automação `.github/workflows/gerar-paginas.yml` faz isso sozinha a cada mudança no `editais.json` e todo dia às 06h17, para a situação “aberto/encerrado” acompanhar a data. Não edite os arquivos gerados à mão.
+
+O endereço usado nos links absolutos vem, nesta ordem, da variável `SITE_URL`, do arquivo `CNAME` (domínio próprio) ou do padrão do GitHub Pages.
+
+**Depois de publicar, uma vez só:**
+
+1. Cadastre o site no [Google Search Console](https://search.google.com/search-console) (propriedade do tipo “prefixo do URL”) e envie o `sitemap.xml`.
+2. Com domínio próprio: crie o arquivo `CNAME` com o domínio, configure o DNS conforme a documentação do GitHub Pages e rode o gerador de novo. O `robots.txt` só é lido pelos buscadores na raiz de um domínio, então ele passa a valer com o domínio próprio.
+
 ### Publicar editais reais para todos os visitantes
 
 1. Em **Editais → Mais ações → Gerenciar editais**, cadastre ou importe os editais.

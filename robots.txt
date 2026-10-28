@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/sitemap.xml

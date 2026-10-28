@@ -1,0 +1,48 @@
+name: Gerar páginas de editais
+
+# Regenera as páginas indexáveis (editais/, instituicoes/, sitemap.xml) quando
+# os editais mudam e todo dia de manhã, para a situação "aberto/encerrado"
+# e a ordem das listas acompanharem a data.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'editais.json'
+      - 'index.html'
+      - 'scripts/**'
+      - 'assets/paginas.css'
+  schedule:
+    - cron: '17 9 * * *' # 06h17 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gerar-paginas
+  cancel-in-progress: false
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Gerar páginas
+        run: node scripts/gerar-paginas.mjs
+
+      - name: Publicar alterações
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nada mudou."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Atualiza páginas de editais ($(date -u +%Y-%m-%d))"
+          git push
