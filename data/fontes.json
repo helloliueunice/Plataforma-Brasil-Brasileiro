@@ -1,13 +1,14 @@
 {
-  "_leia": "Páginas oficiais que listam chamadas abertas. O monitor lê cada uma todo dia, identifica links novos de chamadas e usa IA para extrair os dados. 'filtro' é uma expressão regular aplicada ao texto ou ao endereço do link; 'ativo': false pausa a fonte. Endereços com o ano (ex.: FAPESP 2026) precisam ser atualizados em janeiro.",
+  "_leia": "Páginas oficiais que listam chamadas abertas. O monitor lê cada uma todo dia, identifica links novos de chamadas e usa IA para extrair os dados. 'filtro' é uma expressão regular aplicada ao texto ou ao endereço do link; 'ativo': false pausa a fonte. Endereços com o ano (ex.: FAPESP 2026) precisam ser atualizados em janeiro. Campos opcionais: 'hrefFiltro' (expressão regular para o endereço de páginas de chamada), 'minTexto' (tamanho mínimo do texto do link, padrão 25) e 'ignorar'. Para calibrar uma fonte, rode o workflow com a opção 'diagnostico'.",
   "fontes": [
     {
       "id": "fapesp",
       "nome": "FAPESP — Chamadas de propostas 2026",
       "url": "https://fapesp.br/2185/chamadas-de-propostas-2026",
       "agencia": "fapesp",
-      "filtro": "chamada|call|programa|bolsa|pipe",
-      "ativo": true
+      "filtro": "chamada|call|edital|sele[cç][aã]o",
+      "ativo": true,
+      "hrefFiltro": "fapesp\\.br/(\\d{4,6}|sprint/chamada\\d{4})/?$"
     },
     {
       "id": "cnpq",
@@ -20,7 +21,7 @@
     {
       "id": "finep",
       "nome": "Finep — Chamadas públicas abertas",
-      "url": "https://www.finep.gov.br/chamadas-publicas?situacao=aberta",
+      "url": "http://www.finep.gov.br/chamadas-publicas/chamadaspublicas?situacao=aberta",
       "agencia": "finep",
       "filtro": "chamada|sele[cç][aã]o p[uú]blica|edital",
       "ativo": true

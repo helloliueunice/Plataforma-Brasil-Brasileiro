@@ -44,6 +44,7 @@ const UA = 'Mozilla/5.0 (compatible; FundosBrasilMonitor/1.0; +https://github.co
 
 const PUBLICOS = ['pesquisador', 'ict', 'empresa', 'osc', 'municipio', 'estado'];
 const AREAS = ['Tecnologia', 'Saúde', 'Educação', 'Meio Ambiente', 'Infraestrutura', 'Cultura', 'Agronegocio', 'Energia', 'Segurança', 'Desenvolvimento'];
+const DIAGNOSTICO = process.argv.includes('--diagnostico'); // só lista os links de cada fonte, sem alterar nada
 const lerJSON = (f, padrao) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_) { return padrao; } };
 const gravarJSON = (f, d) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(d, null, 2) + '\n'); };
 const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -96,19 +97,33 @@ function textoDoHtml(html) {
         .replace(/[ \t\f\v]+/g, ' ').replace(/\n\s*\n+/g, '\n').trim();
 }
 
-function linksDe(html, base, filtro) {
+// Remove menus, cabeçalhos e rodapés antes de procurar links (é onde ficam os falsos positivos)
+const BLOCOS_NAVEGACAO = /<(nav|header|footer|aside)\b[\s\S]*?<\/\1>|<(div|ul|section)\b[^>]*(?:id|class)\s*=\s*["'][^"']*\b(menu|navbar|nav|navegacao|breadcrumb|rodape|footer|header|cabecalho|sidebar|barra)\b[^"']*["'][^>]*>[\s\S]*?<\/\2>/gi;
+const NUMERO_CHAMADA = /\b(n[º°o.]\s*)?\d{1,4}\s*\/\s*20\d{2}\b|\b20\d{2}\b/;
+const GENERICOS = /^(chamadas?( p[uú]blicas?)?( de propostas)?|editais( abertos| encerrados)?|resultados?|programas?|bolsas?|oportunidades|saiba mais|leia mais|acesse|clique aqui|ver todos?|mais informa[cç][oõ]es)$/i;
+
+// Um link vira candidato quando parece o título de uma chamada específica, não um item de menu
+function linksDe(html, base, fonte = {}) {
     const re = /<a\b[^>]*href\s*=\s*["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi;
     const vistos = new Map();
-    const rx = new RegExp(filtro || 'chamada|edital', 'i');
+    const rxTexto = new RegExp(fonte.filtro || 'chamada|edital', 'i');
+    const rxHref = fonte.hrefFiltro ? new RegExp(fonte.hrefFiltro, 'i') : null;
+    const rxIgnorar = fonte.ignorar ? new RegExp(fonte.ignorar, 'i') : null;
+    const minTexto = fonte.minTexto || 25;
+    const corpo = html.replace(BLOCOS_NAVEGACAO, ' ');
     let m;
-    while ((m = re.exec(html))) {
+    while ((m = re.exec(corpo))) {
         let url;
         try { url = new URL(decod(m[1].trim()), base).href.replace(/#.*$/, ''); } catch (_) { continue; }
-        if (!/^https?:/.test(url)) continue;
+        if (!/^https?:/.test(url) || url === base) continue;
+        if (/(login|facebook|twitter|linkedin|instagram|youtube|whatsapp|mailto:|\/busca|\/search|\/rss|\.(jpg|png|zip|docx?|xlsx?)($|\?))/i.test(url)) continue;
         const texto = textoDoHtml(m[2]).replace(/\s+/g, ' ').trim();
-        if (texto.length < 12 && !/\.pdf($|\?)/i.test(url)) continue; // ignora "Saiba mais", ícones etc.
-        if (!rx.test(norm(texto)) && !rx.test(norm(url))) continue;
-        if (/(login|facebook|twitter|linkedin|instagram|youtube|whatsapp|mailto:|\/busca|\/search)/i.test(url)) continue;
+        const t = norm(texto);
+        if (GENERICOS.test(t) || (rxIgnorar && (rxIgnorar.test(t) || rxIgnorar.test(url)))) continue;
+        const palavras = t.split(' ').filter(Boolean).length;
+        const porTexto = rxTexto.test(t) && (texto.length >= minTexto || NUMERO_CHAMADA.test(t)) && palavras >= 3;
+        const porHref = rxHref && rxHref.test(url) && texto.length >= 15 && palavras >= 3;
+        if (!porTexto && !porHref) continue;
         if (!vistos.has(url)) vistos.set(url, texto.slice(0, 200));
     }
     return [...vistos].map(([url, texto]) => ({ url, texto }));
@@ -241,12 +256,23 @@ for (const f of fontes) {
     try {
         const pg = await baixar(f.url);
         if (pg.tipo !== 'html') throw new Error('a fonte não é uma página HTML');
-        const links = linksDe(pg.html, pg.url, f.filtro);
+        const links = linksDe(pg.html, pg.url, f);
+        if (DIAGNOSTICO) {
+            console.log(`\n## ${f.nome}\n${f.url} → ${links.length} link(s)`);
+            for (const l of links) console.log(`  ${estado.vistos[l.url] ? '·' : conhecidos.has(l.url) ? '=' : '+'} ${l.texto}  <${l.url}>`);
+            continue;
+        }
         if (!links.length) rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: 'nenhum link de chamada encontrado (o layout pode ter mudado)' });
         for (const l of links) if (!estado.vistos[l.url] && !conhecidos.has(l.url)) fila.push({ ...l, fonteId: f.id, fonteNome: f.nome, agencia: f.agencia });
     } catch (err) {
         rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: err.message });
     }
+}
+
+if (DIAGNOSTICO) {
+    for (const f of rel.falhasFonte) console.log(`\n⚠️ ${f.fonte}: ${f.erro}`);
+    console.log('\nLegenda: + novo · já visto · = já está na base');
+    process.exit(0);
 }
 
 // 2. Links novos → extração e validação

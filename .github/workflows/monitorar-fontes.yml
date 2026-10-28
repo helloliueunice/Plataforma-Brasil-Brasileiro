@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '43 10 * * *' # 07h43 em Brasília
   workflow_dispatch:
+    inputs:
+      diagnostico:
+        description: 'Só listar os links encontrados em cada fonte (não chama a IA, não altera nada)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -31,7 +36,12 @@ jobs:
         with:
           node-version: 22
 
+      - name: Diagnóstico das fontes
+        if: inputs.diagnostico
+        run: node scripts/monitorar-fontes.mjs --diagnostico
+
       - name: Verificar fontes
+        if: ${{ !inputs.diagnostico }}
         id: monitor
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -39,6 +49,7 @@ jobs:
         run: node scripts/monitorar-fontes.mjs
 
       - name: Guardar o que já foi analisado
+        if: ${{ !inputs.diagnostico }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -49,7 +60,7 @@ jobs:
           fi
 
       - name: Abrir pull request com os candidatos
-        if: steps.monitor.outputs.candidatos != '0'
+        if: ${{ !inputs.diagnostico && steps.monitor.outputs.candidatos != '0' }}
         run: |
           RAMO="monitor/$(date -u +%Y-%m-%d)-${{ github.run_number }}"
           cp relatorio-monitor.md /tmp/relatorio.md
@@ -66,7 +77,7 @@ jobs:
           fi
 
       - name: Registrar itens para revisão (sem candidatos novos)
-        if: steps.monitor.outputs.candidatos == '0' && steps.monitor.outputs.revisar == '1'
+        if: ${{ !inputs.diagnostico && steps.monitor.outputs.candidatos == '0' && steps.monitor.outputs.revisar == '1' }}
         run: |
           TITULO="Monitor de editais: itens para revisar"
           NUM=$(gh issue list --state open --search "in:title \"$TITULO\"" --json number --jq '.[0].number')
