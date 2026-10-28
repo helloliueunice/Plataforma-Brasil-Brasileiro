@@ -1,0 +1,371 @@
+{
+  "geradoEm": "2026-10-28",
+  "demonstrativo": true,
+  "editais": [
+    {
+      "id": 1,
+      "titulo": "Inteligência Artificial para Saúde Pública",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "IA",
+        "Saúde Digital",
+        "Inovação"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 400000,
+      "valorTotal": 8500000,
+      "contrapartida": "Não exigida",
+      "publicadoEm": "2026-09-10",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-04",
+      "resultado": "2027-02-15",
+      "resumo": "Apoio a projetos de pesquisa que desenvolvam ou validem soluções de inteligência artificial para diagnóstico, triagem e gestão no SUS, com dados abertos e avaliação ética.",
+      "docsExtras": [
+        "Parecer ou protocolo de submissão ao CEP/CONEP"
+      ],
+      "criterios": [
+        {
+          "nome": "Mérito científico e originalidade",
+          "peso": 35
+        },
+        {
+          "nome": "Potencial de incorporação no SUS",
+          "peso": 25
+        },
+        {
+          "nome": "Plano de governança de dados e ética",
+          "peso": 20
+        },
+        {
+          "nome": "Qualificação da equipe",
+          "peso": 20
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Educação Digital Inclusiva",
+      "instituicao": "FNDE",
+      "agencia": "fnde",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Tecnologia Educacional",
+        "Inclusão"
+      ],
+      "modalidade": "Transferência voluntária",
+      "publico": [
+        "municipio",
+        "estado"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 1500000,
+      "valorTotal": 45000000,
+      "contrapartida": "Mínimo de 2% do valor",
+      "publicadoEm": "2026-09-25",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-18",
+      "resultado": "2027-03-10",
+      "resumo": "Recursos para conectividade, equipamentos e formação docente em redes públicas de ensino, com prioridade para escolas com menor IDEB e alunos com deficiência."
+    },
+    {
+      "id": 3,
+      "titulo": "Preservação da Amazônia",
+      "instituicao": "FUNBIO",
+      "agencia": "funbio",
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Sustentabilidade",
+        "Biodiversidade",
+        "Povos tradicionais"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "osc",
+        "ict"
+      ],
+      "abrangencia": "Amazônia Legal",
+      "moeda": "BRL",
+      "valorMax": 800000,
+      "valorTotal": 25000000,
+      "contrapartida": "Não exigida",
+      "publicadoEm": "2026-08-15",
+      "abertura": "2026-08-20",
+      "encerramento": "2026-11-12",
+      "resultado": "2027-01-30",
+      "resumo": "Projetos de conservação, monitoramento e cadeias da sociobiodiversidade em unidades de conservação e territórios indígenas da Amazônia Legal."
+    },
+    {
+      "id": 4,
+      "titulo": "Startups de Impacto Social",
+      "instituicao": "FINEP",
+      "agencia": "finep",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "Startups",
+        "Inovação Social",
+        "Subvenção"
+      ],
+      "modalidade": "Subvenção econômica",
+      "publico": [
+        "empresa"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 1000000,
+      "valorTotal": 15000000,
+      "contrapartida": "5% a 20%, conforme o porte",
+      "publicadoEm": "2026-10-05",
+      "abertura": "2026-10-10",
+      "encerramento": "2027-01-29",
+      "resultado": "2027-04-20",
+      "resumo": "Subvenção para empresas de base tecnológica com soluções de impacto em saúde, educação, habitação ou inclusão produtiva, em estágio de validação de mercado.",
+      "docsExtras": [
+        "Comprovante de enquadramento de porte (ME/EPP)"
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Telemedicina Rural",
+      "instituicao": "Banco Mundial",
+      "agencia": "banco-mundial",
+      "procedencia": "internacional",
+      "tema": "Saúde",
+      "tags": [
+        "Telemedicina",
+        "Saúde Rural"
+      ],
+      "modalidade": "Doação (grant)",
+      "publico": [
+        "municipio",
+        "osc"
+      ],
+      "abrangencia": "Norte e Nordeste",
+      "moeda": "USD",
+      "valorMax": 250000,
+      "valorTotal": 3800000,
+      "contrapartida": "Não exigida",
+      "publicadoEm": "2026-10-20",
+      "abertura": "2026-12-01",
+      "encerramento": "2027-02-26",
+      "resultado": "2027-05-15",
+      "resumo": "Financiamento de serviços de teleconsulta e telediagnóstico na atenção primária de municípios rurais, incluindo conectividade e capacitação de equipes.",
+      "docsExtras": [
+        "Proposta em inglês ou com resumo executivo em inglês"
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Agricultura Familiar Sustentável",
+      "instituicao": "BID",
+      "agencia": "bid",
+      "procedencia": "internacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Agricultura",
+        "Sustentabilidade",
+        "Cooperativismo"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "osc"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "USD",
+      "valorMax": 300000,
+      "valorTotal": 6200000,
+      "contrapartida": "10% (financeira ou econômica)",
+      "publicadoEm": "2026-08-25",
+      "abertura": "2026-09-01",
+      "encerramento": "2026-11-30",
+      "resultado": "2027-02-28",
+      "resumo": "Apoio a cooperativas e associações da agricultura familiar para transição agroecológica, acesso a mercados e adaptação climática."
+    },
+    {
+      "id": 7,
+      "titulo": "Pesquisa em Energias Renováveis",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Energia",
+      "tags": [
+        "Energia",
+        "Hidrogênio verde",
+        "Sustentabilidade"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "São Paulo",
+      "moeda": "BRL",
+      "valorMax": 600000,
+      "valorTotal": 12000000,
+      "contrapartida": "Não exigida",
+      "publicadoEm": "2026-09-15",
+      "abertura": "2026-09-20",
+      "encerramento": "2026-11-25",
+      "resultado": "2027-03-30",
+      "resumo": "Projetos de pesquisa em geração solar, eólica, biocombustíveis e hidrogênio verde, conduzidos por pesquisadores vinculados a instituições do estado de São Paulo."
+    },
+    {
+      "id": 8,
+      "titulo": "Infraestrutura Escolar",
+      "instituicao": "FNDE",
+      "agencia": "fnde",
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Infraestrutura",
+        "Educação Básica"
+      ],
+      "modalidade": "Transferência voluntária",
+      "publico": [
+        "municipio",
+        "estado"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 3000000,
+      "valorTotal": 120000000,
+      "contrapartida": "Mínimo de 1% do valor",
+      "publicadoEm": "2026-05-20",
+      "abertura": "2026-06-01",
+      "encerramento": "2026-09-30",
+      "resultado": "2026-12-15",
+      "resumo": "Construção, reforma e ampliação de escolas de educação básica, quadras e creches.",
+      "docsExtras": [
+        "Projeto de engenharia e documentação do terreno"
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "Cooperação Cultural União Europeia–Brasil",
+      "instituicao": "União Europeia",
+      "agencia": "uniao-europeia",
+      "procedencia": "internacional",
+      "tema": "Cultura",
+      "tags": [
+        "Economia Criativa",
+        "Intercâmbio"
+      ],
+      "modalidade": "Doação (grant)",
+      "publico": [
+        "osc"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "EUR",
+      "valorMax": 150000,
+      "valorTotal": 2400000,
+      "contrapartida": "Cofinanciamento de 10%",
+      "publicadoEm": "2026-10-15",
+      "abertura": "2026-10-20",
+      "encerramento": "2027-01-15",
+      "resultado": "2027-04-30",
+      "resumo": "Projetos culturais e de economia criativa em parceria entre organizações brasileiras e europeias, com foco em diversidade e acesso à cultura.",
+      "docsExtras": [
+        "Carta de parceria com organização europeia"
+      ]
+    },
+    {
+      "id": 10,
+      "titulo": "Saúde Mental na Atenção Primária",
+      "instituicao": "FNS",
+      "agencia": "fns",
+      "procedencia": "nacional",
+      "tema": "Saúde",
+      "tags": [
+        "Saúde Mental",
+        "SUS",
+        "Atenção Primária"
+      ],
+      "modalidade": "Transferência fundo a fundo",
+      "publico": [
+        "municipio",
+        "estado"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 500000,
+      "valorTotal": 30000000,
+      "contrapartida": "Não exigida",
+      "publicadoEm": "2026-10-22",
+      "abertura": "2026-11-16",
+      "encerramento": "2027-01-20",
+      "resultado": "2027-03-31",
+      "resumo": "Incentivo para estruturar o cuidado em saúde mental nas Unidades Básicas de Saúde, integrado à Rede de Atenção Psicossocial (RAPS)."
+    },
+    {
+      "id": 11,
+      "titulo": "Biodiversidade e Clima",
+      "instituicao": "GEF",
+      "agencia": "gef",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Clima",
+        "Biodiversidade",
+        "Restauração"
+      ],
+      "modalidade": "Doação (grant)",
+      "publico": [
+        "osc",
+        "ict"
+      ],
+      "abrangencia": "Cerrado e Caatinga",
+      "moeda": "USD",
+      "valorMax": 1000000,
+      "valorTotal": 4500000,
+      "contrapartida": "Cofinanciamento 1:1",
+      "publicadoEm": "2026-06-25",
+      "abertura": "2026-07-01",
+      "encerramento": "2026-10-31",
+      "resultado": "2027-01-31",
+      "resumo": "Restauração de paisagens, conservação de espécies ameaçadas e soluções baseadas na natureza no Cerrado e na Caatinga."
+    },
+    {
+      "id": 12,
+      "titulo": "Doenças Tropicais Negligenciadas",
+      "instituicao": "NIH",
+      "agencia": "nih",
+      "procedencia": "internacional",
+      "tema": "Saúde",
+      "tags": [
+        "Doenças Tropicais",
+        "Pesquisa Clínica"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "USD",
+      "valorMax": 250000,
+      "valorTotal": 2000000,
+      "contrapartida": "Não exigida",
+      "publicadoEm": "2026-09-01",
+      "abertura": "2026-09-05",
+      "encerramento": "2027-01-08",
+      "resultado": "2027-05-30",
+      "resumo": "Pesquisa colaborativa sobre dengue, doença de Chagas, leishmaniose e outras doenças negligenciadas, com parceria entre grupos brasileiros e norte-americanos.",
+      "docsExtras": [
+        "Registro no SAM.gov e eRA Commons",
+        "Proposta em inglês"
+      ]
+    }
+  ]
+}

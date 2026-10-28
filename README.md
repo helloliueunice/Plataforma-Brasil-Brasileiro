@@ -2,7 +2,16 @@
 
 Plataforma brasileira para gestão de fundos públicos, facilitando a captação, fiscalização e transparência de recursos governamentais.
 
-É uma página única (`index.html`), sem build: abra o arquivo no navegador ou publique no GitHub Pages.
+É uma página única (`index.html`), sem build: abra o arquivo no navegador ou publique no GitHub Pages. Publicado em um servidor, o site carrega automaticamente o arquivo `editais.json` da raiz; aberto direto do disco, usa os editais de exemplo embutidos.
+
+## Jornadas
+
+- **Quero captar recursos**: editais → perfil → detalhes → acompanhar → checklist → agenda → submissão no portal oficial → resultado, tudo registrado em **Minhas propostas**.
+- **Gerencio um projeto financiado**: projetos → prestação de contas em 3 etapas (preencher, revisar, protocolo), com rascunho automático, validação, comprovante e histórico da análise.
+- **Quero acompanhar o dinheiro público**: fundos → instituição (desembolsos, editais, projetos) → mapa com lista acessível.
+- **Ajuda**: passo a passo, glossário de termos (CAUC, MROSC, ICT…) e perguntas frequentes.
+
+A auditoria de usabilidade que orientou essas jornadas está em [`docs/auditoria-usabilidade.md`](docs/auditoria-usabilidade.md).
 
 ## Ferramenta de editais
 
@@ -64,3 +73,9 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | `docsExtras` | não | documentos específicos; os usuais de cada tipo de proponente entram automaticamente |
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
+
+### Publicar editais reais para todos os visitantes
+
+1. Em **Editais → Mais ações → Gerenciar editais**, cadastre ou importe os editais.
+2. Use **Exportar todos** e salve o arquivo como `editais.json` na raiz do repositório, substituindo o atual.
+3. Remova a linha `"demonstrativo": true` do arquivo: a faixa do site passa a dizer "editais publicados" com a data de atualização.
