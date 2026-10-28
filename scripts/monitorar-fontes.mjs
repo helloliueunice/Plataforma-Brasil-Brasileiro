@@ -92,7 +92,7 @@ async function baixar(url, { bytes = false } = {}) {
     } finally { clearTimeout(t); }
 }
 
-const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ordm: 'º', ordf: 'ª', ccedil: 'ç', atilde: 'ã', otilde: 'õ', aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', acirc: 'â', ecirc: 'ê', ocirc: 'ô', agrave: 'à', Ccedil: 'Ç', Atilde: 'Ã', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú' };
+const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', ldquo: '“', rdquo: '”', lsquo: '‘', rsquo: '’', laquo: '«', raquo: '»', hellip: '…', deg: '°', middot: '·', bull: '•', euro: '€', ordm: 'º', ordf: 'ª', uuml: 'ü', ntilde: 'ñ', ccedil: 'ç', atilde: 'ã', otilde: 'õ', aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', acirc: 'â', ecirc: 'ê', ocirc: 'ô', agrave: 'à', Ccedil: 'Ç', Atilde: 'Ã', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú' };
 const decod = s => s.replace(/&(#x?[0-9a-f]+|\w+);/gi, (m, e) => (e[0] === '#' ? String.fromCodePoint(e[1].toLowerCase() === 'x' ? parseInt(e.slice(2), 16) : Number(e.slice(1))) : ENT[e] ?? m));
 
 function textoDoHtml(html) {
@@ -126,6 +126,7 @@ function linksDe(html, base, fonte = {}) {
         const texto = textoDoHtml(m[2]).replace(/\s+/g, ' ').trim();
         const t = norm(texto);
         if (GENERICOS.test(t) || (rxIgnorar && (rxIgnorar.test(t) || rxIgnorar.test(url)))) continue;
+        if (/\bresultados?\b|\bhomologa[cç]/.test(t) || /\/resultados?[\/_-]/i.test(url)) continue; // resultados não são chamadas abertas
         const palavras = t.split(' ').filter(Boolean).length;
         const porTexto = rxTexto.test(t) && (texto.length >= minTexto || NUMERO_CHAMADA.test(t)) && palavras >= 3;
         const porHref = rxHref && rxHref.test(url) && texto.length >= 15 && palavras >= 3;

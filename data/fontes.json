@@ -21,10 +21,11 @@
     {
       "id": "finep",
       "nome": "Finep — Chamadas públicas abertas",
-      "url": "http://www.finep.gov.br/chamadas-publicas/chamadaspublicas?situacao=aberta",
+      "url": "http://legacy.finep.gov.br/chamadas-publicas/chamadaspublicas?situacao=aberta",
       "agencia": "finep",
       "filtro": "chamada|sele[cç][aã]o p[uú]blica|edital",
-      "ativo": true
+      "ativo": true,
+      "observacao": "O portal novo monta a lista no navegador; usando a versão legada."
     },
     {
       "id": "minc",
@@ -45,7 +46,8 @@
       "nome": "FAPERJ — Editais",
       "url": "https://faperj.br/?id=117.5.8",
       "filtro": "edital",
-      "ativo": true
+      "ativo": false,
+      "observacao": "Pausada: a página não lista editais em HTML. Procure a listagem oficial e reative."
     },
     {
       "id": "fapes",

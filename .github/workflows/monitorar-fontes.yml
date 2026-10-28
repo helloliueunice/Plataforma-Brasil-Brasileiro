@@ -13,6 +13,10 @@ on:
         description: 'Só listar os links encontrados em cada fonte (não chama a IA, não altera nada)'
         type: boolean
         default: false
+      max_novos:
+        description: 'Máximo de links novos analisados pela IA nesta execução (use mais para processar o acúmulo inicial)'
+        type: number
+        default: 15
 
 permissions:
   contents: write
@@ -46,6 +50,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MODELO: ${{ vars.MODELO }}
+          MAX_NOVOS: ${{ inputs.max_novos || 15 }}
         run: node scripts/monitorar-fontes.mjs
 
       - name: Guardar o que já foi analisado
