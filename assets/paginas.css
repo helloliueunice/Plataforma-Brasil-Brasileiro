@@ -83,3 +83,6 @@ section, .aviso { margin-top: 28px; }
     .topo nav, .acoes, .pular { display: none; }
     body { background: var(--white); }
 }
+.numero { font-size: 13px; font-weight: 700; color: var(--gray-dark); margin-top: 12px; }
+.numero + h1 { margin-top: 2px; }
+.destaque { background: var(--white); border-left: 4px solid var(--primary); border-radius: 6px; padding: 10px 14px; font-size: 14px; margin-top: 12px; }

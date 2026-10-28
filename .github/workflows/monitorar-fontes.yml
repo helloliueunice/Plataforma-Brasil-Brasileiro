@@ -1,0 +1,77 @@
+name: Monitorar editais
+
+# Todo dia, lê as fontes oficiais (data/fontes.json), extrai as chamadas novas com IA
+# e abre um pull request para revisão humana. Publicar = fazer o merge.
+# Requer o segredo ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions).
+# Opcional: variável MODELO para trocar o modelo de extração.
+on:
+  schedule:
+    - cron: '43 10 * * *' # 07h43 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: monitorar-editais
+  cancel-in-progress: false
+
+jobs:
+  monitorar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verificar fontes
+        id: monitor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODELO: ${{ vars.MODELO }}
+        run: node scripts/monitorar-fontes.mjs
+
+      - name: Guardar o que já foi analisado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/monitor-estado.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Monitor: estado de $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Abrir pull request com os candidatos
+        if: steps.monitor.outputs.candidatos != '0'
+        run: |
+          RAMO="monitor/$(date -u +%Y-%m-%d)-${{ github.run_number }}"
+          cp relatorio-monitor.md /tmp/relatorio.md
+          git switch -c "$RAMO"
+          node scripts/monitorar-fontes.mjs --aplicar
+          git add editais.json
+          git commit -m "Novos editais encontrados pelo monitor ($(date -u +%Y-%m-%d))"
+          git push -u origin "$RAMO"
+          TITULO="Novos editais para revisar — $(date -u +%d/%m/%Y) (${{ steps.monitor.outputs.candidatos }})"
+          if ! gh pr create --base main --head "$RAMO" --title "$TITULO" --body-file /tmp/relatorio.md; then
+            # Se o repositório não permitir que o Actions abra PRs, registra numa issue com o link do branch
+            printf '\n\n---\nNão foi possível abrir o pull request automaticamente. Abra-o a partir do branch `%s`, ou ative em Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".\n' "$RAMO" >> /tmp/relatorio.md
+            gh issue create --title "$TITULO" --body-file /tmp/relatorio.md
+          fi
+
+      - name: Registrar itens para revisão (sem candidatos novos)
+        if: steps.monitor.outputs.candidatos == '0' && steps.monitor.outputs.revisar == '1'
+        run: |
+          TITULO="Monitor de editais: itens para revisar"
+          NUM=$(gh issue list --state open --search "in:title \"$TITULO\"" --json number --jq '.[0].number')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body-file relatorio-monitor.md
+          else
+            gh issue create --title "$TITULO" --body-file relatorio-monitor.md
+          fi

@@ -24,7 +24,29 @@ A auditoria de usabilidade que orientou essas jornadas está em [`docs/auditoria
 - **Exportação** em CSV (abre direto no Excel em português) e **comparação** de até 3 editais.
 - **Gerenciar editais**: cadastre editais reais pelo formulário ou importe um arquivo JSON. Ficam salvos no navegador (`localStorage`); exporte o JSON para compartilhar ou versionar.
 
-> Os editais que acompanham a página são **demonstrativos**. Confirme sempre datas, valores e requisitos no edital oficial.
+> Os editais são **reais**, conferidos na página ou no documento oficial de cada instituição (cada um guarda `fonte` e `verificadoEm`). Já **projetos e prestação de contas** usam dados de demonstração. Em qualquer divergência, vale o edital oficial.
+
+## Curadoria e monitoramento automático
+
+**Base atual (28/10/2026):** 8 chamadas vigentes da FAPESP, do CNPq (com CAPES e ANR) e da Finep, para pesquisadores, ICTs e empresas. Ficaram de fora as chamadas já encerradas e as que não puderam ser confirmadas em fonte oficial.
+
+**Monitor diário** (`.github/workflows/monitorar-fontes.yml`, todo dia às 07h43):
+
+1. Lê as páginas oficiais listadas em [`data/fontes.json`](data/fontes.json) (FAPESP, CNPq, Finep, MinC, MDA, FAPERJ, FAPES) e encontra links de chamadas ainda não vistos.
+2. Envia cada página ou PDF à IA (API da Anthropic), que extrai os dados no formato do `editais.json` — só fatos explícitos no documento, com **trechos de evidência**, nível de confiança e pontos para conferir.
+3. Valida com as mesmas regras do site: descarta prazos vencidos, resultados, duplicados e itens sem dados mínimos.
+4. Confere se a página oficial de cada edital aberto mudou desde a última verificação (possível retificação ou prorrogação).
+5. Abre um **pull request** com os candidatos e o relatório. Você revisa no documento oficial, corrige se precisar e faz o merge — o site e as páginas públicas se atualizam sozinhos. Retificações e falhas de fonte vão para uma issue.
+
+**Para ativar (uma vez):**
+
+1. Crie uma chave em [console.anthropic.com](https://console.anthropic.com) e salve como segredo `ANTHROPIC_API_KEY` em *Settings → Secrets and variables → Actions*.
+2. Em *Settings → Actions → General*, marque **Allow GitHub Actions to create and approve pull requests**.
+3. Rode a primeira vez em *Actions → Monitorar editais → Run workflow*.
+
+Sem a chave, o monitor funciona em modo manual: lista os links novos numa issue para você conferir. O custo da API é por uso; o monitor analisa no máximo 15 links por dia (variável `MAX_NOVOS`) e o modelo pode ser trocado pela variável `MODELO`. Para incluir uma fonte, acrescente a página oficial que lista as chamadas em `data/fontes.json`. Endereços com o ano (como o da FAPESP) precisam ser atualizados em janeiro.
+
+**Teste local:** `ANTHROPIC_API_KEY=... node scripts/monitorar-fontes.mjs` gera `relatorio-monitor.md` e `data/novos-editais.json`; `node scripts/monitorar-fontes.mjs --aplicar` acrescenta os candidatos ao `editais.json`.
 
 ## Formato de importação (JSON)
 
@@ -60,8 +82,12 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | Campo | Obrigatório | Observações |
 |---|---|---|
 | `titulo`, `instituicao` | sim | |
+| `numero` | não | identificação oficial, ex.: `Chamada CNPq nº 33/2026` |
 | `publico` | sim | `pesquisador`, `ict`, `empresa`, `osc`, `municipio`, `estado` (aceita também os nomes por extenso) |
-| `valorMax` | sim | número, valor máximo por proposta |
+| `valorMax` | sim, ou `valorNota` | número, valor máximo por proposta; `null` quando não há teto (ex.: só bolsas) |
+| `valorNota` | não | faixas, linhas e o que é financiado; obrigatório se `valorMax` for `null` |
+| `prazoNota` | não | horário limite, etapas seguintes, cadastro prévio exigido |
+| `fonte`, `verificadoEm` | recomendado | onde a informação foi conferida e quando (`AAAA-MM-DD`) |
 | `abertura`, `encerramento` | sim | `AAAA-MM-DD` ou `DD/MM/AAAA` |
 | `link` | sim, se `agencia` não for cadastrada | URL `http(s)` do edital oficial |
 | `agencia` | não | `cnpq`, `finep`, `fnde`, `fapesp`, `funbio`, `fns`, `banco-mundial`, `uniao-europeia`, `bid`, `gef`, `nih` |
@@ -69,7 +95,7 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | `abrangencia` | não | `Nacional`, uma região (`Norte`, `Nordeste`, `Centro-Oeste`, `Sudeste`, `Sul`, `Norte e Nordeste`, `Amazônia Legal`, `Semiárido`, `Cerrado e Caatinga`) ou a sigla de uma UF |
 | `ufs` | não | lista de siglas, quando a abrangência for um conjunto específico de estados |
 | `moeda` | não | `BRL` (padrão), `USD` ou `EUR` |
-| `criterios` | não | `[{ "nome": "Mérito", "peso": 40 }, ...]` |
+| `criterios` | não | `[{ "nome": "Mérito", "peso": 40 }, ...]`; use `"peso": null` se a chamada não divulga pesos |
 | `docsExtras` | não | documentos específicos; os usuais de cada tipo de proponente entram automaticamente |
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
@@ -96,4 +122,6 @@ O endereço usado nos links absolutos vem, nesta ordem, da variável `SITE_URL`,
 
 1. Em **Editais → Mais ações → Gerenciar editais**, cadastre ou importe os editais.
 2. Use **Exportar todos** e salve o arquivo como `editais.json` na raiz do repositório, substituindo o atual.
-3. Remova a linha `"demonstrativo": true` do arquivo: a faixa do site passa a dizer "editais publicados" com a data de atualização.
+3. Mantenha `"demonstrativo": false` e atualize `"geradoEm"`: a faixa do site mostra quantos editais foram conferidos e quando.
+
+O gerador também grava os editais dentro do `index.html` (entre `// editais:inicio` e `// editais:fim`), para que a plataforma abra com os dados reais mesmo sem servidor.

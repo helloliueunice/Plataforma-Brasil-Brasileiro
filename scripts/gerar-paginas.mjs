@@ -43,11 +43,14 @@ const geradoEm = (!Array.isArray(fonte) && fonte.geradoEm) || new Date().toISOSt
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const norm = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 // Mesma regra de slugEdital() no index.html
-const slugify = s => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70).replace(/-+$/, '');
+// Até 70 caracteres, sem cortar palavra no meio
+const slugify = s => { const b = norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); if (b.length <= 70) return b; const c = b.slice(0, 71); return c.slice(0, c.lastIndexOf('-')); };
 const slugEdital = e => `${slugify(e.titulo)}-${e.id}`;
 const isoOk = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
 const data = iso => { const [y, m, d] = iso.split('-'); return `${d}/${m}/${y}`; };
 const valor = (v, moeda = 'BRL') => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: moeda, notation: 'compact', maximumFractionDigits: 1 }).format(v);
+const temValor = e => Number(e.valorMax) > 0;
+const valorTxt = e => (temValor(e) ? `até ${valor(e.valorMax, e.moeda)}` : /bolsa/i.test(e.modalidade) ? 'bolsas (ver condições)' : 'ver condições');
 const plural = (n, s, p) => `${n} ${n === 1 ? s : p}`;
 const corta = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…');
 const hoje = new Date().toISOString().slice(0, 10);
@@ -58,14 +61,15 @@ const ROTULO = { aberto: 'Inscrições abertas', 'em-breve': 'Em breve', fechado
 const avisos = [];
 const editais = [];
 brutos.forEach((r, i) => {
-    const faltam = ['id', 'titulo', 'instituicao', 'abertura', 'encerramento', 'valorMax'].filter(c => r[c] === undefined || r[c] === '');
+    const faltam = ['id', 'titulo', 'instituicao', 'abertura', 'encerramento'].filter(c => r[c] === undefined || r[c] === '');
+    if (!(Number(r.valorMax) > 0) && !r.valorNota) faltam.push('valorMax ou valorNota');
     if (!isoOk(r.abertura) || !isoOk(r.encerramento)) faltam.push('datas no formato AAAA-MM-DD');
     if (!Array.isArray(r.publico) || !r.publico.length) faltam.push('publico');
     if (faltam.length) { avisos.push(`Item ${i + 1} (${r.titulo || 'sem título'}) ignorado: ${faltam.join(', ')}`); return; }
     const ag = agencias[r.agencia];
     editais.push({
         moeda: 'BRL', procedencia: 'nacional', tema: 'Desenvolvimento', modalidade: 'Não informada', abrangencia: 'Nacional',
-        contrapartida: 'Não informada', tags: [], resumo: '', docsExtras: [], valorTotal: r.valorMax, ...r,
+        contrapartida: 'Não informada', tags: [], resumo: '', docsExtras: [], valorTotal: null, ...r,
         link: r.link || (ag ? ag.link : ''),
         criterios: r.criterios && r.criterios.length ? r.criterios : CRITERIOS_PADRAO,
         documentos: [...new Set([...r.publico.flatMap(p => DOCS_POR_PUBLICO[p] || []), ...DOCS_COMUNS, ...(r.docsExtras || [])])]
@@ -159,7 +163,7 @@ function cartao(e, rel) {
     return `<li class="cartao">
             <div class="selos">${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span></div>
             <h3><a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a></h3>
-            <p>${esc(e.instituicao)} · até <strong>${valor(e.valorMax, e.moeda)}</strong> por proposta · ${esc(publicoTxt(e))}</p>
+            <p>${esc(e.instituicao)} · <strong>${valorTxt(e)}</strong>${temValor(e) ? ' por proposta' : ''} · ${esc(publicoTxt(e))}</p>
             <p class="nota">Inscrições: ${data(e.abertura)} a ${data(e.encerramento)} · ${esc(e.abrangencia)}</p>
         </li>`;
 }
@@ -180,9 +184,10 @@ for (const e of editais) {
     const ag = agencias[e.agencia];
     const instNome = ag ? `${ag.sigla} — ${ag.nome}` : e.instituicao;
     const area = AREAS[e.tema] || e.tema;
-    const titulo = `${e.titulo} — ${e.instituicao} | ${NOME}`;
-    const descricao = corta(`${e.modalidade}: até ${valor(e.valorMax, e.moeda)} por proposta para ${publicoTxt(e)}. Inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`, 158);
-    const textoWhats = `${e.titulo} (${e.instituicao}) — até ${valor(e.valorMax, e.moeda)} por proposta. Inscrições até ${data(e.encerramento)}: ${url}`;
+    // Buscadores exibem ~60 caracteres: título do edital primeiro, instituição e marca só se couberem
+    const titulo = (t => (t.length <= 66 ? `${t} | ${NOME}` : t))(`${corta(e.titulo, 64)} — ${e.instituicao}`);
+    const descricao = corta(`${e.numero ? e.numero + '. ' : ''}${e.modalidade}${temValor(e) ? `: até ${valor(e.valorMax, e.moeda)} por proposta` : ''} para ${publicoTxt(e)}. Inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`, 158);
+    const textoWhats = `${e.titulo} (${e.instituicao})${temValor(e) ? ` — até ${valor(e.valorMax, e.moeda)} por proposta` : ''}. Inscrições até ${data(e.encerramento)}: ${url}`;
     const etapas = [['Publicação do edital', e.publicadoEm], ['Abertura das inscrições', e.abertura], ['Prazo final', e.encerramento], ['Resultado (previsão)', e.resultado]].filter(([, d]) => isoOk(d));
     const relacionados = editais.filter(x => x.id !== e.id && (x.agencia === e.agencia || x.tema === e.tema)).sort(ordemPrazo).slice(0, 4);
     const ufs = Array.isArray(e.ufs) && e.ufs.length ? e.ufs : REGIOES_UF[e.abrangencia];
@@ -197,13 +202,15 @@ for (const e of editais) {
             ] },
             { '@type': 'MonetaryGrant', name: e.titulo, description: e.resumo || descricao, url, ...(e.link ? { sameAs: e.link } : {}),
               funder: { '@type': 'Organization', name: instNome, ...(ag ? { url: ag.link } : {}) },
-              amount: { '@type': 'MonetaryAmount', currency: e.moeda, maxValue: e.valorMax } }
+              ...(temValor(e) ? { amount: { '@type': 'MonetaryAmount', currency: e.moeda, maxValue: e.valorMax } } : {}),
+              ...(e.numero ? { identifier: e.numero } : {}) }
         ]
     };
 
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(e.titulo)}</span></nav>
         <div class="selos">${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? '🌍 Internacional' : '🇧🇷 Nacional'}</span></div>
+        ${e.numero ? `<p class="numero">${esc(e.numero)}</p>` : ''}
         <h1>${esc(e.titulo)}</h1>
         <p class="sub">${ag ? `<a href="${rel}instituicoes/${e.agencia}/">${esc(e.instituicao)}</a>` : esc(e.instituicao)} · ${esc(area)} · ${esc(e.abrangencia)}</p>
 
@@ -214,27 +221,30 @@ for (const e of editais) {
         </div>
 
         <dl class="fatos">
-            <div><dt>Valor por proposta</dt><dd>até ${valor(e.valorMax, e.moeda)}</dd></div>
-            <div><dt>Valor total do edital</dt><dd>${valor(e.valorTotal, e.moeda)}</dd></div>
+            <div><dt>Valor por proposta</dt><dd>${valorTxt(e)}</dd></div>
+            <div><dt>Valor total do edital</dt><dd>${e.valorTotal > 0 ? valor(e.valorTotal, e.moeda) : 'Não informado'}</dd></div>
             <div><dt>Prazo final</dt><dd>${data(e.encerramento)}</dd></div>
             <div><dt>Quem pode participar</dt><dd>${esc(publicoTxt(e))}</dd></div>
             <div><dt>Contrapartida</dt><dd>${esc(e.contrapartida)}</dd></div>
             <div><dt>Abrangência</dt><dd>${esc(e.abrangencia)}${ufs && ufs.length > 1 ? `<br><small>${ufs.join(', ')}</small>` : ''}</dd></div>
         </dl>
-        ${e.moeda !== 'BRL' ? `<p class="nota">Valores em ${e.moeda}. Equivalente aproximado: até ${valor(e.valorMax * (COTACAO_REF[e.moeda] || 1))} por proposta (cotação de referência).</p>` : ''}
+        ${e.valorNota ? `<p class="destaque">💰 ${esc(e.valorNota)}</p>` : ''}
+        ${e.moeda !== 'BRL' && temValor(e) ? `<p class="nota">Valores em ${e.moeda}. Equivalente aproximado: até ${valor(e.valorMax * (COTACAO_REF[e.moeda] || 1))} por proposta (cotação de referência).</p>` : ''}
 
         <section><h2>Sobre o edital</h2><p>${esc(e.resumo || 'Consulte o edital oficial para o objetivo completo.')}</p>
+            ${e.fonte || e.verificadoEm ? `<p class="nota">✔ Conferido${e.verificadoEm ? ` em ${data(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(e.fonte)}" target="_blank" rel="noopener noreferrer">fonte oficial</a>` : ''}.</p>` : ''}
             ${e.tags.length ? `<p class="tags">${e.tags.map(t => `<span>${esc(t)}</span>`).join('')}</p>` : ''}</section>
 
         <section><h2>Cronograma</h2>
-            <ol class="cronograma">${etapas.map(([n, d]) => `<li><strong>${n}</strong> <span>${data(d)}</span></li>`).join('')}</ol></section>
+            <ol class="cronograma">${etapas.map(([n, d]) => `<li><strong>${n}</strong> <span>${data(d)}</span></li>`).join('')}</ol>
+            ${e.prazoNota ? `<p class="destaque">⏳ ${esc(e.prazoNota)}</p>` : ''}</section>
 
         <section><h2>Documentos usuais</h2>
             <ul class="lista">${e.documentos.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
             <p class="nota">Lista de referência para organizar a proposta; vale a lista do edital oficial. <a href="${rel}#edital-${e.id}">Marque o que já está pronto na plataforma.</a></p></section>
 
         <section><h2>Critérios de avaliação</h2>
-            <ul class="criterios">${e.criterios.map(c => `<li><span>${esc(c.nome)}</span><strong>${c.peso}%</strong><i style="width:${c.peso}%"></i></li>`).join('')}</ul></section>
+            <ul class="criterios">${e.criterios.map(c => `<li><span>${esc(c.nome)}</span>${c.peso != null ? `<strong>${c.peso}%</strong><i style="width:${c.peso}%"></i>` : ''}</li>`).join('')}</ul></section>
 
         <aside class="aviso">${demonstrativo ? 'ℹ️ <strong>Dados demonstrativos.</strong> ' : ''}Informações de ${data(geradoEm)}. Antes de submeter, confirme datas, valores e requisitos no edital oficial publicado pela instituição.</aside>
 
@@ -333,6 +343,19 @@ ${urls.map(([u, f, p]) => `  <url><loc>${esc(u)}</loc><lastmod>${geradoEm}</last
 `);
 escrever('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 if (!fs.existsSync(path.join(RAIZ, '.nojekyll'))) escrever('.nojekyll', '');
+
+/* ---------- Editais embutidos no index.html ---------- */
+{
+    const reDados = /\/\/ editais:inicio[^\n]*\n[\s\S]*?\/\/ editais:fim/;
+    if (!reDados.test(indexHtml)) throw new Error('Marcadores // editais:inicio e // editais:fim não encontrados no index.html');
+    const ind = s => s.split('\n').map((l, i) => (i ? '        ' + l : l)).join('\n');
+    const embutidos = brutos.filter(r => editais.some(e => e.id === r.id));
+    const bloco = `// editais:inicio (gerado por scripts/gerar-paginas.mjs a partir do editais.json — não edite aqui)
+        const DADOS_META = ${JSON.stringify({ geradoEm, demonstrativo })};
+        let EDITAIS_BASE = ${ind(JSON.stringify(embutidos, null, 4)).replace(/<\/(script)/gi, '<\\/$1')};
+        // editais:fim`;
+    indexHtml = indexHtml.replace(reDados, () => bloco);
+}
 
 /* ---------- Metatags da página inicial ---------- */
 const abertosHoje = editais.filter(e => statusEm(e) === 'aberto').length;

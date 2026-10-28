@@ -1,371 +1,258 @@
 {
   "geradoEm": "2026-10-28",
-  "demonstrativo": true,
+  "demonstrativo": false,
   "editais": [
     {
-      "id": 1,
-      "titulo": "Inteligência Artificial para Saúde Pública",
+      "id": 101,
+      "numero": "Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026",
+      "titulo": "Plataformas digitais baseadas em software livre e protocolos abertos",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": ["Software livre", "Protocolos abertos", "Arquiteturas federadas", "Internet"],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": ["pesquisador", "ict"],
+      "abrangencia": "São Paulo",
+      "moeda": "BRL",
+      "valorMax": 5000000,
+      "valorTotal": 21000000,
+      "valorNota": "Projeto Temático: até R$ 5 milhões em 5 anos (R$ 15 milhões reservados). Auxílio à Pesquisa Regular: até R$ 200 mil por ano, por 2 a 3 anos (R$ 6 milhões reservados).",
+      "contrapartida": "Não informada na chamada",
+      "publicadoEm": "2026-10-15",
+      "abertura": "2026-11-05",
+      "encerramento": "2027-02-22",
+      "prazoNota": "Submissão pelo SAGe a partir de 05/11/2026.",
+      "resumo": "Financia pesquisa e desenvolvimento de plataformas digitais baseadas em software livre e protocolos abertos, especialmente arquiteturas federadas. As propostas devem atender a uma ou mais linhas: desenvolvimento e aprimoramento de softwares livres e plataformas descentralizadas; estudos de viabilidade econômica e modelos de negócio; e estudos de impacto socioambiental. São admitidas parcerias com empresas, cooperativas, organizações de trabalhadores e comunidades.",
+      "link": "https://fapesp.br/18444",
+      "fonte": "https://fapesp.br/18445/nova-chamada-destinara-r-21-milhoes-a-pesquisas-sobre-plataformas-digitais-abertas",
+      "verificadoEm": "2026-10-28",
+      "docsExtras": ["Proposta submetida pelo SAGe (sistema de submissão da FAPESP)", "Indicação da(s) linha(s) de pesquisa atendida(s)"]
+    },
+    {
+      "id": 102,
+      "numero": "Chamada FAPESP nº 53/2026",
+      "titulo": "PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": ["Startups", "Tecnologia educacional", "PIPE", "Pequenas empresas"],
+      "modalidade": "Não reembolsável",
+      "publico": ["empresa"],
+      "abrangencia": "São Paulo",
+      "moeda": "BRL",
+      "valorMax": 500000,
+      "valorTotal": 25000000,
+      "valorNota": "Inclui bolsas de treinamento técnico e de pesquisa em pequenas empresas. Duração de até 12 meses.",
+      "contrapartida": "Não informada na chamada",
+      "publicadoEm": "2026-10-21",
+      "abertura": "2026-10-21",
+      "encerramento": "2026-11-12",
+      "prazoNota": "Prazo da pré-proposta. As pré-propostas consideradas elegíveis enviam a proposta completa até 13/01/2027.",
+      "resumo": "Apoio não reembolsável a projetos de pesquisa científica e tecnológica em tecnologias educacionais desenvolvidos por pequenas empresas (até 250 empregados) com sede ou unidade de P&D no estado de São Paulo. O pesquisador responsável deve ser sócio da empresa e residir no estado durante a execução; até dois pesquisadores principais podem complementar a equipe.",
+      "link": "https://fapesp.br/18434",
+      "fonte": "https://agencia.fapesp.br/programa-pesquisa-inovativa-em-pequenas-empresas-vai-apoiar-projetos-de-tecnologias-educacionais/59435",
+      "verificadoEm": "2026-10-28",
+      "docsExtras": ["Pré-proposta submetida pelo SAGe", "Comprovação de que o pesquisador responsável é sócio da empresa", "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"]
+    },
+    {
+      "id": 103,
+      "numero": "Chamada FAPESP nº 47/2026",
+      "titulo": "Jovens Pesquisadores – chamada para pesquisadores no exterior",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": ["Jovem Pesquisador", "Atração de talentos", "Pesquisa no exterior"],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": ["pesquisador"],
+      "abrangencia": "São Paulo",
+      "moeda": "BRL",
+      "valorMax": 2500000,
+      "valorNota": "Até 20 propostas selecionadas. Duração de 60 meses, prorrogável por até 12. A Bolsa de Jovem Pesquisador pode ser solicitada à parte.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-09-23",
+      "abertura": "2026-09-23",
+      "encerramento": "2026-11-19",
+      "prazoNota": "Prazo da proposta completa. Depois há avaliação por painel externo, apresentação oral e entrevista on-line.",
+      "resumo": "Atrai cientistas de qualquer nacionalidade que vivem e trabalham no exterior há pelo menos dois anos após o doutorado para criar, numa instituição paulista, um laboratório e um programa de pesquisa independente e competitivo internacionalmente.",
+      "link": "https://fapesp.br/18389",
+      "fonte": "https://agencia.fapesp.br/fapesp-lanca-chamada-para-atrair-jovens-pesquisadores-do-exterior/59256",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        { "nome": "Originalidade e impacto potencial" },
+        { "nome": "Qualidade científica e viabilidade" },
+        { "nome": "Formação científica e histórico do candidato" },
+        { "nome": "Capacidade de liderar um programa de pesquisa independente e competitivo" }
+      ],
+      "docsExtras": ["Comprovação de pelo menos 2 anos de trabalho no exterior após o doutorado", "Residência no exterior na data da submissão", "Concordância da instituição paulista que vai sediar o laboratório"]
+    },
+    {
+      "id": 104,
+      "numero": "Chamada CNPq nº 33/2026",
+      "titulo": "Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": ["Bolsa de produtividade", "PQ", "DT", "Todas as áreas"],
+      "modalidade": "Bolsa",
+      "publico": ["pesquisador"],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 448963200,
+      "valorNota": "Bolsa mensal e adicional de bancada conforme a tabela vigente do CNPq. Vigência de até 60 meses (nível A e PQ-Sr), 48 (nível B) ou 36 (nível C). Orçamento: R$ 23,5 mi para DT e R$ 425,4 mi para PQ e PQ-Sr.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-10-07",
+      "abertura": "2026-10-07",
+      "encerramento": "2027-01-07",
+      "resultado": "2027-06-30",
+      "prazoNota": "Até 23h59 (Brasília). Resultado preliminar em 05/05/2027; bolsas a partir de 01/08/2027.",
+      "resumo": "Bolsas para pesquisadores com produção científica, tecnológica e de inovação de destaque, em três linhas: Desenvolvimento Tecnológico e Extensão Inovadora (DT, níveis A a C), Pesquisa (PQ, níveis A a C) e Pesquisa Sênior (PQ-Sr). Exige doutorado e vínculo formal com a instituição de execução; para o nível C, doutorado concluído até 2024. Uma proposta por pessoa, numa única linha. Os critérios abaixo são os de PQ e PQ-Sr; DT tem critérios próprios.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/chamada-publica-cnpq-N-33-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/Chamada_Produtividade_33_2026.pdf",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        { "nome": "Relevância e caráter inovador da contribuição ao longo da carreira, com ênfase na atividade recente", "peso": 30 },
+        { "nome": "Mérito, originalidade e impacto do projeto", "peso": 20 },
+        { "nome": "Formação de recursos humanos e atuação na graduação e pós-graduação", "peso": 20 },
+        { "nome": "Cooperação com grupos e instituições e participação em redes", "peso": 20 },
+        { "nome": "Atuação em sociedades científicas, editoria, gestão, prêmios e distinções", "peso": 10 }
+      ],
+      "docsExtras": ["Formulário na Plataforma Integrada Carlos Chagas", "Súmula curricular com até 5 realizações de maior impacto", "Comprovante de vínculo formal com a instituição de execução"]
+    },
+    {
+      "id": 105,
+      "numero": "Chamada CNPq nº 34/2026",
+      "titulo": "Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": ["Eventos científicos", "Congressos", "Divulgação científica"],
+      "modalidade": "Auxílio a eventos",
+      "publico": ["pesquisador", "ict"],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 200000,
+      "valorTotal": 20000000,
+      "valorNota": "Linhas 1 (eventos mundiais) e 2 (eventos tradicionais): até R$ 200 mil. Linha 3 (eventos não tradicionais): até R$ 150 mil. Só custeio.",
+      "contrapartida": "Não exigida (auxílio estudantil, se pedido, exige contrapartida igual do promotor)",
+      "publicadoEm": "2026-10-14",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-12-04",
+      "resultado": "2027-04-30",
+      "prazoNota": "Até 23h59 (Brasília). Resultado preliminar em 15/03/2027.",
+      "resumo": "Apoia eventos científicos de grande porte realizados no Brasil, de abrangência mundial, internacional ou nacional, entre 01/07/2027 e 30/06/2028 (eventos mundiais até 31/07/2028). O evento deve incluir ações de educação, popularização ou divulgação científica e se relacionar a ao menos um eixo da ENCTI 2024–2034. Eventos locais, regionais, de médio ou pequeno porte não são elegíveis.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/chamada-publica-cnpq-N-34-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/Chamada_ARC_34_2026.pdf",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        { "nome": "Mérito e relevância do evento para o desenvolvimento científico, tecnológico e de inovação", "peso": 30 },
+        { "nome": "Impacto potencial e abrangência na área do conhecimento", "peso": 30 },
+        { "nome": "Qualificação e experiência do proponente na organização de eventos", "peso": 20 },
+        { "nome": "Adequação do orçamento aos objetivos, atividades e metas", "peso": 20 }
+      ],
+      "docsExtras": ["Formulário na Plataforma Integrada Carlos Chagas", "Anexo obrigatório em PDF (até 1 MB) com promotor, programação, comissão organizadora e histórico do evento", "Concordância escrita das instituições e membros da equipe"]
+    },
+    {
+      "id": 106,
+      "numero": "Chamada Pública CNPq/CAPES nº 30/2026",
+      "titulo": "Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)",
       "instituicao": "CNPq",
       "agencia": "cnpq",
       "procedencia": "nacional",
       "tema": "Tecnologia",
-      "tags": [
-        "IA",
-        "Saúde Digital",
-        "Inovação"
-      ],
-      "modalidade": "Auxílio à pesquisa",
-      "publico": [
-        "pesquisador",
-        "ict"
-      ],
+      "tags": ["Bolsas", "Pós-graduação", "Parceria com empresas", "CAPES"],
+      "modalidade": "Bolsas",
+      "publico": ["ict"],
       "abrangencia": "Nacional",
       "moeda": "BRL",
-      "valorMax": 400000,
-      "valorTotal": 8500000,
-      "contrapartida": "Não exigida",
-      "publicadoEm": "2026-09-10",
-      "abertura": "2026-09-15",
-      "encerramento": "2026-11-04",
-      "resultado": "2027-02-15",
-      "resumo": "Apoio a projetos de pesquisa que desenvolvam ou validem soluções de inteligência artificial para diagnóstico, triagem e gestão no SUS, com dados abertos e avaliação ética.",
-      "docsExtras": [
-        "Parecer ou protocolo de submissão ao CEP/CONEP"
-      ],
+      "valorMax": null,
+      "valorTotal": 62440000,
+      "valorNota": "Só bolsas. Linha 1: até 10 de mestrado, 10 de doutorado, 5 de pós-doutorado empresarial, 15 de iniciação tecnológica e 1 DTI. Linha 2: até 5 de mestrado, 5 de doutorado, 10 de iniciação tecnológica e 1 DTI.",
+      "contrapartida": "Do parceiro, por bolsa: R$ 15 mil (mestrado), R$ 30 mil (doutorado) e R$ 10 mil (pós-doutorado). Empresas médias e grandes pagam ao menos 50% em dinheiro.",
+      "publicadoEm": "2026-08-19",
+      "abertura": "2026-08-20",
+      "encerramento": "2026-12-11",
+      "prazoNota": "Até 23h59 (Brasília). Julgamento em janeiro e decisão final prevista para fevereiro de 2027.",
+      "resumo": "Bolsas para que estudantes de graduação e pós-graduação de ICTs desenvolvam projetos de interesse de empresas, órgãos públicos e entidades do terceiro setor. A proposta é institucional, apresentada pelo representante indicado pelo dirigente máximo da ICT, que precisa ter pós-graduação reconhecida, NIT constituído e política de inovação. Uma proposta por ICT.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+      "verificadoEm": "2026-10-28",
       "criterios": [
-        {
-          "nome": "Mérito científico e originalidade",
-          "peso": 35
-        },
-        {
-          "nome": "Potencial de incorporação no SUS",
-          "peso": 25
-        },
-        {
-          "nome": "Plano de governança de dados e ética",
-          "peso": 20
-        },
-        {
-          "nome": "Qualificação da equipe",
-          "peso": 20
-        }
-      ]
+        { "nome": "Mérito, clareza, relevância e aderência do plano de trabalho", "peso": 20 },
+        { "nome": "Capacidade dos programas de pós-graduação frente às bolsas pedidas", "peso": 10 },
+        { "nome": "Histórico de projetos de P&D com parceiros nos últimos quatro anos", "peso": 10 },
+        { "nome": "Experiência da ICT em ecossistemas de inovação", "peso": 20 },
+        { "nome": "Grau de inovação e impacto potencial", "peso": 20 },
+        { "nome": "Estrutura administrativa para gerir o programa", "peso": 10 },
+        { "nome": "Plano de divulgação dos resultados para a sociedade", "peso": 10 }
+      ],
+      "docsExtras": ["Plano de trabalho (Anexo II)", "Declaração do representante institucional (Anexo III)", "Carta de anuência de cada parceiro (Anexo IV)", "Comprovação de NIT constituído e política de inovação da ICT"]
     },
     {
-      "id": 2,
-      "titulo": "Educação Digital Inclusiva",
-      "instituicao": "FNDE",
-      "agencia": "fnde",
+      "id": 107,
+      "numero": "Chamada Pública MCTI/CNPq/ANR nº 32/2026",
+      "titulo": "Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
       "procedencia": "nacional",
-      "tema": "Educação",
-      "tags": [
-        "Tecnologia Educacional",
-        "Inclusão"
-      ],
-      "modalidade": "Transferência voluntária",
-      "publico": [
-        "municipio",
-        "estado"
-      ],
+      "tema": "Tecnologia",
+      "tags": ["Cooperação internacional", "França", "Saúde Única", "Doenças infecciosas", "IA", "Computação quântica"],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": ["pesquisador", "ict"],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": 1500000,
-      "valorTotal": 45000000,
-      "contrapartida": "Mínimo de 2% do valor",
-      "publicadoEm": "2026-09-25",
-      "abertura": "2026-10-01",
-      "encerramento": "2026-12-18",
-      "resultado": "2027-03-10",
-      "resumo": "Recursos para conectividade, equipamentos e formação docente em redes públicas de ensino, com prioridade para escolas com menor IDEB e alunos com deficiência."
+      "valorTotal": 6000000,
+      "valorNota": "Até 4 projetos; só custeio (materiais, serviços, missões Brasil–França); até 48 meses, sem prorrogação. A equipe francesa é financiada pela ANR.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-09-03",
+      "abertura": "2026-09-03",
+      "encerramento": "2027-03-31",
+      "prazoNota": "Até 23h59 (Brasília). Resultado a partir de outubro de 2027; contratação em janeiro de 2028.",
+      "resumo": "Seleciona projetos conjuntos de grupos brasileiros e franceses em duas frentes: Saúde Única (imunologia, doenças infecciosas e inflamação; doenças infecciosas e ambiente) e continuum digital (modelagem, simulação, HPC, tecnologias digitais sustentáveis e ciências e tecnologias quânticas). O CNPq conduz a avaliação; o coordenador francês envia cópia da proposta à ANR com o mesmo título e acrônimo.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/ChamadaPblicaANR322026_2766435.pdf",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        { "nome": "Excelência científica e tecnológica", "peso": 20 },
+        { "nome": "Metodologia", "peso": 20 },
+        { "nome": "Organização e execução do projeto", "peso": 20 },
+        { "nome": "Estrutura e contribuição da colaboração internacional", "peso": 20 },
+        { "nome": "Impacto", "peso": 20 }
+      ],
+      "docsExtras": ["Proposta em PDF (até 1 MB), de preferência em inglês, com orçamento em R$ e em €", "Cópia da proposta enviada à ANR pelo coordenador francês", "Plano de missões técnicas entre os grupos"]
     },
     {
-      "id": 3,
-      "titulo": "Preservação da Amazônia",
-      "instituicao": "FUNBIO",
-      "agencia": "funbio",
-      "procedencia": "nacional",
-      "tema": "Meio Ambiente",
-      "tags": [
-        "Sustentabilidade",
-        "Biodiversidade",
-        "Povos tradicionais"
-      ],
-      "modalidade": "Não reembolsável",
-      "publico": [
-        "osc",
-        "ict"
-      ],
-      "abrangencia": "Amazônia Legal",
-      "moeda": "BRL",
-      "valorMax": 800000,
-      "valorTotal": 25000000,
-      "contrapartida": "Não exigida",
-      "publicadoEm": "2026-08-15",
-      "abertura": "2026-08-20",
-      "encerramento": "2026-11-12",
-      "resultado": "2027-01-30",
-      "resumo": "Projetos de conservação, monitoramento e cadeias da sociobiodiversidade em unidades de conservação e territórios indígenas da Amazônia Legal."
-    },
-    {
-      "id": 4,
-      "titulo": "Startups de Impacto Social",
+      "id": 108,
+      "numero": "Chamada Pública PRONINC 2026",
+      "titulo": "PRONINC 2026 – Tecnologias e inovação social para a economia solidária",
       "instituicao": "FINEP",
       "agencia": "finep",
       "procedencia": "nacional",
-      "tema": "Tecnologia",
-      "tags": [
-        "Startups",
-        "Inovação Social",
-        "Subvenção"
-      ],
-      "modalidade": "Subvenção econômica",
-      "publico": [
-        "empresa"
-      ],
-      "abrangencia": "Nacional",
-      "moeda": "BRL",
-      "valorMax": 1000000,
-      "valorTotal": 15000000,
-      "contrapartida": "5% a 20%, conforme o porte",
-      "publicadoEm": "2026-10-05",
-      "abertura": "2026-10-10",
-      "encerramento": "2027-01-29",
-      "resultado": "2027-04-20",
-      "resumo": "Subvenção para empresas de base tecnológica com soluções de impacto em saúde, educação, habitação ou inclusão produtiva, em estágio de validação de mercado.",
-      "docsExtras": [
-        "Comprovante de enquadramento de porte (ME/EPP)"
-      ]
-    },
-    {
-      "id": 5,
-      "titulo": "Telemedicina Rural",
-      "instituicao": "Banco Mundial",
-      "agencia": "banco-mundial",
-      "procedencia": "internacional",
-      "tema": "Saúde",
-      "tags": [
-        "Telemedicina",
-        "Saúde Rural"
-      ],
-      "modalidade": "Doação (grant)",
-      "publico": [
-        "municipio",
-        "osc"
-      ],
-      "abrangencia": "Norte e Nordeste",
-      "moeda": "USD",
-      "valorMax": 250000,
-      "valorTotal": 3800000,
-      "contrapartida": "Não exigida",
-      "publicadoEm": "2026-10-20",
-      "abertura": "2026-12-01",
-      "encerramento": "2027-02-26",
-      "resultado": "2027-05-15",
-      "resumo": "Financiamento de serviços de teleconsulta e telediagnóstico na atenção primária de municípios rurais, incluindo conectividade e capacitação de equipes.",
-      "docsExtras": [
-        "Proposta em inglês ou com resumo executivo em inglês"
-      ]
-    },
-    {
-      "id": 6,
-      "titulo": "Agricultura Familiar Sustentável",
-      "instituicao": "BID",
-      "agencia": "bid",
-      "procedencia": "internacional",
-      "tema": "Agronegocio",
-      "tags": [
-        "Agricultura",
-        "Sustentabilidade",
-        "Cooperativismo"
-      ],
+      "tema": "Desenvolvimento",
+      "tags": ["Economia solidária", "Agroecologia", "Saneamento", "Energia renovável", "Incubadoras", "FNDCT"],
       "modalidade": "Não reembolsável",
-      "publico": [
-        "osc"
-      ],
-      "abrangencia": "Nacional",
-      "moeda": "USD",
-      "valorMax": 300000,
-      "valorTotal": 6200000,
-      "contrapartida": "10% (financeira ou econômica)",
-      "publicadoEm": "2026-08-25",
-      "abertura": "2026-09-01",
-      "encerramento": "2026-11-30",
-      "resultado": "2027-02-28",
-      "resumo": "Apoio a cooperativas e associações da agricultura familiar para transição agroecológica, acesso a mercados e adaptação climática."
-    },
-    {
-      "id": 7,
-      "titulo": "Pesquisa em Energias Renováveis",
-      "instituicao": "FAPESP",
-      "agencia": "fapesp",
-      "procedencia": "nacional",
-      "tema": "Energia",
-      "tags": [
-        "Energia",
-        "Hidrogênio verde",
-        "Sustentabilidade"
-      ],
-      "modalidade": "Auxílio à pesquisa",
-      "publico": [
-        "pesquisador",
-        "ict"
-      ],
-      "abrangencia": "São Paulo",
-      "moeda": "BRL",
-      "valorMax": 600000,
-      "valorTotal": 12000000,
-      "contrapartida": "Não exigida",
-      "publicadoEm": "2026-09-15",
-      "abertura": "2026-09-20",
-      "encerramento": "2026-11-25",
-      "resultado": "2027-03-30",
-      "resumo": "Projetos de pesquisa em geração solar, eólica, biocombustíveis e hidrogênio verde, conduzidos por pesquisadores vinculados a instituições do estado de São Paulo."
-    },
-    {
-      "id": 8,
-      "titulo": "Infraestrutura Escolar",
-      "instituicao": "FNDE",
-      "agencia": "fnde",
-      "procedencia": "nacional",
-      "tema": "Infraestrutura",
-      "tags": [
-        "Infraestrutura",
-        "Educação Básica"
-      ],
-      "modalidade": "Transferência voluntária",
-      "publico": [
-        "municipio",
-        "estado"
-      ],
+      "publico": ["ict"],
       "abrangencia": "Nacional",
       "moeda": "BRL",
-      "valorMax": 3000000,
-      "valorTotal": 120000000,
-      "contrapartida": "Mínimo de 1% do valor",
-      "publicadoEm": "2026-05-20",
-      "abertura": "2026-06-01",
-      "encerramento": "2026-09-30",
-      "resultado": "2026-12-15",
-      "resumo": "Construção, reforma e ampliação de escolas de educação básica, quadras e creches.",
-      "docsExtras": [
-        "Projeto de engenharia e documentação do terreno"
-      ]
-    },
-    {
-      "id": 9,
-      "titulo": "Cooperação Cultural União Europeia–Brasil",
-      "instituicao": "União Europeia",
-      "agencia": "uniao-europeia",
-      "procedencia": "internacional",
-      "tema": "Cultura",
-      "tags": [
-        "Economia Criativa",
-        "Intercâmbio"
-      ],
-      "modalidade": "Doação (grant)",
-      "publico": [
-        "osc"
-      ],
-      "abrangencia": "Nacional",
-      "moeda": "EUR",
-      "valorMax": 150000,
-      "valorTotal": 2400000,
-      "contrapartida": "Cofinanciamento de 10%",
-      "publicadoEm": "2026-10-15",
-      "abertura": "2026-10-20",
-      "encerramento": "2027-01-15",
-      "resultado": "2027-04-30",
-      "resumo": "Projetos culturais e de economia criativa em parceria entre organizações brasileiras e europeias, com foco em diversidade e acesso à cultura.",
-      "docsExtras": [
-        "Carta de parceria com organização europeia"
-      ]
-    },
-    {
-      "id": 10,
-      "titulo": "Saúde Mental na Atenção Primária",
-      "instituicao": "FNS",
-      "agencia": "fns",
-      "procedencia": "nacional",
-      "tema": "Saúde",
-      "tags": [
-        "Saúde Mental",
-        "SUS",
-        "Atenção Primária"
-      ],
-      "modalidade": "Transferência fundo a fundo",
-      "publico": [
-        "municipio",
-        "estado"
-      ],
-      "abrangencia": "Nacional",
-      "moeda": "BRL",
-      "valorMax": 500000,
-      "valorTotal": 30000000,
-      "contrapartida": "Não exigida",
-      "publicadoEm": "2026-10-22",
-      "abertura": "2026-11-16",
-      "encerramento": "2027-01-20",
-      "resultado": "2027-03-31",
-      "resumo": "Incentivo para estruturar o cuidado em saúde mental nas Unidades Básicas de Saúde, integrado à Rede de Atenção Psicossocial (RAPS)."
-    },
-    {
-      "id": 11,
-      "titulo": "Biodiversidade e Clima",
-      "instituicao": "GEF",
-      "agencia": "gef",
-      "procedencia": "internacional",
-      "tema": "Meio Ambiente",
-      "tags": [
-        "Clima",
-        "Biodiversidade",
-        "Restauração"
-      ],
-      "modalidade": "Doação (grant)",
-      "publico": [
-        "osc",
-        "ict"
-      ],
-      "abrangencia": "Cerrado e Caatinga",
-      "moeda": "USD",
-      "valorMax": 1000000,
-      "valorTotal": 4500000,
-      "contrapartida": "Cofinanciamento 1:1",
-      "publicadoEm": "2026-06-25",
-      "abertura": "2026-07-01",
-      "encerramento": "2026-10-31",
-      "resultado": "2027-01-31",
-      "resumo": "Restauração de paisagens, conservação de espécies ameaçadas e soluções baseadas na natureza no Cerrado e na Caatinga."
-    },
-    {
-      "id": 12,
-      "titulo": "Doenças Tropicais Negligenciadas",
-      "instituicao": "NIH",
-      "agencia": "nih",
-      "procedencia": "internacional",
-      "tema": "Saúde",
-      "tags": [
-        "Doenças Tropicais",
-        "Pesquisa Clínica"
-      ],
-      "modalidade": "Auxílio à pesquisa",
-      "publico": [
-        "pesquisador",
-        "ict"
-      ],
-      "abrangencia": "Nacional",
-      "moeda": "USD",
-      "valorMax": 250000,
-      "valorTotal": 2000000,
-      "contrapartida": "Não exigida",
-      "publicadoEm": "2026-09-01",
-      "abertura": "2026-09-05",
-      "encerramento": "2027-01-08",
-      "resultado": "2027-05-30",
-      "resumo": "Pesquisa colaborativa sobre dengue, doença de Chagas, leishmaniose e outras doenças negligenciadas, com parceria entre grupos brasileiros e norte-americanos.",
-      "docsExtras": [
-        "Registro no SAM.gov e eRA Commons",
-        "Proposta em inglês"
-      ]
+      "valorMax": 5000000,
+      "valorTotal": 100000000,
+      "valorNota": "Entre R$ 2 milhões e R$ 5 milhões por proposta; até 2 propostas por ICT executora; até 36 meses. Recursos do FNDCT.",
+      "contrapartida": "Não informada na notícia oficial; confira o edital",
+      "publicadoEm": "2026-09-18",
+      "abertura": "2026-09-18",
+      "encerramento": "2027-01-14",
+      "prazoNota": "Atenção: instituições sem cadastro aprovado na Finep precisavam se cadastrar até 16/10/2026.",
+      "resumo": "Financia ICTs públicas (por meio de fundações de apoio) e ICTs privadas sem fins lucrativos qualificadas como OS ou ICES, em articulação com Incubadoras Tecnológicas de Cooperativas Populares (ITCPs) e NITs, para desenvolver tecnologias para a economia solidária: agroecologia e soberania alimentar; saneamento e reaproveitamento de resíduos; sistemas digitais e finanças solidárias; energias renováveis; e saúde, cuidado e bem-viver nos territórios.",
+      "link": "https://www.finep.gov.br/en/e/chamada-publica/222684/1057230",
+      "fonte": "https://agenciagov.ebc.com.br/noticias/202609/finep-publica-chamada-de-r-100-milhoes-para-impulsionar-solucoes-tecnologicas-na-economia-solidaria",
+      "verificadoEm": "2026-10-28",
+      "docsExtras": ["Cadastro da proponente e da ICT executora aprovado na Finep", "Ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos", "Comprovação da articulação com ITCP e NIT"]
     }
   ]
 }

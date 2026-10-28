@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundos de Financiamento Brasil 🇧🇷 - Plataforma Integrada</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (9 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
+    <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (7 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
     <meta name="theme-color" content="#1351B4">
     <meta property="og:type" content="website">
@@ -1541,6 +1541,8 @@
         }
 
         [hidden] { display: none !important; }
+        .edital-numero { display: block; font-size: 12px; font-weight: 600; color: var(--gray-dark); margin-top: 2px; }
+        .valor-nota { font-size: 13px; background: var(--light); border-radius: 8px; padding: 8px 12px; margin-top: 10px; }
         .site-footer { text-align: center; padding: 24px 16px 40px; font-size: 14px; display: grid; gap: 6px; border-top: 1px solid #E5E5E5; background: var(--white); }
         .site-footer a { color: var(--primary); font-weight: 600; }
         .span-2 { grid-column: span 2; }
@@ -1888,6 +1890,7 @@
         </div>
 
         <div class="container">
+            <div class="demo-banner" role="note">ℹ️ <strong>Área de demonstração.</strong> Os projetos e as prestações de contas abaixo são exemplos para conhecer o fluxo; os envios não chegam às instituições financiadoras.</div>
             <div class="filter-section">
                 <div class="filter-grid" style="margin-top:0;">
                     <div class="filter-item span-2">
@@ -2009,7 +2012,7 @@
                 <h2 class="card-title">💬 Perguntas frequentes</h2>
                 <div class="faq">
                     <details><summary>Os editais são reais?</summary>
-                        <p id="faqFonte">Os editais que acompanham a página são demonstrativos. Quem administra o site pode publicar editais reais em um arquivo <code>editais.json</code>. Sempre confirme datas, valores e requisitos no edital oficial.</p></details>
+                        <p id="faqFonte">Sim. Cada edital é conferido na página ou no documento oficial da instituição, e o detalhe mostra a fonte e a data da conferência. Novas chamadas são monitoradas diariamente e passam por revisão humana antes de entrar. Já <strong>Projetos e prestação de contas</strong> usam dados de demonstração. Em caso de divergência, vale sempre o edital oficial.</p></details>
                     <details><summary>Onde ficam meus dados?</summary>
                         <p>Perfil, favoritos, propostas, checklists, rascunhos e prestações ficam somente neste navegador (armazenamento local). Nada é enviado a um servidor. Se você limpar os dados do site ou trocar de dispositivo, eles não estarão lá.</p></details>
                     <details><summary>Como a compatibilidade é calculada?</summary>
@@ -2234,75 +2237,427 @@
             { nome: 'Aderência aos objetivos do edital', peso: 10 }
         ];
 
+        // editais:inicio (gerado por scripts/gerar-paginas.mjs a partir do editais.json — não edite aqui)
+        const DADOS_META = {"geradoEm":"2026-10-28","demonstrativo":false};
         let EDITAIS_BASE = [
-            { id: 1, titulo: 'Inteligência Artificial para Saúde Pública', instituicao: 'CNPq', agencia: 'cnpq', procedencia: 'nacional', tema: 'Tecnologia',
-              tags: ['IA', 'Saúde Digital', 'Inovação'], modalidade: 'Auxílio à pesquisa', publico: ['pesquisador', 'ict'], abrangencia: 'Nacional',
-              moeda: 'BRL', valorTotal: 8500000, valorMax: 400000, contrapartida: 'Não exigida',
-              publicadoEm: '2026-09-10', abertura: '2026-09-15', encerramento: '2026-11-04', resultado: '2027-02-15',
-              resumo: 'Apoio a projetos de pesquisa que desenvolvam ou validem soluções de inteligência artificial para diagnóstico, triagem e gestão no SUS, com dados abertos e avaliação ética.',
-              criterios: [{ nome: 'Mérito científico e originalidade', peso: 35 }, { nome: 'Potencial de incorporação no SUS', peso: 25 }, { nome: 'Plano de governança de dados e ética', peso: 20 }, { nome: 'Qualificação da equipe', peso: 20 }],
-              docsExtras: ['Parecer ou protocolo de submissão ao CEP/CONEP'] },
-            { id: 2, titulo: 'Educação Digital Inclusiva', instituicao: 'FNDE', agencia: 'fnde', procedencia: 'nacional', tema: 'Educação',
-              tags: ['Tecnologia Educacional', 'Inclusão'], modalidade: 'Transferência voluntária', publico: ['municipio', 'estado'], abrangencia: 'Nacional',
-              moeda: 'BRL', valorTotal: 45000000, valorMax: 1500000, contrapartida: 'Mínimo de 2% do valor',
-              publicadoEm: '2026-09-25', abertura: '2026-10-01', encerramento: '2026-12-18', resultado: '2027-03-10',
-              resumo: 'Recursos para conectividade, equipamentos e formação docente em redes públicas de ensino, com prioridade para escolas com menor IDEB e alunos com deficiência.' },
-            { id: 3, titulo: 'Preservação da Amazônia', instituicao: 'FUNBIO', agencia: 'funbio', procedencia: 'nacional', tema: 'Meio Ambiente',
-              tags: ['Sustentabilidade', 'Biodiversidade', 'Povos tradicionais'], modalidade: 'Não reembolsável', publico: ['osc', 'ict'], abrangencia: 'Amazônia Legal',
-              moeda: 'BRL', valorTotal: 25000000, valorMax: 800000, contrapartida: 'Não exigida',
-              publicadoEm: '2026-08-15', abertura: '2026-08-20', encerramento: '2026-11-12', resultado: '2027-01-30',
-              resumo: 'Projetos de conservação, monitoramento e cadeias da sociobiodiversidade em unidades de conservação e territórios indígenas da Amazônia Legal.' },
-            { id: 4, titulo: 'Startups de Impacto Social', instituicao: 'FINEP', agencia: 'finep', procedencia: 'nacional', tema: 'Tecnologia',
-              tags: ['Startups', 'Inovação Social', 'Subvenção'], modalidade: 'Subvenção econômica', publico: ['empresa'], abrangencia: 'Nacional',
-              moeda: 'BRL', valorTotal: 15000000, valorMax: 1000000, contrapartida: '5% a 20%, conforme o porte',
-              publicadoEm: '2026-10-05', abertura: '2026-10-10', encerramento: '2027-01-29', resultado: '2027-04-20',
-              resumo: 'Subvenção para empresas de base tecnológica com soluções de impacto em saúde, educação, habitação ou inclusão produtiva, em estágio de validação de mercado.',
-              docsExtras: ['Comprovante de enquadramento de porte (ME/EPP)'] },
-            { id: 5, titulo: 'Telemedicina Rural', instituicao: 'Banco Mundial', agencia: 'banco-mundial', procedencia: 'internacional', tema: 'Saúde',
-              tags: ['Telemedicina', 'Saúde Rural'], modalidade: 'Doação (grant)', publico: ['municipio', 'osc'], abrangencia: 'Norte e Nordeste',
-              moeda: 'USD', valorTotal: 3800000, valorMax: 250000, contrapartida: 'Não exigida',
-              publicadoEm: '2026-10-20', abertura: '2026-12-01', encerramento: '2027-02-26', resultado: '2027-05-15',
-              resumo: 'Financiamento de serviços de teleconsulta e telediagnóstico na atenção primária de municípios rurais, incluindo conectividade e capacitação de equipes.',
-              docsExtras: ['Proposta em inglês ou com resumo executivo em inglês'] },
-            { id: 6, titulo: 'Agricultura Familiar Sustentável', instituicao: 'BID', agencia: 'bid', procedencia: 'internacional', tema: 'Agronegocio',
-              tags: ['Agricultura', 'Sustentabilidade', 'Cooperativismo'], modalidade: 'Não reembolsável', publico: ['osc'], abrangencia: 'Nacional',
-              moeda: 'USD', valorTotal: 6200000, valorMax: 300000, contrapartida: '10% (financeira ou econômica)',
-              publicadoEm: '2026-08-25', abertura: '2026-09-01', encerramento: '2026-11-30', resultado: '2027-02-28',
-              resumo: 'Apoio a cooperativas e associações da agricultura familiar para transição agroecológica, acesso a mercados e adaptação climática.' },
-            { id: 7, titulo: 'Pesquisa em Energias Renováveis', instituicao: 'FAPESP', agencia: 'fapesp', procedencia: 'nacional', tema: 'Energia',
-              tags: ['Energia', 'Hidrogênio verde', 'Sustentabilidade'], modalidade: 'Auxílio à pesquisa', publico: ['pesquisador', 'ict'], abrangencia: 'São Paulo',
-              moeda: 'BRL', valorTotal: 12000000, valorMax: 600000, contrapartida: 'Não exigida',
-              publicadoEm: '2026-09-15', abertura: '2026-09-20', encerramento: '2026-11-25', resultado: '2027-03-30',
-              resumo: 'Projetos de pesquisa em geração solar, eólica, biocombustíveis e hidrogênio verde, conduzidos por pesquisadores vinculados a instituições do estado de São Paulo.' },
-            { id: 8, titulo: 'Infraestrutura Escolar', instituicao: 'FNDE', agencia: 'fnde', procedencia: 'nacional', tema: 'Infraestrutura',
-              tags: ['Infraestrutura', 'Educação Básica'], modalidade: 'Transferência voluntária', publico: ['municipio', 'estado'], abrangencia: 'Nacional',
-              moeda: 'BRL', valorTotal: 120000000, valorMax: 3000000, contrapartida: 'Mínimo de 1% do valor',
-              publicadoEm: '2026-05-20', abertura: '2026-06-01', encerramento: '2026-09-30', resultado: '2026-12-15',
-              resumo: 'Construção, reforma e ampliação de escolas de educação básica, quadras e creches.',
-              docsExtras: ['Projeto de engenharia e documentação do terreno'] },
-            { id: 9, titulo: 'Cooperação Cultural União Europeia–Brasil', instituicao: 'União Europeia', agencia: 'uniao-europeia', procedencia: 'internacional', tema: 'Cultura',
-              tags: ['Economia Criativa', 'Intercâmbio'], modalidade: 'Doação (grant)', publico: ['osc'], abrangencia: 'Nacional',
-              moeda: 'EUR', valorTotal: 2400000, valorMax: 150000, contrapartida: 'Cofinanciamento de 10%',
-              publicadoEm: '2026-10-15', abertura: '2026-10-20', encerramento: '2027-01-15', resultado: '2027-04-30',
-              resumo: 'Projetos culturais e de economia criativa em parceria entre organizações brasileiras e europeias, com foco em diversidade e acesso à cultura.',
-              docsExtras: ['Carta de parceria com organização europeia'] },
-            { id: 10, titulo: 'Saúde Mental na Atenção Primária', instituicao: 'FNS', agencia: 'fns', procedencia: 'nacional', tema: 'Saúde',
-              tags: ['Saúde Mental', 'SUS', 'Atenção Primária'], modalidade: 'Transferência fundo a fundo', publico: ['municipio', 'estado'], abrangencia: 'Nacional',
-              moeda: 'BRL', valorTotal: 30000000, valorMax: 500000, contrapartida: 'Não exigida',
-              publicadoEm: '2026-10-22', abertura: '2026-11-16', encerramento: '2027-01-20', resultado: '2027-03-31',
-              resumo: 'Incentivo para estruturar o cuidado em saúde mental nas Unidades Básicas de Saúde, integrado à Rede de Atenção Psicossocial (RAPS).' },
-            { id: 11, titulo: 'Biodiversidade e Clima', instituicao: 'GEF', agencia: 'gef', procedencia: 'internacional', tema: 'Meio Ambiente',
-              tags: ['Clima', 'Biodiversidade', 'Restauração'], modalidade: 'Doação (grant)', publico: ['osc', 'ict'], abrangencia: 'Cerrado e Caatinga',
-              moeda: 'USD', valorTotal: 4500000, valorMax: 1000000, contrapartida: 'Cofinanciamento 1:1',
-              publicadoEm: '2026-06-25', abertura: '2026-07-01', encerramento: '2026-10-31', resultado: '2027-01-31',
-              resumo: 'Restauração de paisagens, conservação de espécies ameaçadas e soluções baseadas na natureza no Cerrado e na Caatinga.' },
-            { id: 12, titulo: 'Doenças Tropicais Negligenciadas', instituicao: 'NIH', agencia: 'nih', procedencia: 'internacional', tema: 'Saúde',
-              tags: ['Doenças Tropicais', 'Pesquisa Clínica'], modalidade: 'Auxílio à pesquisa', publico: ['pesquisador', 'ict'], abrangencia: 'Nacional',
-              moeda: 'USD', valorTotal: 2000000, valorMax: 250000, contrapartida: 'Não exigida',
-              publicadoEm: '2026-09-01', abertura: '2026-09-05', encerramento: '2027-01-08', resultado: '2027-05-30',
-              resumo: 'Pesquisa colaborativa sobre dengue, doença de Chagas, leishmaniose e outras doenças negligenciadas, com parceria entre grupos brasileiros e norte-americanos.',
-              docsExtras: ['Registro no SAM.gov e eRA Commons', 'Proposta em inglês'] }
+            {
+                "id": 101,
+                "numero": "Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026",
+                "titulo": "Plataformas digitais baseadas em software livre e protocolos abertos",
+                "instituicao": "FAPESP",
+                "agencia": "fapesp",
+                "procedencia": "nacional",
+                "tema": "Tecnologia",
+                "tags": [
+                    "Software livre",
+                    "Protocolos abertos",
+                    "Arquiteturas federadas",
+                    "Internet"
+                ],
+                "modalidade": "Auxílio à pesquisa",
+                "publico": [
+                    "pesquisador",
+                    "ict"
+                ],
+                "abrangencia": "São Paulo",
+                "moeda": "BRL",
+                "valorMax": 5000000,
+                "valorTotal": 21000000,
+                "valorNota": "Projeto Temático: até R$ 5 milhões em 5 anos (R$ 15 milhões reservados). Auxílio à Pesquisa Regular: até R$ 200 mil por ano, por 2 a 3 anos (R$ 6 milhões reservados).",
+                "contrapartida": "Não informada na chamada",
+                "publicadoEm": "2026-10-15",
+                "abertura": "2026-11-05",
+                "encerramento": "2027-02-22",
+                "prazoNota": "Submissão pelo SAGe a partir de 05/11/2026.",
+                "resumo": "Financia pesquisa e desenvolvimento de plataformas digitais baseadas em software livre e protocolos abertos, especialmente arquiteturas federadas. As propostas devem atender a uma ou mais linhas: desenvolvimento e aprimoramento de softwares livres e plataformas descentralizadas; estudos de viabilidade econômica e modelos de negócio; e estudos de impacto socioambiental. São admitidas parcerias com empresas, cooperativas, organizações de trabalhadores e comunidades.",
+                "link": "https://fapesp.br/18444",
+                "fonte": "https://fapesp.br/18445/nova-chamada-destinara-r-21-milhoes-a-pesquisas-sobre-plataformas-digitais-abertas",
+                "verificadoEm": "2026-10-28",
+                "docsExtras": [
+                    "Proposta submetida pelo SAGe (sistema de submissão da FAPESP)",
+                    "Indicação da(s) linha(s) de pesquisa atendida(s)"
+                ]
+            },
+            {
+                "id": 102,
+                "numero": "Chamada FAPESP nº 53/2026",
+                "titulo": "PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)",
+                "instituicao": "FAPESP",
+                "agencia": "fapesp",
+                "procedencia": "nacional",
+                "tema": "Educação",
+                "tags": [
+                    "Startups",
+                    "Tecnologia educacional",
+                    "PIPE",
+                    "Pequenas empresas"
+                ],
+                "modalidade": "Não reembolsável",
+                "publico": [
+                    "empresa"
+                ],
+                "abrangencia": "São Paulo",
+                "moeda": "BRL",
+                "valorMax": 500000,
+                "valorTotal": 25000000,
+                "valorNota": "Inclui bolsas de treinamento técnico e de pesquisa em pequenas empresas. Duração de até 12 meses.",
+                "contrapartida": "Não informada na chamada",
+                "publicadoEm": "2026-10-21",
+                "abertura": "2026-10-21",
+                "encerramento": "2026-11-12",
+                "prazoNota": "Prazo da pré-proposta. As pré-propostas consideradas elegíveis enviam a proposta completa até 13/01/2027.",
+                "resumo": "Apoio não reembolsável a projetos de pesquisa científica e tecnológica em tecnologias educacionais desenvolvidos por pequenas empresas (até 250 empregados) com sede ou unidade de P&D no estado de São Paulo. O pesquisador responsável deve ser sócio da empresa e residir no estado durante a execução; até dois pesquisadores principais podem complementar a equipe.",
+                "link": "https://fapesp.br/18434",
+                "fonte": "https://agencia.fapesp.br/programa-pesquisa-inovativa-em-pequenas-empresas-vai-apoiar-projetos-de-tecnologias-educacionais/59435",
+                "verificadoEm": "2026-10-28",
+                "docsExtras": [
+                    "Pré-proposta submetida pelo SAGe",
+                    "Comprovação de que o pesquisador responsável é sócio da empresa",
+                    "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"
+                ]
+            },
+            {
+                "id": 103,
+                "numero": "Chamada FAPESP nº 47/2026",
+                "titulo": "Jovens Pesquisadores – chamada para pesquisadores no exterior",
+                "instituicao": "FAPESP",
+                "agencia": "fapesp",
+                "procedencia": "nacional",
+                "tema": "Educação",
+                "tags": [
+                    "Jovem Pesquisador",
+                    "Atração de talentos",
+                    "Pesquisa no exterior"
+                ],
+                "modalidade": "Auxílio à pesquisa",
+                "publico": [
+                    "pesquisador"
+                ],
+                "abrangencia": "São Paulo",
+                "moeda": "BRL",
+                "valorMax": 2500000,
+                "valorNota": "Até 20 propostas selecionadas. Duração de 60 meses, prorrogável por até 12. A Bolsa de Jovem Pesquisador pode ser solicitada à parte.",
+                "contrapartida": "Não se aplica",
+                "publicadoEm": "2026-09-23",
+                "abertura": "2026-09-23",
+                "encerramento": "2026-11-19",
+                "prazoNota": "Prazo da proposta completa. Depois há avaliação por painel externo, apresentação oral e entrevista on-line.",
+                "resumo": "Atrai cientistas de qualquer nacionalidade que vivem e trabalham no exterior há pelo menos dois anos após o doutorado para criar, numa instituição paulista, um laboratório e um programa de pesquisa independente e competitivo internacionalmente.",
+                "link": "https://fapesp.br/18389",
+                "fonte": "https://agencia.fapesp.br/fapesp-lanca-chamada-para-atrair-jovens-pesquisadores-do-exterior/59256",
+                "verificadoEm": "2026-10-28",
+                "criterios": [
+                    {
+                        "nome": "Originalidade e impacto potencial"
+                    },
+                    {
+                        "nome": "Qualidade científica e viabilidade"
+                    },
+                    {
+                        "nome": "Formação científica e histórico do candidato"
+                    },
+                    {
+                        "nome": "Capacidade de liderar um programa de pesquisa independente e competitivo"
+                    }
+                ],
+                "docsExtras": [
+                    "Comprovação de pelo menos 2 anos de trabalho no exterior após o doutorado",
+                    "Residência no exterior na data da submissão",
+                    "Concordância da instituição paulista que vai sediar o laboratório"
+                ]
+            },
+            {
+                "id": 104,
+                "numero": "Chamada CNPq nº 33/2026",
+                "titulo": "Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)",
+                "instituicao": "CNPq",
+                "agencia": "cnpq",
+                "procedencia": "nacional",
+                "tema": "Educação",
+                "tags": [
+                    "Bolsa de produtividade",
+                    "PQ",
+                    "DT",
+                    "Todas as áreas"
+                ],
+                "modalidade": "Bolsa",
+                "publico": [
+                    "pesquisador"
+                ],
+                "abrangencia": "Nacional",
+                "moeda": "BRL",
+                "valorMax": null,
+                "valorTotal": 448963200,
+                "valorNota": "Bolsa mensal e adicional de bancada conforme a tabela vigente do CNPq. Vigência de até 60 meses (nível A e PQ-Sr), 48 (nível B) ou 36 (nível C). Orçamento: R$ 23,5 mi para DT e R$ 425,4 mi para PQ e PQ-Sr.",
+                "contrapartida": "Não se aplica",
+                "publicadoEm": "2026-10-07",
+                "abertura": "2026-10-07",
+                "encerramento": "2027-01-07",
+                "resultado": "2027-06-30",
+                "prazoNota": "Até 23h59 (Brasília). Resultado preliminar em 05/05/2027; bolsas a partir de 01/08/2027.",
+                "resumo": "Bolsas para pesquisadores com produção científica, tecnológica e de inovação de destaque, em três linhas: Desenvolvimento Tecnológico e Extensão Inovadora (DT, níveis A a C), Pesquisa (PQ, níveis A a C) e Pesquisa Sênior (PQ-Sr). Exige doutorado e vínculo formal com a instituição de execução; para o nível C, doutorado concluído até 2024. Uma proposta por pessoa, numa única linha. Os critérios abaixo são os de PQ e PQ-Sr; DT tem critérios próprios.",
+                "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/chamada-publica-cnpq-N-33-2026",
+                "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/Chamada_Produtividade_33_2026.pdf",
+                "verificadoEm": "2026-10-28",
+                "criterios": [
+                    {
+                        "nome": "Relevância e caráter inovador da contribuição ao longo da carreira, com ênfase na atividade recente",
+                        "peso": 30
+                    },
+                    {
+                        "nome": "Mérito, originalidade e impacto do projeto",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Formação de recursos humanos e atuação na graduação e pós-graduação",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Cooperação com grupos e instituições e participação em redes",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Atuação em sociedades científicas, editoria, gestão, prêmios e distinções",
+                        "peso": 10
+                    }
+                ],
+                "docsExtras": [
+                    "Formulário na Plataforma Integrada Carlos Chagas",
+                    "Súmula curricular com até 5 realizações de maior impacto",
+                    "Comprovante de vínculo formal com a instituição de execução"
+                ]
+            },
+            {
+                "id": 105,
+                "numero": "Chamada CNPq nº 34/2026",
+                "titulo": "Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)",
+                "instituicao": "CNPq",
+                "agencia": "cnpq",
+                "procedencia": "nacional",
+                "tema": "Educação",
+                "tags": [
+                    "Eventos científicos",
+                    "Congressos",
+                    "Divulgação científica"
+                ],
+                "modalidade": "Auxílio a eventos",
+                "publico": [
+                    "pesquisador",
+                    "ict"
+                ],
+                "abrangencia": "Nacional",
+                "moeda": "BRL",
+                "valorMax": 200000,
+                "valorTotal": 20000000,
+                "valorNota": "Linhas 1 (eventos mundiais) e 2 (eventos tradicionais): até R$ 200 mil. Linha 3 (eventos não tradicionais): até R$ 150 mil. Só custeio.",
+                "contrapartida": "Não exigida (auxílio estudantil, se pedido, exige contrapartida igual do promotor)",
+                "publicadoEm": "2026-10-14",
+                "abertura": "2026-10-14",
+                "encerramento": "2026-12-04",
+                "resultado": "2027-04-30",
+                "prazoNota": "Até 23h59 (Brasília). Resultado preliminar em 15/03/2027.",
+                "resumo": "Apoia eventos científicos de grande porte realizados no Brasil, de abrangência mundial, internacional ou nacional, entre 01/07/2027 e 30/06/2028 (eventos mundiais até 31/07/2028). O evento deve incluir ações de educação, popularização ou divulgação científica e se relacionar a ao menos um eixo da ENCTI 2024–2034. Eventos locais, regionais, de médio ou pequeno porte não são elegíveis.",
+                "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/chamada-publica-cnpq-N-34-2026",
+                "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/Chamada_ARC_34_2026.pdf",
+                "verificadoEm": "2026-10-28",
+                "criterios": [
+                    {
+                        "nome": "Mérito e relevância do evento para o desenvolvimento científico, tecnológico e de inovação",
+                        "peso": 30
+                    },
+                    {
+                        "nome": "Impacto potencial e abrangência na área do conhecimento",
+                        "peso": 30
+                    },
+                    {
+                        "nome": "Qualificação e experiência do proponente na organização de eventos",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Adequação do orçamento aos objetivos, atividades e metas",
+                        "peso": 20
+                    }
+                ],
+                "docsExtras": [
+                    "Formulário na Plataforma Integrada Carlos Chagas",
+                    "Anexo obrigatório em PDF (até 1 MB) com promotor, programação, comissão organizadora e histórico do evento",
+                    "Concordância escrita das instituições e membros da equipe"
+                ]
+            },
+            {
+                "id": 106,
+                "numero": "Chamada Pública CNPq/CAPES nº 30/2026",
+                "titulo": "Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)",
+                "instituicao": "CNPq",
+                "agencia": "cnpq",
+                "procedencia": "nacional",
+                "tema": "Tecnologia",
+                "tags": [
+                    "Bolsas",
+                    "Pós-graduação",
+                    "Parceria com empresas",
+                    "CAPES"
+                ],
+                "modalidade": "Bolsas",
+                "publico": [
+                    "ict"
+                ],
+                "abrangencia": "Nacional",
+                "moeda": "BRL",
+                "valorMax": null,
+                "valorTotal": 62440000,
+                "valorNota": "Só bolsas. Linha 1: até 10 de mestrado, 10 de doutorado, 5 de pós-doutorado empresarial, 15 de iniciação tecnológica e 1 DTI. Linha 2: até 5 de mestrado, 5 de doutorado, 10 de iniciação tecnológica e 1 DTI.",
+                "contrapartida": "Do parceiro, por bolsa: R$ 15 mil (mestrado), R$ 30 mil (doutorado) e R$ 10 mil (pós-doutorado). Empresas médias e grandes pagam ao menos 50% em dinheiro.",
+                "publicadoEm": "2026-08-19",
+                "abertura": "2026-08-20",
+                "encerramento": "2026-12-11",
+                "prazoNota": "Até 23h59 (Brasília). Julgamento em janeiro e decisão final prevista para fevereiro de 2027.",
+                "resumo": "Bolsas para que estudantes de graduação e pós-graduação de ICTs desenvolvam projetos de interesse de empresas, órgãos públicos e entidades do terceiro setor. A proposta é institucional, apresentada pelo representante indicado pelo dirigente máximo da ICT, que precisa ter pós-graduação reconhecida, NIT constituído e política de inovação. Uma proposta por ICT.",
+                "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+                "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+                "verificadoEm": "2026-10-28",
+                "criterios": [
+                    {
+                        "nome": "Mérito, clareza, relevância e aderência do plano de trabalho",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Capacidade dos programas de pós-graduação frente às bolsas pedidas",
+                        "peso": 10
+                    },
+                    {
+                        "nome": "Histórico de projetos de P&D com parceiros nos últimos quatro anos",
+                        "peso": 10
+                    },
+                    {
+                        "nome": "Experiência da ICT em ecossistemas de inovação",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Grau de inovação e impacto potencial",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Estrutura administrativa para gerir o programa",
+                        "peso": 10
+                    },
+                    {
+                        "nome": "Plano de divulgação dos resultados para a sociedade",
+                        "peso": 10
+                    }
+                ],
+                "docsExtras": [
+                    "Plano de trabalho (Anexo II)",
+                    "Declaração do representante institucional (Anexo III)",
+                    "Carta de anuência de cada parceiro (Anexo IV)",
+                    "Comprovação de NIT constituído e política de inovação da ICT"
+                ]
+            },
+            {
+                "id": 107,
+                "numero": "Chamada Pública MCTI/CNPq/ANR nº 32/2026",
+                "titulo": "Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital",
+                "instituicao": "CNPq",
+                "agencia": "cnpq",
+                "procedencia": "nacional",
+                "tema": "Tecnologia",
+                "tags": [
+                    "Cooperação internacional",
+                    "França",
+                    "Saúde Única",
+                    "Doenças infecciosas",
+                    "IA",
+                    "Computação quântica"
+                ],
+                "modalidade": "Auxílio à pesquisa",
+                "publico": [
+                    "pesquisador",
+                    "ict"
+                ],
+                "abrangencia": "Nacional",
+                "moeda": "BRL",
+                "valorMax": 1500000,
+                "valorTotal": 6000000,
+                "valorNota": "Até 4 projetos; só custeio (materiais, serviços, missões Brasil–França); até 48 meses, sem prorrogação. A equipe francesa é financiada pela ANR.",
+                "contrapartida": "Não se aplica",
+                "publicadoEm": "2026-09-03",
+                "abertura": "2026-09-03",
+                "encerramento": "2027-03-31",
+                "prazoNota": "Até 23h59 (Brasília). Resultado a partir de outubro de 2027; contratação em janeiro de 2028.",
+                "resumo": "Seleciona projetos conjuntos de grupos brasileiros e franceses em duas frentes: Saúde Única (imunologia, doenças infecciosas e inflamação; doenças infecciosas e ambiente) e continuum digital (modelagem, simulação, HPC, tecnologias digitais sustentáveis e ciências e tecnologias quânticas). O CNPq conduz a avaliação; o coordenador francês envia cópia da proposta à ANR com o mesmo título e acrônimo.",
+                "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-2026",
+                "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/ChamadaPblicaANR322026_2766435.pdf",
+                "verificadoEm": "2026-10-28",
+                "criterios": [
+                    {
+                        "nome": "Excelência científica e tecnológica",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Metodologia",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Organização e execução do projeto",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Estrutura e contribuição da colaboração internacional",
+                        "peso": 20
+                    },
+                    {
+                        "nome": "Impacto",
+                        "peso": 20
+                    }
+                ],
+                "docsExtras": [
+                    "Proposta em PDF (até 1 MB), de preferência em inglês, com orçamento em R$ e em €",
+                    "Cópia da proposta enviada à ANR pelo coordenador francês",
+                    "Plano de missões técnicas entre os grupos"
+                ]
+            },
+            {
+                "id": 108,
+                "numero": "Chamada Pública PRONINC 2026",
+                "titulo": "PRONINC 2026 – Tecnologias e inovação social para a economia solidária",
+                "instituicao": "FINEP",
+                "agencia": "finep",
+                "procedencia": "nacional",
+                "tema": "Desenvolvimento",
+                "tags": [
+                    "Economia solidária",
+                    "Agroecologia",
+                    "Saneamento",
+                    "Energia renovável",
+                    "Incubadoras",
+                    "FNDCT"
+                ],
+                "modalidade": "Não reembolsável",
+                "publico": [
+                    "ict"
+                ],
+                "abrangencia": "Nacional",
+                "moeda": "BRL",
+                "valorMax": 5000000,
+                "valorTotal": 100000000,
+                "valorNota": "Entre R$ 2 milhões e R$ 5 milhões por proposta; até 2 propostas por ICT executora; até 36 meses. Recursos do FNDCT.",
+                "contrapartida": "Não informada na notícia oficial; confira o edital",
+                "publicadoEm": "2026-09-18",
+                "abertura": "2026-09-18",
+                "encerramento": "2027-01-14",
+                "prazoNota": "Atenção: instituições sem cadastro aprovado na Finep precisavam se cadastrar até 16/10/2026.",
+                "resumo": "Financia ICTs públicas (por meio de fundações de apoio) e ICTs privadas sem fins lucrativos qualificadas como OS ou ICES, em articulação com Incubadoras Tecnológicas de Cooperativas Populares (ITCPs) e NITs, para desenvolver tecnologias para a economia solidária: agroecologia e soberania alimentar; saneamento e reaproveitamento de resíduos; sistemas digitais e finanças solidárias; energias renováveis; e saúde, cuidado e bem-viver nos territórios.",
+                "link": "https://www.finep.gov.br/en/e/chamada-publica/222684/1057230",
+                "fonte": "https://agenciagov.ebc.com.br/noticias/202609/finep-publica-chamada-de-r-100-milhoes-para-impulsionar-solucoes-tecnologicas-na-economia-solidaria",
+                "verificadoEm": "2026-10-28",
+                "docsExtras": [
+                    "Cadastro da proponente e da ICT executora aprovado na Finep",
+                    "Ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos",
+                    "Comprovação da articulação com ITCP e NIT"
+                ]
+            }
         ];
+        // editais:fim
 
         const agencias = {
             'cnpq': { sigla: 'CNPq', nome: 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', pais: '🇧🇷 Brasil', cidade: 'Brasília/DF', lat: -15.7801, lng: -47.9292, fundacao: 1951, moeda: 'BRL', desembolsoMi: 3500, intervalo: 'R$ 20 mil – R$ 2 mi', link: 'https://www.gov.br/cnpq/pt-br',
@@ -2403,6 +2758,13 @@
             return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: moeda, notation: 'compact', maximumFractionDigits: 1 }).format(v);
         }
         function valorBRL(v, moeda) { return v * (COTACAO_REF[moeda] || 1); }
+        // Chamadas só de bolsas não têm teto por proposta: o valor fica em e.valorNota
+        function temValor(e) { return Number(e.valorMax) > 0; }
+        function valorRef(e) { return temValor(e) ? valorBRL(e.valorMax, e.moeda) : -1; }
+        function valorPropostaTxt(e) {
+            if (temValor(e)) return `até ${fmtValor(e.valorMax, e.moeda)}`;
+            return /bolsa/i.test(e.modalidade) ? 'Bolsas (ver condições)' : 'Ver condições';
+        }
 
         function statusEdital(e) {
             if (HOJE < parseDate(e.abertura)) return 'em-breve';
@@ -2503,7 +2865,7 @@
                 if (f.procedencia && e.procedencia !== f.procedencia) return false;
                 if (f.uf && !atendeUF(e, f.uf)) return false;
                 if (f.rec) { const c = avaliarCompat(e); if (!c || !c.elegivel || st === 'fechado') return false; }
-                if (f.valor && valorBRL(e.valorMax, e.moeda) < Number(f.valor)) return false;
+                if (f.valor && valorRef(e) < Number(f.valor)) return false;
                 if (f.prazo && !(st === 'aberto' && diasAte(e.encerramento) <= Number(f.prazo))) return false;
                 if (f.fav && !favorites.includes(e.id)) return false;
                 return true;
@@ -2513,7 +2875,7 @@
         function ordenar(lista, ordem) {
             const rank = { 'aberto': 0, 'em-breve': 1, 'fechado': 2 };
             const copia = [...lista];
-            if (ordem === 'valor') return copia.sort((a, b) => valorBRL(b.valorMax, b.moeda) - valorBRL(a.valorMax, a.moeda));
+            if (ordem === 'valor') return copia.sort((a, b) => valorRef(b) - valorRef(a));
             if (ordem === 'recentes') return copia.sort((a, b) => parseDate(b.publicadoEm) - parseDate(a.publicadoEm));
             if (ordem === 'az') return copia.sort((a, b) => a.titulo.localeCompare(b.titulo, 'pt-BR'));
             // prazo: abertos que encerram antes → em breve que abrem antes → encerrados mais recentes
@@ -2614,10 +2976,10 @@
                     <span class="badge badge-${e.procedencia}">${e.procedencia === 'nacional' ? '🇧🇷 Nacional' : '🌍 Internacional'}</span>
                 </div>
                 <div class="edital-header">
-                    <div class="edital-title">${esc(e.titulo)}</div>
+                    <div class="edital-title">${esc(e.titulo)}${e.numero ? `<small class="edital-numero">${esc(e.numero)}</small>` : ''}</div>
                     <div class="edital-value">
-                        ${fmtValor(e.valorMax, e.moeda)}
-                        <small>por proposta · total ${fmtValor(e.valorTotal, e.moeda)}</small>
+                        ${temValor(e) ? fmtValor(e.valorMax, e.moeda) : (/bolsa/i.test(e.modalidade) ? 'Bolsas' : '—')}
+                        <small>${temValor(e) ? 'por proposta' : 'ver condições'}${e.valorTotal > 0 ? ` · total ${fmtValor(e.valorTotal, e.moeda)}` : ''}</small>
                     </div>
                 </div>
                 ${st === 'aberto' ? `<div class="window-bar ${urgente ? 'urgente' : ''}" title="Janela de submissão decorrida"><span style="width:${janelaPct(e).toFixed(0)}%"></span></div>` : ''}
@@ -2713,6 +3075,7 @@
                         <span class="badge badge-neutral">${esc(e.modalidade)}</span>
                         <span class="badge badge-${e.procedencia}">${e.procedencia === 'nacional' ? '🇧🇷 Nacional' : '🌍 Internacional'}</span>
                     </div>
+                    ${e.numero ? `<p class="nota" style="margin-top:8px;">${esc(e.numero)}</p>` : ''}
                     <h2 id="editalModalTitle">${esc(e.titulo)}</h2>
                     <p>${esc(e.instituicao)} · ${esc(AREAS[e.tema] || e.tema)} · ${esc(e.abrangencia)}</p>
                 </div>
@@ -2743,20 +3106,22 @@
 
                     <div class="modal-section">
                         <h3>Resumo</h3>
-                        <p>${esc(e.resumo || 'Sem resumo cadastrado. Consulte o edital oficial.')}</p>
+                        <p>${comGlossario(esc(e.resumo || 'Sem resumo cadastrado. Consulte o edital oficial.'))}</p>
+                        ${e.fonte || e.verificadoEm ? `<p class="nota" style="margin-top:8px;">✔ Informações conferidas${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(e.fonte)}" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;">fonte oficial</a>` : ''}. Vale sempre o texto do edital.</p>` : ''}
                     </div>
 
                     <div class="modal-section">
                         <h3>Condições</h3>
                         <div class="facts-grid">
-                            <div class="fact"><span class="info-label">Valor por proposta</span><div class="info-value">até ${fmtValor(e.valorMax, e.moeda)}</div></div>
-                            <div class="fact"><span class="info-label">Valor total do edital</span><div class="info-value">${fmtValor(e.valorTotal, e.moeda)}</div></div>
+                            <div class="fact"><span class="info-label">Valor por proposta</span><div class="info-value">${valorPropostaTxt(e)}</div></div>
+                            <div class="fact"><span class="info-label">Valor total do edital</span><div class="info-value">${e.valorTotal > 0 ? fmtValor(e.valorTotal, e.moeda) : 'Não informado'}</div></div>
                             <div class="fact"><span class="info-label">Modalidade</span><div class="info-value">${comGlossario(esc(e.modalidade))}</div></div>
                             <div class="fact"><span class="info-label">Contrapartida</span><div class="info-value">${comGlossario(esc(e.contrapartida))}</div></div>
                             <div class="fact"><span class="info-label">Quem pode participar</span><div class="info-value">${comGlossario(esc(e.publico.map(p => PUBLICOS[p]).join(', ')))}</div></div>
                             <div class="fact"><span class="info-label">Abrangência</span><div class="info-value">${esc(e.abrangencia)}${ufsDoEdital(e) && ufsDoEdital(e).length > 1 ? `<br><span style="font-size:12px;font-weight:500;color:var(--gray-dark)">${ufsDoEdital(e).join(', ')}</span>` : ''}</div></div>
                         </div>
-                        ${e.moeda !== 'BRL' ? `<p style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Valores em ${e.moeda}. Equivalente aproximado: até ${fmtValor(valorBRL(e.valorMax, e.moeda), 'BRL')} por proposta (cotação de referência).</p>` : ''}
+                        ${e.valorNota ? `<p class="valor-nota">💰 ${comGlossario(esc(e.valorNota))}</p>` : ''}
+                        ${e.moeda !== 'BRL' && temValor(e) ? `<p style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Valores em ${e.moeda}. Equivalente aproximado: até ${fmtValor(valorBRL(e.valorMax, e.moeda), 'BRL')} por proposta (cotação de referência).</p>` : ''}
                     </div>
 
                     <div class="modal-section">
@@ -2768,15 +3133,17 @@
                                     <span>${fmtDate(et.data)}${i === proxima ? ` · ${diasAte(et.data) === 0 ? 'hoje' : 'em ' + plural(diasAte(et.data), 'dia', 'dias')}` : ''}</span>
                                 </li>`).join('')}
                         </ol>
+                        ${e.prazoNota ? `<p class="valor-nota">⏳ ${esc(e.prazoNota)}</p>` : ''}
                     </div>
 
                     <div class="modal-section">
                         <h3>Critérios de avaliação</h3>
                         ${e.criterios.map(c => `
                             <div class="criterio">
-                                <div class="criterio-top"><span>${esc(c.nome)}</span><strong>${c.peso}%</strong></div>
-                                <div class="criterio-bar"><span style="width:${c.peso}%"></span></div>
+                                <div class="criterio-top"><span>${esc(c.nome)}</span>${c.peso != null ? `<strong>${c.peso}%</strong>` : ''}</div>
+                                ${c.peso != null ? `<div class="criterio-bar"><span style="width:${c.peso}%"></span></div>` : ''}
                             </div>`).join('')}
+                        ${e.criterios.some(c => c.peso == null) ? '<p class="nota">Pesos não divulgados no material oficial consultado.</p>' : ''}
                     </div>
 
                     <div class="modal-section">
@@ -2807,7 +3174,8 @@
 
         // Mesma regra de slugEdital() em scripts/gerar-paginas.mjs
         function slugEdital(e) {
-            const base = norm(e.titulo).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70).replace(/-+$/, '');
+            const b = norm(e.titulo).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+            const base = b.length <= 70 ? b : b.slice(0, 71).slice(0, b.slice(0, 71).lastIndexOf('-'));
             return `${base}-${e.id}`;
         }
 
@@ -2820,7 +3188,7 @@
 
         function whatsappEdital(id) {
             const e = editais.find(x => x.id === id);
-            const texto = `${e.titulo} (${e.instituicao}) — até ${fmtValor(e.valorMax, e.moeda)} por proposta. Inscrições até ${fmtDate(e.encerramento)}: ${linkPublico(e)}`;
+            const texto = `${e.titulo} (${e.instituicao})${temValor(e) ? ` — até ${fmtValor(e.valorMax, e.moeda)} por proposta` : ''}. Inscrições até ${fmtDate(e.encerramento)}: ${linkPublico(e)}`;
             window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
         }
 
@@ -2852,7 +3220,7 @@
                 `DTSTART;VALUE=DATE:${ymd(e.encerramento)}`,
                 `DTEND;VALUE=DATE:${fimStr}`,
                 `SUMMARY:${icsText(`Prazo final: ${e.titulo} (${e.instituicao})`)}`,
-                `DESCRIPTION:${icsText(`${e.resumo}\n\nValor por proposta: até ${fmtValor(e.valorMax, e.moeda)}\nConfirme o horário limite no edital oficial: ${e.link}`)}`,
+                `DESCRIPTION:${icsText(`${e.resumo}\n\nValor por proposta: ${valorPropostaTxt(e)}\n${e.prazoNota ? e.prazoNota + '\n' : ''}Confirme o horário limite no edital oficial: ${e.link}`)}`,
                 `URL:${e.link}`,
                 'BEGIN:VALARM', 'TRIGGER:-P7D', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(`Faltam 7 dias: ${e.titulo}`)}`, 'END:VALARM',
                 'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(`Amanhã encerra: ${e.titulo}`)}`, 'END:VALARM',
@@ -2876,7 +3244,7 @@
             const cols = [
                 ['Título', e => e.titulo], ['Instituição', e => e.instituicao], ['Situação', e => STATUS_LABEL[statusEdital(e)]],
                 ['Área', e => AREAS[e.tema] || e.tema], ['Modalidade', e => e.modalidade], ['Quem pode participar', e => e.publico.map(p => PUBLICOS[p]).join(', ')],
-                ['Abrangência', e => e.abrangencia], ['UFs', e => (ufsDoEdital(e) || ['Todas']).join(', ')], ['Moeda', e => e.moeda], ['Valor por proposta', e => e.valorMax], ['Valor total', e => e.valorTotal],
+                ['Abrangência', e => e.abrangencia], ['UFs', e => (ufsDoEdital(e) || ['Todas']).join(', ')], ['Moeda', e => e.moeda], ['Valor por proposta', e => (temValor(e) ? e.valorMax : '')], ['Observação sobre valores', e => e.valorNota || ''], ['Valor total', e => e.valorTotal || ''], ['Número da chamada', e => e.numero || ''],
                 ['Contrapartida', e => e.contrapartida], ['Abertura', e => fmtDate(e.abertura)], ['Encerramento', e => fmtDate(e.encerramento)],
                 ['Resultado previsto', e => e.resultado ? fmtDate(e.resultado) : ''], ['Link', e => e.link]
             ];
@@ -2912,8 +3280,8 @@
             const linhas = [
                 ['Instituição', e => esc(e.instituicao)],
                 ['Situação', e => prazoBadge(e)],
-                ['Por proposta', e => `até ${fmtValor(e.valorMax, e.moeda)}`],
-                ['Valor total', e => fmtValor(e.valorTotal, e.moeda)],
+                ['Por proposta', e => valorPropostaTxt(e)],
+                ['Valor total', e => (e.valorTotal > 0 ? fmtValor(e.valorTotal, e.moeda) : 'Não informado')],
                 ['Contrapartida', e => esc(e.contrapartida)],
                 ['Modalidade', e => esc(e.modalidade)],
                 ['Quem pode participar', e => esc(e.publico.map(p => PUBLICOS[p]).join(', '))],
@@ -2973,6 +3341,7 @@
             else motivos.push({ ok: false, txt: 'Fora das suas áreas de interesse' });
 
             if (!perfil.valorMin) pontos += 5;
+            else if (!temValor(e)) pontos += 5;
             else if (valorBRL(e.valorMax, e.moeda) >= Number(perfil.valorMin)) { pontos += 10; motivos.push({ ok: true, txt: 'Valor por proposta atende ao mínimo desejado' }); }
             else motivos.push({ ok: false, txt: `Valor por proposta abaixo de ${fmtValor(Number(perfil.valorMin))}` });
 
@@ -3197,8 +3566,8 @@
                 publico: [...new Set(lista(r.publico).map(mapPublico).filter(Boolean))],
                 abrangencia,
                 moeda: ['BRL', 'USD', 'EUR'].includes(String(r.moeda || '').toUpperCase()) ? String(r.moeda).toUpperCase() : 'BRL',
-                valorMax: Number(r.valorMax),
-                valorTotal: Number(r.valorTotal) || Number(r.valorMax),
+                valorMax: r.valorMax === null || r.valorMax === undefined || r.valorMax === '' ? null : Number(r.valorMax),
+                valorTotal: Number(r.valorTotal) || null,
                 contrapartida: String(r.contrapartida || 'Não informada').trim(),
                 abertura: toISO(r.abertura),
                 encerramento: toISO(r.encerramento),
@@ -3208,9 +3577,12 @@
                 link: /^https?:\/\//i.test(String(r.link || '').trim()) ? String(r.link).trim() : '',
                 docsExtras: lista(r.docsExtras)
             };
+            for (const c of ['numero', 'valorNota', 'prazoNota']) { const v = String(r[c] || '').trim(); if (v) e[c] = v; }
+            if (/^https?:\/\//i.test(String(r.fonte || ''))) e.fonte = String(r.fonte).trim();
+            if (toISO(r.verificadoEm)) e.verificadoEm = toISO(r.verificadoEm);
             if (ufs.length) e.ufs = ufs;
             if (Array.isArray(r.criterios)) {
-                const crit = r.criterios.filter(c => c && c.nome).map(c => ({ nome: String(c.nome), peso: Math.max(0, Math.min(100, Number(c.peso) || 0)) }));
+                const crit = r.criterios.filter(c => c && c.nome).map(c => ({ nome: String(c.nome), peso: c.peso === null || c.peso === undefined || c.peso === '' ? null : Math.max(0, Math.min(100, Number(c.peso) || 0)) }));
                 if (crit.length) e.criterios = crit;
             }
 
@@ -3218,7 +3590,8 @@
             if (!e.titulo) erros.push('título');
             if (!e.instituicao) erros.push('instituição');
             if (!e.publico.length) erros.push('quem pode participar');
-            if (!(e.valorMax > 0)) erros.push('valor por proposta');
+            if (!(e.valorMax > 0) && !e.valorNota) erros.push('valor por proposta (ou observação sobre valores, se forem só bolsas)');
+            if (e.valorMax !== null && !(e.valorMax > 0)) erros.push('valor por proposta inválido');
             if (!e.abertura) erros.push('data de abertura');
             if (!e.encerramento) erros.push('data de encerramento');
             if (e.abertura && e.encerramento && e.encerramento < e.abertura) erros.push('encerramento anterior à abertura');
@@ -3246,6 +3619,7 @@
                     <input type="hidden" id="geId" value="${e.id || ''}">
                     <div class="form-grid">
                         <div class="form-group full"><label for="geTitulo">Título *</label><input id="geTitulo" required value="${esc(e.titulo)}"></div>
+                        <div class="form-group full"><label for="geNumero">Número da chamada</label><input id="geNumero" value="${esc(e.numero || '')}" placeholder="Ex.: Chamada CNPq nº 33/2026"></div>
                         <div class="form-group"><label for="geAgencia">Instituição cadastrada</label>
                             <select id="geAgencia"><option value="">Outra (informe abaixo)</option>${sel(Object.fromEntries(Object.entries(agencias).map(([k, a]) => [k, a.sigla])), e.agencia)}</select></div>
                         <div class="form-group"><label for="geInstituicao">Nome da instituição *</label><input id="geInstituicao" value="${esc(e.instituicao)}" placeholder="Preenchido ao escolher acima"></div>
@@ -3264,8 +3638,9 @@
                             <div class="check-chips">${Object.entries(PUBLICOS).map(([k, t]) => `<label><input type="checkbox" name="gePublico" value="${k}" ${(e.publico || []).includes(k) ? 'checked' : ''}> ${esc(t)}</label>`).join('')}</div>
                         </fieldset>
                         <div class="form-group"><label for="geMoeda">Moeda</label><select id="geMoeda">${sel({ BRL: 'Real (R$)', USD: 'Dólar (US$)', EUR: 'Euro (€)' }, e.moeda || 'BRL')}</select></div>
-                        <div class="form-group"><label for="geValorMax">Valor máximo por proposta *</label><input id="geValorMax" type="number" min="0" step="1000" value="${e.valorMax || ''}"></div>
+                        <div class="form-group"><label for="geValorMax">Valor máximo por proposta</label><input id="geValorMax" type="number" min="0" step="1000" value="${e.valorMax || ''}"></div>
                         <div class="form-group"><label for="geValorTotal">Valor total do edital</label><input id="geValorTotal" type="number" min="0" step="1000" value="${e.valorTotal || ''}"></div>
+                        <div class="form-group full"><label for="geValorNota">Observação sobre valores</label><input id="geValorNota" value="${esc(e.valorNota || '')}" placeholder="Obrigatória se não houver teto por proposta (ex.: só bolsas)"></div>
                         <div class="form-group"><label for="geContrapartida">Contrapartida</label><input id="geContrapartida" value="${esc(e.contrapartida || '')}" placeholder="Ex.: Não exigida"></div>
                         <div class="form-group"><label for="gePublicado">Publicação</label><input id="gePublicado" type="date" value="${e.publicadoEm || ''}"></div>
                         <div class="form-group"><label for="geAbertura">Abertura das submissões *</label><input id="geAbertura" type="date" value="${e.abertura || ''}"></div>
@@ -3334,6 +3709,8 @@
                 publico: [...document.querySelectorAll('input[name="gePublico"]:checked')].map(i => i.value),
                 moeda: val('geMoeda'),
                 valorMax: val('geValorMax'),
+                valorNota: val('geValorNota'),
+                numero: val('geNumero'),
                 valorTotal: val('geValorTotal'),
                 contrapartida: val('geContrapartida'),
                 publicadoEm: val('gePublicado'),
@@ -3400,7 +3777,7 @@
 
         function exportJSON(escopo) {
             const campos = ['id', 'titulo', 'instituicao', 'agencia', 'procedencia', 'tema', 'tags', 'modalidade', 'publico', 'abrangencia', 'ufs', 'moeda',
-                'valorMax', 'valorTotal', 'contrapartida', 'publicadoEm', 'abertura', 'encerramento', 'resultado', 'resumo', 'link', 'docsExtras', 'criterios'];
+                'valorMax', 'valorTotal', 'valorNota', 'contrapartida', 'publicadoEm', 'abertura', 'encerramento', 'resultado', 'prazoNota', 'numero', 'resumo', 'link', 'fonte', 'verificadoEm', 'docsExtras', 'criterios'];
             const fonte = escopo === 'meus' ? editaisCustom : [...EDITAIS_BASE, ...editaisCustom];
             const dados = fonte.map(e => Object.fromEntries(campos.filter(c => e[c] !== undefined && e[c] !== '').map(c => [c, e[c]])));
             downloadFile(`editais-${escopo}-${isoDe(HOJE)}.json`, JSON.stringify({ geradoEm: isoDe(HOJE), editais: dados }, null, 2), 'application/json');
@@ -3487,7 +3864,7 @@
         /* =====================================================================
            DADOS PUBLICADOS (editais.json na raiz do site)
         ===================================================================== */
-        let fonteDados = { tipo: 'embutido' };
+        let fonteDados = { tipo: 'embutido', geradoEm: DADOS_META.geradoEm, demonstrativo: DADOS_META.demonstrativo, total: EDITAIS_BASE.length };
 
         async function carregarEditaisPublicados() {
             if (/^https?:$/.test(location.protocol)) {
@@ -3517,8 +3894,8 @@
 
         function atualizarBannerFonte() {
             const b = $('demoBanner');
-            if (fonteDados.tipo === 'arquivo' && !fonteDados.demonstrativo) {
-                b.innerHTML = `📄 <strong>${plural(fonteDados.total, 'edital publicado', 'editais publicados')}</strong>${fonteDados.geradoEm ? `, atualizados em ${fmtDate(fonteDados.geradoEm)}` : ''}. Antes de submeter, confirme datas, valores e requisitos no edital oficial.`;
+            if (!fonteDados.demonstrativo) {
+                b.innerHTML = `✔ <strong>${plural(fonteDados.total, 'edital real conferido', 'editais reais conferidos')} nas fontes oficiais</strong>${fonteDados.geradoEm ? `, atualizados em ${fmtDate(fonteDados.geradoEm)}` : ''}. Antes de submeter, confirme datas, valores e requisitos no edital oficial — ele sempre prevalece.`;
             } else {
                 b.innerHTML = `ℹ️ <strong>Dados demonstrativos</strong>${fonteDados.tipo === 'arquivo' && fonteDados.geradoEm ? ` (arquivo de ${fmtDate(fonteDados.geradoEm)})` : ''}. Antes de submeter uma proposta, confirme datas, valores e requisitos no edital oficial publicado pela instituição.`;
             }
@@ -3723,7 +4100,7 @@
                 <div class="proposta-top">
                     <div>
                         <h2><button class="link-btn" data-action="details" data-id="${e.id}">${esc(e.titulo)}</button></h2>
-                        <div class="nota">${esc(e.instituicao)} · até ${fmtValor(e.valorMax, e.moeda)} por proposta</div>
+                        <div class="nota">${esc(e.instituicao)} · ${valorPropostaTxt(e)}${temValor(e) ? ' por proposta' : ''}</div>
                     </div>
                     <div class="edital-badges" style="padding-right:0;margin:0;">${situacaoPropostaBadge(e, p)}</div>
                 </div>
