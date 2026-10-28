@@ -1137,6 +1137,164 @@
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { transition: none !important; animation: none !important; }
         }
+
+        /* ============ PERFIL, CALENDÁRIO, GESTÃO E IMPRESSÃO ============ */
+        .perfil-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, var(--blue-light), var(--white));
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+        .perfil-card strong { color: var(--primary-dark); font-size: 15px; }
+        .perfil-card p { font-size: 14px; color: var(--gray-dark); margin-top: 2px; }
+        .perfil-card .perfil-acoes { display: flex; gap: 8px; flex-wrap: wrap; }
+
+        .badge-match-alto { background: #D4F5DC; color: #0E5814; }
+        .badge-match-medio { background: var(--blue-light); color: var(--primary); }
+        .badge-match-fora { background: #F1F1F1; color: #6B6B6B; }
+
+        .motivos { list-style: none; display: grid; gap: 6px; font-size: 14px; }
+        .motivos li.ok::before { content: '✔ '; color: var(--success); font-weight: 800; }
+        .motivos li.no::before { content: '✖ '; color: var(--danger); font-weight: 800; }
+
+        .view-toggle { display: inline-flex; border: 2px solid var(--primary); border-radius: 8px; overflow: hidden; }
+        .view-toggle button {
+            border: none;
+            background: var(--white);
+            color: var(--primary);
+            padding: 6px 12px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .view-toggle button[aria-pressed="true"] { background: var(--primary); color: var(--white); }
+
+        .cal-wrap { background: var(--white); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px; flex-wrap: wrap; }
+        .cal-header h3 { font-size: 18px; color: var(--primary-dark); }
+        .cal-nav { display: flex; gap: 6px; }
+        .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+        .cal-dow { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--gray-dark); text-align: center; padding: 4px 0; }
+        .cal-day {
+            min-height: 96px;
+            background: var(--white);
+            border: 1px solid #EEEEEE;
+            border-radius: 8px;
+            padding: 6px;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            overflow: hidden;
+            min-width: 0;
+        }
+        .cal-day.outro { background: transparent; border-color: transparent; color: #BBBBBB; }
+        .cal-day.hoje { border: 2px solid var(--primary); }
+        .cal-day .num { font-weight: 700; color: var(--gray-dark); }
+        .cal-day.outro .num { color: #C8C8C8; }
+        .cal-day.hoje .num { color: var(--primary); }
+        .cal-ev {
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .cal-ev.fim { background: var(--danger-light); color: #B21B05; }
+        .cal-ev.inicio { background: var(--success-light); color: #0E5814; }
+        .cal-ev.resultado { background: var(--purple-light); color: var(--purple); }
+        .cal-legend { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 20px; }
+        .cal-agenda { list-style: none; }
+        .cal-agenda li { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #F0F0F0; font-size: 14px; }
+        .cal-agenda .data { font-weight: 700; min-width: 54px; color: var(--primary-dark); }
+        .cal-agenda button { background: none; border: none; text-align: left; font: inherit; color: var(--primary); cursor: pointer; font-weight: 600; padding: 0; }
+        .cal-agenda button:hover { text-decoration: underline; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 14px; }
+        .form-grid .full { grid-column: 1 / -1; }
+        .form-group small { display: block; color: var(--gray-dark); font-size: 12px; margin-top: 4px; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--primary); }
+        fieldset.form-group { border: none; padding: 0; }
+        fieldset.form-group legend { font-weight: 600; margin-bottom: 6px; }
+        .check-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .check-chips label {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+            border: 2px solid var(--gray);
+            border-radius: 18px;
+            padding: 5px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0;
+        }
+        .check-chips input { accent-color: var(--primary); width: auto; }
+        .check-chips label:has(input:checked) { border-color: var(--primary); background: var(--blue-light); color: var(--primary); }
+
+        .tabs { display: flex; gap: 4px; border-bottom: 2px solid #EEEEEE; margin: 16px 0; overflow-x: auto; }
+        .tabs button {
+            border: none;
+            background: none;
+            padding: 10px 14px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            color: var(--gray-dark);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            white-space: nowrap;
+        }
+        .tabs button[aria-selected="true"] { color: var(--primary); border-bottom-color: var(--primary); }
+        .import-report { font-size: 13px; background: var(--light); border-radius: 8px; padding: 12px; margin-top: 12px; white-space: pre-wrap; }
+        .meus-editais li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #F0F0F0; flex-wrap: wrap; }
+        .meus-editais { list-style: none; }
+        .btn-danger { background: var(--danger); color: var(--white); }
+        .btn-danger:hover { background: #B21B05; }
+
+        .print-only { display: none; }
+
+        @media (max-width: 768px) {
+            .cal-wrap { padding: 12px; }
+            .cal-day { min-height: 48px; padding: 4px; gap: 2px; }
+            .cal-ev { font-size: 0; height: 6px; padding: 0; }
+            .cal-dow { font-size: 10px; }
+        }
+
+        @media print {
+            body > *:not(#editalModal) { display: none !important; }
+            body { background: var(--white); }
+            dialog.modal {
+                position: static;
+                max-height: none;
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+                border-radius: 0;
+                overflow: visible;
+            }
+            dialog.modal::backdrop { background: none; }
+            .modal-close, .modal-actions, .no-print { display: none !important; }
+            .modal-header { position: static; padding-right: 28px; }
+            .print-only { display: block; }
+            .badge, .fact, .criterio-bar span, .window-bar span { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .modal-section { break-inside: avoid; }
+        }
     </style>
 </head>
 <body>
@@ -1234,7 +1392,7 @@
 
             <div class="card">
                 <div class="card-title">
-                    🔥 Editais em Destaque
+                    <span id="destaquesTitulo">🔥 Editais em Destaque</span>
                     <button class="btn btn-outline" onclick="navigateTo('editais', event)" aria-label="Ver todos os editais">Ver Todos →</button>
                 </div>
                 <div id="destaquesList"></div>
@@ -1316,6 +1474,17 @@
                 ℹ️ <strong>Dados demonstrativos.</strong> Antes de submeter uma proposta, confirme datas, valores e requisitos no edital oficial publicado pela instituição.
             </div>
 
+            <div class="perfil-card" id="perfilCard">
+                <div>
+                    <strong id="perfilTitulo">🎯 Monte seu perfil e veja os editais compatíveis</strong>
+                    <p id="perfilResumo"></p>
+                </div>
+                <div class="perfil-acoes">
+                    <button class="chip-toggle" id="toggleRecomendados" aria-pressed="false" hidden>🎯 Só compatíveis</button>
+                    <button class="btn btn-primary btn-small" id="perfilBtn" data-action="edit-perfil">Definir perfil</button>
+                </div>
+            </div>
+
             <div class="filter-section">
                 <h3 style="margin-bottom: 12px;">🔍 Encontre o edital certo</h3>
 
@@ -1355,6 +1524,10 @@
                         </select>
                     </div>
                     <div class="filter-item">
+                        <label for="filterUF">Estado de atuação</label>
+                        <select id="filterUF"><option value="">Todo o Brasil</option></select>
+                    </div>
+                    <div class="filter-item">
                         <label for="filterValor">Valor por proposta</label>
                         <select id="filterValor">
                             <option value="">Qualquer valor</option>
@@ -1389,20 +1562,28 @@
             <div class="results-toolbar">
                 <div class="results-count" id="resultsCount" aria-live="polite"></div>
                 <div class="toolbar-actions">
+                    <div class="view-toggle" role="group" aria-label="Modo de visualização">
+                        <button data-view="lista" aria-pressed="true">☰ Lista</button>
+                        <button data-view="calendario" aria-pressed="false">📆 Calendário</button>
+                    </div>
                     <label for="sortSelect" class="sr-only">Ordenar por</label>
                     <select id="sortSelect">
                         <option value="prazo">Ordenar: prazo mais próximo</option>
+                        <option value="compat">Ordenar: compatibilidade com meu perfil</option>
                         <option value="valor">Ordenar: maior valor por proposta</option>
                         <option value="recentes">Ordenar: publicados recentemente</option>
                         <option value="az">Ordenar: A–Z</option>
                     </select>
-                    <button class="btn btn-outline btn-small" data-action="export-csv">⬇️ Exportar CSV</button>
+                    <button class="btn btn-outline btn-small" data-action="export-csv">⬇️ CSV</button>
+                    <button class="btn btn-outline btn-small" data-action="export-ics-all" title="Todos os prazos dos editais filtrados em um arquivo de agenda">📅 Prazos na agenda</button>
+                    <button class="btn btn-outline btn-small" data-action="open-gerenciar">⚙️ Gerenciar editais</button>
                     <button class="btn btn-secondary btn-small" data-action="clear-filters">🔄 Limpar filtros</button>
                 </div>
             </div>
             <div class="active-filters" id="activeFilters"></div>
 
             <div id="editaisList"></div>
+            <div id="calendarView" hidden></div>
         </div>
     </div>
 
@@ -1518,6 +1699,18 @@
         <div id="compareModalContent"></div>
     </dialog>
 
+    <!-- MODAL: PERFIL -->
+    <dialog id="perfilModal" class="modal" aria-labelledby="perfilModalTitle">
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <div id="perfilModalContent"></div>
+    </dialog>
+
+    <!-- MODAL: GERENCIAR EDITAIS -->
+    <dialog id="gerenciarModal" class="modal" aria-labelledby="gerenciarModalTitle">
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <div id="gerenciarModalContent"></div>
+    </dialog>
+
     <!-- BARRA DE COMPARAÇÃO -->
     <div class="compare-bar" id="compareBar" role="region" aria-label="Comparação de editais">
         <span id="compareCount"></span>
@@ -1558,6 +1751,30 @@
             municipio: 'Município',
             estado: 'Estado / DF'
         };
+
+        const UFS = {
+            AC: 'Acre', AL: 'Alagoas', AP: 'Amapá', AM: 'Amazonas', BA: 'Bahia', CE: 'Ceará', DF: 'Distrito Federal',
+            ES: 'Espírito Santo', GO: 'Goiás', MA: 'Maranhão', MT: 'Mato Grosso', MS: 'Mato Grosso do Sul', MG: 'Minas Gerais',
+            PA: 'Pará', PB: 'Paraíba', PR: 'Paraná', PE: 'Pernambuco', PI: 'Piauí', RJ: 'Rio de Janeiro', RN: 'Rio Grande do Norte',
+            RS: 'Rio Grande do Sul', RO: 'Rondônia', RR: 'Roraima', SC: 'Santa Catarina', SP: 'São Paulo', SE: 'Sergipe', TO: 'Tocantins'
+        };
+        const NORTE = ['AC', 'AM', 'AP', 'PA', 'RO', 'RR', 'TO'];
+        const NORDESTE = ['AL', 'BA', 'CE', 'MA', 'PB', 'PE', 'PI', 'RN', 'SE'];
+        // Abrangências usadas nos editais → UFs atendidas (ausente = todo o Brasil)
+        const REGIOES_UF = {
+            'Norte': NORTE,
+            'Nordeste': NORDESTE,
+            'Centro-Oeste': ['DF', 'GO', 'MS', 'MT'],
+            'Sudeste': ['ES', 'MG', 'RJ', 'SP'],
+            'Sul': ['PR', 'RS', 'SC'],
+            'Norte e Nordeste': [...NORTE, ...NORDESTE],
+            'Amazônia Legal': ['AC', 'AM', 'AP', 'MA', 'MT', 'PA', 'RO', 'RR', 'TO'],
+            'Semiárido': ['AL', 'BA', 'CE', 'MG', 'PB', 'PE', 'PI', 'RN', 'SE'],
+            'Cerrado e Caatinga': ['AL', 'BA', 'CE', 'DF', 'GO', 'MA', 'MG', 'MS', 'MT', 'PB', 'PE', 'PI', 'RN', 'SE', 'TO'],
+            'São Paulo': ['SP']
+        };
+        function ufsDoEdital(e) { return (Array.isArray(e.ufs) && e.ufs.length) ? e.ufs : (REGIOES_UF[e.abrangencia] || null); }
+        function atendeUF(e, uf) { const u = ufsDoEdital(e); return !uf || !u || u.includes(uf); }
 
         // Documentos usuais por tipo de proponente (base para o checklist de preparação)
         const DOCS_POR_PUBLICO = {
@@ -1683,7 +1900,7 @@
         ];
 
         // Completa cada edital com link oficial, documentos e critérios
-        const editais = EDITAIS_BASE.map(e => ({
+        const completarEdital = e => ({
             ...e,
             link: e.link || (agencias[e.agencia] && agencias[e.agencia].link) || '#',
             criterios: e.criterios || CRITERIOS_PADRAO,
@@ -1692,7 +1909,8 @@
                 ...DOCS_COMUNS,
                 ...(e.docsExtras || [])
             ])]
-        }));
+        });
+        let editais = [];
 
         /* =====================================================================
            UTILITÁRIOS
@@ -1707,6 +1925,13 @@
             get(k, fallback) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch (_) { return fallback; } },
             set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) { /* armazenamento indisponível */ } }
         };
+
+        // Editais cadastrados/importados pelo usuário (salvos neste navegador)
+        let editaisCustom = store.get('editaisCustom', []);
+        function rebuildEditais() {
+            editais = [...EDITAIS_BASE, ...editaisCustom.map(e => ({ ...e, custom: true }))].map(completarEdital);
+        }
+        rebuildEditais();
 
         function esc(s) {
             return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -1778,6 +2003,10 @@
         ===================================================================== */
         let favorites = store.get('favorites', []);
         let somenteFavoritos = false;
+        let somenteRecomendados = false;
+        let perfil = store.get('perfil', null);
+        let viewMode = 'lista';
+        let calMes = new Date(HOJE.getFullYear(), HOJE.getMonth(), 1);
         const compareSet = new Set();
         let currentEditais = [];
         let mapInstance = null;
@@ -1785,7 +2014,7 @@
 
         const FILTER_FIELDS = {
             q: 'searchInput', status: 'filterStatus', publico: 'filterPublico', area: 'filterArea',
-            modalidade: 'filterModalidade', procedencia: 'filterProcedencia', valor: 'filterValor', prazo: 'filterPrazo', ordem: 'sortSelect'
+            modalidade: 'filterModalidade', procedencia: 'filterProcedencia', uf: 'filterUF', valor: 'filterValor', prazo: 'filterPrazo', ordem: 'sortSelect'
         };
 
         const PRESETS = {
@@ -1805,6 +2034,7 @@
             for (const [k, id] of Object.entries(FILTER_FIELDS)) f[k] = val(id);
             f.ordem = f.ordem || 'prazo';
             f.fav = somenteFavoritos;
+            f.rec = somenteRecomendados && perfilAtivo();
             return f;
         }
 
@@ -1822,6 +2052,8 @@
                 if (f.area && e.tema !== f.area) return false;
                 if (f.modalidade && e.modalidade !== f.modalidade) return false;
                 if (f.procedencia && e.procedencia !== f.procedencia) return false;
+                if (f.uf && !atendeUF(e, f.uf)) return false;
+                if (f.rec) { const c = avaliarCompat(e); if (!c || !c.elegivel || st === 'fechado') return false; }
                 if (f.valor && valorBRL(e.valorMax, e.moeda) < Number(f.valor)) return false;
                 if (f.prazo && !(st === 'aberto' && diasAte(e.encerramento) <= Number(f.prazo))) return false;
                 if (f.fav && !favorites.includes(e.id)) return false;
@@ -1836,13 +2068,18 @@
             if (ordem === 'recentes') return copia.sort((a, b) => parseDate(b.publicadoEm) - parseDate(a.publicadoEm));
             if (ordem === 'az') return copia.sort((a, b) => a.titulo.localeCompare(b.titulo, 'pt-BR'));
             // prazo: abertos que encerram antes → em breve que abrem antes → encerrados mais recentes
-            return copia.sort((a, b) => {
+            const porPrazo = (a, b) => {
                 const sa = statusEdital(a), sb = statusEdital(b);
                 if (sa !== sb) return rank[sa] - rank[sb];
                 if (sa === 'aberto') return parseDate(a.encerramento) - parseDate(b.encerramento);
                 if (sa === 'em-breve') return parseDate(a.abertura) - parseDate(b.abertura);
                 return parseDate(b.encerramento) - parseDate(a.encerramento);
-            });
+            };
+            if (ordem === 'compat' && perfilAtivo()) {
+                const score = e => { const c = avaliarCompat(e); return c.elegivel ? c.score : -1; };
+                return copia.sort((a, b) => (score(b) - score(a)) || porPrazo(a, b));
+            }
+            return copia.sort(porPrazo);
         }
 
         function filterEditais() {
@@ -1858,7 +2095,10 @@
         function clearFilters(silencioso = false) {
             for (const [k, id] of Object.entries(FILTER_FIELDS)) if ($(id)) $(id).value = k === 'ordem' ? 'prazo' : '';
             somenteFavoritos = false;
+            somenteRecomendados = false;
             $('toggleFavoritos').setAttribute('aria-pressed', 'false');
+            $('toggleRecomendados').setAttribute('aria-pressed', 'false');
+            if (perfilAtivo()) $('sortSelect').value = 'compat';
             if (!silencioso) filterEditais();
         }
 
@@ -1888,10 +2128,11 @@
             const labelDe = (id) => { const s = $(id); return s && s.selectedIndex > 0 ? s.options[s.selectedIndex].text : ''; };
             const chips = [];
             if (f.q) chips.push({ k: 'q', txt: `“${f.q}”` });
-            for (const k of ['status', 'publico', 'area', 'modalidade', 'procedencia', 'valor', 'prazo']) {
+            for (const k of ['status', 'publico', 'area', 'modalidade', 'procedencia', 'uf', 'valor', 'prazo']) {
                 if (f[k]) chips.push({ k, txt: labelDe(FILTER_FIELDS[k]) });
             }
             if (f.fav) chips.push({ k: 'fav', txt: '★ Favoritos' });
+            if (f.rec) chips.push({ k: 'rec', txt: '🎯 Compatíveis com meu perfil' });
             $('activeFilters').innerHTML = chips.map(c =>
                 `<button class="active-filter" data-action="remove-filter" data-key="${c.k}" aria-label="Remover filtro ${esc(c.txt)}">${esc(c.txt)} ✕</button>`
             ).join('');
@@ -1899,6 +2140,7 @@
 
         function removeFilter(k) {
             if (k === 'fav') { somenteFavoritos = false; $('toggleFavoritos').setAttribute('aria-pressed', 'false'); }
+            else if (k === 'rec') { somenteRecomendados = false; $('toggleRecomendados').setAttribute('aria-pressed', 'false'); }
             else $(FILTER_FIELDS[k]).value = '';
             filterEditais();
         }
@@ -1916,6 +2158,7 @@
             <article class="edital-card ${st}" data-action="details" data-id="${e.id}" tabindex="0" aria-label="Edital: ${esc(e.titulo)}, ${STATUS_LABEL[st]}">
                 <button class="favorite-btn ${fav ? 'active' : ''}" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}">${fav ? '★' : '☆'}</button>
                 <div class="edital-badges">
+                    ${compatBadge(e)}
                     ${prazoBadge(e)}
                     <span class="badge badge-neutral">${esc(e.modalidade)}</span>
                     <span class="badge badge-${e.procedencia}">${e.procedencia === 'nacional' ? '🇧🇷 Nacional' : '🌍 Internacional'}</span>
@@ -1955,6 +2198,9 @@
                 : `${lista.length} de ${plural(total, 'edital', 'editais')}`;
 
             const container = $('editaisList');
+            container.hidden = viewMode === 'calendario';
+            $('calendarView').hidden = viewMode !== 'calendario';
+            if (viewMode === 'calendario') { renderCalendario(lista); return; }
             if (lista.length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
@@ -1969,10 +2215,13 @@
         }
 
         function renderDestaques() {
-            const destaques = ordenar(editais.filter(e => statusEdital(e) === 'aberto'), 'prazo').slice(0, 3);
+            const usarPerfil = perfilAtivo();
+            $('destaquesTitulo').textContent = usarPerfil ? '🎯 Recomendados para você' : '🔥 Editais em Destaque';
+            const candidatos = editais.filter(e => statusEdital(e) === 'aberto' && (!usarPerfil || avaliarCompat(e).elegivel));
+            const destaques = ordenar(candidatos, usarPerfil ? 'compat' : 'prazo').slice(0, 3);
             $('destaquesList').innerHTML = destaques.length
                 ? destaques.map(e => editalCardHTML(e, { compacto: true })).join('')
-                : '<p style="color:var(--gray-dark)">Nenhum edital aberto no momento.</p>';
+                : `<p style="color:var(--gray-dark)">${usarPerfil ? 'Nenhum edital aberto compatível com seu perfil agora. <a href="#editais" style="color:var(--primary);font-weight:600;">Ver todos os editais</a>' : 'Nenhum edital aberto no momento.'}</p>`;
         }
 
         function renderDashboardStats() {
@@ -2029,7 +2278,8 @@
                 { nome: 'Abertura das submissões', data: e.abertura },
                 { nome: 'Prazo final de submissão', data: e.encerramento },
                 { nome: 'Divulgação do resultado (previsão)', data: e.resultado }
-            ];
+            ].filter(et => et.data);
+            const compat = avaliarCompat(e);
             const proxima = etapas.findIndex(et => parseDate(et.data) >= HOJE);
 
             const modal = $('editalModal');
@@ -2050,12 +2300,25 @@
                         ${st !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}">📅 Adicionar à agenda</button>` : ''}
                         <button class="btn btn-outline btn-small" data-action="share" data-id="${e.id}">🔗 Compartilhar</button>
                         <button class="btn btn-outline btn-small" data-action="fav" data-id="${e.id}" aria-pressed="${fav}">${fav ? '★ Favorito' : '☆ Favoritar'}</button>
-                        <button class="btn btn-outline btn-small" data-action="agencia" data-key="${e.agencia}">🏛️ Ver instituição</button>
+                        ${agencias[e.agencia] ? `<button class="btn btn-outline btn-small" data-action="agencia" data-key="${e.agencia}">🏛️ Ver instituição</button>` : ''}
+                        <button class="btn btn-outline btn-small" data-action="print">🖨️ Imprimir / PDF</button>
+                        ${e.custom ? `<button class="btn btn-outline btn-small" data-action="edit-edital" data-id="${e.id}">✏️ Editar</button>
+                        <button class="btn btn-danger btn-small" data-action="delete-edital" data-id="${e.id}">🗑️ Excluir</button>` : ''}
                     </div>
+                    <p class="print-only" style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Ficha gerada em ${fmtDate(isoDe(HOJE))} na plataforma Fundos Brasil. Confirme todas as informações no edital oficial: ${esc(e.link)}</p>
+
+                    ${compat ? `
+                    <div class="modal-section">
+                        <h3>Compatibilidade com seu perfil · ${compat.elegivel ? `${compat.score}%` : 'fora do perfil'}</h3>
+                        <ul class="motivos">${compat.motivos.map(m => `<li class="${m.ok ? 'ok' : 'no'}">${esc(m.txt)}</li>`).join('')}</ul>
+                    </div>` : `
+                    <div class="modal-section no-print">
+                        <p style="font-size:14px;color:var(--gray-dark);">🎯 <button class="btn btn-outline btn-small" data-action="edit-perfil">Defina seu perfil</button> para ver se você pode participar deste edital.</p>
+                    </div>`}
 
                     <div class="modal-section">
                         <h3>Resumo</h3>
-                        <p>${esc(e.resumo)}</p>
+                        <p>${esc(e.resumo || 'Sem resumo cadastrado. Consulte o edital oficial.')}</p>
                     </div>
 
                     <div class="modal-section">
@@ -2065,6 +2328,7 @@
                             <div class="fact"><span class="info-label">Valor total do edital</span><div class="info-value">${fmtValor(e.valorTotal, e.moeda)}</div></div>
                             <div class="fact"><span class="info-label">Contrapartida</span><div class="info-value">${esc(e.contrapartida)}</div></div>
                             <div class="fact"><span class="info-label">Quem pode participar</span><div class="info-value">${esc(e.publico.map(p => PUBLICOS[p]).join(', '))}</div></div>
+                            <div class="fact"><span class="info-label">Abrangência</span><div class="info-value">${esc(e.abrangencia)}${ufsDoEdital(e) && ufsDoEdital(e).length > 1 ? `<br><span style="font-size:12px;font-weight:500;color:var(--gray-dark)">${ufsDoEdital(e).join(', ')}</span>` : ''}</div></div>
                         </div>
                         ${e.moeda !== 'BRL' ? `<p style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Valores em ${e.moeda}. Equivalente aproximado: até ${fmtValor(valorBRL(e.valorMax, e.moeda), 'BRL')} por proposta (cotação de referência).</p>` : ''}
                     </div>
@@ -2139,14 +2403,12 @@
         ===================================================================== */
         function icsText(s) { return String(s).replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/[,;]/g, m => '\\' + m); }
 
-        function downloadICS(id) {
-            const e = editais.find(x => x.id === id);
+        function icsEvento(e) {
             const ymd = iso => iso.replace(/-/g, '');
             const fim = new Date(parseDate(e.encerramento).getTime() + DIA_MS);
             const fimStr = `${fim.getFullYear()}${String(fim.getMonth() + 1).padStart(2, '0')}${String(fim.getDate()).padStart(2, '0')}`;
             const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-            const ics = [
-                'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Fundos Brasil//Editais//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+            return [
                 'BEGIN:VEVENT',
                 `UID:edital-${e.id}-${ymd(e.encerramento)}@fundos-brasil`,
                 `DTSTAMP:${stamp}`,
@@ -2157,10 +2419,19 @@
                 `URL:${e.link}`,
                 'BEGIN:VALARM', 'TRIGGER:-P7D', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(`Faltam 7 dias: ${e.titulo}`)}`, 'END:VALARM',
                 'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(`Amanhã encerra: ${e.titulo}`)}`, 'END:VALARM',
-                'END:VEVENT', 'END:VCALENDAR'
-            ].join('\r\n');
-            downloadFile(`prazo-edital-${e.id}.ics`, ics, 'text/calendar;charset=utf-8');
-            showNotification('📅 Evento gerado com lembretes 7 dias e 1 dia antes');
+                'END:VEVENT'
+            ];
+        }
+
+        function downloadICS(ids) {
+            const lista = (Array.isArray(ids) ? ids : [ids]).map(id => editais.find(x => x.id === id)).filter(e => e && statusEdital(e) !== 'fechado');
+            if (!lista.length) { showNotification('Nenhum prazo futuro para exportar.', 'warning'); return; }
+            const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Fundos Brasil//Editais//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+                ...lista.flatMap(icsEvento), 'END:VCALENDAR'].join('\r\n');
+            const nome = lista.length === 1 ? `prazo-edital-${lista[0].id}.ics` : `prazos-editais-${isoDe(HOJE)}.ics`;
+            downloadFile(nome, ics, 'text/calendar;charset=utf-8');
+            showNotification(lista.length === 1 ? '📅 Evento gerado com lembretes 7 dias e 1 dia antes'
+                : `📅 ${plural(lista.length, 'prazo exportado', 'prazos exportados')}, com lembretes 7 dias e 1 dia antes`);
         }
 
         function exportCSV() {
@@ -2168,9 +2439,9 @@
             const cols = [
                 ['Título', e => e.titulo], ['Instituição', e => e.instituicao], ['Situação', e => STATUS_LABEL[statusEdital(e)]],
                 ['Área', e => AREAS[e.tema] || e.tema], ['Modalidade', e => e.modalidade], ['Quem pode participar', e => e.publico.map(p => PUBLICOS[p]).join(', ')],
-                ['Abrangência', e => e.abrangencia], ['Moeda', e => e.moeda], ['Valor por proposta', e => e.valorMax], ['Valor total', e => e.valorTotal],
+                ['Abrangência', e => e.abrangencia], ['UFs', e => (ufsDoEdital(e) || ['Todas']).join(', ')], ['Moeda', e => e.moeda], ['Valor por proposta', e => e.valorMax], ['Valor total', e => e.valorTotal],
                 ['Contrapartida', e => e.contrapartida], ['Abertura', e => fmtDate(e.abertura)], ['Encerramento', e => fmtDate(e.encerramento)],
-                ['Resultado previsto', e => fmtDate(e.resultado)], ['Link', e => e.link]
+                ['Resultado previsto', e => e.resultado ? fmtDate(e.resultado) : ''], ['Link', e => e.link]
             ];
             const cell = v => `"${String(v).replace(/"/g, '""')}"`;
             const linhas = [cols.map(c => cell(c[0])).join(';'), ...currentEditais.map(e => cols.map(c => cell(c[1](e))).join(';'))];
@@ -2211,6 +2482,7 @@
                 ['Quem pode participar', e => esc(e.publico.map(p => PUBLICOS[p]).join(', '))],
                 ['Abrangência', e => esc(e.abrangencia)],
                 ['Encerramento', e => fmtDate(e.encerramento)],
+                ...(perfilAtivo() ? [['Compatibilidade', e => compatBadge(e)]] : []),
                 ['Documentos', e => plural(e.documentos.length, 'item', 'itens')]
             ];
             $('compareModalContent').innerHTML = `
@@ -2234,6 +2506,498 @@
             compareSet.clear();
             updateCompareBar();
             document.querySelectorAll('input[data-action="compare"]').forEach(i => { i.checked = false; });
+        }
+
+        /* =====================================================================
+           PERFIL DO PROPONENTE E COMPATIBILIDADE
+        ===================================================================== */
+        function perfilAtivo() {
+            return !!(perfil && (perfil.publico || perfil.uf || (perfil.areas || []).length || perfil.valorMin));
+        }
+
+        // Elegibilidade (tipo de proponente e UF) é eliminatória; o resto soma pontos até 100.
+        function avaliarCompat(e) {
+            if (!perfilAtivo()) return null;
+            const motivos = [];
+            let elegivel = true;
+            let pontos = 50;
+
+            if (perfil.publico) {
+                if (e.publico.includes(perfil.publico)) motivos.push({ ok: true, txt: `Aceita ${PUBLICOS[perfil.publico]}` });
+                else { elegivel = false; motivos.push({ ok: false, txt: `Não aceita ${PUBLICOS[perfil.publico]} (aceita: ${e.publico.map(p => PUBLICOS[p]).join(', ')})` }); }
+            }
+            if (perfil.uf) {
+                if (atendeUF(e, perfil.uf)) motivos.push({ ok: true, txt: !ufsDoEdital(e) ? 'Abrangência nacional' : e.abrangencia === UFS[perfil.uf] ? `Abrange ${UFS[perfil.uf]}` : `Abrange ${UFS[perfil.uf]} (${e.abrangencia})` });
+                else { elegivel = false; motivos.push({ ok: false, txt: `Não abrange ${UFS[perfil.uf]} (abrangência: ${e.abrangencia})` }); }
+            }
+            const areas = perfil.areas || [];
+            if (!areas.length) pontos += 15;
+            else if (areas.includes(e.tema)) { pontos += 30; motivos.push({ ok: true, txt: `Área de interesse: ${AREAS[e.tema] || e.tema}` }); }
+            else motivos.push({ ok: false, txt: 'Fora das suas áreas de interesse' });
+
+            if (!perfil.valorMin) pontos += 5;
+            else if (valorBRL(e.valorMax, e.moeda) >= Number(perfil.valorMin)) { pontos += 10; motivos.push({ ok: true, txt: 'Valor por proposta atende ao mínimo desejado' }); }
+            else motivos.push({ ok: false, txt: `Valor por proposta abaixo de ${fmtValor(Number(perfil.valorMin))}` });
+
+            const st = statusEdital(e);
+            if (st === 'aberto') pontos += 10;
+            else if (st === 'em-breve') { pontos += 5; motivos.push({ ok: true, txt: `Abre em ${fmtDate(e.abertura)} — dá tempo de preparar` }); }
+            else motivos.push({ ok: false, txt: 'Submissões encerradas' });
+
+            return { elegivel, score: elegivel ? Math.min(100, pontos) : 0, motivos };
+        }
+
+        function compatBadge(e) {
+            const c = avaliarCompat(e);
+            if (!c) return '';
+            if (!c.elegivel) return '<span class="badge badge-match-fora">Fora do seu perfil</span>';
+            return `<span class="badge ${c.score >= 75 ? 'badge-match-alto' : 'badge-match-medio'}">🎯 ${c.score}% compatível</span>`;
+        }
+
+        function resumoPerfil() {
+            const partes = [];
+            if (perfil.publico) partes.push(PUBLICOS[perfil.publico]);
+            if (perfil.uf) partes.push(UFS[perfil.uf]);
+            if ((perfil.areas || []).length) partes.push(perfil.areas.map(a => AREAS[a] || a).join(', '));
+            if (perfil.valorMin) partes.push(`a partir de ${fmtValor(Number(perfil.valorMin))}`);
+            return partes.join(' · ');
+        }
+
+        function renderPerfilCard() {
+            const btn = $('perfilBtn');
+            const tog = $('toggleRecomendados');
+            if (!perfilAtivo()) {
+                $('perfilTitulo').textContent = '🎯 Monte seu perfil e veja os editais compatíveis';
+                $('perfilResumo').textContent = 'Informe quem você é, onde atua e o que procura — a plataforma calcula a compatibilidade de cada edital.';
+                btn.textContent = 'Definir perfil';
+                tog.hidden = true;
+                return;
+            }
+            const compat = editais.filter(e => { const c = avaliarCompat(e); return c && c.elegivel && statusEdital(e) !== 'fechado'; });
+            const abertos = compat.filter(e => statusEdital(e) === 'aberto').length;
+            $('perfilTitulo').textContent = `🎯 Seu perfil: ${resumoPerfil()}`;
+            $('perfilResumo').textContent = compat.length
+                ? `${plural(compat.length, 'edital compatível', 'editais compatíveis')} em aberto ou previstos — ${plural(abertos, 'aceita', 'aceitam')} propostas agora.`
+                : 'Nenhum edital aberto ou previsto é compatível com seu perfil no momento.';
+            btn.textContent = 'Editar perfil';
+            tog.hidden = false;
+        }
+
+        function openPerfil() {
+            const p = perfil || {};
+            const opts = (obj, atual) => Object.entries(obj).map(([v, t]) => `<option value="${esc(v)}" ${v === atual ? 'selected' : ''}>${esc(t)}</option>`).join('');
+            const valores = [['', 'Qualquer valor'], ['50000', 'R$ 50 mil'], ['100000', 'R$ 100 mil'], ['500000', 'R$ 500 mil'], ['1000000', 'R$ 1 milhão']];
+            $('perfilModalContent').innerHTML = `
+                <div class="modal-header"><h2 id="perfilModalTitle">Meu perfil de proponente</h2><p>Fica salvo só neste navegador e serve para calcular a compatibilidade de cada edital.</p></div>
+                <div class="modal-body">
+                    <form id="perfilForm" style="margin-top:16px;">
+                        <div class="form-grid">
+                            <div class="form-group"><label for="perfilPublico">Tipo de proponente</label>
+                                <select id="perfilPublico"><option value="">Não informar</option>${opts(PUBLICOS, p.publico)}</select></div>
+                            <div class="form-group"><label for="perfilUF">Estado de atuação</label>
+                                <select id="perfilUF"><option value="">Não informar</option>${opts(UFS, p.uf)}</select></div>
+                            <div class="form-group"><label for="perfilValor">Valor mínimo por proposta</label>
+                                <select id="perfilValor">${valores.map(([v, t]) => `<option value="${v}" ${String(p.valorMin || '') === v ? 'selected' : ''}>${t}</option>`).join('')}</select></div>
+                            <fieldset class="form-group full"><legend>Áreas de interesse</legend>
+                                <div class="check-chips">${Object.entries(AREAS).map(([k, t]) => `<label><input type="checkbox" name="perfilArea" value="${esc(k)}" ${(p.areas || []).includes(k) ? 'checked' : ''}> ${esc(t)}</label>`).join('')}</div>
+                            </fieldset>
+                        </div>
+                        <div class="modal-actions">
+                            <button type="submit" class="btn btn-primary">💾 Salvar perfil</button>
+                            ${perfilAtivo() ? '<button type="button" class="btn btn-secondary" data-action="clear-perfil">Remover perfil</button>' : ''}
+                        </div>
+                    </form>
+                </div>`;
+            abrirDialog($('perfilModal'));
+        }
+
+        function salvarPerfil() {
+            perfil = {
+                publico: val('perfilPublico'),
+                uf: val('perfilUF'),
+                valorMin: val('perfilValor'),
+                areas: [...document.querySelectorAll('input[name="perfilArea"]:checked')].map(i => i.value)
+            };
+            store.set('perfil', perfil);
+            closeModal($('perfilModal'));
+            if (perfilAtivo()) $('sortSelect').value = 'compat';
+            refreshAll();
+            if ($('editalModal').open) openEdital(Number($('editalModal').dataset.id));
+            showNotification(perfilAtivo() ? '🎯 Perfil salvo — editais ordenados por compatibilidade' : 'Perfil vazio salvo');
+        }
+
+        function limparPerfil() {
+            perfil = null;
+            somenteRecomendados = false;
+            store.set('perfil', null);
+            if ($('sortSelect').value === 'compat') $('sortSelect').value = 'prazo';
+            closeModal($('perfilModal'));
+            refreshAll();
+            showNotification('Perfil removido');
+        }
+
+        /* =====================================================================
+           CALENDÁRIO DE PRAZOS
+        ===================================================================== */
+        const TIPO_EV = { inicio: { nome: 'Abertura', icone: '🟢' }, fim: { nome: 'Prazo final', icone: '⏳' }, resultado: { nome: 'Resultado', icone: '🏁' } };
+        const pad2 = n => String(n).padStart(2, '0');
+        const isoDe = d => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+
+        function eventosDe(lista) {
+            const ev = [];
+            lista.forEach(e => {
+                ev.push({ data: e.abertura, tipo: 'inicio', e });
+                ev.push({ data: e.encerramento, tipo: 'fim', e });
+                if (e.resultado) ev.push({ data: e.resultado, tipo: 'resultado', e });
+            });
+            return ev.sort((a, b) => a.data.localeCompare(b.data) || (a.tipo === 'fim' ? -1 : 1));
+        }
+
+        function renderCalendario(lista) {
+            const ano = calMes.getFullYear(), mes = calMes.getMonth();
+            const primeiroDow = new Date(ano, mes, 1).getDay();
+            const diasNoMes = new Date(ano, mes + 1, 0).getDate();
+            const semanas = Math.ceil((primeiroDow + diasNoMes) / 7);
+            const porDia = {};
+            const eventos = eventosDe(lista);
+            eventos.forEach(ev => { (porDia[ev.data] = porDia[ev.data] || []).push(ev); });
+            const hojeIso = isoDe(HOJE);
+
+            let celulas = '';
+            for (let i = 0; i < semanas * 7; i++) {
+                const d = new Date(ano, mes, 1 - primeiroDow + i);
+                const iso = isoDe(d);
+                const fora = d.getMonth() !== mes;
+                const evs = fora ? [] : (porDia[iso] || []);
+                celulas += `
+                    <div class="cal-day ${fora ? 'outro' : ''} ${iso === hojeIso ? 'hoje' : ''}" ${evs.length ? `aria-label="${d.getDate()}: ${evs.length} evento(s)"` : ''}>
+                        <span class="num">${d.getDate()}</span>
+                        ${evs.map(ev => `<button class="cal-ev ${ev.tipo}" data-action="details" data-id="${ev.e.id}" title="${TIPO_EV[ev.tipo].nome}: ${esc(ev.e.titulo)}">${TIPO_EV[ev.tipo].icone} ${esc(ev.e.titulo)}</button>`).join('')}
+                    </div>`;
+            }
+
+            const doMes = eventos.filter(ev => ev.data.startsWith(`${ano}-${pad2(mes + 1)}`));
+            $('calendarView').innerHTML = `
+                <div class="cal-wrap">
+                    <div class="cal-header">
+                        <h3>${(m => m.charAt(0).toUpperCase() + m.slice(1))(calMes.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' }))}</h3>
+                        <div class="cal-nav">
+                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="-1" aria-label="Mês anterior">←</button>
+                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="0">Hoje</button>
+                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="1" aria-label="Próximo mês">→</button>
+                        </div>
+                    </div>
+                    <div class="cal-grid" role="grid">
+                        ${['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map(d => `<div class="cal-dow">${d}</div>`).join('')}
+                        ${celulas}
+                    </div>
+                    <div class="cal-legend">
+                        <span class="badge badge-aberto">🟢 Abertura</span>
+                        <span class="badge badge-urgente">⏳ Prazo final</span>
+                        <span class="badge badge-internacional">🏁 Resultado</span>
+                    </div>
+                    <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--primary-dark);margin-bottom:6px;">Neste mês</h3>
+                    ${doMes.length ? `<ul class="cal-agenda">${doMes.map(ev => `
+                        <li><span class="data">${fmtDate(ev.data).slice(0, 5)}</span>
+                            <span>${TIPO_EV[ev.tipo].icone} ${TIPO_EV[ev.tipo].nome} · <button data-action="details" data-id="${ev.e.id}">${esc(ev.e.titulo)}</button> <span style="color:var(--gray-dark)">(${esc(ev.e.instituicao)})</span></span></li>`).join('')}</ul>`
+                        : '<p style="color:var(--gray-dark);font-size:14px;">Nenhum evento neste mês para os filtros atuais.</p>'}
+                </div>`;
+        }
+
+        function navegarCalendario(delta) {
+            calMes = delta === 0 ? new Date(HOJE.getFullYear(), HOJE.getMonth(), 1) : new Date(calMes.getFullYear(), calMes.getMonth() + delta, 1);
+            renderCalendario(currentEditais);
+        }
+
+        function setView(modo) {
+            viewMode = modo === 'calendario' ? 'calendario' : 'lista';
+            document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === viewMode)));
+            filterEditais();
+        }
+
+        /* =====================================================================
+           CADASTRO, IMPORTAÇÃO E EXPORTAÇÃO DE EDITAIS
+        ===================================================================== */
+        function toISO(s) {
+            s = String(s || '').trim();
+            let m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+            if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+            m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (m) return `${m[3]}-${pad2(m[2])}-${pad2(m[1])}`;
+            return '';
+        }
+
+        function mapPublico(s) {
+            const n = norm(s).trim();
+            if (!n) return '';
+            return Object.keys(PUBLICOS).find(k => n === k || norm(PUBLICOS[k]).includes(n) || n.includes(k)) || '';
+        }
+
+        function mapArea(s) {
+            if (AREAS[s]) return s;
+            const n = norm(s);
+            return Object.keys(AREAS).find(k => norm(k) === n || norm(AREAS[k]).includes(n)) || '';
+        }
+
+        // Valida e normaliza um edital vindo do formulário ou de um arquivo JSON
+        function normalizarEdital(raw) {
+            const r = raw && typeof raw === 'object' ? raw : {};
+            const lista = v => (Array.isArray(v) ? v : String(v || '').split(/[,;\n]/)).map(x => String(x).trim()).filter(Boolean);
+            const agencia = agencias[r.agencia] ? r.agencia : '';
+            let abrangencia = String(r.abrangencia || 'Nacional').trim();
+            let ufs = lista(r.ufs).map(u => u.toUpperCase()).filter(u => UFS[u]);
+            if (UFS[abrangencia.toUpperCase()]) { ufs = [abrangencia.toUpperCase()]; abrangencia = UFS[ufs[0]]; }
+
+            const e = {
+                id: Number(r.id) || 0,
+                titulo: String(r.titulo || '').trim(),
+                instituicao: String(r.instituicao || (agencia ? agencias[agencia].sigla : '')).trim(),
+                agencia,
+                procedencia: r.procedencia === 'internacional' || (!r.procedencia && agencia && !agencias[agencia].pais.includes('Brasil')) ? 'internacional' : 'nacional',
+                tema: mapArea(r.tema) || 'Desenvolvimento',
+                tags: lista(r.tags),
+                modalidade: String(r.modalidade || 'Não informada').trim(),
+                publico: [...new Set(lista(r.publico).map(mapPublico).filter(Boolean))],
+                abrangencia,
+                moeda: ['BRL', 'USD', 'EUR'].includes(String(r.moeda || '').toUpperCase()) ? String(r.moeda).toUpperCase() : 'BRL',
+                valorMax: Number(r.valorMax),
+                valorTotal: Number(r.valorTotal) || Number(r.valorMax),
+                contrapartida: String(r.contrapartida || 'Não informada').trim(),
+                abertura: toISO(r.abertura),
+                encerramento: toISO(r.encerramento),
+                resultado: toISO(r.resultado),
+                publicadoEm: toISO(r.publicadoEm) || toISO(r.abertura),
+                resumo: String(r.resumo || '').trim(),
+                link: /^https?:\/\//i.test(String(r.link || '').trim()) ? String(r.link).trim() : '',
+                docsExtras: lista(r.docsExtras)
+            };
+            if (ufs.length) e.ufs = ufs;
+            if (Array.isArray(r.criterios)) {
+                const crit = r.criterios.filter(c => c && c.nome).map(c => ({ nome: String(c.nome), peso: Math.max(0, Math.min(100, Number(c.peso) || 0)) }));
+                if (crit.length) e.criterios = crit;
+            }
+
+            const erros = [];
+            if (!e.titulo) erros.push('título');
+            if (!e.instituicao) erros.push('instituição');
+            if (!e.publico.length) erros.push('quem pode participar');
+            if (!(e.valorMax > 0)) erros.push('valor por proposta');
+            if (!e.abertura) erros.push('data de abertura');
+            if (!e.encerramento) erros.push('data de encerramento');
+            if (e.abertura && e.encerramento && e.encerramento < e.abertura) erros.push('encerramento anterior à abertura');
+            if (!e.link && !agencia) erros.push('link oficial (http/https)');
+            return { ok: !erros.length, erros, edital: e };
+        }
+
+        function proximoId() { return Math.max(999, ...EDITAIS_BASE.map(e => e.id), ...editaisCustom.map(e => e.id)) + 1; }
+
+        function salvarCustom() {
+            store.set('editaisCustom', editaisCustom);
+            rebuildEditais();
+            popularSelects();
+            refreshAll();
+        }
+
+        function formEditalHTML(e) {
+            e = e || {};
+            const sel = (obj, atual) => Object.entries(obj).map(([v, t]) => `<option value="${esc(v)}" ${v === atual ? 'selected' : ''}>${esc(t)}</option>`).join('');
+            const abrAtual = e.ufs && e.ufs.length === 1 ? e.ufs[0] : (e.abrangencia || 'Nacional');
+            const regioes = ['Nacional', ...Object.keys(REGIOES_UF)];
+            const modalidades = [...new Set(editais.map(x => x.modalidade))].sort();
+            return `
+                <form id="editalForm" novalidate>
+                    <input type="hidden" id="geId" value="${e.id || ''}">
+                    <div class="form-grid">
+                        <div class="form-group full"><label for="geTitulo">Título *</label><input id="geTitulo" required value="${esc(e.titulo)}"></div>
+                        <div class="form-group"><label for="geAgencia">Instituição cadastrada</label>
+                            <select id="geAgencia"><option value="">Outra (informe abaixo)</option>${sel(Object.fromEntries(Object.entries(agencias).map(([k, a]) => [k, a.sigla])), e.agencia)}</select></div>
+                        <div class="form-group"><label for="geInstituicao">Nome da instituição *</label><input id="geInstituicao" value="${esc(e.instituicao)}" placeholder="Preenchido ao escolher acima"></div>
+                        <div class="form-group"><label for="geProcedencia">Procedência</label>
+                            <select id="geProcedencia">${sel({ nacional: 'Nacional', internacional: 'Internacional' }, e.procedencia || 'nacional')}</select></div>
+                        <div class="form-group"><label for="geTema">Área</label><select id="geTema">${sel(AREAS, e.tema)}</select></div>
+                        <div class="form-group"><label for="geModalidade">Modalidade de apoio</label>
+                            <input id="geModalidade" list="geModalidades" value="${esc(e.modalidade || '')}" placeholder="Ex.: Subvenção econômica">
+                            <datalist id="geModalidades">${modalidades.map(m => `<option value="${esc(m)}">`).join('')}</datalist></div>
+                        <div class="form-group"><label for="geAbrangencia">Abrangência</label>
+                            <select id="geAbrangencia">
+                                ${regioes.map(r => `<option value="${esc(r)}" ${r === abrAtual ? 'selected' : ''}>${esc(r)}</option>`).join('')}
+                                <optgroup label="Um estado">${sel(UFS, abrAtual)}</optgroup>
+                            </select></div>
+                        <fieldset class="form-group full"><legend>Quem pode participar *</legend>
+                            <div class="check-chips">${Object.entries(PUBLICOS).map(([k, t]) => `<label><input type="checkbox" name="gePublico" value="${k}" ${(e.publico || []).includes(k) ? 'checked' : ''}> ${esc(t)}</label>`).join('')}</div>
+                        </fieldset>
+                        <div class="form-group"><label for="geMoeda">Moeda</label><select id="geMoeda">${sel({ BRL: 'Real (R$)', USD: 'Dólar (US$)', EUR: 'Euro (€)' }, e.moeda || 'BRL')}</select></div>
+                        <div class="form-group"><label for="geValorMax">Valor máximo por proposta *</label><input id="geValorMax" type="number" min="0" step="1000" value="${e.valorMax || ''}"></div>
+                        <div class="form-group"><label for="geValorTotal">Valor total do edital</label><input id="geValorTotal" type="number" min="0" step="1000" value="${e.valorTotal || ''}"></div>
+                        <div class="form-group"><label for="geContrapartida">Contrapartida</label><input id="geContrapartida" value="${esc(e.contrapartida || '')}" placeholder="Ex.: Não exigida"></div>
+                        <div class="form-group"><label for="gePublicado">Publicação</label><input id="gePublicado" type="date" value="${e.publicadoEm || ''}"></div>
+                        <div class="form-group"><label for="geAbertura">Abertura das submissões *</label><input id="geAbertura" type="date" value="${e.abertura || ''}"></div>
+                        <div class="form-group"><label for="geEncerramento">Prazo final *</label><input id="geEncerramento" type="date" value="${e.encerramento || ''}"></div>
+                        <div class="form-group"><label for="geResultado">Resultado previsto</label><input id="geResultado" type="date" value="${e.resultado || ''}"></div>
+                        <div class="form-group full"><label for="geLink">Link do edital oficial</label><input id="geLink" type="url" value="${esc(e.link && !Object.values(agencias).some(a => a.link === e.link) ? e.link : '')}" placeholder="https://...">
+                            <small>Obrigatório se a instituição não estiver cadastrada; senão usamos o portal da instituição.</small></div>
+                        <div class="form-group full"><label for="geTags">Palavras-chave</label><input id="geTags" value="${esc((e.tags || []).join(', '))}" placeholder="Separadas por vírgula"></div>
+                        <div class="form-group full"><label for="geResumo">Resumo</label><textarea id="geResumo">${esc(e.resumo || '')}</textarea></div>
+                        <div class="form-group full"><label for="geDocs">Documentos específicos deste edital</label><textarea id="geDocs" placeholder="Um por linha">${esc((e.docsExtras || []).join('\n'))}</textarea>
+                            <small>Os documentos usuais de cada tipo de proponente já entram automaticamente no checklist.</small></div>
+                    </div>
+                    <div id="geErros" class="import-report" role="alert" hidden></div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">💾 ${e.id ? 'Salvar alterações' : 'Cadastrar edital'}</button>
+                        ${e.id ? `<button type="button" class="btn btn-secondary" data-action="ge-tab" data-tab="meus">Cancelar</button>` : ''}
+                    </div>
+                </form>`;
+        }
+
+        function openGerenciar(tab = 'novo', editId = null) {
+            const meus = editais.filter(e => e.custom);
+            const editando = editId ? editais.find(e => e.id === editId && e.custom) : null;
+            const tabs = [['novo', editando ? '✏️ Editar edital' : '➕ Cadastrar edital'], ['importar', '📥 Importar / exportar'], ['meus', `🗂️ Meus editais (${meus.length})`]];
+            let corpo = '';
+            if (tab === 'novo') corpo = formEditalHTML(editando);
+            if (tab === 'importar') corpo = `
+                <p style="font-size:14px;margin-bottom:12px;">Importe um arquivo <strong>.json</strong> com uma lista de editais (o mesmo formato da exportação). Datas em <code>AAAA-MM-DD</code> ou <code>DD/MM/AAAA</code>. Campos obrigatórios: título, instituição, publico, valorMax, abertura, encerramento e link (ou agencia cadastrada).</p>
+                <div class="form-group"><label for="geImportFile">Arquivo JSON</label><input type="file" id="geImportFile" accept=".json,application/json"></div>
+                <div id="geImportReport" class="import-report" role="status" hidden></div>
+                <div class="modal-actions">
+                    <button class="btn btn-outline btn-small" data-action="export-json" data-escopo="todos">⬇️ Exportar todos (modelo)</button>
+                    <button class="btn btn-outline btn-small" data-action="export-json" data-escopo="meus" ${meus.length ? '' : 'disabled'}>⬇️ Exportar só os meus</button>
+                    <button class="btn btn-danger btn-small" data-action="reset-custom" ${meus.length ? '' : 'disabled'}>🗑️ Remover meus editais</button>
+                </div>`;
+            if (tab === 'meus') corpo = meus.length
+                ? `<ul class="meus-editais">${meus.map(e => `
+                    <li><span><strong>${esc(e.titulo)}</strong><br><span style="font-size:13px;color:var(--gray-dark)">${esc(e.instituicao)} · ${STATUS_LABEL[statusEdital(e)]} · prazo ${fmtDate(e.encerramento)}</span></span>
+                        <span style="display:flex;gap:6px;"><button class="btn btn-outline btn-small" data-action="edit-edital" data-id="${e.id}">✏️ Editar</button>
+                        <button class="btn btn-danger btn-small" data-action="delete-edital" data-id="${e.id}">Excluir</button></span></li>`).join('')}</ul>`
+                : '<p style="color:var(--gray-dark)">Você ainda não cadastrou nem importou editais.</p>';
+
+            $('gerenciarModalContent').innerHTML = `
+                <div class="modal-header"><h2 id="gerenciarModalTitle">Gerenciar editais</h2>
+                    <p>Cadastre editais reais ou importe uma lista. Ficam salvos neste navegador; exporte o JSON para compartilhar ou publicar.</p></div>
+                <div class="modal-body">
+                    <div class="tabs" role="tablist">${tabs.map(([k, t]) => `<button role="tab" aria-selected="${k === tab}" data-action="ge-tab" data-tab="${k}">${t}</button>`).join('')}</div>
+                    ${corpo}
+                </div>`;
+            const modal = $('gerenciarModal');
+            if (!modal.open) abrirDialog(modal);
+            modal.scrollTop = 0;
+        }
+
+        function lerFormEdital() {
+            const abr = val('geAbrangencia');
+            return {
+                id: Number(val('geId')) || 0,
+                titulo: val('geTitulo'),
+                agencia: val('geAgencia'),
+                instituicao: val('geInstituicao') || (agencias[val('geAgencia')] ? agencias[val('geAgencia')].sigla : ''),
+                procedencia: val('geProcedencia'),
+                tema: val('geTema'),
+                modalidade: val('geModalidade'),
+                abrangencia: abr,
+                publico: [...document.querySelectorAll('input[name="gePublico"]:checked')].map(i => i.value),
+                moeda: val('geMoeda'),
+                valorMax: val('geValorMax'),
+                valorTotal: val('geValorTotal'),
+                contrapartida: val('geContrapartida'),
+                publicadoEm: val('gePublicado'),
+                abertura: val('geAbertura'),
+                encerramento: val('geEncerramento'),
+                resultado: val('geResultado'),
+                link: val('geLink'),
+                tags: val('geTags'),
+                resumo: val('geResumo'),
+                docsExtras: val('geDocs')
+            };
+        }
+
+        function salvarFormEdital() {
+            const { ok, erros, edital } = normalizarEdital(lerFormEdital());
+            if (!ok) {
+                const box = $('geErros');
+                box.hidden = false;
+                box.textContent = `Revise os campos: ${erros.join(', ')}.`;
+                box.scrollIntoView({ block: 'nearest' });
+                return;
+            }
+            const idx = editaisCustom.findIndex(e => e.id === edital.id);
+            if (idx >= 0) editaisCustom[idx] = edital;
+            else { edital.id = proximoId(); editaisCustom.push(edital); }
+            salvarCustom();
+            closeModal($('gerenciarModal'));
+            showNotification(idx >= 0 ? '✏️ Edital atualizado' : '➕ Edital cadastrado');
+            openEdital(edital.id);
+        }
+
+        function importarJSON(file) {
+            const leitor = new FileReader();
+            leitor.onload = () => {
+                const report = $('geImportReport');
+                report.hidden = false;
+                let dados;
+                try { dados = JSON.parse(leitor.result); }
+                catch (_) { report.textContent = '❌ O arquivo não é um JSON válido.'; return; }
+                const itens = Array.isArray(dados) ? dados : (dados && Array.isArray(dados.editais) ? dados.editais : null);
+                if (!itens) { report.textContent = '❌ Esperava uma lista de editais ou um objeto { "editais": [...] }.'; return; }
+
+                let novos = 0, atualizados = 0, repetidos = 0;
+                const falhas = [];
+                itens.forEach((raw, i) => {
+                    const { ok, erros, edital } = normalizarEdital(raw);
+                    if (!ok) { falhas.push(`• Item ${i + 1}${edital.titulo ? ` (“${edital.titulo}”)` : ''}: faltando ou inválido — ${erros.join(', ')}`); return; }
+                    // Editais de exemplo reimportados são ignorados; mesmo id de um edital seu = atualização
+                    if (EDITAIS_BASE.some(b => b.id === edital.id && b.titulo === edital.titulo)) { repetidos++; return; }
+                    const idx = edital.id ? editaisCustom.findIndex(e => e.id === edital.id) : -1;
+                    if (idx >= 0) { editaisCustom[idx] = edital; atualizados++; }
+                    else { edital.id = proximoId(); editaisCustom.push(edital); novos++; }
+                });
+                salvarCustom();
+                report.textContent = `✅ ${plural(novos, 'edital importado', 'editais importados')}` +
+                    (atualizados ? `, ${plural(atualizados, 'atualizado', 'atualizados')}` : '') +
+                    (repetidos ? `, ${plural(repetidos, 'de exemplo ignorado', 'de exemplo ignorados')}` : '') +
+                    (falhas.length ? `\n⚠️ ${plural(falhas.length, 'item ignorado', 'itens ignorados')}:\n${falhas.join('\n')}` : '');
+                const tab = document.querySelector('#gerenciarModal [data-tab="meus"]');
+                if (tab) tab.textContent = `🗂️ Meus editais (${editaisCustom.length})`;
+            };
+            leitor.readAsText(file);
+        }
+
+        function exportJSON(escopo) {
+            const campos = ['id', 'titulo', 'instituicao', 'agencia', 'procedencia', 'tema', 'tags', 'modalidade', 'publico', 'abrangencia', 'ufs', 'moeda',
+                'valorMax', 'valorTotal', 'contrapartida', 'publicadoEm', 'abertura', 'encerramento', 'resultado', 'resumo', 'link', 'docsExtras', 'criterios'];
+            const fonte = escopo === 'meus' ? editaisCustom : [...EDITAIS_BASE, ...editaisCustom];
+            const dados = fonte.map(e => Object.fromEntries(campos.filter(c => e[c] !== undefined && e[c] !== '').map(c => [c, e[c]])));
+            downloadFile(`editais-${escopo}-${isoDe(HOJE)}.json`, JSON.stringify({ geradoEm: isoDe(HOJE), editais: dados }, null, 2), 'application/json');
+        }
+
+        function excluirEdital(id) {
+            const e = editaisCustom.find(x => x.id === id);
+            if (!e || !confirm(`Excluir o edital “${e.titulo}”? Esta ação não pode ser desfeita.`)) return;
+            editaisCustom = editaisCustom.filter(x => x.id !== id);
+            favorites = favorites.filter(f => f !== id);
+            store.set('favorites', favorites);
+            compareSet.delete(id);
+            updateCompareBar();
+            closeModal($('editalModal'));
+            salvarCustom();
+            if ($('gerenciarModal').open) openGerenciar('meus');
+            showNotification('🗑️ Edital excluído');
+        }
+
+        function resetCustom() {
+            if (!confirm(`Remover ${plural(editaisCustom.length, 'edital cadastrado', 'editais cadastrados')} por você? Os editais de exemplo continuam.`)) return;
+            const ids = new Set(editaisCustom.map(e => e.id));
+            editaisCustom = [];
+            favorites = favorites.filter(f => !ids.has(f));
+            store.set('favorites', favorites);
+            ids.forEach(id => compareSet.delete(id));
+            updateCompareBar();
+            salvarCustom();
+            openGerenciar('importar');
+            showNotification('Editais próprios removidos');
+        }
+
+        function abrirDialog(modal) {
+            if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
         }
 
         /* =====================================================================
@@ -2391,15 +3155,23 @@
             clearFilters(true);
             for (const [k, id] of Object.entries(FILTER_FIELDS)) if (params.has(k)) $(id).value = params.get(k);
             somenteFavoritos = params.get('fav') === '1';
+            somenteRecomendados = params.get('rec') === '1';
             $('toggleFavoritos').setAttribute('aria-pressed', String(somenteFavoritos));
+            $('toggleRecomendados').setAttribute('aria-pressed', String(somenteRecomendados));
+            if (params.has('view')) {
+                viewMode = params.get('view') === 'calendario' ? 'calendario' : 'lista';
+                document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === viewMode)));
+            }
         }
 
         function syncUrl(f) {
             if (!$('page-editais').classList.contains('active') || $('editalModal').open) return;
             if (!/^#edita(is|l-)|^$/.test(location.hash)) return; // outra rota já foi solicitada
             const params = new URLSearchParams();
-            for (const k of Object.keys(FILTER_FIELDS)) if (f[k] && !(k === 'ordem' && f[k] === 'prazo')) params.set(k, f[k]);
+            for (const k of Object.keys(FILTER_FIELDS)) if (f[k] && !(k === 'ordem' && (f[k] === 'prazo' || f[k] === 'compat'))) params.set(k, f[k]);
             if (f.fav) params.set('fav', '1');
+            if (f.rec) params.set('rec', '1');
+            if (viewMode === 'calendario') params.set('view', 'calendario');
             const qs = params.toString();
             history.replaceState(null, '', `#editais${qs ? '?' + qs : ''}`);
         }
@@ -2456,6 +3228,8 @@
         function refreshAll() {
             if ($('page-editais').classList.contains('active')) filterEditais(); else renderEditais(ordenar(aplicarFiltros(getFiltros()), getFiltros().ordem));
             renderDestaques();
+            renderDashboardStats();
+            renderPerfilCard();
             updateAlertBadge();
             if ($('page-agencia').classList.contains('active')) {
                 const key = location.hash.slice(1).replace('agencia-', '');
@@ -2464,15 +3238,20 @@
         }
 
         function popularSelects() {
+            // Idempotente: recria as opções preservando a seleção atual
             const addOptions = (id, pares) => {
                 const sel = $(id);
+                const atual = sel.value;
+                while (sel.options.length > 1) sel.remove(1);
                 pares.forEach(([v, t]) => sel.insertAdjacentHTML('beforeend', `<option value="${esc(v)}">${esc(t)}</option>`));
+                sel.value = pares.some(([v]) => v === atual) ? atual : '';
             };
             const areasUsadas = Object.entries(AREAS).filter(([k]) => editais.some(e => e.tema === k));
             addOptions('filterArea', areasUsadas);
             addOptions('homeFilterArea', areasUsadas);
             addOptions('filterPublico', Object.entries(PUBLICOS));
             addOptions('filterModalidade', [...new Set(editais.map(e => e.modalidade))].sort().map(m => [m, m]));
+            addOptions('filterUF', Object.entries(UFS));
         }
 
         document.addEventListener('click', ev => {
@@ -2498,6 +3277,17 @@
                 case 'clear-filters': clearFilters(); break;
                 case 'remove-filter': removeFilter(el.dataset.key); break;
                 case 'close-modal': closeModal(el.closest('dialog')); break;
+                case 'edit-perfil': openPerfil(); break;
+                case 'clear-perfil': limparPerfil(); break;
+                case 'cal-nav': navegarCalendario(Number(el.dataset.delta)); break;
+                case 'export-ics-all': downloadICS(currentEditais.map(e => e.id)); break;
+                case 'open-gerenciar': openGerenciar('novo'); break;
+                case 'ge-tab': openGerenciar(el.dataset.tab); break;
+                case 'edit-edital': closeModal($('editalModal')); openGerenciar('novo', id); break;
+                case 'delete-edital': excluirEdital(id); break;
+                case 'export-json': exportJSON(el.dataset.escopo); break;
+                case 'reset-custom': resetCustom(); break;
+                case 'print': window.print(); break;
             }
         });
 
@@ -2505,6 +3295,17 @@
             const el = ev.target;
             if (el.dataset.action === 'compare') toggleCompare(Number(el.dataset.id), el.checked, el);
             if (el.dataset.action === 'check') toggleChecklist(Number(el.dataset.id), Number(el.dataset.index), el.checked);
+            if (el.id === 'geImportFile' && el.files[0]) importarJSON(el.files[0]);
+            if (el.id === 'geAgencia' && agencias[el.value]) {
+                const a = agencias[el.value];
+                $('geInstituicao').value = a.sigla;
+                $('geProcedencia').value = a.pais.includes('Brasil') ? 'nacional' : 'internacional';
+            }
+        });
+
+        document.addEventListener('submit', ev => {
+            if (ev.target.id === 'perfilForm') { ev.preventDefault(); salvarPerfil(); }
+            if (ev.target.id === 'editalForm') { ev.preventDefault(); salvarFormEdital(); }
         });
 
         // Enter/Espaço abre o card focado (acessibilidade por teclado)
@@ -2523,7 +3324,7 @@
             popularSelects();
 
             $('searchInput').addEventListener('input', debouncedFilter);
-            ['filterStatus', 'filterPublico', 'filterArea', 'filterModalidade', 'filterProcedencia', 'filterValor', 'filterPrazo', 'sortSelect']
+            ['filterStatus', 'filterPublico', 'filterArea', 'filterModalidade', 'filterProcedencia', 'filterUF', 'filterValor', 'filterPrazo', 'sortSelect']
                 .forEach(id => $(id).addEventListener('change', filterEditais));
             document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => applyPreset(btn.dataset.preset)));
             $('toggleFavoritos').addEventListener('click', () => {
@@ -2531,6 +3332,13 @@
                 $('toggleFavoritos').setAttribute('aria-pressed', String(somenteFavoritos));
                 filterEditais();
             });
+            $('toggleRecomendados').addEventListener('click', () => {
+                somenteRecomendados = !somenteRecomendados;
+                $('toggleRecomendados').setAttribute('aria-pressed', String(somenteRecomendados));
+                if (!$('page-editais').classList.contains('active')) navigateTo('editais'); else filterEditais();
+            });
+            document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+            if (perfilAtivo()) $('sortSelect').value = 'compat';
             $('homeSearchInput').addEventListener('keydown', ev => { if (ev.key === 'Enter') searchFromHome(); });
             $('compareOpenBtn').addEventListener('click', openCompare);
             $('compareClearBtn').addEventListener('click', clearCompare);
@@ -2545,9 +3353,10 @@
             });
 
             renderDashboardStats();
+            renderPerfilCard();
             renderDestaques();
             renderProjetos();
-            renderEditais(ordenar(editais, 'prazo'));
+            renderEditais(ordenar(editais, val('sortSelect')));
             updateAlertBadge();
             updateCompareBar();
             route();
