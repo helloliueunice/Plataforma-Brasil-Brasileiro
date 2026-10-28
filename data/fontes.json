@@ -24,8 +24,8 @@
       "url": "http://legacy.finep.gov.br/chamadas-publicas/chamadaspublicas?situacao=aberta",
       "agencia": "finep",
       "filtro": "chamada|sele[cç][aã]o p[uú]blica|edital",
-      "ativo": true,
-      "observacao": "O portal novo monta a lista no navegador; usando a versão legada."
+      "ativo": false,
+      "observacao": "Pausada: o portal da Finep (novo e legado) monta a lista de chamadas no navegador, sem HTML para ler. Acompanhe manualmente em https://www.finep.gov.br/chamadas-publicas ou reative quando houver uma listagem em HTML."
     },
     {
       "id": "minc",
