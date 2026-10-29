@@ -27,4 +27,8 @@ const r = await fetch('https://api.indexnow.org/indexnow', {
     headers: { 'content-type': 'application/json; charset=utf-8' },
     body: JSON.stringify({ host: u.host, key: chave, keyLocation: `${SITE}/${chave}.txt`, urlList: urls })
 });
-console.log(`IndexNow: ${urls.length} URL(s) enviadas → HTTP ${r.status}`);
+const msg = `IndexNow: ${urls.length} URL(s) enviadas → HTTP ${r.status}${r.ok ? '' : ` ${(await r.text()).slice(0, 200)}`}`;
+console.log(msg);
+if (process.env.GITHUB_ACTIONS) console.log(`::${r.ok ? 'notice' : 'warning'} title=IndexNow::${msg.replace(/\n/g, ' ')}`);
+// 200 = recebido; 202 = recebido, chave ainda em validação (normal na primeira vez)
+if (!r.ok) process.exitCode = 1;
