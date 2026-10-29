@@ -16,12 +16,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { GUIAS, PUBLICOS_HUB } from './conteudo.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PADRAO = 'https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro';
 const cname = fs.existsSync(path.join(RAIZ, 'CNAME')) ? fs.readFileSync(path.join(RAIZ, 'CNAME'), 'utf8').trim() : '';
 const SITE = (process.env.SITE_URL || (cname ? `https://${cname}` : PADRAO)).replace(/\/+$/, '');
-const NOME = 'Fundos Brasil';
+const cfg = JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8'));
+const NOME = cfg.nome || 'Fundos Brasil';
+const REPO = 'https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro';
 
 /* ---------- Dados: reaproveita o bloco de configuração do index.html ---------- */
 const indexPath = path.join(RAIZ, 'index.html');
@@ -33,6 +36,10 @@ const ctx = vm.runInNewContext(
     indexHtml.slice(ini, fim) + '\n;({ COTACAO_REF, AREAS, PUBLICOS, UFS, REGIOES_UF, DOCS_POR_PUBLICO, DOCS_COMUNS, CRITERIOS_PADRAO, agencias, projetos, EDITAIS_BASE })'
 );
 const { COTACAO_REF, AREAS, PUBLICOS, UFS, REGIOES_UF, DOCS_POR_PUBLICO, DOCS_COMUNS, CRITERIOS_PADRAO, agencias, projetos } = ctx;
+// Glossário: o mesmo usado na plataforma (definido mais abaixo no index.html)
+const mGloss = indexHtml.match(/const GLOSSARIO = (\[[\s\S]*?\n        \]);/);
+if (!mGloss) throw new Error('GLOSSARIO não encontrado no index.html');
+const GLOSSARIO = vm.runInNewContext(mGloss[1]);
 
 const fonte = JSON.parse(fs.readFileSync(path.join(RAIZ, 'editais.json'), 'utf8'));
 const brutos = Array.isArray(fonte) ? fonte : fonte.editais || [];
@@ -56,6 +63,20 @@ const corta = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/
 const hoje = new Date().toISOString().slice(0, 10);
 const statusEm = (e, dia = hoje) => (dia < e.abertura ? 'em-breve' : dia <= e.encerramento ? 'aberto' : 'fechado');
 const ROTULO = { aberto: 'Inscrições abertas', 'em-breve': 'Em breve', fechado: 'Encerrado' };
+const mesAno = new Date(`${hoje}T12:00:00`).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' }).replace(/^./, c => c.toUpperCase());
+const patrocinado = e => !!e.patrocinado && (!e.patrocinioAte || e.patrocinioAte >= hoje) && statusEm(e) !== 'fechado';
+// Imagem de prévia própria do edital (gerada por scripts/gerar-imagens.mjs), se existir
+const ogDoEdital = e => { const f = `assets/og/edital-${e.id}.jpg`; return fs.existsSync(path.join(RAIZ, f)) ? `${SITE}/${f}` : null; };
+
+/* ---------- Medição e verificação (data/site.json) ---------- */
+const headExtras = () => [
+    cfg.googleVerificacao ? `<meta name="google-site-verification" content="${esc(cfg.googleVerificacao)}">` : '',
+    cfg.bingVerificacao ? `<meta name="msvalidate.01" content="${esc(cfg.bingVerificacao)}">` : '',
+    cfg.analytics?.goatcounter ? `<script data-goatcounter="https://${esc(cfg.analytics.goatcounter)}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>` : '',
+    cfg.analytics?.ga4 ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${esc(cfg.analytics.ga4)}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${esc(cfg.analytics.ga4)}');</script>` : ''
+].filter(Boolean).join('\n    ');
+// Eventos do funil: qualquer elemento com data-evento conta um clique
+const SCRIPT_EVENTOS = `document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;var n=a.getAttribute('data-evento');try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}});`;
 
 /* ---------- Validação ---------- */
 const avisos = [];
@@ -90,7 +111,7 @@ const ordemPrazo = (a, b) => {
 /* ---------- Layout ---------- */
 const OG_IMG = `${SITE}/assets/og-image.jpg`;
 
-function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, ativo = '' }) {
+function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, ativo = '', robots = '', ogImagem = '' }) {
     return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -98,6 +119,7 @@ function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${esc(titulo)}</title>
     <meta name="description" content="${esc(descricao)}">
+    ${robots ? `<meta name="robots" content="${robots}">` : ''}
     <link rel="canonical" href="${esc(url)}">
     <meta name="theme-color" content="#1351B4">
     <meta property="og:type" content="${tipo}">
@@ -106,13 +128,15 @@ function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, 
     <meta property="og:title" content="${esc(titulo)}">
     <meta property="og:description" content="${esc(descricao)}">
     <meta property="og:url" content="${esc(url)}">
-    <meta property="og:image" content="${OG_IMG}">
+    <meta property="og:image" content="${ogImagem || OG_IMG}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="${NOME} — editais e fundos de financiamento">
+    <meta property="og:image:alt" content="${ogImagem ? esc(titulo) : `${NOME} — editais e fundos de financiamento`}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="${rel}assets/paginas.css">
+    <link rel="alternate" type="application/rss+xml" title="${NOME} — novos editais" href="${SITE}/feed.xml">
+    ${headExtras()}
     ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>` : ''}
 </head>
 <body>
@@ -121,9 +145,10 @@ function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, 
         <a class="marca" href="${rel}"><span aria-hidden="true">🇧🇷</span> ${NOME}</a>
         <nav aria-label="Navegação principal">
             <a href="${rel}editais/"${ativo === 'editais' ? ' aria-current="page"' : ''}>Editais</a>
+            <a href="${rel}prazos/">Prazos</a>
+            <a href="${rel}guias/"${ativo === 'guias' ? ' aria-current="page"' : ''}>Guias</a>
             <a href="${rel}instituicoes/"${ativo === 'instituicoes' ? ' aria-current="page"' : ''}>Instituições</a>
-            <a href="${rel}#propostas">Minhas propostas</a>
-            <a class="btn primario pequeno" href="${rel}#editais">Abrir a plataforma</a>
+            <a class="btn primario pequeno" href="${rel}#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
         </nav>
     </header>
     <main id="conteudo" class="pagina">
@@ -131,7 +156,9 @@ ${corpo}
     </main>
     <footer class="rodape">
         <p><strong>${NOME}</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
-        <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}#ajuda">Ajuda e glossário</a></p>
+        <nav class="rodape-links" aria-label="Editais por perfil">${Object.values(PUBLICOS_HUB).map(h => `<a href="${rel}para/${h.slug}/">${esc(h.titulo.replace('Editais abertos ', 'Editais ').replace('Editais e programas abertos ', 'Programas '))}</a>`).join(' · ')}</nav>
+        <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}prazos/">Prazos</a> · <a href="${rel}guias/">Guias</a> · <a href="${rel}glossario/">Glossário</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}sugerir-edital/">Sugerir edital</a> · <a href="${rel}parcerias/">Parcerias</a> · <a href="${rel}feed.xml">RSS</a></p>
+        <p>${cfg.boletim?.url ? `<a class="btn pequeno primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">📬 Receber novos editais</a> ` : ''}${cfg.whatsappCanal ? `<a class="btn pequeno whats" href="${esc(cfg.whatsappCanal)}" target="_blank" rel="noopener" data-evento="canal-whatsapp">📲 Canal no WhatsApp</a> ` : ''}${cfg.apoio?.url ? `<a class="btn pequeno" href="${esc(cfg.apoio.url)}" target="_blank" rel="noopener" data-evento="apoio">💚 ${esc(cfg.apoio.texto || 'Apoie')}</a>` : ''}</p>
         <p class="nota">${demonstrativo ? 'Dados demonstrativos. ' : ''}Informações de ${data(geradoEm)}. Confirme sempre no edital oficial da instituição.</p>
     </footer>
     <script>
@@ -147,6 +174,7 @@ ${corpo}
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();
+    ${SCRIPT_EVENTOS}
     </script>
 </body>
 </html>
@@ -161,7 +189,7 @@ const publicoTxt = e => e.publico.map(p => PUBLICOS[p] || p).join(', ');
 
 function cartao(e, rel) {
     return `<li class="cartao">
-            <div class="selos">${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span></div>
+            <div class="selos">${patrocinado(e) ? '<span class="selo patrocinado">⭐ Patrocinado</span> ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span></div>
             <h3><a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a></h3>
             <p>${esc(e.instituicao)} · <strong>${valorTxt(e)}</strong>${temValor(e) ? ' por proposta' : ''} · ${esc(publicoTxt(e))}</p>
             <p class="nota">Inscrições: ${data(e.abertura)} a ${data(e.encerramento)} · ${esc(e.abrangencia)}</p>
@@ -175,7 +203,7 @@ function escrever(rota, html) {
 }
 
 // Remove páginas geradas anteriormente (editais renomeados ou removidos)
-for (const dir of ['editais', 'instituicoes']) fs.rmSync(path.join(RAIZ, dir), { recursive: true, force: true });
+for (const dir of ['editais', 'instituicoes', 'para', 'area', 'prazos', 'glossario', 'guias', 'parcerias', 'sugerir-edital']) fs.rmSync(path.join(RAIZ, dir), { recursive: true, force: true });
 
 /* ---------- Página de cada edital ---------- */
 for (const e of editais) {
@@ -209,22 +237,22 @@ for (const e of editais) {
 
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(e.titulo)}</span></nav>
-        <div class="selos">${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? '🌍 Internacional' : '🇧🇷 Nacional'}</span></div>
+        <div class="selos">${patrocinado(e) ? '<span class="selo patrocinado">⭐ Patrocinado</span> ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? '🌍 Internacional' : '🇧🇷 Nacional'}</span></div>
         ${e.numero ? `<p class="numero">${esc(e.numero)}</p>` : ''}
         <h1>${esc(e.titulo)}</h1>
         <p class="sub">${ag ? `<a href="${rel}instituicoes/${e.agencia}/">${esc(e.instituicao)}</a>` : esc(e.instituicao)} · ${esc(area)} · ${esc(e.abrangencia)}</p>
 
         <div class="acoes">
-            <a class="btn primario" href="${rel}#edital-${e.id}">📋 Acompanhar e ver o checklist</a>
-            ${e.link ? `<a class="btn" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer">🔗 Edital oficial</a>` : ''}
-            <a class="btn whats" href="https://wa.me/?text=${encodeURIComponent(textoWhats)}" target="_blank" rel="noopener noreferrer">📲 Enviar no WhatsApp</a>
+            <a class="btn primario" href="${rel}#edital-${e.id}" data-evento="edital-acompanhar">📋 Acompanhar e ver o checklist</a>
+            ${e.link ? `<a class="btn" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial">🔗 Edital oficial</a>` : ''}
+            <a class="btn whats" href="https://wa.me/?text=${encodeURIComponent(textoWhats)}" target="_blank" rel="noopener noreferrer" data-evento="edital-whatsapp">📲 Enviar no WhatsApp</a>
         </div>
 
         <dl class="fatos">
             <div><dt>Valor por proposta</dt><dd>${valorTxt(e)}</dd></div>
             <div><dt>Valor total do edital</dt><dd>${e.valorTotal > 0 ? valor(e.valorTotal, e.moeda) : 'Não informado'}</dd></div>
             <div><dt>Prazo final</dt><dd>${data(e.encerramento)}</dd></div>
-            <div><dt>Quem pode participar</dt><dd>${esc(publicoTxt(e))}</dd></div>
+            <div><dt>Quem pode participar</dt><dd>${e.publico.map(p => PUBLICOS_HUB[p] ? `<a href="${rel}para/${PUBLICOS_HUB[p].slug}/">${esc(PUBLICOS[p] || p)}</a>` : esc(PUBLICOS[p] || p)).join(', ')}</dd></div>
             <div><dt>Contrapartida</dt><dd>${esc(e.contrapartida)}</dd></div>
             <div><dt>Abrangência</dt><dd>${esc(e.abrangencia)}${ufs && ufs.length > 1 ? `<br><small>${ufs.join(', ')}</small>` : ''}</dd></div>
         </dl>
@@ -248,9 +276,11 @@ for (const e of editais) {
 
         <aside class="aviso">${demonstrativo ? 'ℹ️ <strong>Dados demonstrativos.</strong> ' : ''}Informações de ${data(geradoEm)}. Antes de submeter, confirme datas, valores e requisitos no edital oficial publicado pela instituição.</aside>
 
+        <section><h2>Como se preparar</h2><ul class="lista">${GUIAS.slice(0, 3).map(g => `<li><a href="${rel}guias/${g.slug}/">${esc(g.titulo)}</a></li>`).join('')}</ul></section>
+
         ${relacionados.length ? `<section><h2>Editais relacionados</h2><ul class="cartoes">${relacionados.map(x => cartao(x, rel)).join('')}</ul></section>` : ''}`;
 
-    escrever(`editais/${slugEdital(e)}/index.html`, layout({ rel, titulo, descricao, url, tipo: 'article', jsonld, corpo, ativo: 'editais' }));
+    escrever(`editais/${slugEdital(e)}/index.html`, layout({ rel, titulo, descricao, url, tipo: 'article', jsonld, corpo, ativo: 'editais', ogImagem: ogDoEdital(e) }));
 }
 
 /* ---------- Lista de editais ---------- */
@@ -262,7 +292,8 @@ for (const e of editais) {
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Editais</span></nav>
         <h1>Editais e chamadas públicas</h1>
         <p class="sub">${plural(editais.length, 'edital', 'editais')} de ${new Set(editais.map(e => e.instituicao)).size} instituições · ${plural(abertos, 'com inscrições abertas', 'com inscrições abertas')}</p>
-        <div class="acoes"><a class="btn primario" href="${rel}#editais">🎯 Filtrar pelo meu perfil na plataforma</a></div>
+        <div class="acoes"><a class="btn primario" href="${rel}#editais" data-evento="lista-plataforma">🎯 Filtrar pelo meu perfil na plataforma</a> <a class="btn" href="${rel}prazos/">⏳ Ver por prazo</a></div>
+        <p class="atalhos">${Object.values(PUBLICOS_HUB).map(h => `<a href="${rel}para/${h.slug}/">${esc(h.titulo.replace('Editais abertos ', '').replace('Editais e programas abertos ', ''))}</a>`).join('')}</p>
         ${grupos.map(([st, l]) => `<section><h2>${ROTULO[st]} (${l.length})</h2><ul class="cartoes">${l.map(e => cartao(e, rel)).join('')}</ul></section>`).join('')}`;
     const itemList = { '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: editais.sort(ordemPrazo).map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/editais/${slugEdital(e)}/`, name: e.titulo })) };
     escrever('editais/index.html', layout({
@@ -322,6 +353,228 @@ for (const [k, a] of Object.entries(agencias)) {
     }));
 }
 
+/* ---------- Páginas por público, área e prazo (alvos de busca) ---------- */
+// Só vai para o índice dos buscadores a página com conteúdo suficiente; as demais existem, mas com noindex
+const MIN_INDEXAVEL = 2;
+const vigentes = l => l.filter(e => statusEm(e) !== 'fechado').sort(ordemPrazo);
+const urlsExtras = [];
+const linkGuias = rel => `<ul class="lista">${GUIAS.map(g => `<li><a href="${rel}guias/${g.slug}/">${esc(g.titulo)}</a></li>`).join('')}</ul>`;
+const blocoVazio = rel => `<div class="aviso">Nenhuma chamada aberta para este perfil no momento. O monitor verifica as fontes oficiais todos os dias.
+    <div class="acoes" style="margin:12px 0 0;">
+        ${cfg.boletim?.url ? `<a class="btn primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">📬 Receber novos editais</a>` : `<a class="btn primario" href="${rel}feed.xml" data-evento="feed">📬 Assinar o feed de editais</a>`}
+        <a class="btn" href="${rel}sugerir-edital/">➕ Sugerir um edital</a>
+    </div></div>`;
+
+for (const [pub, h] of Object.entries(PUBLICOS_HUB)) {
+    const rel = '../../';
+    const lista = vigentes(editais.filter(e => e.publico.includes(pub)));
+    const url = `${SITE}/para/${h.slug}/`;
+    const indexavel = lista.length >= MIN_INDEXAVEL;
+    if (indexavel) urlsExtras.push([url, 'daily', '0.8']);
+    const docs = [...(DOCS_POR_PUBLICO[pub] || []), ...DOCS_COMUNS];
+    const abertos = lista.filter(e => statusEm(e) === 'aberto').length;
+    escrever(`para/${h.slug}/index.html`, layout({
+        rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow',
+        titulo: `${h.titulo} (${mesAno}) | ${NOME}`,
+        descricao: corta(`${lista.length ? `${plural(abertos, 'chamada aberta', 'chamadas abertas')} agora. ` : ''}${h.descricao}`, 158),
+        jsonld: lista.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: h.h1, itemListElement: lista.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/editais/${slugEdital(e)}/`, name: e.titulo })) } : null,
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(h.titulo.replace('Editais abertos ', '').replace('Editais e programas abertos ', ''))}</span></nav>
+        <h1>${esc(h.h1)}</h1>
+        <p class="sub">${lista.length ? `${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} · atualizado em ${data(geradoEm)}` : `Atualizado em ${data(geradoEm)}`}</p>
+        <div class="acoes"><a class="btn primario" href="${rel}#editais?publico=${pub}" data-evento="hub-plataforma">🎯 Ver compatibilidade com o meu perfil</a></div>
+        ${lista.length ? `<section><h2>Chamadas abertas e previstas</h2><ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul></section>` : blocoVazio(rel)}
+        <section><h2>Como funciona</h2>${h.intro.replace(/\{raiz\}/g, rel)}</section>
+        <section><h2>Dicas rápidas</h2><ul class="lista">${h.dicas.map(d => `<li>${esc(d)}</li>`).join('')}</ul></section>
+        <section><h2>Documentos que costumam ser pedidos</h2><ul class="lista">${docs.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
+            <p class="nota">Veja o <a href="${rel}guias/documentos-para-editais/">checklist completo de documentos</a>. Cada edital define a lista oficial.</p></section>
+        <section><h2>Guias</h2>${linkGuias(rel)}</section>`
+    }));
+}
+
+for (const [k, nomeArea] of Object.entries(AREAS)) {
+    const lista = vigentes(editais.filter(e => e.tema === k));
+    if (!lista.length) continue;
+    const rel = '../../';
+    const slug = slugify(nomeArea);
+    const url = `${SITE}/area/${slug}/`;
+    const indexavel = lista.length >= MIN_INDEXAVEL;
+    if (indexavel) urlsExtras.push([url, 'daily', '0.7']);
+    escrever(`area/${slug}/index.html`, layout({
+        rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow',
+        titulo: `Editais abertos de ${nomeArea} (${mesAno}) | ${NOME}`,
+        descricao: corta(`${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} em ${nomeArea}: valores, prazos, quem pode participar e documentos, conferidos nas fontes oficiais.`, 158),
+        jsonld: { '@context': 'https://schema.org', '@type': 'ItemList', name: `Editais de ${nomeArea}`, itemListElement: lista.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/editais/${slugEdital(e)}/`, name: e.titulo })) },
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(nomeArea)}</span></nav>
+        <h1>Editais abertos de ${esc(nomeArea)}</h1>
+        <p class="sub">${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} · atualizado em ${data(geradoEm)}</p>
+        <ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul>
+        <section><h2>Por perfil</h2><ul class="lista">${Object.entries(PUBLICOS_HUB).map(([p, h]) => `<li><a href="${rel}para/${h.slug}/">${esc(h.titulo)}</a></li>`).join('')}</ul></section>
+        <section><h2>Guias</h2>${linkGuias(rel)}</section>`
+    }));
+}
+
+{
+    const rel = '../';
+    const ab = editais.filter(e => statusEm(e) === 'aberto').sort((a, b) => a.encerramento.localeCompare(b.encerramento));
+    const breve = editais.filter(e => statusEm(e) === 'em-breve').sort((a, b) => a.abertura.localeCompare(b.abertura));
+    const url = `${SITE}/prazos/`;
+    if (ab.length + breve.length >= MIN_INDEXAVEL) urlsExtras.push([url, 'daily', '0.8']);
+    const linha = e => `<li><span class="data">${data(e.encerramento).slice(0, 5)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)} · ${valorTxt(e)}</span> ${selo(e)}</li>`;
+    escrever('prazos/index.html', layout({
+        rel, url, ativo: 'editais', robots: ab.length + breve.length >= MIN_INDEXAVEL ? '' : 'noindex,follow',
+        titulo: `Prazos de editais: chamadas que encerram em breve (${mesAno}) | ${NOME}`,
+        descricao: corta(`Calendário de prazos: ${plural(ab.length, 'chamada aberta', 'chamadas abertas')} em ordem de encerramento e ${plural(breve.length, 'que abre', 'que abrem')} em breve. Não perca o prazo.`, 158),
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Prazos</span></nav>
+        <h1>Prazos de editais: o que encerra primeiro</h1>
+        <p class="sub">Atualizado em ${data(geradoEm)}. Prazos com horário-limite: confira sempre o edital oficial.</p>
+        <div class="acoes"><a class="btn primario" href="${rel}#editais?view=calendario" data-evento="prazos-calendario">📆 Ver no calendário e exportar para a agenda</a></div>
+        <section><h2>Inscrições abertas, por prazo final</h2>${ab.length ? `<ul class="agenda">${ab.map(linha).join('')}</ul>` : '<p>Nenhuma chamada aberta no momento.</p>'}</section>
+        ${breve.length ? `<section><h2>Abrem em breve</h2><ul class="agenda">${breve.map(e => `<li><span class="data">${data(e.abertura).slice(0, 5)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)} · abre em ${data(e.abertura)}</span></li>`).join('')}</ul></section>` : ''}`
+    }));
+}
+
+/* ---------- Glossário ---------- */
+{
+    const rel = '../';
+    const url = `${SITE}/glossario/`;
+    urlsExtras.push([url, 'monthly', '0.6']);
+    escrever('glossario/index.html', layout({
+        rel, url, ativo: 'guias',
+        titulo: `Glossário de editais e fomento: CAUC, MROSC, ICT, contrapartida e mais | ${NOME}`,
+        descricao: 'O que significam os termos dos editais de fomento: ICT, OSC, MROSC, subvenção econômica, contrapartida, CAUC, Transferegov, CNDT, CRF, rubrica e outros.',
+        jsonld: { '@context': 'https://schema.org', '@type': 'DefinedTermSet', name: 'Glossário de editais e fomento', url, hasDefinedTerm: GLOSSARIO.map(g => ({ '@type': 'DefinedTerm', name: g.termo, description: g.def, url: `${url}#${slugify(g.termo)}` })) },
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Glossário</span></nav>
+        <h1>Glossário de editais e fomento</h1>
+        <p class="sub">Os termos que mais aparecem em editais, chamadas públicas e prestação de contas, em linguagem simples.</p>
+        <dl class="glossario">${GLOSSARIO.map(g => `<dt id="${slugify(g.termo)}">${esc(g.termo)}</dt><dd>${esc(g.def)}</dd>`).join('')}</dl>
+        <section><h2>Guias</h2>${linkGuias(rel)}</section>`
+    }));
+}
+
+/* ---------- Guias ---------- */
+{
+    const rel = '../';
+    urlsExtras.push([`${SITE}/guias/`, 'monthly', '0.7']);
+    escrever('guias/index.html', layout({
+        rel, url: `${SITE}/guias/`, ativo: 'guias',
+        titulo: `Guias para captar recursos com editais | ${NOME}`,
+        descricao: 'Guias práticos para encontrar editais, reunir documentos, escrever propostas competitivas e prestar contas de projetos financiados.',
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Guias</span></nav>
+        <h1>Guias para captar recursos com editais</h1>
+        <p class="sub">Do primeiro edital à prestação de contas.</p>
+        <ul class="cartoes">${GUIAS.map(g => `<li class="cartao"><h3><a href="${rel}guias/${g.slug}/">${esc(g.titulo)}</a></h3><p>${esc(g.descricao)}</p></li>`).join('')}
+            <li class="cartao"><h3><a href="${rel}glossario/">Glossário de editais e fomento</a></h3><p>CAUC, MROSC, ICT, contrapartida, rubrica e outros termos explicados.</p></li></ul>`
+    }));
+    for (const g of GUIAS) {
+        const relG = '../../';
+        const url = `${SITE}/guias/${g.slug}/`;
+        urlsExtras.push([url, 'monthly', '0.7']);
+        const outros = GUIAS.filter(x => x.slug !== g.slug);
+        escrever(`guias/${g.slug}/index.html`, layout({
+            rel: relG, url, tipo: 'article', ativo: 'guias',
+            titulo: `${g.titulo} | ${NOME}`, descricao: g.descricao,
+            jsonld: { '@context': 'https://schema.org', '@graph': [
+                { '@type': 'Article', headline: g.titulo, description: g.descricao, dateModified: g.atualizado, datePublished: g.atualizado, inLanguage: 'pt-BR', mainEntityOfPage: url, image: OG_IMG, author: { '@type': 'Organization', name: NOME, url: `${SITE}/` }, publisher: { '@type': 'Organization', name: NOME, url: `${SITE}/` } },
+                { '@type': 'BreadcrumbList', itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Início', item: `${SITE}/` },
+                    { '@type': 'ListItem', position: 2, name: 'Guias', item: `${SITE}/guias/` },
+                    { '@type': 'ListItem', position: 3, name: g.titulo, item: url }] }
+            ] },
+            corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${relG}">Início</a> › <a href="${relG}guias/">Guias</a> › <span aria-current="page">${esc(g.titulo)}</span></nav>
+        <article class="guia">
+            <h1>${esc(g.titulo)}</h1>
+            <p class="sub">${esc(g.descricao)}</p>
+            <p class="nota">Atualizado em ${data(g.atualizado)} · Equipe ${NOME}</p>
+            ${g.html.replace(/\{raiz\}/g, relG)}
+        </article>
+        <aside class="aviso">Este guia tem caráter informativo e não substitui o edital, o termo assinado nem a orientação jurídica ou contábil da sua instituição.</aside>
+        <section><h2>Editais abertos agora</h2><ul class="cartoes">${vigentes(editais).slice(0, 3).map(e => cartao(e, relG)).join('')}</ul>
+            <p><a href="${relG}editais/">Ver todos os editais →</a></p></section>
+        <section><h2>Outros guias</h2><ul class="lista">${outros.map(x => `<li><a href="${relG}guias/${x.slug}/">${esc(x.titulo)}</a></li>`).join('')}</ul></section>`
+        }));
+    }
+}
+
+/* ---------- Parcerias (monetização com transparência) e sugestão de edital ---------- */
+const contatoHref = cfg.contato ? (/^https?:/.test(cfg.contato) ? cfg.contato : `mailto:${cfg.contato}`) : `${REPO}/issues/new?template=parceria.yml`;
+const sugestaoHref = cfg.formularioSugestao || `${REPO}/issues/new?template=sugerir-edital.yml`;
+{
+    const rel = '../';
+    urlsExtras.push([`${SITE}/parcerias/`, 'monthly', '0.5']);
+    escrever('parcerias/index.html', layout({
+        rel, url: `${SITE}/parcerias/`, ativo: 'parcerias',
+        titulo: `Parcerias, patrocínio e divulgação de editais | ${NOME}`,
+        descricao: 'Divulgue seu edital de graça, destaque chamadas com selo de patrocínio transparente ou leve a plataforma de captação para sua instituição.',
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Parcerias</span></nav>
+        <h1>Parcerias</h1>
+        <p class="sub">O ${NOME} é gratuito para quem busca editais. Financiadores, instituições e empresas podem ampliar o alcance das suas chamadas e apoiar o projeto, sempre com regras editoriais claras.</p>
+        <ul class="cartoes">
+            <li class="cartao"><h3>📢 Publique seu edital — grátis</h3><p>Envie o link da chamada oficial. A equipe confere os dados e publica com página própria, prévia para WhatsApp e entrada no feed e nos alertas.</p><p><a class="btn pequeno primario" href="${esc(sugestaoHref)}" target="_blank" rel="noopener" data-evento="parceria-publicar">Enviar edital</a></p></li>
+            <li class="cartao"><h3>⭐ Destaque patrocinado</h3><p>Sua chamada em posição de destaque na página inicial e nas páginas do público-alvo, por tempo definido.</p></li>
+            <li class="cartao"><h3>📬 Patrocínio de conteúdo</h3><p>Apoie um guia, o boletim de editais ou uma seção temática, com crédito visível e independência editorial.</p></li>
+            <li class="cartao"><h3>🏛️ Para governos, FAPs e fundações</h3><p>Portal de captação e prestação de contas com a sua identidade, monitoramento de chamadas e painel de indicadores para municípios, secretarias e redes.</p></li>
+        </ul>
+        <section><h2>Regras do destaque patrocinado</h2>
+            <ul class="lista">
+                <li>Só chamadas reais, com inscrições abertas e conferidas na fonte oficial.</li>
+                <li>Selo <strong>“Patrocinado”</strong> sempre visível.</li>
+                <li>O patrocínio <strong>não altera</strong> a compatibilidade com o perfil, os filtros nem a ordem dos resultados de busca.</li>
+                <li>Nenhum dado pessoal de usuários é vendido ou compartilhado.</li>
+            </ul></section>
+        <div class="acoes"><a class="btn primario" href="${esc(contatoHref)}" target="_blank" rel="noopener" data-evento="parceria-contato">✉️ Falar sobre parceria</a>
+            ${cfg.apoio?.url ? `<a class="btn" href="${esc(cfg.apoio.url)}" target="_blank" rel="noopener" data-evento="apoio">💚 ${esc(cfg.apoio.texto || 'Apoie')}</a>` : ''}</div>`
+    }));
+    escrever('sugerir-edital/index.html', layout({
+        rel, url: `${SITE}/sugerir-edital/`, ativo: 'parcerias',
+        titulo: `Sugira um edital | ${NOME}`,
+        descricao: 'Conhece uma chamada pública aberta que não está aqui? Envie o link oficial: conferimos e publicamos gratuitamente.',
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Sugerir edital</span></nav>
+        <h1>Sugira um edital</h1>
+        <p class="sub">Conhece uma chamada aberta que ainda não está aqui? Envie o link do edital oficial.</p>
+        <ol class="lista">
+            <li>Envie o endereço da página ou do PDF oficial da chamada.</li>
+            <li>A IA extrai os dados e um revisor confere tudo no documento oficial.</li>
+            <li>Aprovado, o edital ganha página própria, entra no feed e nos alertas, e você recebe o link.</li>
+        </ol>
+        <div class="acoes"><a class="btn primario" href="${esc(sugestaoHref)}" target="_blank" rel="noopener" data-evento="sugerir-edital">➕ Enviar edital</a></div>
+        <p class="nota">Publicamos somente chamadas de fomento com inscrições abertas ou previstas: auxílios, bolsas, subvenção, termos de fomento e prêmios. Não divulgamos licitações de compra nem concursos de emprego.</p>`
+    }));
+}
+
+/* ---------- Feed RSS ---------- */
+{
+    const itens = [...editais].filter(e => statusEm(e) !== 'fechado').sort((a, b) => (b.publicadoEm || '').localeCompare(a.publicadoEm || ''));
+    const rfc = iso => new Date(`${iso}T12:00:00-03:00`).toUTCString();
+    escrever('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>${esc(NOME)} — novos editais</title>
+  <link>${SITE}/</link>
+  <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>${esc(cfg.descricaoCurta || 'Editais abertos de fomento no Brasil')}</description>
+  <language>pt-BR</language>
+  <lastBuildDate>${rfc(geradoEm)}</lastBuildDate>
+${itens.map(e => `  <item>
+    <title>${esc(e.titulo)} — ${esc(e.instituicao)}</title>
+    <link>${SITE}/editais/${slugEdital(e)}/</link>
+    <guid isPermaLink="true">${SITE}/editais/${slugEdital(e)}/</guid>
+    <pubDate>${rfc(e.publicadoEm || e.abertura)}</pubDate>
+    <category>${esc(AREAS[e.tema] || e.tema)}</category>
+    <description>${esc(`${e.numero ? e.numero + '. ' : ''}${valorTxt(e)}${temValor(e) ? ' por proposta' : ''} · ${publicoTxt(e)} · inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`)}</description>
+  </item>`).join('\n')}
+</channel>
+</rss>
+`);
+}
+
 /* ---------- 404, sitemap, robots ---------- */
 escrever('404.html', layout({
     rel: `${new URL(SITE).pathname.replace(/\/?$/, '/')}`, url: `${SITE}/`, titulo: `Página não encontrada | ${NOME}`, descricao: 'Esta página não existe ou foi removida.',
@@ -334,7 +587,8 @@ const urls = [
     [`${SITE}/editais/`, 'daily', '0.9'],
     ...editais.map(e => [`${SITE}/editais/${slugEdital(e)}/`, 'weekly', statusEm(e) === 'fechado' ? '0.4' : '0.8']),
     [`${SITE}/instituicoes/`, 'weekly', '0.6'],
-    ...Object.keys(agencias).map(k => [`${SITE}/instituicoes/${k}/`, 'weekly', '0.6'])
+    ...Object.keys(agencias).map(k => [`${SITE}/instituicoes/${k}/`, 'weekly', '0.6']),
+    ...urlsExtras
 ];
 escrever('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -374,10 +628,30 @@ const seoHome = `<!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: NOME, url: `${SITE}/`, inLanguage: 'pt-BR' })}</script>
+    <link rel="alternate" type="application/rss+xml" title="${NOME} — novos editais" href="${SITE}/feed.xml">
+    ${headExtras()}
+    <script>window.SITE_CFG = ${JSON.stringify({ apoio: cfg.apoio?.url ? cfg.apoio : null, boletim: cfg.boletim?.url || '', whatsappCanal: cfg.whatsappCanal || '', sugestao: sugestaoHref, contato: contatoHref }).replace(/</g, '\\u003c')};</script>
+    <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [
+        { '@type': 'WebSite', name: NOME, url: `${SITE}/`, inLanguage: 'pt-BR', description: cfg.descricaoCurta },
+        { '@type': 'Organization', name: NOME, url: `${SITE}/`, logo: `${SITE}/assets/favicon.svg` }] })}</script>
     <!-- seo:fim -->`;
 const reSeo = /<!-- seo:inicio[\s\S]*?<!-- seo:fim -->/;
 indexHtml = reSeo.test(indexHtml) ? indexHtml.replace(reSeo, seoHome) : indexHtml.replace('</title>', `</title>\n    ${seoHome}`);
+// Bloco visível e rastreável na página inicial: links diretos para editais, perfis e guias
+{
+    const reLista = /<!-- lista-seo:inicio -->[\s\S]*?<!-- lista-seo:fim -->/;
+    const vig = vigentes(editais);
+    const bloco = `<!-- lista-seo:inicio -->
+    <section class="seo-links" aria-labelledby="seoLinksTitulo">
+        <h2 id="seoLinksTitulo">Editais abertos agora</h2>
+        <ul>${vig.map(e => `<li><a href="editais/${slugEdital(e)}/">${esc(e.titulo)}</a> — ${esc(e.instituicao)}, até ${data(e.encerramento)}</li>`).join('')}</ul>
+        <p><strong>Por perfil:</strong> ${Object.values(PUBLICOS_HUB).map(h => `<a href="para/${h.slug}/">${esc(h.titulo)}</a>`).join(' · ')}</p>
+        <p><strong>Guias:</strong> ${GUIAS.map(g => `<a href="guias/${g.slug}/">${esc(g.titulo)}</a>`).join(' · ')} · <a href="glossario/">Glossário</a> · <a href="prazos/">Prazos</a></p>
+    </section>
+    <!-- lista-seo:fim -->`;
+    if (!reLista.test(indexHtml)) throw new Error('Marcadores <!-- lista-seo --> não encontrados no index.html');
+    indexHtml = indexHtml.replace(reLista, () => bloco);
+}
 fs.writeFileSync(indexPath, indexHtml);
 
 avisos.forEach(a => console.warn('⚠️ ', a));

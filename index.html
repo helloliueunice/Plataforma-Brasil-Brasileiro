@@ -19,12 +19,17 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR"}</script>
+    <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
+    
+    <script>window.SITE_CFG = {"apoio":null,"boletim":"","whatsappCanal":"","sugestao":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=sugerir-edital.yml","contato":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=parceria.yml"};</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR","description":"Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil."},{"@type":"Organization","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","logo":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/favicon.svg"}]}</script>
     <!-- seo:fim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         /* ESTILOS EXISTENTES MANTIDOS */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1545,6 +1550,13 @@
         .valor-nota { font-size: 13px; background: var(--light); border-radius: 8px; padding: 8px 12px; margin-top: 10px; }
         .site-footer { text-align: center; padding: 24px 16px 40px; font-size: 14px; display: grid; gap: 6px; border-top: 1px solid #E5E5E5; background: var(--white); }
         .site-footer a { color: var(--primary); font-weight: 600; }
+        .seo-links { max-width: 1100px; margin: 0 auto 12px; text-align: left; font-size: 14px; }
+        .seo-links h2 { font-size: 16px; color: var(--primary-dark); margin-bottom: 6px; }
+        .seo-links ul { margin: 0 0 8px 18px; display: grid; gap: 2px; }
+        .seo-links p { margin-top: 4px; }
+        .canais { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 8px; }
+        .canais:empty { display: none; }
+        .badge-patrocinado { background: #FFF3C4; color: #6B5200; border: 1px solid var(--warning-dark); }
         .span-2 { grid-column: span 2; }
         @media (max-width: 768px) { .span-2 { grid-column: auto; } .badge { white-space: normal; max-width: 100%; } }
     </style>
@@ -1855,6 +1867,8 @@
                             <button data-action="export-csv">⬇️ Exportar resultados (CSV)</button>
                             <button data-action="export-ics-all">📅 Prazos dos resultados na agenda (.ics)</button>
                             <button data-action="open-gerenciar">⚙️ Gerenciar editais (cadastrar / importar)</button>
+                            <a href="sugerir-edital/">➕ Sugerir um edital para todos</a>
+                            <a href="prazos/">⏳ Página de prazos</a>
                         </div>
                     </details>
                     <button class="btn btn-secondary btn-small" data-action="clear-filters">🔄 Limpar filtros</button>
@@ -2105,10 +2119,24 @@
     </main>
 
     <footer class="site-footer">
+    <!-- lista-seo:inicio -->
+    <section class="seo-links" aria-labelledby="seoLinksTitulo">
+        <h2 id="seoLinksTitulo">Editais abertos agora</h2>
+        <ul><li><a href="editais/pipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/">PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)</a> — FAPESP, até 12/11/2026</li><li><a href="editais/jovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/">Jovens Pesquisadores – chamada para pesquisadores no exterior</a> — FAPESP, até 19/11/2026</li><li><a href="editais/auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/">Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)</a> — CNPq, até 04/12/2026</li><li><a href="editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/">Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)</a> — CNPq, até 11/12/2026</li><li><a href="editais/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/">Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)</a> — CNPq, até 07/01/2027</li><li><a href="editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/">PRONINC 2026 – Tecnologias e inovação social para a economia solidária</a> — FINEP, até 14/01/2027</li><li><a href="editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/">Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital</a> — CNPq, até 31/03/2027</li><li><a href="editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/">Plataformas digitais baseadas em software livre e protocolos abertos</a> — FAPESP, até 22/02/2027</li></ul>
+        <p><strong>Por perfil:</strong> <a href="para/pesquisadores/">Editais abertos para pesquisadores</a> · <a href="para/universidades-e-icts/">Editais abertos para universidades e ICTs</a> · <a href="para/empresas-e-startups/">Editais abertos para empresas e startups</a> · <a href="para/oscs-e-ongs/">Editais abertos para OSCs e ONGs</a> · <a href="para/municipios-e-prefeituras/">Editais e programas abertos para municípios</a> · <a href="para/governos-estaduais/">Editais e programas abertos para governos estaduais</a></p>
+        <p><strong>Guias:</strong> <a href="guias/como-encontrar-editais/">Como encontrar o edital certo para o seu projeto</a> · <a href="guias/documentos-para-editais/">Documentos para editais: checklist por tipo de proponente</a> · <a href="guias/como-escrever-proposta-edital/">Como escrever uma proposta competitiva para edital</a> · <a href="guias/prestacao-de-contas/">Prestação de contas de projetos financiados: guia prático</a> · <a href="glossario/">Glossário</a> · <a href="prazos/">Prazos</a></p>
+    </section>
+    <!-- lista-seo:fim -->
+        <div id="canais" class="canais"></div>
         <nav aria-label="Páginas para consulta">
             <a href="editais/">Todos os editais</a> ·
+            <a href="prazos/">Prazos</a> ·
+            <a href="guias/">Guias</a> ·
+            <a href="glossario/">Glossário</a> ·
             <a href="instituicoes/">Instituições financiadoras</a> ·
-            <a href="#ajuda">Ajuda e glossário</a> ·
+            <a href="sugerir-edital/">Sugerir edital</a> ·
+            <a href="parcerias/">Parcerias</a> ·
+            <a href="feed.xml">RSS</a> ·
             <a href="https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro" target="_blank" rel="noopener noreferrer">Código aberto</a>
         </nav>
         <p class="nota">Fundos Brasil — confirme sempre datas, valores e requisitos no edital oficial da instituição.</p>
@@ -2969,6 +2997,7 @@
             <article class="edital-card ${st}" data-action="details" data-id="${e.id}" tabindex="0" aria-label="Edital: ${esc(e.titulo)}, ${STATUS_LABEL[st]}">
                 <button class="favorite-btn ${fav ? 'active' : ''}" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}">${fav ? '★' : '☆'}</button>
                 <div class="edital-badges">
+                    ${patrocinioAtivo(e) ? '<span class="badge badge-patrocinado" title="Destaque patrocinado: não altera filtros, compatibilidade nem ordem dos resultados">⭐ Patrocinado</span>' : ''}
                     ${compatBadge(e)}
                     ${propostas[e.id] && !['interesse', 'preparando'].includes(propostas[e.id].etapa) ? '' : prazoBadge(e)}
                     ${propostas[e.id] ? `<span class="badge badge-neutral">${ETAPA[propostas[e.id].etapa].icone} ${ETAPA[propostas[e.id].etapa].nome}</span>` : ''}
@@ -3026,11 +3055,17 @@
             container.innerHTML = lista.map(e => editalCardHTML(e)).join('');
         }
 
+        function patrocinioAtivo(e) {
+            return !!e.patrocinado && (!e.patrocinioAte || e.patrocinioAte >= isoDe(HOJE)) && statusEdital(e) !== 'fechado';
+        }
+
         function renderDestaques() {
             const usarPerfil = perfilAtivo();
             $('destaquesTitulo').textContent = usarPerfil ? '🎯 Recomendados para você' : '🔥 Editais em Destaque';
             const candidatos = editais.filter(e => statusEdital(e) === 'aberto' && (!usarPerfil || avaliarCompat(e).elegivel));
-            const destaques = ordenar(candidatos, usarPerfil ? 'compat' : 'prazo').slice(0, 3);
+            // Um patrocinado (sinalizado) pode ocupar o primeiro lugar do destaque; o restante segue a ordem normal
+            const patro = editais.filter(e => patrocinioAtivo(e) && (!usarPerfil || avaliarCompat(e).elegivel)).slice(0, 1);
+            const destaques = [...patro, ...ordenar(candidatos.filter(e => !patro.includes(e)), usarPerfil ? 'compat' : 'prazo')].slice(0, 3);
             $('destaquesList').innerHTML = destaques.length
                 ? destaques.map(e => editalCardHTML(e, { compacto: true })).join('')
                 : `<p style="color:var(--gray-dark)">${usarPerfil ? 'Nenhum edital aberto compatível com seu perfil agora. <a href="#editais" style="color:var(--primary);font-weight:600;">Ver todos os editais</a>' : 'Nenhum edital aberto no momento.'}</p>`;
@@ -3050,6 +3085,7 @@
         function openEdital(id) {
             const e = editais.find(x => x.id === id);
             if (!e) return;
+            if (!$('editalModal').open || Number($('editalModal').dataset.id) !== id) track('edital-abrir');
             registrarVisto(e.id);
             const st = statusEdital(e);
             const fav = favorites.includes(e.id);
@@ -3187,12 +3223,14 @@
         }
 
         function whatsappEdital(id) {
+            track('edital-whatsapp');
             const e = editais.find(x => x.id === id);
             const texto = `${e.titulo} (${e.instituicao})${temValor(e) ? ` — até ${fmtValor(e.valorMax, e.moeda)} por proposta` : ''}. Inscrições até ${fmtDate(e.encerramento)}: ${linkPublico(e)}`;
             window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
         }
 
         async function shareEdital(id) {
+            track('edital-compartilhar');
             const e = editais.find(x => x.id === id);
             const url = linkPublico(e);
             if (navigator.share) {
@@ -3229,6 +3267,7 @@
         }
 
         function downloadICS(ids) {
+            track('agenda');
             const lista = (Array.isArray(ids) ? ids : [ids]).map(id => editais.find(x => x.id === id)).filter(e => e && statusEdital(e) !== 'fechado');
             if (!lista.length) { showNotification('Nenhum prazo futuro para exportar.', 'warning'); return; }
             const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Fundos Brasil//Editais//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
@@ -3240,6 +3279,7 @@
         }
 
         function exportCSV() {
+            track('exportar-csv');
             if (!currentEditais.length) { showNotification('Nenhum edital para exportar.', 'warning'); return; }
             const cols = [
                 ['Título', e => e.titulo], ['Instituição', e => e.instituicao], ['Situação', e => STATUS_LABEL[statusEdital(e)]],
@@ -3418,6 +3458,7 @@
         }
 
         function salvarPerfil() {
+            track('perfil-salvo');
             perfil = {
                 publico: val('perfilPublico'),
                 uf: val('perfilUF'),
@@ -3579,6 +3620,7 @@
             };
             for (const c of ['numero', 'valorNota', 'prazoNota']) { const v = String(r[c] || '').trim(); if (v) e[c] = v; }
             if (/^https?:\/\//i.test(String(r.fonte || ''))) e.fonte = String(r.fonte).trim();
+            if (r.patrocinado) { e.patrocinado = true; if (toISO(r.patrocinioAte)) e.patrocinioAte = toISO(r.patrocinioAte); }
             if (toISO(r.verificadoEm)) e.verificadoEm = toISO(r.verificadoEm);
             if (ufs.length) e.ufs = ufs;
             if (Array.isArray(r.criterios)) {
@@ -3827,6 +3869,23 @@
             setTimeout(() => n.remove(), acao ? 7000 : 3800);
         }
 
+        // Medição do funil (GoatCounter ou GA4, conforme data/site.json); silenciosa se não houver ferramenta
+        function track(nome) {
+            try {
+                if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'evento/' + nome, title: nome, event: true });
+                if (window.gtag) window.gtag('event', nome);
+            } catch (_) { /* medição nunca quebra a página */ }
+        }
+
+        function renderCanais() {
+            const c = window.SITE_CFG || {};
+            const b = [];
+            if (c.boletim) b.push(`<a class="btn btn-primary btn-small" href="${esc(c.boletim)}" target="_blank" rel="noopener" data-track="boletim">📬 Receber novos editais</a>`);
+            if (c.whatsappCanal) b.push(`<a class="btn btn-outline btn-small" href="${esc(c.whatsappCanal)}" target="_blank" rel="noopener" data-track="canal-whatsapp">📲 Canal no WhatsApp</a>`);
+            if (c.apoio && c.apoio.url) b.push(`<a class="btn btn-outline btn-small" href="${esc(c.apoio.url)}" target="_blank" rel="noopener" data-track="apoio">💚 ${esc(c.apoio.texto || 'Apoie')}</a>`);
+            $('canais').innerHTML = b.join('');
+        }
+
         function anunciar(msg) {
             const a = $('srAnnouncer');
             a.textContent = '';
@@ -4028,6 +4087,7 @@
         }
 
         function acompanhar(id, etapa = 'interesse', silencioso = false) {
+            track(`proposta-${etapa}`);
             const agora = new Date().toISOString();
             const atual = propostas[id];
             propostas[id] = { ...(atual || { criadoEm: agora, notas: '', protocolo: '' }), etapa, atualizadoEm: agora };
@@ -4546,6 +4606,7 @@
             store.set('prestacoes', prestacoesUser);
             store.set(`rascunho-pc-${id}`, null);
             ultimoEnvio = pc;
+            track('prestacao-enviada');
             pcDados = null;
             refreshAll();
             openPrestacao(id, 'enviado');
@@ -4973,6 +5034,8 @@
         }
 
         document.addEventListener('click', ev => {
+            const t = ev.target.closest && ev.target.closest('[data-track]');
+            if (t) track(t.dataset.track);
             // Fecha menus suspensos ao clicar fora ou ao escolher uma opção
             document.querySelectorAll('details.menu[open]').forEach(d => {
                 if (!d.contains(ev.target) || ev.target.closest('.menu-panel a, .menu-panel button')) d.removeAttribute('open');
@@ -4981,6 +5044,7 @@
             if (!el) return;
             const action = el.dataset.action;
             const id = Number(el.dataset.id);
+            if (action === 'external') track('edital-oficial');
             if (action === 'external' || action === 'compare' || action === 'check') { ev.stopPropagation(); return; }
             if (el.tagName === 'LABEL' || ev.target.closest('label.compare-check')) return;
             ev.stopPropagation();
@@ -5126,6 +5190,7 @@
             });
 
             renderUsuario();
+            renderCanais();
             renderDashboardStats();
             renderPerfilCard();
             renderDestaques();

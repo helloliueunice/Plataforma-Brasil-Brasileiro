@@ -257,9 +257,19 @@ const conhecidos = new Set(base.editais.flatMap(e => [e.link, e.fonte]).filter(B
 
 const rel = { candidatos: [], descartados: [], manuais: [], mudancas: [], falhasFonte: [], erros: [], adiados: 0 };
 
+// Sugestão avulsa (formulário "Sugerir edital"): analisa só o link enviado
+const SUGESTAO = process.argv.includes('--url') ? String(process.env.SUGESTAO_URL || '').trim() : '';
+if (process.argv.includes('--url') && !/^https?:\/\/[^\s]+$/i.test(SUGESTAO)) {
+    fs.writeFileSync(ARQ.relatorio, 'Não encontramos um link válido (começando com http:// ou https://) na sugestão. Edite a issue e informe o endereço da chamada oficial.\n');
+    if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, 'candidatos=0\nrevisar=1\n');
+    console.log('Sugestão sem link válido.');
+    process.exit(0);
+}
+
 // 1. Fontes → links novos
 const fila = [];
-for (const f of fontes) {
+if (SUGESTAO) fila.push({ url: SUGESTAO, texto: 'Sugestão enviada pelo formulário', fonteId: 'sugestao', fonteNome: 'Sugestão de usuário' });
+for (const f of (SUGESTAO ? [] : fontes)) {
     try {
         const pg = await baixar(f.url);
         if (pg.tipo !== 'html') throw new Error('a fonte não é uma página HTML');
@@ -316,7 +326,7 @@ for (const item of lote) {
 }
 
 // 3. Mudanças nas páginas oficiais dos editais ainda abertos ou previstos
-for (const e of base.editais.filter(e => e.encerramento >= HOJE)) {
+for (const e of (SUGESTAO ? [] : base.editais.filter(e => e.encerramento >= HOJE))) {
     const url = e.link;
     if (!url) continue;
     try {
@@ -336,8 +346,12 @@ estado.execucoes = [{ em: HOJE, fontes: fontes.length, linksNovos: fila.length, 
 gravarJSON(ARQ.estado, estado);
 
 const linhas = [];
-linhas.push(`# Monitor de editais — ${dataBR(HOJE)}`, '');
-linhas.push(`Fontes verificadas: **${fontes.length}** · links novos: **${fila.length}**${rel.adiados ? ` (${rel.adiados} ficam para a próxima execução)` : ''} · candidatos: **${novos.length}**`, '');
+if (SUGESTAO) {
+    linhas.push(`# Análise da sugestão — ${dataBR(HOJE)}`, '', `Link analisado: ${SUGESTAO}`, '');
+} else {
+    linhas.push(`# Monitor de editais — ${dataBR(HOJE)}`, '');
+    linhas.push(`Fontes verificadas: **${fontes.length}** · links novos: **${fila.length}**${rel.adiados ? ` (${rel.adiados} ficam para a próxima execução)` : ''} · candidatos: **${novos.length}**`, '');
+}
 if (!API_KEY) linhas.push('> ⚠️ Sem `ANTHROPIC_API_KEY` configurada: os links novos estão listados para revisão manual, sem extração automática.', '');
 if (rel.candidatos.length) {
     linhas.push('## ✅ Candidatos incluídos neste pull request', '', 'Revise cada um no documento oficial antes do merge. Para corrigir, edite o `editais.json` neste branch; para descartar, apague o item.', '');
@@ -364,7 +378,11 @@ if (rel.manuais.length) {
     for (const m of rel.manuais) linhas.push(`- [ ] ${md(m.texto)} — ${m.url} _(${md(m.fonteNome)})_`);
     linhas.push('');
 }
-if (rel.descartados.length) {
+if (rel.descartados.length && SUGESTAO) {
+    linhas.push('## Não foi possível publicar automaticamente', '');
+    for (const d of rel.descartados) linhas.push(`- **Motivo:** ${md(d.motivo)}`);
+    linhas.push('', 'Publicamos chamadas de fomento com inscrições abertas ou previstas, com prazo, valor ou condições e link oficial identificáveis.', '');
+} else if (rel.descartados.length) {
     linhas.push('<details><summary>🗂️ Itens descartados automaticamente (' + rel.descartados.length + ')</summary>', '');
     for (const d of rel.descartados) linhas.push(`- ${md(d.item.texto)} — ${d.item.url}: ${md(d.motivo)}`);
     linhas.push('', '</details>', '');
@@ -375,11 +393,11 @@ if (rel.falhasFonte.length || rel.erros.length) {
     for (const f of rel.erros) linhas.push(`- ${md(f.item.texto)} (${f.item.url}): ${md(f.erro)} — será tentado de novo`);
     linhas.push('');
 }
-const temItens = rel.candidatos.length || rel.mudancas.length || rel.manuais.length || rel.falhasFonte.length || rel.erros.length;
-if (!temItens) linhas.push('Nenhuma novidade hoje.');
+const temItens = rel.candidatos.length || rel.mudancas.length || rel.manuais.length || rel.falhasFonte.length || rel.erros.length || (SUGESTAO && rel.descartados.length);
+if (!temItens) linhas.push(SUGESTAO ? 'A análise não retornou resultado.' : 'Nenhuma novidade hoje.');
 fs.writeFileSync(ARQ.relatorio, linhas.join('\n') + '\n');
 
-console.log(`Fontes: ${fontes.length} · links novos: ${fila.length} · candidatos: ${novos.length} · descartados: ${rel.descartados.length} · mudanças: ${rel.mudancas.length} · falhas: ${rel.falhasFonte.length + rel.erros.length}`);
+console.log(`${SUGESTAO ? 'Sugestão' : `Fontes: ${fontes.length}`} · links novos: ${fila.length} · candidatos: ${novos.length} · descartados: ${rel.descartados.length} · mudanças: ${rel.mudancas.length} · falhas: ${rel.falhasFonte.length + rel.erros.length}`);
 // Sinaliza ao workflow o que fazer
 if (process.env.GITHUB_OUTPUT) {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `candidatos=${novos.length}\nrevisar=${temItens ? 1 : 0}\n`);

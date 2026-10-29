@@ -1,8 +1,8 @@
 name: Gerar páginas de editais
 
-# Regenera as páginas indexáveis (editais/, instituicoes/, sitemap.xml) quando
-# os editais mudam e todo dia de manhã, para a situação "aberto/encerrado"
-# e a ordem das listas acompanharem a data.
+# Regenera as páginas indexáveis (editais, perfis, áreas, prazos, guias, glossário, feed, sitemap)
+# e as imagens de prévia quando os dados mudam e todo dia de manhã, para a situação
+# "aberto/encerrado" e a ordem das listas acompanharem a data. Depois avisa os buscadores (IndexNow).
 on:
   push:
     branches: [main]
@@ -10,10 +10,16 @@ on:
       - 'editais.json'
       - 'index.html'
       - 'scripts/**'
+      - 'data/site.json'
       - 'assets/paginas.css'
   schedule:
     - cron: '17 9 * * *' # 06h17 em Brasília
   workflow_dispatch:
+    inputs:
+      notificar_tudo:
+        description: 'Avisar os buscadores (IndexNow) sobre todas as páginas — use no lançamento ou após mudar de domínio'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,15 +33,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
+      - name: Imagens de prévia (só quando algum edital mudou)
+        run: |
+          if node scripts/gerar-imagens.mjs --verificar; then
+            echo "Imagens em dia."
+          else
+            npm install --no-save --no-package-lock playwright@1.49.1 > /dev/null
+            npx playwright install --with-deps chromium > /dev/null
+            node scripts/gerar-imagens.mjs
+          fi
+
       - name: Gerar páginas
         run: node scripts/gerar-paginas.mjs
 
       - name: Publicar alterações
+        id: publicar
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo "Nada mudou."
@@ -46,3 +65,17 @@ jobs:
           git add -A
           git commit -m "Atualiza páginas de editais ($(date -u +%Y-%m-%d))"
           git push
+          echo "alterados<<FIM" >> "$GITHUB_OUTPUT"
+          git diff --name-only HEAD~1 HEAD >> "$GITHUB_OUTPUT"
+          echo "FIM" >> "$GITHUB_OUTPUT"
+
+      - name: Avisar buscadores (IndexNow)
+        if: steps.publicar.outputs.alterados != ''
+        continue-on-error: true
+        env:
+          ALTERADOS: ${{ steps.publicar.outputs.alterados }}
+        run: node scripts/notificar-buscadores.mjs $ALTERADOS
+
+      - name: Avisar buscadores sobre todas as páginas
+        if: inputs.notificar_tudo
+        run: node scripts/notificar-buscadores.mjs $(git ls-files '*.html')

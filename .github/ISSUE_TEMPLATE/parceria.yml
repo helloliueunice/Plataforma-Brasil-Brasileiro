@@ -1,0 +1,28 @@
+name: Parceria ou patrocínio
+description: Divulgação de editais, destaque patrocinado, patrocínio de conteúdo ou plataforma para sua instituição.
+title: "Parceria: "
+labels: ["parceria"]
+body:
+  - type: input
+    id: instituicao
+    attributes:
+      label: Instituição ou empresa
+    validations:
+      required: true
+  - type: dropdown
+    id: interesse
+    attributes:
+      label: Interesse
+      multiple: true
+      options: [Destaque patrocinado de edital, Patrocínio de guia ou boletim, Plataforma para governo/FAP/fundação, Apoio institucional, Outro]
+    validations:
+      required: true
+  - type: input
+    id: contato
+    attributes:
+      label: Como prefere ser contatado
+      description: Não publique dados pessoais sensíveis. Um e-mail institucional é suficiente.
+  - type: textarea
+    id: detalhes
+    attributes:
+      label: Conte mais

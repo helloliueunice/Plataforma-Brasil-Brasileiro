@@ -100,6 +100,17 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
 
+## Crescimento, busca e sustentação
+
+O plano de lançamento, com distribuição, indicadores e monetização, está em [`docs/lancamento.md`](docs/lancamento.md). Configurações públicas ficam em [`data/site.json`](data/site.json): verificação do Search Console e do Bing, medição (GoatCounter ou GA4), link de apoio, boletim, canal no WhatsApp, formulário de sugestão e contato. Campos vazios ficam invisíveis.
+
+- **Páginas por intenção de busca** (`para/`, `area/`, `prazos/`), **guias** (`guias/`, conteúdo em `scripts/conteudo.mjs`) e **glossário** (`glossario/`). Páginas com menos de 2 chamadas ficam com `noindex` e fora do sitemap.
+- **Imagem de prévia por edital** (`assets/og/`), gerada por `scripts/gerar-imagens.mjs` só quando os dados exibidos mudam.
+- **Sugerir edital:** formulário de issue → workflow `Sugestão de edital` → IA extrai os dados → pull request para revisão → quem sugeriu é avisado.
+- **IndexNow:** `scripts/notificar-buscadores.mjs` avisa Bing e outros buscadores a cada página alterada (chave em `data/site.json` e no arquivo `<chave>.txt` da raiz).
+- **Medição do funil:** eventos `edital-abrir`, `edital-whatsapp`, `edital-oficial`, `proposta-*`, `perfil-salvo`, `agenda`, `prestacao-enviada` etc.
+- **Destaque patrocinado:** `"patrocinado": true` e `"patrocinioAte"` no edital; selo sempre visível, sem alterar filtros, compatibilidade ou ordem dos resultados.
+
 ## Páginas indexáveis (SEO) e compartilhamento
 
 A plataforma em si é uma página só; para o Google e para o WhatsApp, cada edital e cada instituição também ganham uma **página estática própria**, gerada a partir do `editais.json`:

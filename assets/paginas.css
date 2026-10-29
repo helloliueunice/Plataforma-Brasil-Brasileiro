@@ -86,3 +86,19 @@ section, .aviso { margin-top: 28px; }
 .numero { font-size: 13px; font-weight: 700; color: var(--gray-dark); margin-top: 12px; }
 .numero + h1 { margin-top: 2px; }
 .destaque { background: var(--white); border-left: 4px solid var(--primary); border-radius: 6px; padding: 10px 14px; font-size: 14px; margin-top: 12px; }
+.selo.patrocinado { background: #FFF3C4; color: #6B5200; border: 1px solid #E6B800; }
+.atalhos { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 8px; }
+.atalhos a { background: var(--white); border: 2px solid var(--primary); border-radius: 18px; padding: 4px 12px; font-size: 13px; font-weight: 700; text-decoration: none; }
+.agenda { list-style: none; display: grid; gap: 4px; }
+.agenda li { background: var(--white); border-radius: 8px; padding: 10px 12px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.agenda .data { font-weight: 800; color: var(--primary-dark); min-width: 48px; }
+.glossario { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 10px 18px; background: var(--white); border-radius: 12px; padding: 18px; }
+.glossario dt { font-weight: 800; color: var(--primary-dark); scroll-margin-top: 16px; }
+.glossario dt:target, .glossario dt:target + dd { background: #FFF8D6; }
+.guia { background: var(--white); border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+.guia h2 { margin-top: 26px; }
+.guia p, .guia li { font-size: 16px; line-height: 1.7; }
+.guia p + p { margin-top: 12px; }
+.guia ul, .guia ol { margin: 10px 0 0 22px; display: grid; gap: 6px; }
+.rodape-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; font-size: 13px; }
+@media (max-width: 640px) { .glossario { grid-template-columns: 1fr; gap: 2px; } .glossario dd { margin-bottom: 10px; } .guia { padding: 16px; } }

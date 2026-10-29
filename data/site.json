@@ -1,0 +1,25 @@
+{
+  "_leia": "Configuração pública do site. Campos vazios ficam invisíveis. Depois de editar, o site é regenerado automaticamente (workflow 'Gerar páginas de editais').",
+  "nome": "Fundos Brasil",
+  "descricaoCurta": "Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil.",
+  "googleVerificacao": "",
+  "bingVerificacao": "",
+  "analytics": {
+    "_leia": "Preencha UM: goatcounter = código do site em goatcounter.com (gratuito, sem cookies); ga4 = ID 'G-XXXX' (exige aviso de cookies).",
+    "goatcounter": "",
+    "ga4": ""
+  },
+  "apoio": {
+    "_leia": "Link para apoiar o projeto (Apoia.se, Catarse, página de Pix etc.). Vazio = botão oculto.",
+    "url": "",
+    "texto": "Apoie o Fundos Brasil"
+  },
+  "boletim": {
+    "_leia": "Link de inscrição no boletim semanal (ex.: Substack, Buttondown, Google Forms). Vazio = usa o feed RSS.",
+    "url": ""
+  },
+  "whatsappCanal": "",
+  "formularioSugestao": "",
+  "contato": "",
+  "indexnowChave": "a3f9c1e7b2d84f60925e1c7d8b4a6f13"
+}

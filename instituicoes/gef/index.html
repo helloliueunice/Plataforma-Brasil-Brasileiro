@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEF: editais e financiamento | Fundos Brasil</title>
     <meta name="description" content="GEF (Global Environment Facility): Fundo multilateral que financia projetos de biodiversidade, clima, águas internacionais e degradação do solo. Veja 0…">
+    
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/gef/">
     <meta name="theme-color" content="#1351B4">
     <meta property="og:type" content="website">
@@ -20,6 +21,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/paginas.css">
+    <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
+    
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Global Environment Facility","alternateName":"GEF","url":"https://www.thegef.org","foundingDate":"1991","address":"Washington, EUA"}</script>
 </head>
 <body>
@@ -28,9 +31,10 @@
         <a class="marca" href="../../"><span aria-hidden="true">🇧🇷</span> Fundos Brasil</a>
         <nav aria-label="Navegação principal">
             <a href="../../editais/">Editais</a>
+            <a href="../../prazos/">Prazos</a>
+            <a href="../../guias/">Guias</a>
             <a href="../../instituicoes/" aria-current="page">Instituições</a>
-            <a href="../../#propostas">Minhas propostas</a>
-            <a class="btn primario pequeno" href="../../#editais">Abrir a plataforma</a>
+            <a class="btn primario pequeno" href="../../#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
         </nav>
     </header>
     <main id="conteudo" class="pagina">
@@ -54,7 +58,9 @@
     </main>
     <footer class="rodape">
         <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
-        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../#ajuda">Ajuda e glossário</a></p>
+        <nav class="rodape-links" aria-label="Editais por perfil"><a href="../../para/pesquisadores/">Editais para pesquisadores</a> · <a href="../../para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="../../para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="../../para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="../../para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="../../para/governos-estaduais/">Programas para governos estaduais</a></nav>
+        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a> · <a href="../../parcerias/">Parcerias</a> · <a href="../../feed.xml">RSS</a></p>
+        <p></p>
         <p class="nota">Informações de 28/10/2026. Confirme sempre no edital oficial da instituição.</p>
     </footer>
     <script>
@@ -70,6 +76,7 @@
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();
+    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;var n=a.getAttribute('data-evento');try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}});
     </script>
 </body>
 </html>

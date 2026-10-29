@@ -1,0 +1,31 @@
+name: Sugerir edital
+description: Envie o link de uma chamada pública aberta para ser publicada no Fundos Brasil.
+title: "Sugestão de edital"
+labels: ["sugestao-edital"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado! Envie o **link oficial** da chamada (página ou PDF da instituição). A IA extrai os dados, um revisor confere no documento oficial e, se aprovado, o edital é publicado com página própria. Você recebe o link aqui.
+  - type: input
+    id: link
+    attributes:
+      label: Link oficial da chamada
+      description: Endereço da página ou do PDF publicado pela instituição financiadora.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: nome
+    attributes:
+      label: Nome da chamada (opcional)
+  - type: dropdown
+    id: perfil
+    attributes:
+      label: Quem pode participar (opcional)
+      multiple: true
+      options: [Pesquisadores, Universidades e ICTs, Empresas e startups, OSCs e ONGs, Municípios, Estados]
+  - type: textarea
+    id: obs
+    attributes:
+      label: Observações (opcional)

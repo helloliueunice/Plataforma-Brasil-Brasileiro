@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página não encontrada | Fundos Brasil</title>
     <meta name="description" content="Esta página não existe ou foi removida.">
+    
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
     <meta name="theme-color" content="#1351B4">
     <meta property="og:type" content="website">
@@ -21,6 +22,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/Plataforma-Brasil-Brasileiro/assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/Plataforma-Brasil-Brasileiro/assets/paginas.css">
+    <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
+    
     
 </head>
 <body>
@@ -29,9 +32,10 @@
         <a class="marca" href="/Plataforma-Brasil-Brasileiro/"><span aria-hidden="true">🇧🇷</span> Fundos Brasil</a>
         <nav aria-label="Navegação principal">
             <a href="/Plataforma-Brasil-Brasileiro/editais/">Editais</a>
+            <a href="/Plataforma-Brasil-Brasileiro/prazos/">Prazos</a>
+            <a href="/Plataforma-Brasil-Brasileiro/guias/">Guias</a>
             <a href="/Plataforma-Brasil-Brasileiro/instituicoes/">Instituições</a>
-            <a href="/Plataforma-Brasil-Brasileiro/#propostas">Minhas propostas</a>
-            <a class="btn primario pequeno" href="/Plataforma-Brasil-Brasileiro/#editais">Abrir a plataforma</a>
+            <a class="btn primario pequeno" href="/Plataforma-Brasil-Brasileiro/#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
         </nav>
     </header>
     <main id="conteudo" class="pagina">
@@ -40,7 +44,9 @@
     </main>
     <footer class="rodape">
         <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
-        <p><a href="/Plataforma-Brasil-Brasileiro/">Início</a> · <a href="/Plataforma-Brasil-Brasileiro/editais/">Todos os editais</a> · <a href="/Plataforma-Brasil-Brasileiro/instituicoes/">Instituições</a> · <a href="/Plataforma-Brasil-Brasileiro/#ajuda">Ajuda e glossário</a></p>
+        <nav class="rodape-links" aria-label="Editais por perfil"><a href="/Plataforma-Brasil-Brasileiro/para/pesquisadores/">Editais para pesquisadores</a> · <a href="/Plataforma-Brasil-Brasileiro/para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="/Plataforma-Brasil-Brasileiro/para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="/Plataforma-Brasil-Brasileiro/para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="/Plataforma-Brasil-Brasileiro/para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="/Plataforma-Brasil-Brasileiro/para/governos-estaduais/">Programas para governos estaduais</a></nav>
+        <p><a href="/Plataforma-Brasil-Brasileiro/">Início</a> · <a href="/Plataforma-Brasil-Brasileiro/editais/">Todos os editais</a> · <a href="/Plataforma-Brasil-Brasileiro/prazos/">Prazos</a> · <a href="/Plataforma-Brasil-Brasileiro/guias/">Guias</a> · <a href="/Plataforma-Brasil-Brasileiro/glossario/">Glossário</a> · <a href="/Plataforma-Brasil-Brasileiro/instituicoes/">Instituições</a> · <a href="/Plataforma-Brasil-Brasileiro/sugerir-edital/">Sugerir edital</a> · <a href="/Plataforma-Brasil-Brasileiro/parcerias/">Parcerias</a> · <a href="/Plataforma-Brasil-Brasileiro/feed.xml">RSS</a></p>
+        <p></p>
         <p class="nota">Informações de 28/10/2026. Confirme sempre no edital oficial da instituição.</p>
     </footer>
     <script>
@@ -56,6 +62,7 @@
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();
+    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;var n=a.getAttribute('data-evento');try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}});
     </script>
 </body>
 </html>

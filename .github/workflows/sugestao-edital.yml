@@ -1,0 +1,85 @@
+name: Sugestão de edital
+
+# Quando alguém envia um edital pelo formulário (issue com o rótulo sugestao-edital),
+# a IA extrai os dados do link e abre um pull request para revisão. Quem sugeriu é avisado na issue.
+on:
+  issues:
+    types: [opened, labeled, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: sugestao-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  analisar:
+    if: contains(github.event.issue.labels.*.name, 'sugestao-edital') && github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NUM: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Extrair o link da sugestão
+        id: link
+        # O texto da issue é de terceiros: é lido pelo Node a partir do arquivo do evento, nunca interpolado no shell
+        run: |
+          node -e '
+            const ev = JSON.parse(require("fs").readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
+            const corpo = String(ev.issue.body || "");
+            const m = corpo.match(/https?:\/\/[^\s<>()"\x27\]]+/i);
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `url=${m ? m[0].replace(/[.,;]+$/, "") : ""}\n`);
+          '
+
+      - name: Analisar com IA
+        id: monitor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODELO: ${{ vars.MODELO }}
+          SUGESTAO_URL: ${{ steps.link.outputs.url }}
+        run: node scripts/monitorar-fontes.mjs --url
+
+      - name: Abrir pull request
+        if: steps.monitor.outputs.candidatos != '0'
+        run: |
+          RAMO="sugestao/issue-$NUM"
+          cp relatorio-monitor.md /tmp/relatorio.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$RAMO"
+          node scripts/monitorar-fontes.mjs --aplicar
+          git add editais.json
+          git commit -m "Edital sugerido na issue #$NUM"
+          git push -f -u origin "$RAMO"
+          printf '\n\n---\n⚠️ Conteúdo sugerido por terceiros: confira tudo no documento oficial antes do merge.\n\nCloses #%s\n' "$NUM" >> /tmp/relatorio.md
+          PR=$(gh pr list --head "$RAMO" --json url --jq '.[0].url')
+          if [ -z "$PR" ]; then
+            PR=$(gh pr create --base main --head "$RAMO" --title "Edital sugerido (issue #$NUM)" --body-file /tmp/relatorio.md) || PR=""
+          fi
+          if [ -n "$PR" ]; then
+            gh issue comment "$NUM" --body "Obrigado! Os dados foram extraídos e estão em revisão: $PR. Quando for aprovado, o edital aparece no site e esta issue é fechada automaticamente."
+          else
+            gh issue comment "$NUM" --body-file /tmp/relatorio.md
+          fi
+
+      - name: Responder quando não houver candidato
+        if: steps.monitor.outputs.candidatos == '0'
+        run: |
+          {
+            echo "Obrigado pela sugestão! Veja o resultado da análise automática:"
+            echo
+            cat relatorio-monitor.md
+            echo
+            echo "Se algo estiver errado, edite a issue com o link correto da chamada oficial e a análise roda de novo."
+          } > /tmp/resposta.md
+          gh issue comment "$NUM" --body-file /tmp/resposta.md
