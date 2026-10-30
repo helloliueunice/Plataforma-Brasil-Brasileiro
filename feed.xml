@@ -6,7 +6,7 @@
   <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil.</description>
   <language>pt-BR</language>
-  <lastBuildDate>Wed, 28 Oct 2026 15:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 30 Oct 2026 15:00:00 GMT</lastBuildDate>
   <item>
     <title>PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1) — FAPESP</title>
     <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/</link>
@@ -14,6 +14,22 @@
     <pubDate>Wed, 21 Oct 2026 15:00:00 GMT</pubDate>
     <category>Educação e Pesquisa</category>
     <description>Chamada FAPESP nº 53/2026. até R$ 500,0 mil por proposta · Empresa / Startup · inscrições de 21/10/2026 a 12/11/2026. Apoio não reembolsável a projetos de pesquisa científica e tecnológica em tecnologias educacionais desenvolvidos por pequenas empresas (até 250 empregados) com sede ou unidade de P&amp;D no estado de São Paulo. O pesquisador responsável deve ser sócio da empresa e residir no estado durante a execução; até dois pesquisadores principais podem complementar a equipe.</description>
+  </item>
+  <item>
+    <title>BIOTA – Síntese e Transformação — FAPESP</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/biota-sintese-e-transformacao-109/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/biota-sintese-e-transformacao-109/</guid>
+    <pubDate>Tue, 20 Oct 2026 15:00:00 GMT</pubDate>
+    <category>Meio Ambiente e Sustentabilidade</category>
+    <description>Chamada FAPESP nº 57/2026. ver condições · Pesquisador(a) · inscrições de 04/11/2026 a 22/02/2027. Apoia projetos de síntese de conhecimento sobre biodiversidade (reanálise e modelagem de dados já existentes) ou de transformação (coprodução com gestores, comunidades e tomadores de decisão para subsidiar políticas socioambientais), dentro do Plano BIOTA 2030.</description>
+  </item>
+  <item>
+    <title>FAPESP e Instituto Pasteur de Montevideo – Jovem Pesquisador — FAPESP</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/fapesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/fapesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/</guid>
+    <pubDate>Tue, 20 Oct 2026 15:00:00 GMT</pubDate>
+    <category>Saúde e Bem-estar</category>
+    <description>Chamada FAPESP nº 56/2026. ver condições · Pesquisador(a) · inscrições de 04/11/2026 a 04/03/2027. Para jovens doutores com pelo menos 2 anos de pós-doutorado no exterior criarem um grupo de pesquisa em biomedicina (genômica, bioinformática, biologia molecular e celular) numa instituição paulista, em colaboração com o Instituto Pasteur de Montevideo.</description>
   </item>
   <item>
     <title>Plataformas digitais baseadas em software livre e protocolos abertos — FAPESP</title>
@@ -46,6 +62,14 @@
     <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
     <category>Educação e Pesquisa</category>
     <description>Chamada FAPESP nº 47/2026. até R$ 2,5 mi por proposta · Pesquisador(a) · inscrições de 23/09/2026 a 19/11/2026. Atrai cientistas de qualquer nacionalidade que vivem e trabalham no exterior há pelo menos dois anos após o doutorado para criar, numa instituição paulista, um laboratório e um programa de pesquisa independente e competitivo internacionalmente.</description>
+  </item>
+  <item>
+    <title>SPRINT 2026 – colaboração internacional (edição 2) — FAPESP</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/sprint-2026-colaboracao-internacional-edicao-2-111/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/sprint-2026-colaboracao-internacional-edicao-2-111/</guid>
+    <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
+    <category>Educação e Pesquisa</category>
+    <description>Chamada FAPESP nº 48/2026. até US$ 50,0 mil por proposta · Pesquisador(a) · inscrições de 21/09/2026 a 22/02/2027. Financia a internacionalização de pesquisadores paulistas em fases: mobilidade inicial para uma instituição estrangeira parceira, intercâmbio nos dois sentidos e, depois, recursos semente para formar redes de pesquisa.</description>
   </item>
   <item>
     <title>PRONINC 2026 – Tecnologias e inovação social para a economia solidária — FINEP</title>
