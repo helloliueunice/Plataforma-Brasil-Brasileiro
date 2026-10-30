@@ -17,7 +17,7 @@ const chave = cfg.indexnowChave;
 if (!chave || !fs.existsSync(path.join(RAIZ, `${chave}.txt`))) { console.log('IndexNow: chave ausente; nada a fazer.'); process.exit(0); }
 
 const urls = [...new Set(process.argv.slice(2)
-    .filter(f => /\.html$/.test(f) && !/^404\.html$/.test(f))
+    .filter(f => /\.html$/.test(f) && !/^404\.html$/.test(f) && !/(^|\/)google[0-9a-f]+\.html$/.test(f)) // ignora arquivos de verificação
     .map(f => `${SITE}/${f.replace(/(^|\/)index\.html$/, '$1')}`))].slice(0, 10000);
 if (!urls.length) { console.log('IndexNow: nenhuma página alterada.'); process.exit(0); }
 
