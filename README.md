@@ -17,7 +17,7 @@ A auditoria de usabilidade que orientou essas jornadas está em [`docs/auditoria
 
 - **Status automático** (aberto, em breve, encerrado) calculado pelas datas, com contagem regressiva e destaque para prazos em até 7 dias.
 - **Perfil do proponente**: tipo (pesquisador, ICT, empresa, OSC, município, estado), UF, áreas de interesse e valor mínimo. Cada edital recebe um percentual de compatibilidade e a explicação do porquê; tipo de proponente e UF são eliminatórios.
-- **Filtros**: busca sem acentos, situação, quem pode participar, área, modalidade, procedência, estado, valor por proposta e prazo. Os filtros ficam na URL (`#editais?status=aberto&uf=SP`), e cada edital tem link próprio (`#edital-3`).
+- **Filtros por tipologia**: chips de *quem vai propor*, *tipo de apoio* (auxílio à pesquisa, bolsas, eventos, não reembolsável/subvenção — agrupa as modalidades escritas por cada instituição), *área* e *situação*, cada um com a contagem de editais que restam se for escolhido. Em *Mais filtros*: formato de submissão (direta ou com pré-proposta; campo `preProposta`), procedência, estado, valor e prazo. Sem resultados, a página diz qual filtro remover ou, se não há oferta para o público, leva à página dele e ao formulário de sugestão. Os filtros ficam na URL (`#editais?publico=empresa&modalidade=subvencao`), e cada edital tem link próprio (`#edital-3`).
 - **Lista ou calendário** mensal com aberturas, prazos finais e resultados.
 - **Detalhes**: condições, cronograma, critérios com pesos e checklist de documentos por tipo de proponente (progresso salvo no navegador). Ficha pronta para imprimir ou salvar em PDF.
 - **Agenda**: prazo de um edital ou de todos os filtrados em `.ics`, com lembretes 7 dias e 1 dia antes.
@@ -87,6 +87,7 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | `valorMax` | sim, ou `valorNota` | número, valor máximo por proposta; `null` quando não há teto (ex.: só bolsas) |
 | `valorNota` | não | faixas, linhas e o que é financiado; obrigatório se `valorMax` for `null` |
 | `prazoNota` | não | horário limite, etapas seguintes, cadastro prévio exigido |
+| `preProposta` | não | `true` quando há pré-proposta ou consulta de elegibilidade antes da proposta completa |
 | `fonte`, `verificadoEm` | recomendado | onde a informação foi conferida e quando (`AAAA-MM-DD`) |
 | `abertura`, `encerramento` | sim | `AAAA-MM-DD` ou `DD/MM/AAAA` |
 | `link` | sim, se `agencia` não for cadastrada | URL `http(s)` do edital oficial |

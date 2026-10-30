@@ -931,6 +931,33 @@
             letter-spacing: 0.5px;
         }
 
+        /* Facetas de tipologia: chips com contagem (design system: chip-toggle + facet-count) */
+        .facetas { display: grid; gap: 12px; margin-top: 16px; }
+        .faceta { display: grid; grid-template-columns: 140px 1fr; gap: 8px 12px; align-items: start; }
+        .faceta-label { font-size: 12px; font-weight: 700; color: var(--gray-dark); text-transform: uppercase; letter-spacing: 0.5px; padding-top: 8px; }
+        .faceta-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .faceta-ajuda { font-size: 12px; color: var(--gray-dark); margin: 0; }
+        .facet-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; }
+        .facet-count { background: var(--light); color: var(--gray-dark); border-radius: 10px; padding: 0 7px; font-size: 12px; font-weight: 700; min-width: 22px; text-align: center; }
+        .facet-chip[aria-pressed="true"] .facet-count { background: rgba(255,255,255,0.25); color: var(--white); }
+        .facet-chip.vazio { border-style: dashed; color: var(--gray-dark); }
+        .facet-chip.vazio[aria-pressed="true"] { color: var(--white); }
+        .facet-chip .seu-perfil { font-size: 11px; font-weight: 700; color: var(--success); }
+        .facet-chip[aria-pressed="true"] .seu-perfil { color: var(--white); }
+        .mais-filtros { margin-top: 16px; border-top: 1px solid var(--gray); padding-top: 12px; }
+        .mais-filtros > summary { cursor: pointer; font-weight: 700; color: var(--primary); font-size: 14px; min-height: 32px; display: flex; align-items: center; gap: 8px; }
+        .mais-filtros-count { background: var(--primary); color: var(--white); border-radius: 10px; padding: 0 8px; font-size: 12px; }
+        .mais-filtros .filter-grid { margin-top: 8px; }
+        .empty-sugestoes { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 4px 0 16px; }
+        .badge-etapa { background: #FFF4CC; color: #6B5200; }
+        @media (max-width: 768px) {
+            .faceta { grid-template-columns: 1fr; gap: 6px; }
+            .faceta-label { padding-top: 0; }
+            .faceta-chips { gap: 6px; }
+            .facet-chip { padding: 4px 10px; font-size: 12.5px; min-height: 34px; gap: 4px; border-width: 1.5px; }
+            .facet-count { padding: 0 5px; min-width: 18px; font-size: 11px; }
+        }
+
         .preset-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; align-items: center; }
         .preset-row .preset-label { font-size: 12px; font-weight: 700; color: var(--gray-dark); margin-right: 4px; }
 
@@ -1780,67 +1807,86 @@
                     <input type="search" id="searchInput" placeholder="Título, instituição, tema ou palavra-chave (ex.: saude digital, amazonia)" autocomplete="off">
                 </div>
 
-                <div class="filter-grid">
-                    <div class="filter-item">
-                        <label for="filterStatus">Situação</label>
-                        <select id="filterStatus">
-                            <option value="">Todas</option>
-                            <option value="aberto">Abertos</option>
-                            <option value="em-breve">Em breve</option>
-                            <option value="fechado">Encerrados</option>
-                        </select>
+                <div class="facetas" id="facetas">
+                    <div class="faceta" role="group" aria-labelledby="facetaPublicoLabel">
+                        <span class="faceta-label" id="facetaPublicoLabel">Quem vai propor</span>
+                        <div class="faceta-chips" data-faceta="publico"></div>
                     </div>
-                    <div class="filter-item">
-                        <label for="filterPublico">Quem pode participar</label>
-                        <select id="filterPublico"><option value="">Qualquer proponente</option></select>
+                    <div class="faceta" role="group" aria-labelledby="facetaTipoLabel">
+                        <span class="faceta-label" id="facetaTipoLabel">Tipo de apoio</span>
+                        <div class="faceta-chips" data-faceta="modalidade"></div>
                     </div>
-                    <div class="filter-item">
-                        <label for="filterArea">Área</label>
-                        <select id="filterArea"><option value="">Todas as áreas</option></select>
+                    <div class="faceta" role="group" aria-labelledby="facetaAreaLabel">
+                        <span class="faceta-label" id="facetaAreaLabel">Área</span>
+                        <div class="faceta-chips" data-faceta="area"></div>
                     </div>
-                    <div class="filter-item">
-                        <label for="filterModalidade">Modalidade de apoio</label>
-                        <select id="filterModalidade"><option value="">Todas</option></select>
+                    <div class="faceta" role="group" aria-labelledby="facetaStatusLabel">
+                        <span class="faceta-label" id="facetaStatusLabel">Situação</span>
+                        <div class="faceta-chips" data-faceta="status"></div>
                     </div>
-                    <div class="filter-item">
-                        <label for="filterProcedencia">Procedência</label>
-                        <select id="filterProcedencia">
-                            <option value="">Nacional e internacional</option>
-                            <option value="nacional">Nacional</option>
-                            <option value="internacional">Internacional</option>
-                        </select>
-                    </div>
-                    <div class="filter-item">
-                        <label for="filterUF">Estado de atuação</label>
-                        <select id="filterUF"><option value="">Todo o Brasil</option></select>
-                    </div>
-                    <div class="filter-item">
-                        <label for="filterValor">Valor por proposta</label>
-                        <select id="filterValor">
-                            <option value="">Qualquer valor</option>
-                            <option value="100000">A partir de R$ 100 mil</option>
-                            <option value="500000">A partir de R$ 500 mil</option>
-                            <option value="1000000">A partir de R$ 1 milhão</option>
-                        </select>
-                    </div>
-                    <div class="filter-item">
-                        <label for="filterPrazo">Prazo de submissão</label>
-                        <select id="filterPrazo">
-                            <option value="">Qualquer prazo</option>
-                            <option value="7">Encerra em até 7 dias</option>
-                            <option value="30">Encerra em até 30 dias</option>
-                            <option value="90">Encerra em até 90 dias</option>
-                        </select>
-                    </div>
+                    <p class="faceta-ajuda">Os números mostram quantos editais você encontra ao escolher cada opção, considerando os outros filtros. Clique de novo para desmarcar.</p>
                 </div>
+
+                <!-- Estado dos filtros de tipologia (controlado pelos chips acima; mantém a URL e a busca da página inicial) -->
+                <div hidden>
+                    <select id="filterStatus" aria-hidden="true" tabindex="-1">
+                        <option value="">Todas</option>
+                        <option value="aberto">Abertos</option>
+                        <option value="em-breve">Em breve</option>
+                        <option value="fechado">Encerrados</option>
+                    </select>
+                    <select id="filterPublico" aria-hidden="true" tabindex="-1"><option value="">Qualquer proponente</option></select>
+                    <select id="filterArea" aria-hidden="true" tabindex="-1"><option value="">Todas as áreas</option></select>
+                    <select id="filterModalidade" aria-hidden="true" tabindex="-1"><option value="">Todos os tipos</option></select>
+                </div>
+
+                <details class="mais-filtros" id="maisFiltros">
+                    <summary>Mais filtros <span class="mais-filtros-count" id="maisFiltrosCount" hidden></span></summary>
+                    <div class="filter-grid">
+                        <div class="filter-item">
+                            <label for="filterFormato">Formato de submissão</label>
+                            <select id="filterFormato">
+                                <option value="">Qualquer formato</option>
+                                <option value="direta">Proposta direta</option>
+                                <option value="pre-proposta">Com pré-proposta ou consulta prévia</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="filterProcedencia">Procedência</label>
+                            <select id="filterProcedencia">
+                                <option value="">Nacional e internacional</option>
+                                <option value="nacional">Nacional</option>
+                                <option value="internacional">Internacional</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="filterUF">Estado de atuação</label>
+                            <select id="filterUF"><option value="">Todo o Brasil</option></select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="filterValor">Valor por proposta</label>
+                            <select id="filterValor">
+                                <option value="">Qualquer valor</option>
+                                <option value="100000">A partir de R$ 100 mil</option>
+                                <option value="500000">A partir de R$ 500 mil</option>
+                                <option value="1000000">A partir de R$ 1 milhão</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="filterPrazo">Prazo de submissão</label>
+                            <select id="filterPrazo">
+                                <option value="">Qualquer prazo</option>
+                                <option value="7">Encerra em até 7 dias</option>
+                                <option value="30">Encerra em até 30 dias</option>
+                                <option value="90">Encerra em até 90 dias</option>
+                            </select>
+                        </div>
+                    </div>
+                </details>
 
                 <div class="preset-row" role="group" aria-label="Atalhos de busca">
                     <span class="preset-label">Atalhos:</span>
-                    <button class="chip-toggle" data-preset="abertos" aria-pressed="false">✅ Abertos agora</button>
-                    <button class="chip-toggle" data-preset="pesquisador" aria-pressed="false">🔬 Para pesquisadores</button>
-                    <button class="chip-toggle" data-preset="empresa" aria-pressed="false">🚀 Para empresas</button>
-                    <button class="chip-toggle" data-preset="municipio" aria-pressed="false">🏙️ Para municípios</button>
-                    <button class="chip-toggle" data-preset="osc" aria-pressed="false">🤝 Para OSCs</button>
+                    <button class="chip-toggle" data-preset="urgentes" aria-pressed="false">⏳ Encerram em 30 dias</button>
                     <button class="chip-toggle" data-preset="internacional" aria-pressed="false">🌍 Internacionais</button>
                     <button class="chip-toggle" id="toggleFavoritos" aria-pressed="false">★ Meus favoritos</button>
                 </div>
@@ -2213,6 +2259,27 @@
             'Desenvolvimento': 'Desenvolvimento Social'
         };
 
+        /* Tipologias de apoio: agrupam as modalidades escritas por cada instituição */
+        const TIPOS_APOIO = {
+            pesquisa: { nome: 'Auxílio à pesquisa', icone: '🧪' },
+            bolsas: { nome: 'Bolsas', icone: '🎓' },
+            eventos: { nome: 'Eventos', icone: '🎤' },
+            subvencao: { nome: 'Não reembolsável / subvenção', icone: '💼' },
+            outros: { nome: 'Outras modalidades', icone: '📦' }
+        };
+        function tipoApoio(e) {
+            const m = norm(e.modalidade || '');
+            if (/evento/.test(m)) return 'eventos';
+            if (/reembols|subven|fomento direto|premi/.test(m)) return 'subvencao'; // antes de "bolsa": "reembolsável" contém "bolsa"
+            if (/\bbolsas?\b/.test(m)) return 'bolsas';
+            if (/pesquisa|auxilio/.test(m)) return 'pesquisa';
+            return 'outros';
+        }
+        const tipoDoFiltro = v => TIPOS_APOIO[v] ? v : tipoApoio({ modalidade: v }); // aceita links antigos com o nome da modalidade
+        const exigePreProposta = e => !!e.preProposta || /pr[eé]-?proposta|consulta (de|previa|prévia)/i.test(e.prazoNota || '');
+        const ICONE_PUBLICO = { pesquisador: '🔬', ict: '🏛️', empresa: '🚀', osc: '🤝', municipio: '🏙️', estado: '🗺️' };
+        const HUB_PUBLICO = { pesquisador: 'pesquisadores', ict: 'universidades-e-icts', empresa: 'empresas-e-startups', osc: 'oscs-e-ongs', municipio: 'municipios-e-prefeituras', estado: 'governos-estaduais' };
+
         const PUBLICOS = {
             pesquisador: 'Pesquisador(a)',
             ict: 'ICT / Universidade',
@@ -2334,6 +2401,7 @@
                 "abertura": "2026-10-21",
                 "encerramento": "2026-11-12",
                 "prazoNota": "Prazo da pré-proposta. As pré-propostas consideradas elegíveis enviam a proposta completa até 13/01/2027.",
+                "preProposta": true,
                 "resumo": "Apoio não reembolsável a projetos de pesquisa científica e tecnológica em tecnologias educacionais desenvolvidos por pequenas empresas (até 250 empregados) com sede ou unidade de P&D no estado de São Paulo. O pesquisador responsável deve ser sócio da empresa e residir no estado durante a execução; até dois pesquisadores principais podem complementar a equipe.",
                 "link": "https://fapesp.br/18434",
                 "fonte": "https://agencia.fapesp.br/programa-pesquisa-inovativa-em-pequenas-empresas-vai-apoiar-projetos-de-tecnologias-educacionais/59435",
@@ -2408,7 +2476,7 @@
                     "DT",
                     "Todas as áreas"
                 ],
-                "modalidade": "Bolsa",
+                "modalidade": "Bolsas",
                 "publico": [
                     "pesquisador"
                 ],
@@ -2713,6 +2781,7 @@
                 "encerramento": "2027-02-22",
                 "resultado": "2027-08-01",
                 "prazoNota": "Atenção: consulta de elegibilidade e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026; só quem for considerado elegível submete a proposta completa no SAGe até 22/02/2027. Uma proposta por pesquisador, em um único eixo (Síntese ou Transformação).",
+                "preProposta": true,
                 "resumo": "Apoia projetos de síntese de conhecimento sobre biodiversidade (reanálise e modelagem de dados já existentes) ou de transformação (coprodução com gestores, comunidades e tomadores de decisão para subsidiar políticas socioambientais), dentro do Plano BIOTA 2030.",
                 "link": "https://fapesp.br/18456",
                 "fonte": "https://fapesp.br/18456/chamada-de-propostas-biota-sintese-e-transformacao",
@@ -3018,15 +3087,12 @@
 
         const FILTER_FIELDS = {
             q: 'searchInput', status: 'filterStatus', publico: 'filterPublico', area: 'filterArea',
-            modalidade: 'filterModalidade', procedencia: 'filterProcedencia', uf: 'filterUF', valor: 'filterValor', prazo: 'filterPrazo', ordem: 'sortSelect'
+            modalidade: 'filterModalidade', formato: 'filterFormato', procedencia: 'filterProcedencia', uf: 'filterUF', valor: 'filterValor', prazo: 'filterPrazo', ordem: 'sortSelect'
         };
 
         const PRESETS = {
             abertos: { status: 'aberto' },
-            pesquisador: { publico: 'pesquisador' },
-            empresa: { publico: 'empresa' },
-            municipio: { publico: 'municipio' },
-            osc: { publico: 'osc' },
+            urgentes: { prazo: '30' },
             internacional: { procedencia: 'internacional' }
         };
 
@@ -3048,13 +3114,14 @@
                 const st = statusEdital(e);
                 if (termos.length) {
                     const texto = norm([e.titulo, e.instituicao, e.tema, AREAS[e.tema], e.modalidade, e.resumo, e.abrangencia,
-                        ...e.tags, ...e.publico.map(p => PUBLICOS[p])].join(' '));
+                        TIPOS_APOIO[tipoApoio(e)].nome, ...e.tags, ...e.publico.map(p => PUBLICOS[p])].join(' '));
                     if (!termos.every(t => texto.includes(t))) return false;
                 }
                 if (f.status && st !== f.status) return false;
                 if (f.publico && !e.publico.includes(f.publico)) return false;
                 if (f.area && e.tema !== f.area) return false;
-                if (f.modalidade && e.modalidade !== f.modalidade) return false;
+                if (f.modalidade && tipoApoio(e) !== tipoDoFiltro(f.modalidade)) return false;
+                if (f.formato && (f.formato === 'pre-proposta') !== exigePreProposta(e)) return false;
                 if (f.procedencia && e.procedencia !== f.procedencia) return false;
                 if (f.uf && !atendeUF(e, f.uf)) return false;
                 if (f.rec) { const c = avaliarCompat(e); if (!c || !c.elegivel || st === 'fechado') return false; }
@@ -3089,10 +3156,90 @@
         function filterEditais() {
             const f = getFiltros();
             const lista = ordenar(aplicarFiltros(f), f.ordem);
-            renderEditais(lista);
+            renderEditais(lista, f);
             renderActiveFilters(f);
             updatePresetButtons(f);
+            atualizarFacetas(f);
             syncUrl(f);
+        }
+
+        /* =====================================================================
+           FACETAS DE TIPOLOGIA (quem propõe, tipo de apoio, área, situação)
+           Cada opção mostra quantos editais ficam se ela for escolhida, mantidos os demais
+           filtros — evita becos sem saída (prevenção de erros) e mostra o tamanho da oferta.
+        ===================================================================== */
+        const ADVANCED = ['formato', 'procedencia', 'uf', 'valor', 'prazo'];
+        function opcoesFaceta(k) {
+            if (k === 'publico') return Object.keys(PUBLICOS).map(v => [v, PUBLICOS[v], ICONE_PUBLICO[v]]);
+            if (k === 'modalidade') return Object.keys(TIPOS_APOIO).filter(v => editais.some(e => tipoApoio(e) === v)).map(v => [v, TIPOS_APOIO[v].nome, TIPOS_APOIO[v].icone]);
+            if (k === 'area') return Object.entries(AREAS).filter(([v]) => editais.some(e => e.tema === v)).map(([v, t]) => [v, t, '']);
+            return [['aberto', 'Abertos', '✅'], ['em-breve', 'Em breve', '🗓️'], ['fechado', 'Encerrados', '🔒']];
+        }
+        function montarFacetas() {
+            document.querySelectorAll('.faceta-chips').forEach(box => {
+                const k = box.dataset.faceta;
+                box.innerHTML = opcoesFaceta(k).map(([v, t, ic]) =>
+                    `<button type="button" class="chip-toggle facet-chip" data-facet="${k}" data-value="${esc(v)}" aria-pressed="false">${ic ? `<span aria-hidden="true">${ic}</span>` : ''}<span class="facet-nome">${esc(t)}</span><span class="seu-perfil" hidden> · seu perfil</span><span class="facet-count"></span></button>`
+                ).join('');
+            });
+        }
+        function atualizarFacetas(f) {
+            document.querySelectorAll('.facet-chip').forEach(btn => {
+                const k = btn.dataset.facet, v = btn.dataset.value;
+                const atual = k === 'modalidade' && f[k] ? tipoDoFiltro(f[k]) : f[k];
+                const ativo = atual === v;
+                const n = aplicarFiltros({ ...f, [k]: v }).length;
+                btn.setAttribute('aria-pressed', String(ativo));
+                btn.classList.toggle('vazio', n === 0);
+                btn.querySelector('.facet-count').textContent = n;
+                const nome = btn.querySelector('.facet-nome').textContent;
+                btn.setAttribute('aria-label', `${nome}: ${plural(n, 'edital', 'editais')}${ativo ? ' (filtro ativo, clique para remover)' : ''}`);
+                btn.title = n === 0 ? 'Nenhum edital com os filtros atuais' : '';
+                const sp = btn.querySelector('.seu-perfil');
+                if (sp) sp.hidden = !(k === 'publico' && perfil && perfil.publico === v);
+            });
+            const nAv = ADVANCED.filter(k => f[k]).length;
+            $('maisFiltrosCount').hidden = !nAv;
+            $('maisFiltrosCount').textContent = nAv;
+            if (nAv) $('maisFiltros').open = true;
+        }
+        function escolherFaceta(k, v) {
+            const sel = $(FILTER_FIELDS[k]);
+            const atual = k === 'modalidade' && sel.value ? tipoDoFiltro(sel.value) : sel.value;
+            sel.value = atual === v ? '' : v;
+            if (sel.value) track(`filtro-${k}`);
+            filterEditais();
+        }
+
+        /* Sem resultados: diz o porquê e oferece a saída mais útil (recuperação de erros) */
+        function semResultadosHTML(f) {
+            const acoes = [];
+            const pub = f.publico;
+            const ofertaPub = pub ? editais.filter(e => e.publico.includes(pub) && statusEdital(e) !== 'fechado').length : 1;
+            let titulo = 'Nenhum edital encontrado';
+            let texto = 'Nenhuma chamada atende a todos os filtros ao mesmo tempo.';
+            if (pub && !ofertaPub) {
+                titulo = `Ainda não há chamadas abertas para ${PUBLICOS[pub]}`;
+                texto = 'Acompanhamos as fontes oficiais todos os dias e publicamos assim que surgir uma. Enquanto isso:';
+                acoes.push(`<a class="btn btn-primary" href="para/${HUB_PUBLICO[pub]}/">${ICONE_PUBLICO[pub]} Página de ${esc(PUBLICOS[pub])}</a>`);
+                acoes.push(`<a class="btn btn-outline" href="sugerir-edital/" data-track="sugerir-vazio">➕ Conhece um edital? Sugira</a>`);
+            } else {
+                const nomes = { q: 'a busca', status: 'a situação', publico: 'o proponente', area: 'a área', modalidade: 'o tipo de apoio', formato: 'o formato', procedencia: 'a procedência', uf: 'o estado', valor: 'o valor mínimo', prazo: 'o prazo', fav: 'os favoritos', rec: 'só compatíveis' };
+                const alternativas = Object.keys(nomes).filter(k => f[k]).map(k => {
+                    const g = { ...f, [k]: (k === 'fav' || k === 'rec') ? false : '' };
+                    return { k, n: aplicarFiltros(g).length };
+                }).filter(x => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 3);
+                if (alternativas.length) texto = 'Remova um filtro para ver resultados:';
+                alternativas.forEach(x => acoes.push(`<button class="btn btn-outline btn-small" data-action="remove-filter" data-key="${x.k}">Sem ${nomes[x.k]} → ${plural(x.n, 'edital', 'editais')}</button>`));
+            }
+            return `
+                <div class="empty-state">
+                    <div class="empty-state-icon">🔍</div>
+                    <div class="empty-state-title">${esc(titulo)}</div>
+                    <p style="margin-bottom:12px;">${texto}</p>
+                    ${acoes.length ? `<div class="empty-sugestoes">${acoes.join('')}</div>` : ''}
+                    <button class="btn btn-secondary btn-small" data-action="clear-filters">🔄 Limpar todos os filtros</button>
+                </div>`;
         }
         const debouncedFilter = debounce(filterEditais, 200);
 
@@ -3132,7 +3279,7 @@
             const labelDe = (id) => { const s = $(id); return s && s.selectedIndex > 0 ? s.options[s.selectedIndex].text : ''; };
             const chips = [];
             if (f.q) chips.push({ k: 'q', txt: `“${f.q}”` });
-            for (const k of ['status', 'publico', 'area', 'modalidade', 'procedencia', 'uf', 'valor', 'prazo']) {
+            for (const k of ['status', 'publico', 'area', 'modalidade', 'formato', 'procedencia', 'uf', 'valor', 'prazo']) {
                 if (f[k]) chips.push({ k, txt: labelDe(FILTER_FIELDS[k]) });
             }
             if (f.fav) chips.push({ k: 'fav', txt: '★ Favoritos' });
@@ -3166,7 +3313,8 @@
                     ${compatBadge(e)}
                     ${propostas[e.id] && !['interesse', 'preparando'].includes(propostas[e.id].etapa) ? '' : prazoBadge(e)}
                     ${propostas[e.id] ? `<span class="badge badge-neutral">${ETAPA[propostas[e.id].etapa].icone} ${ETAPA[propostas[e.id].etapa].nome}</span>` : ''}
-                    <span class="badge badge-neutral">${esc(e.modalidade)}</span>
+                    <span class="badge badge-neutral" title="Tipo de apoio: ${esc(TIPOS_APOIO[tipoApoio(e)].nome)}">${TIPOS_APOIO[tipoApoio(e)].icone} ${esc(e.modalidade)}</span>
+                    ${exigePreProposta(e) ? '<span class="badge badge-etapa" title="Há uma etapa antes da proposta completa: veja o prazo de cada etapa nos detalhes">📝 Pré-proposta</span>' : ''}
                     <span class="badge badge-${e.procedencia}">${e.procedencia === 'nacional' ? '🇧🇷 Nacional' : '🌍 Internacional'}</span>
                 </div>
                 <div class="edital-header">
@@ -3193,7 +3341,7 @@
             </article>`;
         }
 
-        function renderEditais(lista) {
+        function renderEditais(lista, f = getFiltros()) {
             currentEditais = lista;
             const total = editais.length;
             const abertos = lista.filter(e => statusEdital(e) === 'aberto').length;
@@ -3207,16 +3355,7 @@
             container.hidden = viewMode === 'calendario';
             $('calendarView').hidden = viewMode !== 'calendario';
             if (viewMode === 'calendario') { renderCalendario(lista); return; }
-            if (lista.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">🔍</div>
-                        <div class="empty-state-title">Nenhum edital encontrado</div>
-                        <p style="margin-bottom:16px;">Tente remover algum filtro ou buscar por um termo mais amplo.</p>
-                        <button class="btn btn-outline" data-action="clear-filters">🔄 Limpar filtros</button>
-                    </div>`;
-                return;
-            }
+            if (lista.length === 0) { container.innerHTML = semResultadosHTML(f); return; }
             container.innerHTML = lista.map(e => editalCardHTML(e)).join('');
         }
 
@@ -3785,6 +3924,7 @@
             };
             for (const c of ['numero', 'valorNota', 'prazoNota']) { const v = String(r[c] || '').trim(); if (v) e[c] = v; }
             if (/^https?:\/\//i.test(String(r.fonte || ''))) e.fonte = String(r.fonte).trim();
+            if (r.preProposta === true || r.preProposta === 'true') e.preProposta = true;
             if (r.patrocinado) { e.patrocinado = true; if (toISO(r.patrocinioAte)) e.patrocinioAte = toISO(r.patrocinioAte); }
             if (toISO(r.verificadoEm)) e.verificadoEm = toISO(r.verificadoEm);
             if (ufs.length) e.ufs = ufs;
@@ -5138,7 +5278,7 @@
 
         function setFiltrosFromParams(params) {
             clearFilters(true);
-            for (const [k, id] of Object.entries(FILTER_FIELDS)) if (params.has(k)) $(id).value = params.get(k);
+            for (const [k, id] of Object.entries(FILTER_FIELDS)) if (params.has(k)) $(id).value = k === 'modalidade' ? tipoDoFiltro(params.get(k)) : params.get(k);
             somenteFavoritos = params.get('fav') === '1';
             somenteRecomendados = params.get('rec') === '1';
             $('toggleFavoritos').setAttribute('aria-pressed', String(somenteFavoritos));
@@ -5194,7 +5334,8 @@
             addOptions('filterArea', areasUsadas);
             addOptions('homeFilterArea', areasUsadas);
             addOptions('filterPublico', Object.entries(PUBLICOS));
-            addOptions('filterModalidade', [...new Set(editais.map(e => e.modalidade))].sort().map(m => [m, m]));
+            addOptions('filterModalidade', Object.keys(TIPOS_APOIO).filter(v => editais.some(e => tipoApoio(e) === v)).map(v => [v, TIPOS_APOIO[v].nome]));
+            montarFacetas();
             addOptions('filterUF', Object.entries(UFS));
         }
 
@@ -5326,8 +5467,13 @@
             popularSelects();
 
             $('searchInput').addEventListener('input', debouncedFilter);
-            ['filterStatus', 'filterPublico', 'filterArea', 'filterModalidade', 'filterProcedencia', 'filterUF', 'filterValor', 'filterPrazo', 'sortSelect']
+            ['filterStatus', 'filterPublico', 'filterArea', 'filterModalidade', 'filterFormato', 'filterProcedencia', 'filterUF', 'filterValor', 'filterPrazo', 'sortSelect']
                 .forEach(id => $(id).addEventListener('change', filterEditais));
+            $('facetas').addEventListener('click', ev => {
+                const b = ev.target.closest('[data-facet]');
+                if (b) escolherFaceta(b.dataset.facet, b.dataset.value);
+            });
+            if (window.matchMedia && window.matchMedia('(min-width: 900px)').matches) $('maisFiltros').open = true;
             document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => applyPreset(btn.dataset.preset)));
             $('toggleFavoritos').addEventListener('click', () => {
                 somenteFavoritos = !somenteFavoritos;
