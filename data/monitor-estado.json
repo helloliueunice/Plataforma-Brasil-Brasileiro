@@ -74,6 +74,81 @@
       "em": "2026-10-29",
       "fonte": "fapesp",
       "resultado": "manual"
+    },
+    "https://fapesp.br/18291/": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18277/": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18262/": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18256/": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18255/": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18249": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18243": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18238": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18231": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18225": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18223": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18413": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18203": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18192": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
+    },
+    "https://fapesp.br/18200": {
+      "em": "2026-10-30",
+      "fonte": "fapesp",
+      "resultado": "manual"
     }
   },
   "paginas": {
@@ -111,6 +186,14 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-10-30",
+      "fontes": 5,
+      "linksNovos": 64,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 0
+    },
     {
       "em": "2026-10-29",
       "fontes": 5,
