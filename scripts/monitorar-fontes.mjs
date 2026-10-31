@@ -192,24 +192,28 @@ async function extrair(item, conteudo) {
         : [{ type: 'text', text: `Conteúdo da página (texto extraído do HTML):\n\n${textoDoHtml(conteudo.html).slice(0, 60000)}` }];
     blocos.push({ type: 'text', text: `Endereço: ${conteudo.url}\nTexto do link na página de origem: "${item.texto}"\nFonte: ${item.fonteNome}\n\nRegistre os dados desta chamada com a ferramenta registrar_edital.` });
 
+    // Modelos recentes não aceitam forçar a ferramenta (tool_choice "tool"/"any"): usamos "auto"
+    // e, se a resposta vier em texto, pedimos de novo que registre os dados com a ferramenta.
+    const mensagens = [{ role: 'user', content: blocos }];
     for (let tentativa = 1; tentativa <= 3; tentativa++) {
         const r = await fetch(API_URL, {
             method: 'POST',
             headers: { 'content-type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
             body: JSON.stringify({
-                model: MODELO, max_tokens: 4096, system: SISTEMA,
-                tools: [FERRAMENTA], tool_choice: { type: 'tool', name: FERRAMENTA.name },
-                messages: [{ role: 'user', content: blocos }]
+                model: MODELO, max_tokens: 8000, system: SISTEMA,
+                tools: [FERRAMENTA], tool_choice: { type: 'auto' },
+                messages: mensagens
             })
         });
         if (r.status === 429 || r.status >= 500) { await new Promise(ok => setTimeout(ok, 4000 * tentativa)); continue; }
         if (!r.ok) throw new Error(`API ${r.status}: ${(await r.text()).slice(0, 300)}`);
         const resp = await r.json();
-        const uso = (resp.content || []).find(c => c.type === 'tool_use');
-        if (!uso) throw new Error('A IA não retornou os dados estruturados');
-        return uso.input;
+        const uso = (resp.content || []).find(c => c.type === 'tool_use' && c.name === FERRAMENTA.name);
+        if (uso) return uso.input;
+        mensagens.push({ role: 'assistant', content: resp.content && resp.content.length ? resp.content : [{ type: 'text', text: '(sem resposta)' }] });
+        mensagens.push({ role: 'user', content: [{ type: 'text', text: 'Registre agora os dados desta chamada usando a ferramenta registrar_edital (se não for chamada de fomento aberta, use eh_chamada_de_fomento=false).' }] });
     }
-    throw new Error('API indisponível após 3 tentativas');
+    throw new Error('A IA não retornou os dados estruturados');
 }
 
 /* ============================ Validação (mesmas regras do site) ============================ */
