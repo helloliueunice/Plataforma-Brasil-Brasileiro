@@ -103,7 +103,8 @@ async function baixar(url, { bytes = false } = {}, salto = 0, cookies = '') {
     } finally { clearTimeout(t); }
 }
 function destinoRedirect(html) {
-    const meta = html.match(/<meta[^>]+http-equiv=["']?refresh["']?[^>]*content=["'][^"']*url=([^"'>\s]+)/i);
+    // aceita content="0; URL='https://…'" (aspas simples dentro, como na FAPESP) e content="0;url=https://…"
+    const meta = html.match(/<meta[^>]+http-equiv=["']?refresh["']?[^>]*content=["']\s*\d*\s*;?\s*url\s*=\s*['"]?([^"'>\s]+)/i);
     if (meta) return decod(meta[1]);
     const js = html.match(/(?:window\.|document\.|top\.)?location(?:\.href)?\s*(?:=|\.replace\(|\.assign\()\s*["']([^"']+)["']/i);
     if (js) return js[1];
