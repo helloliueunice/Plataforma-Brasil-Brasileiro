@@ -456,9 +456,53 @@
     "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573": {
       "hash": "609e833030c43bfd",
       "em": "2026-10-31"
+    },
+    "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026": {
+      "hash": "a7c5abb54c1c835f",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf": {
+      "hash": "4ed717773fc583af",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf": {
+      "hash": "f50a60d221239719",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.pdf": {
+      "hash": "23c20b37c6f0cf9a",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf": {
+      "hash": "1c7a5ac292cc5169",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf": {
+      "hash": "47c104b7b416e0aa",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf": {
+      "hash": "22feaea3aed07858",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf": {
+      "hash": "932c4d5c69b559db",
+      "em": "2026-10-31"
+    },
+    "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf": {
+      "hash": "bb19315217910b8c",
+      "em": "2026-10-31"
     }
   },
   "execucoes": [
+    {
+      "em": "2026-10-31",
+      "fontes": 5,
+      "linksNovos": 0,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 0
+    },
     {
       "em": "2026-10-31",
       "fontes": 5,
