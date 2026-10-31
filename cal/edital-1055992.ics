@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:ação 214s - Rotas de Integração Nacional - Rp2 — Fundos 
+ Brasil
+NAME:ação 214s - Rotas de Integração Nacional - Rp2 — Fundos Brasil
+X-WR-CALDESC:Prazos de ação 214s - Rotas de Integração Nacional - Rp2 (
+ Ministério da Integração e do Desenvolvimento Regional). Confirme sempr
+ e no edital oficial.
+DESCRIPTION:Prazos de ação 214s - Rotas de Integração Nacional - Rp2 (M
+ inistério da Integração e do Desenvolvimento Regional). Confirme sempre
+  no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1055992-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Prazo final: ação 214s - Rotas de Integração Nacional - Rp2
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 5300020260002\nValor: ver condições\nQuem pode parti
+ cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
+ cionárias)\, pelo código 5300020260002. É preciso cadastro do proponent
+ e e\, para entes\, regularidade no CAUC.\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-214s-rotas-d
+ e-integracao-nacional-rp2-1055992/\nConfirme data e horário limite no edi
+ tal oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ cao-214s-rotas-de-integracao-nacional-rp2-1055992/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — ação 214s - Rotas de Integraç
+ ão Nacional - Rp2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — ação 214s - Rotas de Integração Na
+ cional - Rp2
+END:VALARM
+END:VEVENT
+END:VCALENDAR

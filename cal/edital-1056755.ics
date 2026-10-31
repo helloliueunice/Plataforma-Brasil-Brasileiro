@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prospera Amazônia — Fundos Brasil
+NAME:Prospera Amazônia — Fundos Brasil
+X-WR-CALDESC:Prazos de Prospera Amazônia (Ministerio do Meio Ambiente). Co
+ nfirme sempre no edital oficial.
+DESCRIPTION:Prazos de Prospera Amazônia (Ministerio do Meio Ambiente). Con
+ firme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056755-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Prazo final: Prospera Amazônia
+DESCRIPTION:Ministerio do Meio Ambiente · Programa Transferegov 4400020260
+ 013\nValor: ver condições\nQuem pode participar: OSC / Cooperativa\nProp
+ osta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo códi
+ go 4400020260013. É preciso cadastro do proponente e\, para entes\, regul
+ aridade no CAUC.\nPágina do edital: https://helloliueunice.github.io/Plat
+ aforma-Brasil-Brasileiro/editais/prospera-amazonia-1056755/\nConfirme data
+  e horário limite no edital oficial: https://www.gov.br/transferegov/pt-b
+ r
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rospera-amazonia-1056755/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Prospera Amazônia
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Prospera Amazônia
+END:VALARM
+END:VEVENT
+END:VCALENDAR

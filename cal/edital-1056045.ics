@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Fomento ao Setor Agropecuário - Propostas Voluntárias — Fu
+ ndos Brasil
+NAME:Fomento ao Setor Agropecuário - Propostas Voluntárias — Fundos Bra
+ sil
+X-WR-CALDESC:Prazos de Fomento ao Setor Agropecuário - Propostas Voluntár
+ ias (Ministério da Agricultura e Pecuária). Confirme sempre no edital of
+ icial.
+DESCRIPTION:Prazos de Fomento ao Setor Agropecuário - Propostas Voluntári
+ as (Ministério da Agricultura e Pecuária). Confirme sempre no edital ofi
+ cial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056045-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Propostas Voluntária
+ s
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260004\nValor: ver condições\nQuem pode participar: Município\n
+ Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
+ ódigo 2200020260004. É preciso cadastro do proponente e\, para entes\, r
+ egularidade no CAUC.\nPágina do edital: https://helloliueunice.github.io/
+ Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-propost
+ as-voluntarias-1056045/\nConfirme data e horário limite no edital oficial
+ : https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-propostas-voluntarias-1056045/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário -
+  Propostas Voluntárias
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
+ stas Voluntárias
+END:VALARM
+END:VEVENT
+END:VCALENDAR

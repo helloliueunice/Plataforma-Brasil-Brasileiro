@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Programa Nacional de Estradas Rurais - Proner — Fundos Brasi
+ l
+NAME:Programa Nacional de Estradas Rurais - Proner — Fundos Brasil
+X-WR-CALDESC:Prazos de Programa Nacional de Estradas Rurais - Proner (Minis
+ tério da Agricultura e Pecuária). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Programa Nacional de Estradas Rurais - Proner (Minist
+ ério da Agricultura e Pecuária). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056079-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - Proner
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260006\nValor: ver condições\nQuem pode participar: Município\n
+ Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
+ ódigo 2200020260006. É preciso cadastro do proponente e\, para entes\, r
+ egularidade no CAUC.\nPágina do edital: https://helloliueunice.github.io/
+ Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-rurais-
+ proner-1056079/\nConfirme data e horário limite no edital oficial: https:
+ //www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-nacional-de-estradas-rurais-proner-1056079/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
+ rais - Proner
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
+  Proner
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -16,6 +16,37 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
+UID:edital-1056853-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Prazo final: Recursos Hídricos: Água em Quantidade e Qualidade pa
+ ra Sempre
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 4420520260001\nValor: ver condições\nQuem pode parti
+ cipar: OSC / Cooperativa\nProposta cadastrada no Transferegov.br (módulo 
+ Discricionárias)\, pelo código 4420520260001. É preciso cadastro do pro
+ ponente e\, para entes\, regularidade no CAUC.\nPágina do edital: https:/
+ /helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/recursos-hi
+ dricos-agua-em-quantidade-e-qualidade-para-sempre-1056853/\nConfirme data 
+ e horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
+ ecursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-1056853/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Recursos Hídricos: Água em Qua
+ ntidade e Qualidade para Sempre
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Recursos Hídricos: Água em Quantidad
+ e e Qualidade para Sempre
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:edital-130-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261123
@@ -47,6 +78,363 @@ ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Bolsas de aperfeiçoamento para especi
  alistas que atuam em museus e instituições de acervos de São Paulo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056045-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Propostas Voluntária
+ s
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260004\nValor: ver condições\nQuem pode participar: Município\n
+ Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
+ ódigo 2200020260004. É preciso cadastro do proponente e\, para entes\, r
+ egularidade no CAUC.\nPágina do edital: https://helloliueunice.github.io/
+ Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-propost
+ as-voluntarias-1056045/\nConfirme data e horário limite no edital oficial
+ : https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-propostas-voluntarias-1056045/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário -
+  Propostas Voluntárias
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
+ stas Voluntárias
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056046-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Propostas Voluntária
+ s - Termo de Fomento
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260005\nValor: ver condições\nQuem pode participar: OSC / Cooper
+ ativa\nProposta cadastrada no Transferegov.br (módulo Discricionárias)\,
+  pelo código 2200020260005. É preciso cadastro do proponente e\, para en
+ tes\, regularidade no CAUC.\nPágina do edital: https://helloliueunice.git
+ hub.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-
+ propostas-voluntarias-termo-de-fomento-1056046/\nConfirme data e horário 
+ limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-propostas-voluntarias-termo-de-fomento-105604
+ 6/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário -
+  Propostas Voluntárias - Termo de Fomento
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
+ stas Voluntárias - Termo de Fomento
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056079-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - Proner
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260006\nValor: ver condições\nQuem pode participar: Município\n
+ Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
+ ódigo 2200020260006. É preciso cadastro do proponente e\, para entes\, r
+ egularidade no CAUC.\nPágina do edital: https://helloliueunice.github.io/
+ Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-rurais-
+ proner-1056079/\nConfirme data e horário limite no edital oficial: https:
+ //www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-nacional-de-estradas-rurais-proner-1056079/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
+ rais - Proner
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
+  Proner
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056107-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Proposta Voluntária 
+ - Obras de Fomento
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260018\nValor: ver condições\nQuem pode participar: Estado / DF\
+ nProposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo 
+ código 2200020260018. É preciso cadastro do proponente e\, para entes\, 
+ regularidade no CAUC.\nPágina do edital: https://helloliueunice.github.io
+ /Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-propos
+ ta-voluntaria-obras-de-fomento-1056107/\nConfirme data e horário limite n
+ o edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário -
+  Proposta Voluntária - Obras de Fomento
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
+ sta Voluntária - Obras de Fomento
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056156-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio À Produç
+ ão Agrícola - Promaq
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260022\nValor: ver condições\nQuem pode participar: Município\n
+ Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
+ ódigo 2200020260022. É preciso cadastro do proponente e\, para entes\, r
+ egularidade no CAUC.\nPágina do edital: https://helloliueunice.github.io/
+ Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-modernizacao-e-a
+ poio-a-producao-agricola-promaq-1056156/\nConfirme data e horário limite 
+ no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-105615
+ 6/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Modernizaç
+ ão e Apoio À Produção Agrícola - Promaq
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Modernização e 
+ Apoio À Produção Agrícola - Promaq
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056398-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Ba) Superintendência R
+ egional do Incra na Bahia– Convênio.
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260010\nValor: ver condições\nQuem pode 
+ participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, pelo código 2220120260010. É preciso cadastro do propo
+ nente e\, para entes\, regularidade no CAUC.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutu
+ ra-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ nfra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(B
+ a) Superintendência Regional do Incra na Bahia– Convênio.
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Ba) Sup
+ erintendência Regional do Incra na Bahia– Convênio.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056401-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Sp) Superintendência R
+ egional do Incra de São Paulo– Convênio
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260013\nValor: ver condições\nQuem pode 
+ participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, pelo código 2220120260013. É preciso cadastro do propo
+ nente e\, para entes\, regularidade no CAUC.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutu
+ ra-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/\nConfir
+ me data e horário limite no edital oficial: https://www.gov.br/transfereg
+ ov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ nfra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056
+ 401/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(S
+ p) Superintendência Regional do Incra de São Paulo– Convênio
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Sp) Sup
+ erintendência Regional do Incra de São Paulo– Convênio
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056402-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Pr) Superintendência R
+ egional do Incra no Paraná– Convênio.
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260014\nValor: ver condições\nQuem pode 
+ participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, pelo código 2220120260014. É preciso cadastro do propo
+ nente e\, para entes\, regularidade no CAUC.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutu
+ ra-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ nfra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(P
+ r) Superintendência Regional do Incra no Paraná– Convênio.
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Pr) Sup
+ erintendência Regional do Incra no Paraná– Convênio.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056404-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Rs) Superintendência R
+ egional do Incra no Rio Grande do Sul– Convênio.
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260016\nValor: ver condições\nQuem pode 
+ participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, pelo código 2220120260016. É preciso cadastro do propo
+ nente e\, para entes\, regularidade no CAUC.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutu
+ ra-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/\nConfir
+ me data e horário limite no edital oficial: https://www.gov.br/transfereg
+ ov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ nfra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056
+ 404/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(R
+ s) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Rs) Sup
+ erintendência Regional do Incra no Rio Grande do Sul– Convênio.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056676-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento Sr(Pa)
+  Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(1
+ 1)rs– Convênio.
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260048\nValor: ver condições\nQuem pode 
+ participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, pelo código 2220120260048. É preciso cadastro do propo
+ nente e\, para entes\, regularidade no CAUC.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-se
+ tor-agropecuario-investimento-sr-pa-superintendencia-1056676/\nConfirme da
+ ta e horário limite no edital oficial: https://www.gov.br/transferegov/pt
+ -br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário 
+ – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do R
+ io Grande do Sul - Sr(11)rs– Convênio.
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário – Inv
+ estimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Gran
+ de do Sul - Sr(11)rs– Convênio.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056721-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: 2321 - Recursos Hídricos: Água em Quantidade e Quali
+ dade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barrag
+ em Atalaia no Estado do Piauí/ Rp (3)
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 2220320260043\nValor: ver condições\nQuem pode parti
+ cipar: Município\nProposta cadastrada no Transferegov.br (módulo Discric
+ ionárias)\, pelo código 2220320260043. É preciso cadastro do proponente
+  e\, para entes\, regularidade no CAUC.\nPágina do edital: https://hellol
+ iueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2321-recursos-hidr
+ icos-agua-em-quantidade-e-qualidade-para-sempre-pt-1056721/\nConfirme data
+  e horário limite no edital oficial: https://www.gov.br/transferegov/pt-b
+ r
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
+ 321-recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-105672
+ 1/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — 2321 - Recursos Hídricos: Água
+  em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: 
+ Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — 2321 - Recursos Hídricos: Água em Qu
+ antidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Constr
+ ução da Barragem Atalaia no Estado do Piauí/ Rp (3)
 END:VALARM
 END:VEVENT
 END:VCALENDAR

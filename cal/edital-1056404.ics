@@ -1,0 +1,54 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Infra-Estrutura Básica – Sr(Rs) Superintendência Regional
+ … — Fundos Brasil
+NAME:Infra-Estrutura Básica – Sr(Rs) Superintendência Regional… — F
+ undos Brasil
+X-WR-CALDESC:Prazos de Infra-Estrutura Básica – Sr(Rs) Superintendência
+  Regional do Incra no Rio Grande do Sul– Convênio. (Ministério do Dese
+ nvolvimento Agrário e Agricultura Familiar). Confirme sempre no edital of
+ icial.
+DESCRIPTION:Prazos de Infra-Estrutura Básica – Sr(Rs) Superintendência 
+ Regional do Incra no Rio Grande do Sul– Convênio. (Ministério do Desen
+ volvimento Agrário e Agricultura Familiar). Confirme sempre no edital ofi
+ cial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056404-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Rs) Superintendência R
+ egional do Incra no Rio Grande do Sul– Convênio.
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260016\nValor: ver condições\nQuem pode 
+ participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, pelo código 2220120260016. É preciso cadastro do propo
+ nente e\, para entes\, regularidade no CAUC.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutu
+ ra-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/\nConfir
+ me data e horário limite no edital oficial: https://www.gov.br/transfereg
+ ov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ nfra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056
+ 404/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(R
+ s) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Rs) Sup
+ erintendência Regional do Incra no Rio Grande do Sul– Convênio.
+END:VALARM
+END:VEVENT
+END:VCALENDAR

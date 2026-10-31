@@ -310,6 +310,276 @@
       "valorTotal": null,
       "link": "https://fapesp.br/18365/chamada-de-propostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-paises-em-desenvolvimento",
       "etapaPrazo": "Manifestação de interesse"
+    },
+    "1055941": {
+      "titulo": "Programa Simec/Par",
+      "abertura": "2026-01-02",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1055945": {
+      "titulo": "Programa Brasileiro de Professores no Cern",
+      "abertura": "2026-01-02",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1055966": {
+      "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes",
+      "abertura": "2026-01-16",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1055990": {
+      "titulo": "ação 00sx - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - Rp2",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1055992": {
+      "titulo": "ação 214s - Rotas de Integração Nacional - Rp2",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1055995": {
+      "titulo": "ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - Rp2",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056045": {
+      "titulo": "Fomento ao Setor Agropecuário - Propostas Voluntárias",
+      "abertura": "2026-02-09",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056046": {
+      "titulo": "Fomento ao Setor Agropecuário - Propostas Voluntárias - Termo de Fomento",
+      "abertura": "2026-02-09",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056079": {
+      "titulo": "Programa Nacional de Estradas Rurais - Proner",
+      "abertura": "2026-02-11",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056107": {
+      "titulo": "Fomento ao Setor Agropecuário - Proposta Voluntária - Obras de Fomento",
+      "abertura": "2026-02-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056156": {
+      "titulo": "Programa Nacional de Modernização e Apoio À Produção Agrícola - Promaq",
+      "abertura": "2026-02-11",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056385": {
+      "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Proeb e Inovação Tecnológica",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056386": {
+      "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Sistema Uab",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056398": {
+      "titulo": "Infra-Estrutura Básica – Sr(Ba) Superintendência Regional do Incra na Bahia– Convênio.",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056401": {
+      "titulo": "Infra-Estrutura Básica – Sr(Sp) Superintendência Regional do Incra de São Paulo– Convênio",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056402": {
+      "titulo": "Infra-Estrutura Básica – Sr(Pr) Superintendência Regional do Incra no Paraná– Convênio.",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056404": {
+      "titulo": "Infra-Estrutura Básica – Sr(Rs) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056427": {
+      "titulo": "Industrialização da Cadeia Produtiva do Pirarucu",
+      "abertura": "2026-10-16",
+      "encerramento": "2026-11-16",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056676": {
+      "titulo": "Fomento ao Setor Agropecuário – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(11)rs– Convênio.",
+      "abertura": "2026-06-30",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056721": {
+      "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
+      "abertura": "2026-07-13",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056725": {
+      "titulo": "2317 - (Ted 7aadaf Sdr/Midr) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp",
+      "abertura": "2026-07-14",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056755": {
+      "titulo": "Prospera Amazônia",
+      "abertura": "2026-08-03",
+      "encerramento": "2026-12-01",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056835": {
+      "titulo": "Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional",
+      "abertura": "2026-09-30",
+      "encerramento": "2026-11-03",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056851": {
+      "titulo": "Rede Multidisciplinar de Atenção a Mães e Familiares Vítimas de Desaparecimentos Forçados e da Violência de Estado na Baixada Fluminense",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-11-13",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056853": {
+      "titulo": "Recursos Hídricos: Água em Quantidade e Qualidade para Sempre",
+      "abertura": "2026-10-21",
+      "encerramento": "2026-11-23",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056868": {
+      "titulo": "Ri para Todos: Diplomacia Popular, Cidadania Global e Democratização das Relações Internacionais",
+      "abertura": "2026-10-28",
+      "encerramento": "2026-11-28",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056871": {
+      "titulo": "Edupol-Ia: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança",
+      "abertura": "2026-10-29",
+      "encerramento": "2026-11-06",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
     }
   }
 }

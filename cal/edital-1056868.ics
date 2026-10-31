@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ri para Todos: Diplomacia Popular\, Cidadania Global e… — 
+ Fundos Brasil
+NAME:Ri para Todos: Diplomacia Popular\, Cidadania Global e… — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Ri para Todos: Diplomacia Popular\, Cidadania Global
+  e Democratização das Relações Internacionais (Ministerio da Educacao)
+ . Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Ri para Todos: Diplomacia Popular\, Cidadania Global 
+ e Democratização das Relações Internacionais (Ministerio da Educacao).
+  Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056868-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Prazo final: Ri para Todos: Diplomacia Popular\, Cidadania Global e
+  Democratização das Relações Internacionais
+DESCRIPTION:Ministerio da Educacao · Programa Transferegov 2624920260004\n
+ Valor: ver condições\nQuem pode participar: OSC / Cooperativa\nProposta 
+ cadastrada no Transferegov.br (módulo Discricionárias)\, pelo código 26
+ 24920260004. É preciso cadastro do proponente e\, para entes\, regularida
+ de no CAUC.\nPágina do edital: https://helloliueunice.github.io/Plataform
+ a-Brasil-Brasileiro/editais/ri-para-todos-diplomacia-popular-cidadania-glo
+ bal-e-democratizacao-das-1056868/\nConfirme data e horário limite no edit
+ al oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
+ i-para-todos-diplomacia-popular-cidadania-global-e-democratizacao-das-1056
+ 868/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Ri para Todos: Diplomacia Popula
+ r\, Cidadania Global e Democratização das Relações Internacionais
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Ri para Todos: Diplomacia Popular\, Ci
+ dadania Global e Democratização das Relações Internacionais
+END:VALARM
+END:VEVENT
+END:VCALENDAR
