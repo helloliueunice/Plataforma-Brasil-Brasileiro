@@ -43,6 +43,8 @@ const HOJE = process.env.HOJE || new Date(Date.now() - 3 * 3600e3).toISOString()
 const UA = 'Mozilla/5.0 (compatible; FundosBrasilMonitor/1.0; +https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro)';
 
 const PUBLICOS = ['pesquisador', 'ict', 'empresa', 'osc', 'municipio', 'estado'];
+const FONTES_RECURSO = ['publico', 'privado', 'incentivo-fiscal', 'internacional', 'misto'];
+const TIPOS_VALOR = ['por-proposta', 'total', 'faixa', 'bolsa', 'nao-informado'];
 const AREAS = ['Tecnologia', 'Saúde', 'Educação', 'Meio Ambiente', 'Infraestrutura', 'Cultura', 'Agronegocio', 'Energia', 'Segurança', 'Desenvolvimento'];
 const DIAGNOSTICO = process.argv.includes('--diagnostico'); // só lista os links de cada fonte, sem alterar nada
 // No GitHub Actions, o resultado também vira anotação visível na página da execução
@@ -194,6 +196,22 @@ const FERRAMENTA = {
             link: { type: ['string', 'null'], description: 'Endereço da página ou documento oficial da chamada.' },
             criterios: { type: ['array', 'null'], items: { type: 'object', properties: { nome: { type: 'string' }, peso: { type: ['number', 'null'], description: 'Peso em % (0 a 100). null se não informado.' } }, required: ['nome'] } },
             docsExtras: { type: 'array', items: { type: 'string' }, maxItems: 6, description: 'Documentos ou requisitos específicos desta chamada.' },
+            elegibilidade: {
+                type: ['array', 'null'], minItems: 2, maxItems: 6,
+                description: 'De 2 a 6 perguntas de sim/não, na 2ª pessoa, que o proponente responde sozinho para saber se pode concorrer (ex.: "Você tem título de doutor?", "Sua organização tem CNPJ ativo há pelo menos 2 anos?", "O projeto será executado no Espírito Santo?"). Cada pergunta precisa corresponder a um requisito ESCRITO no documento e citado em "evidencias"; não invente nem complete com conhecimento próprio, nem com regras gerais da agência que o documento não repete. Se o documento não traz ao menos 2 requisitos claros, use null.',
+                items: {
+                    type: 'object',
+                    properties: {
+                        pergunta: { type: 'string', maxLength: 160, description: 'Pergunta curta (até 160 caracteres), terminando em "?".' },
+                        esperado: { type: 'boolean', description: 'Resposta que torna o proponente elegível.' },
+                        eliminatoria: { type: 'boolean', description: 'true só quando o documento torna o requisito obrigatório (sem ele a proposta é indeferida); false para preferências, bônus ou recomendações.' }
+                    },
+                    required: ['pergunta', 'esperado', 'eliminatoria']
+                }
+            },
+            fonteRecurso: { type: ['string', 'null'], enum: [...FONTES_RECURSO, null], description: 'Origem do dinheiro, segundo o documento: publico (orçamento de órgão ou fundo público), privado (empresa, fundação ou instituto privado), incentivo-fiscal (captação por lei de incentivo, ex.: Rouanet), internacional (organismo ou governo estrangeiro), misto (mais de uma dessas origens, explícitas no texto). null se o documento não deixa claro.' },
+            tipoValor: { type: ['string', 'null'], enum: [...TIPOS_VALOR, null], description: 'Como o valor é informado: por-proposta (teto por proposta), total (só o orçamento global, sem teto por proposta), faixa (mínimo e máximo por proposta), bolsa (só bolsas, valor por tabela), nao-informado. Use nao-informado se o documento não traz valores.' },
+            fluxoContinuo: { type: ['boolean', 'null'], description: 'true SOMENTE se o documento diz que as propostas são recebidas continuamente (fluxo contínuo); false para prazo único ou etapas com datas fixas.' },
             evidencias: { type: 'array', items: { type: 'string' }, maxItems: 5, description: 'Trechos literais curtos do documento que comprovam prazo, valor e elegibilidade.' },
             confianca: { type: 'string', enum: ['alta', 'media', 'baixa'] },
             alertas: { type: 'array', items: { type: 'string' }, description: 'Dúvidas e ambiguidades para o revisor humano.' }
@@ -209,6 +227,7 @@ Regras:
 - "publico" indica quem SUBMETE: pesquisador (pessoa física pesquisadora/docente), ict (universidade, instituto de pesquisa, proposta institucional), empresa, osc (associação, fundação, cooperativa, OSC), municipio, estado.
 - Se o prazo final já passou ou o documento é resultado/retificação sem chamada aberta, marque eh_chamada_de_fomento=false e explique em motivo_descarte.
 - "evidencias" deve citar literalmente os trechos de prazo, valor e elegibilidade.
+- "elegibilidade" só traz requisitos escritos no documento (titulação, vínculo, sede, tipo de organização, tempo de CNPJ, parcerias obrigatórias); na dúvida, prefira menos perguntas ou null. "fluxoContinuo" só é true se o documento disser que recebe propostas continuamente.
 - Escreva em português claro, sem jargão desnecessário.`;
 
 async function extrair(item, conteudo) {
@@ -258,6 +277,34 @@ function validar(x, base) {
     const chave = e => norm(`${e.instituicao} ${e.numero || e.titulo}`);
     const dup = base.find(e => (x.link && (e.link === x.link || e.fonte === x.link)) || (x.numero && e.numero && chave(e) === chave(x)));
     if (dup) erros.push(`duplicado de “${dup.titulo}” (id ${dup.id})`);
+    // Campos de elegibilidade: opcionais, mas, se vierem, precisam estar bem formados
+    if (x.fonteRecurso != null && !FONTES_RECURSO.includes(x.fonteRecurso)) erros.push(`fonte de recurso inválida (${x.fonteRecurso})`);
+    if (x.tipoValor != null && !TIPOS_VALOR.includes(x.tipoValor)) erros.push(`tipo de valor inválido (${x.tipoValor})`);
+    if (x.fluxoContinuo != null && typeof x.fluxoContinuo !== 'boolean') erros.push('fluxo contínuo deve ser true ou false');
+    erros.push(...errosElegibilidade(x.elegibilidade));
+    return erros;
+}
+
+function errosElegibilidade(el) {
+    if (el == null) return [];
+    if (!Array.isArray(el)) return ['elegibilidade deve ser uma lista'];
+    const erros = [];
+    if (el.length < 2 || el.length > 6) erros.push(`elegibilidade deve ter de 2 a 6 perguntas (veio ${el.length})`);
+    const vistas = new Set();
+    el.forEach((it, i) => {
+        const n = `elegibilidade[${i + 1}]`;
+        if (!it || typeof it !== 'object' || Array.isArray(it)) { erros.push(`${n} não é um objeto`); return; }
+        const p = typeof it.pergunta === 'string' ? it.pergunta.trim() : '';
+        if (!p) erros.push(`${n} sem pergunta`);
+        else if (p.length > 160) erros.push(`${n} com mais de 160 caracteres`);
+        else if (!p.endsWith('?')) erros.push(`${n} não termina com “?”`);
+        if (typeof it.esperado !== 'boolean') erros.push(`${n}: “esperado” deve ser true ou false`);
+        if (typeof it.eliminatoria !== 'boolean') erros.push(`${n}: “eliminatoria” deve ser true ou false`);
+        const extras = Object.keys(it).filter(k => !['pergunta', 'esperado', 'eliminatoria'].includes(k));
+        if (extras.length) erros.push(`${n} com campos desconhecidos (${extras.join(', ')})`);
+        if (p && vistas.has(norm(p))) erros.push(`${n} repetida`);
+        vistas.add(norm(p));
+    });
     return erros;
 }
 
@@ -273,7 +320,12 @@ function paraEdital(x, item) {
         resultado: isoOk(x.resultado) ? x.resultado : undefined, prazoNota: x.prazoNota || undefined,
         resumo: x.resumo, link: x.link, fonte: item.url, verificadoEm: HOJE,
         criterios: Array.isArray(x.criterios) && x.criterios.length ? x.criterios.map(c => ({ nome: c.nome, peso: Number.isFinite(c.peso) ? c.peso : null })) : undefined,
-        docsExtras: x.docsExtras || []
+        docsExtras: x.docsExtras || [],
+        elegibilidade: Array.isArray(x.elegibilidade) && x.elegibilidade.length
+            ? x.elegibilidade.map(c => ({ pergunta: c.pergunta.trim(), esperado: c.esperado, eliminatoria: c.eliminatoria })) : undefined,
+        fonteRecurso: FONTES_RECURSO.includes(x.fonteRecurso) ? x.fonteRecurso : undefined,
+        tipoValor: TIPOS_VALOR.includes(x.tipoValor) ? x.tipoValor : undefined,
+        fluxoContinuo: typeof x.fluxoContinuo === 'boolean' ? x.fluxoContinuo : undefined
     };
     return JSON.parse(JSON.stringify(e)); // remove campos undefined
 }
@@ -414,6 +466,8 @@ if (rel.candidatos.length) {
         linhas.push(`| Prazo | ${dataBR(ed.abertura)} a **${dataBR(ed.encerramento)}**${ed.prazoNota ? ` — ${md(ed.prazoNota)}` : ''} |`);
         linhas.push(`| Valor | ${ed.valorMax ? `até ${ed.valorMax.toLocaleString('pt-BR')} ${ed.moeda}` : '—'}${ed.valorNota ? ` — ${md(ed.valorNota)}` : ''} |`);
         linhas.push(`| Quem submete | ${ed.publico.join(', ')} · ${md(ed.abrangencia)} |`);
+        linhas.push(`| Elegibilidade | ${ed.elegibilidade ? ed.elegibilidade.map(c => `${md(c.pergunta)} → ${c.esperado ? 'sim' : 'não'}${c.eliminatoria ? ' (eliminatória)' : ''}`).join('<br>') : '— (não extraída)'} |`);
+        linhas.push(`| Recurso | ${ed.fonteRecurso || '—'} · valor ${ed.tipoValor || '—'}${ed.fluxoContinuo ? ' · fluxo contínuo' : ''} |`);
         linhas.push(`| Fonte | ${ed.fonte} |`);
         linhas.push(`| Confiança da IA | ${x.confianca} |`, '');
         if (x.evidencias?.length) linhas.push('**Evidências:**', ...x.evidencias.map(t => `> ${md(t)}`), '');

@@ -98,6 +98,10 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | `moeda` | não | `BRL` (padrão), `USD` ou `EUR` |
 | `criterios` | não | `[{ "nome": "Mérito", "peso": 40 }, ...]`; use `"peso": null` se a chamada não divulga pesos |
 | `docsExtras` | não | documentos específicos; os usuais de cada tipo de proponente entram automaticamente |
+| `elegibilidade` | não | 2 a 6 perguntas de sim/não que o proponente responde sozinho: `[{ "pergunta": "Você tem título de doutor?", "esperado": true, "eliminatoria": true }, ...]`. `pergunta`: até 160 caracteres, na 2ª pessoa, terminando em `?`; `esperado`: a resposta que torna elegível; `eliminatoria`: `true` só quando o edital torna o requisito obrigatório. Use apenas requisitos escritos no edital |
+| `fonteRecurso` | não | origem do dinheiro: `publico`, `privado`, `incentivo-fiscal`, `internacional` ou `misto` |
+| `tipoValor` | não | como o valor é informado: `por-proposta` (teto por proposta), `total` (só orçamento global), `faixa` (mínimo e máximo por proposta), `bolsa` (só bolsas, por tabela) ou `nao-informado` |
+| `fluxoContinuo` | não | `true` só quando a chamada recebe propostas continuamente; `false` para prazo único ou etapas com datas fixas |
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
 
