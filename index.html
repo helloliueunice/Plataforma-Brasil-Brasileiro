@@ -963,6 +963,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     background: var(--open-bg); color: var(--open-fg); font-size: 24px; font-weight: 600; }
 .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -3px; }
     </style>
+    <link rel="stylesheet" href="assets/captacao.css">
 </head>
 <body>
 
@@ -1115,6 +1116,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 <div id="dashPropostas"></div>
             </div>
 
+            <!-- Ferramentas do captador (assets/captacao.js): buscas salvas -->
+            <section class="card" id="capBuscasHome" aria-labelledby="capBuscasHomeTitulo" hidden></section>
+
             <div class="card">
                 <div class="card-title">
                     <span id="destaquesTitulo">Editais em Destaque</span>
@@ -1183,6 +1187,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
 
             <div class="editais-layout">
             <div class="filter-section">
+                <!-- Ferramentas do captador (assets/captacao.js): buscas salvas -->
+                <div id="capBuscasEditais"></div>
                 <h2 class="filter-title">Filtros</h2>
 
                 <div class="filter-item">
@@ -1304,6 +1310,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     <button class="btn btn-secondary btn-small" data-action="clear-filters">Limpar filtros</button>
                 </div>
             </div>
+            <!-- Ferramentas do captador (assets/captacao.js): assinar alertas e salvar a busca -->
+            <div id="capAcoesBusca"></div>
             <div class="active-filters" id="activeFilters"></div>
 
             <div id="editaisList"></div>
@@ -1321,9 +1329,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             <div class="hero-subtitle">Acompanhe cada edital da intenção ao resultado</div>
         </div>
         <div class="container">
+            <!-- Ferramentas do captador (assets/captacao.js): Lista | Quadro, avisos de certidões -->
+            <div id="capPropostasBarra"></div>
             <div class="pipeline" id="pipelineResumo" role="group" aria-label="Filtrar por etapa"></div>
             <div id="propostasList"></div>
+            <div id="capQuadro" hidden></div>
             <div id="propostasSugestoes"></div>
+            <!-- Ferramentas do captador (assets/captacao.js): cofre de certidões e backup -->
+            <div id="capCofre"></div>
+            <div id="capBackup"></div>
         </div>
     </div>
 
@@ -1472,7 +1486,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
 
             <div class="card">
                 <h2 class="card-title">Meus dados neste navegador</h2>
-                <p style="font-size:14px;margin-bottom:12px;">Apaga perfil, favoritos, propostas, checklists, rascunhos, prestações e editais cadastrados por você. Os editais de exemplo continuam.</p>
+                <p style="font-size:14px;margin-bottom:12px;">Apaga perfil, favoritos, propostas, avaliações go/no-go, cofre de certidões, buscas salvas, checklists, rascunhos, prestações e editais cadastrados por você. Os editais de exemplo continuam. Para guardar uma cópia antes, use <a href="#propostas">Minhas propostas → Exportar backup</a>.</p>
                 <button class="btn btn-danger btn-small" data-action="limpar-dados">Apagar meus dados</button>
             </div>
         </div>
@@ -4421,6 +4435,17 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             if (r.patrocinado) { e.patrocinado = true; if (toISO(r.patrocinioAte)) e.patrocinioAte = toISO(r.patrocinioAte); }
             if (toISO(r.verificadoEm)) e.verificadoEm = toISO(r.verificadoEm);
             if (ufs.length) e.ufs = ufs;
+            // Campos opcionais da curadoria: só entram se tiverem o formato e os valores permitidos
+            if (Array.isArray(r.elegibilidade)) {
+                const eleg = r.elegibilidade
+                    .filter(q => q && typeof q === 'object' && typeof q.pergunta === 'string' && q.pergunta.trim() && q.pergunta.trim().length <= 200 && typeof q.esperado === 'boolean')
+                    .slice(0, 10)
+                    .map(q => ({ pergunta: q.pergunta.trim(), esperado: q.esperado, eliminatoria: q.eliminatoria === true }));
+                if (eleg.length) e.elegibilidade = eleg;
+            }
+            if (['publico', 'privado', 'incentivo-fiscal', 'internacional', 'misto'].includes(r.fonteRecurso)) e.fonteRecurso = r.fonteRecurso;
+            if (['por-proposta', 'total', 'faixa', 'bolsa', 'nao-informado'].includes(r.tipoValor)) e.tipoValor = r.tipoValor;
+            if (typeof r.fluxoContinuo === 'boolean') e.fluxoContinuo = r.fluxoContinuo;
             if (Array.isArray(r.criterios)) {
                 const crit = r.criterios.filter(c => c && c.nome).map(c => ({ nome: String(c.nome), peso: c.peso === null || c.peso === undefined || c.peso === '' ? null : Math.max(0, Math.min(100, Number(c.peso) || 0)) }));
                 if (crit.length) e.criterios = crit;
@@ -4617,7 +4642,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
 
         function exportJSON(escopo) {
             const campos = ['id', 'titulo', 'instituicao', 'agencia', 'procedencia', 'tema', 'tags', 'modalidade', 'publico', 'abrangencia', 'ufs', 'moeda',
-                'valorMax', 'valorTotal', 'valorNota', 'contrapartida', 'publicadoEm', 'abertura', 'encerramento', 'resultado', 'prazoNota', 'numero', 'resumo', 'link', 'fonte', 'verificadoEm', 'docsExtras', 'criterios'];
+                'valorMax', 'valorTotal', 'valorNota', 'contrapartida', 'publicadoEm', 'abertura', 'encerramento', 'resultado', 'prazoNota', 'numero', 'resumo', 'link', 'fonte', 'verificadoEm', 'docsExtras', 'criterios', 'elegibilidade', 'fonteRecurso', 'tipoValor', 'fluxoContinuo'];
             const fonte = escopo === 'meus' ? editaisCustom : [...EDITAIS_BASE, ...editaisCustom];
             const dados = fonte.map(e => Object.fromEntries(campos.filter(c => e[c] !== undefined && e[c] !== '').map(c => [c, e[c]])));
             downloadFile(`editais-${escopo}-${isoDe(HOJE)}.json`, JSON.stringify({ geradoEm: isoDe(HOJE), editais: dados }, null, 2), 'application/json');
@@ -4955,7 +4980,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const acao = proximaAcao(e, p);
             const posSubmissao = ['submetida', 'aprovada', 'nao-aprovada'].includes(p.etapa);
             return `
-            <article class="proposta-card etapa-${p.etapa}" aria-label="Proposta: ${esc(e.titulo)}">
+            <article class="proposta-card etapa-${p.etapa}" data-proposta="${e.id}" aria-label="Proposta: ${esc(e.titulo)}">
                 <div class="proposta-top">
                     <div>
                         <h2><button class="link-btn" data-action="details" data-id="${e.id}">${esc(e.titulo)}</button></h2>
@@ -5555,10 +5580,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         }
 
         function limparDados() {
-            if (!confirm('Apagar perfil, favoritos, propostas, checklists, rascunhos, prestações enviadas e editais cadastrados neste navegador? Esta ação não pode ser desfeita.')) return;
+            if (!confirm('Apagar perfil, favoritos, propostas, avaliações go/no-go, cofre de certidões, buscas salvas, checklists, rascunhos, prestações enviadas e editais cadastrados neste navegador? Esta ação não pode ser desfeita.')) return;
             try {
                 Object.keys(localStorage).forEach(k => {
-                    if (/^(favorites|perfil|propostas|editaisCustom|vistos|prestacoes|usuario|pcSeq|checklist-|rascunho-pc-)/.test(k)) localStorage.removeItem(k);
+                    if (/^(favorites|perfil|propostas|editaisCustom|vistos|prestacoes|usuario|pcSeq|checklist-|rascunho-pc-|fb:)/.test(k)) localStorage.removeItem(k);
                 });
                 sessionStorage.setItem('dadosApagados', '1');
             } catch (_) { /* armazenamento indisponível */ }
@@ -6058,5 +6083,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             }
         });
     </script>
+    <!-- Ferramentas do captador: alertas, buscas salvas, quadro, go/no-go, cofre, elegibilidade e backup -->
+    <script defer src="assets/captacao.js"></script>
 </body>
 </html>
