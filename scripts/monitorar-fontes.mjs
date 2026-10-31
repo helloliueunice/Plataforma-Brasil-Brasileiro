@@ -74,11 +74,13 @@ if (process.argv.includes('--aplicar')) {
 }
 
 /* ============================ Rede ============================ */
-async function baixar(url, { bytes = false } = {}) {
+async function baixar(url, { bytes = false } = {}, salto = 0, cookies = '') {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 30000);
     try {
-        const r = await fetch(url, { headers: { 'user-agent': UA, accept: 'text/html,application/pdf;q=0.9,*/*;q=0.8' }, redirect: 'follow', signal: ctrl.signal });
+        const headers = { 'user-agent': UA, accept: 'text/html,application/pdf;q=0.9,*/*;q=0.8' };
+        if (cookies) headers.cookie = cookies;
+        const r = await fetch(url, { headers, redirect: 'follow', signal: ctrl.signal });
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         const tipo = r.headers.get('content-type') || '';
         const buf = Buffer.from(await r.arrayBuffer());
@@ -88,8 +90,28 @@ async function baixar(url, { bytes = false } = {}) {
         if (!charset) charset = (buf.subarray(0, 2048).toString('latin1').match(/<meta[^>]+charset=["']?([\w-]+)/i) || [])[1];
         let html;
         try { html = new TextDecoder(charset || 'utf-8').decode(buf); } catch (_) { html = buf.toString('utf8'); }
+        // Páginas de "Redirect" (meta refresh ou JavaScript), como as da FAPESP: segue até 3 saltos,
+        // levando os cookies definidos pela página intermediária.
+        const destino = salto < 3 && textoDoHtml(html).length < 600 && destinoRedirect(html);
+        if (destino) {
+            const prox = new URL(destino, r.url).href;
+            const novos = (r.headers.getSetCookie ? r.headers.getSetCookie() : []).map(c => c.split(';')[0]);
+            const jar = [...(cookies ? cookies.split('; ') : []), ...novos, ...cookiesDoScript(html)].filter(Boolean).join('; ');
+            if (prox !== r.url || jar !== cookies) return baixar(prox, { bytes }, salto + 1, jar);
+        }
         return { tipo: 'html', html, url: r.url };
     } finally { clearTimeout(t); }
+}
+function destinoRedirect(html) {
+    const meta = html.match(/<meta[^>]+http-equiv=["']?refresh["']?[^>]*content=["'][^"']*url=([^"'>\s]+)/i);
+    if (meta) return decod(meta[1]);
+    const js = html.match(/(?:window\.|document\.|top\.)?location(?:\.href)?\s*(?:=|\.replace\(|\.assign\()\s*["']([^"']+)["']/i);
+    if (js) return js[1];
+    if (/<title>\s*redirect/i.test(html)) { const a = html.match(/<a[^>]+href=["']([^"']+)["']/i); if (a) return decod(a[1]); }
+    return null;
+}
+function cookiesDoScript(html) {
+    return [...html.matchAll(/document\.cookie\s*=\s*["']([^"';]+)/gi)].map(m => m[1]);
 }
 
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', ldquo: '“', rdquo: '”', lsquo: '‘', rsquo: '’', laquo: '«', raquo: '»', hellip: '…', deg: '°', middot: '·', bull: '•', euro: '€', ordm: 'º', ordf: 'ª', uuml: 'ü', ntilde: 'ñ', ccedil: 'ç', atilde: 'ã', otilde: 'õ', aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', acirc: 'â', ecirc: 'ê', ocirc: 'ô', agrave: 'à', Ccedil: 'Ç', Atilde: 'Ã', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú' };
