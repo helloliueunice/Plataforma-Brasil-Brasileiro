@@ -57,7 +57,8 @@ const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLow
 const isoOk = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
 const dataBR = iso => (isoOk(iso) ? iso.split('-').reverse().join('/') : '—');
 const hash = s => crypto.createHash('sha256').update(s).digest('hex').slice(0, 16);
-const md = s => String(s ?? '').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
+// Texto de terceiros (sites, IA) no relatório/PR: neutraliza tabelas, @menções, links, imagens e HTML
+const md = s => String(s ?? '').replace(/\r?\n/g, ' ').replace(/[|@!\[\]()<>`*_]/g, c => '\\' + c);
 
 /* ============================ Aplicar candidatos ============================ */
 if (process.argv.includes('--aplicar')) {
@@ -83,6 +84,7 @@ async function baixar(url, { bytes = false } = {}, salto = 0, cookies = '') {
         const r = await fetch(url, { headers, redirect: 'follow', signal: ctrl.signal });
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         const tipo = r.headers.get('content-type') || '';
+        if (Number(r.headers.get('content-length') || 0) > 20 * 1048576) throw new Error('arquivo maior que 20 MB');
         const buf = Buffer.from(await r.arrayBuffer());
         if (bytes || /pdf/i.test(tipo) || /\.pdf($|\?)/i.test(url)) return { tipo: 'pdf', buf, url: r.url };
         // Respeita o charset declarado (alguns portais ainda usam ISO-8859-1)
@@ -222,6 +224,7 @@ async function extrair(item, conteudo) {
         const r = await fetch(API_URL, {
             method: 'POST',
             headers: { 'content-type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
+            signal: AbortSignal.timeout(180000),
             body: JSON.stringify({
                 model: MODELO, max_tokens: 8000, system: SISTEMA,
                 tools: [FERRAMENTA], tool_choice: { type: 'auto' },
@@ -281,7 +284,7 @@ const fontes = (lerJSON(ARQ.fontes, { fontes: [] }).fontes || []).filter(f => f.
 const estado = lerJSON(ARQ.estado, { vistos: {}, paginas: {}, execucoes: [] });
 estado.vistos ||= {}; estado.paginas ||= {}; estado.execucoes ||= [];
 // Links listados em modo manual (sem chave) voltam para a fila quando a chave passa a existir
-const pendente = url => { const v = estado.vistos[url]; return !v || (API_KEY && v.resultado === 'manual'); };
+const pendente = url => { const v = estado.vistos[url]; return !v || v.resultado === 'erro' || (API_KEY && v.resultado === 'manual'); };
 const conhecidos = new Set(base.editais.flatMap(e => [e.link, e.fonte]).filter(Boolean));
 
 const rel = { candidatos: [], descartados: [], manuais: [], mudancas: [], falhasFonte: [], erros: [], adiados: 0 };
@@ -344,7 +347,11 @@ for (const item of lote) {
         const conteudo = await baixar(item.url);
         if (conteudo.tipo === 'pdf' && conteudo.buf.length > 20 * 1048576) throw new Error('PDF maior que 20 MB');
         const x = await extrair(item, conteudo);
-        x.link = /^https?:\/\//.test(String(x.link || '')) ? x.link : item.url;
+        const dominio = u => { try { return new URL(u).hostname.split('.').slice(-2).join('.'); } catch (_) { return ''; } };
+        if (!/^https:?\/\//.test(String(x.link || '')) || dominio(x.link) !== dominio(item.url)) {
+            if (x.link && dominio(x.link) !== dominio(item.url)) (x.alertas ||= []).push(`A IA indicou um link de outro domínio (${x.link}); usamos a página oficial lida.`);
+            x.link = item.url;
+        }
         if (!x.eh_chamada_de_fomento) {
             rel.descartados.push({ item, motivo: x.motivo_descarte || 'não é chamada de fomento' });
             estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'descartado' };
@@ -361,8 +368,12 @@ for (const item of lote) {
         rel.candidatos.push({ ed, x, item });
         estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'candidato' };
     } catch (err) {
-        // Não marca como visto: tenta de novo na próxima execução
-        rel.erros.push({ item, erro: err.message });
+        // Tenta de novo nas próximas execuções, até 3 vezes (evita gasto repetido com erro permanente)
+        const ant = estado.vistos[item.url];
+        const tentativas = (ant && ant.resultado === 'erro' ? ant.tentativas || 1 : 0) + 1;
+        if (tentativas >= 3) estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'erro-definitivo', erro: err.message.slice(0, 200) };
+        else estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'erro', tentativas };
+        rel.erros.push({ item, erro: err.message + (tentativas >= 3 ? ' — desistimos após 3 tentativas' : ' — será tentado de novo') });
     }
 }
 
@@ -431,7 +442,7 @@ if (rel.descartados.length && SUGESTAO) {
 if (rel.falhasFonte.length || rel.erros.length) {
     linhas.push('## ⚠️ Falhas', '');
     for (const f of rel.falhasFonte) linhas.push(`- ${md(f.fonte)} (${f.url}): ${md(f.erro)}`);
-    for (const f of rel.erros) linhas.push(`- ${md(f.item.texto)} (${f.item.url}): ${md(f.erro)} — será tentado de novo`);
+    for (const f of rel.erros) linhas.push(`- ${md(f.item.texto)} (${f.item.url}): ${md(f.erro)}`);
     linhas.push('');
 }
 const temItens = rel.candidatos.length || rel.mudancas.length || rel.manuais.length || rel.falhasFonte.length || rel.erros.length || (SUGESTAO && rel.descartados.length);

@@ -55,6 +55,30 @@
       "url": "https://fapes.es.gov.br/",
       "filtro": "edital|chamada",
       "ativo": true
+    },
+    {
+      "id": "ms-chamamentos",
+      "nome": "Ministério da Saúde — Chamamentos públicos",
+      "url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/participacao-social/chamamentos-publicos",
+      "filtro": "chamamento|edital|sele[cç][aã]o",
+      "ativo": true,
+      "publicoAlvo": "OSC e municípios"
+    },
+    {
+      "id": "palmares",
+      "nome": "Fundação Cultural Palmares — Editais",
+      "url": "https://www.gov.br/palmares/pt-br/acesso-a-informacao/editais",
+      "filtro": "edital|chamamento|pr[eê]mio",
+      "ativo": true,
+      "publicoAlvo": "OSC e cultura"
+    },
+    {
+      "id": "bndes-socioambiental",
+      "nome": "BNDES — Fundo Socioambiental (chamadas)",
+      "url": "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-fundo-socioambiental",
+      "filtro": "chamada|edital|sele[cç][aã]o|ciclo",
+      "ativo": true,
+      "publicoAlvo": "OSC"
     }
   ]
 }

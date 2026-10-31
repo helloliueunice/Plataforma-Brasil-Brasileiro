@@ -3,6 +3,10 @@ description: Divulgação de editais, destaque patrocinado, patrocínio de conte
 title: "Parceria: "
 labels: ["parceria"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        **Atenção: esta solicitação fica pública.** Não informe telefone, CPF, endereço ou e-mail pessoal aqui. Indique só o nome da instituição e um canal institucional; responderemos para combinar um contato privado.
   - type: input
     id: instituicao
     attributes:
@@ -21,7 +25,7 @@ body:
     id: contato
     attributes:
       label: Como prefere ser contatado
-      description: Não publique dados pessoais sensíveis. Um e-mail institucional é suficiente.
+      description: Este campo é público. Use só um canal institucional (site ou e-mail genérico da instituição).
   - type: textarea
     id: detalhes
     attributes:

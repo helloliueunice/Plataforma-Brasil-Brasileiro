@@ -2,9 +2,11 @@ name: Sugestão de edital
 
 # Quando alguém envia um edital pelo formulário (issue com o rótulo sugestao-edital),
 # a IA extrai os dados do link e abre um pull request para revisão. Quem sugeriu é avisado na issue.
+# Para evitar custo de API por abuso: roda sozinho para quem é dono/membro/colaborador do repositório;
+# sugestões de outras pessoas rodam quando a mantenedora aplica o rótulo "sugestao-aprovada".
 on:
   issues:
-    types: [opened, labeled, edited]
+    types: [opened, labeled]
 
 permissions:
   contents: write
@@ -17,7 +19,11 @@ concurrency:
 
 jobs:
   analisar:
-    if: contains(github.event.issue.labels.*.name, 'sugestao-edital') && github.event.issue.state == 'open'
+    if: >-
+      github.event.issue.state == 'open' && (
+        (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'sugestao-edital') &&
+          contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)) ||
+        (github.event.action == 'labeled' && github.event.label.name == 'sugestao-aprovada'))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:

@@ -28,7 +28,7 @@
 <body>
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
     <header class="topo">
-        <a class="marca" href="../../"><span aria-hidden="true">🇧🇷</span> Fundos Brasil</a>
+        <a class="marca" href="../../"><span class="marca-icone" aria-hidden="true"></span>Fundos Brasil</a>
         <nav aria-label="Navegação principal">
             <a href="../../editais/" aria-current="page">Editais</a>
             <a href="../../prazos/">Prazos</a>
@@ -43,7 +43,7 @@
         <h1>Editais abertos de Cultura e Economia Criativa</h1>
         <p class="sub">1 chamada vigente · atualizado em 31/10/2026</p>
         <ul class="cartoes"><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-09-15" data-encerramento="2026-11-23">✅ Inscrições abertas</span> <span class="selo neutro">Bolsa de Aperfeiçoamento de Especialistas</span></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-09-15" data-encerramento="2026-11-23">Inscrições abertas</span> <span class="selo neutro">Bolsa de Aperfeiçoamento de Especialistas</span></div>
             <h3><a href="../../editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/">Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo</a></h3>
             <p>FAPESP · <strong>bolsas (ver condições)</strong> · Pesquisador(a)</p>
             <p class="nota">Inscrições: 15/09/2026 a 23/11/2026 · São Paulo</p>
@@ -56,18 +56,20 @@
         <nav class="rodape-links" aria-label="Editais por perfil"><a href="../../para/pesquisadores/">Editais para pesquisadores</a> · <a href="../../para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="../../para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="../../para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="../../para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="../../para/governos-estaduais/">Programas para governos estaduais</a></nav>
         <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a> · <a href="../../parcerias/">Parcerias</a> · <a href="../../feed.xml">RSS</a></p>
         <p></p>
-        <p class="nota">Informações de 31/10/2026. Confirme sempre no edital oficial da instituição.</p>
+        <p class="nota">Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
+        <p class="nota"><a href="../../privacidade/">Privacidade</a> · <a href="../../termos/">Termos de uso</a></p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)
     (function () {
-        var d = new Date(), h = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        var h; try { h = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date()); } catch (_) { var d = new Date(); h = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
         var dia = 864e5, t0 = Date.parse(h);
         document.querySelectorAll('[data-abertura]').forEach(function (el) {
             var a = el.dataset.abertura, z = el.dataset.encerramento, txt, cls;
-            if (h < a) { var n = Math.round((Date.parse(a) - t0) / dia); txt = '⏰ Abre em ' + n + (n === 1 ? ' dia' : ' dias'); cls = 'em-breve'; }
-            else if (h <= z) { var m = Math.round((Date.parse(z) - t0) / dia); txt = m === 0 ? '⏳ Encerra hoje' : (m <= 7 ? '⏳ Encerra em ' : '✅ Aberto · ') + m + (m === 1 ? ' dia' : ' dias') + (m > 7 ? ' restantes' : ''); cls = m <= 7 ? 'urgente' : 'aberto'; }
-            else { txt = '❌ Encerrado'; cls = 'fechado'; }
+            var et = el.dataset.etapa ? el.dataset.etapa + ': ' : '';
+            if (h < a) { var n = Math.round((Date.parse(a) - t0) / dia); txt = 'Abre em ' + n + (n === 1 ? ' dia' : ' dias'); cls = 'em-breve'; }
+            else if (h <= z) { var m = Math.round((Date.parse(z) - t0) / dia); txt = m === 0 ? et + (et ? 'encerra hoje' : 'Encerra hoje') : (m <= 7 ? et + (et ? 'encerra em ' : 'Encerra em ') : (et || 'Aberto · ')) + m + (m === 1 ? ' dia' : ' dias') + (m > 7 && !et ? ' restantes' : ''); cls = m <= 7 ? 'urgente' : 'aberto'; }
+            else { txt = 'Encerrado'; cls = 'fechado'; }
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();

@@ -107,7 +107,9 @@ O plano de lançamento, com distribuição, indicadores e monetização, está e
 
 - **Páginas por intenção de busca** (`para/`, `area/`, `prazos/`), **guias** (`guias/`, conteúdo em `scripts/conteudo.mjs`) e **glossário** (`glossario/`). Páginas com menos de 2 chamadas ficam com `noindex` e fora do sitemap.
 - **Imagem de prévia por edital** (`assets/og/`), gerada por `scripts/gerar-imagens.mjs` só quando os dados exibidos mudam.
-- **Sugerir edital:** formulário de issue → workflow `Sugestão de edital` → IA extrai os dados → pull request para revisão → quem sugeriu é avisado.
+- **Sugerir edital:** formulário de issue → workflow `Sugestão de edital` → IA extrai os dados → pull request para revisão → quem sugeriu é avisado. Para evitar gasto de API por abuso, a análise roda sozinha só para quem é dono/colaborador do repositório; sugestões de outras pessoas rodam quando a mantenedora aplica o rótulo `sugestao-aprovada`.
+- **Privacidade e termos:** páginas `/privacidade/` e `/termos/` geradas pelo `gerar-paginas.mjs`; preencha `responsavel` e `contato` em `data/site.json` para identificar quem responde pelo site (LGPD).
+- **Design:** design system minimalista (tokens no topo do `<style>` do `index.html` e em `assets/paginas.css`), com modo escuro automático e sem emojis como ícones.
 - **IndexNow:** `scripts/notificar-buscadores.mjs` avisa Bing e outros buscadores a cada página alterada (chave em `data/site.json` e no arquivo `<chave>.txt` da raiz).
 - **Medição do funil:** eventos `edital-abrir`, `edital-whatsapp`, `edital-oficial`, `proposta-*`, `perfil-salvo`, `agenda`, `prestacao-enviada` etc.
 - **Destaque patrocinado:** `"patrocinado": true` e `"patrocinioAte"` no edital; selo sempre visível, sem alterar filtros, compatibilidade ou ordem dos resultados.

@@ -55,7 +55,9 @@
       "link": "https://fapesp.br/18434",
       "fonte": "https://agencia.fapesp.br/programa-pesquisa-inovativa-em-pequenas-empresas-vai-apoiar-projetos-de-tecnologias-educacionais/59435",
       "verificadoEm": "2026-10-28",
-      "docsExtras": ["Pré-proposta submetida pelo SAGe", "Comprovação de que o pesquisador responsável é sócio da empresa", "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"]
+      "docsExtras": ["Pré-proposta submetida pelo SAGe", "Comprovação de que o pesquisador responsável é sócio da empresa", "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"],
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-01-13"
     },
     {
       "id": 103,
@@ -168,7 +170,7 @@
       "tema": "Tecnologia",
       "tags": ["Bolsas", "Pós-graduação", "Parceria com empresas", "CAPES"],
       "modalidade": "Bolsas",
-      "publico": ["ict"],
+      "publico": ["pesquisador", "ict"],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": null,
@@ -200,7 +202,7 @@
       "titulo": "Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital",
       "instituicao": "CNPq",
       "agencia": "cnpq",
-      "procedencia": "nacional",
+      "procedencia": "internacional",
       "tema": "Tecnologia",
       "tags": ["Cooperação internacional", "França", "Saúde Única", "Doenças infecciosas", "IA", "Computação quântica"],
       "modalidade": "Auxílio à pesquisa",
@@ -250,7 +252,7 @@
       "encerramento": "2027-01-14",
       "prazoNota": "Atenção: instituições sem cadastro aprovado na Finep precisavam se cadastrar até 16/10/2026.",
       "resumo": "Financia ICTs públicas (por meio de fundações de apoio) e ICTs privadas sem fins lucrativos qualificadas como OS ou ICES, em articulação com Incubadoras Tecnológicas de Cooperativas Populares (ITCPs) e NITs, para desenvolver tecnologias para a economia solidária: agroecologia e soberania alimentar; saneamento e reaproveitamento de resíduos; sistemas digitais e finanças solidárias; energias renováveis; e saúde, cuidado e bem-viver nos territórios.",
-      "link": "https://www.finep.gov.br/en/e/chamada-publica/222684/1057230",
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1057230",
       "fonte": "https://agenciagov.ebc.com.br/noticias/202609/finep-publica-chamada-de-r-100-milhoes-para-impulsionar-solucoes-tecnologicas-na-economia-solidaria",
       "verificadoEm": "2026-10-28",
       "docsExtras": ["Cadastro da proponente e da ICT executora aprovado na Finep", "Ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos", "Comprovação da articulação com ITCP e NIT"]
@@ -274,7 +276,7 @@
       "contrapartida": "Não se aplica",
       "publicadoEm": "2026-10-20",
       "abertura": "2026-11-04",
-      "encerramento": "2027-02-22",
+      "encerramento": "2026-12-04",
       "resultado": "2027-08-01",
       "prazoNota": "Atenção: consulta de elegibilidade e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026; só quem for considerado elegível submete a proposta completa no SAGe até 22/02/2027. Uma proposta por pesquisador, em um único eixo (Síntese ou Transformação).",
       "preProposta": true,
@@ -290,7 +292,9 @@
         { "nome": "Adequação do orçamento", "peso": null },
         { "nome": "Disseminação de conhecimento e dados", "peso": null }
       ],
-      "docsExtras": ["Pré-proposta (até 1.200 palavras) e descrição da equipe (até 400 palavras)", "Súmulas curriculares no modelo FAPESP", "Estimativa simplificada de orçamento", "Justificativa de concomitância, se já coordena outro auxílio"]
+      "docsExtras": ["Pré-proposta (até 1.200 palavras) e descrição da equipe (até 400 palavras)", "Súmulas curriculares no modelo FAPESP", "Estimativa simplificada de orçamento", "Justificativa de concomitância, se já coordena outro auxílio"],
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-02-22"
     },
     {
       "id": 110,
@@ -298,7 +302,7 @@
       "titulo": "FAPESP e Instituto Pasteur de Montevideo – Jovem Pesquisador",
       "instituicao": "FAPESP",
       "agencia": "fapesp",
-      "procedencia": "nacional",
+      "procedencia": "internacional",
       "tema": "Saúde",
       "tags": ["Jovem Pesquisador", "Biomedicina", "Cooperação internacional", "Uruguai"],
       "modalidade": "Auxílio à pesquisa",
@@ -332,7 +336,7 @@
       "titulo": "SPRINT 2026 – colaboração internacional (edição 2)",
       "instituicao": "FAPESP",
       "agencia": "fapesp",
-      "procedencia": "nacional",
+      "procedencia": "internacional",
       "tema": "Educação",
       "tags": ["Internacionalização", "Mobilidade", "SPRINT", "Cooperação internacional"],
       "modalidade": "Auxílio à pesquisa",
@@ -465,7 +469,8 @@
       "fonte": "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573",
       "verificadoEm": "2026-10-30",
       "criterios": [],
-      "docsExtras": ["Declaração da organização (Anexo I)", "Plano de trabalho no modelo do edital (Anexo II)", "Planilha orçamentária anual (Anexo III)", "Protocolo de intenção de registro no CMI (Anexo IV)"]
+      "docsExtras": ["Declaração da organização (Anexo I)", "Plano de trabalho no modelo do edital (Anexo II)", "Planilha orçamentária anual (Anexo III)", "Protocolo de intenção de registro no CMI (Anexo IV)"],
+      "ufs": ["SP"]
     },
     {
       "id": 116,
@@ -525,7 +530,8 @@
         { "nome": "Contribuição ao Plano ES 500 Anos", "peso": 15 },
         { "nome": "Contribuição aos ODS", "peso": 15 }
       ],
-      "docsExtras": ["Formulário de submissão preenchido (Anexo I)", "Histórico escolar dos alunos orientados com coeficiente de rendimento igual ou superior a 7,0", "Declaração da coordenação do curso confirmando tema e orientador (Anexo II)", "Currículo Lattes do proponente atualizado há menos de 6 meses", "Anuência da IES via Sigfapes por gestor institucional", "Na contratação: regularidade fiscal, declaração da IES e comprovação de matrícula dos alunos"]
+      "docsExtras": ["Formulário de submissão preenchido (Anexo I)", "Histórico escolar dos alunos orientados com coeficiente de rendimento igual ou superior a 7,0", "Declaração da coordenação do curso confirmando tema e orientador (Anexo II)", "Currículo Lattes do proponente atualizado há menos de 6 meses", "Anuência da IES via Sigfapes por gestor institucional", "Na contratação: regularidade fiscal, declaração da IES e comprovação de matrícula dos alunos"],
+      "agencia": "fapes"
     },
     {
       "id": 118,
@@ -536,7 +542,7 @@
       "tema": "Tecnologia",
       "tags": ["doutor empreendedor", "inovação", "startups", "subvenção econômica", "bolsa POSDOC", "Espírito Santo"],
       "modalidade": "Subvenção econômica e bolsas (POSDOC e ICT)",
-      "publico": ["pesquisador"],
+      "publico": ["pesquisador", "empresa"],
       "abrangencia": "Espírito Santo",
       "ufs": ["ES"],
       "moeda": "BRL",
@@ -561,7 +567,8 @@
         { "nome": "Apresentação oral: perfil, competência e experiência do doutor e da equipe", "peso": 5 },
         { "nome": "Apresentação oral: capacidade de argumentação e domínio do tema", "peso": 15 }
       ],
-      "docsExtras": ["Formulário de submissão da proposta (Anexo I), assinado pelo coordenador e pelo tutor acadêmico", "Declaração de apoio do tutor acadêmico (Anexo II) e da instituição copartícipe (Anexo III)", "Declaração de não acumulação de bolsas (Anexo IV)", "Diploma de doutorado ou atestado de previsão de conclusão com comprovante de aprovação da qualificação da tese", "Comprovante de residência no ES, RG/CPF ou CNH e Currículo Lattes atualizado nos últimos 3 meses", "Declaração de Ciência do NIT (Anexo IX), exigida na contratação quando a instituição copartícipe estiver vinculada à contemplada no Edital FAPES 12/2025"]
+      "docsExtras": ["Formulário de submissão da proposta (Anexo I), assinado pelo coordenador e pelo tutor acadêmico", "Declaração de apoio do tutor acadêmico (Anexo II) e da instituição copartícipe (Anexo III)", "Declaração de não acumulação de bolsas (Anexo IV)", "Diploma de doutorado ou atestado de previsão de conclusão com comprovante de aprovação da qualificação da tese", "Comprovante de residência no ES, RG/CPF ou CNH e Currículo Lattes atualizado nos últimos 3 meses", "Declaração de Ciência do NIT (Anexo IX), exigida na contratação quando a instituição copartícipe estiver vinculada à contemplada no Edital FAPES 12/2025"],
+      "agencia": "fapes"
     },
     {
       "id": 119,
@@ -594,7 +601,8 @@
         { "nome": "Etapa II: PPG mais antigo em data de início do curso", "peso": null },
         { "nome": "Etapa II: maior número de doutores", "peso": null }
       ],
-      "docsExtras": ["Anexo I – Formulário de Submissão do PPG preenchido e assinado pelo coordenador via E-Docs (assinatura escaneada ou colada como imagem não é aceita)", "Portaria, ata do colegiado do PPG ou ato interno da IES/P que designe o proponente como coordenador do PPG", "Anuência do Gestor Institucional da IES/P no Sistema de Gestão da Fapes", "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema", "Regimento interno com seleção por chamada pública e dissertação como requisito para o título", "Política regulamentada de ações afirmativas de reserva de vagas"]
+      "docsExtras": ["Anexo I – Formulário de Submissão do PPG preenchido e assinado pelo coordenador via E-Docs (assinatura escaneada ou colada como imagem não é aceita)", "Portaria, ata do colegiado do PPG ou ato interno da IES/P que designe o proponente como coordenador do PPG", "Anuência do Gestor Institucional da IES/P no Sistema de Gestão da Fapes", "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema", "Regimento interno com seleção por chamada pública e dissertação como requisito para o título", "Política regulamentada de ações afirmativas de reserva de vagas"],
+      "agencia": "fapes"
     },
     {
       "id": 120,
@@ -627,7 +635,8 @@
         { "nome": "PPG mais antigo em data de início do curso", "peso": null },
         { "nome": "Maior número de doutores", "peso": null }
       ],
-      "docsExtras": ["Anexo I – Formulário de Submissão do PPG, assinado pelo coordenador exclusivamente via E-Docs", "Portaria, ata do colegiado ou ato interno da IES/P designando o proponente como coordenador do PPG", "Anuência do Gestor Institucional no Sistema de Gestão da Fapes", "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema", "Regimento interno com seleção por chamada pública e aprovação de tese como requisito para o título", "Política regulamentada de ações afirmativas de reserva de vagas"]
+      "docsExtras": ["Anexo I – Formulário de Submissão do PPG, assinado pelo coordenador exclusivamente via E-Docs", "Portaria, ata do colegiado ou ato interno da IES/P designando o proponente como coordenador do PPG", "Anuência do Gestor Institucional no Sistema de Gestão da Fapes", "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema", "Regimento interno com seleção por chamada pública e aprovação de tese como requisito para o título", "Política regulamentada de ações afirmativas de reserva de vagas"],
+      "agencia": "fapes"
     },
     {
       "id": 121,
@@ -670,7 +679,10 @@
         }
       ],
       "docsExtras": ["Pré-proposta e proposta completa em inglês, nos modelos da Chamada, via EPSS", "Consórcio transnacional com no mínimo 3 parceiros financiáveis de 3 países diferentes (máximo 7 parceiros)", "Documentos de regularidade conforme Instrução de Serviços nº 082/2025", "Cadastro do projeto e documentação no SigFapes após a seleção", "Estar adimplente com a FAPES na data limite de submissão"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-06-02",
+      "agencia": "fapes"
     },
     {
       "id": 122,
@@ -698,14 +710,17 @@
       "fonte": "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf",
       "verificadoEm": "2026-10-31",
       "docsExtras": ["Pré-proposta obrigatória na 1ª fase, em inglês, via EPSS com os modelos da Chamada", "Documentos de regularidade conforme Instrução de Serviços nº 082/2025", "Consórcio com ao menos 3 parceiros financiáveis de 3 países diferentes (máximo de 7 parceiros)", "Ao menos 2 entidades jurídicas independentes de Estados-Membros da UE ou países associados ao Horizon Europe", "Cadastro posterior dos projetos selecionados no SigFapes"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-04-16",
+      "agencia": "fapes"
     },
     {
       "id": 123,
       "numero": "Chamada Transnacional Conjunta CONFAP & Water4All 2026",
       "titulo": "Chamada Transnacional CONFAP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)",
       "instituicao": "FAPES",
-      "procedencia": "nacional",
+      "procedencia": "internacional",
       "tema": "Meio Ambiente",
       "tags": ["recursos hídricos", "Water4All", "Horizon Europe", "cooperação internacional", "Espírito Santo", "CONFAP"],
       "modalidade": "Auxílio à pesquisa",
@@ -725,7 +740,10 @@
       "fonte": "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf",
       "verificadoEm": "2026-10-31",
       "docsExtras": ["Proposta e pré-proposta em inglês, nos modelos da Chamada, via Electronic Proposal Submission System (EPSS)", "Comprovação de regularidade conforme documentos da Instrução de Serviços nº 082/2025 da FAPES", "Consórcio transnacional com ao menos 3 parceiros financiáveis de 3 países diferentes, e no máximo 7 parceiros", "Após a seleção, cadastro do projeto e envio de documentos no SigFapes", "Cada pesquisador pode submeter apenas 1 proposta"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-04-06",
+      "agencia": "fapes"
     },
     {
       "id": 124,
@@ -766,7 +784,10 @@
         }
       ],
       "docsExtras": ["Proposta em inglês, enviada pelo EPSS com os modelos da Chamada", "Consórcio com pelo menos 3 parceiros financiados de 3 países diferentes (máximo 7 parceiros)", "Pelo menos 2 entidades de 2 Estados-Membros da UE ou países associados ao Horizon Europe", "Documentos de regularidade da Instrução de Serviços nº 082/2025", "Cadastro posterior do projeto selecionado no SigFapes"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-06-14",
+      "agencia": "fapes"
     },
     {
       "id": 125,
@@ -862,7 +883,8 @@
       "fonte": "https://fapesp.br/18415",
       "verificadoEm": "2026-10-31",
       "docsExtras": ["Súmula curricular do Pesquisador Responsável em inglês", "Tempo estimado de dedicação semanal (recomendado mínimo de 12h/semana)", "Duração e orçamento total previsto em R$ (sem descritivo)", "Título, pesquisador coordenador do consórcio e sua instituição", "Pre-proposal form da SBEP, submetido pelo coordenador do consórcio na plataforma Biodiversa+", "Consortium Agreement em caso de aprovação"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta"
     },
     {
       "id": 128,
@@ -890,7 +912,8 @@
       "fonte": "https://fapesp.br/18414",
       "verificadoEm": "2026-10-31",
       "docsExtras": ["Súmula curricular do Pesquisador Responsável em inglês, enviada por e-mail à FAPESP", "Tempo estimado de dedicação semanal (recomendado mínimo de 12h/semana), com justificativa de concomitância se houver APR vigente", "Duração da proposta e orçamento total previsto em R$ (sem descritivo)", "Pré-proposta no Pre-proposal template da Water4All, submetida pelo coordenador do consórcio", "Consortium Agreement entre as instituições do consórcio, em caso de aprovação"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta"
     },
     {
       "id": 129,
@@ -918,7 +941,8 @@
       "fonte": "https://fapesp.br/18366",
       "verificadoEm": "2026-10-31",
       "docsExtras": ["Súmula curricular do Pesquisador Responsável em inglês", "Estimativa de dedicação semanal (recomendado mínimo de 12h/semana) e justificativa de concomitância, se houver APR vigente", "Duração e orçamento total previsto em R$ (sem descritivo)", "Título da proposta, nome e instituição do coordenador do consórcio", "Pré-proposta no formulário da Biodiversa+, enviada pelo coordenador do consórcio", "Consortium Agreement em caso de aprovação"],
-      "preProposta": true
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta"
     },
     {
       "id": 130,
@@ -959,7 +983,7 @@
       "agencia": "fapesp",
       "procedencia": "internacional",
       "tema": "Desenvolvimento",
-      "tags": ["pós-doutorado", "UNESCO-TWAS", "cooperação internacional", "países em desenvolvimento", "São Paulo", "bolsas"],
+      "tags": ["pós-doutorado", "UNESCO-TWAS", "cooperação internacional", "países em desenvolvimento", "São Paulo", "bolsas", "Candidatos estrangeiros de países em desenvolvimento"],
       "modalidade": "Bolsa de Pós-Doutorado",
       "publico": ["pesquisador"],
       "abrangencia": "São Paulo",
@@ -985,7 +1009,9 @@
       ],
       "docsExtras": ["Formulário de manifestação de interesse enviado por e-mail (nome, nº do auxílio FAPESP vigente, vigência, resumo em inglês)", "Auxílio FAPESP vigente indicado como processo vinculado, ativo por pelo menos 6 meses após o início do pós-doc", "Declaração de Apoio Institucional assinada pelo Dirigente da Instituição Sede", "Projeto de pesquisa do bolsista em até 4 páginas, em inglês, e Plano de Gestão de Dados de até 2 páginas", "Declaração do supervisor atestando a proficiência em inglês do bolsista", "Anexo II sobre a infraestrutura institucional e manifestação do Dirigente da Instituição Sede"],
       "preProposta": true,
-      "numero": "Chamada UNESCO-TWAS/FAPESP 2026"
+      "numero": "Chamada UNESCO-TWAS/FAPESP 2026",
+      "etapaPrazo": "Manifestação de interesse",
+      "propostaCompleta": "2027-04-01"
     }
   ]
 }

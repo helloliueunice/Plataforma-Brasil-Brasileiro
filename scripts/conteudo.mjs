@@ -38,7 +38,7 @@ export const PUBLICOS_HUB = {
         h1: 'Editais abertos para OSCs, ONGs, associações e cooperativas',
         descricao: 'Chamamentos públicos e editais para organizações da sociedade civil: termos de fomento, prêmios e apoio a projetos, com prazos, valores e documentos exigidos.',
         intro: `<p>Organizações da sociedade civil acessam recursos públicos principalmente por <strong>chamamentos públicos</strong> regidos pelo Marco Regulatório das OSCs (MROSC, Lei nº 13.019/2014), além de editais de fundações, institutos e empresas.</p>
-<p>O MROSC exige, entre outros pontos, um tempo mínimo de existência com CNPJ ativo: em regra, 1 ano para parcerias com municípios, 2 com estados e 3 com a União, podendo ser reduzido quando nenhuma organização atingir o mínimo. Também exige experiência prévia no objeto e capacidade técnica e operacional. O estatuto precisa prever objetivos de relevância pública e social.</p>`,
+<p>O MROSC exige, entre outros pontos, um tempo mínimo de existência com CNPJ ativo: em regra, 1 ano para parcerias com municípios, 2 com estados e o Distrito Federal e 3 com a União, prazo que o ente pode reduzir por ato específico quando nenhuma organização o atingir (Lei 13.019/2014, art. 33, V, “a”). Esse requisito não se aplica a acordos de cooperação. Também exige experiência prévia no objeto e capacidade técnica e operacional. O estatuto precisa prever objetivos de relevância pública e social.</p>`,
         dicas: ['Mantenha atas, estatuto e certidões em dia: são cobrados em quase todos os chamamentos.', 'Documente a experiência prévia com fotos, relatórios, declarações de parceiros e matérias.', 'Leia o plano de trabalho exigido: metas, indicadores e orçamento precisam conversar.']
     },
     municipio: {
@@ -154,7 +154,7 @@ export const GUIAS = [
 <h2>Para OSCs, associações e cooperativas</h2>
 <ul>
 <li>Estatuto social com objetivos de relevância pública e social, e ata de eleição da diretoria vigente.</li>
-<li><strong>Comprovação do tempo mínimo de existência</strong> com CNPJ ativo: no MROSC, em regra, 1 ano para parcerias com municípios, 2 com estados e 3 com a União.</li>
+<li><strong>Comprovação do tempo mínimo de existência</strong> com CNPJ ativo: no MROSC, em regra, 1 ano para parcerias com municípios, 2 com estados e o DF e 3 com a União, salvo redução por ato do ente; não se aplica a acordos de cooperação (Lei 13.019/2014, art. 33).</li>
 <li>Comprovação de experiência prévia no objeto: relatórios, declarações de parceiros, fotos e publicações.</li>
 <li>Certidões de regularidade fiscal, previdenciária, trabalhista e do FGTS.</li>
 <li>Declarações exigidas pelo MROSC, por exemplo de que a organização e seus dirigentes não estão impedidos de celebrar parcerias.</li>
@@ -255,7 +255,7 @@ export const GUIAS = [
 <ul>
 <li><strong>Termos de outorga de agências de pesquisa:</strong> no âmbito do Marco Legal de CT&I, o Decreto nº 9.283/2018 prevê procedimentos simplificados com foco em resultados.</li>
 <li><strong>Termos de fomento e colaboração com OSCs:</strong> regidos pelo MROSC (Lei nº 13.019/2014).</li>
-<li><strong>Convênios e contratos de repasse da União:</strong> regidos pelo Decreto nº 11.531/2023 e operados no Transferegov.br.</li>
+<li><strong>Convênios e contratos de repasse da União:</strong> regidos pelo Decreto nº 11.531/2023 (com a Lei nº 14.133/2021 aplicada no que couber, art. 184) e operados no Transferegov.br.</li>
 </ul>
 <p>Siga sempre o termo assinado e as normas do financiador.</p>
 
@@ -278,7 +278,7 @@ export const GUIAS = [
 </ul>
 
 <h2>Prazos e guarda de documentos</h2>
-<p>Prestações parciais costumam ser periódicas, e a final tem prazo contado a partir do fim da vigência. Os documentos precisam ser guardados por anos depois da aprovação das contas: no MROSC, por exemplo, por 10 anos. Confira o prazo do seu instrumento.</p>
+<p>Prestações parciais costumam ser periódicas, e a final tem prazo contado a partir do fim da vigência. Os documentos precisam ser guardados por anos: no MROSC, por 10 anos contados do dia útil seguinte ao da prestação de contas (Lei 13.019/2014, art. 68, parágrafo único). Confira o prazo do seu instrumento.</p>
 <p>Na plataforma, a área de <a href="{raiz}#projetos">Projetos</a> mostra o fluxo de prestação de contas em etapas (preencher, revisar e protocolo), com rascunho automático. Ela é uma <strong>demonstração</strong>: o envio oficial é feito no sistema exigido pelo financiador.</p>`
     }
 ];
