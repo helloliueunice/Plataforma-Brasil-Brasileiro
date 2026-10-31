@@ -50,15 +50,22 @@ async function pedir(caminho, params = {}) {
     }
 }
 
-// Coleta todas as páginas de uma consulta (com limite de segurança)
-async function todas(caminho, params, maxPaginas = 60) {
+// Coleta todas as páginas de uma consulta. A visão é programa × proposta e pesada:
+// se o serviço falhar (502/504), reduz o tamanho da página e tenta de novo.
+async function todas(caminho, params, maxLinhas = 20000) {
     const linhas = [];
-    for (let pagina = 1; pagina <= maxPaginas; pagina++) {
-        const env = await pedir(caminho, { ...params, pagina, tamanho_da_pagina: 200 });
+    let tam = 200, pagina = 1;
+    while (linhas.length < maxLinhas) {
+        let env;
+        try { env = await pedir(caminho, { ...params, pagina, tamanho_da_pagina: tam }); }
+        catch (err) {
+            if (tam > 25 && !err.definitivo) { const ini = (pagina - 1) * tam; tam = Math.max(25, tam / 2); pagina = Math.floor(ini / tam) + 1; continue; }
+            throw err;
+        }
         const dados = Array.isArray(env) ? env : env.data || [];
         linhas.push(...dados);
-        const total = env.total_paginas ?? env.totalPaginas ?? env.pages ?? null;
-        if (!dados.length || dados.length < 200 || (total && pagina >= total)) break;
+        if (dados.length < tam) break;
+        pagina++;
     }
     return linhas;
 }
@@ -138,16 +145,20 @@ function paraEdital(p) {
 }
 
 /* ---------------- Coleta ---------------- */
-const consultas = ['EXPIRACAO_PROG_DISTANTE', 'EXPIRACAO_PROG_PROX', 'EXPIRACAO_PROG_MUITO_PROX'];
+const ANO = Number(HOJE.slice(0, 4));
+const consultas = [];
+for (const exp of ['EXPIRACAO_PROG_MUITO_PROX', 'EXPIRACAO_PROG_PROX', 'EXPIRACAO_PROG_DISTANTE'])
+    for (const ano of [ANO, ANO - 1]) consultas.push({ expiracao_prog_prop_voluntaria: exp, ano_disponibilizacao: String(ano) });
 const porId = new Map();
 const amostras = [];
 let falhas = 0;
-for (const exp of consultas) {
+for (const c of consultas) {
+    const rotulo = `${c.expiracao_prog_prop_voluntaria} ${c.ano_disponibilizacao}`;
     try {
-        const linhas = await todas('discricionarias/todos-programas', { sit_programa: 'DISPONIBILIZADO', expiracao_prog_prop_voluntaria: exp });
+        const linhas = await todas('discricionarias/todos-programas', { sit_programa: 'DISPONIBILIZADO', ...c });
         for (const p of linhas) if (!porId.has(p.id_programa)) { porId.set(p.id_programa, p); if (amostras.length < 3) amostras.push(p); }
-        anotar(`Consulta ${exp}`, `${linhas.length} linhas · ${porId.size} programas distintos até aqui`);
-    } catch (err) { falhas++; anotar(`Falha ${exp}`, err.message, 'warning'); }
+        anotar(`Consulta ${rotulo}`, `${linhas.length} linhas · ${porId.size} programas distintos até aqui`);
+    } catch (err) { falhas++; anotar(`Falha ${rotulo}`, err.message, 'warning'); }
 }
 
 const programas = [...porId.values()];
@@ -171,6 +182,7 @@ if (DIAG) {
     process.exit(0);
 }
 
+if (falhas && fs.existsSync(SAIDA) && (JSON.parse(fs.readFileSync(SAIDA, 'utf8')).editais || []).length > editais.length) { anotar('Transferegov parcial', `${falhas} consulta(s) falharam; mantivemos o arquivo anterior, mais completo.`, 'warning'); process.exit(0); }
 if (!programas.length && falhas) { anotar('Transferegov indisponível', 'Nenhuma consulta funcionou; o arquivo anterior foi mantido.', 'warning'); process.exit(0); }
 fs.mkdirSync(path.dirname(SAIDA), { recursive: true });
 fs.writeFileSync(SAIDA, JSON.stringify({ geradoEm: HOJE, fonte: `${BASE}/discricionarias/todos-programas`, atualizacaoBase: atualizacao, editais }, null, 2) + '\n');
