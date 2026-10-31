@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Dr. Empreendedor Capixaba: apoio a doutores empreendedores… 
+ — Fundos Brasil
+NAME:Dr. Empreendedor Capixaba: apoio a doutores empreendedores… — Fund
+ os Brasil
+X-WR-CALDESC:Prazos de Dr. Empreendedor Capixaba: apoio a doutores empreend
+ edores com projetos de inovação (FAPES). Confirme sempre no edital ofici
+ al.
+DESCRIPTION:Prazos de Dr. Empreendedor Capixaba: apoio a doutores empreende
+ dores com projetos de inovação (FAPES). Confirme sempre no edital oficia
+ l.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-118-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Prazo final: Dr. Empreendedor Capixaba: apoio a doutores empreended
+ ores com projetos de inovação
+DESCRIPTION:FAPES · Edital FAPES nº 10/2026\nValor: até R$ 355\,4 mil 
+ por proposta\nQuem pode participar: Pesquisador(a)\, Empresa / Startup\nEs
+ ta é a 2ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes
+  até as 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilita
+ ção a partir de 08/01/2027\, apresentação oral entre 03/02 e 18/03/202
+ 7 e resultado homologado previsto a partir de 27/04/2027.\nPágina do edit
+ al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
+ dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capix
+ aba_-_1a_alteracao_.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/d
+ r-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Dr. Empreendedor Capixaba: apoio
+  a doutores empreendedores com projetos de inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Dr. Empreendedor Capixaba: apoio a dou
+ tores empreendedores com projetos de inovação
+END:VALARM
+END:VEVENT
+END:VCALENDAR

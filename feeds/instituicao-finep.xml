@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Fundos Brasil — editais FINEP</title>
+  <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/finep/</link>
+  <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/instituicao-finep.xml" rel="self" type="application/rss+xml"/>
+  <description>Editais com inscrições abertas ou previstas (editais FINEP), conferidos nas fontes oficiais. Confirme sempre no edital oficial.</description>
+  <language>pt-BR</language>
+  <ttl>720</ttl>
+  <lastBuildDate>Sat, 31 Oct 2026 15:00:00 GMT</lastBuildDate>
+  <item>
+    <title>COOPERAMAIS Tecnologia – ICTs com cooperativas da agricultura familiar — Finep</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperamais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperamais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/</guid>
+    <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
+    <category>Agronegócio e Segurança Alimentar</category>
+    <category>ICT / Universidade</category>
+    <description>Chamada Pública MCTI/Finep/FNDCT – CT-Agro. até R$ 15,0 mi · ICT / Universidade · inscrições de 22/09/2026 a 08/12/2026. P,D&amp;I de ICTs públicas e privadas em soluções para a agricultura familiar (comercialização, agroindustrialização, transformação digital, economia circular e resiliência climática), obrigatoriamente com cooperativa parceira há pelo menos 1 ano.</description>
+  </item>
+  <item>
+    <title>Finep COOPERAMAIS Brasil Tecnologias – Empresas — Finep</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/finep-cooperamais-brasil-tecnologias-empresas-112/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/finep-cooperamais-brasil-tecnologias-empresas-112/</guid>
+    <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
+    <category>Agronegócio e Segurança Alimentar</category>
+    <category>Empresa / Startup</category>
+    <description>Seleção Pública MCTI/Finep/FNDCT – Fluxo Contínuo. até R$ 20,0 mi · Empresa / Startup · inscrições de 22/09/2026 a 30/04/2027. Subvenção econômica para empresas desenvolverem produtos ou processos inovadores para a agroindústria nacional e a segurança alimentar, em parceria com cooperativas da agricultura familiar.</description>
+  </item>
+  <item>
+    <title>PRONINC 2026 – Tecnologias e inovação social para a economia solidária — FINEP</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/</guid>
+    <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
+    <category>Desenvolvimento Social</category>
+    <category>ICT / Universidade</category>
+    <description>Chamada Pública PRONINC 2026. até R$ 5,0 mi · ICT / Universidade · inscrições de 18/09/2026 a 14/01/2027. Financia ICTs públicas (por meio de fundações de apoio) e ICTs privadas sem fins lucrativos qualificadas como OS ou ICES, em articulação com Incubadoras Tecnológicas de Cooperativas Populares (ITCPs) e NITs, para desenvolver tecnologias para a economia solidária: agroecologia e soberania alimentar; saneamento e reaproveitamento de resíduos; sistemas digitais e finanças solidárias; energias renováveis; e saúde, cuidado e bem-viver nos territórios.</description>
+  </item>
+</channel>
+</rss>

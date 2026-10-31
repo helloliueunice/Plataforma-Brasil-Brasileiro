@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Fundos Brasil — editais de Cultura e Economia Criativa</title>
+  <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/area/cultura-e-economia-criativa/</link>
+  <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/area-cultura-e-economia-criativa.xml" rel="self" type="application/rss+xml"/>
+  <description>Editais com inscrições abertas ou previstas (editais de Cultura e Economia Criativa), conferidos nas fontes oficiais. Confirme sempre no edital oficial.</description>
+  <language>pt-BR</language>
+  <ttl>720</ttl>
+  <lastBuildDate>Sat, 31 Oct 2026 15:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo — FAPESP</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/</guid>
+    <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
+    <category>Cultura e Economia Criativa</category>
+    <category>Pesquisador(a)</category>
+    <description>Chamada FAPESP – Aperfeiçoamento de especialistas em museus. bolsas (ver condições) · Pesquisador(a) · inscrições de 15/09/2026 a 23/11/2026. A FAPESP oferece bolsas para técnicos de museus e instituições de salvaguarda e comunicação de acervos de SP fazerem estágios de 30 a 90 dias. Os estágios podem ser em SP, em outros estados ou no exterior. As áreas são educação museal, conservação, documentação museológica e expografia. O bolsista deve ter diploma de nível superior e vínculo empregatício com a instituição sede, em SP. O estágio deve ser em cidade diferente da do vínculo.</description>
+  </item>
+</channel>
+</rss>

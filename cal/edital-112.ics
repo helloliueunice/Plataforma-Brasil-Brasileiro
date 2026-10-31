@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Finep COOPERAMAIS Brasil Tecnologias – Empresas — Fundos B
+ rasil
+NAME:Finep COOPERAMAIS Brasil Tecnologias – Empresas — Fundos Brasil
+X-WR-CALDESC:Prazos de Finep COOPERAMAIS Brasil Tecnologias – Empresas (F
+ inep). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Finep COOPERAMAIS Brasil Tecnologias – Empresas (Fi
+ nep). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-112-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Prazo final: Finep COOPERAMAIS Brasil Tecnologias – Empresas
+DESCRIPTION:Finep · Seleção Pública MCTI/Finep/FNDCT – Fluxo Contínu
+ o\nValor: até R$ 20\,0 mi\nQuem pode participar: Empresa / Startup\nFlu
+ xo contínuo até 30/04/2027\, 17h\, pela Plataforma de Apoio e Financiame
+ nto da Finep. A empresa precisa de parceria formalizada com cooperativa co
+ m CAF e pelo menos 70% de agricultores familiares.\nPágina do edital: htt
+ ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/finep-c
+ ooperamais-brasil-tecnologias-empresas-112/\nConfirme data e horário limi
+ te no edital oficial: https://www.finep.gov.br/e/chamada-publica/222684/10
+ 60720
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ inep-cooperamais-brasil-tecnologias-empresas-112/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Finep COOPERAMAIS Brasil Tecnolo
+ gias – Empresas
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Finep COOPERAMAIS Brasil Tecnologias 
+ – Empresas
+END:VALARM
+END:VEVENT
+END:VCALENDAR

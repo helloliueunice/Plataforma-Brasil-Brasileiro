@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chamada Conjunta FAPESP/CONFAP/SBEP para economia azul… — 
+ Fundos Brasil
+NAME:Chamada Conjunta FAPESP/CONFAP/SBEP para economia azul… — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Chamada Conjunta FAPESP/CONFAP/SBEP para economia az
+ ul sustentável e inovadora (FAPESP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Chamada Conjunta FAPESP/CONFAP/SBEP para economia azu
+ l sustentável e inovadora (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-127-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Pré-proposta: Chamada Conjunta FAPESP/CONFAP/SBEP para economia az
+ ul sustentável e inovadora
+DESCRIPTION:FAPESP · Chamada Conjunta de Propostas FAPESP/CONFAP/SBEP 2026
+ /2027\nValor: até R$ 600\,0 mil por proposta\nQuem pode participar: Pes
+ quisador(a)\nA data limite de 16/11/2026 vale tanto para a FAPESP quanto p
+ ara a SBEP\; não há horário informado. Só quem tiver pré-proposta apr
+ ovada pode enviar a proposta completa pelo SAGe.\nPágina do edital: https
+ ://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-c
+ onjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/\nConfirme
+  data e horário limite no edital oficial: https://fapesp.br/18415/chamada
+ -conjunta-de-propostas-fapespconfapsbep-20262027
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-conjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Conjunta FAPESP/CONFAP
+ /SBEP para economia azul sustentável e inovadora
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Conjunta FAPESP/CONFAP/SBEP 
+ para economia azul sustentável e inovadora
+END:VALARM
+END:VEVENT
+END:VCALENDAR

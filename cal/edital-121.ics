@@ -1,0 +1,81 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chamada Transnacional Conjunta FOREST 2026 (Forest… — Fund
+ os Brasil
+NAME:Chamada Transnacional Conjunta FOREST 2026 (Forest… — Fundos Brasi
+ l
+X-WR-CALDESC:Prazos de Chamada Transnacional Conjunta FOREST 2026 (Forest P
+ athways) – Diretrizes FAPES (FAPES). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Chamada Transnacional Conjunta FOREST 2026 (Forest Pa
+ thways) – Diretrizes FAPES (FAPES). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-121-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta FOREST 2026 (Forest P
+ athways) – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
+ OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
+ r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
+ )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
+ ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
+ al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
+ retrizes-forest-pathways-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  FOREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta FORES
+ T 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-121-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270602
+DTEND;VALUE=DATE:20270603
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta FOREST 2026 (Fore
+ st Pathways) – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
+ OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
+ r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
+ )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
+ ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
+ al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
+ retrizes-forest-pathways-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta FOREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta F
+ OREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+END:VCALENDAR

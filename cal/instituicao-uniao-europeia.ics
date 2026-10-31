@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de editais União Europeia — Fundos Brasil
+NAME:Prazos de editais União Europeia — Fundos Brasil
+X-WR-CALDESC:Prazos de editais União Europeia\, com lembretes 7 dias e 1 d
+ ia antes. Atualizado todo dia. Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de editais União Europeia\, com lembretes 7 dias e 1 di
+ a antes. Atualizado todo dia. Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+END:VCALENDAR

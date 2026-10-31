@@ -1,0 +1,77 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1
+ ) — Fundos Brasil
+NAME:PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1) — Fu
+ ndos Brasil
+X-WR-CALDESC:Prazos de PIPE Jornada Tecnológica – Tecnologias Educaciona
+ is (Fase 1) (FAPESP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de PIPE Jornada Tecnológica – Tecnologias Educacionai
+ s (Fase 1) (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-102-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Pré-proposta: PIPE Jornada Tecnológica – Tecnologias Educaciona
+ is (Fase 1)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
+ il por proposta\nQuem pode participar: Empresa / Startup\nPrazo da pré-pr
+ oposta. As pré-propostas consideradas elegíveis enviam a proposta comple
+ ta até 13/01/2027.\nPágina do edital: https://helloliueunice.github.io/P
+ lataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-e
+ ducacionais-fase-1-102/\nConfirme data e horário limite no edital oficial
+ : https://fapesp.br/18434
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — PIPE Jornada Tecnológica – 
+ Tecnologias Educacionais (Fase 1)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — PIPE Jornada Tecnológica – Tecnol
+ ogias Educacionais (Fase 1)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-102-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:Proposta completa: PIPE Jornada Tecnológica – Tecnologias Educac
+ ionais (Fase 1)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
+ il por proposta\nQuem pode participar: Empresa / Startup\nPrazo da pré-pr
+ oposta. As pré-propostas consideradas elegíveis enviam a proposta comple
+ ta até 13/01/2027.\nPágina do edital: https://helloliueunice.github.io/P
+ lataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-e
+ ducacionais-fase-1-102/\nConfirme data e horário limite no edital oficial
+ : https://fapesp.br/18434
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — PIPE Jornada Tecnológica 
+ – Tecnologias Educacionais (Fase 1)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — PIPE Jornada Tecnológica – Te
+ cnologias Educacionais (Fase 1)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

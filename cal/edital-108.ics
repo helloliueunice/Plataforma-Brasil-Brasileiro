@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PRONINC 2026 – Tecnologias e inovação social para a… —
+  Fundos Brasil
+NAME:PRONINC 2026 – Tecnologias e inovação social para a… — Fundos 
+ Brasil
+X-WR-CALDESC:Prazos de PRONINC 2026 – Tecnologias e inovação social par
+ a a economia solidária (FINEP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de PRONINC 2026 – Tecnologias e inovação social para
+  a economia solidária (FINEP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-108-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Prazo final: PRONINC 2026 – Tecnologias e inovação social para 
+ a economia solidária
+DESCRIPTION:FINEP · Chamada Pública PRONINC 2026\nValor: até R$ 5\,0 m
+ i\nQuem pode participar: ICT / Universidade\nAtenção: instituições sem
+  cadastro aprovado na Finep precisavam se cadastrar até 16/10/2026.\nPág
+ ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
+ ro/editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-soli
+ daria-108/\nConfirme data e horário limite no edital oficial: https://www
+ .finep.gov.br/e/chamada-publica/222684/1057230
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ roninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PRONINC 2026 – Tecnologias e i
+ novação social para a economia solidária
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PRONINC 2026 – Tecnologias e inovaç
+ ão social para a economia solidária
+END:VALARM
+END:VEVENT
+END:VCALENDAR

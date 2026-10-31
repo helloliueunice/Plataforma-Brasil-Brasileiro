@@ -1,0 +1,315 @@
+{
+  "_leia": "Gerado por scripts/gerar-paginas.mjs: estado anterior dos campos-chave de cada edital, usado para registrar alterações em data/alteracoes.json. Não edite.",
+  "editais": {
+    "101": {
+      "titulo": "Plataformas digitais baseadas em software livre e protocolos abertos",
+      "abertura": "2026-11-05",
+      "encerramento": "2027-02-22",
+      "propostaCompleta": null,
+      "valorMax": 5000000,
+      "valorTotal": 21000000,
+      "link": "https://fapesp.br/18444",
+      "etapaPrazo": null
+    },
+    "102": {
+      "titulo": "PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)",
+      "abertura": "2026-10-21",
+      "encerramento": "2026-11-12",
+      "propostaCompleta": "2027-01-13",
+      "valorMax": 500000,
+      "valorTotal": 25000000,
+      "link": "https://fapesp.br/18434",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "103": {
+      "titulo": "Jovens Pesquisadores – chamada para pesquisadores no exterior",
+      "abertura": "2026-09-23",
+      "encerramento": "2026-11-19",
+      "propostaCompleta": null,
+      "valorMax": 2500000,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18389",
+      "etapaPrazo": null
+    },
+    "104": {
+      "titulo": "Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)",
+      "abertura": "2026-10-07",
+      "encerramento": "2027-01-07",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 448963200,
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/chamada-publica-cnpq-N-33-2026",
+      "etapaPrazo": null
+    },
+    "105": {
+      "titulo": "Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-12-04",
+      "propostaCompleta": null,
+      "valorMax": 200000,
+      "valorTotal": 20000000,
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/chamada-publica-cnpq-N-34-2026",
+      "etapaPrazo": null
+    },
+    "106": {
+      "titulo": "Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)",
+      "abertura": "2026-08-20",
+      "encerramento": "2026-12-11",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 62440000,
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+      "etapaPrazo": null
+    },
+    "107": {
+      "titulo": "Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital",
+      "abertura": "2026-09-03",
+      "encerramento": "2027-03-31",
+      "propostaCompleta": null,
+      "valorMax": 1500000,
+      "valorTotal": 6000000,
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-2026",
+      "etapaPrazo": null
+    },
+    "108": {
+      "titulo": "PRONINC 2026 – Tecnologias e inovação social para a economia solidária",
+      "abertura": "2026-09-18",
+      "encerramento": "2027-01-14",
+      "propostaCompleta": null,
+      "valorMax": 5000000,
+      "valorTotal": 100000000,
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1057230",
+      "etapaPrazo": null
+    },
+    "109": {
+      "titulo": "BIOTA – Síntese e Transformação",
+      "abertura": "2026-11-04",
+      "encerramento": "2026-12-04",
+      "propostaCompleta": "2027-02-22",
+      "valorMax": null,
+      "valorTotal": 15000000,
+      "link": "https://fapesp.br/18456",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "110": {
+      "titulo": "FAPESP e Instituto Pasteur de Montevideo – Jovem Pesquisador",
+      "abertura": "2026-11-04",
+      "encerramento": "2027-03-04",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18455",
+      "etapaPrazo": null
+    },
+    "111": {
+      "titulo": "SPRINT 2026 – colaboração internacional (edição 2)",
+      "abertura": "2026-09-21",
+      "encerramento": "2027-02-22",
+      "propostaCompleta": null,
+      "valorMax": 50000,
+      "valorTotal": null,
+      "link": "https://fapesp.br/sprint/chamada2026",
+      "etapaPrazo": null
+    },
+    "112": {
+      "titulo": "Finep COOPERAMAIS Brasil Tecnologias – Empresas",
+      "abertura": "2026-09-22",
+      "encerramento": "2027-04-30",
+      "propostaCompleta": null,
+      "valorMax": 20000000,
+      "valorTotal": 120000000,
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1060720",
+      "etapaPrazo": null
+    },
+    "113": {
+      "titulo": "COOPERAMAIS Tecnologia – ICTs com cooperativas da agricultura familiar",
+      "abertura": "2026-09-22",
+      "encerramento": "2026-12-08",
+      "propostaCompleta": null,
+      "valorMax": 15000000,
+      "valorTotal": 100000000,
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1060260",
+      "etapaPrazo": null
+    },
+    "114": {
+      "titulo": "Floresta Viva – Águas do São Francisco",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-02",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 17760000,
+      "link": "https://chamadas.funbio.org.br/floresta-viva-sao-francisco",
+      "etapaPrazo": null
+    },
+    "115": {
+      "titulo": "Fundo Municipal do Idoso – projetos para a pessoa idosa (cidade de São Paulo)",
+      "abertura": "2026-09-24",
+      "encerramento": "2026-11-06",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 12800000,
+      "link": "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573",
+      "etapaPrazo": null
+    },
+    "116": {
+      "titulo": "Projeto InspirAÇÃO: jovens mulheres negras na indústria de energia",
+      "abertura": "2026-10-26",
+      "encerramento": "2026-12-08",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 30240000,
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026",
+      "etapaPrazo": null
+    },
+    "117": {
+      "titulo": "TCC Empreendedor Inovador: bolsas para Trabalhos de Conclusão de Curso com foco em inovação",
+      "abertura": "2027-02-02",
+      "encerramento": "2027-03-30",
+      "propostaCompleta": null,
+      "valorMax": 11000,
+      "valorTotal": 1600000,
+      "link": "https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf",
+      "etapaPrazo": null
+    },
+    "118": {
+      "titulo": "Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-12-15",
+      "propostaCompleta": null,
+      "valorMax": 355400,
+      "valorTotal": 10662000,
+      "link": "https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf",
+      "etapaPrazo": null
+    },
+    "119": {
+      "titulo": "PROCAP 2027 – Bolsas de mestrado para Programas de Pós-graduação do Espírito Santo",
+      "abertura": "2026-09-28",
+      "encerramento": "2026-11-16",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 16128000,
+      "link": "https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.pdf",
+      "etapaPrazo": null
+    },
+    "120": {
+      "titulo": "PROCAP 2027 – Bolsas de doutorado para Programas de Pós-graduação do Espírito Santo",
+      "abertura": "2026-09-28",
+      "encerramento": "2026-11-16",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 27000000,
+      "link": "https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf",
+      "etapaPrazo": null
+    },
+    "121": {
+      "titulo": "Chamada Transnacional Conjunta FOREST 2026 (Forest Pathways) – Diretrizes FAPES",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-12-02",
+      "propostaCompleta": "2027-06-02",
+      "valorMax": 75000,
+      "valorTotal": 75000,
+      "link": "https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "122": {
+      "titulo": "Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES",
+      "abertura": "2026-09-09",
+      "encerramento": "2026-11-10",
+      "propostaCompleta": "2027-04-16",
+      "valorMax": 75000,
+      "valorTotal": 75000,
+      "link": "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "123": {
+      "titulo": "Chamada Transnacional CONFAP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)",
+      "abertura": "2026-09-08",
+      "encerramento": "2026-11-10",
+      "propostaCompleta": "2027-04-06",
+      "valorMax": 75000,
+      "valorTotal": null,
+      "link": "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "124": {
+      "titulo": "Chamada Transnacional Conjunta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-16",
+      "propostaCompleta": "2027-06-14",
+      "valorMax": 75000,
+      "valorTotal": null,
+      "link": "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "125": {
+      "titulo": "Bolsa Estágio de Pesquisa no Exterior (BEPE) Mestrado 2026",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-11",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18417/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026",
+      "etapaPrazo": null
+    },
+    "126": {
+      "titulo": "Bolsa Estágio de Pesquisa no Exterior (BEPE) para Iniciação Científica 2026",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-11",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-iniciacao-cientifica-2026",
+      "etapaPrazo": null
+    },
+    "127": {
+      "titulo": "Chamada Conjunta FAPESP/CONFAP/SBEP para economia azul sustentável e inovadora",
+      "abertura": "2026-09-24",
+      "encerramento": "2026-11-16",
+      "propostaCompleta": null,
+      "valorMax": 600000,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18415/chamada-conjunta-de-propostas-fapespconfapsbep-20262027",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "128": {
+      "titulo": "Chamada conjunta FAPESP/CONFAP/Water4All sobre gestão sustentável da água",
+      "abertura": "2026-09-24",
+      "encerramento": "2026-11-10",
+      "propostaCompleta": null,
+      "valorMax": 600000,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18414/chamada-conjunta-de-propostas-fapespconfapwater4all-2026-2027",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "129": {
+      "titulo": "Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novos ecossistemas (BiodivFuture)",
+      "abertura": "2026-09-02",
+      "encerramento": "2026-11-10",
+      "propostaCompleta": null,
+      "valorMax": 600000,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18366/chamada-conjunta-de-propostas-fapespconfapbiodiversa-2026-2027",
+      "etapaPrazo": "Pré-proposta"
+    },
+    "130": {
+      "titulo": "Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-23",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": 4000000,
+      "link": "https://fapesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-especialistas-que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-de-acervos-sediadas-no-estado-de-sao-paulo",
+      "etapaPrazo": null
+    },
+    "131": {
+      "titulo": "Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento",
+      "abertura": "2026-09-02",
+      "encerramento": "2026-11-01",
+      "propostaCompleta": "2027-04-01",
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://fapesp.br/18365/chamada-de-propostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-paises-em-desenvolvimento",
+      "etapaPrazo": "Manifestação de interesse"
+    }
+  }
+}

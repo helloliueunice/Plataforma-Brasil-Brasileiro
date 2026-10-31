@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de editais de Cultura e Economia Criativa — Fundos Br
+ asil
+NAME:Prazos de editais de Cultura e Economia Criativa — Fundos Brasil
+X-WR-CALDESC:Prazos de editais de Cultura e Economia Criativa\, com lembret
+ es 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital of
+ icial.
+DESCRIPTION:Prazos de editais de Cultura e Economia Criativa\, com lembrete
+ s 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital ofi
+ cial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-130-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Prazo final: Bolsas de aperfeiçoamento para especialistas que atua
+ m em museus e instituições de acervos de São Paulo
+DESCRIPTION:FAPESP · Chamada FAPESP – Aperfeiçoamento de especialistas 
+ em museus\nValor: bolsas (ver condições)\nQuem pode participar: Pesquisa
+ dor(a)\nPrazo ampliado até 23/11/2026 (o horário-limite não consta no t
+ exto). Submissão apenas pelo SAGe\; resultados a partir de 08/03/2027.\nP
+ ágina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasi
+ leiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-mu
+ seus-e-130/\nConfirme data e horário limite no edital oficial: https://fa
+ pesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-especialistas
+ -que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-de-acervo
+ s-sediadas-no-estado-de-sao-paulo
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsas de aperfeiçoamento para 
+ especialistas que atuam em museus e instituições de acervos de São Paul
+ o
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsas de aperfeiçoamento para especi
+ alistas que atuam em museus e instituições de acervos de São Paulo
+END:VALARM
+END:VEVENT
+END:VCALENDAR

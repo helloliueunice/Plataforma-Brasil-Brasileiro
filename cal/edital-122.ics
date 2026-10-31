@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture)… 
+ — Fundos Brasil
+NAME:Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture)… — Fundo
+ s Brasil
+X-WR-CALDESC:Prazos de Chamada Transnacional Conjunta Biodiversa+ (BiodivFu
+ ture) 2026-2027 – Diretrizes FAPES (FAPES). Confirme sempre no edital of
+ icial.
+DESCRIPTION:Prazos de Chamada Transnacional Conjunta Biodiversa+ (BiodivFut
+ ure) 2026-2027 – Diretrizes FAPES (FAPES). Confirme sempre no edital ofi
+ cial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-122-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta Biodiversa+ (BiodivFu
+ ture) 2026-2027 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
+ iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
+ e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
+  10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
+ onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
+ ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
+ trizes-biodiversa-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta Biodi
+ versa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-122-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270416
+DTEND;VALUE=DATE:20270417
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta Biodiversa+ (Biod
+ ivFuture) 2026-2027 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
+ iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
+ e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
+  10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
+ onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
+ ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
+ trizes-biodiversa-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta B
+ iodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+END:VCALENDAR

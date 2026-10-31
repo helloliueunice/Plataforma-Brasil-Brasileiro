@@ -1,0 +1,85 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para… — Fundos
+  Brasil
+NAME:Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para… — Fundos Brasil
+X-WR-CALDESC:Prazos de Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pes
+ quisadores de países em desenvolvimento (FAPESP). Confirme sempre no edit
+ al oficial.
+DESCRIPTION:Prazos de Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pesq
+ uisadores de países em desenvolvimento (FAPESP). Confirme sempre no edita
+ l oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-131-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:Manifestação de interesse: Bolsas de Pós-Doutorado UNESCO-TWAS/F
+ APESP para pesquisadores de países em desenvolvimento
+DESCRIPTION:FAPESP · Chamada UNESCO-TWAS/FAPESP 2026\nValor: bolsas (ver c
+ ondições)\nQuem pode participar: Pesquisador(a)\nManifestação de inter
+ esse do supervisor por e-mail (chamada-twas@fapesp.br) até 01/11/2026. O 
+ SAGe abre em 01/12/2026 e a proposta completa deve ser submetida até 01/0
+ 4/2027. O horário limite não é informado.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-pos
+ -doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/\nConfirme data e 
+ horário limite no edital oficial: https://fapesp.br/18365/chamada-de-prop
+ ostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-pa
+ ises-em-desenvolvimento
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Manifestação de interesse — Bolsas de Pós-D
+ outorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimen
+ to
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Manifestação de interesse — Bolsas de Pós-Doutora
+ do UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-131-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Proposta completa: Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para
+  pesquisadores de países em desenvolvimento
+DESCRIPTION:FAPESP · Chamada UNESCO-TWAS/FAPESP 2026\nValor: bolsas (ver c
+ ondições)\nQuem pode participar: Pesquisador(a)\nManifestação de inter
+ esse do supervisor por e-mail (chamada-twas@fapesp.br) até 01/11/2026. O 
+ SAGe abre em 01/12/2026 e a proposta completa deve ser submetida até 01/0
+ 4/2027. O horário limite não é informado.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-pos
+ -doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/\nConfirme data e 
+ horário limite no edital oficial: https://fapesp.br/18365/chamada-de-prop
+ ostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-pa
+ ises-em-desenvolvimento
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Bolsas de Pós-Doutorado U
+ NESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Bolsas de Pós-Doutorado UNESCO-
+ TWAS/FAPESP para pesquisadores de países em desenvolvimento
+END:VALARM
+END:VEVENT
+END:VCALENDAR

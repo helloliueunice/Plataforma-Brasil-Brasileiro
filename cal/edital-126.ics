@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bolsa Estágio de Pesquisa no Exterior (BEPE) para… — Fund
+ os Brasil
+NAME:Bolsa Estágio de Pesquisa no Exterior (BEPE) para… — Fundos Brasi
+ l
+X-WR-CALDESC:Prazos de Bolsa Estágio de Pesquisa no Exterior (BEPE) para I
+ niciação Científica 2026 (FAPESP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Bolsa Estágio de Pesquisa no Exterior (BEPE) para In
+ iciação Científica 2026 (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-126-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Bolsa Estágio de Pesquisa no Exterior (BEPE) para Ini
+ ciação Científica 2026
+DESCRIPTION:FAPESP · Chamada de Propostas BEPE Iniciação Científica –
+  2026\nValor: bolsas (ver condições)\nQuem pode participar: Pesquisador(
+ a)\nSubmissão apenas pelo SAGe até 11/12/2026. A instituição e o super
+ visor no exterior precisam estar cadastrados no SAGe antes (o cadastro da 
+ instituição leva cerca de 2 dias úteis). Carta da instituição estrang
+ eira\, procuração e declaração de retorno podem ser entregues na contr
+ atação.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
+ Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-para-
+ iniciacao-cientifica-126/\nConfirme data e horário limite no edital ofici
+ al: https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa
+ -no-exterior-bepe-iniciacao-cientifica-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsa Estágio de Pesquisa no Ex
+ terior (BEPE) para Iniciação Científica 2026
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsa Estágio de Pesquisa no Exterior
+  (BEPE) para Iniciação Científica 2026
+END:VALARM
+END:VEVENT
+END:VCALENDAR

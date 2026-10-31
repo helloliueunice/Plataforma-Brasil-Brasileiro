@@ -1,0 +1,1227 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de todos os editais — Fundos Brasil
+NAME:Prazos de todos os editais — Fundos Brasil
+X-WR-CALDESC:Prazos de todos os editais\, com lembretes 7 dias e 1 dia ante
+ s. Atualizado todo dia. Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de todos os editais\, com lembretes 7 dias e 1 dia antes
+ . Atualizado todo dia. Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-131-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:Manifestação de interesse: Bolsas de Pós-Doutorado UNESCO-TWAS/F
+ APESP para pesquisadores de países em desenvolvimento
+DESCRIPTION:FAPESP · Chamada UNESCO-TWAS/FAPESP 2026\nValor: bolsas (ver c
+ ondições)\nQuem pode participar: Pesquisador(a)\nManifestação de inter
+ esse do supervisor por e-mail (chamada-twas@fapesp.br) até 01/11/2026. O 
+ SAGe abre em 01/12/2026 e a proposta completa deve ser submetida até 01/0
+ 4/2027. O horário limite não é informado.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-pos
+ -doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/\nConfirme data e 
+ horário limite no edital oficial: https://fapesp.br/18365/chamada-de-prop
+ ostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-pa
+ ises-em-desenvolvimento
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Manifestação de interesse — Bolsas de Pós-D
+ outorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimen
+ to
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Manifestação de interesse — Bolsas de Pós-Doutora
+ do UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-115-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Prazo final: Fundo Municipal do Idoso – projetos para a pessoa id
+ osa (cidade de São Paulo)
+DESCRIPTION:Prefeitura de São Paulo (SMDHC) · Edital de Chamamento Públi
+ co nº 008/2026/SMDHC/FMID\nValor: ver condições\nQuem pode participar: 
+ OSC / Cooperativa\nInscrição e entrega das propostas até 06/11/2026. At
+ é 3 propostas por OSC\; projetos de 12 a 24 meses. Só para OSCs que atua
+ m na cidade de São Paulo\, com registro (ou pedido) no Conselho Municipal
+  da Pessoa Idosa.\nPágina do edital: https://helloliueunice.github.io/Pla
+ taforma-Brasil-Brasileiro/editais/fundo-municipal-do-idoso-projetos-para-a
+ -pessoa-idosa-cidade-de-sao-115/\nConfirme data e horário limite no edita
+ l oficial: https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_so
+ cial/fundos/fumcad/fundo_municipal_do_idoso/269573
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ undo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fundo Municipal do Idoso – pro
+ jetos para a pessoa idosa (cidade de São Paulo)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fundo Municipal do Idoso – projetos 
+ para a pessoa idosa (cidade de São Paulo)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-122-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta Biodiversa+ (BiodivFu
+ ture) 2026-2027 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
+ iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
+ e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
+  10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
+ onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
+ ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
+ trizes-biodiversa-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta Biodi
+ versa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-123-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada Transnacional CONFAP & Water4All 2026 – Ge
+ stão Sustentável dos Recursos Hídricos (diretrizes FAPES)
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
+ \nValor: até € 75\,0 mil por proposta\nQuem pode participar: Pesquisa
+ dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
+ gatória para a 2ª fase. Seleção das pré-propostas no início de fever
+ eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
+  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
+ ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
+ 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
+ l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
+ df
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional CONFAP &
+  Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrize
+ s FAPES)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional CONFAP & Water
+ 4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPE
+ S)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-128-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada conjunta FAPESP/CONFAP/Water4All sobre gest
+ ão sustentável da água
+DESCRIPTION:FAPESP · Chamada Conjunta de Propostas FAPESP/CONFAP/Water4All
+  2026-2027\nValor: até R$ 600\,0 mil por proposta\nQuem pode participar
+ : Pesquisador(a)\nO prazo de 10/11/2026 vale para a FAPESP e para a Water4
+ All. A pré-proposta vai à Water4All (plataforma etag.ee) pelo coordenado
+ r do consórcio\, e o pesquisador de SP envia à FAPESP\, por e-mail\, sú
+ mula curricular em inglês\, dedicação semanal\, duração e orçamento\
+ , e título e coordenador. A proposta completa vai depois pelo SAGe\, só 
+ para quem tiver pré-proposta aprovada.\nPágina do edital: https://hellol
+ iueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-conjunta-f
+ apesp-confap-water4all-sobre-gestao-sustentavel-da-128/\nConfirme data e h
+ orário limite no edital oficial: https://fapesp.br/18414/chamada-conjunta
+ -de-propostas-fapespconfapwater4all-2026-2027
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-conjunta-fapesp-confap-water4all-sobre-gestao-sustentavel-da-128/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada conjunta FAPESP/CONFAP
+ /Water4All sobre gestão sustentável da água
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada conjunta FAPESP/CONFAP/Water
+ 4All sobre gestão sustentável da água
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-129-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre nov
+ os ecossistemas (BiodivFuture)
+DESCRIPTION:FAPESP · Chamada Conjunta FAPESP/CONFAP/Biodiversa+ 2026-2027\
+ nValor: até R$ 600\,0 mil por proposta\nQuem pode participar: Pesquisad
+ or(a)\nPrazo de 10/11/2026 igual na FAPESP e na Biodiversa+. O coordenador
+  do consórcio submete a pré-proposta na plataforma da Biodiversa+ e o pe
+ squisador de SP envia as informações por e-mail à FAPESP. Só quem tive
+ r pré-proposta aprovada pode enviar a proposta completa pelo SAGe.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistem
+ as-129/\nConfirme data e horário limite no edital oficial: https://fapesp
+ .br/18366/chamada-conjunta-de-propostas-fapespconfapbiodiversa-2026-2027
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistemas-129/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada conjunta FAPESP/CONFAP
+ /Biodiversa+ sobre novos ecossistemas (BiodivFuture)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada conjunta FAPESP/CONFAP/Biodi
+ versa+ sobre novos ecossistemas (BiodivFuture)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-102-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Pré-proposta: PIPE Jornada Tecnológica – Tecnologias Educaciona
+ is (Fase 1)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
+ il por proposta\nQuem pode participar: Empresa / Startup\nPrazo da pré-pr
+ oposta. As pré-propostas consideradas elegíveis enviam a proposta comple
+ ta até 13/01/2027.\nPágina do edital: https://helloliueunice.github.io/P
+ lataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-e
+ ducacionais-fase-1-102/\nConfirme data e horário limite no edital oficial
+ : https://fapesp.br/18434
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — PIPE Jornada Tecnológica – 
+ Tecnologias Educacionais (Fase 1)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — PIPE Jornada Tecnológica – Tecnol
+ ogias Educacionais (Fase 1)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-119-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de mestrado para Programas de P
+ ós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 26/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nEnvio até 16/11/2026 às 1
+ 7h59 (horário de Brasília) pelo Sistema de Gestão da Fapes (SigFapes)\,
+  com login próprio do coordenador. Cada PPG pode enviar uma só proposta\
+ ; vale a última enviada. Recurso administrativo em até 5 dias úteis ap
+ ós o resultado preliminar (a partir de 14/12/2026)\; indicação regular 
+ de bolsistas de março a novembro de 2027.\nPágina do edital: https://hel
+ loliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/procap-2027-bol
+ sas-de-mestrado-para-programas-de-pos-graduacao-do-119/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/pr
+ ocap-2027-mestrado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de mestra
+ do para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de mestrado par
+ a Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-120-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de doutorado para Programas de 
+ Pós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 27/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nSubmissão até 16/11/2026\
+ , às 17h59 (Brasília)\, pelo Sistema de Gestão da Fapes\, com login do 
+ coordenador\; cada PPG envia apenas uma proposta (vale a última). Resulta
+ do preliminar a partir de 14/12/2026\, recurso em 5 dias úteis\, homologa
+ ção a partir de 21/12/2026\; indicação de bolsistas de março a novemb
+ ro de 2027.\nPágina do edital: https://helloliueunice.github.io/Plataform
+ a-Brasil-Brasileiro/editais/procap-2027-bolsas-de-doutorado-para-programas
+ -de-pos-graduacao-do-120/\nConfirme data e horário limite no edital ofici
+ al: https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de doutor
+ ado para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de doutorado pa
+ ra Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-124-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta da Parceria de Econom
+ ia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
+ l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
+ ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
+ opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPE
+ S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta da Pa
+ rceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-127-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Pré-proposta: Chamada Conjunta FAPESP/CONFAP/SBEP para economia az
+ ul sustentável e inovadora
+DESCRIPTION:FAPESP · Chamada Conjunta de Propostas FAPESP/CONFAP/SBEP 2026
+ /2027\nValor: até R$ 600\,0 mil por proposta\nQuem pode participar: Pes
+ quisador(a)\nA data limite de 16/11/2026 vale tanto para a FAPESP quanto p
+ ara a SBEP\; não há horário informado. Só quem tiver pré-proposta apr
+ ovada pode enviar a proposta completa pelo SAGe.\nPágina do edital: https
+ ://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-c
+ onjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/\nConfirme
+  data e horário limite no edital oficial: https://fapesp.br/18415/chamada
+ -conjunta-de-propostas-fapespconfapsbep-20262027
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-conjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Conjunta FAPESP/CONFAP
+ /SBEP para economia azul sustentável e inovadora
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Conjunta FAPESP/CONFAP/SBEP 
+ para economia azul sustentável e inovadora
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-103-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:Prazo final: Jovens Pesquisadores – chamada para pesquisadores no
+  exterior
+DESCRIPTION:FAPESP · Chamada FAPESP nº 47/2026\nValor: até R$ 2\,5 mi 
+ por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da proposta comp
+ leta. Depois há avaliação por painel externo\, apresentação oral e en
+ trevista on-line.\nPágina do edital: https://helloliueunice.github.io/Pla
+ taforma-Brasil-Brasileiro/editais/jovens-pesquisadores-chamada-para-pesqui
+ sadores-no-exterior-103/\nConfirme data e horário limite no edital oficia
+ l: https://fapesp.br/18389
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/j
+ ovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Jovens Pesquisadores – chamada
+  para pesquisadores no exterior
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Jovens Pesquisadores – chamada para 
+ pesquisadores no exterior
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-130-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Prazo final: Bolsas de aperfeiçoamento para especialistas que atua
+ m em museus e instituições de acervos de São Paulo
+DESCRIPTION:FAPESP · Chamada FAPESP – Aperfeiçoamento de especialistas 
+ em museus\nValor: bolsas (ver condições)\nQuem pode participar: Pesquisa
+ dor(a)\nPrazo ampliado até 23/11/2026 (o horário-limite não consta no t
+ exto). Submissão apenas pelo SAGe\; resultados a partir de 08/03/2027.\nP
+ ágina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasi
+ leiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-mu
+ seus-e-130/\nConfirme data e horário limite no edital oficial: https://fa
+ pesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-especialistas
+ -que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-de-acervo
+ s-sediadas-no-estado-de-sao-paulo
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsas de aperfeiçoamento para 
+ especialistas que atuam em museus e instituições de acervos de São Paul
+ o
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsas de aperfeiçoamento para especi
+ alistas que atuam em museus e instituições de acervos de São Paulo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-114-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Prazo final: Floresta Viva – Águas do São Francisco
+DESCRIPTION:Funbio / BNDES · Edital Funbio nº 04/2026\nValor: ver condiç
+ ões\nQuem pode participar: OSC / Cooperativa\nAté 02/12/2026\, 19h\, no 
+ Portal de Chamadas do Funbio. Dúvidas até 25/11\; reunião on-line de es
+ clarecimento em 13/11.\nPágina do edital: https://helloliueunice.github.i
+ o/Plataforma-Brasil-Brasileiro/editais/floresta-viva-aguas-do-sao-francisc
+ o-114/\nConfirme data e horário limite no edital oficial: https://chamada
+ s.funbio.org.br/floresta-viva-sao-francisco
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ loresta-viva-aguas-do-sao-francisco-114/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Floresta Viva – Águas do São
+  Francisco
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Floresta Viva – Águas do São Franc
+ isco
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-121-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta FOREST 2026 (Forest P
+ athways) – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
+ OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
+ r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
+ )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
+ ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
+ al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
+ retrizes-forest-pathways-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  FOREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta FORES
+ T 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-105-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Prazo final: Auxílio à Promoção de Eventos Científicos\, Tecno
+ lógicos e de Inovação (ARC)
+DESCRIPTION:CNPq · Chamada CNPq nº 34/2026\nValor: até R$ 200\,0 mil p
+ or proposta\nQuem pode participar: Pesquisador(a)\, ICT / Universidade\nAt
+ é 23h59 (Brasília). Resultado preliminar em 15/03/2027.\nPágina do edit
+ al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
+ auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/\
+ nConfirme data e horário limite no edital oficial: https://www.gov.br/cnp
+ q/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/chamad
+ a-publica-cnpq-N-34-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ uxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Auxílio à Promoção de Evento
+ s Científicos\, Tecnológicos e de Inovação (ARC)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Auxílio à Promoção de Eventos Cien
+ tíficos\, Tecnológicos e de Inovação (ARC)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-109-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Pré-proposta: BIOTA – Síntese e Transformação
+DESCRIPTION:FAPESP · Chamada FAPESP nº 57/2026\nValor: ver condições\nQ
+ uem pode participar: Pesquisador(a)\nAtenção: consulta de elegibilidade 
+ e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026\; só quem fo
+ r considerado elegível submete a proposta completa no SAGe até 22/02/202
+ 7. Uma proposta por pesquisador\, em um único eixo (Síntese ou Transform
+ ação).\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
+ rasil-Brasileiro/editais/biota-sintese-e-transformacao-109/\nConfirme data
+  e horário limite no edital oficial: https://fapesp.br/18456
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ iota-sintese-e-transformacao-109/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — BIOTA – Síntese e Transform
+ ação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — BIOTA – Síntese e Transformação
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-113-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:Prazo final: COOPERAMAIS Tecnologia – ICTs com cooperativas da ag
+ ricultura familiar
+DESCRIPTION:Finep · Chamada Pública MCTI/Finep/FNDCT – CT-Agro\nValor: 
+ até R$ 15\,0 mi\nQuem pode participar: ICT / Universidade\nAté 08/12/2
+ 026\, 18h\, pelo sistema SISGON. Cada ICT pode ser executora principal de 
+ uma só proposta. O projeto deve partir de TRL 3 ou superior (eliminatóri
+ o).\nPágina do edital: https://helloliueunice.github.io/Plataforma-Brasil
+ -Brasileiro/editais/cooperamais-tecnologia-icts-com-cooperativas-da-agricu
+ ltura-familiar-113/\nConfirme data e horário limite no edital oficial: ht
+ tps://www.finep.gov.br/e/chamada-publica/222684/1060260
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ ooperamais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — COOPERAMAIS Tecnologia – ICTs 
+ com cooperativas da agricultura familiar
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — COOPERAMAIS Tecnologia – ICTs com co
+ operativas da agricultura familiar
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-116-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:Prazo final: Projeto InspirAÇÃO: jovens mulheres negras na indús
+ tria de energia
+DESCRIPTION:CNPq · Chamada Pública CNPq/Petrobras nº 31/2026\nValor: bol
+ sas (ver condições)\nQuem pode participar: ICT / Universidade\nInscriç
+ ões até 08/12/2026. Exige indicação de um Representante Institucional 
+ pela Pró-Reitoria de Extensão (ou cargo equivalente).\nPágina do edital
+ : https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/pr
+ ojeto-inspiracao-jovens-mulheres-negras-na-industria-de-energia-116/\nConf
+ irme data e horário limite no edital oficial: https://www.gov.br/cnpq/pt-
+ br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-pub
+ lica-cnpq-N-31-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rojeto-inspiracao-jovens-mulheres-negras-na-industria-de-energia-116/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Projeto InspirAÇÃO: jovens mul
+ heres negras na indústria de energia
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Projeto InspirAÇÃO: jovens mulheres 
+ negras na indústria de energia
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-106-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Mestrado e Doutorado Acadêmico para Inovação (MAI/D
+ AI)
+DESCRIPTION:CNPq · Chamada Pública CNPq/CAPES nº 30/2026\nValor: bolsas 
+ (ver condições)\nQuem pode participar: Pesquisador(a)\, ICT / Universida
+ de\nAté 23h59 (Brasília). Julgamento em janeiro e decisão final previst
+ a para fevereiro de 2027.\nPágina do edital: https://helloliueunice.githu
+ b.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-doutorado-academico-p
+ ara-inovacao-mai-dai-106/\nConfirme data e horário limite no edital ofici
+ al: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026
+ /chamada-no-30-2026/chamada-publica-cnpq-N-30-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/m
+ estrado-e-doutorado-academico-para-inovacao-mai-dai-106/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Mestrado e Doutorado Acadêmico 
+ para Inovação (MAI/DAI)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Mestrado e Doutorado Acadêmico para I
+ novação (MAI/DAI)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-125-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Bolsa Estágio de Pesquisa no Exterior (BEPE) Mestrado
+  2026
+DESCRIPTION:FAPESP · Chamada de Propostas BEPE Mestrado – 2026\nValor: b
+ olsas (ver condições)\nQuem pode participar: Pesquisador(a)\nSubmissão 
+ exclusivamente pelo SAGe até 11/12/2026 (horário limite não informado).
+  A instituição e o supervisor no exterior precisam estar cadastrados no 
+ SAGe\; o cadastro da instituição leva cerca de 2 dias úteis. Resultados
+  previstos para março de 2027.\nPágina do edital: https://helloliueunice
+ .github.io/Plataforma-Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-
+ no-exterior-bepe-mestrado-2026-125/\nConfirme data e horário limite no ed
+ ital oficial: https://fapesp.br/18417/chamada-de-propostas-bolsa-estagio-d
+ e-pesquisa-no-exterior-bepe-mestrado-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026-125/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsa Estágio de Pesquisa no Ex
+ terior (BEPE) Mestrado 2026
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsa Estágio de Pesquisa no Exterior
+  (BEPE) Mestrado 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-126-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Bolsa Estágio de Pesquisa no Exterior (BEPE) para Ini
+ ciação Científica 2026
+DESCRIPTION:FAPESP · Chamada de Propostas BEPE Iniciação Científica –
+  2026\nValor: bolsas (ver condições)\nQuem pode participar: Pesquisador(
+ a)\nSubmissão apenas pelo SAGe até 11/12/2026. A instituição e o super
+ visor no exterior precisam estar cadastrados no SAGe antes (o cadastro da 
+ instituição leva cerca de 2 dias úteis). Carta da instituição estrang
+ eira\, procuração e declaração de retorno podem ser entregues na contr
+ atação.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
+ Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-para-
+ iniciacao-cientifica-126/\nConfirme data e horário limite no edital ofici
+ al: https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa
+ -no-exterior-bepe-iniciacao-cientifica-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsa Estágio de Pesquisa no Ex
+ terior (BEPE) para Iniciação Científica 2026
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsa Estágio de Pesquisa no Exterior
+  (BEPE) para Iniciação Científica 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-118-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Prazo final: Dr. Empreendedor Capixaba: apoio a doutores empreended
+ ores com projetos de inovação
+DESCRIPTION:FAPES · Edital FAPES nº 10/2026\nValor: até R$ 355\,4 mil 
+ por proposta\nQuem pode participar: Pesquisador(a)\, Empresa / Startup\nEs
+ ta é a 2ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes
+  até as 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilita
+ ção a partir de 08/01/2027\, apresentação oral entre 03/02 e 18/03/202
+ 7 e resultado homologado previsto a partir de 27/04/2027.\nPágina do edit
+ al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
+ dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capix
+ aba_-_1a_alteracao_.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/d
+ r-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Dr. Empreendedor Capixaba: apoio
+  a doutores empreendedores com projetos de inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Dr. Empreendedor Capixaba: apoio a dou
+ tores empreendedores com projetos de inovação
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-104-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270108
+SUMMARY:Prazo final: Bolsas de Produtividade em Pesquisa e em Desenvolvimen
+ to Tecnológico (PQ\, DT e PQ-Sr)
+DESCRIPTION:CNPq · Chamada CNPq nº 33/2026\nValor: bolsas (ver condiçõe
+ s)\nQuem pode participar: Pesquisador(a)\nAté 23h59 (Brasília). Resultad
+ o preliminar em 05/05/2027\; bolsas a partir de 01/08/2027.\nPágina do ed
+ ital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editai
+ s/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104
+ /\nConfirme data e horário limite no edital oficial: https://www.gov.br/c
+ npq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/cham
+ ada-publica-cnpq-N-33-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsas de Produtividade em Pesqu
+ isa e em Desenvolvimento Tecnológico (PQ\, DT e PQ-Sr)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsas de Produtividade em Pesquisa e 
+ em Desenvolvimento Tecnológico (PQ\, DT e PQ-Sr)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-102-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:Proposta completa: PIPE Jornada Tecnológica – Tecnologias Educac
+ ionais (Fase 1)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
+ il por proposta\nQuem pode participar: Empresa / Startup\nPrazo da pré-pr
+ oposta. As pré-propostas consideradas elegíveis enviam a proposta comple
+ ta até 13/01/2027.\nPágina do edital: https://helloliueunice.github.io/P
+ lataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-e
+ ducacionais-fase-1-102/\nConfirme data e horário limite no edital oficial
+ : https://fapesp.br/18434
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — PIPE Jornada Tecnológica 
+ – Tecnologias Educacionais (Fase 1)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — PIPE Jornada Tecnológica – Te
+ cnologias Educacionais (Fase 1)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-108-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Prazo final: PRONINC 2026 – Tecnologias e inovação social para 
+ a economia solidária
+DESCRIPTION:FINEP · Chamada Pública PRONINC 2026\nValor: até R$ 5\,0 m
+ i\nQuem pode participar: ICT / Universidade\nAtenção: instituições sem
+  cadastro aprovado na Finep precisavam se cadastrar até 16/10/2026.\nPág
+ ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
+ ro/editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-soli
+ daria-108/\nConfirme data e horário limite no edital oficial: https://www
+ .finep.gov.br/e/chamada-publica/222684/1057230
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ roninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PRONINC 2026 – Tecnologias e i
+ novação social para a economia solidária
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PRONINC 2026 – Tecnologias e inovaç
+ ão social para a economia solidária
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-101-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Prazo final: Plataformas digitais baseadas em software livre e prot
+ ocolos abertos
+DESCRIPTION:FAPESP · Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026\nValor: a
+ té R$ 5\,0 mi por proposta\nQuem pode participar: Pesquisador(a)\, ICT 
+ / Universidade\nSubmissão pelo SAGe a partir de 05/11/2026.\nPágina do e
+ dital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edita
+ is/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-10
+ 1/\nConfirme data e horário limite no edital oficial: https://fapesp.br/1
+ 8444
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ lataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Plataformas digitais baseadas em
+  software livre e protocolos abertos
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Plataformas digitais baseadas em softw
+ are livre e protocolos abertos
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-109-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Proposta completa: BIOTA – Síntese e Transformação
+DESCRIPTION:FAPESP · Chamada FAPESP nº 57/2026\nValor: ver condições\nQ
+ uem pode participar: Pesquisador(a)\nAtenção: consulta de elegibilidade 
+ e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026\; só quem fo
+ r considerado elegível submete a proposta completa no SAGe até 22/02/202
+ 7. Uma proposta por pesquisador\, em um único eixo (Síntese ou Transform
+ ação).\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
+ rasil-Brasileiro/editais/biota-sintese-e-transformacao-109/\nConfirme data
+  e horário limite no edital oficial: https://fapesp.br/18456
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ iota-sintese-e-transformacao-109/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — BIOTA – Síntese e Trans
+ formação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — BIOTA – Síntese e Transforma
+ ção
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-111-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Prazo final: SPRINT 2026 – colaboração internacional (edição 
+ 2)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 48/2026\nValor: até US$ 50\,0 m
+ il por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da edição 2
+  (a edição 1 encerrou em 26/10/2026). Submissão pelo SAGe.\nPágina do 
+ edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
+ ais/sprint-2026-colaboracao-internacional-edicao-2-111/\nConfirme data e h
+ orário limite no edital oficial: https://fapesp.br/sprint/chamada2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/s
+ print-2026-colaboracao-internacional-edicao-2-111/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — SPRINT 2026 – colaboração in
+ ternacional (edição 2)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — SPRINT 2026 – colaboração internac
+ ional (edição 2)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-110-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270304
+DTEND;VALUE=DATE:20270305
+SUMMARY:Prazo final: FAPESP e Instituto Pasteur de Montevideo – Jovem Pes
+ quisador
+DESCRIPTION:FAPESP · Chamada FAPESP nº 56/2026\nValor: ver condições\nQ
+ uem pode participar: Pesquisador(a)\nSubmissão só pelo SAGe. Os pré-sel
+ ecionados fazem entrevista on-line a partir de julho de 2027.\nPágina do 
+ edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
+ ais/fapesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/\nConfi
+ rme data e horário limite no edital oficial: https://fapesp.br/18455
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ apesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — FAPESP e Instituto Pasteur de Mo
+ ntevideo – Jovem Pesquisador
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — FAPESP e Instituto Pasteur de Montevid
+ eo – Jovem Pesquisador
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-117-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270330
+DTEND;VALUE=DATE:20270331
+SUMMARY:Prazo final: TCC Empreendedor Inovador: bolsas para Trabalhos de Co
+ nclusão de Curso com foco em inovação
+DESCRIPTION:FAPES · Edital FAPES nº 01/2026\nValor: até R$ 11\,0 mil p
+ or proposta\nQuem pode participar: Pesquisador(a)\nSubmissão até as 17h5
+ 9 pelo Sigfapes\, com anuência prévia do gestor institucional da IES. As
+  1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026)\; resta a 3ª
+  chamada (02/02/2027 a 30/03/2027)\, com resultado preliminar a partir de 
+ 24/05/2027 e homologação a partir de 22/06/2027.\nPágina do edital: htt
+ ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/tcc-emp
+ reendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/\nConfi
+ rme data e horário limite no edital oficial: https://fapes.es.gov.br/medi
+ a/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
+ cc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — TCC Empreendedor Inovador: bolsa
+ s para Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — TCC Empreendedor Inovador: bolsas para
+  Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-107-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:Prazo final: Cooperação Brasil–França em pesquisa: Saúde Úni
+ ca e continuum digital
+DESCRIPTION:CNPq · Chamada Pública MCTI/CNPq/ANR nº 32/2026\nValor: até
+  R$ 1\,5 mi por proposta\nQuem pode participar: Pesquisador(a)\, ICT / U
+ niversidade\nAté 23h59 (Brasília). Resultado a partir de outubro de 2027
+ \; contratação em janeiro de 2028.\nPágina do edital: https://helloliue
+ unice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-brasil-fra
+ nca-em-pesquisa-saude-unica-e-continuum-digital-107/\nConfirme data e hor
+ ário limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/tod
+ as-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-
+ 2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ ooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Cooperação Brasil–França em
+  pesquisa: Saúde Única e continuum digital
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Cooperação Brasil–França em pesqu
+ isa: Saúde Única e continuum digital
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-131-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Proposta completa: Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para
+  pesquisadores de países em desenvolvimento
+DESCRIPTION:FAPESP · Chamada UNESCO-TWAS/FAPESP 2026\nValor: bolsas (ver c
+ ondições)\nQuem pode participar: Pesquisador(a)\nManifestação de inter
+ esse do supervisor por e-mail (chamada-twas@fapesp.br) até 01/11/2026. O 
+ SAGe abre em 01/12/2026 e a proposta completa deve ser submetida até 01/0
+ 4/2027. O horário limite não é informado.\nPágina do edital: https://h
+ elloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-pos
+ -doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/\nConfirme data e 
+ horário limite no edital oficial: https://fapesp.br/18365/chamada-de-prop
+ ostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-pa
+ ises-em-desenvolvimento
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Bolsas de Pós-Doutorado U
+ NESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Bolsas de Pós-Doutorado UNESCO-
+ TWAS/FAPESP para pesquisadores de países em desenvolvimento
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-123-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:Proposta completa: Chamada Transnacional CONFAP & Water4All 2026 
+ – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
+ \nValor: até € 75\,0 mil por proposta\nQuem pode participar: Pesquisa
+ dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
+ gatória para a 2ª fase. Seleção das pré-propostas no início de fever
+ eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
+  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
+ ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
+ 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
+ l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
+ df
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional CONF
+ AP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diret
+ rizes FAPES)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional CONFAP & W
+ ater4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes 
+ FAPES)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-122-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270416
+DTEND;VALUE=DATE:20270417
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta Biodiversa+ (Biod
+ ivFuture) 2026-2027 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
+ iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
+ e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
+  10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
+ onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
+ ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
+ trizes-biodiversa-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta B
+ iodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-112-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Prazo final: Finep COOPERAMAIS Brasil Tecnologias – Empresas
+DESCRIPTION:Finep · Seleção Pública MCTI/Finep/FNDCT – Fluxo Contínu
+ o\nValor: até R$ 20\,0 mi\nQuem pode participar: Empresa / Startup\nFlu
+ xo contínuo até 30/04/2027\, 17h\, pela Plataforma de Apoio e Financiame
+ nto da Finep. A empresa precisa de parceria formalizada com cooperativa co
+ m CAF e pelo menos 70% de agricultores familiares.\nPágina do edital: htt
+ ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/finep-c
+ ooperamais-brasil-tecnologias-empresas-112/\nConfirme data e horário limi
+ te no edital oficial: https://www.finep.gov.br/e/chamada-publica/222684/10
+ 60720
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ inep-cooperamais-brasil-tecnologias-empresas-112/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Finep COOPERAMAIS Brasil Tecnolo
+ gias – Empresas
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Finep COOPERAMAIS Brasil Tecnologias 
+ – Empresas
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-121-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270602
+DTEND;VALUE=DATE:20270603
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta FOREST 2026 (Fore
+ st Pathways) – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
+ OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
+ r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
+ )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
+ ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
+ al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
+ retrizes-forest-pathways-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta FOREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta F
+ OREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-124-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270615
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta da Parceria de Ec
+ onomia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
+ l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
+ ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
+ opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes 
+ FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta d
+ a Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+END:VCALENDAR

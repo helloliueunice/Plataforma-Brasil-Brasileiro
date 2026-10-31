@@ -852,7 +852,7 @@ for (const e of editais) {
         ${arquivo ? `<p><a href="${rel}semana/">Ver o resumo da semana atual</a></p>` : `<p class="nota">Endereço permanente deste resumo: <a href="${rel}semana/${sem.chave}/">semana ${sem.semana} de ${sem.ano}</a>.</p>`}`;
     const descSemana = corta(`Semana ${sem.semana}/${sem.ano} (${periodo}): ${plural(novos.length, 'edital novo', 'editais novos')}, ${plural(encerrando.length, 'prazo', 'prazos')} nos próximos 14 dias e ${plural(alterados.length, 'edital alterado', 'editais alterados')}.`, 158);
     escrever('semana/index.html', layout({ rel: '../', url: `${SITE}/semana/`, ativo: 'semana', corpo: corpoSemana('../', false), assinatura: { chave: 'todos', nome: 'todos os editais' },
-        titulo: `Resumo semanal de editais: novos, prazos e mudanças | ${NOME}`, descricao: descSemana }));
+        titulo: `Resumo semanal de editais: novos, prazos e mudanças | ${NOME}`, descricao: corta(`Resumo desta semana, sempre atualizado: ${plural(novos.length, 'edital novo', 'editais novos')}, ${plural(encerrando.length, 'prazo', 'prazos')} em 14 dias e ${plural(alterados.length, 'mudança', 'mudanças')}.`, 158) }));
     escrever(`semana/${sem.chave}/index.html`, layout({ rel: '../../', url: `${SITE}/semana/${sem.chave}/`, ativo: 'semana', corpo: corpoSemana('../../', true),
         titulo: `Editais da semana ${sem.semana} de ${sem.ano} | ${NOME}`, descricao: descSemana }));
     urlsExtras.push([`${SITE}/semana/`, 'daily', '0.7', hoje], [`${SITE}/semana/${sem.chave}/`, 'daily', '0.4', hoje],

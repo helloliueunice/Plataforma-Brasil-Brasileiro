@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Plataformas digitais baseadas em software livre e… — Fundo
+ s Brasil
+NAME:Plataformas digitais baseadas em software livre e… — Fundos Brasil
+X-WR-CALDESC:Prazos de Plataformas digitais baseadas em software livre e pr
+ otocolos abertos (FAPESP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Plataformas digitais baseadas em software livre e pro
+ tocolos abertos (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-101-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Prazo final: Plataformas digitais baseadas em software livre e prot
+ ocolos abertos
+DESCRIPTION:FAPESP · Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026\nValor: a
+ té R$ 5\,0 mi por proposta\nQuem pode participar: Pesquisador(a)\, ICT 
+ / Universidade\nSubmissão pelo SAGe a partir de 05/11/2026.\nPágina do e
+ dital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edita
+ is/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-10
+ 1/\nConfirme data e horário limite no edital oficial: https://fapesp.br/1
+ 8444
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ lataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Plataformas digitais baseadas em
+  software livre e protocolos abertos
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Plataformas digitais baseadas em softw
+ are livre e protocolos abertos
+END:VALARM
+END:VEVENT
+END:VCALENDAR

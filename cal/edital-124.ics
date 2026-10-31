@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chamada Transnacional Conjunta da Parceria de Economia… — 
+ Fundos Brasil
+NAME:Chamada Transnacional Conjunta da Parceria de Economia… — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Chamada Transnacional Conjunta da Parceria de Econom
+ ia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES (FAPES). Confirme se
+ mpre no edital oficial.
+DESCRIPTION:Prazos de Chamada Transnacional Conjunta da Parceria de Economi
+ a Azul Sustentável (SBEP) 2026 – Diretrizes FAPES (FAPES). Confirme sem
+ pre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-124-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta da Parceria de Econom
+ ia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
+ l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
+ ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
+ opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPE
+ S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta da Pa
+ rceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-124-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270615
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta da Parceria de Ec
+ onomia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
+ l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
+ ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
+ opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes 
+ FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta d
+ a Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+END:VCALENDAR

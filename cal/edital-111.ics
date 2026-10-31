@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SPRINT 2026 – colaboração internacional (edição 2) — F
+ undos Brasil
+NAME:SPRINT 2026 – colaboração internacional (edição 2) — Fundos Br
+ asil
+X-WR-CALDESC:Prazos de SPRINT 2026 – colaboração internacional (ediçã
+ o 2) (FAPESP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de SPRINT 2026 – colaboração internacional (edição
+  2) (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-111-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Prazo final: SPRINT 2026 – colaboração internacional (edição 
+ 2)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 48/2026\nValor: até US$ 50\,0 m
+ il por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da edição 2
+  (a edição 1 encerrou em 26/10/2026). Submissão pelo SAGe.\nPágina do 
+ edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
+ ais/sprint-2026-colaboracao-internacional-edicao-2-111/\nConfirme data e h
+ orário limite no edital oficial: https://fapesp.br/sprint/chamada2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/s
+ print-2026-colaboracao-internacional-edicao-2-111/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — SPRINT 2026 – colaboração in
+ ternacional (edição 2)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — SPRINT 2026 – colaboração internac
+ ional (edição 2)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

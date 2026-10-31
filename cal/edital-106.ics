@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI) — 
+ Fundos Brasil
+NAME:Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI) — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Mestrado e Doutorado Acadêmico para Inovação (MAI
+ /DAI) (CNPq). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Mestrado e Doutorado Acadêmico para Inovação (MAI/
+ DAI) (CNPq). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-106-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Mestrado e Doutorado Acadêmico para Inovação (MAI/D
+ AI)
+DESCRIPTION:CNPq · Chamada Pública CNPq/CAPES nº 30/2026\nValor: bolsas 
+ (ver condições)\nQuem pode participar: Pesquisador(a)\, ICT / Universida
+ de\nAté 23h59 (Brasília). Julgamento em janeiro e decisão final previst
+ a para fevereiro de 2027.\nPágina do edital: https://helloliueunice.githu
+ b.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-doutorado-academico-p
+ ara-inovacao-mai-dai-106/\nConfirme data e horário limite no edital ofici
+ al: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026
+ /chamada-no-30-2026/chamada-publica-cnpq-N-30-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/m
+ estrado-e-doutorado-academico-para-inovacao-mai-dai-106/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Mestrado e Doutorado Acadêmico 
+ para Inovação (MAI/DAI)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Mestrado e Doutorado Acadêmico para I
+ novação (MAI/DAI)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

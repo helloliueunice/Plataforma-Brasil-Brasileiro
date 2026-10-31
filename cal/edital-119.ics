@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PROCAP 2027 – Bolsas de mestrado para Programas de… — Fu
+ ndos Brasil
+NAME:PROCAP 2027 – Bolsas de mestrado para Programas de… — Fundos Bra
+ sil
+X-WR-CALDESC:Prazos de PROCAP 2027 – Bolsas de mestrado para Programas de
+  Pós-graduação do Espírito Santo (FAPES). Confirme sempre no edital of
+ icial.
+DESCRIPTION:Prazos de PROCAP 2027 – Bolsas de mestrado para Programas de 
+ Pós-graduação do Espírito Santo (FAPES). Confirme sempre no edital ofi
+ cial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-119-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de mestrado para Programas de P
+ ós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 26/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nEnvio até 16/11/2026 às 1
+ 7h59 (horário de Brasília) pelo Sistema de Gestão da Fapes (SigFapes)\,
+  com login próprio do coordenador. Cada PPG pode enviar uma só proposta\
+ ; vale a última enviada. Recurso administrativo em até 5 dias úteis ap
+ ós o resultado preliminar (a partir de 14/12/2026)\; indicação regular 
+ de bolsistas de março a novembro de 2027.\nPágina do edital: https://hel
+ loliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/procap-2027-bol
+ sas-de-mestrado-para-programas-de-pos-graduacao-do-119/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/pr
+ ocap-2027-mestrado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de mestra
+ do para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de mestrado par
+ a Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+END:VCALENDAR

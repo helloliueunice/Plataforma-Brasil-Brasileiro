@@ -1,0 +1,411 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de editais FAPES — Fundos Brasil
+NAME:Prazos de editais FAPES — Fundos Brasil
+X-WR-CALDESC:Prazos de editais FAPES\, com lembretes 7 dias e 1 dia antes. 
+ Atualizado todo dia. Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de editais FAPES\, com lembretes 7 dias e 1 dia antes. A
+ tualizado todo dia. Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-122-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta Biodiversa+ (BiodivFu
+ ture) 2026-2027 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
+ iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
+ e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
+  10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
+ onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
+ ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
+ trizes-biodiversa-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta Biodi
+ versa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-123-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada Transnacional CONFAP & Water4All 2026 – Ge
+ stão Sustentável dos Recursos Hídricos (diretrizes FAPES)
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
+ \nValor: até € 75\,0 mil por proposta\nQuem pode participar: Pesquisa
+ dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
+ gatória para a 2ª fase. Seleção das pré-propostas no início de fever
+ eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
+  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
+ ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
+ 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
+ l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
+ df
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional CONFAP &
+  Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrize
+ s FAPES)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional CONFAP & Water
+ 4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPE
+ S)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-119-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de mestrado para Programas de P
+ ós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 26/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nEnvio até 16/11/2026 às 1
+ 7h59 (horário de Brasília) pelo Sistema de Gestão da Fapes (SigFapes)\,
+  com login próprio do coordenador. Cada PPG pode enviar uma só proposta\
+ ; vale a última enviada. Recurso administrativo em até 5 dias úteis ap
+ ós o resultado preliminar (a partir de 14/12/2026)\; indicação regular 
+ de bolsistas de março a novembro de 2027.\nPágina do edital: https://hel
+ loliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/procap-2027-bol
+ sas-de-mestrado-para-programas-de-pos-graduacao-do-119/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/pr
+ ocap-2027-mestrado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de mestra
+ do para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de mestrado par
+ a Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-120-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de doutorado para Programas de 
+ Pós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 27/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nSubmissão até 16/11/2026\
+ , às 17h59 (Brasília)\, pelo Sistema de Gestão da Fapes\, com login do 
+ coordenador\; cada PPG envia apenas uma proposta (vale a última). Resulta
+ do preliminar a partir de 14/12/2026\, recurso em 5 dias úteis\, homologa
+ ção a partir de 21/12/2026\; indicação de bolsistas de março a novemb
+ ro de 2027.\nPágina do edital: https://helloliueunice.github.io/Plataform
+ a-Brasil-Brasileiro/editais/procap-2027-bolsas-de-doutorado-para-programas
+ -de-pos-graduacao-do-120/\nConfirme data e horário limite no edital ofici
+ al: https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de doutor
+ ado para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de doutorado pa
+ ra Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-124-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta da Parceria de Econom
+ ia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
+ l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
+ ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
+ opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPE
+ S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta da Pa
+ rceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-121-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Pré-proposta: Chamada Transnacional Conjunta FOREST 2026 (Forest P
+ athways) – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
+ OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
+ r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
+ )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
+ ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
+ al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
+ retrizes-forest-pathways-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional Conjunta
+  FOREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional Conjunta FORES
+ T 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-118-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Prazo final: Dr. Empreendedor Capixaba: apoio a doutores empreended
+ ores com projetos de inovação
+DESCRIPTION:FAPES · Edital FAPES nº 10/2026\nValor: até R$ 355\,4 mil 
+ por proposta\nQuem pode participar: Pesquisador(a)\, Empresa / Startup\nEs
+ ta é a 2ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes
+  até as 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilita
+ ção a partir de 08/01/2027\, apresentação oral entre 03/02 e 18/03/202
+ 7 e resultado homologado previsto a partir de 27/04/2027.\nPágina do edit
+ al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
+ dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capix
+ aba_-_1a_alteracao_.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/d
+ r-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Dr. Empreendedor Capixaba: apoio
+  a doutores empreendedores com projetos de inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Dr. Empreendedor Capixaba: apoio a dou
+ tores empreendedores com projetos de inovação
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-117-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270330
+DTEND;VALUE=DATE:20270331
+SUMMARY:Prazo final: TCC Empreendedor Inovador: bolsas para Trabalhos de Co
+ nclusão de Curso com foco em inovação
+DESCRIPTION:FAPES · Edital FAPES nº 01/2026\nValor: até R$ 11\,0 mil p
+ or proposta\nQuem pode participar: Pesquisador(a)\nSubmissão até as 17h5
+ 9 pelo Sigfapes\, com anuência prévia do gestor institucional da IES. As
+  1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026)\; resta a 3ª
+  chamada (02/02/2027 a 30/03/2027)\, com resultado preliminar a partir de 
+ 24/05/2027 e homologação a partir de 22/06/2027.\nPágina do edital: htt
+ ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/tcc-emp
+ reendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/\nConfi
+ rme data e horário limite no edital oficial: https://fapes.es.gov.br/medi
+ a/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
+ cc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — TCC Empreendedor Inovador: bolsa
+ s para Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — TCC Empreendedor Inovador: bolsas para
+  Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-123-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:Proposta completa: Chamada Transnacional CONFAP & Water4All 2026 
+ – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
+ \nValor: até € 75\,0 mil por proposta\nQuem pode participar: Pesquisa
+ dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
+ gatória para a 2ª fase. Seleção das pré-propostas no início de fever
+ eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
+  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
+ ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
+ 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
+ l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
+ df
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional CONF
+ AP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diret
+ rizes FAPES)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional CONFAP & W
+ ater4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes 
+ FAPES)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-122-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270416
+DTEND;VALUE=DATE:20270417
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta Biodiversa+ (Biod
+ ivFuture) 2026-2027 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
+ iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
+ e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
+  10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
+ onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
+ ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
+ trizes-biodiversa-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta B
+ iodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-121-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270602
+DTEND;VALUE=DATE:20270603
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta FOREST 2026 (Fore
+ st Pathways) – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
+ OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
+ r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
+ )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
+ ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
+ al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
+ retrizes-forest-pathways-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta FOREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta F
+ OREST 2026 (Forest Pathways) – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-124-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270615
+SUMMARY:Proposta completa: Chamada Transnacional Conjunta da Parceria de Ec
+ onomia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
+ l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
+ ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
+ opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
+ br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional Conj
+ unta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes 
+ FAPES
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional Conjunta d
+ a Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES
+END:VALARM
+END:VEVENT
+END:VCALENDAR

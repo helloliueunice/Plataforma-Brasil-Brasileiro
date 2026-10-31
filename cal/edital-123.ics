@@ -1,0 +1,89 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chamada Transnacional CONFAP & Water4All 2026 – Gestão… 
+ — Fundos Brasil
+NAME:Chamada Transnacional CONFAP & Water4All 2026 – Gestão… — Fundo
+ s Brasil
+X-WR-CALDESC:Prazos de Chamada Transnacional CONFAP & Water4All 2026 – Ge
+ stão Sustentável dos Recursos Hídricos (diretrizes FAPES) (FAPES). Conf
+ irme sempre no edital oficial.
+DESCRIPTION:Prazos de Chamada Transnacional CONFAP & Water4All 2026 – Ges
+ tão Sustentável dos Recursos Hídricos (diretrizes FAPES) (FAPES). Confi
+ rme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-123-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada Transnacional CONFAP & Water4All 2026 – Ge
+ stão Sustentável dos Recursos Hídricos (diretrizes FAPES)
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
+ \nValor: até € 75\,0 mil por proposta\nQuem pode participar: Pesquisa
+ dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
+ gatória para a 2ª fase. Seleção das pré-propostas no início de fever
+ eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
+  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
+ ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
+ 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
+ l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
+ df
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada Transnacional CONFAP &
+  Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrize
+ s FAPES)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada Transnacional CONFAP & Water
+ 4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPE
+ S)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-123-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:Proposta completa: Chamada Transnacional CONFAP & Water4All 2026 
+ – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)
+DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
+ \nValor: até € 75\,0 mil por proposta\nQuem pode participar: Pesquisa
+ dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
+ gatória para a 2ª fase. Seleção das pré-propostas no início de fever
+ eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
+  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
+ ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
+ 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
+ l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
+ df
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — Chamada Transnacional CONF
+ AP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diret
+ rizes FAPES)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — Chamada Transnacional CONFAP & W
+ ater4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes 
+ FAPES)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

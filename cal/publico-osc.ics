@@ -1,0 +1,77 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de editais para OSCs e ONGs — Fundos Brasil
+NAME:Prazos de editais para OSCs e ONGs — Fundos Brasil
+X-WR-CALDESC:Prazos de editais para OSCs e ONGs\, com lembretes 7 dias e 1 
+ dia antes. Atualizado todo dia. Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de editais para OSCs e ONGs\, com lembretes 7 dias e 1 d
+ ia antes. Atualizado todo dia. Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-115-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Prazo final: Fundo Municipal do Idoso – projetos para a pessoa id
+ osa (cidade de São Paulo)
+DESCRIPTION:Prefeitura de São Paulo (SMDHC) · Edital de Chamamento Públi
+ co nº 008/2026/SMDHC/FMID\nValor: ver condições\nQuem pode participar: 
+ OSC / Cooperativa\nInscrição e entrega das propostas até 06/11/2026. At
+ é 3 propostas por OSC\; projetos de 12 a 24 meses. Só para OSCs que atua
+ m na cidade de São Paulo\, com registro (ou pedido) no Conselho Municipal
+  da Pessoa Idosa.\nPágina do edital: https://helloliueunice.github.io/Pla
+ taforma-Brasil-Brasileiro/editais/fundo-municipal-do-idoso-projetos-para-a
+ -pessoa-idosa-cidade-de-sao-115/\nConfirme data e horário limite no edita
+ l oficial: https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_so
+ cial/fundos/fumcad/fundo_municipal_do_idoso/269573
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ undo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fundo Municipal do Idoso – pro
+ jetos para a pessoa idosa (cidade de São Paulo)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fundo Municipal do Idoso – projetos 
+ para a pessoa idosa (cidade de São Paulo)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-114-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Prazo final: Floresta Viva – Águas do São Francisco
+DESCRIPTION:Funbio / BNDES · Edital Funbio nº 04/2026\nValor: ver condiç
+ ões\nQuem pode participar: OSC / Cooperativa\nAté 02/12/2026\, 19h\, no 
+ Portal de Chamadas do Funbio. Dúvidas até 25/11\; reunião on-line de es
+ clarecimento em 13/11.\nPágina do edital: https://helloliueunice.github.i
+ o/Plataforma-Brasil-Brasileiro/editais/floresta-viva-aguas-do-sao-francisc
+ o-114/\nConfirme data e horário limite no edital oficial: https://chamada
+ s.funbio.org.br/floresta-viva-sao-francisco
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ loresta-viva-aguas-do-sao-francisco-114/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Floresta Viva – Águas do São
+  Francisco
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Floresta Viva – Águas do São Franc
+ isco
+END:VALARM
+END:VEVENT
+END:VCALENDAR

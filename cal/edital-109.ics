@@ -1,0 +1,74 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:BIOTA – Síntese e Transformação — Fundos Brasil
+NAME:BIOTA – Síntese e Transformação — Fundos Brasil
+X-WR-CALDESC:Prazos de BIOTA – Síntese e Transformação (FAPESP). Confi
+ rme sempre no edital oficial.
+DESCRIPTION:Prazos de BIOTA – Síntese e Transformação (FAPESP). Confir
+ me sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-109-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Pré-proposta: BIOTA – Síntese e Transformação
+DESCRIPTION:FAPESP · Chamada FAPESP nº 57/2026\nValor: ver condições\nQ
+ uem pode participar: Pesquisador(a)\nAtenção: consulta de elegibilidade 
+ e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026\; só quem fo
+ r considerado elegível submete a proposta completa no SAGe até 22/02/202
+ 7. Uma proposta por pesquisador\, em um único eixo (Síntese ou Transform
+ ação).\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
+ rasil-Brasileiro/editais/biota-sintese-e-transformacao-109/\nConfirme data
+  e horário limite no edital oficial: https://fapesp.br/18456
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ iota-sintese-e-transformacao-109/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — BIOTA – Síntese e Transform
+ ação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — BIOTA – Síntese e Transformação
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-109-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Proposta completa: BIOTA – Síntese e Transformação
+DESCRIPTION:FAPESP · Chamada FAPESP nº 57/2026\nValor: ver condições\nQ
+ uem pode participar: Pesquisador(a)\nAtenção: consulta de elegibilidade 
+ e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026\; só quem fo
+ r considerado elegível submete a proposta completa no SAGe até 22/02/202
+ 7. Uma proposta por pesquisador\, em um único eixo (Síntese ou Transform
+ ação).\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
+ rasil-Brasileiro/editais/biota-sintese-e-transformacao-109/\nConfirme data
+  e horário limite no edital oficial: https://fapesp.br/18456
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ iota-sintese-e-transformacao-109/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — BIOTA – Síntese e Trans
+ formação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — BIOTA – Síntese e Transforma
+ ção
+END:VALARM
+END:VEVENT
+END:VCALENDAR

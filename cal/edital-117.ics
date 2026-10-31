@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TCC Empreendedor Inovador: bolsas para Trabalhos de… — Fun
+ dos Brasil
+NAME:TCC Empreendedor Inovador: bolsas para Trabalhos de… — Fundos Bras
+ il
+X-WR-CALDESC:Prazos de TCC Empreendedor Inovador: bolsas para Trabalhos de 
+ Conclusão de Curso com foco em inovação (FAPES). Confirme sempre no edi
+ tal oficial.
+DESCRIPTION:Prazos de TCC Empreendedor Inovador: bolsas para Trabalhos de C
+ onclusão de Curso com foco em inovação (FAPES). Confirme sempre no edit
+ al oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-117-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270330
+DTEND;VALUE=DATE:20270331
+SUMMARY:Prazo final: TCC Empreendedor Inovador: bolsas para Trabalhos de Co
+ nclusão de Curso com foco em inovação
+DESCRIPTION:FAPES · Edital FAPES nº 01/2026\nValor: até R$ 11\,0 mil p
+ or proposta\nQuem pode participar: Pesquisador(a)\nSubmissão até as 17h5
+ 9 pelo Sigfapes\, com anuência prévia do gestor institucional da IES. As
+  1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026)\; resta a 3ª
+  chamada (02/02/2027 a 30/03/2027)\, com resultado preliminar a partir de 
+ 24/05/2027 e homologação a partir de 22/06/2027.\nPágina do edital: htt
+ ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/tcc-emp
+ reendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/\nConfi
+ rme data e horário limite no edital oficial: https://fapes.es.gov.br/medi
+ a/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
+ cc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — TCC Empreendedor Inovador: bolsa
+ s para Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — TCC Empreendedor Inovador: bolsas para
+  Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+END:VEVENT
+END:VCALENDAR

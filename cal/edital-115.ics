@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Fundo Municipal do Idoso – projetos para a pessoa idosa… 
+ — Fundos Brasil
+NAME:Fundo Municipal do Idoso – projetos para a pessoa idosa… — Fundo
+ s Brasil
+X-WR-CALDESC:Prazos de Fundo Municipal do Idoso – projetos para a pessoa 
+ idosa (cidade de São Paulo) (Prefeitura de São Paulo (SMDHC)). Confirme 
+ sempre no edital oficial.
+DESCRIPTION:Prazos de Fundo Municipal do Idoso – projetos para a pessoa i
+ dosa (cidade de São Paulo) (Prefeitura de São Paulo (SMDHC)). Confirme s
+ empre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-115-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Prazo final: Fundo Municipal do Idoso – projetos para a pessoa id
+ osa (cidade de São Paulo)
+DESCRIPTION:Prefeitura de São Paulo (SMDHC) · Edital de Chamamento Públi
+ co nº 008/2026/SMDHC/FMID\nValor: ver condições\nQuem pode participar: 
+ OSC / Cooperativa\nInscrição e entrega das propostas até 06/11/2026. At
+ é 3 propostas por OSC\; projetos de 12 a 24 meses. Só para OSCs que atua
+ m na cidade de São Paulo\, com registro (ou pedido) no Conselho Municipal
+  da Pessoa Idosa.\nPágina do edital: https://helloliueunice.github.io/Pla
+ taforma-Brasil-Brasileiro/editais/fundo-municipal-do-idoso-projetos-para-a
+ -pessoa-idosa-cidade-de-sao-115/\nConfirme data e horário limite no edita
+ l oficial: https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_so
+ cial/fundos/fumcad/fundo_municipal_do_idoso/269573
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ undo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fundo Municipal do Idoso – pro
+ jetos para a pessoa idosa (cidade de São Paulo)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fundo Municipal do Idoso – projetos 
+ para a pessoa idosa (cidade de São Paulo)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

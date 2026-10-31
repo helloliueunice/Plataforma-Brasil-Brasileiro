@@ -1,0 +1,363 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de editais de Educação e Pesquisa — Fundos Brasil
+NAME:Prazos de editais de Educação e Pesquisa — Fundos Brasil
+X-WR-CALDESC:Prazos de editais de Educação e Pesquisa\, com lembretes 7 d
+ ias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de editais de Educação e Pesquisa\, com lembretes 7 di
+ as e 1 dia antes. Atualizado todo dia. Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-102-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Pré-proposta: PIPE Jornada Tecnológica – Tecnologias Educaciona
+ is (Fase 1)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
+ il por proposta\nQuem pode participar: Empresa / Startup\nPrazo da pré-pr
+ oposta. As pré-propostas consideradas elegíveis enviam a proposta comple
+ ta até 13/01/2027.\nPágina do edital: https://helloliueunice.github.io/P
+ lataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-e
+ ducacionais-fase-1-102/\nConfirme data e horário limite no edital oficial
+ : https://fapesp.br/18434
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — PIPE Jornada Tecnológica – 
+ Tecnologias Educacionais (Fase 1)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — PIPE Jornada Tecnológica – Tecnol
+ ogias Educacionais (Fase 1)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-119-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de mestrado para Programas de P
+ ós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 26/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nEnvio até 16/11/2026 às 1
+ 7h59 (horário de Brasília) pelo Sistema de Gestão da Fapes (SigFapes)\,
+  com login próprio do coordenador. Cada PPG pode enviar uma só proposta\
+ ; vale a última enviada. Recurso administrativo em até 5 dias úteis ap
+ ós o resultado preliminar (a partir de 14/12/2026)\; indicação regular 
+ de bolsistas de março a novembro de 2027.\nPágina do edital: https://hel
+ loliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/procap-2027-bol
+ sas-de-mestrado-para-programas-de-pos-graduacao-do-119/\nConfirme data e h
+ orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/pr
+ ocap-2027-mestrado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de mestra
+ do para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de mestrado par
+ a Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-120-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de doutorado para Programas de 
+ Pós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 27/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nSubmissão até 16/11/2026\
+ , às 17h59 (Brasília)\, pelo Sistema de Gestão da Fapes\, com login do 
+ coordenador\; cada PPG envia apenas uma proposta (vale a última). Resulta
+ do preliminar a partir de 14/12/2026\, recurso em 5 dias úteis\, homologa
+ ção a partir de 21/12/2026\; indicação de bolsistas de março a novemb
+ ro de 2027.\nPágina do edital: https://helloliueunice.github.io/Plataform
+ a-Brasil-Brasileiro/editais/procap-2027-bolsas-de-doutorado-para-programas
+ -de-pos-graduacao-do-120/\nConfirme data e horário limite no edital ofici
+ al: https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de doutor
+ ado para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de doutorado pa
+ ra Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-103-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:Prazo final: Jovens Pesquisadores – chamada para pesquisadores no
+  exterior
+DESCRIPTION:FAPESP · Chamada FAPESP nº 47/2026\nValor: até R$ 2\,5 mi 
+ por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da proposta comp
+ leta. Depois há avaliação por painel externo\, apresentação oral e en
+ trevista on-line.\nPágina do edital: https://helloliueunice.github.io/Pla
+ taforma-Brasil-Brasileiro/editais/jovens-pesquisadores-chamada-para-pesqui
+ sadores-no-exterior-103/\nConfirme data e horário limite no edital oficia
+ l: https://fapesp.br/18389
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/j
+ ovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Jovens Pesquisadores – chamada
+  para pesquisadores no exterior
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Jovens Pesquisadores – chamada para 
+ pesquisadores no exterior
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-105-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Prazo final: Auxílio à Promoção de Eventos Científicos\, Tecno
+ lógicos e de Inovação (ARC)
+DESCRIPTION:CNPq · Chamada CNPq nº 34/2026\nValor: até R$ 200\,0 mil p
+ or proposta\nQuem pode participar: Pesquisador(a)\, ICT / Universidade\nAt
+ é 23h59 (Brasília). Resultado preliminar em 15/03/2027.\nPágina do edit
+ al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
+ auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/\
+ nConfirme data e horário limite no edital oficial: https://www.gov.br/cnp
+ q/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/chamad
+ a-publica-cnpq-N-34-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ uxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Auxílio à Promoção de Evento
+ s Científicos\, Tecnológicos e de Inovação (ARC)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Auxílio à Promoção de Eventos Cien
+ tíficos\, Tecnológicos e de Inovação (ARC)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-125-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Bolsa Estágio de Pesquisa no Exterior (BEPE) Mestrado
+  2026
+DESCRIPTION:FAPESP · Chamada de Propostas BEPE Mestrado – 2026\nValor: b
+ olsas (ver condições)\nQuem pode participar: Pesquisador(a)\nSubmissão 
+ exclusivamente pelo SAGe até 11/12/2026 (horário limite não informado).
+  A instituição e o supervisor no exterior precisam estar cadastrados no 
+ SAGe\; o cadastro da instituição leva cerca de 2 dias úteis. Resultados
+  previstos para março de 2027.\nPágina do edital: https://helloliueunice
+ .github.io/Plataforma-Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-
+ no-exterior-bepe-mestrado-2026-125/\nConfirme data e horário limite no ed
+ ital oficial: https://fapesp.br/18417/chamada-de-propostas-bolsa-estagio-d
+ e-pesquisa-no-exterior-bepe-mestrado-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026-125/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsa Estágio de Pesquisa no Ex
+ terior (BEPE) Mestrado 2026
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsa Estágio de Pesquisa no Exterior
+  (BEPE) Mestrado 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-126-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Prazo final: Bolsa Estágio de Pesquisa no Exterior (BEPE) para Ini
+ ciação Científica 2026
+DESCRIPTION:FAPESP · Chamada de Propostas BEPE Iniciação Científica –
+  2026\nValor: bolsas (ver condições)\nQuem pode participar: Pesquisador(
+ a)\nSubmissão apenas pelo SAGe até 11/12/2026. A instituição e o super
+ visor no exterior precisam estar cadastrados no SAGe antes (o cadastro da 
+ instituição leva cerca de 2 dias úteis). Carta da instituição estrang
+ eira\, procuração e declaração de retorno podem ser entregues na contr
+ atação.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
+ Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-para-
+ iniciacao-cientifica-126/\nConfirme data e horário limite no edital ofici
+ al: https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa
+ -no-exterior-bepe-iniciacao-cientifica-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsa Estágio de Pesquisa no Ex
+ terior (BEPE) para Iniciação Científica 2026
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsa Estágio de Pesquisa no Exterior
+  (BEPE) para Iniciação Científica 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-104-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270108
+SUMMARY:Prazo final: Bolsas de Produtividade em Pesquisa e em Desenvolvimen
+ to Tecnológico (PQ\, DT e PQ-Sr)
+DESCRIPTION:CNPq · Chamada CNPq nº 33/2026\nValor: bolsas (ver condiçõe
+ s)\nQuem pode participar: Pesquisador(a)\nAté 23h59 (Brasília). Resultad
+ o preliminar em 05/05/2027\; bolsas a partir de 01/08/2027.\nPágina do ed
+ ital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editai
+ s/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104
+ /\nConfirme data e horário limite no edital oficial: https://www.gov.br/c
+ npq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/cham
+ ada-publica-cnpq-N-33-2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
+ olsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Bolsas de Produtividade em Pesqu
+ isa e em Desenvolvimento Tecnológico (PQ\, DT e PQ-Sr)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Bolsas de Produtividade em Pesquisa e 
+ em Desenvolvimento Tecnológico (PQ\, DT e PQ-Sr)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-102-proposta-completa@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:Proposta completa: PIPE Jornada Tecnológica – Tecnologias Educac
+ ionais (Fase 1)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
+ il por proposta\nQuem pode participar: Empresa / Startup\nPrazo da pré-pr
+ oposta. As pré-propostas consideradas elegíveis enviam a proposta comple
+ ta até 13/01/2027.\nPágina do edital: https://helloliueunice.github.io/P
+ lataforma-Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-e
+ ducacionais-fase-1-102/\nConfirme data e horário limite no edital oficial
+ : https://fapesp.br/18434
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Proposta completa — PIPE Jornada Tecnológica 
+ – Tecnologias Educacionais (Fase 1)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Proposta completa — PIPE Jornada Tecnológica – Te
+ cnologias Educacionais (Fase 1)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-111-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Prazo final: SPRINT 2026 – colaboração internacional (edição 
+ 2)
+DESCRIPTION:FAPESP · Chamada FAPESP nº 48/2026\nValor: até US$ 50\,0 m
+ il por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da edição 2
+  (a edição 1 encerrou em 26/10/2026). Submissão pelo SAGe.\nPágina do 
+ edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
+ ais/sprint-2026-colaboracao-internacional-edicao-2-111/\nConfirme data e h
+ orário limite no edital oficial: https://fapesp.br/sprint/chamada2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/s
+ print-2026-colaboracao-internacional-edicao-2-111/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — SPRINT 2026 – colaboração in
+ ternacional (edição 2)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — SPRINT 2026 – colaboração internac
+ ional (edição 2)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-117-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270330
+DTEND;VALUE=DATE:20270331
+SUMMARY:Prazo final: TCC Empreendedor Inovador: bolsas para Trabalhos de Co
+ nclusão de Curso com foco em inovação
+DESCRIPTION:FAPES · Edital FAPES nº 01/2026\nValor: até R$ 11\,0 mil p
+ or proposta\nQuem pode participar: Pesquisador(a)\nSubmissão até as 17h5
+ 9 pelo Sigfapes\, com anuência prévia do gestor institucional da IES. As
+  1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026)\; resta a 3ª
+  chamada (02/02/2027 a 30/03/2027)\, com resultado preliminar a partir de 
+ 24/05/2027 e homologação a partir de 22/06/2027.\nPágina do edital: htt
+ ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/tcc-emp
+ reendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/\nConfi
+ rme data e horário limite no edital oficial: https://fapes.es.gov.br/medi
+ a/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
+ cc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — TCC Empreendedor Inovador: bolsa
+ s para Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — TCC Empreendedor Inovador: bolsas para
+  Trabalhos de Conclusão de Curso com foco em inovação
+END:VALARM
+END:VEVENT
+END:VCALENDAR

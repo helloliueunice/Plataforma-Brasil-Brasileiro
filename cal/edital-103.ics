@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Jovens Pesquisadores – chamada para pesquisadores no… — 
+ Fundos Brasil
+NAME:Jovens Pesquisadores – chamada para pesquisadores no… — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Jovens Pesquisadores – chamada para pesquisadores 
+ no exterior (FAPESP). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Jovens Pesquisadores – chamada para pesquisadores n
+ o exterior (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-103-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:Prazo final: Jovens Pesquisadores – chamada para pesquisadores no
+  exterior
+DESCRIPTION:FAPESP · Chamada FAPESP nº 47/2026\nValor: até R$ 2\,5 mi 
+ por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da proposta comp
+ leta. Depois há avaliação por painel externo\, apresentação oral e en
+ trevista on-line.\nPágina do edital: https://helloliueunice.github.io/Pla
+ taforma-Brasil-Brasileiro/editais/jovens-pesquisadores-chamada-para-pesqui
+ sadores-no-exterior-103/\nConfirme data e horário limite no edital oficia
+ l: https://fapesp.br/18389
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/j
+ ovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Jovens Pesquisadores – chamada
+  para pesquisadores no exterior
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Jovens Pesquisadores – chamada para 
+ pesquisadores no exterior
+END:VALARM
+END:VEVENT
+END:VCALENDAR

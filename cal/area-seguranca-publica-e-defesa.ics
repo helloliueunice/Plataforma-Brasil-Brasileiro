@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos de editais de Segurança Pública e Defesa — Fundos B
+ rasil
+NAME:Prazos de editais de Segurança Pública e Defesa — Fundos Brasil
+X-WR-CALDESC:Prazos de editais de Segurança Pública e Defesa\, com lembre
+ tes 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital o
+ ficial.
+DESCRIPTION:Prazos de editais de Segurança Pública e Defesa\, com lembret
+ es 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital of
+ icial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+END:VCALENDAR

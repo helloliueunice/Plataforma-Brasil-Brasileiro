@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAPESP: editais e financiamento | Fundos Brasil</title>
-    <meta name="description" content="FAPESP (Fundação de Amparo à Pesquisa do Estado de São Paulo): Fundação estadual de apoio à pesquisa científica e tecnológica em São Paulo, financiada por…">
+    <meta name="description" content="FAPESP: 10 editais abertos, 3 previstos, valores, prazos e quem pode participar. Assine o feed e o calendário.">
     
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/fapesp/">
     <meta name="theme-color" content="#1351B4">
@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="Fundos Brasil">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="FAPESP: editais e financiamento | Fundos Brasil">
-    <meta property="og:description" content="FAPESP (Fundação de Amparo à Pesquisa do Estado de São Paulo): Fundação estadual de apoio à pesquisa científica e tecnológica em São Paulo, financiada por…">
+    <meta property="og:description" content="FAPESP: 10 editais abertos, 3 previstos, valores, prazos e quem pode participar. Assine o feed e o calendário.">
     <meta property="og:url" content="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/fapesp/">
     <meta property="og:image" content="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -22,8 +22,10 @@
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/paginas.css">
     <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — editais FAPESP" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/instituicao-fapesp.xml">
+    <link rel="alternate" type="text/calendar" title="Prazos — editais FAPESP" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/cal/instituicao-fapesp.ics">
     
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Fundação de Amparo à Pesquisa do Estado de São Paulo","alternateName":"FAPESP","url":"https://fapesp.br/oportunidades","foundingDate":"1960","address":"São Paulo/SP"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/fapesp/#organizacao","name":"Fundação de Amparo à Pesquisa do Estado de São Paulo","alternateName":"FAPESP","url":"https://fapesp.br/oportunidades","sameAs":["https://fapesp.br/oportunidades"],"foundingDate":"1960","address":{"@type":"PostalAddress","addressLocality":"São Paulo/SP","addressCountry":"BR"},"description":"Fundação estadual de apoio à pesquisa científica e tecnológica em São Paulo, financiada por percentual da receita tributária do estado."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/"},{"@type":"ListItem","position":2,"name":"Instituições","item":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/"},{"@type":"ListItem","position":3,"name":"FAPESP","item":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/fapesp/"}]}]}</script>
 </head>
 <body>
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -32,6 +34,7 @@
         <nav aria-label="Navegação principal">
             <a href="../../editais/">Editais</a>
             <a href="../../prazos/">Prazos</a>
+            <a href="../../semana/">Semana</a>
             <a href="../../guias/">Guias</a>
             <a href="../../instituicoes/" aria-current="page">Instituições</a>
             <a class="btn primario pequeno" href="../../#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
@@ -44,16 +47,26 @@
         <h1>FAPESP — Fundação de Amparo à Pesquisa do Estado de São Paulo</h1>
         <p class="sub">Fundação estadual de apoio à pesquisa científica e tecnológica em São Paulo, financiada por percentual da receita tributária do estado.</p>
         <div class="acoes">
-            <a class="btn primario" href="../../#agencia-fapesp">Desembolsos e projetos na plataforma</a>
+            <a class="btn primario" href="../../#agencia-fapesp">Ver na plataforma</a>
             <a class="btn" href="https://fapesp.br/oportunidades" target="_blank" rel="noopener noreferrer">Portal oficial</a>
         </div>
+        <div class="assinar" role="group" aria-label="Assinar editais desta instituição">
+            <span class="assinar-rotulo">Assinar editais desta instituição</span>
+            <a class="btn pequeno" href="../../feeds/instituicao-fapesp.xml" type="application/rss+xml" data-evento="assinar-rss">Feed RSS</a>
+            <a class="btn pequeno" href="../../cal/instituicao-fapesp.ics" type="text/calendar" data-evento="assinar-calendario">Calendário (.ics)</a>
+            <a class="assinar-ajuda" href="../../dados/#assinar">Como assinar</a>
+        </div>
+        <section aria-labelledby="numeros-titulo"><h2 id="numeros-titulo">Em números</h2>
         <dl class="fatos">
-            <div><dt>Fundação</dt><dd>1960</dd></div>
-            <div><dt>Faixa de apoio</dt><dd>R$ 50 mil – R$ 5 mi</dd></div>
-            <div><dt>Editais nesta plataforma</dt><dd>13</dd></div>
-            <div><dt>Áreas</dt><dd>Ciência Básica, Energia, Saúde, Pesquisa Inovativa em Pequenas Empresas</dd></div>
+            <div><dt>Inscrições abertas agora</dt><dd>10</dd></div>
+            <div><dt>Previstos (abrem em breve)</dt><dd>3</dd></div>
+            <div><dt>Encerrados no cadastro</dt><dd>0</dd></div>
+            <div><dt>Valor médio por proposta</dt><dd>R$ 1,6 mi<br><small>média de 6 editais com teto informado</small></dd></div>
+            <div><dt>Públicos atendidos</dt><dd><a href="../../para/pesquisadores/">Pesquisador(a)</a>, <a href="../../para/universidades-e-icts/">ICT / Universidade</a>, <a href="../../para/empresas-e-startups/">Empresa / Startup</a></dd></div>
+            <div><dt>Áreas</dt><dd><a href="../../area/tecnologia-e-inovacao/">Tecnologia e Inovação</a>, <a href="../../area/saude-e-bem-estar/">Saúde e Bem-estar</a>, <a href="../../area/educacao-e-pesquisa/">Educação e Pesquisa</a>, <a href="../../area/meio-ambiente-e-sustentabilidade/">Meio Ambiente e Sustentabilidade</a>, <a href="../../area/cultura-e-economia-criativa/">Cultura e Economia Criativa</a>, <a href="../../area/desenvolvimento-social/">Desenvolvimento Social</a></dd></div>
         </dl>
-        <section><h2>Editais</h2><ul class="cartoes"><li class="cartao">
+        <p class="nota">Números calculados só com os 13 editais cadastrados nesta plataforma (dados de 31/10/2026); não representam todo o histórico da instituição. Fundação: 1960.</p></section>
+        <section><h2>Inscrições abertas (10)</h2><ul class="cartoes"><li class="cartao">
             <div class="selos"><span class="selo aberto" data-abertura="2026-09-02" data-encerramento="2026-11-01" data-etapa="Manifestação de interesse">Manifestação de interesse até 01/11/2026</span> <span class="selo neutro">Bolsa de Pós-Doutorado</span></div>
             <h3><a href="../../editais/bolsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/">Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento</a></h3>
             <p>FAPESP · <strong>bolsas (ver condições)</strong> · Pesquisador(a)</p>
@@ -103,7 +116,8 @@
             <h3><a href="../../editais/sprint-2026-colaboracao-internacional-edicao-2-111/">SPRINT 2026 – colaboração internacional (edição 2)</a></h3>
             <p>FAPESP · <strong>até US$ 50,0 mil</strong> por proposta · Pesquisador(a)</p>
             <p class="nota">Inscrições: 21/09/2026 a 22/02/2027 · São Paulo</p>
-        </li><li class="cartao">
+        </li></ul></section>
+        <section><h2>Previstos (3)</h2><ul class="cartoes"><li class="cartao">
             <div class="selos"><span class="selo em-breve" data-abertura="2026-11-04" data-encerramento="2026-12-04" data-etapa="Pré-proposta">Pré-proposta até 04/12/2026</span> <span class="selo neutro">Auxílio à pesquisa</span></div>
             <h3><a href="../../editais/biota-sintese-e-transformacao-109/">BIOTA – Síntese e Transformação</a></h3>
             <p>FAPESP · <strong>ver condições</strong> · Pesquisador(a)</p>
@@ -120,11 +134,13 @@
             <p class="nota">Inscrições: 05/11/2026 a 22/02/2027 · São Paulo</p>
         </li></ul></section>
         
+        
     </main>
     <footer class="rodape">
         <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
         <nav class="rodape-links" aria-label="Editais por perfil"><a href="../../para/pesquisadores/">Editais para pesquisadores</a> · <a href="../../para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="../../para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="../../para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="../../para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="../../para/governos-estaduais/">Programas para governos estaduais</a></nav>
-        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a> · <a href="../../parcerias/">Parcerias</a> · <a href="../../feed.xml">RSS</a></p>
+        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a> · <a href="../../parcerias/">Parcerias</a></p>
+        <p><a href="../../semana/">Resumo da semana</a> · <a href="../../dados/#assinar">Assinar (RSS e calendário)</a> · <a href="../../dados/">Dados abertos</a> · <a href="../../feed.xml">RSS</a></p>
         <p></p>
         <p class="nota">Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
         <p class="nota"><a href="../../privacidade/">Privacidade</a> · <a href="../../termos/">Termos de uso</a></p>

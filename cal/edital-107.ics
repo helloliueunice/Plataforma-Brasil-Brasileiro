@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cooperação Brasil–França em pesquisa: Saúde Única e… 
+ — Fundos Brasil
+NAME:Cooperação Brasil–França em pesquisa: Saúde Única e… — Fund
+ os Brasil
+X-WR-CALDESC:Prazos de Cooperação Brasil–França em pesquisa: Saúde Ú
+ nica e continuum digital (CNPq). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Cooperação Brasil–França em pesquisa: Saúde Ún
+ ica e continuum digital (CNPq). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-107-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:Prazo final: Cooperação Brasil–França em pesquisa: Saúde Úni
+ ca e continuum digital
+DESCRIPTION:CNPq · Chamada Pública MCTI/CNPq/ANR nº 32/2026\nValor: até
+  R$ 1\,5 mi por proposta\nQuem pode participar: Pesquisador(a)\, ICT / U
+ niversidade\nAté 23h59 (Brasília). Resultado a partir de outubro de 2027
+ \; contratação em janeiro de 2028.\nPágina do edital: https://helloliue
+ unice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-brasil-fra
+ nca-em-pesquisa-saude-unica-e-continuum-digital-107/\nConfirme data e hor
+ ário limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/tod
+ as-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-
+ 2026
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ ooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Cooperação Brasil–França em
+  pesquisa: Saúde Única e continuum digital
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Cooperação Brasil–França em pesqu
+ isa: Saúde Única e continuum digital
+END:VALARM
+END:VEVENT
+END:VCALENDAR

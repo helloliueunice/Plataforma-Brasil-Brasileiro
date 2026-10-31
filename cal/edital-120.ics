@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PROCAP 2027 – Bolsas de doutorado para Programas de… — F
+ undos Brasil
+NAME:PROCAP 2027 – Bolsas de doutorado para Programas de… — Fundos Br
+ asil
+X-WR-CALDESC:Prazos de PROCAP 2027 – Bolsas de doutorado para Programas d
+ e Pós-graduação do Espírito Santo (FAPES). Confirme sempre no edital o
+ ficial.
+DESCRIPTION:Prazos de PROCAP 2027 – Bolsas de doutorado para Programas de
+  Pós-graduação do Espírito Santo (FAPES). Confirme sempre no edital of
+ icial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-120-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: PROCAP 2027 – Bolsas de doutorado para Programas de 
+ Pós-graduação do Espírito Santo
+DESCRIPTION:FAPES · Edital Fapes nº 27/2026\nValor: bolsas (ver condiçõ
+ es)\nQuem pode participar: ICT / Universidade\nSubmissão até 16/11/2026\
+ , às 17h59 (Brasília)\, pelo Sistema de Gestão da Fapes\, com login do 
+ coordenador\; cada PPG envia apenas uma proposta (vale a última). Resulta
+ do preliminar a partir de 14/12/2026\, recurso em 5 dias úteis\, homologa
+ ção a partir de 21/12/2026\; indicação de bolsistas de março a novemb
+ ro de 2027.\nPágina do edital: https://helloliueunice.github.io/Plataform
+ a-Brasil-Brasileiro/editais/procap-2027-bolsas-de-doutorado-para-programas
+ -de-pos-graduacao-do-120/\nConfirme data e horário limite no edital ofici
+ al: https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rocap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — PROCAP 2027 – Bolsas de doutor
+ ado para Programas de Pós-graduação do Espírito Santo
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — PROCAP 2027 – Bolsas de doutorado pa
+ ra Programas de Pós-graduação do Espírito Santo
+END:VALARM
+END:VEVENT
+END:VCALENDAR

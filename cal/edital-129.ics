@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novos… — 
+ Fundos Brasil
+NAME:Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novos… — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre nov
+ os ecossistemas (BiodivFuture) (FAPESP). Confirme sempre no edital oficial
+ .
+DESCRIPTION:Prazos de Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novo
+ s ecossistemas (BiodivFuture) (FAPESP). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-129-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Pré-proposta: Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre nov
+ os ecossistemas (BiodivFuture)
+DESCRIPTION:FAPESP · Chamada Conjunta FAPESP/CONFAP/Biodiversa+ 2026-2027\
+ nValor: até R$ 600\,0 mil por proposta\nQuem pode participar: Pesquisad
+ or(a)\nPrazo de 10/11/2026 igual na FAPESP e na Biodiversa+. O coordenador
+  do consórcio submete a pré-proposta na plataforma da Biodiversa+ e o pe
+ squisador de SP envia as informações por e-mail à FAPESP. Só quem tive
+ r pré-proposta aprovada pode enviar a proposta completa pelo SAGe.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/chamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistem
+ as-129/\nConfirme data e horário limite no edital oficial: https://fapesp
+ .br/18366/chamada-conjunta-de-propostas-fapespconfapbiodiversa-2026-2027
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
+ hamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistemas-129/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Pré-proposta — Chamada conjunta FAPESP/CONFAP
+ /Biodiversa+ sobre novos ecossistemas (BiodivFuture)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Pré-proposta — Chamada conjunta FAPESP/CONFAP/Biodi
+ versa+ sobre novos ecossistemas (BiodivFuture)
+END:VALARM
+END:VEVENT
+END:VCALENDAR
