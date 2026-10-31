@@ -253,6 +253,8 @@ const base = lerJSON(ARQ.editais, { editais: [] });
 const fontes = (lerJSON(ARQ.fontes, { fontes: [] }).fontes || []).filter(f => f.ativo !== false);
 const estado = lerJSON(ARQ.estado, { vistos: {}, paginas: {}, execucoes: [] });
 estado.vistos ||= {}; estado.paginas ||= {}; estado.execucoes ||= [];
+// Links listados em modo manual (sem chave) voltam para a fila quando a chave passa a existir
+const pendente = url => { const v = estado.vistos[url]; return !v || (API_KEY && v.resultado === 'manual'); };
 const conhecidos = new Set(base.editais.flatMap(e => [e.link, e.fonte]).filter(Boolean));
 
 const rel = { candidatos: [], descartados: [], manuais: [], mudancas: [], falhasFonte: [], erros: [], adiados: 0 };
@@ -281,7 +283,7 @@ for (const f of (SUGESTAO ? [] : fontes)) {
             continue;
         }
         if (!links.length) rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: 'nenhum link de chamada encontrado (o layout pode ter mudado)' });
-        for (const l of links) if (!estado.vistos[l.url] && !conhecidos.has(l.url)) fila.push({ ...l, fonteId: f.id, fonteNome: f.nome, agencia: f.agencia });
+        for (const l of links) if (pendente(l.url) && !conhecidos.has(l.url)) fila.push({ ...l, fonteId: f.id, fonteNome: f.nome, agencia: f.agencia });
     } catch (err) {
         rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: err.message });
     }
@@ -292,6 +294,10 @@ if (DIAGNOSTICO) {
     console.log('\nLegenda: + novo · já visto · = já está na base');
     process.exit(0);
 }
+
+anotar(API_KEY ? 'Chave da API encontrada' : 'Chave da API não encontrada',
+    API_KEY ? 'Extração com IA ativa.' : 'O segredo ANTHROPIC_API_KEY não chegou ao workflow: confira o nome exato em Settings → Secrets and variables → Actions → aba Secrets (Repository secrets). Os links ficam para revisão manual.',
+    API_KEY ? 'notice' : 'warning');
 
 // 2. Links novos → extração e validação
 const lote = fila.slice(0, MAX_NOVOS);
