@@ -152,14 +152,21 @@ for (const exp of ['EXPIRACAO_PROG_MUITO_PROX', 'EXPIRACAO_PROG_PROX', 'EXPIRACA
 const porId = new Map();
 const amostras = [];
 let falhas = 0;
-for (const c of consultas) {
-    const rotulo = `${c.expiracao_prog_prop_voluntaria} ${c.ano_disponibilizacao}`;
+// Códigos de órgão superior (ministérios) para dividir consultas pesadas; e UFs como 2º nível
+const ORGAOS = Array.from({ length: 80 }, (_, i) => String(20000 + i * 1000));
+const UFS = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
+async function coletar(params, rotulo, nivel = 0) {
     try {
-        const linhas = await todas('discricionarias/todos-programas', { sit_programa: 'DISPONIBILIZADO', ...c });
+        const linhas = await todas('discricionarias/todos-programas', { sit_programa: 'DISPONIBILIZADO', ...params });
         for (const p of linhas) if (!porId.has(p.id_programa)) { porId.set(p.id_programa, p); if (amostras.length < 3) amostras.push(p); }
-        anotar(`Consulta ${rotulo}`, `${linhas.length} linhas · ${porId.size} programas distintos até aqui`);
-    } catch (err) { falhas++; anotar(`Falha ${rotulo}`, err.message, 'warning'); }
+        if (nivel === 0 || linhas.length) anotar(`Consulta ${rotulo}`, `${linhas.length} linhas · ${porId.size} programas distintos até aqui`);
+    } catch (err) {
+        if (nivel === 0) { for (const o of ORGAOS) await coletar({ ...params, cod_orgao_sup_programa: o }, `${rotulo} órgão ${o}`, 1); return; }
+        if (nivel === 1) { for (const uf of UFS) await coletar({ ...params, uf_programa: uf }, `${rotulo} ${uf}`, 2); return; }
+        falhas++; anotar(`Falha ${rotulo}`, err.message, 'warning');
+    }
 }
+for (const c of consultas) await coletar(c, `${c.expiracao_prog_prop_voluntaria} ${c.ano_disponibilizacao}`);
 
 const programas = [...porId.values()];
 const editais = programas
