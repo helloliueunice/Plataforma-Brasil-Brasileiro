@@ -84,7 +84,6 @@ function publicos(p) {
     if (/estad|distrito federal/.test(t)) s.add('estado');
     if (/organiza[cç][aã]o da sociedade civil|osc|entidade privada sem fins|sem fins lucrativos/.test(t)) s.add('osc');
     if (/cons[oó]rcio/.test(t)) { s.add('municipio'); }
-    if (/empresa p[uú]blica|sociedade de economia mista/.test(t)) s.add('estado');
     return [...s];
 }
 

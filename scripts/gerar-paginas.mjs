@@ -45,6 +45,10 @@ const GLOSSARIO = vm.runInNewContext(mGloss[1]);
 const fonte = JSON.parse(fs.readFileSync(path.join(RAIZ, 'editais.json'), 'utf8'));
 const brutos = Array.isArray(fonte) ? fonte : fonte.editais || [];
 const demonstrativo = !Array.isArray(fonte) && !!fonte.demonstrativo;
+// Programas federais abertos lidos da API do Transferegov (scripts/transferegov.mjs): dados oficiais,
+// atualizados todo dia, mantidos fora do editais.json curado. IDs a partir de 1.000.000.
+const arqTG = path.join(RAIZ, 'data', 'transferegov.json');
+const brutosTG = fs.existsSync(arqTG) ? (JSON.parse(fs.readFileSync(arqTG, 'utf8')).editais || []).filter(r => Number(r.id) >= 1000000) : [];
 const geradoEm = (!Array.isArray(fonte) && fonte.geradoEm) || new Date().toISOString().slice(0, 10);
 
 /* ---------- Utilitários ---------- */
@@ -83,7 +87,7 @@ const SCRIPT_EVENTOS = `document.addEventListener('click',function(ev){var a=ev.
 /* ---------- Validação ---------- */
 const avisos = [];
 const editais = [];
-brutos.forEach((r, i) => {
+[...brutos, ...brutosTG].forEach((r, i) => {
     const faltam = ['id', 'titulo', 'instituicao', 'abertura', 'encerramento'].filter(c => r[c] === undefined || r[c] === '');
     if (!(Number(r.valorMax) > 0) && !r.valorNota) faltam.push('valorMax ou valorNota');
     if (!isoOk(r.abertura) || !isoOk(r.encerramento)) faltam.push('datas no formato AAAA-MM-DD');
@@ -950,7 +954,7 @@ if (!fs.existsSync(path.join(RAIZ, '.nojekyll'))) escrever('.nojekyll', '');
     const reDados = /\/\/ editais:inicio[^\n]*\n[\s\S]*?\/\/ editais:fim/;
     if (!reDados.test(indexHtml)) throw new Error('Marcadores // editais:inicio e // editais:fim não encontrados no index.html');
     const ind = s => s.split('\n').map((l, i) => (i ? '        ' + l : l)).join('\n');
-    const embutidos = brutos.filter(r => editais.some(e => e.id === r.id));
+    const embutidos = [...brutos, ...brutosTG].filter(r => editais.some(e => e.id === r.id));
     const bloco = `// editais:inicio (gerado por scripts/gerar-paginas.mjs a partir do editais.json — não edite aqui)
         const DADOS_META = ${JSON.stringify({ geradoEm, demonstrativo })};
         let EDITAIS_BASE = ${ind(JSON.stringify(embutidos, null, 4)).replace(/<\/(script)/gi, '<\\/$1')};

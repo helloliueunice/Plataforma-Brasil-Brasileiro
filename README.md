@@ -114,6 +114,14 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
 
+## Programas federais do Transferegov (municípios, estados, consórcios e OSCs)
+
+O workflow **Programas do Transferegov** (`.github/workflows/transferegov.yml`, todo dia às 06h23) lê a API pública de dados abertos do Transferegov (`https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas`, sem chave) e grava em `data/transferegov.json` os programas com recebimento de **propostas voluntárias** aberto ou previsto. O gerador junta esses programas aos editais curados (IDs a partir de 1.000.000), com página própria, feeds, calendários e páginas por público. São dados oficiais atualizados diariamente, mantidos fora do `editais.json`.
+
+- Quem pode propor vem da natureza jurídica do programa: administração municipal e consórcios → municípios; administração estadual/DF → estados; organizações da sociedade civil → OSCs.
+- A consulta é pesada (a visão junta programas e propostas): o script divide por órgão e por UF quando o serviço falha, e mantém o arquivo anterior se a coleta vier incompleta.
+- Diagnóstico: *Actions → Programas do Transferegov → Run workflow* com `diagnostico` marcado mostra contagens e amostras sem alterar nada.
+
 ## Crescimento, busca e sustentação
 
 O plano de lançamento, com distribuição, indicadores e monetização, está em [`docs/lancamento.md`](docs/lancamento.md). Configurações públicas ficam em [`data/site.json`](data/site.json): verificação do Search Console e do Bing, medição (GoatCounter ou GA4), link de apoio, boletim, canal no WhatsApp, formulário de sugestão e contato. Campos vazios ficam invisíveis.

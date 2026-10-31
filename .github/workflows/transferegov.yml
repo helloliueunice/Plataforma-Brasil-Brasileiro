@@ -36,12 +36,24 @@ jobs:
       - name: Atualizar programas
         if: ${{ !inputs.diagnostico }}
         run: node scripts/transferegov.mjs
+      - name: Regenerar páginas
+        if: ${{ !inputs.diagnostico }}
+        run: node scripts/gerar-paginas.mjs
       - name: Publicar
         if: ${{ !inputs.diagnostico }}
+        id: publicar
         run: |
-          if [ -z "$(git status --porcelain data/transferegov.json)" ]; then echo "Sem mudanças."; exit 0; fi
+          if [ -z "$(git status --porcelain)" ]; then echo "Sem mudanças."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/transferegov.json
+          git add -A
           git commit -m "Transferegov: programas abertos ($(date -u +%Y-%m-%d))"
-          git pull --rebase -q && git push
+          git pull --rebase -q -X theirs || { git rebase --abort; node scripts/gerar-paginas.mjs; git add -A; git commit -m "Transferegov: programas abertos"; }
+          git push
+          echo "alterados<<FIM" >> "$GITHUB_OUTPUT"; git diff --name-only HEAD~1 HEAD >> "$GITHUB_OUTPUT"; echo "FIM" >> "$GITHUB_OUTPUT"
+      - name: Avisar buscadores (IndexNow)
+        if: steps.publicar.outputs.alterados != ''
+        continue-on-error: true
+        env:
+          ALTERADOS: ${{ steps.publicar.outputs.alterados }}
+        run: echo "$ALTERADOS" | xargs node scripts/notificar-buscadores.mjs

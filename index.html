@@ -5585,7 +5585,12 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     const r = await fetch('editais.json', { cache: 'no-cache' });
                     if (!r.ok) throw new Error(String(r.status));
                     const d = await r.json();
-                    const itens = Array.isArray(d) ? d : ((d && d.editais) || []);
+                    let itens = Array.isArray(d) ? d : ((d && d.editais) || []);
+                    // Programas federais abertos do Transferegov (municípios, estados, consórcios e OSCs)
+                    try {
+                        const rt = await fetch('data/transferegov.json', { cache: 'no-cache' });
+                        if (rt.ok) { const dt = await rt.json(); itens = itens.concat(((dt && dt.editais) || []).filter(x => Number(x.id) >= 1000000)); }
+                    } catch (_) { /* opcional */ }
                     const usados = new Set();
                     const validos = itens.map(normalizarEdital).filter(x => x.ok).map(x => x.edital);
                     let seq = 1;
