@@ -16,7 +16,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
-import { GUIAS, PUBLICOS_HUB } from './conteudo.mjs';
+import { GUIAS, PUBLICOS_HUB, ESQUEMA_CAMPOS } from './conteudo.mjs';
+import { rss, calendario, comparar, semanaISO, somaDias } from './feeds.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PADRAO = 'https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro';
@@ -35,7 +36,7 @@ if (ini < 0 || fim < 0) throw new Error('Bloco de dados não encontrado no index
 const ctx = vm.runInNewContext(
     indexHtml.slice(ini, fim) + '\n;({ COTACAO_REF, AREAS, PUBLICOS, UFS, REGIOES_UF, DOCS_POR_PUBLICO, DOCS_COMUNS, CRITERIOS_PADRAO, agencias, projetos, EDITAIS_BASE })'
 );
-const { COTACAO_REF, AREAS, PUBLICOS, UFS, REGIOES_UF, DOCS_POR_PUBLICO, DOCS_COMUNS, CRITERIOS_PADRAO, agencias, projetos } = ctx;
+const { COTACAO_REF, AREAS, PUBLICOS, UFS, REGIOES_UF, DOCS_POR_PUBLICO, DOCS_COMUNS, CRITERIOS_PADRAO, agencias } = ctx;
 // Glossário: o mesmo usado na plataforma (definido mais abaixo no index.html)
 const mGloss = indexHtml.match(/const GLOSSARIO = (\[[\s\S]*?\n        \]);/);
 if (!mGloss) throw new Error('GLOSSARIO não encontrado no index.html');
@@ -115,6 +116,52 @@ brutos.forEach((r, i) => {
 const slugs = new Set();
 editais.forEach(e => { if (slugs.has(slugEdital(e))) throw new Error(`Slug duplicado: ${slugEdital(e)} (ids repetidos?)`); slugs.add(slugEdital(e)); });
 
+/* ---------- Histórico de alterações (data/editais-snapshot.json → data/alteracoes.json) ---------- */
+// Compara os campos-chave com o estado da execução anterior. Idempotente: o workflow roda várias vezes
+// por dia e só registra o que mudou desde o último snapshot. Sem snapshot, apenas cria o snapshot.
+const SNAPSHOT = path.join(RAIZ, 'data', 'editais-snapshot.json');
+const ALTERACOES = path.join(RAIZ, 'data', 'alteracoes.json');
+const lerJson = (f, padrao) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return padrao; } };
+const gravarSeMudou = (f, txt) => { if (!fs.existsSync(f) || fs.readFileSync(f, 'utf8') !== txt) { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, txt); } };
+let alteracoes = lerJson(ALTERACOES, []);
+if (!Array.isArray(alteracoes)) alteracoes = [];
+{
+    const anterior = fs.existsSync(SNAPSHOT) ? lerJson(SNAPSHOT, null)?.editais || null : null;
+    const { novas, estado } = comparar(editais, anterior, hoje);
+    alteracoes.push(...novas);
+    gravarSeMudou(ALTERACOES, JSON.stringify(alteracoes, null, 2) + '\n');
+    gravarSeMudou(SNAPSHOT, JSON.stringify({ _leia: 'Gerado por scripts/gerar-paginas.mjs: estado anterior dos campos-chave de cada edital, usado para registrar alterações em data/alteracoes.json. Não edite.', editais: estado }, null, 2) + '\n');
+    if (novas.length) console.log(`${plural(novas.length, 'alteração registrada', 'alterações registradas')} em data/alteracoes.json`);
+}
+const alteracoesDe = id => alteracoes.filter(a => a.id === id && a.campo !== 'novo');
+const dm = iso => data(iso).slice(0, 5);
+// Domingo que fecha a semana ISO "AAAA-SS" (para o lastmod do sitemap)
+const semanaFim = chave => { const [a, n] = chave.split('-').map(Number); return somaDias(semanaISO(`${a}-01-04`).inicio, (n - 1) * 7 + 6); };
+const CAMPO_ROTULO = { abertura: 'Abertura', encerramento: 'Prazo', propostaCompleta: 'Prazo da proposta completa', valorMax: 'Valor por proposta', valorTotal: 'Valor total', titulo: 'Título', link: 'Link oficial', etapaPrazo: 'Etapa do prazo' };
+// Frase curta para cada alteração (página do edital, resumo semanal e feed de alterações)
+function textoAlteracao(a, e) {
+    const moeda = e?.moeda || 'BRL';
+    const fmt = v => (v == null ? 'não informado' : ['abertura', 'encerramento', 'propostaCompleta'].includes(a.campo) && isoOk(v) ? data(v) : ['valorMax', 'valorTotal'].includes(a.campo) && Number(v) > 0 ? valor(Number(v), moeda) : String(v));
+    if (a.campo === 'novo') return 'Edital incluído';
+    if (['encerramento', 'propostaCompleta', 'abertura'].includes(a.campo) && isoOk(a.de) && isoOk(a.para)) {
+        if (a.campo === 'abertura') return `Abertura alterada de ${dm(a.de)} para ${dm(a.para)} em ${dm(a.em)}`;
+        const rotulo = a.campo === 'encerramento' && e?.etapaPrazo ? `Prazo da ${e.etapaPrazo.toLowerCase()}` : CAMPO_ROTULO[a.campo];
+        return `${rotulo} alterado de ${dm(a.de)} para ${dm(a.para)} em ${dm(a.em)} (${a.para > a.de ? 'prorrogado' : 'antecipado'})`;
+    }
+    if (a.campo === 'link') return `Link oficial atualizado em ${dm(a.em)}`;
+    if (a.campo === 'titulo') return `Título alterado em ${dm(a.em)} (antes: ${a.de || 'sem título'})`;
+    return `${CAMPO_ROTULO[a.campo] || a.campo} alterado de ${fmt(a.de)} para ${fmt(a.para)} em ${dm(a.em)}`;
+}
+
+/* ---------- Prazos para calendários (um evento de dia inteiro por prazo) ---------- */
+const prazosDe = e => [
+    isoOk(e.encerramento) && { tipo: 'encerramento', campo: 'encerramento', data: e.encerramento, rotulo: e.etapaPrazo || 'Prazo final' },
+    isoOk(e.propostaCompleta) && { tipo: 'proposta-completa', campo: 'propostaCompleta', data: e.propostaCompleta, rotulo: 'Proposta completa' }
+].filter(Boolean);
+const FONTE_RECURSO = { publico: 'Recurso público', privado: 'Recurso privado', 'incentivo-fiscal': 'Incentivo fiscal (lei de incentivo)', internacional: 'Recurso internacional', misto: 'Misto (público e privado)' };
+const elegibilidadeDe = e => (Array.isArray(e.elegibilidade) ? e.elegibilidade.filter(q => q && typeof q.pergunta === 'string' && q.pergunta.trim() && typeof q.esperado === 'boolean') : []);
+const porProposta = e => !e.tipoValor || e.tipoValor === 'por-proposta';
+
 const ordemPrazo = (a, b) => {
     const r = { aberto: 0, 'em-breve': 1, fechado: 2 };
     const sa = statusEm(a), sb = statusEm(b);
@@ -127,7 +174,11 @@ const ordemPrazo = (a, b) => {
 /* ---------- Layout ---------- */
 const OG_IMG = `${SITE}/assets/og-image.jpg`;
 
-function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, ativo = '', robots = '', ogImagem = '' }) {
+// Buscadores cortam títulos longos: no máximo 70 caracteres (tira a marca e, se preciso, encurta)
+const ajustaTitulo = t => { if (t.length <= 70) return t; const s = t.endsWith(` | ${NOME}`) ? t.slice(0, -(NOME.length + 3)) : t; return s.length <= 70 ? s : corta(s, 70); };
+
+function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', jsonld, corpo, ativo = '', robots = '', ogImagem = '', assinatura = null }) {
+    const titulo = ajustaTitulo(tituloBruto);
     return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -152,6 +203,8 @@ function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, 
     <link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="${rel}assets/paginas.css">
     <link rel="alternate" type="application/rss+xml" title="${NOME} — novos editais" href="${SITE}/feed.xml">
+    ${assinatura ? `<link rel="alternate" type="application/rss+xml" title="${esc(`${NOME} — ${assinatura.nome}`)}" href="${SITE}/feeds/${assinatura.chave}.xml">
+    <link rel="alternate" type="text/calendar" title="${esc(`Prazos — ${assinatura.nome}`)}" href="${SITE}/cal/${assinatura.chave}.ics">` : ''}
     ${headExtras()}
     ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>` : ''}
 </head>
@@ -162,6 +215,7 @@ function layout({ rel, titulo, descricao, url, tipo = 'website', jsonld, corpo, 
         <nav aria-label="Navegação principal">
             <a href="${rel}editais/"${ativo === 'editais' ? ' aria-current="page"' : ''}>Editais</a>
             <a href="${rel}prazos/">Prazos</a>
+            <a href="${rel}semana/"${ativo === 'semana' ? ' aria-current="page"' : ''}>Semana</a>
             <a href="${rel}guias/"${ativo === 'guias' ? ' aria-current="page"' : ''}>Guias</a>
             <a href="${rel}instituicoes/"${ativo === 'instituicoes' ? ' aria-current="page"' : ''}>Instituições</a>
             <a class="btn primario pequeno" href="${rel}#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
@@ -173,7 +227,8 @@ ${corpo}
     <footer class="rodape">
         <p><strong>${NOME}</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
         <nav class="rodape-links" aria-label="Editais por perfil">${Object.values(PUBLICOS_HUB).map(h => `<a href="${rel}para/${h.slug}/">${esc(h.titulo.replace('Editais abertos ', 'Editais ').replace('Editais e programas abertos ', 'Programas '))}</a>`).join(' · ')}</nav>
-        <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}prazos/">Prazos</a> · <a href="${rel}guias/">Guias</a> · <a href="${rel}glossario/">Glossário</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}sugerir-edital/">Sugerir edital</a> · <a href="${rel}parcerias/">Parcerias</a> · <a href="${rel}feed.xml">RSS</a></p>
+        <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}prazos/">Prazos</a> · <a href="${rel}guias/">Guias</a> · <a href="${rel}glossario/">Glossário</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}sugerir-edital/">Sugerir edital</a> · <a href="${rel}parcerias/">Parcerias</a></p>
+        <p><a href="${rel}semana/">Resumo da semana</a> · <a href="${rel}dados/#assinar">Assinar (RSS e calendário)</a> · <a href="${rel}dados/">Dados abertos</a> · <a href="${rel}feed.xml">RSS</a></p>
         <p>${cfg.boletim?.url ? `<a class="btn pequeno primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a> ` : ''}${cfg.whatsappCanal ? `<a class="btn pequeno whats" href="${esc(cfg.whatsappCanal)}" target="_blank" rel="noopener" data-evento="canal-whatsapp">Canal no WhatsApp</a> ` : ''}${cfg.apoio?.url ? `<a class="btn pequeno" href="${esc(cfg.apoio.url)}" target="_blank" rel="noopener" data-evento="apoio">${esc(cfg.apoio.texto || 'Apoie')}</a>` : ''}</p>
         <p class="nota">${demonstrativo ? 'Dados demonstrativos. ' : ''}Informações de ${data(geradoEm)}. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
         <p class="nota"><a href="${rel}privacidade/">Privacidade</a> · <a href="${rel}termos/">Termos de uso</a></p>
@@ -214,6 +269,14 @@ function cartao(e, rel) {
         </li>`;
 }
 
+// Botões de assinatura de um recorte (feeds/<chave>.xml e cal/<chave>.ics)
+const assinar = (rel, chave, rotulo) => `<div class="assinar" role="group" aria-label="${esc(rotulo)}">
+            <span class="assinar-rotulo">${esc(rotulo)}</span>
+            <a class="btn pequeno" href="${rel}feeds/${chave}.xml" type="application/rss+xml" data-evento="assinar-rss">Feed RSS</a>
+            <a class="btn pequeno" href="${rel}cal/${chave}.ics" type="text/calendar" data-evento="assinar-calendario">Calendário (.ics)</a>
+            <a class="assinar-ajuda" href="${rel}dados/#assinar">Como assinar</a>
+        </div>`;
+
 function escrever(rota, html) {
     const destino = path.join(RAIZ, rota);
     fs.mkdirSync(path.dirname(destino), { recursive: true });
@@ -221,7 +284,8 @@ function escrever(rota, html) {
 }
 
 // Remove páginas geradas anteriormente (editais renomeados ou removidos)
-for (const dir of ['editais', 'instituicoes', 'para', 'area', 'prazos', 'glossario', 'guias', 'parcerias', 'sugerir-edital', 'privacidade', 'termos']) fs.rmSync(path.join(RAIZ, dir), { recursive: true, force: true });
+// (semana/ não é apagada: guarda o arquivo dos resumos semanais anteriores)
+for (const dir of ['editais', 'instituicoes', 'para', 'area', 'prazos', 'glossario', 'guias', 'parcerias', 'sugerir-edital', 'privacidade', 'termos', 'dados', 'feeds', 'cal']) fs.rmSync(path.join(RAIZ, dir), { recursive: true, force: true });
 
 /* ---------- Página de cada edital ---------- */
 for (const e of editais) {
@@ -231,12 +295,25 @@ for (const e of editais) {
     const instNome = ag ? `${ag.sigla} — ${ag.nome}` : e.instituicao;
     const area = AREAS[e.tema] || e.tema;
     // Buscadores exibem ~60 caracteres: título do edital primeiro, instituição e marca só se couberem
-    const titulo = (t => (t.length <= 66 ? `${t} | ${NOME}` : t))(`${corta(e.titulo, 64)} — ${e.instituicao}`);
+    const titulo = (() => {
+        const inst = e.instituicao;
+        if (`${e.titulo} — ${inst} | ${NOME}`.length <= 70) return `${e.titulo} — ${inst} | ${NOME}`;
+        if (`${e.titulo} — ${inst}`.length <= 70) return `${e.titulo} — ${inst}`;
+        return inst.length <= 24 ? `${corta(e.titulo, 67 - inst.length)} — ${inst}` : corta(e.titulo, 70);
+    })();
     const descricao = corta(`${e.numero ? e.numero + '. ' : ''}${e.modalidade}${temValor(e) ? `: até ${valor(e.valorMax, e.moeda)} por proposta` : ''} para ${publicoTxt(e)}. Inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`, 158);
     const textoWhats = `${e.titulo} (${e.instituicao})${temValor(e) ? ` — até ${valor(e.valorMax, e.moeda)} por proposta` : ''}. Inscrições até ${data(e.encerramento)}: ${url}`;
     const etapas = [['Publicação do edital', e.publicadoEm], ['Abertura das inscrições', e.abertura], ['Prazo final', e.encerramento], ['Resultado (previsão)', e.resultado]].filter(([, d]) => isoOk(d));
     const relacionados = editais.filter(x => x.id !== e.id && (x.agencia === e.agencia || x.tema === e.tema)).sort(ordemPrazo).slice(0, 4);
     const ufs = Array.isArray(e.ufs) && e.ufs.length ? e.ufs : REGIOES_UF[e.abrangencia];
+    const elig = elegibilidadeDe(e);
+    const fonteRec = FONTE_RECURSO[e.fonteRecurso];
+    // Avisos de prazo/valor alterado (do histórico), mais recentes primeiro
+    const alts = alteracoesDe(e.id).filter(a => ['encerramento', 'propostaCompleta', 'abertura', 'valorMax', 'valorTotal'].includes(a.campo)).reverse();
+    // Prazos futuros: viram links "Adicionar ao calendário"
+    const proximos = prazosDe(e).filter(p => p.data >= hoje);
+    const gcal = p => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`${p.rotulo}: ${e.titulo}`)}&dates=${p.data.replace(/-/g, '')}/${somaDias(p.data, 1).replace(/-/g, '')}&details=${encodeURIComponent(`${e.instituicao}. Confirme o horário limite no edital oficial. ${url}`)}`;
+    const rotuloValor = { total: 'Valor do edital', faixa: 'Faixa de valor por proposta', bolsa: 'Bolsa' }[e.tipoValor] || 'Valor por proposta';
 
     const jsonld = {
         '@context': 'https://schema.org',
@@ -255,10 +332,11 @@ for (const e of editais) {
 
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(e.titulo)}</span></nav>
-        <div class="selos">${patrocinado(e) ? '<span class="selo patrocinado">Patrocinado</span> ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span></div>
+        <div class="selos">${patrocinado(e) ? '<span class="selo patrocinado">Patrocinado</span> ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span>${e.fluxoContinuo === true ? ' <span class="selo neutro">Fluxo contínuo</span>' : ''}</div>
         ${e.numero ? `<p class="numero">${esc(e.numero)}</p>` : ''}
         <h1>${esc(e.titulo)}</h1>
         <p class="sub">${ag ? `<a href="${rel}instituicoes/${e.agencia}/">${esc(e.instituicao)}</a>` : esc(e.instituicao)} · ${esc(area)} · ${esc(e.abrangencia)}</p>
+        ${alts.length ? `<ul class="alteracoes" aria-label="Alterações registradas">${alts.map(a => `<li>${esc(textoAlteracao(a, e))}</li>`).join('')}</ul>` : ''}
 
         <div class="acoes">
             <a class="btn primario" href="${rel}#edital-${e.id}" data-evento="edital-acompanhar">Acompanhar e ver o checklist</a>
@@ -267,15 +345,22 @@ for (const e of editais) {
         </div>
 
         <dl class="fatos">
-            <div><dt>Valor por proposta</dt><dd>${valorTxt(e)}</dd></div>
+            <div><dt>${rotuloValor}</dt><dd>${e.tipoValor === 'nao-informado' && !temValor(e) ? 'Não informado' : valorTxt(e)}</dd></div>
             <div><dt>Valor total do edital</dt><dd>${e.valorTotal > 0 ? valor(e.valorTotal, e.moeda) : 'Não informado'}</dd></div>
-            <div><dt>Prazo final</dt><dd>${data(e.encerramento)}</dd></div>
+            <div><dt>${e.etapaPrazo ? esc(e.etapaPrazo) : 'Prazo final'}</dt><dd>${e.fluxoContinuo === true ? `Fluxo contínuo, até ${data(e.encerramento)}` : data(e.encerramento)}</dd></div>
+            ${isoOk(e.propostaCompleta) ? `<div><dt>Proposta completa</dt><dd>${data(e.propostaCompleta)}</dd></div>` : ''}
             <div><dt>Quem pode participar</dt><dd>${e.publico.map(p => PUBLICOS_HUB[p] ? `<a href="${rel}para/${PUBLICOS_HUB[p].slug}/">${esc(PUBLICOS[p] || p)}</a>` : esc(PUBLICOS[p] || p)).join(', ')}</dd></div>
             <div><dt>Contrapartida</dt><dd>${esc(e.contrapartida)}</dd></div>
+            ${fonteRec ? `<div><dt>Origem do recurso</dt><dd>${e.fonteRecurso === 'incentivo-fiscal' ? `<a href="${rel}guias/leis-de-incentivo-fiscal/">${esc(fonteRec)}</a>` : esc(fonteRec)}</dd></div>` : ''}
             <div><dt>Abrangência</dt><dd>${esc(e.abrangencia)}${ufs && ufs.length > 1 ? `<br><small>${ufs.join(', ')}</small>` : ''}</dd></div>
         </dl>
         ${e.valorNota ? `<p class="destaque">${esc(e.valorNota)}</p>` : ''}
         ${e.moeda !== 'BRL' && temValor(e) ? `<p class="nota">Valores em ${e.moeda}. Equivalente aproximado: até ${valor(e.valorMax * (COTACAO_REF[e.moeda] || 1))} por proposta (cotação de referência).</p>` : ''}
+
+        ${elig.length ? `<section aria-labelledby="elig-titulo"><h2 id="elig-titulo">Quem pode participar — confira antes</h2>
+            <p class="nota">Compare cada requisito com a sua situação. Se você não atende a um requisito eliminatório, a proposta não pode ser aceita.</p>
+            <ol class="elegibilidade">${elig.map(q => `<li><span class="pergunta">${esc(q.pergunta)}</span> <span class="requisito">Precisa ser: <strong>${q.esperado ? 'Sim' : 'Não'}</strong></span>${q.eliminatoria ? ' <span class="selo eliminatoria">Eliminatória</span>' : ''}</li>`).join('')}</ol>
+            <p class="nota">Lista de conferência rápida; os requisitos completos estão no edital oficial.</p></section>` : ''}
 
         <section><h2>Sobre o edital</h2><p>${esc(e.resumo || 'Consulte o edital oficial para o objetivo completo.')}</p>
             ${e.fonte || e.verificadoEm ? `<p class="nota">Conferido${e.verificadoEm ? ` em ${data(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(e.fonte)}" target="_blank" rel="noopener noreferrer">fonte oficial</a>` : ''}.</p>` : ''}
@@ -283,7 +368,12 @@ for (const e of editais) {
 
         <section><h2>Cronograma</h2>
             <ol class="cronograma">${etapas.map(([n, d]) => `<li><strong>${n}</strong> <span>${data(d)}</span></li>`).join('')}</ol>
-            ${e.prazoNota ? `<p class="destaque">${esc(e.prazoNota)}</p>` : ''}</section>
+            ${e.prazoNota ? `<p class="destaque">${esc(e.prazoNota)}</p>` : ''}
+            ${proximos.length ? `<div class="assinar" role="group" aria-label="Adicionar ao calendário">
+                <span class="assinar-rotulo">Adicionar ao calendário</span>
+                <a class="btn pequeno" href="${rel}cal/edital-${e.id}.ics" type="text/calendar" data-evento="edital-ics">Arquivo .ics (Apple, Outlook)</a>
+                ${proximos.map(p => `<a class="btn pequeno" href="${esc(gcal(p))}" target="_blank" rel="noopener noreferrer" data-evento="edital-google-agenda">Google Agenda: ${esc(p.rotulo.toLowerCase())}</a>`).join('\n                ')}
+            </div>` : ''}</section>
 
         <section><h2>Documentos usuais</h2>
             <ul class="lista">${e.documentos.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
@@ -298,7 +388,7 @@ for (const e of editais) {
 
         ${relacionados.length ? `<section><h2>Editais relacionados</h2><ul class="cartoes">${relacionados.map(x => cartao(x, rel)).join('')}</ul></section>` : ''}`;
 
-    escrever(`editais/${slugEdital(e)}/index.html`, layout({ rel, titulo, descricao, url, tipo: 'article', jsonld, corpo, ativo: 'editais', ogImagem: ogDoEdital(e) }));
+    escrever(`editais/${slugEdital(e)}/index.html`, layout({ rel, titulo, descricao, url, tipo: 'article', jsonld, corpo, ativo: 'editais', ogImagem: ogDoEdital(e), assinatura: ag ? { chave: `instituicao-${e.agencia}`, nome: `editais ${ag.sigla}` } : null }));
 }
 
 /* ---------- Lista de editais ---------- */
@@ -322,33 +412,58 @@ for (const e of editais) {
 }
 
 /* ---------- Instituições ---------- */
+// Só dados do editais.json: nada de histórico inventado
+const temPaginaArea = k => editais.some(e => e.tema === k && statusEm(e) !== 'fechado');
 for (const [k, a] of Object.entries(agencias)) {
     const rel = '../../';
-    const eds = editais.filter(e => e.agencia === k).sort(ordemPrazo);
-    const projs = projetos.filter(p => p.agencia === k);
+    const eds = editais.filter(e => e.agencia === k);
+    const abertos = eds.filter(e => statusEm(e) === 'aberto').sort(ordemPrazo);
+    const previstos = eds.filter(e => statusEm(e) === 'em-breve').sort(ordemPrazo);
+    const encerrados = eds.filter(e => statusEm(e) === 'fechado').sort(ordemPrazo);
     const url = `${SITE}/instituicoes/${k}/`;
+    // Valor médio por proposta: só editais com teto por proposta informado, na moeda mais comum
+    const comValor = eds.filter(e => temValor(e) && porProposta(e));
+    const moedaRef = comValor.length ? Object.entries(comValor.reduce((m, e) => ({ ...m, [e.moeda]: (m[e.moeda] || 0) + 1 }), {})).sort((x, y) => y[1] - x[1])[0][0] : 'BRL';
+    const valores = comValor.filter(e => e.moeda === moedaRef).map(e => Number(e.valorMax));
+    const media = valores.length ? valores.reduce((s, v) => s + v, 0) / valores.length : 0;
+    const publicos = Object.keys(PUBLICOS).filter(p => eds.some(e => e.publico.includes(p)));
+    const temas = Object.keys(AREAS).filter(t => eds.some(e => e.tema === t));
+    const secao = (titulo, lista, vazio) => `<section><h2>${titulo} (${lista.length})</h2>${lista.length ? `<ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul>` : `<p class="nota">${vazio}</p>`}</section>`;
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}instituicoes/">Instituições</a> › <span aria-current="page">${esc(a.sigla)}</span></nav>
         <p class="selos"><span class="selo neutro">${esc(a.pais)} · ${esc(a.cidade)}</span></p>
         <h1>${esc(a.sigla)} — ${esc(a.nome)}</h1>
         <p class="sub">${esc(a.descricao)}</p>
         <div class="acoes">
-            <a class="btn primario" href="${rel}#agencia-${k}">Desembolsos e projetos na plataforma</a>
+            <a class="btn primario" href="${rel}#agencia-${k}">Ver na plataforma</a>
             <a class="btn" href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">Portal oficial</a>
         </div>
+        ${assinar(rel, `instituicao-${k}`, 'Assinar editais desta instituição')}
+        <section aria-labelledby="numeros-titulo"><h2 id="numeros-titulo">Em números</h2>
         <dl class="fatos">
-            <div><dt>Fundação</dt><dd>${a.fundacao}</dd></div>
-            <div><dt>Faixa de apoio</dt><dd>${esc(a.intervalo)}</dd></div>
-            <div><dt>Editais nesta plataforma</dt><dd>${eds.length}</dd></div>
-            <div><dt>Áreas</dt><dd>${a.temas.map(esc).join(', ')}</dd></div>
+            <div><dt>Inscrições abertas agora</dt><dd>${abertos.length}</dd></div>
+            <div><dt>Previstos (abrem em breve)</dt><dd>${previstos.length}</dd></div>
+            <div><dt>Encerrados no cadastro</dt><dd>${encerrados.length}</dd></div>
+            <div><dt>Valor médio por proposta</dt><dd>${valores.length ? `${valor(media, moedaRef)}<br><small>média de ${plural(valores.length, 'edital', 'editais')} com teto informado</small>` : 'Sem valor informado'}</dd></div>
+            <div><dt>Públicos atendidos</dt><dd>${publicos.length ? publicos.map(p => PUBLICOS_HUB[p] ? `<a href="${rel}para/${PUBLICOS_HUB[p].slug}/">${esc(PUBLICOS[p])}</a>` : esc(PUBLICOS[p])).join(', ') : '—'}</dd></div>
+            <div><dt>Áreas</dt><dd>${temas.length ? temas.map(t => temPaginaArea(t) ? `<a href="${rel}area/${slugify(AREAS[t])}/">${esc(AREAS[t])}</a>` : esc(AREAS[t])).join(', ') : a.temas.map(esc).join(', ')}</dd></div>
         </dl>
-        <section><h2>Editais</h2>${eds.length ? `<ul class="cartoes">${eds.map(e => cartao(e, rel)).join('')}</ul>` : '<p>Nenhum edital cadastrado no momento.</p>'}</section>
-        ${projs.length ? `<section><h2>Projetos financiados</h2><ul class="lista">${projs.map(p => `<li><strong>${esc(p.titulo)}</strong> — ${valor(p.valor, p.moeda)} · ${esc(p.status)} (${p.inicio.slice(0, 4)}–${p.fim.slice(0, 4)})</li>`).join('')}</ul></section>` : ''}`;
+        <p class="nota">Números calculados só com os ${plural(eds.length, 'edital cadastrado', 'editais cadastrados')} nesta plataforma (dados de ${data(geradoEm)}); não representam todo o histórico da instituição.${a.fundacao ? ` Fundação: ${esc(a.fundacao)}.` : ''}</p></section>
+        ${secao('Inscrições abertas', abertos, 'Nenhum edital com inscrições abertas no momento.')}
+        ${previstos.length ? secao('Previstos', previstos, '') : ''}
+        ${encerrados.length ? secao('Encerrados', encerrados, '') : ''}
+        ${eds.length ? '' : `<p>Nenhum edital desta instituição cadastrado no momento. Assine o feed para saber quando houver.</p>`}`;
     escrever(`instituicoes/${k}/index.html`, layout({
-        rel, url, ativo: 'instituicoes', corpo,
-        titulo: `${a.sigla}: editais e financiamento | ${NOME}`,
-        descricao: corta(`${a.sigla} (${a.nome}): ${a.descricao} Veja ${plural(eds.length, 'edital', 'editais')}, prazos e valores.`, 158),
-        jsonld: { '@context': 'https://schema.org', '@type': 'Organization', name: a.nome, alternateName: a.sigla, url: a.link, foundingDate: String(a.fundacao), address: a.cidade }
+        rel, url, ativo: 'instituicoes', corpo, assinatura: { chave: `instituicao-${k}`, nome: `editais ${a.sigla}` },
+        titulo: (t => (t.length <= 70 ? t : `${a.sigla}: editais e financiamento`))(`${a.sigla}: editais e financiamento | ${NOME}`),
+        descricao: corta(`${a.sigla}: ${plural(abertos.length, 'edital aberto', 'editais abertos')}, ${plural(previstos.length, 'previsto', 'previstos')}, valores, prazos e quem pode participar. Assine o feed e o calendário.`, 158),
+        jsonld: { '@context': 'https://schema.org', '@graph': [
+            { '@type': 'Organization', '@id': `${url}#organizacao`, name: a.nome, alternateName: a.sigla, url: a.link, sameAs: [a.link], ...(a.fundacao ? { foundingDate: String(a.fundacao) } : {}), ...(a.cidade ? { address: { '@type': 'PostalAddress', addressLocality: a.cidade, ...(a.pais === 'Brasil' ? { addressCountry: 'BR' } : {}) } } : {}), description: a.descricao },
+            { '@type': 'BreadcrumbList', itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Início', item: `${SITE}/` },
+                { '@type': 'ListItem', position: 2, name: 'Instituições', item: `${SITE}/instituicoes/` },
+                { '@type': 'ListItem', position: 3, name: a.sigla, item: url }] }
+        ] }
     }));
 }
 {
@@ -362,7 +477,7 @@ for (const [k, a] of Object.entries(agencias)) {
         rel, url: `${SITE}/instituicoes/`, ativo: 'instituicoes',
         jsonld: { '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: Object.entries(agencias).map(([k, a], i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/instituicoes/${k}/`, name: a.sigla })) },
         titulo: `Fundos e agências de fomento nacionais e internacionais | ${NOME}`,
-        descricao: corta(`Instituições que financiam projetos no Brasil: ${Object.values(agencias).map(a => a.sigla).join(', ')}. Editais, áreas de atuação e projetos financiados.`, 158),
+        descricao: corta(`Instituições que financiam projetos no Brasil: ${Object.values(agencias).map(a => a.sigla).join(', ')}. Editais abertos, previstos, prazos e feeds por instituição.`, 158),
         corpo: `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Instituições</span></nav>
         <h1>Fundos e agências de fomento</h1>
@@ -392,7 +507,7 @@ for (const [pub, h] of Object.entries(PUBLICOS_HUB)) {
     const docs = [...(DOCS_POR_PUBLICO[pub] || []), ...DOCS_COMUNS];
     const abertos = lista.filter(e => statusEm(e) === 'aberto').length;
     escrever(`para/${h.slug}/index.html`, layout({
-        rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow',
+        rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow', assinatura: { chave: `publico-${pub}`, nome: h.titulo.replace(/^Editais (e programas )?abertos /, 'editais ') },
         titulo: `${h.titulo} (${mesAno}) | ${NOME}`,
         descricao: corta(`${lista.length ? `${plural(abertos, 'chamada aberta', 'chamadas abertas')} agora. ` : ''}${h.descricao}`, 158),
         jsonld: lista.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: h.h1, itemListElement: lista.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/editais/${slugEdital(e)}/`, name: e.titulo })) } : null,
@@ -401,6 +516,7 @@ for (const [pub, h] of Object.entries(PUBLICOS_HUB)) {
         <h1>${esc(h.h1)}</h1>
         <p class="sub">${lista.length ? `${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} · atualizado em ${data(geradoEm)}` : `Atualizado em ${data(geradoEm)}`}</p>
         <div class="acoes"><a class="btn primario" href="${rel}#editais?publico=${pub}" data-evento="hub-plataforma">Ver compatibilidade com o meu perfil</a></div>
+        ${assinar(rel, `publico-${pub}`, 'Assinar novos editais deste perfil')}
         ${lista.length ? `<section><h2>Chamadas abertas e previstas</h2><ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul></section>` : blocoVazio(rel)}
         <section><h2>Como funciona</h2>${h.intro.replace(/\{raiz\}/g, rel)}</section>
         <section><h2>Dicas rápidas</h2><ul class="lista">${h.dicas.map(d => `<li>${esc(d)}</li>`).join('')}</ul></section>
@@ -419,7 +535,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
     const indexavel = lista.length >= MIN_INDEXAVEL;
     if (indexavel) urlsExtras.push([url, 'daily', '0.7']);
     escrever(`area/${slug}/index.html`, layout({
-        rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow',
+        rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow', assinatura: { chave: `area-${slug}`, nome: `editais de ${nomeArea}` },
         titulo: `Editais abertos de ${nomeArea} (${mesAno}) | ${NOME}`,
         descricao: corta(`${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} em ${nomeArea}: valores, prazos, quem pode participar e documentos, conferidos nas fontes oficiais.`, 158),
         jsonld: { '@context': 'https://schema.org', '@type': 'ItemList', name: `Editais de ${nomeArea}`, itemListElement: lista.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/editais/${slugEdital(e)}/`, name: e.titulo })) },
@@ -427,6 +543,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(nomeArea)}</span></nav>
         <h1>Editais abertos de ${esc(nomeArea)}</h1>
         <p class="sub">${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} · atualizado em ${data(geradoEm)}</p>
+        ${assinar(rel, `area-${slug}`, 'Assinar editais desta área')}
         <ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul>
         <section><h2>Por perfil</h2><ul class="lista">${Object.entries(PUBLICOS_HUB).map(([p, h]) => `<li><a href="${rel}para/${h.slug}/">${esc(h.titulo)}</a></li>`).join('')}</ul></section>
         <section><h2>Guias</h2>${linkGuias(rel)}</section>`
@@ -449,6 +566,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
         <h1>Prazos de editais: o que encerra primeiro</h1>
         <p class="sub">Atualizado em ${data(geradoEm)}. Prazos com horário-limite: confira sempre o edital oficial.</p>
         <div class="acoes"><a class="btn primario" href="${rel}#editais?view=calendario" data-evento="prazos-calendario">Ver no calendário e exportar para a agenda</a></div>
+        ${assinar(rel, 'todos', 'Assinar todos os prazos')}
         <section><h2>Inscrições abertas, por prazo final</h2>${ab.length ? `<ul class="agenda">${ab.map(linha).join('')}</ul>` : '<p>Nenhuma chamada aberta no momento.</p>'}</section>
         ${breve.length ? `<section><h2>Abrem em breve</h2><ul class="agenda">${breve.map(e => `<li><span class="data">${data(e.abertura).slice(0, 5)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)} · abre em ${data(e.abertura)}</span></li>`).join('')}</ul></section>` : ''}`
     }));
@@ -638,6 +756,172 @@ ${itens.map(e => `  <item>
 `);
 }
 
+/* ---------- Feeds RSS e calendários por recorte (contrato com a plataforma: nomes fixos) ---------- */
+//   feeds/todos.xml, feeds/publico-<publico>.xml, feeds/area-<slug>.xml, feeds/instituicao-<agencia>.xml, feeds/alteracoes.xml
+//   cal/todos.ics, cal/publico-<publico>.ics, cal/area-<slug>.ics, cal/instituicao-<agencia>.ics, cal/edital-<id>.ics
+// Todos são gerados, mesmo vazios.
+const urlEdital = e => `${SITE}/editais/${slugEdital(e)}/`;
+const porId = new Map(editais.map(e => [e.id, e]));
+const descricaoEdital = e => `${e.numero ? e.numero + '. ' : ''}${valorTxt(e)}${temValor(e) && porProposta(e) ? ' por proposta' : ''} · ${publicoTxt(e)} · inscrições de ${data(e.abertura)} a ${data(e.encerramento)}${e.etapaPrazo ? ` (${e.etapaPrazo.toLowerCase()})` : ''}${isoOk(e.propostaCompleta) ? `; proposta completa até ${data(e.propostaCompleta)}` : ''}. ${e.resumo}`.trim();
+const itemRss = e => ({
+    titulo: `${e.titulo} — ${e.instituicao}`, link: urlEdital(e), guid: urlEdital(e),
+    data: isoOk(e.publicadoEm) ? e.publicadoEm : e.abertura,
+    categorias: [AREAS[e.tema] || e.tema, ...e.publico.map(p => PUBLICOS[p] || p)], descricao: descricaoEdital(e)
+});
+const eventosDe = (e, desde = '') => prazosDe(e).filter(p => p.data >= desde).map(p => ({
+    uid: `edital-${e.id}-${p.tipo}@fundosbrasil`, data: p.data, carimbo: isoOk(geradoEm) ? geradoEm : hoje,
+    sequencia: alteracoes.filter(a => a.id === e.id && a.campo === p.campo).length,
+    resumo: `${p.rotulo}: ${e.titulo}`, alarme: `${p.rotulo} — ${e.titulo}`, url: urlEdital(e),
+    descricao: [
+        `${e.instituicao}${e.numero ? ` · ${e.numero}` : ''}`,
+        `Valor: ${valorTxt(e)}${temValor(e) && porProposta(e) ? ' por proposta' : ''}`,
+        `Quem pode participar: ${publicoTxt(e)}`,
+        e.prazoNota || '',
+        `Página do edital: ${urlEdital(e)}`,
+        e.link ? `Confirme data e horário limite no edital oficial: ${e.link}` : ''
+    ].filter(Boolean).join('\n')
+}));
+const nomePublico = p => (PUBLICOS_HUB[p] ? PUBLICOS_HUB[p].titulo.replace(/^Editais (e programas )?abertos /, 'editais ') : `editais para ${PUBLICOS[p] || p}`);
+const RECORTES = [
+    { chave: 'todos', nome: 'todos os editais', grupo: 'Geral', filtro: () => true, pagina: `${SITE}/editais/` },
+    ...Object.keys(PUBLICOS).map(p => ({ chave: `publico-${p}`, nome: nomePublico(p), rotulo: PUBLICOS[p], grupo: 'Por perfil', filtro: e => e.publico.includes(p), pagina: PUBLICOS_HUB[p] ? `${SITE}/para/${PUBLICOS_HUB[p].slug}/` : `${SITE}/editais/` })),
+    ...Object.entries(AREAS).map(([k, n]) => ({ chave: `area-${slugify(n)}`, nome: `editais de ${n}`, rotulo: n, grupo: 'Por área', filtro: e => e.tema === k, pagina: temPaginaArea(k) ? `${SITE}/area/${slugify(n)}/` : `${SITE}/editais/` })),
+    ...Object.entries(agencias).map(([k, a]) => ({ chave: `instituicao-${k}`, nome: `editais ${a.sigla}`, rotulo: a.sigla, grupo: 'Por instituição', filtro: e => e.agencia === k, pagina: `${SITE}/instituicoes/${k}/` }))
+];
+for (const r of RECORTES) {
+    const lista = editais.filter(r.filtro);
+    const itens = lista.filter(e => statusEm(e) !== 'fechado').map(itemRss).sort((a, b) => b.data.localeCompare(a.data) || a.link.localeCompare(b.link));
+    escrever(`feeds/${r.chave}.xml`, rss({
+        titulo: `${NOME} — ${r.nome}`, link: r.pagina, self: `${SITE}/feeds/${r.chave}.xml`, atualizado: geradoEm, itens,
+        descricao: `Editais com inscrições abertas ou previstas (${r.nome}), conferidos nas fontes oficiais. Confirme sempre no edital oficial.`
+    }));
+    const eventos = lista.flatMap(e => eventosDe(e, hoje)).sort((a, b) => a.data.localeCompare(b.data) || a.uid.localeCompare(b.uid));
+    escrever(`cal/${r.chave}.ics`, calendario({
+        nome: `Prazos de ${r.nome} — ${NOME}`,
+        descricao: `Prazos de ${r.nome}, com lembretes 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital oficial.`, eventos
+    }));
+}
+for (const e of editais) {
+    escrever(`cal/edital-${e.id}.ics`, calendario({ nome: `${corta(e.titulo, 60)} — ${NOME}`, descricao: `Prazos de ${e.titulo} (${e.instituicao}). Confirme sempre no edital oficial.`, eventos: eventosDe(e) }));
+}
+// Feed de alterações (prazo prorrogado ou antecipado, valor alterado, novo edital)
+{
+    const hash = s => { let h = 5381; for (const c of s) h = ((h * 33) ^ c.codePointAt(0)) >>> 0; return h.toString(36); };
+    const tituloDe = id => porId.get(id)?.titulo || alteracoes.find(x => x.id === id && x.campo === 'novo')?.para || `Edital ${id}`;
+    const ult = alteracoes.slice(-100).reverse();
+    escrever('feeds/alteracoes.xml', rss({
+        titulo: `${NOME} — alterações em editais`, link: `${SITE}/semana/`, self: `${SITE}/feeds/alteracoes.xml`,
+        descricao: 'Prazos prorrogados ou antecipados, valores alterados e editais incluídos, registrados a cada atualização dos dados.',
+        atualizado: [geradoEm, ...ult.map(a => a.em)].filter(isoOk).sort().pop() || hoje,
+        itens: ult.map(a => {
+            const e = porId.get(a.id);
+            const link = e ? urlEdital(e) : `${SITE}/editais/`;
+            return {
+                titulo: a.campo === 'novo' ? `Novo edital: ${tituloDe(a.id)}${e ? ` — ${e.instituicao}` : ''}` : `${textoAlteracao(a, e)}: ${tituloDe(a.id)}`,
+                link, guid: `${link}#alteracao-${a.id}-${a.campo}-${a.em}-${hash(JSON.stringify(a))}`, permalink: false, data: a.em,
+                categorias: [a.campo === 'novo' ? 'Novo edital' : CAMPO_ROTULO[a.campo] || a.campo],
+                descricao: a.campo === 'novo' && e ? descricaoEdital(e) : `${textoAlteracao(a, e)}. Confirme no edital oficial.`
+            };
+        })
+    }));
+}
+
+/* ---------- Resumo semanal: semana/ (semana atual) e semana/AAAA-SS/ (arquivo) ---------- */
+{
+    const sem = semanaISO(hoje);
+    const ate14 = somaDias(hoje, 14);
+    const naSemana = d => isoOk(d) && d >= sem.inicio && d <= sem.fim;
+    const idsNovos = new Set([...editais.filter(e => naSemana(e.publicadoEm)).map(e => e.id), ...alteracoes.filter(a => a.campo === 'novo' && naSemana(a.em)).map(a => a.id)]);
+    const novos = editais.filter(e => idsNovos.has(e.id)).sort(ordemPrazo);
+    const encerrando = editais.flatMap(e => prazosDe(e).filter(p => p.data >= hoje && p.data <= ate14).map(p => ({ e, p }))).sort((x, y) => x.p.data.localeCompare(y.p.data) || x.e.titulo.localeCompare(y.e.titulo));
+    const alterados = [...new Set(alteracoes.filter(a => a.campo !== 'novo' && naSemana(a.em) && porId.has(a.id)).map(a => a.id))].map(id => ({ e: porId.get(id), lista: alteracoes.filter(a => a.id === id && a.campo !== 'novo' && naSemana(a.em)) }));
+    const dirSemana = path.join(RAIZ, 'semana');
+    const anteriores = fs.existsSync(dirSemana) ? fs.readdirSync(dirSemana).filter(d => /^\d{4}-\d{2}$/.test(d) && d !== sem.chave && fs.existsSync(path.join(dirSemana, d, 'index.html'))).sort().reverse() : [];
+    const periodo = `${dm(sem.inicio)} a ${data(sem.fim)}`;
+    const corpoSemana = (rel, arquivo) => `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › ${arquivo ? `<a href="${rel}semana/">Resumo da semana</a> › <span aria-current="page">Semana ${sem.semana}/${sem.ano}</span>` : '<span aria-current="page">Resumo da semana</span>'}</nav>
+        <h1>Resumo da semana ${sem.semana} de ${sem.ano}</h1>
+        <p class="sub">${periodo} · situação em ${data(hoje)}. Editais novos, prazos dos próximos 14 dias e mudanças registradas.</p>
+        ${assinar(rel, 'todos', 'Assinar novos editais e prazos')}
+        <p class="nota">Mudanças de prazo e valor também têm um <a href="${rel}feeds/alteracoes.xml">feed de alterações</a>.</p>
+        <section><h2>Novos nesta semana (${novos.length})</h2>${novos.length ? `<ul class="cartoes">${novos.map(e => cartao(e, rel)).join('')}</ul>` : '<p class="nota">Nenhum edital novo publicado nesta semana até agora.</p>'}</section>
+        <section><h2>Encerram nos próximos 14 dias (${encerrando.length})</h2>${encerrando.length ? `<ul class="agenda">${encerrando.map(({ e, p }) => `<li><span class="data">${dm(p.data)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(p.rotulo)} · ${esc(e.instituicao)} · ${valorTxt(e)}</span></li>`).join('')}</ul>` : '<p class="nota">Nenhum prazo nos próximos 14 dias.</p>'}</section>
+        <section><h2>Alterados nesta semana (${alterados.length})</h2>${alterados.length ? `<ul class="lista">${alterados.map(({ e, lista }) => `<li><a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)}</span><br>${lista.map(a => esc(textoAlteracao(a, e))).join('; ')}</li>`).join('')}</ul>` : '<p class="nota">Nenhuma mudança de prazo, valor ou link registrada nesta semana.</p>'}</section>
+        <aside class="aviso">Prazos podem ter horário-limite e etapas anteriores. Confirme sempre no edital oficial.</aside>
+        ${!arquivo && anteriores.length ? `<section><h2>Semanas anteriores</h2><ul class="lista">${anteriores.map(d => `<li><a href="${rel}semana/${d}/">Semana ${Number(d.slice(5))} de ${d.slice(0, 4)}</a></li>`).join('')}</ul></section>` : ''}
+        ${arquivo ? `<p><a href="${rel}semana/">Ver o resumo da semana atual</a></p>` : `<p class="nota">Endereço permanente deste resumo: <a href="${rel}semana/${sem.chave}/">semana ${sem.semana} de ${sem.ano}</a>.</p>`}`;
+    const descSemana = corta(`Semana ${sem.semana}/${sem.ano} (${periodo}): ${plural(novos.length, 'edital novo', 'editais novos')}, ${plural(encerrando.length, 'prazo', 'prazos')} nos próximos 14 dias e ${plural(alterados.length, 'edital alterado', 'editais alterados')}.`, 158);
+    escrever('semana/index.html', layout({ rel: '../', url: `${SITE}/semana/`, ativo: 'semana', corpo: corpoSemana('../', false), assinatura: { chave: 'todos', nome: 'todos os editais' },
+        titulo: `Resumo semanal de editais: novos, prazos e mudanças | ${NOME}`, descricao: descSemana }));
+    escrever(`semana/${sem.chave}/index.html`, layout({ rel: '../../', url: `${SITE}/semana/${sem.chave}/`, ativo: 'semana', corpo: corpoSemana('../../', true),
+        titulo: `Editais da semana ${sem.semana} de ${sem.ano} | ${NOME}`, descricao: descSemana }));
+    urlsExtras.push([`${SITE}/semana/`, 'daily', '0.7', hoje], [`${SITE}/semana/${sem.chave}/`, 'daily', '0.4', hoje],
+        ...anteriores.map(d => [`${SITE}/semana/${d}/`, 'yearly', '0.3', semanaFim(d)]));
+}
+
+/* ---------- Dados abertos (/dados/) ---------- */
+{
+    const rel = '../';
+    const url = `${SITE}/dados/`;
+    urlsExtras.push([url, 'weekly', '0.5']);
+    const LICENCA = 'https://creativecommons.org/licenses/by/4.0/deed.pt-br';
+    const linhaRecorte = r => `<tr><td>${esc(r.rotulo || 'Todos os editais')}</td><td><a href="${rel}feeds/${r.chave}.xml">feeds/${r.chave}.xml</a></td><td><a href="${rel}cal/${r.chave}.ics">cal/${r.chave}.ics</a></td></tr>`;
+    const tabelaRecortes = ['Geral', 'Por perfil', 'Por área', 'Por instituição'].map(g => `<h3>${g}</h3>
+        <div class="tabela-rolagem" role="region" aria-label="Feeds e calendários: ${g.toLowerCase()}" tabindex="0"><table class="tabela"><thead><tr><th scope="col">Recorte</th><th scope="col">RSS</th><th scope="col">Calendário</th></tr></thead>
+        <tbody>${RECORTES.filter(r => r.grupo === g).map(linhaRecorte).join('')}</tbody></table></div>`).join('');
+    escrever('dados/index.html', layout({
+        rel, url, ativo: '',
+        titulo: `Dados abertos de editais: JSON, RSS e calendário | ${NOME}`,
+        descricao: `Baixe os ${editais.length} editais em JSON (licença CC BY 4.0), veja o esquema dos campos e assine feeds RSS e calendários por perfil, área e instituição.`,
+        jsonld: { '@context': 'https://schema.org', '@type': 'Dataset', '@id': `${url}#dataset`,
+            name: `${NOME}: editais de fomento abertos no Brasil`,
+            description: `Editais e chamadas públicas de fomento (pesquisa, inovação, cultura, meio ambiente, social) conferidos nas fontes oficiais: instituição, público, valores, datas de abertura e encerramento, etapas, critérios e links oficiais. Atualizado diariamente, com histórico de alterações de prazo e valor.`,
+            url, license: 'https://creativecommons.org/licenses/by/4.0/', isAccessibleForFree: true, inLanguage: 'pt-BR', dateModified: geradoEm,
+            keywords: ['editais', 'fomento', 'chamadas públicas', 'financiamento', 'pesquisa', 'inovação', 'OSC'],
+            spatialCoverage: { '@type': 'Place', name: 'Brasil' },
+            creator: { '@type': 'Organization', name: NOME, url: `${SITE}/` },
+            distribution: [
+                { '@type': 'DataDownload', name: 'editais.json', encodingFormat: 'application/json', contentUrl: `${SITE}/editais.json` },
+                { '@type': 'DataDownload', name: 'Histórico de alterações', encodingFormat: 'application/json', contentUrl: `${SITE}/data/alteracoes.json` },
+                { '@type': 'DataDownload', name: 'Feed RSS de editais', encodingFormat: 'application/rss+xml', contentUrl: `${SITE}/feeds/todos.xml` },
+                { '@type': 'DataDownload', name: 'Feed RSS de alterações', encodingFormat: 'application/rss+xml', contentUrl: `${SITE}/feeds/alteracoes.xml` },
+                { '@type': 'DataDownload', name: 'Calendário de prazos', encodingFormat: 'text/calendar', contentUrl: `${SITE}/cal/todos.ics` }
+            ] },
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Dados abertos</span></nav>
+        <h1>Dados abertos dos editais</h1>
+        <p class="sub">${plural(editais.length, 'edital', 'editais')} em um único arquivo JSON, atualizado diariamente (dados de ${data(geradoEm)}), com licença aberta, feeds e calendários.</p>
+        <div class="acoes">
+            <a class="btn primario" href="${rel}editais.json" download type="application/json" data-evento="dados-baixar">Baixar editais.json</a>
+            <a class="btn" href="${rel}data/alteracoes.json" type="application/json" data-evento="dados-alteracoes">Histórico de alterações (JSON)</a>
+        </div>
+        <section><h2>O que é</h2>
+            <p>O <code>editais.json</code> é a mesma base usada pela plataforma e pelas páginas deste site: editais e chamadas públicas de fomento, conferidos nas fontes oficiais. Cada edital traz quem financia, quem pode participar, valores, datas, etapas, critérios e o link oficial.</p>
+            <p>O arquivo é um objeto <code>{ "geradoEm", "demonstrativo", "editais": [...] }</code>. Datas usam o formato <code>AAAA-MM-DD</code> e o fuso de Brasília; valores são números na moeda do campo <code>moeda</code>. Campos opcionais podem não existir em todos os editais.</p></section>
+        <section><h2>Licença</h2>
+            <p>Os dados estão sob a licença <a href="${LICENCA}" target="_blank" rel="noopener license">Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)</a>: você pode copiar, redistribuir e adaptar, inclusive para uso comercial, desde que cite a fonte, por exemplo: “Dados: ${NOME} (${SITE}/dados/)”.</p>
+            <p class="nota">O edital oficial sempre prevalece. Os resumos são informativos e podem ficar desatualizados entre uma verificação e outra; o campo <code>verificadoEm</code> diz quando cada edital foi conferido.</p></section>
+        <section><h2>Esquema dos campos</h2>
+            <div class="tabela-rolagem" role="region" aria-label="Esquema dos campos do editais.json" tabindex="0"><table class="tabela">
+                <thead><tr><th scope="col">Campo</th><th scope="col">Tipo</th><th scope="col">Obrigatório</th><th scope="col">Descrição</th></tr></thead>
+                <tbody>${ESQUEMA_CAMPOS.map(([c, t, o, d]) => `<tr><td><code>${esc(c)}</code></td><td>${esc(t)}</td><td>${esc(o)}</td><td>${esc(d)}</td></tr>`).join('')}</tbody>
+            </table></div>
+            <p class="nota">“Contrato” indica campos novos e opcionais: quem consome os dados deve funcionar com e sem eles.</p></section>
+        <section><h2>Histórico de alterações</h2>
+            <p>A cada atualização, o site compara os campos principais de cada edital (título, abertura, prazo, proposta completa, valores, link e etapa) com a versão anterior e registra as mudanças em <a href="${rel}data/alteracoes.json"><code>data/alteracoes.json</code></a>: uma lista de <code>{ "id", "campo", "de", "para", "em" }</code>. Editais incluídos aparecem com <code>"campo": "novo"</code>. As mesmas mudanças saem no <a href="${rel}feeds/alteracoes.xml">feed de alterações</a> e no <a href="${rel}semana/">resumo da semana</a>.</p></section>
+        <section id="assinar"><h2>Feeds e calendários</h2>
+            <p>Receba os editais novos num leitor de RSS e os prazos direto na sua agenda. Os calendários trazem um evento de dia inteiro para cada prazo, com lembretes 7 dias e 1 dia antes, e são atualizados todo dia.</p>
+            <ul class="lista">
+                <li><strong>Google Agenda:</strong> no computador, em “Outras agendas”, escolha “Do URL” e cole o endereço do calendário, por exemplo <code>${SITE}/cal/todos.ics</code>.</li>
+                <li><strong>Outlook:</strong> “Adicionar calendário” › “Assinar da Web” e cole o endereço.</li>
+                <li><strong>Apple Calendário:</strong> “Arquivo” › “Nova assinatura de calendário” e cole o endereço.</li>
+                <li><strong>Leitor de RSS</strong> (Feedly, Inoreader, Thunderbird e outros): adicione o endereço do feed, por exemplo <code>${SITE}/feeds/todos.xml</code>.</li>
+            </ul>
+            <p>Feed de mudanças de prazo e valor: <a href="${rel}feeds/alteracoes.xml">feeds/alteracoes.xml</a>.</p>
+            ${tabelaRecortes}</section>`
+    }));
+}
+
 /* ---------- 404, sitemap, robots ---------- */
 escrever('404.html', layout({
     rel: `${new URL(SITE).pathname.replace(/\/?$/, '/')}`, url: `${SITE}/`, titulo: `Página não encontrada | ${NOME}`, descricao: 'Esta página não existe ou foi removida.',
@@ -709,7 +993,7 @@ indexHtml = reSeo.test(indexHtml) ? indexHtml.replace(reSeo, seoHome) : indexHtm
         <h2 id="seoLinksTitulo">Editais abertos agora</h2>
         <ul>${vig.map(e => `<li><a href="editais/${slugEdital(e)}/">${esc(e.titulo)}</a> — ${esc(e.instituicao)}, até ${data(e.encerramento)}</li>`).join('')}</ul>
         <p><strong>Por perfil:</strong> ${Object.values(PUBLICOS_HUB).map(h => `<a href="para/${h.slug}/">${esc(h.titulo)}</a>`).join(' · ')}</p>
-        <p><strong>Guias:</strong> ${GUIAS.map(g => `<a href="guias/${g.slug}/">${esc(g.titulo)}</a>`).join(' · ')} · <a href="glossario/">Glossário</a> · <a href="prazos/">Prazos</a></p>
+        <p><strong>Guias:</strong> ${GUIAS.map(g => `<a href="guias/${g.slug}/">${esc(g.titulo)}</a>`).join(' · ')} · <a href="glossario/">Glossário</a> · <a href="prazos/">Prazos</a> · <a href="semana/">Resumo da semana</a> · <a href="dados/">Dados abertos</a></p>
     </section>
     <!-- lista-seo:fim -->`;
     if (!reLista.test(indexHtml)) throw new Error('Marcadores <!-- lista-seo --> não encontrados no index.html');

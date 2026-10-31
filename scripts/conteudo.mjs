@@ -280,5 +280,132 @@ export const GUIAS = [
 <h2>Prazos e guarda de documentos</h2>
 <p>Prestações parciais costumam ser periódicas, e a final tem prazo contado a partir do fim da vigência. Os documentos precisam ser guardados por anos: no MROSC, por 10 anos contados do dia útil seguinte ao da prestação de contas (Lei 13.019/2014, art. 68, parágrafo único). Confira o prazo do seu instrumento.</p>
 <p>Na plataforma, a área de <a href="{raiz}#projetos">Projetos</a> mostra o fluxo de prestação de contas em etapas (preencher, revisar e protocolo), com rascunho automático. Ela é uma <strong>demonstração</strong>: o envio oficial é feito no sistema exigido pelo financiador.</p>`
+    },
+    {
+        slug: 'leis-de-incentivo-fiscal',
+        titulo: 'Leis de incentivo fiscal: como captar',
+        descricao: 'Lei Rouanet, incentivo ao esporte e fundos da infância e do idoso: quem pode doar e deduzir, limites, base legal e o calendário para captar.',
+        atualizado: '2026-10-31',
+        html: `
+<p>As leis de incentivo permitem que pessoas e empresas destinem parte do imposto de renda que já pagariam a projetos culturais, esportivos e sociais. Para quem capta, isso muda a conversa: o apoiador não tira dinheiro do próprio bolso além do imposto devido, desde que respeite os limites e as condições de cada lei. O trabalho de quem capta tem duas partes: ter o projeto aprovado (ou a organização apta a receber) e convencer quem pode deduzir.</p>
+<p class="nota">Resumo informativo, conferido em fontes oficiais em 31/10/2026. As regras mudam: confirme sempre a norma vigente e peça a orientação de um contador antes de prometer dedução a um apoiador.</p>
+
+<h2>1. Como funciona, em três passos</h2>
+<ol>
+<li><strong>Aprovação:</strong> o projeto é aprovado pelo órgão responsável (Ministério da Cultura, Ministério do Esporte) ou, no caso dos fundos da infância e do idoso, a organização participa da seleção feita pelo conselho de direitos que controla o fundo.</li>
+<li><strong>Captação:</strong> pessoas físicas e empresas fazem a doação ou o patrocínio e recebem o comprovante para a dedução.</li>
+<li><strong>Execução e prestação de contas:</strong> o recurso fica em conta específica e é usado conforme o plano aprovado.</li>
+</ol>
+
+<h2>2. Quem pode doar e deduzir</h2>
+<ul>
+<li><strong>Pessoas físicas</strong> que fazem a declaração do imposto de renda no <strong>modelo completo</strong>. Quem usa o desconto simplificado não aproveita essas deduções. A destinação feita na própria declaração só existe no modelo completo, entregue no prazo (Receita Federal; Lei 12.213/2010, art. 2º-A, § 2º, II, incluído pela Lei 13.797/2019).</li>
+<li><strong>Empresas tributadas pelo lucro real</strong>. Em regra, empresas do Simples Nacional e do lucro presumido não usam esses mecanismos.</li>
+</ul>
+<p>Os limites são calculados sobre o <strong>imposto devido</strong>, não sobre a renda. Exemplo: quem tem R$ 10.000 de imposto devido e limite de 6% pode destinar até R$ 600.</p>
+
+<h2>3. Os quatro mecanismos mais usados</h2>
+
+<h3>Lei Rouanet (cultura)</h3>
+<p>Base legal: <strong>Lei 8.313/1991</strong>, que instituiu o Programa Nacional de Apoio à Cultura (Pronac). A proposta é cadastrada no sistema Salic; depois da admissibilidade, vira projeto com número Pronac, que é usado na captação e na prestação de contas. Podem propor pessoas físicas com atuação cultural, MEIs, empresas, associações, fundações e cooperativas.</p>
+<ul>
+<li><strong>Limites:</strong> pessoas físicas, até 6% do imposto devido; empresas no lucro real, até 4% do imposto devido.</li>
+<li><strong>Artigo 18 x artigo 26:</strong> nos projetos enquadrados no art. 18, o apoio pode ser deduzido integralmente, dentro dos limites; no art. 26, só uma parte é deduzida do imposto. O enquadramento é definido na análise do projeto.</li>
+<li>O dinheiro captado entra numa conta exclusiva do projeto, aberta a pedido do Ministério da Cultura.</li>
+</ul>
+
+<h3>Lei de Incentivo ao Esporte</h3>
+<p>Base legal: a <strong>Lei 11.438/2006</strong> criou o incentivo e, com as mudanças da Lei 14.439/2022, fixou os limites atuais. Em novembro de 2025, a <strong>Lei Complementar 222/2025</strong> tornou o incentivo permanente e substituiu a lei de 2006. Os projetos esportivos e paraesportivos precisam ser aprovados pelo Ministério do Esporte antes da captação.</p>
+<ul>
+<li><strong>Pessoas físicas:</strong> até 7% do imposto devido.</li>
+<li><strong>Empresas no lucro real:</strong> até 2% do imposto devido, ou até 4% em projetos de inclusão social pelo esporte. Segundo a Câmara dos Deputados, a Lei Complementar 222/2025 eleva o limite geral para 3% a partir de 2028.</li>
+</ul>
+
+<h3>Fundos dos Direitos da Criança e do Adolescente (FIA, FDCA, FMDCA)</h3>
+<p>Base legal: <strong>Estatuto da Criança e do Adolescente (Lei 8.069/1990), arts. 260 e 260-A</strong>. Os fundos são nacional, estaduais, distrital e municipais, e cada um é controlado pelo conselho de direitos correspondente (no município, o CMDCA). As organizações acessam o dinheiro participando das seleções e dos editais desses conselhos.</p>
+<ul>
+<li><strong>Pessoas físicas:</strong> doações ao longo do ano, dentro do limite de 6% do imposto devido; ou destinação direta na declaração, de até 3% do imposto devido.</li>
+<li><strong>Empresas no lucro real:</strong> até 1% do imposto devido, somando as doações aos fundos da criança e do adolescente e aos fundos do idoso (Lei 12.213/2010, art. 3º).</li>
+</ul>
+
+<h3>Fundos do Idoso (Fundos dos Direitos da Pessoa Idosa)</h3>
+<p>Base legal: <strong>Lei 12.213/2010</strong>, que criou o Fundo Nacional do Idoso e autorizou a dedução das doações aos fundos nacional, estaduais e municipais. A Lei 13.797/2019 incluiu o art. 2º-A, que permite à pessoa física doar direto na declaração.</p>
+<ul>
+<li><strong>Pessoas físicas:</strong> destinação na declaração de até 3% do imposto devido, dentro do limite total de 6%, observado o art. 22 da Lei 9.532/1997.</li>
+<li><strong>Empresas no lucro real:</strong> até 1% do imposto devido, em conjunto com os fundos da criança e do adolescente.</li>
+</ul>
+
+<h3>O limite de 6% da pessoa física</h3>
+<p>Para a pessoa física, a soma das deduções de doações aos fundos da criança e do adolescente e do idoso, à cultura e ao audiovisual fica limitada a 6% do imposto devido (Lei 9.532/1997, art. 22). Na declaração, a destinação direta é de até 3% para cada tipo de fundo. O incentivo ao esporte tem limite próprio, de 7%: confirme com quem faz a sua declaração como os limites se combinam no seu caso.</p>
+
+<h2>4. Calendário de destinação</h2>
+<ul>
+<li><strong>Até 31 de dezembro:</strong> doações e patrocínios feitos durante o ano (Rouanet, esporte, fundos da infância e do idoso) são deduzidos na declaração entregue no ano seguinte. Por isso as campanhas de captação com pessoas físicas se concentram em novembro e dezembro.</li>
+<li><strong>Empresas:</strong> a dedução é feita no período de apuração do imposto. A doação precisa acontecer dentro do período em que a empresa quer deduzir.</li>
+<li><strong>Na declaração do imposto de renda (só pessoa física, só fundos da infância e do idoso):</strong> durante o prazo de entrega da declaração, no modelo completo, até 3% para cada tipo de fundo. A declaração gera um DARF para cada destinação, que precisa ser pago até o vencimento da quota única ou da primeira quota do imposto; sem o pagamento no prazo, a dedução é perdida (Lei 12.213/2010, art. 2º-A, §§ 3º e 4º). O valor destinado é abatido do imposto a pagar ou somado à restituição.</li>
+</ul>
+
+<h2>5. Dicas para quem capta</h2>
+<ul>
+<li>Só comece a captar depois da aprovação do projeto ou da seleção da organização: em regra, o apoio feito antes disso não gera dedução.</li>
+<li>Monte uma lista de potenciais apoiadores: empresas do lucro real com imposto a pagar e pessoas físicas que fazem a declaração completa.</li>
+<li>Mostre a conta para o apoiador: quanto ele pode destinar (o limite sobre o imposto devido) e quanto deixa de pagar.</li>
+<li>Planeje duas janelas: fim de ano para doações e patrocínios, e o período da declaração para os fundos da infância e do idoso.</li>
+<li>Emita o comprovante exigido por cada mecanismo e use sempre a conta específica do projeto ou do fundo.</li>
+<li>Acompanhe os editais dos conselhos municipais e estaduais: é por eles que o dinheiro dos fundos chega às organizações.</li>
+</ul>
+
+<h2>Fontes oficiais</h2>
+<ul>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8313cons.htm" target="_blank" rel="noopener">Lei 8.313/1991 (Lei Rouanet)</a> e <a href="https://www.gov.br/iphan/pt-br/assuntos/patrimonio-cultural-na-lei-rouanet/portal-do-proponente-de-patrimonio-da-lei-rouanet/bloco-1-comecando-do-zero" target="_blank" rel="noopener">guia do proponente da Lei Rouanet (Iphan)</a></li>
+<li><a href="https://www2.camara.leg.br/legin/fed/lei/2022/lei-14439-24-agosto-2022-793147-publicacaooriginal-165977-pl.html" target="_blank" rel="noopener">Lei 14.439/2022 (limites do incentivo ao esporte)</a> e <a href="https://www.camara.leg.br/noticias/1227581-lei-de-incentivo-ao-esporte-se-torna-politica-permanente/" target="_blank" rel="noopener">Lei Complementar 222/2025 (Agência Câmara)</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" rel="noopener">Estatuto da Criança e do Adolescente (Lei 8.069/1990), arts. 260 e 260-A</a></li>
+<li><a href="https://www2.camara.leg.br/legin/fed/lei/2010/lei-12213-20-janeiro-2010-600950-publicacaooriginal-122733-pl.html" target="_blank" rel="noopener">Lei 12.213/2010 (Fundo Nacional do Idoso)</a> e <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13797.htm" target="_blank" rel="noopener">Lei 13.797/2019</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9532.htm" target="_blank" rel="noopener">Lei 9.532/1997, art. 22 (limite de 6%)</a></li>
+<li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/passo-a-passo/destinacao-de-imposto-de-renda.pdf/@@download/file/Destina%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%20v2.pdf" target="_blank" rel="noopener">Receita Federal: passo a passo da destinação na declaração</a></li>
+</ul>
+<p>Procure editais de cultura e de desenvolvimento social no <a href="{raiz}editais/">painel de editais</a> e veja também <a href="{raiz}guias/como-escrever-proposta-edital/">como escrever uma proposta competitiva</a>.</p>`
     }
+];
+
+/**
+ * Esquema público do editais.json (página /dados/). Campos marcados como "contrato" são opcionais
+ * e podem não existir em todos os editais.
+ */
+export const ESQUEMA_CAMPOS = [
+    ['id', 'número', 'sim', 'Identificador numérico estável do edital.'],
+    ['numero', 'texto', 'não', 'Identificação oficial da chamada, ex.: "Chamada CNPq nº 33/2026".'],
+    ['titulo', 'texto', 'sim', 'Título da chamada.'],
+    ['instituicao', 'texto', 'sim', 'Nome ou sigla de quem financia.'],
+    ['agencia', 'texto', 'não', 'Código da instituição cadastrada (ex.: cnpq, fapesp); define a página e os feeds da instituição.'],
+    ['procedencia', 'texto', 'não', '"nacional" ou "internacional".'],
+    ['tema', 'texto', 'não', 'Área temática (ex.: Tecnologia, Saúde, Educação, Meio Ambiente, Cultura).'],
+    ['tags', 'lista de textos', 'não', 'Palavras-chave da chamada.'],
+    ['modalidade', 'texto', 'não', 'Tipo de apoio: auxílio à pesquisa, subvenção, bolsa, termo de fomento, prêmio etc.'],
+    ['publico', 'lista de textos', 'sim', 'Quem pode submeter: pesquisador, ict, empresa, osc, municipio, estado.'],
+    ['abrangencia', 'texto', 'não', '"Nacional", uma região ou uma UF.'],
+    ['ufs', 'lista de textos', 'não', 'Siglas das UFs atendidas, quando a abrangência é um conjunto específico.'],
+    ['moeda', 'texto', 'não', 'BRL (padrão), USD ou EUR.'],
+    ['valorMax', 'número ou null', 'sim, ou valorNota', 'Valor máximo por proposta; null quando não há teto.'],
+    ['valorTotal', 'número ou null', 'não', 'Valor total reservado para a chamada.'],
+    ['valorNota', 'texto', 'não', 'Faixas, linhas e o que é financiado.'],
+    ['tipoValor', 'texto', 'não (contrato)', 'Como ler o valor: por-proposta, total, faixa, bolsa ou nao-informado.'],
+    ['fonteRecurso', 'texto', 'não (contrato)', 'Origem do dinheiro: publico, privado, incentivo-fiscal, internacional ou misto.'],
+    ['contrapartida', 'texto', 'não', 'Contrapartida exigida, se houver.'],
+    ['publicadoEm', 'data', 'não', 'Data de publicação do edital (AAAA-MM-DD).'],
+    ['abertura', 'data', 'sim', 'Início das inscrições (AAAA-MM-DD).'],
+    ['encerramento', 'data', 'sim', 'Prazo final das inscrições ou da primeira etapa (AAAA-MM-DD).'],
+    ['etapaPrazo', 'texto', 'não', 'Nome da etapa que encerra em "encerramento", ex.: "Pré-proposta".'],
+    ['propostaCompleta', 'data', 'não', 'Prazo da proposta completa, quando há etapa anterior.'],
+    ['preProposta', 'booleano', 'não', 'true quando há pré-proposta ou consulta de elegibilidade.'],
+    ['fluxoContinuo', 'booleano', 'não (contrato)', 'true quando a chamada recebe propostas continuamente.'],
+    ['resultado', 'data', 'não', 'Previsão de divulgação do resultado.'],
+    ['prazoNota', 'texto', 'não', 'Horário limite, etapas seguintes, cadastro prévio exigido.'],
+    ['elegibilidade', 'lista de objetos', 'não (contrato)', 'Perguntas de elegibilidade: {"pergunta", "esperado" (true/false), "eliminatoria" (true/false)}.'],
+    ['resumo', 'texto', 'não', 'Objetivo da chamada em linguagem simples.'],
+    ['link', 'URL', 'sim, se agencia não for cadastrada', 'Página oficial do edital.'],
+    ['fonte', 'URL', 'recomendado', 'Onde a informação foi conferida.'],
+    ['verificadoEm', 'data', 'recomendado', 'Quando a informação foi conferida.'],
+    ['criterios', 'lista de objetos', 'não', 'Critérios de avaliação: {"nome", "peso"} (peso em %, ou null).'],
+    ['docsExtras', 'lista de textos', 'não', 'Documentos específicos da chamada, além dos usuais de cada perfil.']
 ];
