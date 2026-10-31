@@ -194,6 +194,96 @@
       "em": "2026-10-31",
       "fonte": "fapesp",
       "resultado": "descartado"
+    },
+    "https://fapesp.br/18277/": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18262/": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18256/": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18255/": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18249": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18243": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18238": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18231": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18225": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18223": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18413": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18203": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18192": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18200": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18167": {
+      "em": "2026-10-31",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
     }
   },
   "paginas": {
@@ -292,9 +382,49 @@
     "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf": {
       "hash": "bb19315217910b8c",
       "em": "2026-10-31"
+    },
+    "https://www.finep.gov.br/e/chamada-publica/222684/1057230": {
+      "hash": "9b9b21cf11cc8055",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18417/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026": {
+      "hash": "0cba8612e2b9c2dc",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-iniciacao-cientifica-2026": {
+      "hash": "d785bc942f9d251c",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18415/chamada-conjunta-de-propostas-fapespconfapsbep-20262027": {
+      "hash": "423307f27feee58c",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18414/chamada-conjunta-de-propostas-fapespconfapwater4all-2026-2027": {
+      "hash": "b0daf7db41139561",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18366/chamada-conjunta-de-propostas-fapespconfapbiodiversa-2026-2027": {
+      "hash": "f6708dfbf7239954",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-especialistas-que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-de-acervos-sediadas-no-estado-de-sao-paulo": {
+      "hash": "e16b962dda119ecb",
+      "em": "2026-10-31"
+    },
+    "https://fapesp.br/18365/chamada-de-propostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-paises-em-desenvolvimento": {
+      "hash": "6e3c1780d3183779",
+      "em": "2026-10-31"
     }
   },
   "execucoes": [
+    {
+      "em": "2026-10-31",
+      "fontes": 8,
+      "linksNovos": 43,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 17
+    },
     {
       "em": "2026-10-31",
       "fontes": 5,
