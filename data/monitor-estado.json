@@ -462,6 +462,14 @@
     {
       "em": "2026-10-31",
       "fontes": 5,
+      "linksNovos": 0,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 0
+    },
+    {
+      "em": "2026-10-31",
+      "fontes": 5,
       "linksNovos": 49,
       "candidatos": 0,
       "descartados": 0,
