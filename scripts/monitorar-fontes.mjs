@@ -306,6 +306,14 @@ for (const f of (SUGESTAO ? [] : fontes)) {
             const lista = links.map(l => `${estado.vistos[l.url] ? '·' : conhecidos.has(l.url) ? '=' : '+'} ${l.texto}  <${l.url}>`);
             console.log(`\n## ${f.nome}\n${f.url} → ${links.length} link(s)\n${lista.map(x => '  ' + x).join('\n')}`);
             anotar(`${f.nome}: ${links.length} link(s)`, [f.url, ...lista].join('\n'));
+            // Amostra: como chega a página do primeiro link (ajuda a ver redirecionamentos e bloqueios)
+            if (links[0]) {
+                try {
+                    const c = await baixar(links[0].url);
+                    const bruto = c.tipo === 'pdf' ? `[PDF, ${c.buf.length} bytes]` : c.html.slice(0, 2500);
+                    anotar(`Amostra ${f.nome}`, `Pedido: ${links[0].url}\nURL final: ${c.url}\nTexto: ${c.tipo === 'pdf' ? '-' : textoDoHtml(c.html).slice(0, 300)}\n---\n${bruto}`);
+                } catch (e) { anotar(`Amostra ${f.nome}`, `${links[0].url}: ${e.message}`, 'warning'); }
+            }
             continue;
         }
         if (!links.length) rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: 'nenhum link de chamada encontrado (o layout pode ter mudado)' });
