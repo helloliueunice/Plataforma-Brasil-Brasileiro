@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-30",
+  "geradoEm": "2026-10-31",
   "demonstrativo": false,
   "editais": [
     {
@@ -10,9 +10,17 @@
       "agencia": "fapesp",
       "procedencia": "nacional",
       "tema": "Tecnologia",
-      "tags": ["Software livre", "Protocolos abertos", "Arquiteturas federadas", "Internet"],
+      "tags": [
+        "Software livre",
+        "Protocolos abertos",
+        "Arquiteturas federadas",
+        "Internet"
+      ],
       "modalidade": "Auxílio à pesquisa",
-      "publico": ["pesquisador", "ict"],
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
       "abrangencia": "São Paulo",
       "moeda": "BRL",
       "valorMax": 5000000,
@@ -27,7 +35,10 @@
       "link": "https://fapesp.br/18444",
       "fonte": "https://fapesp.br/18445/nova-chamada-destinara-r-21-milhoes-a-pesquisas-sobre-plataformas-digitais-abertas",
       "verificadoEm": "2026-10-28",
-      "docsExtras": ["Proposta submetida pelo SAGe (sistema de submissão da FAPESP)", "Indicação da(s) linha(s) de pesquisa atendida(s)"]
+      "docsExtras": [
+        "Proposta submetida pelo SAGe (sistema de submissão da FAPESP)",
+        "Indicação da(s) linha(s) de pesquisa atendida(s)"
+      ]
     },
     {
       "id": 102,
@@ -37,9 +48,16 @@
       "agencia": "fapesp",
       "procedencia": "nacional",
       "tema": "Educação",
-      "tags": ["Startups", "Tecnologia educacional", "PIPE", "Pequenas empresas"],
+      "tags": [
+        "Startups",
+        "Tecnologia educacional",
+        "PIPE",
+        "Pequenas empresas"
+      ],
       "modalidade": "Não reembolsável",
-      "publico": ["empresa"],
+      "publico": [
+        "empresa"
+      ],
       "abrangencia": "São Paulo",
       "moeda": "BRL",
       "valorMax": 500000,
@@ -55,7 +73,11 @@
       "link": "https://fapesp.br/18434",
       "fonte": "https://agencia.fapesp.br/programa-pesquisa-inovativa-em-pequenas-empresas-vai-apoiar-projetos-de-tecnologias-educacionais/59435",
       "verificadoEm": "2026-10-28",
-      "docsExtras": ["Pré-proposta submetida pelo SAGe", "Comprovação de que o pesquisador responsável é sócio da empresa", "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"]
+      "docsExtras": [
+        "Pré-proposta submetida pelo SAGe",
+        "Comprovação de que o pesquisador responsável é sócio da empresa",
+        "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"
+      ]
     },
     {
       "id": 103,
@@ -65,9 +87,15 @@
       "agencia": "fapesp",
       "procedencia": "nacional",
       "tema": "Educação",
-      "tags": ["Jovem Pesquisador", "Atração de talentos", "Pesquisa no exterior"],
+      "tags": [
+        "Jovem Pesquisador",
+        "Atração de talentos",
+        "Pesquisa no exterior"
+      ],
       "modalidade": "Auxílio à pesquisa",
-      "publico": ["pesquisador"],
+      "publico": [
+        "pesquisador"
+      ],
       "abrangencia": "São Paulo",
       "moeda": "BRL",
       "valorMax": 2500000,
@@ -82,12 +110,24 @@
       "fonte": "https://agencia.fapesp.br/fapesp-lanca-chamada-para-atrair-jovens-pesquisadores-do-exterior/59256",
       "verificadoEm": "2026-10-28",
       "criterios": [
-        { "nome": "Originalidade e impacto potencial" },
-        { "nome": "Qualidade científica e viabilidade" },
-        { "nome": "Formação científica e histórico do candidato" },
-        { "nome": "Capacidade de liderar um programa de pesquisa independente e competitivo" }
+        {
+          "nome": "Originalidade e impacto potencial"
+        },
+        {
+          "nome": "Qualidade científica e viabilidade"
+        },
+        {
+          "nome": "Formação científica e histórico do candidato"
+        },
+        {
+          "nome": "Capacidade de liderar um programa de pesquisa independente e competitivo"
+        }
       ],
-      "docsExtras": ["Comprovação de pelo menos 2 anos de trabalho no exterior após o doutorado", "Residência no exterior na data da submissão", "Concordância da instituição paulista que vai sediar o laboratório"]
+      "docsExtras": [
+        "Comprovação de pelo menos 2 anos de trabalho no exterior após o doutorado",
+        "Residência no exterior na data da submissão",
+        "Concordância da instituição paulista que vai sediar o laboratório"
+      ]
     },
     {
       "id": 104,
@@ -97,9 +137,16 @@
       "agencia": "cnpq",
       "procedencia": "nacional",
       "tema": "Educação",
-      "tags": ["Bolsa de produtividade", "PQ", "DT", "Todas as áreas"],
+      "tags": [
+        "Bolsa de produtividade",
+        "PQ",
+        "DT",
+        "Todas as áreas"
+      ],
       "modalidade": "Bolsas",
-      "publico": ["pesquisador"],
+      "publico": [
+        "pesquisador"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": null,
@@ -116,13 +163,32 @@
       "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/Chamada_Produtividade_33_2026.pdf",
       "verificadoEm": "2026-10-28",
       "criterios": [
-        { "nome": "Relevância e caráter inovador da contribuição ao longo da carreira, com ênfase na atividade recente", "peso": 30 },
-        { "nome": "Mérito, originalidade e impacto do projeto", "peso": 20 },
-        { "nome": "Formação de recursos humanos e atuação na graduação e pós-graduação", "peso": 20 },
-        { "nome": "Cooperação com grupos e instituições e participação em redes", "peso": 20 },
-        { "nome": "Atuação em sociedades científicas, editoria, gestão, prêmios e distinções", "peso": 10 }
+        {
+          "nome": "Relevância e caráter inovador da contribuição ao longo da carreira, com ênfase na atividade recente",
+          "peso": 30
+        },
+        {
+          "nome": "Mérito, originalidade e impacto do projeto",
+          "peso": 20
+        },
+        {
+          "nome": "Formação de recursos humanos e atuação na graduação e pós-graduação",
+          "peso": 20
+        },
+        {
+          "nome": "Cooperação com grupos e instituições e participação em redes",
+          "peso": 20
+        },
+        {
+          "nome": "Atuação em sociedades científicas, editoria, gestão, prêmios e distinções",
+          "peso": 10
+        }
       ],
-      "docsExtras": ["Formulário na Plataforma Integrada Carlos Chagas", "Súmula curricular com até 5 realizações de maior impacto", "Comprovante de vínculo formal com a instituição de execução"]
+      "docsExtras": [
+        "Formulário na Plataforma Integrada Carlos Chagas",
+        "Súmula curricular com até 5 realizações de maior impacto",
+        "Comprovante de vínculo formal com a instituição de execução"
+      ]
     },
     {
       "id": 105,
@@ -132,9 +198,16 @@
       "agencia": "cnpq",
       "procedencia": "nacional",
       "tema": "Educação",
-      "tags": ["Eventos científicos", "Congressos", "Divulgação científica"],
+      "tags": [
+        "Eventos científicos",
+        "Congressos",
+        "Divulgação científica"
+      ],
       "modalidade": "Auxílio a eventos",
-      "publico": ["pesquisador", "ict"],
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": 200000,
@@ -151,12 +224,28 @@
       "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/Chamada_ARC_34_2026.pdf",
       "verificadoEm": "2026-10-28",
       "criterios": [
-        { "nome": "Mérito e relevância do evento para o desenvolvimento científico, tecnológico e de inovação", "peso": 30 },
-        { "nome": "Impacto potencial e abrangência na área do conhecimento", "peso": 30 },
-        { "nome": "Qualificação e experiência do proponente na organização de eventos", "peso": 20 },
-        { "nome": "Adequação do orçamento aos objetivos, atividades e metas", "peso": 20 }
+        {
+          "nome": "Mérito e relevância do evento para o desenvolvimento científico, tecnológico e de inovação",
+          "peso": 30
+        },
+        {
+          "nome": "Impacto potencial e abrangência na área do conhecimento",
+          "peso": 30
+        },
+        {
+          "nome": "Qualificação e experiência do proponente na organização de eventos",
+          "peso": 20
+        },
+        {
+          "nome": "Adequação do orçamento aos objetivos, atividades e metas",
+          "peso": 20
+        }
       ],
-      "docsExtras": ["Formulário na Plataforma Integrada Carlos Chagas", "Anexo obrigatório em PDF (até 1 MB) com promotor, programação, comissão organizadora e histórico do evento", "Concordância escrita das instituições e membros da equipe"]
+      "docsExtras": [
+        "Formulário na Plataforma Integrada Carlos Chagas",
+        "Anexo obrigatório em PDF (até 1 MB) com promotor, programação, comissão organizadora e histórico do evento",
+        "Concordância escrita das instituições e membros da equipe"
+      ]
     },
     {
       "id": 106,
@@ -166,9 +255,16 @@
       "agencia": "cnpq",
       "procedencia": "nacional",
       "tema": "Tecnologia",
-      "tags": ["Bolsas", "Pós-graduação", "Parceria com empresas", "CAPES"],
+      "tags": [
+        "Bolsas",
+        "Pós-graduação",
+        "Parceria com empresas",
+        "CAPES"
+      ],
       "modalidade": "Bolsas",
-      "publico": ["ict"],
+      "publico": [
+        "ict"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": null,
@@ -184,15 +280,41 @@
       "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
       "verificadoEm": "2026-10-28",
       "criterios": [
-        { "nome": "Mérito, clareza, relevância e aderência do plano de trabalho", "peso": 20 },
-        { "nome": "Capacidade dos programas de pós-graduação frente às bolsas pedidas", "peso": 10 },
-        { "nome": "Histórico de projetos de P&D com parceiros nos últimos quatro anos", "peso": 10 },
-        { "nome": "Experiência da ICT em ecossistemas de inovação", "peso": 20 },
-        { "nome": "Grau de inovação e impacto potencial", "peso": 20 },
-        { "nome": "Estrutura administrativa para gerir o programa", "peso": 10 },
-        { "nome": "Plano de divulgação dos resultados para a sociedade", "peso": 10 }
+        {
+          "nome": "Mérito, clareza, relevância e aderência do plano de trabalho",
+          "peso": 20
+        },
+        {
+          "nome": "Capacidade dos programas de pós-graduação frente às bolsas pedidas",
+          "peso": 10
+        },
+        {
+          "nome": "Histórico de projetos de P&D com parceiros nos últimos quatro anos",
+          "peso": 10
+        },
+        {
+          "nome": "Experiência da ICT em ecossistemas de inovação",
+          "peso": 20
+        },
+        {
+          "nome": "Grau de inovação e impacto potencial",
+          "peso": 20
+        },
+        {
+          "nome": "Estrutura administrativa para gerir o programa",
+          "peso": 10
+        },
+        {
+          "nome": "Plano de divulgação dos resultados para a sociedade",
+          "peso": 10
+        }
       ],
-      "docsExtras": ["Plano de trabalho (Anexo II)", "Declaração do representante institucional (Anexo III)", "Carta de anuência de cada parceiro (Anexo IV)", "Comprovação de NIT constituído e política de inovação da ICT"]
+      "docsExtras": [
+        "Plano de trabalho (Anexo II)",
+        "Declaração do representante institucional (Anexo III)",
+        "Carta de anuência de cada parceiro (Anexo IV)",
+        "Comprovação de NIT constituído e política de inovação da ICT"
+      ]
     },
     {
       "id": 107,
@@ -202,9 +324,19 @@
       "agencia": "cnpq",
       "procedencia": "nacional",
       "tema": "Tecnologia",
-      "tags": ["Cooperação internacional", "França", "Saúde Única", "Doenças infecciosas", "IA", "Computação quântica"],
+      "tags": [
+        "Cooperação internacional",
+        "França",
+        "Saúde Única",
+        "Doenças infecciosas",
+        "IA",
+        "Computação quântica"
+      ],
       "modalidade": "Auxílio à pesquisa",
-      "publico": ["pesquisador", "ict"],
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": 1500000,
@@ -220,13 +352,32 @@
       "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/ChamadaPblicaANR322026_2766435.pdf",
       "verificadoEm": "2026-10-28",
       "criterios": [
-        { "nome": "Excelência científica e tecnológica", "peso": 20 },
-        { "nome": "Metodologia", "peso": 20 },
-        { "nome": "Organização e execução do projeto", "peso": 20 },
-        { "nome": "Estrutura e contribuição da colaboração internacional", "peso": 20 },
-        { "nome": "Impacto", "peso": 20 }
+        {
+          "nome": "Excelência científica e tecnológica",
+          "peso": 20
+        },
+        {
+          "nome": "Metodologia",
+          "peso": 20
+        },
+        {
+          "nome": "Organização e execução do projeto",
+          "peso": 20
+        },
+        {
+          "nome": "Estrutura e contribuição da colaboração internacional",
+          "peso": 20
+        },
+        {
+          "nome": "Impacto",
+          "peso": 20
+        }
       ],
-      "docsExtras": ["Proposta em PDF (até 1 MB), de preferência em inglês, com orçamento em R$ e em €", "Cópia da proposta enviada à ANR pelo coordenador francês", "Plano de missões técnicas entre os grupos"]
+      "docsExtras": [
+        "Proposta em PDF (até 1 MB), de preferência em inglês, com orçamento em R$ e em €",
+        "Cópia da proposta enviada à ANR pelo coordenador francês",
+        "Plano de missões técnicas entre os grupos"
+      ]
     },
     {
       "id": 108,
@@ -236,9 +387,18 @@
       "agencia": "finep",
       "procedencia": "nacional",
       "tema": "Desenvolvimento",
-      "tags": ["Economia solidária", "Agroecologia", "Saneamento", "Energia renovável", "Incubadoras", "FNDCT"],
+      "tags": [
+        "Economia solidária",
+        "Agroecologia",
+        "Saneamento",
+        "Energia renovável",
+        "Incubadoras",
+        "FNDCT"
+      ],
       "modalidade": "Não reembolsável",
-      "publico": ["ict"],
+      "publico": [
+        "ict"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": 5000000,
@@ -253,7 +413,11 @@
       "link": "https://www.finep.gov.br/en/e/chamada-publica/222684/1057230",
       "fonte": "https://agenciagov.ebc.com.br/noticias/202609/finep-publica-chamada-de-r-100-milhoes-para-impulsionar-solucoes-tecnologicas-na-economia-solidaria",
       "verificadoEm": "2026-10-28",
-      "docsExtras": ["Cadastro da proponente e da ICT executora aprovado na Finep", "Ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos", "Comprovação da articulação com ITCP e NIT"]
+      "docsExtras": [
+        "Cadastro da proponente e da ICT executora aprovado na Finep",
+        "Ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos",
+        "Comprovação da articulação com ITCP e NIT"
+      ]
     },
     {
       "id": 109,
@@ -263,9 +427,16 @@
       "agencia": "fapesp",
       "procedencia": "nacional",
       "tema": "Meio Ambiente",
-      "tags": ["Biodiversidade", "BIOTA", "Políticas públicas", "Coprodução"],
+      "tags": [
+        "Biodiversidade",
+        "BIOTA",
+        "Políticas públicas",
+        "Coprodução"
+      ],
       "modalidade": "Auxílio à pesquisa",
-      "publico": ["pesquisador"],
+      "publico": [
+        "pesquisador"
+      ],
       "abrangencia": "São Paulo",
       "moeda": "BRL",
       "valorMax": null,
@@ -283,14 +454,37 @@
       "fonte": "https://fapesp.br/18456/chamada-de-propostas-biota-sintese-e-transformacao",
       "verificadoEm": "2026-10-30",
       "criterios": [
-        { "nome": "Excelência científica e natureza inovadora", "peso": null },
-        { "nome": "Relevância para a chamada e aderência ao eixo", "peso": null },
-        { "nome": "Composição, diversidade e qualidade da equipe", "peso": null },
-        { "nome": "Viabilidade do programa de trabalho", "peso": null },
-        { "nome": "Adequação do orçamento", "peso": null },
-        { "nome": "Disseminação de conhecimento e dados", "peso": null }
+        {
+          "nome": "Excelência científica e natureza inovadora",
+          "peso": null
+        },
+        {
+          "nome": "Relevância para a chamada e aderência ao eixo",
+          "peso": null
+        },
+        {
+          "nome": "Composição, diversidade e qualidade da equipe",
+          "peso": null
+        },
+        {
+          "nome": "Viabilidade do programa de trabalho",
+          "peso": null
+        },
+        {
+          "nome": "Adequação do orçamento",
+          "peso": null
+        },
+        {
+          "nome": "Disseminação de conhecimento e dados",
+          "peso": null
+        }
       ],
-      "docsExtras": ["Pré-proposta (até 1.200 palavras) e descrição da equipe (até 400 palavras)", "Súmulas curriculares no modelo FAPESP", "Estimativa simplificada de orçamento", "Justificativa de concomitância, se já coordena outro auxílio"]
+      "docsExtras": [
+        "Pré-proposta (até 1.200 palavras) e descrição da equipe (até 400 palavras)",
+        "Súmulas curriculares no modelo FAPESP",
+        "Estimativa simplificada de orçamento",
+        "Justificativa de concomitância, se já coordena outro auxílio"
+      ]
     },
     {
       "id": 110,
@@ -300,9 +494,16 @@
       "agencia": "fapesp",
       "procedencia": "nacional",
       "tema": "Saúde",
-      "tags": ["Jovem Pesquisador", "Biomedicina", "Cooperação internacional", "Uruguai"],
+      "tags": [
+        "Jovem Pesquisador",
+        "Biomedicina",
+        "Cooperação internacional",
+        "Uruguai"
+      ],
       "modalidade": "Auxílio à pesquisa",
-      "publico": ["pesquisador"],
+      "publico": [
+        "pesquisador"
+      ],
       "abrangencia": "São Paulo",
       "moeda": "BRL",
       "valorMax": null,
@@ -318,13 +519,34 @@
       "fonte": "https://fapesp.br/18455/chamada-de-propostas-fapesp-e-instituto-pasteur-de-montevideo-2026",
       "verificadoEm": "2026-10-30",
       "criterios": [
-        { "nome": "Histórico acadêmico e produção do candidato", "peso": null },
-        { "nome": "Capacidade de liderar um novo grupo de pesquisa", "peso": null },
-        { "nome": "Objetivos, originalidade e importância do projeto", "peso": null },
-        { "nome": "Fundamentos e métodos", "peso": null },
-        { "nome": "Adequação dos recursos solicitados", "peso": null }
+        {
+          "nome": "Histórico acadêmico e produção do candidato",
+          "peso": null
+        },
+        {
+          "nome": "Capacidade de liderar um novo grupo de pesquisa",
+          "peso": null
+        },
+        {
+          "nome": "Objetivos, originalidade e importância do projeto",
+          "peso": null
+        },
+        {
+          "nome": "Fundamentos e métodos",
+          "peso": null
+        },
+        {
+          "nome": "Adequação dos recursos solicitados",
+          "peso": null
+        }
       ],
-      "docsExtras": ["Projeto de pesquisa em inglês", "Três publicações relevantes e duas cartas de recomendação", "Plano de pesquisa do grupo (2 páginas)", "Carta de compromisso do Instituto Pasteur de Montevideo", "Plano de gestão de dados"]
+      "docsExtras": [
+        "Projeto de pesquisa em inglês",
+        "Três publicações relevantes e duas cartas de recomendação",
+        "Plano de pesquisa do grupo (2 páginas)",
+        "Carta de compromisso do Instituto Pasteur de Montevideo",
+        "Plano de gestão de dados"
+      ]
     },
     {
       "id": 111,
@@ -334,9 +556,16 @@
       "agencia": "fapesp",
       "procedencia": "nacional",
       "tema": "Educação",
-      "tags": ["Internacionalização", "Mobilidade", "SPRINT", "Cooperação internacional"],
+      "tags": [
+        "Internacionalização",
+        "Mobilidade",
+        "SPRINT",
+        "Cooperação internacional"
+      ],
       "modalidade": "Auxílio à pesquisa",
-      "publico": ["pesquisador"],
+      "publico": [
+        "pesquisador"
+      ],
       "abrangencia": "São Paulo",
       "moeda": "USD",
       "valorMax": 50000,
@@ -352,7 +581,9 @@
       "fonte": "https://fapesp.br/sprint/chamada2026",
       "verificadoEm": "2026-10-30",
       "criterios": [],
-      "docsExtras": ["Concordância do parceiro na instituição estrangeira"]
+      "docsExtras": [
+        "Concordância do parceiro na instituição estrangeira"
+      ]
     },
     {
       "id": 112,
@@ -362,9 +593,17 @@
       "agencia": "finep",
       "procedencia": "nacional",
       "tema": "Agronegocio",
-      "tags": ["Agricultura familiar", "Cooperativas", "Agroindústria", "Segurança alimentar", "Subvenção econômica"],
+      "tags": [
+        "Agricultura familiar",
+        "Cooperativas",
+        "Agroindústria",
+        "Segurança alimentar",
+        "Subvenção econômica"
+      ],
       "modalidade": "Não reembolsável",
-      "publico": ["empresa"],
+      "publico": [
+        "empresa"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": 20000000,
@@ -380,7 +619,12 @@
       "fonte": "https://www.finep.gov.br/e/chamada-publica/222684/1060720",
       "verificadoEm": "2026-10-30",
       "criterios": [],
-      "docsExtras": ["Carta de manifestação de interesse da cooperativa", "Declaração de instrumento jurídico firmado entre a empresa e a cooperativa", "Declaração ambiental e de outros aspectos regulatórios", "Definição do nível de maturidade tecnológica (TRL)"]
+      "docsExtras": [
+        "Carta de manifestação de interesse da cooperativa",
+        "Declaração de instrumento jurídico firmado entre a empresa e a cooperativa",
+        "Declaração ambiental e de outros aspectos regulatórios",
+        "Definição do nível de maturidade tecnológica (TRL)"
+      ]
     },
     {
       "id": 113,
@@ -390,9 +634,16 @@
       "agencia": "finep",
       "procedencia": "nacional",
       "tema": "Agronegocio",
-      "tags": ["Agricultura familiar", "Cooperativas", "Economia circular", "Transição climática"],
+      "tags": [
+        "Agricultura familiar",
+        "Cooperativas",
+        "Economia circular",
+        "Transição climática"
+      ],
       "modalidade": "Não reembolsável",
-      "publico": ["ict"],
+      "publico": [
+        "ict"
+      ],
       "abrangencia": "Nacional",
       "moeda": "BRL",
       "valorMax": 15000000,
@@ -408,7 +659,13 @@
       "fonte": "https://www.finep.gov.br/e/chamada-publica/222684/1060260",
       "verificadoEm": "2026-10-30",
       "criterios": [],
-      "docsExtras": ["Carta de manifestação de interesse da cooperativa", "Extrato CAF Pessoa Jurídica da cooperativa", "Documento da parceria com a cooperativa há pelo menos 1 ano", "Política de Inovação (ICTs públicas)", "Justificativa do TRL inicial e final"]
+      "docsExtras": [
+        "Carta de manifestação de interesse da cooperativa",
+        "Extrato CAF Pessoa Jurídica da cooperativa",
+        "Documento da parceria com a cooperativa há pelo menos 1 ano",
+        "Política de Inovação (ICTs públicas)",
+        "Justificativa do TRL inicial e final"
+      ]
     },
     {
       "id": 114,
@@ -418,11 +675,21 @@
       "agencia": "funbio",
       "procedencia": "nacional",
       "tema": "Meio Ambiente",
-      "tags": ["Restauração ecológica", "Rio São Francisco", "Recursos hídricos", "Floresta Viva"],
+      "tags": [
+        "Restauração ecológica",
+        "Rio São Francisco",
+        "Recursos hídricos",
+        "Floresta Viva"
+      ],
       "modalidade": "Não reembolsável",
-      "publico": ["osc"],
+      "publico": [
+        "osc"
+      ],
       "abrangencia": "Nordeste",
-      "ufs": ["BA", "PE"],
+      "ufs": [
+        "BA",
+        "PE"
+      ],
       "moeda": "BRL",
       "valorMax": null,
       "valorTotal": 17760000,
@@ -437,7 +704,11 @@
       "fonte": "https://chamadas.funbio.org.br/floresta-viva-sao-francisco",
       "verificadoEm": "2026-10-30",
       "criterios": [],
-      "docsExtras": ["Currículo institucional (Anexo B) e cartas de parceria", "Planilha padrão de coordenadas geográficas das áreas", "Comprovação de constituição há pelo menos 2 anos"]
+      "docsExtras": [
+        "Currículo institucional (Anexo B) e cartas de parceria",
+        "Planilha padrão de coordenadas geográficas das áreas",
+        "Comprovação de constituição há pelo menos 2 anos"
+      ]
     },
     {
       "id": 115,
@@ -446,9 +717,16 @@
       "instituicao": "Prefeitura de São Paulo (SMDHC)",
       "procedencia": "nacional",
       "tema": "Desenvolvimento",
-      "tags": ["Pessoa idosa", "MROSC", "Termo de fomento", "Direitos humanos"],
+      "tags": [
+        "Pessoa idosa",
+        "MROSC",
+        "Termo de fomento",
+        "Direitos humanos"
+      ],
       "modalidade": "Não reembolsável (termo de fomento)",
-      "publico": ["osc"],
+      "publico": [
+        "osc"
+      ],
       "abrangencia": "SP",
       "moeda": "BRL",
       "valorMax": null,
@@ -465,7 +743,514 @@
       "fonte": "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573",
       "verificadoEm": "2026-10-30",
       "criterios": [],
-      "docsExtras": ["Declaração da organização (Anexo I)", "Plano de trabalho no modelo do edital (Anexo II)", "Planilha orçamentária anual (Anexo III)", "Protocolo de intenção de registro no CMI (Anexo IV)"]
+      "docsExtras": [
+        "Declaração da organização (Anexo I)",
+        "Plano de trabalho no modelo do edital (Anexo II)",
+        "Planilha orçamentária anual (Anexo III)",
+        "Protocolo de intenção de registro no CMI (Anexo IV)"
+      ]
+    },
+    {
+      "id": 116,
+      "numero": "Chamada Pública CNPq/Petrobras nº 31/2026",
+      "titulo": "Projeto InspirAÇÃO: jovens mulheres negras na indústria de energia",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Energia",
+      "tags": [
+        "Petrobras",
+        "Cenpes",
+        "mulheres negras",
+        "indústria de energia",
+        "ICT",
+        "IES"
+      ],
+      "modalidade": "Chamada pública para propostas institucionais",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "A página não informa valores, faixas de financiamento nem duração. Esses dados devem constar no texto da Chamada (PDF), que não foi fornecido.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-10-26",
+      "abertura": "2026-10-26",
+      "encerramento": "2026-12-08",
+      "prazoNota": "O horário limite e as etapas seguintes não constam na página. É exigida a indicação de um Representante Institucional pela Pró-Reitoria de Extensão ou cargo equivalente.",
+      "resumo": "O CNPq, em parceria com o Cenpes e com financiamento da Petrobras, convida ICTs e/ou IES a apresentarem propostas para implementar o Projeto InspirAÇÃO. O objetivo é ampliar a participação de jovens mulheres negras em setores estratégicos da indústria de energia. A proposta é institucional e usa formulário próprio e a lista de territórios priorizados.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Anexo I - Formulário de Proposta Institucional",
+        "Anexo II - Documento de indicação do Representante Institucional nomeado pelo(a) Pró-Reitor(a) de Extensão ou cargo equivalente da IES/ICT",
+        "Anexo III - Lista de Territórios Priorizados (consulta)"
+      ]
+    },
+    {
+      "id": 117,
+      "numero": "Edital FAPES nº 01/2026",
+      "titulo": "TCC Empreendedor Inovador: bolsas para Trabalhos de Conclusão de Curso com foco em inovação",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "TCC",
+        "graduação",
+        "inovação",
+        "empreendedorismo",
+        "Espírito Santo",
+        "bolsa BTCC"
+      ],
+      "modalidade": "Bolsas (BTCC) e auxílio de orientação, cooperação financeira não reembolsável",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": 11000,
+      "valorTotal": 1600000,
+      "valorNota": "Orçamento total de R$ 1,6 milhão (Funcitec), dividido em três chamadas (R$ 800 mil, R$ 400 mil e R$ 400 mil); a 3ª chamada tem R$ 400 mil, com vigência no 2º semestre de 2027. Cada proposta recebe bolsas BTCC de 2 a 4 meses para 3 a 5 alunos, mais até dois auxílios de orientação ao professor, com teto de R$ 11.000 por proposta.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-01-26",
+      "abertura": "2027-02-02",
+      "encerramento": "2027-03-30",
+      "prazoNota": "Submissão até as 17h59 pelo Sigfapes, com anuência prévia do gestor institucional da IES. As 1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026); resta a 3ª chamada (02/02/2027 a 30/03/2027), com resultado preliminar a partir de 24/05/2027 e homologação a partir de 22/06/2027.",
+      "resumo": "A FAPES oferece bolsas de apoio a Trabalhos de Conclusão de Curso (BTCC) de graduação com foco em inovação, empreendedorismo e impacto no Espírito Santo, alinhados aos ODS (especialmente 4, 8, 9, 10 e 17) e ao Plano ES 500 Anos. O professor orientador, com vínculo por tempo indeterminado em IES do ES, submete a proposta com 3 a 5 alunos de graduação que tenham coeficiente de rendimento de 7,0 ou mais. As propostas concorrem por microrregião, e a nota mínima para classificação é 70.",
+      "link": "https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Relevância e Aplicabilidade",
+          "peso": 25
+        },
+        {
+          "nome": "Inovação e Criatividade",
+          "peso": 25
+        },
+        {
+          "nome": "Qualidade Técnica",
+          "peso": 20
+        },
+        {
+          "nome": "Contribuição ao Plano ES 500 Anos",
+          "peso": 15
+        },
+        {
+          "nome": "Contribuição aos ODS",
+          "peso": 15
+        }
+      ],
+      "docsExtras": [
+        "Formulário de submissão preenchido (Anexo I)",
+        "Histórico escolar dos alunos orientados com coeficiente de rendimento igual ou superior a 7,0",
+        "Declaração da coordenação do curso confirmando tema e orientador (Anexo II)",
+        "Currículo Lattes do proponente atualizado há menos de 6 meses",
+        "Anuência da IES via Sigfapes por gestor institucional",
+        "Na contratação: regularidade fiscal, declaração da IES e comprovação de matrícula dos alunos"
+      ]
+    },
+    {
+      "id": 118,
+      "numero": "Edital FAPES nº 10/2026",
+      "titulo": "Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "doutor empreendedor",
+        "inovação",
+        "startups",
+        "subvenção econômica",
+        "bolsa POSDOC",
+        "Espírito Santo"
+      ],
+      "modalidade": "Subvenção econômica e bolsas (POSDOC e ICT)",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": 355400,
+      "valorTotal": 10662000,
+      "valorNota": "Até R$ 355.400 por projeto, em 24 meses: bolsa POSDOC (R$ 163.800), bolsa ICT (R$ 21.600) e subvenção econômica de custeio e capital de até R$ 170.000, dos quais R$ 50.000 vão para consultoria de aceleradoras credenciadas. São 15 projetos por chamada (30 no total).",
+      "contrapartida": "Contrapartida financeira de 5% do valor subvencionado, paga em até duas parcelas anuais em conta específica; pode ser usada em custeio e capital ligados ao projeto.",
+      "publicadoEm": "2026-04-30",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-12-15",
+      "prazoNota": "Esta é a 2ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes até as 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilitação a partir de 08/01/2027, apresentação oral entre 03/02 e 18/03/2027 e resultado homologado previsto a partir de 27/04/2027.",
+      "resumo": "Chamada da FAPES para financiar projetos de pesquisa e desenvolvimento de produtos, serviços ou processos inovadores, conduzidos por doutores sem vínculo empregatício que atuem no Espírito Santo. O objetivo é criar ou fortalecer micro e pequenas empresas de base tecnológica, em qualquer área do conhecimento. O doutor submete a proposta como pessoa física, com apoio de um tutor acadêmico de IES/ICT sediada no ES, e a empresa é constituída ou formalizada na contratação. O apoio inclui bolsas e subvenção econômica, com execução em 24 meses (prorrogável por até 12).",
+      "link": "https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Mérito: relevância da pesquisa/tecnologia utilizada no projeto",
+          "peso": 25
+        },
+        {
+          "nome": "Mérito: alcance e potencial mercadológico da aplicação",
+          "peso": 20
+        },
+        {
+          "nome": "Mérito: grau de inovação da solução e impacto potencial",
+          "peso": 20
+        },
+        {
+          "nome": "Mérito: relevância da instituição de vínculo do tutor acadêmico",
+          "peso": 5
+        },
+        {
+          "nome": "Apresentação oral: potencial de inovação, produto/processo e viabilidade técnico-econômica",
+          "peso": 10
+        },
+        {
+          "nome": "Apresentação oral: perfil, competência e experiência do doutor e da equipe",
+          "peso": 5
+        },
+        {
+          "nome": "Apresentação oral: capacidade de argumentação e domínio do tema",
+          "peso": 15
+        }
+      ],
+      "docsExtras": [
+        "Formulário de submissão da proposta (Anexo I), assinado pelo coordenador e pelo tutor acadêmico",
+        "Declaração de apoio do tutor acadêmico (Anexo II) e da instituição copartícipe (Anexo III)",
+        "Declaração de não acumulação de bolsas (Anexo IV)",
+        "Diploma de doutorado ou atestado de previsão de conclusão com comprovante de aprovação da qualificação da tese",
+        "Comprovante de residência no ES, RG/CPF ou CNH e Currículo Lattes atualizado nos últimos 3 meses",
+        "Declaração de Ciência do NIT (Anexo IX), exigida na contratação quando a instituição copartícipe estiver vinculada à contemplada no Edital FAPES 12/2025"
+      ]
+    },
+    {
+      "id": 119,
+      "numero": "Edital Fapes nº 26/2026",
+      "titulo": "PROCAP 2027 – Bolsas de mestrado para Programas de Pós-graduação do Espírito Santo",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "pós-graduação",
+        "bolsas de mestrado",
+        "PROCAP",
+        "Espírito Santo",
+        "Capes"
+      ],
+      "modalidade": "Bolsas",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 16128000,
+      "valorNota": "210 bolsas de mestrado com 24 parcelas mensais cada. Cada PPG habilitado recebe 2 bolsas na Etapa I; as restantes são distribuídas unitariamente na Etapa II por nota Capes, antiguidade e número de doutores. O valor mensal segue a Tabela de Valores de Bolsas e Auxílios da Fapes (não informado no edital).",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-28",
+      "abertura": "2026-09-28",
+      "encerramento": "2026-11-16",
+      "resultado": "2026-12-21",
+      "prazoNota": "Envio até 16/11/2026 às 17h59 (horário de Brasília) pelo Sistema de Gestão da Fapes (SigFapes), com login próprio do coordenador. Cada PPG pode enviar uma só proposta; vale a última enviada. Recurso administrativo em até 5 dias úteis após o resultado preliminar (a partir de 14/12/2026); indicação regular de bolsistas de março a novembro de 2027.",
+      "resumo": "A Fapes concede bolsas de mestrado, acadêmico ou profissional, a Programas de Pós-graduação stricto sensu aprovados ou recomendados pela Capes e vinculados a instituições de ensino superior ou pesquisa do Espírito Santo. O coordenador do PPG submete a proposta e depois indica os bolsistas. Para participar, o PPG precisa ter regimento com seleção por chamada pública, exigir dissertação para a titulação e ter política de ações afirmativas. São 210 bolsas de 24 parcelas, financiadas pelo Funcitec.",
+      "link": "https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Etapa II: maior nota na última avaliação Capes homologada (PPG sem avaliação recebe nota 3)",
+          "peso": null
+        },
+        {
+          "nome": "Etapa II: PPG mais antigo em data de início do curso",
+          "peso": null
+        },
+        {
+          "nome": "Etapa II: maior número de doutores",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Anexo I – Formulário de Submissão do PPG preenchido e assinado pelo coordenador via E-Docs (assinatura escaneada ou colada como imagem não é aceita)",
+        "Portaria, ata do colegiado do PPG ou ato interno da IES/P que designe o proponente como coordenador do PPG",
+        "Anuência do Gestor Institucional da IES/P no Sistema de Gestão da Fapes",
+        "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema",
+        "Regimento interno com seleção por chamada pública e dissertação como requisito para o título",
+        "Política regulamentada de ações afirmativas de reserva de vagas"
+      ]
+    },
+    {
+      "id": 120,
+      "numero": "Edital Fapes nº 27/2026",
+      "titulo": "PROCAP 2027 – Bolsas de doutorado para Programas de Pós-graduação do Espírito Santo",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "bolsas de doutorado",
+        "pós-graduação",
+        "PROCAP",
+        "Espírito Santo",
+        "Capes"
+      ],
+      "modalidade": "Bolsas",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 27000000,
+      "valorNota": "São 125 bolsas de doutorado de até 48 parcelas mensais cada, distribuídas entre os PPG habilitados (2 bolsas por PPG na Etapa I, e as restantes por ranking). O valor mensal segue a Tabela de Valores de Bolsas e Auxílios da Fapes, não informado no edital.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-28",
+      "abertura": "2026-09-28",
+      "encerramento": "2026-11-16",
+      "resultado": "2026-12-21",
+      "prazoNota": "Submissão até 16/11/2026, às 17h59 (Brasília), pelo Sistema de Gestão da Fapes, com login do coordenador; cada PPG envia apenas uma proposta (vale a última). Resultado preliminar a partir de 14/12/2026, recurso em 5 dias úteis, homologação a partir de 21/12/2026; indicação de bolsistas de março a novembro de 2027.",
+      "resumo": "A Fapes concede bolsas de doutorado a Programas de Pós-graduação stricto sensu (acadêmicos ou profissionais) aprovados ou recomendados pela Capes, vinculados a instituições de ensino superior ou pesquisa do Espírito Santo. A proposta é enviada pelo coordenador do PPG. Cada PPG habilitado recebe 2 bolsas, e as bolsas restantes são distribuídas por nota Capes, antiguidade do curso e número de doutores. Depois, o PPG indica os doutorandos bolsistas, que precisam cumprir os requisitos do edital (por exemplo, residir no ES ou em município limítrofe e não acumular outra bolsa).",
+      "link": "https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Maior nota na última avaliação Capes homologada (PPG sem avaliação recebe nota 4)",
+          "peso": null
+        },
+        {
+          "nome": "PPG mais antigo em data de início do curso",
+          "peso": null
+        },
+        {
+          "nome": "Maior número de doutores",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Anexo I – Formulário de Submissão do PPG, assinado pelo coordenador exclusivamente via E-Docs",
+        "Portaria, ata do colegiado ou ato interno da IES/P designando o proponente como coordenador do PPG",
+        "Anuência do Gestor Institucional no Sistema de Gestão da Fapes",
+        "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema",
+        "Regimento interno com seleção por chamada pública e aprovação de tese como requisito para o título",
+        "Política regulamentada de ações afirmativas de reserva de vagas"
+      ]
+    },
+    {
+      "id": 121,
+      "numero": "Chamada Transnacional Conjunta FOREST 2026 (CONFAP & FOREST 2026)",
+      "titulo": "Chamada Transnacional Conjunta FOREST 2026 (Forest Pathways) – Diretrizes FAPES",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "florestas",
+        "bioeconomia florestal",
+        "Horizon Europe",
+        "cooperação internacional",
+        "CONFAP",
+        "Espírito Santo"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorTotal": 75000,
+      "valorNota": "A FAPES apoia apenas 1 projeto, de até € 75.000 (limite de € 25.000 por ano, até 36 meses). Cobre mobilidade, custeio e capital, exceto bolsas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-15",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-12-02",
+      "resultado": "2027-09-21",
+      "prazoNota": "Pré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET), obrigatória para a 2ª fase. Propostas completas até 02/06/2027; submissão em inglês pelo sistema EPSS.",
+      "resumo": "Chamada conjunta da Parceria Europeia FOREST (Horizon Europe), da qual a FAPES participa pelo CONFAP. Financia projetos transnacionais de pesquisa e inovação sobre florestas, silvicultura e o setor de base florestal. Podem submeter pesquisadores doutores com vínculo ativo com instituição de ensino superior ou pesquisa no Espírito Santo, que residam no estado, sejam brasileiros ou estrangeiros com visto permanente e sejam coordenadores (PI) do projeto. Cada proponente pode submeter no máximo 1 proposta.",
+      "link": "https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Excelência Científica",
+          "peso": 33.3
+        },
+        {
+          "nome": "Relevância e Impacto Potencial",
+          "peso": 33.3
+        },
+        {
+          "nome": "Qualidade e Eficiência da Implementação",
+          "peso": 33.3
+        }
+      ],
+      "docsExtras": [
+        "Pré-proposta e proposta completa em inglês, nos modelos da Chamada, via EPSS",
+        "Consórcio transnacional com no mínimo 3 parceiros financiáveis de 3 países diferentes (máximo 7 parceiros)",
+        "Documentos de regularidade conforme Instrução de Serviços nº 082/2025",
+        "Cadastro do projeto e documentação no SigFapes após a seleção",
+        "Estar adimplente com a FAPES na data limite de submissão"
+      ]
+    },
+    {
+      "id": 122,
+      "numero": "Chamada Transnacional Conjunta CONFAP & Biodiversa+ (BiodivFuture) 2026-2027",
+      "titulo": "Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "biodiversidade",
+        "ecossistemas emergentes",
+        "cooperação internacional",
+        "Biodiversa+",
+        "Horizon Europe",
+        "CONFAP"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorTotal": 75000,
+      "valorNota": "A FAPES apoiará apenas 1 projeto, com até € 75.000 (limite de € 25.000 por ano, por até 36 meses). Cobre mobilidade, custeio e capital, exceto bolsas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-09",
+      "abertura": "2026-09-09",
+      "encerramento": "2026-11-10",
+      "prazoNota": "Pré-proposta (1ª fase, obrigatória) até 10/11/2026 às 12h00 (CEST), em inglês, pelo sistema EPSS. Propostas completas até 16/04/2027 às 12h (CEST).",
+      "resumo": "Chamada transnacional conjunta CONFAP e Biodiversa+, cofinanciada pelo Horizon Europe, sobre ecossistemas emergentes, biodiversidade e trajetórias futuras. A FAPES financia um único projeto de pesquisador doutor, coordenador ou PI do consórcio, vinculado a instituição de ensino superior ou pesquisa no Espírito Santo. O consórcio deve ter parceiros de pelo menos três países.",
+      "link": "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Pré-proposta obrigatória na 1ª fase, em inglês, via EPSS com os modelos da Chamada",
+        "Documentos de regularidade conforme Instrução de Serviços nº 082/2025",
+        "Consórcio com ao menos 3 parceiros financiáveis de 3 países diferentes (máximo de 7 parceiros)",
+        "Ao menos 2 entidades jurídicas independentes de Estados-Membros da UE ou países associados ao Horizon Europe",
+        "Cadastro posterior dos projetos selecionados no SigFapes"
+      ]
+    },
+    {
+      "id": 123,
+      "numero": "Chamada Transnacional Conjunta CONFAP & Water4All 2026",
+      "titulo": "Chamada Transnacional CONFAP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "recursos hídricos",
+        "Water4All",
+        "Horizon Europe",
+        "cooperação internacional",
+        "Espírito Santo",
+        "CONFAP"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorNota": "A FAPES apoiará apenas 1 projeto, com até € 75.000 (limite de € 25.000 por ano, por até 36 meses), com recursos do FUNCITEC. Cobre mobilidade, custeio e capital; bolsas não são permitidas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-08",
+      "abertura": "2026-09-08",
+      "encerramento": "2026-11-10",
+      "prazoNota": "Pré-proposta (1ª fase) até 10/11/2026, às 15h00 (CEST), obrigatória para a 2ª fase. Seleção das pré-propostas no início de fevereiro/2027; propostas completas até 06/04/2027 às 15h (CEST); resultado em setembro/2027.",
+      "resumo": "Chamada conjunta CONFAP & Water4All, cofinanciada pelo Horizon Europe, para projetos transnacionais de pesquisa e inovação em gestão sustentável dos recursos hídricos. Exclui eventos extremos e economia circular. A FAPES convida pesquisadores doutores vinculados a instituições de ensino superior e/ou pesquisa do Espírito Santo, que atuem como PI ou coordenadores em consórcios internacionais. Os temas são monitoramento e avaliação integrados, soluções baseadas na natureza, infraestruturas hídricas inteligentes e governança/políticas públicas. A FAPES financia 1 projeto de até € 75.000.",
+      "link": "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Proposta e pré-proposta em inglês, nos modelos da Chamada, via Electronic Proposal Submission System (EPSS)",
+        "Comprovação de regularidade conforme documentos da Instrução de Serviços nº 082/2025 da FAPES",
+        "Consórcio transnacional com ao menos 3 parceiros financiáveis de 3 países diferentes, e no máximo 7 parceiros",
+        "Após a seleção, cadastro do projeto e envio de documentos no SigFapes",
+        "Cada pesquisador pode submeter apenas 1 proposta"
+      ]
+    },
+    {
+      "id": 124,
+      "numero": "Chamada CONFAP & SBEP 2026",
+      "titulo": "Chamada Transnacional Conjunta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "economia azul",
+        "transnacional",
+        "Horizon Europe",
+        "CONFAP",
+        "Espírito Santo",
+        "cooperação internacional"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorNota": "A FAPES apoia até 1 projeto, com limite de € 25.000 por ano (até 36 meses). Cobre mobilidade, custeio e capital, exceto bolsas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-15",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-16",
+      "prazoNota": "Prazo da pré-proposta (1ª fase): 16/11/2026 às 15:00 CET, obrigatória para a 2ª fase. Propostas completas até 14/06/2027, em inglês, pelo sistema EPSS.",
+      "resumo": "Chamada transnacional do Horizon Europe (parceria SBEP) para projetos de pesquisa e inovação em economia azul sustentável. A FAPES financia pesquisadores doutores de instituições de ensino superior ou pesquisa do Espírito Santo, que participam de consórcios internacionais. Os temas são: transição dos setores azuis, gestão do uso do mar com abordagens digitais, biorrecursos azuis e resiliência de comunidades costeiras.",
+      "link": "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Excelência Científica",
+          "peso": 33.3
+        },
+        {
+          "nome": "Relevância e Impacto Potencial",
+          "peso": 33.3
+        },
+        {
+          "nome": "Qualidade e Eficiência da Implementação",
+          "peso": 33.3
+        }
+      ],
+      "docsExtras": [
+        "Proposta em inglês, enviada pelo EPSS com os modelos da Chamada",
+        "Consórcio com pelo menos 3 parceiros financiados de 3 países diferentes (máximo 7 parceiros)",
+        "Pelo menos 2 entidades de 2 Estados-Membros da UE ou países associados ao Horizon Europe",
+        "Documentos de regularidade da Instrução de Serviços nº 082/2025",
+        "Cadastro posterior do projeto selecionado no SigFapes"
+      ]
     }
   ]
 }
