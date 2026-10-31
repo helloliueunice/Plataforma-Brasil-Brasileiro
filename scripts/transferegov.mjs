@@ -150,6 +150,7 @@ const consultas = [];
 for (const exp of ['EXPIRACAO_PROG_MUITO_PROX', 'EXPIRACAO_PROG_PROX', 'EXPIRACAO_PROG_DISTANTE'])
     for (const ano of [ANO, ANO - 1]) consultas.push({ expiracao_prog_prop_voluntaria: exp, ano_disponibilizacao: String(ano) });
 const porId = new Map();
+const registro = []; // resumo das consultas (anotado uma vez no fim)
 const amostras = [];
 let falhas = 0;
 // Códigos de órgão superior (ministérios) para dividir consultas pesadas; e UFs como 2º nível
@@ -159,14 +160,15 @@ async function coletar(params, rotulo, nivel = 0) {
     try {
         const linhas = await todas('discricionarias/todos-programas', { sit_programa: 'DISPONIBILIZADO', ...params });
         for (const p of linhas) if (!porId.has(p.id_programa)) { porId.set(p.id_programa, p); if (amostras.length < 3) amostras.push(p); }
-        if (nivel === 0 || linhas.length) anotar(`Consulta ${rotulo}`, `${linhas.length} linhas · ${porId.size} programas distintos até aqui`);
+        if (nivel === 0 || linhas.length) registro.push(`${rotulo}: ${linhas.length} linhas · ${porId.size} programas até aqui`);
     } catch (err) {
         if (nivel === 0) { for (const o of ORGAOS) await coletar({ ...params, cod_orgao_sup_programa: o }, `${rotulo} órgão ${o}`, 1); return; }
         if (nivel === 1) { for (const uf of UFS) await coletar({ ...params, uf_programa: uf }, `${rotulo} ${uf}`, 2); return; }
-        falhas++; anotar(`Falha ${rotulo}`, err.message, 'warning');
+        falhas++; registro.push(`FALHA ${rotulo}: ${err.message.slice(0, 80)}`);
     }
 }
 for (const c of consultas) await coletar(c, `${c.expiracao_prog_prop_voluntaria} ${c.ano_disponibilizacao}`);
+anotar('Consultas', `${falhas} falha(s)\n` + registro.join('\n'), falhas ? 'warning' : 'notice');
 
 const programas = [...porId.values()];
 const editais = programas
