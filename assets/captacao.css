@@ -1,0 +1,211 @@
+/* =====================================================================
+   FUNDOS BRASIL — FERRAMENTAS DO CAPTADOR (assets/captacao.js)
+   Usa só os tokens do design system do index.html (cores, espaços, raios);
+   o modo escuro vem de graça porque os tokens já mudam lá.
+===================================================================== */
+
+/* ---------- Comuns ---------- */
+.cap-links { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+.cap-subtitulo { margin-bottom: var(--s-2); font-size: var(--fs-14); font-weight: var(--fw-semibold); color: var(--text); }
+.cap-texto { margin-bottom: var(--s-3); font-size: var(--fs-14); color: var(--text-2); line-height: var(--lh-body); max-width: 75ch; }
+.cap-vazio { margin: var(--s-4) 0; padding: var(--s-4); border: var(--bw) dashed var(--border-strong); border-radius: var(--r-lg);
+    font-size: var(--fs-14); color: var(--text-2); }
+.cap-alerta {
+    margin: var(--s-3) 0; padding: var(--s-3) var(--s-4);
+    background: var(--urgent-bg); color: var(--urgent-fg);
+    border: var(--bw) solid var(--urgent-bd); border-radius: var(--r-lg); font-size: var(--fs-14);
+}
+.cap-alerta ul { margin: var(--s-2) 0 var(--s-2) var(--s-5); }
+.cap-alerta li + li { margin-top: var(--s-1); }
+.cap-alerta .nota { color: inherit; }
+.cap-alerta .icon { vertical-align: -3px; }
+.cap-alerta-curto { display: flex; gap: var(--s-2); align-items: flex-start; font-size: var(--fs-13); }
+.cap-alerta-curto .icon { margin-top: 1px; }
+.cap-alerta .link-btn { color: inherit; text-decoration: underline; }
+.cap-urgente { color: var(--urgent-fg); font-weight: var(--fw-semibold); }
+
+/* ---------- 1/2. Ações sobre a busca (Assinar, Salvar) ---------- */
+.cap-acoes-busca { display: flex; flex-wrap: wrap; gap: var(--s-2); padding: var(--s-3) 0 0; }
+#capAcoesBusca { margin-bottom: var(--s-3); }
+.cap-painel {
+    margin-top: var(--s-3); padding: var(--s-4) var(--s-5);
+    background: var(--surface); border: var(--bw) solid var(--border); border-radius: var(--r-lg);
+    font-size: var(--fs-14); color: var(--text-2);
+}
+.cap-painel > p, .cap-painel form > p { margin-bottom: var(--s-3); line-height: var(--lh-body); }
+.cap-painel .nota { margin-top: var(--s-3); margin-bottom: 0; }
+.cap-painel-titulo { margin-bottom: var(--s-2); font-size: var(--fs-16); font-weight: var(--fw-semibold); color: var(--text); }
+.cap-painel-titulo strong { font-weight: var(--fw-semibold); }
+.cap-painel .form-group { margin: var(--s-3) 0 0; }
+.cap-painel .form-group input { width: 100%; min-width: 0; }
+.cap-link-cal input { font-size: var(--fs-13); color: var(--text-2); }
+
+/* Lista "Minhas buscas" */
+.cap-buscas-lado { margin-bottom: var(--s-6); padding-bottom: var(--s-2); border-bottom: var(--bw) solid var(--border); }
+.cap-buscas-lado .cap-subtitulo { font-size: var(--fs-16); }
+.cap-buscas { list-style: none; }
+.cap-busca {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-1) var(--s-3);
+    padding: var(--s-3) 0; border-bottom: var(--bw) solid var(--border); font-size: var(--fs-14);
+}
+.cap-busca:last-child { border-bottom: 0; }
+.cap-busca-info { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; flex: 1 1 180px; }
+.cap-busca-nome { color: var(--brand); font-weight: var(--fw-medium); text-decoration: none; overflow-wrap: anywhere; }
+.cap-busca-nome:hover { text-decoration: underline; }
+.cap-busca-nome[aria-current="true"] { color: var(--text); }
+.cap-novos {
+    display: inline-block; padding: 1px var(--s-2); border-radius: var(--r-sm);
+    background: var(--open-bg); color: var(--open-fg); border: var(--bw) solid var(--open-bd);
+    font-size: var(--fs-12); font-weight: var(--fw-semibold);
+}
+.cap-busca-acoes { display: flex; gap: var(--s-1); }
+.cap-busca-acoes .btn { padding: 0 var(--s-2); }
+.cap-renomear { display: flex; flex-wrap: wrap; gap: var(--s-2); width: 100%; }
+.cap-renomear input {
+    flex: 1 1 160px; min-width: 0; min-height: 32px; padding: var(--s-1) var(--s-2);
+    background: var(--bg); color: var(--text); border: var(--bw) solid var(--border-strong); border-radius: var(--r-md); font-size: var(--fs-14);
+}
+#capBuscasHome .cap-busca-info { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: var(--s-1) var(--s-3); }
+
+/* ---------- 3. Minhas propostas: barra e quadro ---------- */
+.cap-barra { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); margin-bottom: var(--s-4); }
+.cap-barra .view-toggle { margin-right: auto; }
+.cap-quadro-ajuda { margin-bottom: var(--s-3); }
+.cap-quadro {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--s-3);
+    align-items: start; margin-bottom: var(--s-10);
+}
+.cap-coluna {
+    min-width: 0; min-height: 120px; padding: var(--s-3);
+    background: var(--surface); border: var(--bw) solid var(--border); border-radius: var(--r-lg);
+    transition: border-color var(--ease), background-color var(--ease);
+}
+.cap-coluna.cap-alvo { border-color: var(--brand); background: var(--brand-subtle); }
+.cap-coluna-titulo { display: flex; justify-content: space-between; align-items: center; gap: var(--s-2);
+    margin-bottom: var(--s-3); font-size: var(--fs-13); font-weight: var(--fw-semibold); color: var(--text); }
+.cap-coluna-n { min-width: 22px; height: 22px; padding: 0 6px; display: inline-grid; place-items: center;
+    border-radius: var(--r-full); background: var(--surface-2); color: var(--text-2); font-size: var(--fs-12); font-variant-numeric: tabular-nums; }
+.cap-coluna-vazia { padding: var(--s-4) var(--s-2); border: var(--bw) dashed var(--border-strong); border-radius: var(--r-md);
+    font-size: var(--fs-13); color: var(--text-3); text-align: center; }
+.cap-cartoes { list-style: none; display: flex; flex-direction: column; gap: var(--s-2); }
+.cap-cartao {
+    padding: var(--s-3); background: var(--bg); border: var(--bw) solid var(--border); border-radius: var(--r-md);
+    box-shadow: var(--shadow-sm); cursor: grab; font-size: var(--fs-13);
+}
+.cap-cartao:active { cursor: grabbing; }
+.cap-cartao.cap-arrastando { opacity: .5; }
+.cap-cartao-titulo { font-size: var(--fs-14); font-weight: var(--fw-semibold); line-height: var(--lh-snug); overflow-wrap: anywhere; }
+.cap-cartao-titulo .link-btn { color: var(--text); font-weight: var(--fw-semibold); }
+.cap-cartao-titulo .link-btn:hover { color: var(--brand); }
+.cap-cartao > .nota { margin-top: 2px; }
+.cap-cartao-fatos { display: grid; grid-template-columns: auto 1fr; gap: 2px var(--s-2); margin: var(--s-2) 0; }
+.cap-cartao-fatos > div { display: contents; }
+.cap-cartao-fatos dt { color: var(--text-3); }
+.cap-cartao-fatos dd { color: var(--text); font-variant-numeric: tabular-nums; }
+.cap-cartao-gng { margin-bottom: var(--s-2); }
+.cap-selo-btn { padding: 0; border: 0; background: none; cursor: pointer; border-radius: var(--r-sm); }
+.cap-link-pequeno { font-size: var(--fs-13); }
+.cap-cartao-alerta { display: flex; gap: var(--s-1); align-items: flex-start; margin-bottom: var(--s-2); color: var(--urgent-fg); font-size: var(--fs-12); font-weight: var(--fw-medium); }
+.cap-cartao-alerta .icon { width: 14px; height: 14px; margin-top: 1px; }
+.cap-mover { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); align-items: center;
+    padding-top: var(--s-2); border-top: var(--bw) solid var(--border); }
+.cap-mover label { flex: 1 1 100%; font-size: var(--fs-12); color: var(--text-3); }
+.cap-mover select {
+    flex: 1 1 120px; min-width: 0; min-height: 32px; padding: var(--s-1) var(--s-2);
+    background: var(--bg); color: var(--text); border: var(--bw) solid var(--border-strong); border-radius: var(--r-md); font-size: var(--fs-13);
+}
+
+/* ---------- 4. Go/no-go ---------- */
+.cap-gng { margin: var(--s-4) 0; border: var(--bw) solid var(--border); border-radius: var(--r-lg); }
+.cap-gng > summary {
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2);
+    min-height: 44px; padding: var(--s-2) var(--s-4); cursor: pointer; list-style: none;
+    font-size: var(--fs-14); font-weight: var(--fw-medium); color: var(--text);
+}
+.cap-gng > summary::-webkit-details-marker { display: none; }
+.cap-gng > summary::before {
+    content: ""; width: 8px; height: 8px; flex: none; margin-right: var(--s-1);
+    border-right: 2px solid var(--text-3); border-bottom: 2px solid var(--text-3); transform: rotate(-45deg); transition: transform var(--ease);
+}
+.cap-gng[open] > summary::before { transform: rotate(45deg); }
+.cap-gng > summary:hover { background: var(--surface); }
+.cap-gng-pergunta { margin-right: auto; }
+.cap-gng-corpo { padding: 0 var(--s-4) var(--s-4); }
+.cap-gng-corpo > .nota { margin-bottom: var(--s-3); }
+.cap-escala { border: 0; padding: var(--s-2) 0; border-top: var(--bw) solid var(--border); }
+.cap-escala legend { float: left; width: 100%; margin-bottom: var(--s-2); padding: 0; font-size: var(--fs-14); }
+.cap-escala legend .nota { display: block; }
+.cap-escala-nome { font-weight: var(--fw-medium); color: var(--text); }
+.cap-escala-opcoes { clear: both; display: flex; gap: var(--s-1); }
+.cap-escala-opcoes label, .cap-eleg-opcoes label { position: relative; cursor: pointer; }
+.cap-escala-opcoes input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.cap-escala-opcoes span {
+    display: grid; place-items: center; width: 40px; height: 36px;
+    border: var(--bw) solid var(--border-strong); border-radius: var(--r-md); background: var(--bg);
+    font-size: var(--fs-14); font-weight: var(--fw-medium); color: var(--text-2); font-variant-numeric: tabular-nums;
+}
+.cap-escala-opcoes label:hover span { border-color: var(--text-3); color: var(--text); }
+.cap-escala-opcoes input:checked + span { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.cap-escala-opcoes input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 2px; }
+.cap-gng-resultado { margin: var(--s-3) 0; font-size: var(--fs-14); line-height: var(--lh-body); }
+.cap-gng-resultado .badge { margin-right: var(--s-1); }
+.cap-gng .form-group { margin-bottom: 0; }
+.cap-gng textarea { min-height: 64px; }
+
+/* ---------- 5. Cofre ---------- */
+.cap-privacidade { display: flex; gap: var(--s-2); align-items: flex-start; margin-bottom: var(--s-3);
+    font-size: var(--fs-14); color: var(--text-2); line-height: var(--lh-body); }
+.cap-privacidade .icon { margin-top: 3px; color: var(--open-fg); }
+.cap-privacidade strong { color: var(--text); font-weight: var(--fw-semibold); }
+.cap-docs { list-style: none; margin: var(--s-3) 0 var(--s-4); }
+.cap-doc {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s-2) var(--s-4);
+    padding: var(--s-3) 0; border-bottom: var(--bw) solid var(--border); font-size: var(--fs-14);
+}
+.cap-doc-nome { display: flex; flex-direction: column; gap: 2px; min-width: 0; overflow-wrap: anywhere; }
+.cap-doc-nome strong { font-weight: var(--fw-medium); color: var(--text); }
+.cap-doc-acoes { display: flex; gap: var(--s-1); }
+.cap-doc-acoes .btn { padding: 0 var(--s-2); }
+.cap-cofre-form { margin-top: var(--s-4); padding: var(--s-4) var(--s-5); background: var(--surface); border: var(--bw) solid var(--border); border-radius: var(--r-lg); }
+.cap-cofre-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 var(--s-4); }
+.cap-cofre-campos .form-group { margin-bottom: var(--s-3); }
+.cap-cofre-form #capDocDica { margin-bottom: var(--s-2); }
+.cap-cofre-form .field-error:empty { display: none; }
+.cap-cofre-form .field-error { margin-bottom: var(--s-2); }
+
+/* ---------- 6. Elegibilidade (modal do edital) ---------- */
+.cap-eleg > .nota { margin-bottom: var(--s-3); }
+.cap-eleg-lista { list-style: none; counter-reset: eleg; border-top: var(--bw) solid var(--border); }
+.cap-eleg-lista li { counter-increment: eleg; padding: var(--s-3) 0; border-bottom: var(--bw) solid var(--border); }
+.cap-eleg-lista fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-2) var(--s-4); }
+.cap-eleg-lista legend { float: left; flex: 1 1 260px; padding: 0; font-size: var(--fs-14); color: var(--text); line-height: var(--lh-snug); }
+.cap-eleg-lista legend::before { content: counter(eleg) ". "; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.cap-eleg-lista legend .badge { margin-left: var(--s-1); vertical-align: 1px; }
+.cap-eleg-opcoes { display: flex; gap: var(--s-2); }
+.cap-eleg-opcoes label {
+    display: inline-flex; align-items: center; gap: var(--s-2); min-height: 36px; padding: 0 var(--s-3);
+    border: var(--bw) solid var(--border-strong); border-radius: var(--r-md); font-size: var(--fs-14); color: var(--text);
+}
+.cap-eleg-opcoes label:has(input:checked) { border-color: var(--brand); background: var(--brand-subtle); color: var(--brand); }
+.cap-eleg-opcoes input { accent-color: var(--brand); margin: 0; }
+.cap-eleg-resultado { margin: var(--s-3) 0 var(--s-2); }
+.cap-eleg-msg { padding: var(--s-3) var(--s-4); border-radius: var(--r-lg); border: var(--bw) solid var(--border);
+    background: var(--surface); color: var(--text-2); font-size: var(--fs-14); line-height: var(--lh-body); }
+.cap-eleg-msg strong { color: inherit; font-weight: var(--fw-semibold); }
+.cap-eleg-msg.ok { background: var(--open-bg); color: var(--open-fg); border-color: var(--open-bd); }
+.cap-eleg-msg.aviso { background: var(--soon-bg); color: var(--soon-fg); border-color: var(--soon-bd); }
+.cap-eleg-msg.alerta { background: var(--urgent-bg); color: var(--urgent-fg); border-color: var(--urgent-bd); }
+
+/* ---------- Celular ---------- */
+@media (max-width: 768px) {
+    .cap-painel, .cap-cofre-form { padding: var(--s-4); }
+    .cap-doc { grid-template-columns: minmax(0, 1fr) auto; }
+    .cap-doc .badge { grid-column: 1; justify-self: start; }
+    .cap-doc-acoes { grid-column: 2; grid-row: 1 / span 2; flex-direction: column; }
+    .cap-acoes-busca .btn { flex: 1 1 auto; }
+    .cap-escala-opcoes span { width: 44px; height: 40px; }
+}
+
+@media print {
+    .cap-gng, .cap-mover, #capAcoesBusca, #capBuscasEditais, #capBackup { display: none !important; }
+}

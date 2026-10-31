@@ -24,6 +24,15 @@ A auditoria de usabilidade que orientou essas jornadas está em [`docs/auditoria
 - **Exportação** em CSV (abre direto no Excel em português) e **comparação** de até 3 editais.
 - **Gerenciar editais**: cadastre editais reais pelo formulário ou importe um arquivo JSON. Ficam salvos no navegador (`localStorage`); exporte o JSON para compartilhar ou versionar.
 
+### Ferramentas do captador (`assets/captacao.js` e `assets/captacao.css`)
+
+- **Assinar alertas** (em Editais): calendário assinado do recorte atual — público escolhido (`cal/publico-*.ics`), senão área (`cal/area-<slug>.ics`), senão `cal/todos.ics` — no Google Agenda, Outlook/Apple (`webcal://`) ou por link; e RSS correspondente em `feeds/`.
+- **Buscas salvas**: guarda os filtros da URL de `#editais` e mostra, no início e em Editais, quantos editais novos (pela data `publicadoEm`) apareceram desde a última visita a cada busca.
+- **Minhas propostas**: alterna **Lista | Quadro** (colunas por etapa; arrastar ou “Mover para”, acessível por teclado), **go/no-go** por proposta (5 critérios de 1 a 5 → Seguir / Avaliar / Não seguir), **cofre de certidões** (tipo, emissão, validade sugerida e aviso quando vence antes do prazo de um edital acompanhado), **backup** em JSON (importação validada) e **quadro em CSV**.
+- **Teste de elegibilidade** no detalhe do edital, quando ele tem o campo `elegibilidade`.
+
+Tudo fica só no navegador, em chaves `fb:*` do `localStorage` (apagadas por “Apagar meus dados”).
+
 > Os editais são **reais**, conferidos na página ou no documento oficial de cada instituição (cada um guarda `fonte` e `verificadoEm`). Já **projetos e prestação de contas** usam dados de demonstração. Em qualquer divergência, vale o edital oficial.
 
 ## Curadoria e monitoramento automático
@@ -98,6 +107,10 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | `moeda` | não | `BRL` (padrão), `USD` ou `EUR` |
 | `criterios` | não | `[{ "nome": "Mérito", "peso": 40 }, ...]`; use `"peso": null` se a chamada não divulga pesos |
 | `docsExtras` | não | documentos específicos; os usuais de cada tipo de proponente entram automaticamente |
+| `elegibilidade` | não | até 10 perguntas `{ "pergunta": "…?" (até 200 caracteres), "esperado": true\|false, "eliminatoria": true\|false }` para o teste de elegibilidade |
+| `fonteRecurso` | não | `publico`, `privado`, `incentivo-fiscal`, `internacional` ou `misto` |
+| `tipoValor` | não | `por-proposta`, `total`, `faixa`, `bolsa` ou `nao-informado` |
+| `fluxoContinuo` | não | `true` para chamadas sem data de corte única |
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
 
