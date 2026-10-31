@@ -98,6 +98,10 @@ Uma lista de editais, ou um objeto `{ "editais": [...] }` (o mesmo formato gerad
 | `moeda` | não | `BRL` (padrão), `USD` ou `EUR` |
 | `criterios` | não | `[{ "nome": "Mérito", "peso": 40 }, ...]`; use `"peso": null` se a chamada não divulga pesos |
 | `docsExtras` | não | documentos específicos; os usuais de cada tipo de proponente entram automaticamente |
+| `elegibilidade` | não | `[{ "pergunta": "…?", "esperado": true, "eliminatoria": true }]`; vira a lista “Quem pode participar — confira antes” na página do edital |
+| `fonteRecurso` | não | `publico`, `privado`, `incentivo-fiscal`, `internacional` ou `misto` |
+| `tipoValor` | não | `por-proposta`, `total`, `faixa`, `bolsa` ou `nao-informado` |
+| `fluxoContinuo` | não | `true` quando a chamada recebe propostas continuamente |
 
 Itens inválidos são ignorados e listados no relatório de importação, com o motivo.
 
@@ -121,6 +125,10 @@ A plataforma em si é uma página só; para o Google e para o WhatsApp, cada edi
 - `editais/` (lista) e `editais/<titulo>-<id>/` (um por edital), `instituicoes/` e `instituicoes/<id>/`;
 - título e descrição otimizados, `canonical`, prévia para WhatsApp e redes (Open Graph, imagem `assets/og-image.jpg`), dados estruturados (schema.org), links entre editais relacionados;
 - `sitemap.xml`, `robots.txt` e `404.html`;
+- **Assinaturas:** feeds RSS em `feeds/` (`todos.xml`, `publico-<publico>.xml`, `area-<slug>.xml`, `instituicao-<agencia>.xml`, `alteracoes.xml`) e calendários iCalendar em `cal/` (mesmos recortes, mais `edital-<id>.ics`), com um evento de dia inteiro por prazo e lembretes 7 dias e 1 dia antes. Todos os arquivos existem mesmo sem itens;
+- **Histórico de alterações:** a cada execução, o gerador compara os campos-chave com `data/editais-snapshot.json` e acrescenta as mudanças (prazo, valor, link, título, novo edital) em `data/alteracoes.json`. Na primeira execução só cria o snapshot. A comparação é idempotente, então pode rodar várias vezes por dia. Esses dois arquivos são gravados pelo workflow; não edite à mão;
+- **Resumo semanal:** `semana/` (semana ISO atual, fuso de Brasília) e `semana/AAAA-SS/` (arquivo; semanas anteriores são mantidas);
+- **Dados abertos:** `dados/` explica o `editais.json` (licença CC BY 4.0), o esquema dos campos (em `ESQUEMA_CAMPOS`, `scripts/conteudo.mjs`) e lista feeds e calendários;
 - metatags da página inicial (bloco entre `<!-- seo:inicio -->` e `<!-- seo:fim -->`).
 
 Para gerar: `node scripts/gerar-paginas.mjs` (Node 18+, sem dependências). A automação `.github/workflows/gerar-paginas.yml` faz isso sozinha a cada mudança no `editais.json` e todo dia às 06h17, para a situação “aberto/encerrado” acompanhar a data. Não edite os arquivos gerados à mão.
