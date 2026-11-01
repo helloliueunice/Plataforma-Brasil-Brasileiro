@@ -1,0 +1,83 @@
+{
+  "_exemplo": true,
+  "_leia": "EXEMPLO com textos provisórios e preços 0 (aparecem como 'sob consulta'). Será substituído pelo texto final. Esquema: README, seção Monetização.",
+  "anuncie": {
+    "titulo": "Anuncie no Fundos Brasil",
+    "subtitulo": "Texto provisório: destaque sua chamada para quem procura editais, com selo de patrocínio transparente.",
+    "paraQuem": [
+      "Fundações e institutos com chamadas abertas",
+      "Empresas com editais de patrocínio ou inovação aberta",
+      "Consultorias e cursos de captação de recursos"
+    ],
+    "porQue": [
+      { "titulo": "Público qualificado", "texto": "Texto provisório sobre quem visita o site." },
+      { "titulo": "Transparência", "texto": "Texto provisório: o selo sempre mostra quem patrocina." }
+    ],
+    "pacotes": [
+      {
+        "id": "destaque-inicio",
+        "nome": "Destaque na página inicial",
+        "precoCheio": 0,
+        "precoLancamento": 0,
+        "periodo": "por 30 dias",
+        "vagas": "1 vaga por vez",
+        "inclui": ["1ª vaga do destaque na página inicial", "Selo Patrocinado por <sua organização>", "Relatório de cliques"],
+        "naoInclui": ["Mudança na ordem da busca ou dos filtros"],
+        "destaque": false
+      },
+      {
+        "id": "destaque-publico",
+        "nome": "Destaque por público",
+        "precoCheio": 0,
+        "precoLancamento": 0,
+        "periodo": "por 30 dias",
+        "vagas": "1 vaga por página",
+        "inclui": ["Vaga reservada nas páginas do público e da área", "Bloco no resumo da semana", "Relatório de cliques"],
+        "naoInclui": ["Alteração da compatibilidade com o perfil"],
+        "destaque": true
+      }
+    ],
+    "comoFunciona": [
+      { "titulo": "Contato", "texto": "Texto provisório: você envia a chamada e o período." },
+      { "titulo": "Conferência", "texto": "Texto provisório: conferimos a chamada na fonte oficial." },
+      { "titulo": "Publicação", "texto": "Texto provisório: o destaque entra no ar com o selo." }
+    ],
+    "regras": [
+      "Selo “Patrocinado por <nome do patrocinador>” sempre visível.",
+      "O patrocínio não altera a busca, os filtros, a compatibilidade nem a ordem das listas.",
+      "O destaque ocupa uma vaga reservada e sinalizada.",
+      "Só chamadas reais, abertas e conferidas na fonte oficial."
+    ],
+    "faq": [
+      { "pergunta": "Pergunta provisória?", "resposta": "Resposta provisória." }
+    ],
+    "chamada": {
+      "titulo": "Vamos conversar?",
+      "texto": "Texto provisório da chamada final.",
+      "botao": "Pedir proposta"
+    }
+  },
+  "apoie": {
+    "titulo": "Apoie o Fundos Brasil",
+    "subtitulo": "Texto provisório: o site é gratuito e independente.",
+    "porQue": ["Motivo provisório 1", "Motivo provisório 2"],
+    "usoDoDinheiro": [
+      { "item": "Hospedagem e domínio", "valor": "Texto provisório" },
+      { "item": "Verificação diária das fontes", "valor": "Texto provisório" }
+    ],
+    "formas": [
+      { "id": "pix", "titulo": "Pix", "texto": "Texto provisório sobre o Pix." },
+      { "id": "apoiase", "titulo": "Apoia.se", "texto": "Texto provisório sobre o apoio mensal." }
+    ],
+    "transparencia": "Texto provisório sobre prestação de contas do apoio.",
+    "nota": "Texto provisório: o apoio é voluntário e não muda a curadoria."
+  },
+  "pro": {
+    "nome": "Fundos Brasil Pro",
+    "preco": 49,
+    "periodo": "mês",
+    "status": "Em breve",
+    "inclui": ["Recurso provisório 1", "Recurso provisório 2"],
+    "chamada": "Entrar na lista de espera"
+  }
+}

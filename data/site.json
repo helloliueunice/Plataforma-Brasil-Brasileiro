@@ -10,9 +10,24 @@
     "ga4": ""
   },
   "apoio": {
-    "_leia": "Link para apoiar o projeto (Apoia.se, Catarse, página de Pix etc.). Vazio = botão oculto.",
+    "_leia": "Formas de apoio exibidas em /apoie/. Vazio = oculto (a página mostra 'em breve'). pix: chave (e-mail, telefone +55DDNÚMERO, CPF/CNPJ só com números ou chave aleatória), nome do recebedor (até 25 letras) e cidade (até 15) — usados para gerar o Pix copia e cola e o QR Code. apoiase: endereço da campanha no Apoia.se. url: outro link de apoio (Catarse etc.), opcional.",
     "url": "",
-    "texto": "Apoie o Fundos Brasil"
+    "texto": "Apoie o Fundos Brasil",
+    "pix": {
+      "chave": "",
+      "nome": "",
+      "cidade": ""
+    },
+    "apoiase": ""
+  },
+  "comercial": {
+    "_leia": "Contato para anunciantes em /anuncie/. email: endereço PROFISSIONAL que pode ser publicado no site (botões abrem o e-mail com o assunto preenchido). formulario: URL de um formulário (Google Forms, Tally). Vazio nos dois = usa o formulário de parceria do GitHub.",
+    "email": "",
+    "formulario": ""
+  },
+  "pro": {
+    "_leia": "Plano Pro (em breve). listaEspera: URL do formulário da lista de espera. Vazio = usa o mesmo contato comercial.",
+    "listaEspera": ""
   },
   "boletim": {
     "_leia": "Link de inscrição no boletim semanal (ex.: Substack, Buttondown, Google Forms). Vazio = usa o feed RSS.",

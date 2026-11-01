@@ -407,5 +407,10 @@ export const ESQUEMA_CAMPOS = [
     ['fonte', 'URL', 'recomendado', 'Onde a informação foi conferida.'],
     ['verificadoEm', 'data', 'recomendado', 'Quando a informação foi conferida.'],
     ['criterios', 'lista de objetos', 'não', 'Critérios de avaliação: {"nome", "peso"} (peso em %, ou null).'],
-    ['docsExtras', 'lista de textos', 'não', 'Documentos específicos da chamada, além dos usuais de cada perfil.']
+    ['docsExtras', 'lista de textos', 'não', 'Documentos específicos da chamada, além dos usuais de cada perfil.'],
+    ['patrocinado', 'booleano', 'não (contrato)', 'true quando a chamada tem destaque patrocinado (sinalizado; não altera busca, filtros nem ordem).'],
+    ['patrocinador', 'texto', 'não (contrato)', 'Nome de quem patrocina o destaque (até 80 caracteres), exibido no selo "Patrocinado por".'],
+    ['patrocinioInicio', 'data', 'não (contrato)', 'Início do destaque patrocinado.'],
+    ['patrocinioAte', 'data', 'não (contrato)', 'Fim do destaque patrocinado.'],
+    ['patrocinioVagas', 'lista de textos', 'não (contrato)', 'Vagas reservadas do destaque: "inicio", "publico", "area", "semana" (padrão ["inicio"]).']
 ];

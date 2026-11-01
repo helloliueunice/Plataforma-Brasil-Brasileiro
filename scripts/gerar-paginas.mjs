@@ -18,6 +18,9 @@ import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 import { GUIAS, PUBLICOS_HUB, ESQUEMA_CAMPOS } from './conteudo.mjs';
 import { rss, calendario, comparar, semanaISO, somaDias } from './feeds.mjs';
+import { patrocinioAtivo, textoSelo, escolherVaga } from './patrocinio.mjs';
+import { brCodePix } from './pix.mjs';
+import { qrSvg } from './qrcode.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PADRAO = 'https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro';
@@ -70,7 +73,8 @@ const hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' })
 const statusEm = (e, dia = hoje) => (dia < e.abertura ? 'em-breve' : dia <= e.encerramento ? 'aberto' : 'fechado');
 const ROTULO = { aberto: 'Inscrições abertas', 'em-breve': 'Em breve', fechado: 'Encerrado' };
 const mesAno = new Date(`${hoje}T12:00:00`).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' }).replace(/^./, c => c.toUpperCase());
-const patrocinado = e => !!e.patrocinado && (!e.patrocinioAte || e.patrocinioAte >= hoje) && statusEm(e) !== 'fechado';
+// Destaque patrocinado (regras em scripts/patrocinio.mjs): período, chamada não encerrada e vagas contratadas
+const patrocinado = (e, vaga) => patrocinioAtivo(e, hoje, vaga);
 // Imagem de prévia própria do edital (gerada por scripts/gerar-imagens.mjs), se existir
 const ogDoEdital = e => { const f = `assets/og/edital-${e.id}.jpg`; return fs.existsSync(path.join(RAIZ, f)) ? `${SITE}/${f}` : null; };
 
@@ -82,7 +86,12 @@ const headExtras = () => [
     cfg.analytics?.ga4 ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${esc(cfg.analytics.ga4)}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${esc(cfg.analytics.ga4)}');</script>` : ''
 ].filter(Boolean).join('\n    ');
 // Eventos do funil: qualquer elemento com data-evento conta um clique
-const SCRIPT_EVENTOS = `document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;var n=a.getAttribute('data-evento');try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}});`;
+// (vários eventos separados por espaço: "patrocinio-clique patrocinio-12")
+const SCRIPT_EVENTOS = `document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});`;
+
+// Alguma forma de apoio configurada? (senão /apoie/ mostra "em breve")
+const pixCfg = cfg.apoio?.pix || {};
+const apoioConfigurado = !!(pixCfg.chave || cfg.apoio?.apoiase || cfg.apoio?.url);
 
 /* ---------- Validação ---------- */
 const avisos = [];
@@ -231,11 +240,11 @@ ${corpo}
     <footer class="rodape">
         <p><strong>${NOME}</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
         <nav class="rodape-links" aria-label="Editais por perfil">${Object.values(PUBLICOS_HUB).map(h => `<a href="${rel}para/${h.slug}/">${esc(h.titulo.replace('Editais abertos ', 'Editais ').replace('Editais e programas abertos ', 'Programas '))}</a>`).join(' · ')}</nav>
-        <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}prazos/">Prazos</a> · <a href="${rel}guias/">Guias</a> · <a href="${rel}glossario/">Glossário</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}sugerir-edital/">Sugerir edital</a> · <a href="${rel}parcerias/">Parcerias</a></p>
+        <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}prazos/">Prazos</a> · <a href="${rel}guias/">Guias</a> · <a href="${rel}glossario/">Glossário</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}sugerir-edital/">Sugerir edital</a></p>
         <p><a href="${rel}semana/">Resumo da semana</a> · <a href="${rel}dados/#assinar">Assinar (RSS e calendário)</a> · <a href="${rel}dados/">Dados abertos</a> · <a href="${rel}feed.xml">RSS</a></p>
-        <p>${cfg.boletim?.url ? `<a class="btn pequeno primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a> ` : ''}${cfg.whatsappCanal ? `<a class="btn pequeno whats" href="${esc(cfg.whatsappCanal)}" target="_blank" rel="noopener" data-evento="canal-whatsapp">Canal no WhatsApp</a> ` : ''}${cfg.apoio?.url ? `<a class="btn pequeno" href="${esc(cfg.apoio.url)}" target="_blank" rel="noopener" data-evento="apoio">${esc(cfg.apoio.texto || 'Apoie')}</a>` : ''}</p>
+        <p>${cfg.boletim?.url ? `<a class="btn pequeno primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a> ` : ''}${cfg.whatsappCanal ? `<a class="btn pequeno whats" href="${esc(cfg.whatsappCanal)}" target="_blank" rel="noopener" data-evento="canal-whatsapp">Canal no WhatsApp</a> ` : ''}${apoioConfigurado ? `<a class="btn pequeno" href="${rel}apoie/" data-evento="apoio">${esc(cfg.apoio?.texto || 'Apoie')}</a>` : ''}</p>
         <p class="nota">${demonstrativo ? 'Dados demonstrativos. ' : ''}Informações de ${data(geradoEm)}. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
-        <p class="nota"><a href="${rel}privacidade/">Privacidade</a> · <a href="${rel}termos/">Termos de uso</a></p>
+        <p class="nota"><a href="${rel}privacidade/">Privacidade</a> · <a href="${rel}termos/">Termos de uso</a> · <a href="${rel}apoie/">Apoie</a> · <a href="${rel}anuncie/">Anuncie</a></p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)
@@ -264,10 +273,18 @@ const selo = e => {
 };
 const publicoTxt = e => e.publico.map(p => PUBLICOS[p] || p).join(', ');
 
+// Selo de patrocínio (CDC arts. 36-37; CONAR): sempre com o nome de quem patrocina e a explicação
+const AVISO_PATROCINIO = 'Destaque pago. Não altera a busca, os filtros, a compatibilidade nem a ordem das listas.';
+const seloPatrocinio = (e, rel) => `<span class="selo patrocinado" title="${AVISO_PATROCINIO}">${esc(textoSelo(e))}</span> <a class="por-que" href="${rel}anuncie/#regras">Por que estou vendo isto?</a>`;
+const eventoPatrocinio = e => ` data-evento="patrocinio-clique patrocinio-${e.id}"`;
+// Em listas de uma linha (prazos, semana): link com medição + selo
+const linkEdital = (e, rel) => `<a href="${rel}editais/${slugEdital(e)}/"${patrocinado(e) ? eventoPatrocinio(e) : ''}>${esc(e.titulo)}</a>${patrocinado(e) ? ' ' + seloPatrocinio(e, rel) : ''}`;
+
 function cartao(e, rel) {
-    return `<li class="cartao">
-            <div class="selos">${patrocinado(e) ? '<span class="selo patrocinado">Patrocinado</span> ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span></div>
-            <h3><a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a></h3>
+    const p = patrocinado(e);
+    return `<li class="cartao${p ? ' tem-patrocinio' : ''}">
+            <div class="selos">${p ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span></div>
+            <h3><a href="${rel}editais/${slugEdital(e)}/"${p ? eventoPatrocinio(e) : ''}>${esc(e.titulo)}</a></h3>
             <p>${esc(e.instituicao)} · <strong>${valorTxt(e)}</strong>${temValor(e) ? ' por proposta' : ''} · ${esc(publicoTxt(e))}</p>
             <p class="nota">Inscrições: ${data(e.abertura)} a ${data(e.encerramento)} · ${esc(e.abrangencia)}</p>
         </li>`;
@@ -281,6 +298,17 @@ const assinar = (rel, chave, rotulo) => `<div class="assinar" role="group" aria-
             <a class="assinar-ajuda" href="${rel}dados/#assinar">Como assinar</a>
         </div>`;
 
+// Vaga reservada e sinalizada (1 por página), fora da lista ordenada — que continua íntegra, com o mesmo
+// edital na sua posição normal. Com mais de um patrocínio vigente para a vaga, rodízio diário.
+function vagaPatrocinada(candidatos, vaga, rel) {
+    const e = escolherVaga(candidatos.filter(x => patrocinado(x, vaga)), hoje);
+    if (!e) return '';
+    return `<aside class="vaga-patrocinada" aria-label="Destaque patrocinado" data-vaga="${vaga}" data-patrocinio="${e.id}">
+            <p class="vaga-rotulo"><strong>Destaque patrocinado</strong> <span>· vaga reservada, fora da ordem da lista</span></p>
+            <ul class="cartoes">${cartao(e, rel)}</ul>
+        </aside>`;
+}
+
 function escrever(rota, html) {
     const destino = path.join(RAIZ, rota);
     fs.mkdirSync(path.dirname(destino), { recursive: true });
@@ -289,7 +317,7 @@ function escrever(rota, html) {
 
 // Remove páginas geradas anteriormente (editais renomeados ou removidos)
 // (semana/ não é apagada: guarda o arquivo dos resumos semanais anteriores)
-for (const dir of ['editais', 'instituicoes', 'para', 'area', 'prazos', 'glossario', 'guias', 'parcerias', 'sugerir-edital', 'privacidade', 'termos', 'dados', 'feeds', 'cal']) fs.rmSync(path.join(RAIZ, dir), { recursive: true, force: true });
+for (const dir of ['editais', 'instituicoes', 'para', 'area', 'prazos', 'glossario', 'guias', 'parcerias', 'anuncie', 'apoie', 'sugerir-edital', 'privacidade', 'termos', 'dados', 'feeds', 'cal']) fs.rmSync(path.join(RAIZ, dir), { recursive: true, force: true });
 
 /* ---------- Página de cada edital ---------- */
 for (const e of editais) {
@@ -336,7 +364,7 @@ for (const e of editais) {
 
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(e.titulo)}</span></nav>
-        <div class="selos">${patrocinado(e) ? '<span class="selo patrocinado">Patrocinado</span> ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span>${e.fluxoContinuo === true ? ' <span class="selo neutro">Fluxo contínuo</span>' : ''}</div>
+        <div class="selos">${patrocinado(e) ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span>${e.fluxoContinuo === true ? ' <span class="selo neutro">Fluxo contínuo</span>' : ''}</div>
         ${e.numero ? `<p class="numero">${esc(e.numero)}</p>` : ''}
         <h1>${esc(e.titulo)}</h1>
         <p class="sub">${ag ? `<a href="${rel}instituicoes/${e.agencia}/">${esc(e.instituicao)}</a>` : esc(e.instituicao)} · ${esc(area)} · ${esc(e.abrangencia)}</p>
@@ -344,7 +372,7 @@ for (const e of editais) {
 
         <div class="acoes">
             <a class="btn primario" href="${rel}#edital-${e.id}" data-evento="edital-acompanhar">Acompanhar e ver o checklist</a>
-            ${e.link ? `<a class="btn" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial">Edital oficial</a>` : ''}
+            ${e.link ? `<a class="btn" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial${patrocinado(e) ? ` patrocinio-oficial-${e.id}` : ''}">Edital oficial</a>` : ''}
             <a class="btn whats" href="https://wa.me/?text=${encodeURIComponent(textoWhats)}" target="_blank" rel="noopener noreferrer" data-evento="edital-whatsapp">Enviar no WhatsApp</a>
         </div>
 
@@ -521,6 +549,7 @@ for (const [pub, h] of Object.entries(PUBLICOS_HUB)) {
         <p class="sub">${lista.length ? `${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} · atualizado em ${data(geradoEm)}` : `Atualizado em ${data(geradoEm)}`}</p>
         <div class="acoes"><a class="btn primario" href="${rel}#editais?publico=${pub}" data-evento="hub-plataforma">Ver compatibilidade com o meu perfil</a></div>
         ${assinar(rel, `publico-${pub}`, 'Assinar novos editais deste perfil')}
+        ${vagaPatrocinada(lista, 'publico', rel)}
         ${lista.length ? `<section><h2>Chamadas abertas e previstas</h2><ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul></section>` : blocoVazio(rel)}
         <section><h2>Como funciona</h2>${h.intro.replace(/\{raiz\}/g, rel)}</section>
         <section><h2>Dicas rápidas</h2><ul class="lista">${h.dicas.map(d => `<li>${esc(d)}</li>`).join('')}</ul></section>
@@ -548,6 +577,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
         <h1>Editais abertos de ${esc(nomeArea)}</h1>
         <p class="sub">${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} · atualizado em ${data(geradoEm)}</p>
         ${assinar(rel, `area-${slug}`, 'Assinar editais desta área')}
+        ${vagaPatrocinada(lista, 'area', rel)}
         <ul class="cartoes">${lista.map(e => cartao(e, rel)).join('')}</ul>
         <section><h2>Por perfil</h2><ul class="lista">${Object.entries(PUBLICOS_HUB).map(([p, h]) => `<li><a href="${rel}para/${h.slug}/">${esc(h.titulo)}</a></li>`).join('')}</ul></section>
         <section><h2>Guias</h2>${linkGuias(rel)}</section>`
@@ -560,7 +590,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
     const breve = editais.filter(e => statusEm(e) === 'em-breve').sort((a, b) => a.abertura.localeCompare(b.abertura));
     const url = `${SITE}/prazos/`;
     if (ab.length + breve.length >= MIN_INDEXAVEL) urlsExtras.push([url, 'daily', '0.8']);
-    const linha = e => `<li><span class="data">${data(e.encerramento).slice(0, 5)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)} · ${valorTxt(e)}</span> ${selo(e)}</li>`;
+    const linha = e => `<li><span class="data">${data(e.encerramento).slice(0, 5)}</span> ${linkEdital(e, rel)} <span class="nota">· ${esc(e.instituicao)} · ${valorTxt(e)}</span> ${selo(e)}</li>`;
     escrever('prazos/index.html', layout({
         rel, url, ativo: 'editais', robots: ab.length + breve.length >= MIN_INDEXAVEL ? '' : 'noindex,follow',
         titulo: `Prazos de editais: chamadas que encerram em breve (${mesAno}) | ${NOME}`,
@@ -572,7 +602,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
         <div class="acoes"><a class="btn primario" href="${rel}#editais?view=calendario" data-evento="prazos-calendario">Ver no calendário e exportar para a agenda</a></div>
         ${assinar(rel, 'todos', 'Assinar todos os prazos')}
         <section><h2>Inscrições abertas, por prazo final</h2>${ab.length ? `<ul class="agenda">${ab.map(linha).join('')}</ul>` : '<p>Nenhuma chamada aberta no momento.</p>'}</section>
-        ${breve.length ? `<section><h2>Abrem em breve</h2><ul class="agenda">${breve.map(e => `<li><span class="data">${data(e.abertura).slice(0, 5)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)} · abre em ${data(e.abertura)}</span></li>`).join('')}</ul></section>` : ''}`
+        ${breve.length ? `<section><h2>Abrem em breve</h2><ul class="agenda">${breve.map(e => `<li><span class="data">${data(e.abertura).slice(0, 5)}</span> ${linkEdital(e, rel)} <span class="nota">· ${esc(e.instituicao)} · abre em ${data(e.abertura)}</span></li>`).join('')}</ul></section>` : ''}`
     }));
 }
 
@@ -641,37 +671,177 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
     }
 }
 
-/* ---------- Parcerias (monetização com transparência) e sugestão de edital ---------- */
+/* ---------- Monetização: /anuncie/ (patrocínio), /apoie/ (Pix e Apoia.se), /parcerias/ (antigo endereço) ---------- */
+// Textos em data/comercial.json; contatos e dados de pagamento em data/site.json (vazios = ocultos).
 const contatoHref = cfg.contato ? (/^https?:/.test(cfg.contato) ? cfg.contato : `mailto:${cfg.contato}`) : `${REPO}/issues/new?template=parceria.yml`;
 const sugestaoHref = cfg.formularioSugestao || `${REPO}/issues/new?template=sugerir-edital.yml`;
+const COM = lerJson(path.join(RAIZ, 'data', 'comercial.json'), {}) || {};
+const ANU = COM.anuncie || {}, APO = COM.apoie || {}, PRO = COM.pro || {};
+const arr = v => (Array.isArray(v) ? v : []);
+const emailOk = s => /^[^@\s<>"]+@[^@\s<>"]+\.[^@\s<>"]+$/.test(String(s || '').trim());
+const urlOk = s => /^https:\/\/\S+$/i.test(String(s || '').trim());
+// Só publica o que está em site.json: e-mail comercial → mailto com assunto; senão formulário; senão o formulário de parceria
+const comercialHref = assunto => (emailOk(cfg.comercial?.email) ? `mailto:${cfg.comercial.email.trim()}?subject=${encodeURIComponent(assunto)}` : urlOk(cfg.comercial?.formulario) ? cfg.comercial.formulario.trim() : contatoHref);
+const contatoEhGithub = !emailOk(cfg.comercial?.email) && !urlOk(cfg.comercial?.formulario) && !cfg.contato;
+const alvo = href => (/^mailto:/.test(href) ? '' : ' target="_blank" rel="noopener"');
+const brl = n => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 }).format(Number(n));
+const precoHTML = p => {
+    const cheio = Number(p.precoCheio) || 0, lanc = Number(p.precoLancamento) || 0;
+    if (lanc > 0 && cheio > lanc) return `<span class="preco-cheio"><span class="sr-only">De </span><s>${brl(cheio)}</s></span> <strong class="preco-atual"><span class="sr-only">por </span>${brl(lanc)}</strong> <span class="selo em-breve">Preço de lançamento</span>`;
+    if (lanc > 0 || cheio > 0) return `<strong class="preco-atual">${brl(lanc || cheio)}</strong>`;
+    return '<strong class="preco-atual">Sob consulta</strong>';
+};
+const REGRAS_BASE = [
+    `Selo “Patrocinado por <nome do patrocinador>” sempre visível, com link para estas regras.`,
+    'O patrocínio não altera a busca, os filtros, a compatibilidade com o perfil nem a ordem das listas.',
+    'O destaque ocupa uma vaga reservada e sinalizada (uma por página), fora da lista ordenada.',
+    'Só chamadas reais, com inscrições abertas ou previstas e conferidas na fonte oficial.'
+];
+const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
 {
     const rel = '../';
-    urlsExtras.push([`${SITE}/parcerias/`, 'monthly', '0.5']);
+    const url = `${SITE}/anuncie/`;
+    urlsExtras.push([url, 'monthly', '0.5']);
+    const pacotes = arr(ANU.pacotes);
+    const regras = arr(ANU.regras).length ? arr(ANU.regras) : REGRAS_BASE;
+    const proHref = urlOk(cfg.pro?.listaEspera) ? cfg.pro.listaEspera.trim() : comercialHref(`Lista de espera — ${PRO.nome || 'Plano Pro'}`);
+    const precoPro = Number(PRO.preco) > 0 ? Number(PRO.preco) : 49;
+    const offers = [
+        ...pacotes.filter(p => Number(p.precoLancamento || p.precoCheio) > 0).map(p => ({ '@type': 'Offer', name: p.nome, price: Number(p.precoLancamento || p.precoCheio), priceCurrency: 'BRL', description: [p.periodo, p.vagas].filter(Boolean).join(' · '), url: `${url}#pacote-${slugify(p.id || p.nome)}` })),
+        { '@type': 'Offer', name: PRO.nome || 'Plano Pro', price: precoPro, priceCurrency: 'BRL', availability: 'https://schema.org/PreOrder', url: `${url}#pro` }
+    ];
+    escrever('anuncie/index.html', layout({
+        rel, url, ativo: 'anuncie',
+        titulo: `${ANU.titulo || 'Anuncie'}: destaque patrocinado de editais | ${NOME}`,
+        descricao: corta(`${ANU.subtitulo ? ANU.subtitulo + ' ' : ''}Destaque patrocinado de editais com selo transparente, vaga reservada e regras claras.`, 158),
+        jsonld: { '@context': 'https://schema.org', '@type': 'Service', name: ANU.titulo || `Anuncie no ${NOME}`, serviceType: 'Destaque patrocinado de editais', description: ANU.subtitulo || '', url, areaServed: { '@type': 'Country', name: 'Brasil' }, provider: { '@type': 'Organization', name: NOME, url: `${SITE}/` }, offers },
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Anuncie</span></nav>
+        <h1>${esc(ANU.titulo || `Anuncie no ${NOME}`)}</h1>
+        ${ANU.subtitulo ? `<p class="sub">${esc(ANU.subtitulo)}</p>` : ''}
+        <div class="acoes"><a class="btn primario" href="${esc(comercialHref(`Anunciar no ${NOME}`))}"${alvo(comercialHref(''))} data-evento="anuncie-contato">${esc(botaoTexto)}</a> <a class="btn" href="#regras">Ver as regras</a></div>
+        ${arr(ANU.paraQuem).length ? `<section aria-labelledby="para-quem"><h2 id="para-quem">Para quem é</h2><ul class="lista">${arr(ANU.paraQuem).map(t => `<li>${esc(t)}</li>`).join('')}</ul></section>` : ''}
+        ${arr(ANU.porQue).length ? `<section aria-labelledby="por-que"><h2 id="por-que">Por que anunciar aqui</h2><ul class="grade-blocos">${arr(ANU.porQue).map(b => `<li><h3>${esc(b.titulo)}</h3><p>${esc(b.texto)}</p></li>`).join('')}</ul></section>` : ''}
+        ${pacotes.length ? `<section aria-labelledby="pacotes"><h2 id="pacotes">Pacotes</h2>
+            <ul class="pacotes">${pacotes.map(p => `<li class="pacote${p.destaque ? ' recomendado' : ''}" id="pacote-${slugify(p.id || p.nome)}">
+                ${p.destaque ? '<p class="pacote-marca">Recomendado</p>' : ''}
+                <h3>${esc(p.nome)}</h3>
+                <p class="preco">${precoHTML(p)}</p>
+                ${p.periodo || p.vagas ? `<p class="nota">${esc([p.periodo, p.vagas].filter(Boolean).join(' · '))}</p>` : ''}
+                ${arr(p.inclui).length ? `<p class="rotulo-lista">Inclui</p><ul class="lista">${arr(p.inclui).map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+                ${arr(p.naoInclui).length ? `<p class="rotulo-lista">Não inclui</p><ul class="lista nao-inclui">${arr(p.naoInclui).map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+                <a class="btn${p.destaque ? ' primario' : ''}" href="${esc(comercialHref(`Anunciar no ${NOME}: ${p.nome}`))}"${alvo(comercialHref(''))} data-evento="anuncie-pacote-${esc(slugify(p.id || p.nome))}">${esc(botaoTexto)}<span class="sr-only">: ${esc(p.nome)}</span></a>
+            </li>`).join('')}</ul>
+            <p class="nota">Cobrança por proposta comercial, combinada diretamente com a equipe. Publicar uma chamada continua gratuito: <a href="${rel}sugerir-edital/">sugira um edital</a>.</p></section>` : ''}
+        ${arr(ANU.comoFunciona).length ? `<section aria-labelledby="como-funciona"><h2 id="como-funciona">Como funciona</h2><ol class="passos">${arr(ANU.comoFunciona).map(b => `<li><h3>${esc(b.titulo)}</h3><p>${esc(b.texto)}</p></li>`).join('')}</ol></section>` : ''}
+        <section id="regras" aria-labelledby="regras-titulo"><h2 id="regras-titulo">Regras do patrocínio</h2>
+            <ul class="lista">${regras.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+            <p class="nota">Publicidade identificada como tal, conforme o Código de Defesa do Consumidor (arts. 36 e 37) e o Código Brasileiro de Autorregulamentação Publicitária (CONAR). Nenhum dado pessoal de quem usa o site é vendido ou repassado a patrocinadores: o relatório traz apenas contagens agregadas de cliques.</p></section>
+        ${arr(ANU.faq).length ? `<section aria-labelledby="faq"><h2 id="faq">Perguntas frequentes</h2><div class="faq">${arr(ANU.faq).map(q => `<details><summary>${esc(q.pergunta)}</summary><p>${esc(q.resposta)}</p></details>`).join('')}</div></section>` : ''}
+        <section id="pro" class="bloco-pro" aria-labelledby="pro-titulo">
+            <h2 id="pro-titulo">${esc(PRO.nome || 'Plano Pro')} <span class="selo neutro">${esc(PRO.status || 'Em breve')}</span></h2>
+            <p class="preco"><strong class="preco-atual">${brl(precoPro)}</strong><span><span aria-hidden="true">/</span><span class="sr-only">por </span>${esc(PRO.periodo || 'mês')}</span></p>
+            ${arr(PRO.inclui).length ? `<ul class="lista">${arr(PRO.inclui).map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+            <p class="nota">Ainda não está à venda: a lista de espera não gera cobrança nem compromisso. Tudo o que é gratuito hoje continua gratuito.</p>
+            <div class="acoes"><a class="btn" href="${esc(proHref)}"${alvo(proHref)} data-evento="pro-lista-espera">${esc(PRO.chamada || 'Entrar na lista de espera')}</a></div>
+        </section>
+        <section class="chamada" aria-labelledby="chamada-titulo">
+            <h2 id="chamada-titulo">${esc(ANU.chamada?.titulo || 'Vamos conversar?')}</h2>
+            ${ANU.chamada?.texto ? `<p>${esc(ANU.chamada.texto)}</p>` : ''}
+            <div class="acoes"><a class="btn primario" href="${esc(comercialHref(`Anunciar no ${NOME}`))}"${alvo(comercialHref(''))} data-evento="anuncie-contato">${esc(botaoTexto)}</a></div>
+            ${contatoEhGithub ? '<p class="nota">O formulário de parceria fica no GitHub e é público: descreva a chamada e o período, sem dados pessoais. Combinamos o restante em contato privado.</p>' : ''}
+        </section>`
+    }));
+}
+{
+    const rel = '../';
+    const url = `${SITE}/apoie/`;
+    urlsExtras.push([url, 'monthly', '0.5']);
+    let pix = null;
+    if (pixCfg.chave) {
+        try {
+            const codigo = brCodePix({ chave: pixCfg.chave, nome: pixCfg.nome || NOME, cidade: pixCfg.cidade || 'BRASIL' });
+            pix = { codigo, qr: qrSvg(codigo, { rotulo: 'QR Code do Pix para apoiar o projeto' }) };
+        } catch (err) { avisos.push(`Pix não gerado: ${err.message}`); }
+    }
+    const apoiase = urlOk(cfg.apoio?.apoiase) ? cfg.apoio.apoiase.trim() : '';
+    const outro = urlOk(cfg.apoio?.url) && cfg.apoio.url.trim() !== apoiase ? cfg.apoio.url.trim() : '';
+    const formasTxt = Object.fromEntries(arr(APO.formas).map(f => [f.id, f]));
+    const formaPix = pix ? `<section class="forma" id="pix" aria-labelledby="pix-titulo">
+            <h2 id="pix-titulo">${esc(formasTxt.pix?.titulo || 'Pix')}</h2>
+            ${formasTxt.pix?.texto ? `<p>${esc(formasTxt.pix.texto)}</p>` : ''}
+            <div class="pix">
+                <figure class="pix-qr">${pix.qr}<figcaption>Aponte a câmera do app do seu banco</figcaption></figure>
+                <div class="pix-dados">
+                    <p class="rotulo-lista">Chave Pix</p>
+                    <p class="pix-chave"><code id="pixChave">${esc(pixCfg.chave)}</code> <button type="button" class="btn pequeno" data-copiar="pixChave" data-evento="apoio-pix-chave">Copiar chave</button></p>
+                    <label class="rotulo-lista" for="pixCodigo">Pix copia e cola</label>
+                    <textarea id="pixCodigo" class="pix-codigo" readonly rows="4" spellcheck="false">${esc(pix.codigo)}</textarea>
+                    <p><button type="button" class="btn pequeno primario" data-copiar="pixCodigo" data-evento="apoio-pix-copia-e-cola">Copiar código</button></p>
+                    <p class="nota">Recebedor: ${esc(pixCfg.nome || NOME)}${pixCfg.cidade ? ` · ${esc(pixCfg.cidade)}` : ''}. Confira o nome no app do banco antes de confirmar. Você escolhe o valor.</p>
+                    <p class="nota" role="status" aria-live="polite" id="copiaStatus"></p>
+                </div>
+            </div>
+        </section>` : '';
+    const formaApoiase = apoiase ? `<section class="forma" id="apoiase" aria-labelledby="apoiase-titulo">
+            <h2 id="apoiase-titulo">${esc(formasTxt.apoiase?.titulo || 'Apoia.se')}</h2>
+            ${formasTxt.apoiase?.texto ? `<p>${esc(formasTxt.apoiase.texto)}</p>` : ''}
+            <div class="acoes"><a class="btn primario" href="${esc(apoiase)}" target="_blank" rel="noopener" data-evento="apoio-apoiase">Apoiar no Apoia.se</a></div>
+        </section>` : '';
+    // Ordem das formas: a de data/comercial.json (pix, apoiase), depois as que faltarem
+    const ordem = [...new Set([...arr(APO.formas).map(f => f.id), 'pix', 'apoiase'])];
+    const formas = ordem.map(id => ({ pix: formaPix, apoiase: formaApoiase }[id] || '')).join('');
+    const usos = arr(APO.usoDoDinheiro);
+    escrever('apoie/index.html', layout({
+        rel, url, ativo: 'apoie',
+        titulo: `${APO.titulo || 'Apoie'} | ${NOME}`,
+        descricao: corta(`${APO.subtitulo ? APO.subtitulo + ' ' : ''}Apoie o ${NOME} com Pix ou contribuição mensal e ajude a manter as fontes conferidas todos os dias.`, 158),
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Apoie</span></nav>
+        <h1>${esc(APO.titulo || `Apoie o ${NOME}`)}</h1>
+        ${APO.subtitulo ? `<p class="sub">${esc(APO.subtitulo)}</p>` : ''}
+        ${apoioConfigurado ? '' : `<div class="aviso" id="em-breve"><strong>Em breve.</strong> As formas de apoio (Pix e contribuição mensal) estão sendo preparadas. Enquanto isso, a melhor ajuda é compartilhar o site com quem procura editais.${cfg.boletim?.url ? ` <a href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener">Receba os novos editais</a>.` : ''}</div>`}
+        ${arr(APO.porQue).length ? `<section aria-labelledby="por-que-apoiar"><h2 id="por-que-apoiar">Por que apoiar</h2><ul class="lista">${arr(APO.porQue).map(t => `<li>${esc(t)}</li>`).join('')}</ul></section>` : ''}
+        ${formas}
+        ${outro ? `<section class="forma" aria-labelledby="outro-titulo"><h2 id="outro-titulo">Outra forma de apoiar</h2><div class="acoes"><a class="btn" href="${esc(outro)}" target="_blank" rel="noopener" data-evento="apoio">${esc(cfg.apoio?.texto || 'Apoiar')}</a></div></section>` : ''}
+        ${usos.length ? `<section aria-labelledby="uso-titulo"><h2 id="uso-titulo">Para onde vai o dinheiro</h2>
+            <div class="tabela-rolagem" role="region" aria-labelledby="uso-titulo" tabindex="0"><table class="tabela"><thead><tr><th scope="col">Item</th><th scope="col">Valor</th></tr></thead>
+            <tbody>${usos.map(u => `<tr><td>${esc(u.item)}</td><td>${typeof u.valor === 'number' ? brl(u.valor) : esc(u.valor)}</td></tr>`).join('')}</tbody></table></div></section>` : ''}
+        ${APO.transparencia ? `<section aria-labelledby="transparencia-titulo"><h2 id="transparencia-titulo">Transparência</h2><p>${esc(APO.transparencia)}</p></section>` : ''}
+        ${APO.nota ? `<p class="aviso">${esc(APO.nota)}</p>` : ''}
+        <p class="nota">Organizações que querem divulgar uma chamada: veja <a href="${rel}anuncie/">Anuncie</a>. Nada é cobrado de quem procura editais.</p>
+        ${pix ? `<script>
+        document.querySelectorAll('[data-copiar]').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var el = document.getElementById(b.getAttribute('data-copiar')), st = document.getElementById('copiaStatus');
+                var txt = el.value !== undefined ? el.value : el.textContent;
+                var feito = function () { st.textContent = b.getAttribute('data-copiar') === 'pixChave' ? 'Chave copiada.' : 'Código Pix copiado. Cole no app do seu banco, em Pix copia e cola.'; };
+                var manual = function () { if (el.select) { el.focus(); el.select(); } else { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); } try { if (document.execCommand('copy')) return feito(); } catch (e) {} st.textContent = 'Selecionado: use Ctrl+C ou "Copiar" do seu aparelho.'; };
+                if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(feito, manual); else manual();
+            });
+        });
+        </script>` : ''}`
+    }));
+}
+{
+    // Endereço antigo: continua funcionando, com o conteúdo resumido e links para /anuncie/ e /apoie/
+    // (canonical aponta para /anuncie/, que concentra o conteúdo; GitHub Pages não faz redirecionamento no servidor)
+    const rel = '../';
     escrever('parcerias/index.html', layout({
-        rel, url: `${SITE}/parcerias/`, ativo: 'parcerias',
-        titulo: `Parcerias, patrocínio e divulgação de editais | ${NOME}`,
-        descricao: 'Divulgue seu edital de graça, destaque chamadas com selo de patrocínio transparente ou leve a plataforma de captação para sua instituição.',
+        rel, url: `${SITE}/anuncie/`,
+        titulo: `Parcerias e patrocínio | ${NOME}`,
+        descricao: `Parcerias com o ${NOME}: destaque patrocinado de chamadas com regras de transparência, apoio por Pix e publicação gratuita de editais.`,
         corpo: `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Parcerias</span></nav>
-        <h1>Parcerias</h1>
-        <p class="sub">O ${NOME} é gratuito para quem busca editais. Financiadores, instituições e empresas podem ampliar o alcance das suas chamadas e apoiar o projeto, sempre com regras editoriais claras.</p>
-        <ul class="cartoes">
-            <li class="cartao"><h3>Publique seu edital — grátis</h3><p>Envie o link da chamada oficial. A equipe confere os dados e publica com página própria, prévia para WhatsApp e entrada no feed e nos alertas.</p><p><a class="btn pequeno primario" href="${esc(sugestaoHref)}" target="_blank" rel="noopener" data-evento="parceria-publicar">Enviar edital</a></p></li>
-            <li class="cartao"><h3>Destaque patrocinado</h3><p>Sua chamada em posição de destaque na página inicial e nas páginas do público-alvo, por tempo definido.</p></li>
-            <li class="cartao"><h3>Patrocínio de conteúdo</h3><p>Apoie um guia, o boletim de editais ou uma seção temática, com crédito visível e independência editorial.</p></li>
-            <li class="cartao"><h3>Para governos, FAPs e fundações</h3><p>Portal de captação e prestação de contas com a sua identidade, monitoramento de chamadas e painel de indicadores para municípios, secretarias e redes.</p></li>
-        </ul>
-        <section><h2>Regras do destaque patrocinado</h2>
-            <ul class="lista">
-                <li>Só chamadas reais, com inscrições abertas e conferidas na fonte oficial.</li>
-                <li>Selo <strong>“Patrocinado”</strong> sempre visível, com o nome de quem patrocina.</li>
-                <li>O destaque ocupa <strong>uma vaga reservada e sinalizada</strong> na página inicial. Não altera a busca, os filtros, a compatibilidade com o perfil nem a ordem da lista de resultados.</li>
-                <li>Recusamos patrocínio de chamadas encerradas, sem fonte oficial verificável ou com publicidade enganosa.</li>
-                <li>Patrocínio por órgão público segue as regras de contratação aplicáveis (Lei 14.133/2021). Conflitos de interesse são informados na página da chamada.</li>
-                <li>Nenhum dado pessoal de usuários é vendido ou compartilhado.</li>
-            </ul></section>
-        <div class="acoes"><a class="btn primario" href="${esc(contatoHref)}" target="_blank" rel="noopener" data-evento="parceria-contato">Falar sobre parceria</a>
-            ${cfg.apoio?.url ? `<a class="btn" href="${esc(cfg.apoio.url)}" target="_blank" rel="noopener" data-evento="apoio">${esc(cfg.apoio.texto || 'Apoie')}</a>` : ''}</div>`
+        <h1>Parcerias e patrocínio</h1>
+        <p class="sub">O conteúdo desta página agora está em <a href="${rel}anuncie/">Anuncie</a>.</p>
+        <div class="acoes"><a class="btn primario" href="${rel}anuncie/" data-evento="parcerias-anuncie">Ver pacotes e regras do patrocínio</a></div>
+        <ul class="lista">
+            <li><a href="${rel}anuncie/">Anuncie</a>: destaque patrocinado de chamadas, pacotes e <a href="${rel}anuncie/#regras">regras de transparência</a>.</li>
+            <li><a href="${rel}apoie/">Apoie</a>: contribua com Pix ou mensalmente.</li>
+            <li><a href="${rel}sugerir-edital/">Sugerir edital</a>: publicar uma chamada é gratuito.</li>
+            <li>Portal para governos, FAPs e fundações: <a href="${esc(comercialHref(`Parceria institucional — ${NOME}`))}"${alvo(comercialHref(''))}>fale com a equipe</a>.</li>
+        </ul>`
     }));
     /* ---------- Privacidade e Termos de uso (LGPD, Marco Civil, CDC) ---------- */
     const responsavel = cfg.responsavel ? esc(cfg.responsavel) : 'a pessoa responsável pelo projeto (repositório público no GitHub)';
@@ -684,7 +854,7 @@ const sugestaoHref = cfg.formularioSugestao || `${REPO}/issues/new?template=suge
         corpo: `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Privacidade</span></nav>
         <h1>Política de Privacidade</h1>
-        <p class="sub">Versão de 31/10/2026. Escrita em linguagem simples, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Marco Civil da Internet (Lei 12.965/2014).</p>
+        <p class="sub">Versão de 01/11/2026. Escrita em linguagem simples, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Marco Civil da Internet (Lei 12.965/2014).</p>
         <section><h2>Quem somos</h2><p>O ${NOME} é um serviço gratuito e informativo mantido por ${responsavel}. Contato: ${canal}.</p></section>
         <section><h2>O que fica só no seu navegador</h2><p>Perfil, favoritos, propostas, checklists, rascunhos, prestações de contas de demonstração e o nome/e-mail do “login” de demonstração são gravados apenas no armazenamento local do seu navegador. <strong>Esses dados não chegam até nós.</strong> Para apagá-los, use “Apagar meus dados” na plataforma ou limpe os dados do site no navegador.</p></section>
         <section><h2>Serviços de terceiros que recebem seu endereço IP</h2><ul class="lista">
@@ -694,24 +864,27 @@ const sugestaoHref = cfg.formularioSugestao || `${REPO}/issues/new?template=suge
             ${cfg.analytics?.goatcounter ? '<li><strong>GoatCounter</strong> (contagem agregada de visitas, sem cookies e sem identificar pessoas).</li>' : ''}
             ${cfg.analytics?.ga4 ? '<li><strong>Google Analytics</strong> (medição de uso; carregado só com o seu consentimento).</li>' : ''}
         </ul><p>Esses serviços podem estar fora do Brasil (transferência internacional, art. 33 da LGPD) e seguem as próprias políticas. Usamos esses serviços por legítimo interesse, para que o site funcione.</p></section>
-        <section><h2>Sugestões de edital e pedidos de parceria</h2><p>São feitos no GitHub e ficam <strong>públicos</strong>. Não informe telefone, CPF, endereço ou e-mail pessoal nesses formulários.</p></section>
+        <section><h2>Sugestões de edital e pedidos de parceria</h2><p>${contatoEhGithub ? 'São feitos no GitHub e ficam <strong>públicos</strong>. Não informe telefone, CPF, endereço ou e-mail pessoal nesses formulários.' : 'Sugestões de edital feitas no GitHub ficam <strong>públicas</strong>: não informe dados pessoais nelas. Pedidos comerciais enviados pelo contato de <a href="' + rel + 'anuncie/">Anuncie</a> são usados só para responder e preparar a proposta.'}</p></section>
+        <section><h2>Apoio (Pix e Apoia.se)</h2><p>A página <a href="${rel}apoie/">Apoie</a> não coleta nenhum dado: o código Pix e o QR Code são gerados no próprio site e o pagamento acontece no app do seu banco. Como em qualquer Pix, o banco informa a quem recebe o nome de quem pagou e parte do CPF ou CNPJ; usamos essas informações apenas para controle financeiro e obrigações legais, sem publicá-las nem compartilhá-las. Contribuições pelo Apoia.se seguem a política de privacidade daquela plataforma.</p></section>
+        <section><h2>Patrocinadores</h2><p>Editais em destaque patrocinado são sinalizados com “Patrocinado por” e o nome de quem patrocina. Patrocinadores recebem só números agregados (quantos cliques o destaque teve), contados sem cookies e sem identificar pessoas. Nenhum dado pessoal de quem usa o site é vendido ou repassado.</p></section>
         <section><h2>Seus direitos</h2><p>Você pode pedir confirmação, acesso, correção ou eliminação de dados pessoais que porventura tratemos (art. 18 da LGPD) pelo contato acima, e também pode recorrer à Autoridade Nacional de Proteção de Dados (ANPD).</p></section>
         <section><h2>Atualizações</h2><p>Mudanças nesta política serão publicadas nesta página, com a data da versão.</p></section>`
     }));
     escrever('termos/index.html', layout({
         rel, url: `${SITE}/termos/`,
         titulo: `Termos de uso | ${NOME}`,
-        descricao: `Condições de uso do ${NOME}: serviço informativo e gratuito; o edital oficial sempre prevalece; conteúdo patrocinado é sinalizado.`,
+        descricao: `Condições de uso do ${NOME}: serviço informativo e gratuito; o edital oficial sempre prevalece; patrocínio sinalizado com o nome de quem patrocina.`,
         corpo: `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Termos de uso</span></nav>
         <h1>Termos de uso</h1>
-        <p class="sub">Versão de 31/10/2026.</p>
+        <p class="sub">Versão de 01/11/2026.</p>
         <ul class="lista">
             <li><strong>Serviço informativo e gratuito.</strong> O ${NOME} reúne e resume editais públicos e privados de fomento. <strong>Não é canal oficial</strong> e não tem vínculo com os órgãos e instituições citados.</li>
             <li><strong>O edital oficial sempre prevalece.</strong> Cada resumo informa a fonte e a data em que foi conferido. Prazos, valores e requisitos podem mudar (retificações, prorrogações); não garantimos que estejam completos ou atualizados. Confirme sempre no documento oficial antes de submeter.</li>
             <li><strong>Inscrições, propostas e prestações de contas reais</strong> são feitas apenas nos sistemas da instituição financiadora. As áreas de projetos e prestação de contas desta plataforma são <strong>simulações</strong>: nada é enviado a ninguém.</li>
             <li><strong>Nomes de instituições</strong> são usados apenas para identificá-las. Textos de editais publicados por órgãos públicos são atos oficiais (Lei 9.610/1998, art. 8º, IV); chamadas de entidades privadas e internacionais são resumidas com redação própria, com link para o original.</li>
-            <li><strong>Conteúdo patrocinado</strong> é sempre sinalizado com o selo “Patrocinado” e segue as regras publicadas em <a href="${rel}parcerias/">Parcerias</a>.</li>
+            <li><strong>Conteúdo patrocinado</strong> é sempre sinalizado com o selo “Patrocinado por” e o nome de quem patrocina, ocupa só vagas reservadas e não altera a busca, os filtros, a compatibilidade nem a ordem das listas. As regras estão em <a href="${rel}anuncie/#regras">Anuncie</a>. A curadoria continua independente: patrocínio não garante publicação de chamada que não atenda aos critérios.</li>
+            <li><strong>Apoio voluntário.</strong> Contribuições por Pix ou Apoia.se são doações ao projeto: não dão acesso a serviços, prioridade na curadoria nem tratamento diferenciado. O plano Pro anunciado como “em breve” ainda não é vendido; a lista de espera não gera cobrança.</li>
             <li><strong>Seus dados:</strong> não insira dados de terceiros nem dados sensíveis. Veja a <a href="${rel}privacidade/">Política de Privacidade</a>.</li>
             <li>Aplica-se a lei brasileira.</li>
         </ul>`
@@ -748,12 +921,12 @@ const sugestaoHref = cfg.formularioSugestao || `${REPO}/issues/new?template=suge
   <language>pt-BR</language>
   <lastBuildDate>${rfc(geradoEm)}</lastBuildDate>
 ${itens.map(e => `  <item>
-    <title>${esc(e.titulo)} — ${esc(e.instituicao)}</title>
+    <title>${patrocinado(e) ? '[Patrocinado] ' : ''}${esc(e.titulo)} — ${esc(e.instituicao)}</title>
     <link>${SITE}/editais/${slugEdital(e)}/</link>
     <guid isPermaLink="true">${SITE}/editais/${slugEdital(e)}/</guid>
     <pubDate>${rfc(e.publicadoEm || e.abertura)}</pubDate>
     <category>${esc(AREAS[e.tema] || e.tema)}</category>
-    <description>${esc(`${e.numero ? e.numero + '. ' : ''}${valorTxt(e)}${temValor(e) ? ' por proposta' : ''} · ${publicoTxt(e)} · inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`)}</description>
+    <description>${esc(`${patrocinado(e) ? `${textoSelo(e)}. ` : ''}${e.numero ? e.numero + '. ' : ''}${valorTxt(e)}${temValor(e) ? ' por proposta' : ''} · ${publicoTxt(e)} · inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`)}</description>
   </item>`).join('\n')}
 </channel>
 </rss>
@@ -768,9 +941,9 @@ const urlEdital = e => `${SITE}/editais/${slugEdital(e)}/`;
 const porId = new Map(editais.map(e => [e.id, e]));
 const descricaoEdital = e => `${e.numero ? e.numero + '. ' : ''}${valorTxt(e)}${temValor(e) && porProposta(e) ? ' por proposta' : ''} · ${publicoTxt(e)} · inscrições de ${data(e.abertura)} a ${data(e.encerramento)}${e.etapaPrazo ? ` (${e.etapaPrazo.toLowerCase()})` : ''}${isoOk(e.propostaCompleta) ? `; proposta completa até ${data(e.propostaCompleta)}` : ''}. ${e.resumo}`.trim();
 const itemRss = e => ({
-    titulo: `${e.titulo} — ${e.instituicao}`, link: urlEdital(e), guid: urlEdital(e),
+    titulo: `${patrocinado(e) ? '[Patrocinado] ' : ''}${e.titulo} — ${e.instituicao}`, link: urlEdital(e), guid: urlEdital(e),
     data: isoOk(e.publicadoEm) ? e.publicadoEm : e.abertura,
-    categorias: [AREAS[e.tema] || e.tema, ...e.publico.map(p => PUBLICOS[p] || p)], descricao: descricaoEdital(e)
+    categorias: [AREAS[e.tema] || e.tema, ...e.publico.map(p => PUBLICOS[p] || p)], descricao: (patrocinado(e) ? `${textoSelo(e)}. ` : '') + descricaoEdital(e)
 });
 const eventosDe = (e, desde = '') => prazosDe(e).filter(p => p.data >= desde).map(p => ({
     uid: `edital-${e.id}-${p.tipo}@fundosbrasil`, data: p.data, carimbo: isoOk(geradoEm) ? geradoEm : hoje,
@@ -848,9 +1021,10 @@ for (const e of editais) {
         <p class="sub">${periodo} · situação em ${data(hoje)}. Editais novos, prazos dos próximos 14 dias e mudanças registradas.</p>
         ${assinar(rel, 'todos', 'Assinar novos editais e prazos')}
         <p class="nota">Mudanças de prazo e valor também têm um <a href="${rel}feeds/alteracoes.xml">feed de alterações</a>.</p>
+        ${arquivo ? '' : vagaPatrocinada(editais, 'semana', rel)}
         <section><h2>Novos nesta semana (${novos.length})</h2>${novos.length ? `<ul class="cartoes">${novos.map(e => cartao(e, rel)).join('')}</ul>` : '<p class="nota">Nenhum edital novo publicado nesta semana até agora.</p>'}</section>
-        <section><h2>Encerram nos próximos 14 dias (${encerrando.length})</h2>${encerrando.length ? `<ul class="agenda">${encerrando.map(({ e, p }) => `<li><span class="data">${dm(p.data)}</span> <a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(p.rotulo)} · ${esc(e.instituicao)} · ${valorTxt(e)}</span></li>`).join('')}</ul>` : '<p class="nota">Nenhum prazo nos próximos 14 dias.</p>'}</section>
-        <section><h2>Alterados nesta semana (${alterados.length})</h2>${alterados.length ? `<ul class="lista">${alterados.map(({ e, lista }) => `<li><a href="${rel}editais/${slugEdital(e)}/">${esc(e.titulo)}</a> <span class="nota">· ${esc(e.instituicao)}</span><br>${lista.map(a => esc(textoAlteracao(a, e))).join('; ')}</li>`).join('')}</ul>` : '<p class="nota">Nenhuma mudança de prazo, valor ou link registrada nesta semana.</p>'}</section>
+        <section><h2>Encerram nos próximos 14 dias (${encerrando.length})</h2>${encerrando.length ? `<ul class="agenda">${encerrando.map(({ e, p }) => `<li><span class="data">${dm(p.data)}</span> ${linkEdital(e, rel)} <span class="nota">· ${esc(p.rotulo)} · ${esc(e.instituicao)} · ${valorTxt(e)}</span></li>`).join('')}</ul>` : '<p class="nota">Nenhum prazo nos próximos 14 dias.</p>'}</section>
+        <section><h2>Alterados nesta semana (${alterados.length})</h2>${alterados.length ? `<ul class="lista">${alterados.map(({ e, lista }) => `<li>${linkEdital(e, rel)} <span class="nota">· ${esc(e.instituicao)}</span><br>${lista.map(a => esc(textoAlteracao(a, e))).join('; ')}</li>`).join('')}</ul>` : '<p class="nota">Nenhuma mudança de prazo, valor ou link registrada nesta semana.</p>'}</section>
         <aside class="aviso">Prazos podem ter horário-limite e etapas anteriores. Confirme sempre no edital oficial.</aside>
         ${!arquivo && anteriores.length ? `<section><h2>Semanas anteriores</h2><ul class="lista">${anteriores.map(d => `<li><a href="${rel}semana/${d}/">Semana ${Number(d.slice(5))} de ${d.slice(0, 4)}</a></li>`).join('')}</ul></section>` : ''}
         ${arquivo ? `<p><a href="${rel}semana/">Ver o resumo da semana atual</a></p>` : `<p class="nota">Endereço permanente deste resumo: <a href="${rel}semana/${sem.chave}/">semana ${sem.semana} de ${sem.ano}</a>.</p>`}`;
@@ -981,7 +1155,7 @@ const seoHome = `<!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="alternate" type="application/rss+xml" title="${NOME} — novos editais" href="${SITE}/feed.xml">
     ${headExtras()}
-    <script>window.SITE_CFG = ${JSON.stringify({ apoio: cfg.apoio?.url ? cfg.apoio : null, boletim: cfg.boletim?.url || '', whatsappCanal: cfg.whatsappCanal || '', sugestao: sugestaoHref, contato: contatoHref }).replace(/</g, '\\u003c')};</script>
+    <script>window.SITE_CFG = ${JSON.stringify({ apoio: cfg.apoio?.url ? { url: cfg.apoio.url, texto: cfg.apoio.texto } : null, apoie: apoioConfigurado, apoioTexto: cfg.apoio?.texto || '', boletim: cfg.boletim?.url || '', whatsappCanal: cfg.whatsappCanal || '', sugestao: sugestaoHref, contato: contatoHref }).replace(/</g, '\\u003c')};</script>
     <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [
         { '@type': 'WebSite', name: NOME, url: `${SITE}/`, inLanguage: 'pt-BR', description: cfg.descricaoCurta },
         { '@type': 'Organization', name: NOME, url: `${SITE}/`, logo: `${SITE}/assets/favicon.svg` }] })}</script>
@@ -995,7 +1169,7 @@ indexHtml = reSeo.test(indexHtml) ? indexHtml.replace(reSeo, seoHome) : indexHtm
     const bloco = `<!-- lista-seo:inicio -->
     <section class="seo-links" aria-labelledby="seoLinksTitulo">
         <h2 id="seoLinksTitulo">Editais abertos agora</h2>
-        <ul>${vig.map(e => `<li><a href="editais/${slugEdital(e)}/">${esc(e.titulo)}</a> — ${esc(e.instituicao)}, até ${data(e.encerramento)}</li>`).join('')}</ul>
+        <ul>${vig.map(e => `<li>${linkEdital(e, '')} — ${esc(e.instituicao)}, até ${data(e.encerramento)}</li>`).join('')}</ul>
         <p><strong>Por perfil:</strong> ${Object.values(PUBLICOS_HUB).map(h => `<a href="para/${h.slug}/">${esc(h.titulo)}</a>`).join(' · ')}</p>
         <p><strong>Guias:</strong> ${GUIAS.map(g => `<a href="guias/${g.slug}/">${esc(g.titulo)}</a>`).join(' · ')} · <a href="glossario/">Glossário</a> · <a href="prazos/">Prazos</a> · <a href="semana/">Resumo da semana</a> · <a href="dados/">Dados abertos</a></p>
     </section>

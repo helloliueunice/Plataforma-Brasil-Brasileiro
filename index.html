@@ -549,6 +549,13 @@ fieldset.form-group { border: 0; padding: 0; }
 .badge-match-alto  { background: var(--open-bg); color: var(--open-fg); border-color: var(--open-bd); }
 .badge-match-medio { background: var(--brand-subtle); color: var(--brand); border-color: var(--brand-border); }
 .badge-patrocinado { background: transparent; color: var(--soon-fg); border-color: var(--soon-bd); }
+/* Destaque patrocinado: vaga reservada e sinalizada (CDC arts. 36-37; CONAR) */
+.vaga-patrocinada { margin: 0 0 var(--s-2); border: var(--bw) solid var(--soon-bd); border-radius: var(--r-lg); overflow: hidden; }
+.vaga-patrocinada .vaga-rotulo { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); align-items: baseline; padding: var(--s-2) var(--s-4) 0; font-size: var(--fs-13); color: var(--text-2); }
+.vaga-patrocinada .vaga-rotulo strong { color: var(--soon-fg); font-weight: var(--fw-semibold); }
+.vaga-patrocinada .edital-card { border-bottom: 0; }
+.por-que { font-size: var(--fs-12); color: var(--text-2); }
+.seo-links .selo.patrocinado { font-size: var(--fs-12); color: var(--soon-fg); }
 .badge-pc-em-analise    { background: var(--soon-bg);   color: var(--soon-fg); }
 .badge-pc-aprovada      { background: var(--open-bg);   color: var(--open-fg); }
 .badge-pc-com-ressalvas { background: var(--soon-bg);   color: var(--soon-fg); border-color: var(--soon-bd); }
@@ -884,6 +891,8 @@ dialog.modal::backdrop { background: rgba(9, 9, 11, 0.45); }
     .facet-chip { flex: none; white-space: nowrap; }
     .edital-card { grid-template-columns: 1fr; padding: var(--s-4) var(--s-10) var(--s-4) 0; }
     .edital-card:hover { background: none; }
+    .vaga-patrocinada .edital-card { padding-left: var(--s-3); padding-right: var(--s-10); }
+    .vaga-patrocinada .vaga-rotulo { padding: var(--s-2) var(--s-3) 0; }
     .edital-header { flex-direction: column; gap: var(--s-1); }
     .edital-value { text-align: left; font-size: var(--fs-14); }
     .edital-value small { display: inline; margin-left: var(--s-1); }
@@ -1479,6 +1488,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                         <p>Tipo de proponente e estado de atuação são eliminatórios: se o edital não aceita seu perfil, ele aparece como “Fora do seu perfil”. Depois somamos pontos por área de interesse, valor por proposta e situação (aberto ou em breve). O detalhe de cada edital mostra os motivos.</p></details>
                     <details><summary>A prestação de contas enviada aqui substitui o sistema oficial?</summary>
                         <p>Não. Esta é uma plataforma demonstrativa para organizar e acompanhar a prestação. O envio oficial deve ser feito no sistema exigido pela instituição financiadora (por exemplo, o Transferegov.br para transferências da União).</p></details>
+                    <details><summary>Como o Fundos Brasil se mantém? O que é “Patrocinado”?</summary>
+                        <p>O site é gratuito para quem procura editais. Ele se mantém com <a href="apoie/" data-track="ajuda-apoie">apoio voluntário</a> (Pix ou contribuição mensal) e com destaques patrocinados. Um edital patrocinado aparece com o selo <strong>“Patrocinado por”</strong> e o nome de quem paga, numa vaga reservada e sinalizada; o patrocínio não muda a busca, os filtros, a compatibilidade com o seu perfil nem a ordem das listas. Veja as <a href="anuncie/#regras">regras do patrocínio</a> ou <a href="anuncie/" data-track="ajuda-anuncie">anuncie</a>.</p></details>
                     <details><summary>Como publicar editais reais para todos os visitantes?</summary>
                         <p>Em Editais, abra <strong>Mais ações → Gerenciar editais</strong>, cadastre ou importe os editais e use <strong>Exportar todos</strong>. Salve o arquivo como <code>editais.json</code> na raiz do repositório: o site passa a carregá-lo automaticamente. O formato está no README.</p></details>
                 </div>
@@ -1566,7 +1577,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     </main>
 
     <footer class="site-footer">
-    <nav class="footer-legal" aria-label="Informações legais"><a href="privacidade/">Privacidade</a> · <a href="termos/">Termos de uso</a> · <a href="parcerias/">Parcerias e patrocínio</a> · <span>Não é um canal oficial dos financiadores: o edital oficial sempre prevalece.</span></nav>
+    <nav class="footer-legal" aria-label="Informações legais"><a href="privacidade/">Privacidade</a> · <a href="termos/">Termos de uso</a> · <a href="apoie/" data-track="rodape-apoie">Apoie</a> · <a href="anuncie/" data-track="rodape-anuncie">Anuncie</a> · <span>Não é um canal oficial dos financiadores: o edital oficial sempre prevalece.</span></nav>
     <!-- lista-seo:inicio -->
     <section class="seo-links" aria-labelledby="seoLinksTitulo">
         <h2 id="seoLinksTitulo">Editais abertos agora</h2>
@@ -1583,7 +1594,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             <a href="glossario/">Glossário</a> ·
             <a href="instituicoes/">Instituições financiadoras</a> ·
             <a href="sugerir-edital/">Sugerir edital</a> ·
-            <a href="parcerias/">Parcerias</a> ·
             <a href="feed.xml">RSS</a> ·
             <a href="https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro" target="_blank" rel="noopener noreferrer">Código aberto</a>
         </nav>
@@ -5912,12 +5922,12 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const fav = favorites.includes(e.id);
             const urgente = st === 'aberto' && diasAte(e.encerramento) <= 7;
             const publico = e.publico.map(p => PUBLICOS[p]).join(', ');
-
+            const patrocinio = patrocinioAtivo(e);
             return `
-            <article class="edital-card ${st}" data-action="details" data-id="${e.id}" tabindex="0" aria-label="Edital: ${esc(e.titulo)}, ${STATUS_LABEL[st]}">
+            <article class="edital-card ${st}" data-action="details" data-id="${e.id}"${patrocinio ? ` data-patrocinio="${e.id}"` : ''} tabindex="0" aria-label="Edital: ${esc(e.titulo)}, ${STATUS_LABEL[st]}${patrocinio ? `, ${esc(textoPatrocinio(e).toLowerCase())}` : ''}">
                 <button class="favorite-btn ${fav ? 'active' : ''}" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Favoritar'}: ${esc(e.titulo)}">${fav ? '★' : '☆'}</button>
                 <div class="edital-badges">
-                    ${patrocinioAtivo(e) ? '<span class="badge badge-patrocinado" title="Destaque patrocinado: não altera filtros, compatibilidade nem ordem dos resultados">Patrocinado</span>' : ''}
+                    ${patrocinio ? seloPatrocinioHTML(e) : ''}
                     ${compatBadge(e)}
                     ${propostas[e.id] && !['interesse', 'preparando'].includes(propostas[e.id].etapa) ? '' : prazoBadge(e)}
                     ${propostas[e.id] ? `<span class="badge badge-neutral">${ETAPA[propostas[e.id].etapa].icone} ${ETAPA[propostas[e.id].etapa].nome}</span>` : ''}
@@ -5967,19 +5977,57 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             container.innerHTML = lista.map(e => editalCardHTML(e)).join('');
         }
 
-        function patrocinioAtivo(e) {
-            return !!e.patrocinado && (!e.patrocinioAte || e.patrocinioAte >= isoDe(HOJE)) && statusEdital(e) !== 'fechado';
+        /* Destaque patrocinado — mesmas regras de scripts/patrocinio.mjs: período (patrocinioInicio..patrocinioAte),
+           chamada não encerrada e vagas contratadas (patrocinioVagas; padrão ["inicio"]). Nunca altera busca,
+           filtros, compatibilidade nem ordem: só o selo e UMA vaga reservada e sinalizada no início. */
+        const VAGAS_PATROCINIO = ['inicio', 'publico', 'area', 'semana'];
+        const AVISO_PATROCINIO = 'Destaque pago. Não altera a busca, os filtros, a compatibilidade nem a ordem das listas.';
+        function vagasPatrocinio(e) {
+            const v = Array.isArray(e.patrocinioVagas) ? e.patrocinioVagas.filter(x => VAGAS_PATROCINIO.includes(x)) : [];
+            return v.length ? v : ['inicio'];
+        }
+        function patrocinioAtivo(e, vaga) {
+            const hoje = isoDe(HOJE);
+            const iso = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
+            return !!e.patrocinado
+                && (!iso(e.patrocinioInicio) || e.patrocinioInicio <= hoje)
+                && (!iso(e.patrocinioAte) || e.patrocinioAte >= hoje)
+                && statusEdital(e) !== 'fechado'
+                && (!vaga || vagasPatrocinio(e).includes(vaga));
+        }
+        function textoPatrocinio(e) {
+            const nome = String(e.patrocinador || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+            return nome ? `Patrocinado por ${nome}` : 'Patrocinado';
+        }
+        function seloPatrocinioHTML(e) {
+            return `<span class="badge badge-patrocinado" title="${AVISO_PATROCINIO}">${esc(textoPatrocinio(e))}<span class="sr-only">. ${AVISO_PATROCINIO}</span></span>`;
+        }
+        // Mais de um patrocínio vigente para a vaga: rodízio diário pela ordem de id (igual às páginas estáticas)
+        function escolherVagaPatrocinada(lista) {
+            if (!lista.length) return null;
+            const ord = [...lista].sort((a, b) => a.id - b.id);
+            const dia = Math.floor(Date.parse(isoDe(HOJE) + 'T12:00:00Z') / DIA_MS);
+            return ord[((dia % ord.length) + ord.length) % ord.length];
+        }
+        // Medição para o relatório ao patrocinador (GoatCounter: evento/patrocinio-clique e evento/patrocinio-<id>)
+        function trackPatrocinio(id) {
+            track('patrocinio-clique');
+            track('patrocinio-' + id);
         }
 
         function renderDestaques() {
             const usarPerfil = perfilAtivo();
             $('destaquesTitulo').textContent = usarPerfil ? 'Recomendados para você' : 'Editais em Destaque';
             const candidatos = editais.filter(e => statusEdital(e) === 'aberto' && (!usarPerfil || avaliarCompat(e).elegivel));
-            // Um patrocinado (sinalizado) pode ocupar o primeiro lugar do destaque; o restante segue a ordem normal
-            const patro = editais.filter(e => patrocinioAtivo(e) && (!usarPerfil || avaliarCompat(e).elegivel)).slice(0, 1);
+            // Um patrocinado (sinalizado, vaga "inicio") pode ocupar o primeiro lugar do destaque; o restante segue a ordem normal
+            const escolhido = escolherVagaPatrocinada(editais.filter(e => patrocinioAtivo(e, 'inicio') && (!usarPerfil || avaliarCompat(e).elegivel)));
+            const patro = escolhido ? [escolhido] : [];
             const destaques = [...patro, ...ordenar(candidatos.filter(e => !patro.includes(e)), usarPerfil ? 'compat' : 'prazo')].slice(0, 3);
+            const vaga = e => `<div class="vaga-patrocinada" role="group" aria-label="Destaque patrocinado">
+                    <p class="vaga-rotulo"><strong>Destaque patrocinado</strong> <span>vaga reservada, fora da ordem da lista</span> <a class="por-que" href="anuncie/#regras">Por que estou vendo isto?</a></p>
+                    ${editalCardHTML(e, { compacto: true })}</div>`;
             $('destaquesList').innerHTML = destaques.length
-                ? destaques.map(e => editalCardHTML(e, { compacto: true })).join('')
+                ? destaques.map(e => (patro.includes(e) ? vaga(e) : editalCardHTML(e, { compacto: true }))).join('')
                 : `<p style="color:var(--gray-dark)">${usarPerfil ? 'Nenhum edital aberto compatível com seu perfil agora. <a href="#editais" style="color:var(--primary);font-weight:600;">Ver todos os editais</a>' : 'Nenhum edital aberto no momento.'}</p>`;
         }
 
@@ -6019,6 +6067,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             $('editalModalContent').innerHTML = `
                 <div class="modal-header">
                     <div class="edital-badges" style="padding-right:0;margin-bottom:0;">
+                        ${patrocinioAtivo(e) ? `${seloPatrocinioHTML(e)} <a class="por-que" href="anuncie/#regras" data-action="sobre-patrocinio">Por que estou vendo isto?</a>` : ''}
                         ${prazoBadge(e)}
                         <span class="badge badge-neutral">${esc(e.modalidade)}</span>
                         <span class="badge badge-${e.procedencia}">${e.procedencia === 'nacional' ? 'Nacional' : 'Internacional'}</span>
@@ -6539,7 +6588,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             if (toISO(r.propostaCompleta)) e.propostaCompleta = toISO(r.propostaCompleta);
             if (/^https?:\/\//i.test(String(r.fonte || ''))) e.fonte = String(r.fonte).trim();
             if (r.preProposta === true || r.preProposta === 'true') e.preProposta = true;
-            if (r.patrocinado) { e.patrocinado = true; if (toISO(r.patrocinioAte)) e.patrocinioAte = toISO(r.patrocinioAte); }
+            if (r.patrocinado === true || r.patrocinado === 'true') {
+                e.patrocinado = true;
+                const nome = String(r.patrocinador || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+                if (nome) e.patrocinador = nome;
+                if (toISO(r.patrocinioInicio)) e.patrocinioInicio = toISO(r.patrocinioInicio);
+                if (toISO(r.patrocinioAte)) e.patrocinioAte = toISO(r.patrocinioAte);
+                const vagas = lista(r.patrocinioVagas).filter(v => ['inicio', 'publico', 'area', 'semana'].includes(v)); // = VAGAS_PATROCINIO (declarado depois)
+                if (vagas.length) e.patrocinioVagas = [...new Set(vagas)];
+            }
             if (toISO(r.verificadoEm)) e.verificadoEm = toISO(r.verificadoEm);
             if (ufs.length) e.ufs = ufs;
             // Campos opcionais da curadoria: só entram se tiverem o formato e os valores permitidos
@@ -6812,7 +6869,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const b = [];
             if (c.boletim) b.push(`<a class="btn btn-primary btn-small" href="${esc(c.boletim)}" target="_blank" rel="noopener" data-track="boletim">Receber novos editais</a>`);
             if (c.whatsappCanal) b.push(`<a class="btn btn-outline btn-small" href="${esc(c.whatsappCanal)}" target="_blank" rel="noopener" data-track="canal-whatsapp">Canal no WhatsApp</a>`);
-            if (c.apoio && c.apoio.url) b.push(`<a class="btn btn-outline btn-small" href="${esc(c.apoio.url)}" target="_blank" rel="noopener" data-track="apoio">${esc(c.apoio.texto || 'Apoie')}</a>`);
+            // Apoio: leva à página /apoie/ (Pix, Apoia.se) quando há alguma forma configurada em data/site.json
+            if (c.apoie || (c.apoio && c.apoio.url)) b.push(`<a class="btn btn-outline btn-small" href="apoie/" data-track="apoio">${esc(c.apoioTexto || (c.apoio && c.apoio.texto) || 'Apoie')}</a>`);
             $('canais').innerHTML = b.join('');
         }
 
@@ -7979,6 +8037,13 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         document.addEventListener('click', ev => {
             const t = ev.target.closest && ev.target.closest('[data-track]');
             if (t) track(t.dataset.track);
+            // Clique em item patrocinado (abrir detalhes ou ir ao portal oficial) conta para o relatório do patrocinador
+            const cardPatro = ev.target.closest && ev.target.closest('[data-patrocinio]');
+            if (cardPatro) {
+                const alvoAcao = ev.target.closest('[data-action]');
+                if (alvoAcao && ['details', 'external'].includes(alvoAcao.dataset.action)) trackPatrocinio(cardPatro.dataset.patrocinio);
+            }
+            if (ev.target.closest && ev.target.closest('[data-action="sobre-patrocinio"]')) return;
             // Fecha menus suspensos ao clicar fora ou ao escolher uma opção
             document.querySelectorAll('details.menu[open]').forEach(d => {
                 if (!d.contains(ev.target) || ev.target.closest('.menu-panel a, .menu-panel button')) d.removeAttribute('open');

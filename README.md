@@ -133,7 +133,61 @@ O plano de lançamento, com distribuição, indicadores e monetização, está e
 - **Design:** design system minimalista (tokens no topo do `<style>` do `index.html` e em `assets/paginas.css`), com modo escuro automático e sem emojis como ícones.
 - **IndexNow:** `scripts/notificar-buscadores.mjs` avisa Bing e outros buscadores a cada página alterada (chave em `data/site.json` e no arquivo `<chave>.txt` da raiz).
 - **Medição do funil:** eventos `edital-abrir`, `edital-whatsapp`, `edital-oficial`, `proposta-*`, `perfil-salvo`, `agenda`, `prestacao-enviada` etc.
-- **Destaque patrocinado:** `"patrocinado": true` e `"patrocinioAte"` no edital; selo sempre visível, sem alterar filtros, compatibilidade ou ordem dos resultados.
+- **Monetização:** destaque patrocinado sinalizado, páginas `/anuncie/` e `/apoie/` — veja a seção [Monetização](#monetização).
+
+## Monetização
+
+Receitas: **destaque patrocinado** (cobrança por proposta comercial, combinada por fora) e **apoio voluntário** (Pix e Apoia.se). O **Plano Pro** (R$ 49/mês) aparece como “em breve”, com lista de espera. Tudo o que é gratuito continua gratuito.
+
+### Regras de transparência (CDC arts. 36–37, CONAR)
+
+- Selo sempre **“Patrocinado por &lt;patrocinador&gt;”** (ou “Patrocinado”, se faltar o nome) no cartão e no detalhe da plataforma, na página do edital, nas listas (editais, instituições, prazos, semana) e nos feeds RSS (título com o prefixo `[Patrocinado] `), com a explicação em `title`/texto para leitor de tela e o link “Por que estou vendo isto?” para `/anuncie/#regras`.
+- O patrocínio **não altera** busca, filtros, compatibilidade com o perfil nem a ordem das listas. Ele só ocupa **uma vaga reservada e sinalizada** por página (“Destaque patrocinado”), fora da lista ordenada — o edital continua na sua posição normal da lista.
+- Vale só no período contratado e enquanto a chamada não encerrar. Com mais de um patrocínio vigente para a mesma vaga, há rodízio diário (por id).
+
+### Como cadastrar um patrocínio (`editais.json`)
+
+```json
+{
+  "id": 107,
+  "titulo": "…",
+  "patrocinado": true,
+  "patrocinador": "Instituto Exemplo",
+  "patrocinioInicio": "2026-11-01",
+  "patrocinioAte": "2026-11-30",
+  "patrocinioVagas": ["inicio", "publico", "area", "semana"]
+}
+```
+
+| Campo | Observações |
+|---|---|
+| `patrocinado` | `true` liga o destaque |
+| `patrocinador` | nome exibido no selo (até 80 caracteres) |
+| `patrocinioInicio`, `patrocinioAte` | `AAAA-MM-DD`; sem início vale desde já; sem fim vale até a chamada encerrar |
+| `patrocinioVagas` | `inicio` (1ª vaga do destaque da página inicial), `publico` (topo das páginas `para/<público>/` dos públicos do edital), `area` (topo de `area/<área>/`), `semana` (bloco em `semana/`). Padrão: `["inicio"]` |
+
+Faça o merge e o workflow regenera as páginas. Na página inicial, quem definiu um perfil só vê o patrocinado se o edital for compatível com ele. As regras ficam em `scripts/patrocinio.mjs` (gerador e relatório) e em `patrocinioAtivo()` no `index.html` (plataforma).
+
+### Relatório ao patrocinador
+
+```
+node scripts/relatorio-patrocinio.mjs              # todos, em Markdown
+node scripts/relatorio-patrocinio.mjs --id 107     # um edital
+node scripts/relatorio-patrocinio.mjs --json       # JSON
+node scripts/relatorio-patrocinio.mjs --hoje 2026-11-30
+```
+
+Lista patrocínios ativos, agendados e encerrados, com período, vagas, páginas onde o destaque aparece e dias na vaga. **Cliques** vêm do GoatCounter (preencha `analytics.goatcounter` em `data/site.json`): cada clique num item patrocinado conta `evento/patrocinio-clique` (total) e `evento/patrocinio-<id>`; o botão “Edital oficial” da página do edital conta `evento/patrocinio-oficial-<id>`. No painel do GoatCounter, escolha o período do patrocínio e filtre por `patrocinio-<id>` (o relatório indica o endereço do painel, o período e o filtro), ou exporte em *Settings › Export* e some a coluna do caminho. Contagem agregada, sem cookies e sem identificar pessoas.
+
+### Textos e contatos
+
+- **`data/comercial.json`**: textos de `/anuncie/` (título, para quem, por que, pacotes com `precoCheio` e `precoLancamento` — preço 0 aparece como “Sob consulta” —, como funciona, regras, FAQ, chamada), de `/apoie/` (por que, uso do dinheiro, formas `pix`/`apoiase`, transparência, nota) e do Plano Pro. O arquivo atual é um **exemplo** (`"_exemplo": true`).
+- **`data/site.json`** (vazio = oculto):
+  - `comercial.email`: e-mail **profissional** publicado em `/anuncie/` (botões abrem o e-mail com assunto preenchido); ou `comercial.formulario` (URL de formulário). Sem nenhum dos dois, os botões levam ao formulário de parceria do GitHub (público). Nenhum e-mail é publicado se não estiver aqui.
+  - `apoio.pix.chave`, `apoio.pix.nome` (até 25 letras), `apoio.pix.cidade` (até 15): geram em `/apoie/` a chave com botão de copiar, o **Pix copia e cola** (BR Code estático EMV com CRC16-CCITT, `scripts/pix.mjs`) e o **QR Code** em SVG (`scripts/qrcode.mjs`, sem dependências). Chave: e-mail, telefone `+55DDNÚMERO`, CPF/CNPJ só com números ou chave aleatória.
+  - `apoio.apoiase`: URL da campanha (botão “Apoiar no Apoia.se”). `apoio.url` continua aceito como outro link de apoio.
+  - `pro.listaEspera`: formulário da lista de espera do Pro (vazio = mesmo contato comercial).
+- Sem nenhuma forma de apoio configurada, `/apoie/` mostra “em breve”; os links “Apoie” e “Anuncie” ficam sempre no rodapé. O endereço antigo `/parcerias/` continua no ar e aponta para `/anuncie/`.
 
 ## Páginas indexáveis (SEO) e compartilhamento
 
