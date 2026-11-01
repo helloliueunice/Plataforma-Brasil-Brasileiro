@@ -1,10 +1,13 @@
 {
-  "_leia": "Páginas oficiais que listam chamadas abertas. O monitor lê cada uma todo dia, identifica links novos de chamadas e usa IA para extrair os dados. 'filtro' é uma expressão regular aplicada ao texto ou ao endereço do link; 'ativo': false pausa a fonte. Endereços com o ano (ex.: FAPESP 2026) precisam ser atualizados em janeiro. Campos opcionais: 'hrefFiltro' (expressão regular para o endereço de páginas de chamada), 'minTexto' (tamanho mínimo do texto do link, padrão 25) e 'ignorar'. Para calibrar uma fonte, rode o workflow com a opção 'diagnostico'.",
+  "_leia": "Páginas oficiais que listam chamadas abertas. O monitor lê cada uma todo dia, identifica links novos de chamadas e usa IA para extrair os dados. 'filtro' é uma expressão regular aplicada ao texto ou ao endereço do link; 'ativo': false pausa a fonte. Endereços com o ano (ex.: FAPESP 2026) precisam ser atualizados em janeiro. Campos opcionais: 'hrefFiltro' (expressão regular para o endereço de páginas de chamada), 'hrefSemTexto' (true: um link que casa com hrefFiltro basta, mesmo com texto curto como 'Baixar'), 'minTexto' (tamanho mínimo do texto do link, padrão 25) e 'ignorar'. 'dominios': domínios que o monitor pode ler a partir desta fonte (o próprio domínio e seus subdomínios), checados antes de cada download e a cada redirecionamento; sem a lista, vale só o domínio do endereço da fonte. Endereços de fontes ativas precisam começar com https://. Para calibrar uma fonte, rode o workflow com a opção 'diagnostico'.",
   "fontes": [
     {
       "id": "fapesp",
       "nome": "FAPESP — Chamadas de propostas 2026",
       "url": "https://fapesp.br/2185/chamadas-de-propostas-2026",
+      "dominios": [
+        "fapesp.br"
+      ],
       "agencia": "fapesp",
       "filtro": "chamada|call|edital|sele[cç][aã]o",
       "ativo": true,
@@ -14,6 +17,10 @@
       "id": "cnpq",
       "nome": "CNPq — Chamadas abertas para submissão",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+      "dominios": [
+        "gov.br",
+        "cnpq.br"
+      ],
       "agencia": "cnpq",
       "filtro": "chamada",
       "ativo": true
@@ -22,6 +29,9 @@
       "id": "finep",
       "nome": "Finep — Chamadas públicas abertas",
       "url": "http://legacy.finep.gov.br/chamadas-publicas/chamadaspublicas?situacao=aberta",
+      "dominios": [
+        "finep.gov.br"
+      ],
       "agencia": "finep",
       "filtro": "chamada|sele[cç][aã]o p[uú]blica|edital",
       "ativo": false,
@@ -31,6 +41,9 @@
       "id": "minc",
       "nome": "Ministério da Cultura — Editais com inscrições abertas",
       "url": "https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas",
+      "dominios": [
+        "gov.br"
+      ],
       "filtro": "edital|chamamento|sele[cç][aã]o|pr[eê]mio",
       "ativo": true
     },
@@ -38,21 +51,31 @@
       "id": "mda",
       "nome": "Ministério do Desenvolvimento Agrário — Editais de chamamento público 2026",
       "url": "https://www.gov.br/mda/pt-br/acesso-a-informacao/participacao-social/Editais-de-chamamento-publico/2026",
+      "dominios": [
+        "gov.br"
+      ],
       "filtro": "edital|chamamento",
       "ativo": true
     },
     {
       "id": "faperj",
-      "nome": "FAPERJ — Editais",
-      "url": "https://faperj.br/?id=117.5.8",
+      "nome": "FAPERJ — Lista de editais",
+      "url": "https://www.faperj.br/?id=28.5.7",
+      "dominios": [
+        "faperj.br"
+      ],
       "filtro": "edital",
-      "ativo": false,
-      "observacao": "Pausada: a página não lista editais em HTML. Procure a listagem oficial e reative."
+      "ativo": true,
+      "ignorar": "(?<!\\d)20(0\\d|1\\d|2[0-5])(?!\\d)|errata|retifica",
+      "observacao": "Página \"Lista de Editais\" (menu Linhas de Fomento), em HTML, com links diretos para os PDFs dos editais do ano; não marca quais estão abertos (a IA descarta os encerrados). Em janeiro, atualize o ano em \"ignorar\". Conferida em 01/11/2026."
     },
     {
       "id": "fapes",
       "nome": "FAPES — Editais",
       "url": "https://fapes.es.gov.br/",
+      "dominios": [
+        "fapes.es.gov.br"
+      ],
       "filtro": "edital|chamada",
       "ativo": true
     },
@@ -60,6 +83,9 @@
       "id": "ms-chamamentos",
       "nome": "Ministério da Saúde — Chamamentos públicos",
       "url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/participacao-social/chamamentos-publicos",
+      "dominios": [
+        "gov.br"
+      ],
       "filtro": "chamamento|edital|sele[cç][aã]o",
       "ativo": true,
       "publicoAlvo": "OSC e municípios"
@@ -68,6 +94,9 @@
       "id": "palmares",
       "nome": "Fundação Cultural Palmares — Editais",
       "url": "https://www.gov.br/palmares/pt-br/acesso-a-informacao/editais",
+      "dominios": [
+        "gov.br"
+      ],
       "filtro": "edital|chamamento|pr[eê]mio",
       "ativo": true,
       "publicoAlvo": "OSC e cultura"
@@ -76,9 +105,141 @@
       "id": "bndes-socioambiental",
       "nome": "BNDES — Fundo Socioambiental (chamadas)",
       "url": "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-fundo-socioambiental",
+      "dominios": [
+        "bndes.gov.br"
+      ],
       "filtro": "chamada|edital|sele[cç][aã]o|ciclo",
       "ativo": true,
       "publicoAlvo": "OSC"
+    },
+    {
+      "id": "fapemig",
+      "nome": "FAPEMIG — Chamadas e editais",
+      "url": "https://fapemig.br/oportunidades/chamadas-e-editais",
+      "dominios": [
+        "fapemig.br"
+      ],
+      "filtro": "chamada|edital",
+      "ativo": false,
+      "hrefFiltro": "fapemig\\.br/oportunidades/chamadas-e-editais/[^/?#]+/?$",
+      "observacao": "Pausada: a página oficial mostra só os contadores (\"Abertas\", \"Fluxo Contínuo\"); os cartões das chamadas são montados no navegador, sem HTML para ler (conferido em 01/11/2026). As páginas de cada chamada seguem o padrão do hrefFiltro. Reative quando houver listagem em HTML."
+    },
+    {
+      "id": "facepe",
+      "nome": "FACEPE — Editais abertos",
+      "url": "https://www2.facepe.br/editais/todos/?c=aberto",
+      "dominios": [
+        "facepe.br"
+      ],
+      "filtro": "edital|chamada",
+      "ativo": true,
+      "hrefFiltro": "facepe\\.br/wp-content/uploads/.+\\.pdf$",
+      "hrefSemTexto": true,
+      "ignorar": "errata|retifica|resultado|anexo|formul",
+      "observacao": "Filtro \"Abertos\" do menu Editais (www.facepe.br redireciona para www2). Os títulos não são links: cada edital tem um botão \"Baixar\" para o PDF, por isso o monitor usa o endereço (hrefSemTexto). Confira com o diagnóstico se o filtro ?c=aberto é aplicado no servidor."
+    },
+    {
+      "id": "fapergs",
+      "nome": "FAPERGS — Editais abertos",
+      "url": "https://fapergs.rs.gov.br/abertos",
+      "dominios": [
+        "fapergs.rs.gov.br"
+      ],
+      "filtro": "edital|chamada",
+      "ativo": false,
+      "hrefFiltro": "fapergs\\.rs\\.gov\\.br/edital",
+      "observacao": "Pausada: endereço oficial confirmado (menu Chamadas e Editais → Abertos), mas em 01/11/2026 a página não listava nenhuma chamada aberta, só avisos de resultado; não deu para confirmar o formato da lista. Reative e calibre com o diagnóstico quando houver edital aberto."
+    },
+    {
+      "id": "fundo-amazonia",
+      "nome": "Fundo Amazônia (BNDES) — Chamadas públicas",
+      "url": "https://www.fundoamazonia.gov.br/pt/como-apresentar-projetos/chamadas-publicas/",
+      "dominios": [
+        "fundoamazonia.gov.br",
+        "amazonfund.gov.br",
+        "bndes.gov.br"
+      ],
+      "filtro": "chamada|edital|sele[cç][aã]o",
+      "ativo": true,
+      "hrefFiltro": "fundoamazonia\\.gov\\.br/pt/como-apresentar-projetos/chamadas-publicas/[^/]+/$",
+      "ignorar": "chamadas-publicas-de-projetos-apoiados|\\((\\d{2}/)?20(0\\d|1\\d|2[0-5])\\)",
+      "publicoAlvo": "OSC, estados e municípios da Amazônia Legal",
+      "observacao": "Lista em HTML com o ano entre parênteses no texto do link (ex.: \"Prospera Amazônia (2026)\"); \"ignorar\" pula os anos anteriores — atualize em janeiro."
+    },
+    {
+      "id": "itau-social",
+      "nome": "Itaú Social — Editais",
+      "url": "https://www.itausocial.org.br/editais/",
+      "dominios": [
+        "itausocial.org.br"
+      ],
+      "filtro": "edital",
+      "ativo": true,
+      "hrefFiltro": "itausocial\\.org\\.br/editais/[^/]+/$",
+      "publicoAlvo": "OSC, pesquisadores e redes de ensino",
+      "observacao": "Os primeiros cartões vêm no HTML; o botão \"Carregar mais\" e os filtros (Aberto, Em breve, Encerrado) usam JavaScript, então editais mais antigos podem não aparecer. As inscrições costumam ser na plataforma editais.itausocial.org.br."
+    },
+    {
+      "id": "petrobras-socioambiental",
+      "nome": "Petrobras Socioambiental — Seleções públicas",
+      "url": "https://petrobras.com.br/en/sustentabilidade/selecoes-publicas",
+      "dominios": [
+        "petrobras.com.br"
+      ],
+      "filtro": "sele[cç][aã]o|edital|regulamento",
+      "ativo": false,
+      "observacao": "Pausada: a única página de seleções encontrada (01/11/2026) está no caminho /en/, diz \"Não temos seleções em aberto\" e só traz documentos do ciclo 2023 (PDFs e inscrição na plataforma externa Bússola Social). Não confirmamos o endereço atual em português; seleções novas aparecem em agencia.petrobras.com.br. Reative com o endereço oficial quando houver seleção aberta."
+    },
+    {
+      "id": "fundo-casa",
+      "nome": "Fundo Casa Socioambiental — Chamadas",
+      "url": "https://casa.org.br/chamadas/",
+      "dominios": [
+        "casa.org.br"
+      ],
+      "filtro": "chamada|edital|apoio",
+      "ativo": true,
+      "hrefFiltro": "casa\\.org\\.br/chamadas/[^/]+/?$",
+      "publicoAlvo": "OSC e organizações comunitárias",
+      "observacao": "Lista em HTML (menu \"Chamadas\"); as encerradas aparecem na mesma página, sob \"Chamadas Encerradas\", e a IA as descarta."
+    },
+    {
+      "id": "embrapii",
+      "nome": "EMBRAPII — Chamadas públicas",
+      "url": "https://embrapii.org.br/transparencia/",
+      "dominios": [
+        "embrapii.org.br"
+      ],
+      "filtro": "chamada",
+      "ativo": true,
+      "hrefFiltro": "embrapii\\.org\\.br/chamadas-publicas/[^/]+/?$",
+      "ignorar": "(?<!\\d)20(0\\d|1\\d|2[0-4])(?!\\d)",
+      "publicoAlvo": "ICTs (unidades e centros de competência)",
+      "observacao": "A lista de chamadas fica na seção \"Chamadas Públicas\" da página Transparência (link do menu: /transparencia/#chamadas), com abas por ano; \"ignorar\" pula 2024 e anteriores. Os PDFs costumam estar em embrapii.org.br/wp-content; alguns ficam em storage.googleapis.com (fora da lista de domínios: entram como \"não lidos\")."
+    },
+    {
+      "id": "novo-pac-selecoes",
+      "nome": "Novo PAC Seleções (Casa Civil)",
+      "url": "https://www.gov.br/casacivil/pt-br/novopac",
+      "dominios": [
+        "gov.br"
+      ],
+      "filtro": "sele[cç][aã]o|sele[cç][oõ]es|edital",
+      "ativo": false,
+      "publicoAlvo": "Estados e municípios",
+      "observacao": "Pausada: a página oficial do Novo PAC não tem lista de seleções em HTML, e não confirmamos uma página de seleções vigente para 2026 (as de 2025 ficam em /novopac/selecoes2025/). As propostas são cadastradas no Transferegov.br, que o site já lê pelo conector do Transferegov."
+    },
+    {
+      "id": "lei-incentivo-esporte",
+      "nome": "Lei de Incentivo ao Esporte (Ministério do Esporte)",
+      "url": "https://www.gov.br/pt-br/servicos/obter-financiamento-de-projeto-esportivo-atraves-da-lei-de-incentivo-ao-esporte",
+      "dominios": [
+        "gov.br"
+      ],
+      "filtro": "edital|chamada|portaria|prazo",
+      "ativo": false,
+      "publicoAlvo": "OSC esportivas, estados e municípios",
+      "observacao": "Pausada: a LIE não funciona por chamadas — os projetos são apresentados em períodos anuais definidos em portaria e depois captam recursos com patrocinadores. Encontramos só a página de serviço do gov.br; não confirmamos uma página do Ministério do Esporte com lista de períodos ou chamadas em HTML."
     }
   ]
 }

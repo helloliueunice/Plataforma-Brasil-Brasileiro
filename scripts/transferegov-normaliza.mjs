@@ -71,3 +71,61 @@ export function abrangencia(nomePrograma, ufPrograma) {
     const cad = limpa(ufPrograma).toUpperCase();
     return { abrangencia: 'Nacional', abrangenciaNota: `Abrangência não informada pela API${/^[A-Z]{2}$/.test(cad) ? ` (o cadastro do programa indica ${cad})` : ''}: confira no programa quem pode propor.` };
 }
+
+// Modalidade do instrumento, a partir de modalidade_programa (ou modalidade_programa_agrupada) da API.
+// Valores vistos na API: CONVENIO, CONTRATO DE REPASSE, TERMO DE FOMENTO, TERMO DE COLABORACAO, TERMO DE COMPROMISSO.
+const MODALIDADES = [
+    [/^conv[eê]nio/, 'Convênio'],
+    [/^contrato de repasse/, 'Contrato de repasse'],
+    [/^termo de fomento/, 'Termo de fomento'],
+    [/^termo de colabora[cç][aã]o/, 'Termo de colaboração'],
+    [/^termo de compromisso/, 'Termo de compromisso'],
+    [/^termo de execu[cç][aã]o descentralizada/, 'Termo de execução descentralizada'],
+];
+export function modalidade(...valores) {
+    for (const v of valores) {
+        const t = limpa(v).toLowerCase();
+        if (!t) continue;
+        for (const [re, nome] of MODALIDADES) if (re.test(t)) return nome;
+        return t[0].toUpperCase() + t.slice(1);
+    }
+    return 'Transferência voluntária';
+}
+
+// Valores por proposta e contrapartida (DESLIGADO por padrão).
+// O registro de discricionarias/todos-programas não traz valores (conferido nas amostras do diagnóstico de
+// 31/10/2026: só datas, órgão, modalidade, natureza jurídica, descrição e critérios). Se a API pública expuser
+// um endpoint com as regras do programa (valor mínimo/máximo por proposta, percentual de contrapartida),
+// ligue com TRANSFEREGOV_VALORES_CAMINHO (ver transferegov.mjs). Os nomes dos campos não estão documentados:
+// reconhecemos variações comuns (vl_/valor_, min/minimo, max/maximo, percentual de contrapartida).
+const numero = v => {
+    if (typeof v === 'number') return Number.isFinite(v) ? v : null;
+    const s = limpa(v).replace(/^r\$\s*/i, '');
+    if (!s) return null;
+    if (/^\d{1,3}(\.\d{3})+$/.test(s)) return Number(s.replace(/\./g, '')); // "1.500.000"
+    const n = Number(/,\d{1,2}$/.test(s) ? s.replace(/\./g, '').replace(',', '.') : s.replace(/,/g, ''));
+    return Number.isFinite(n) ? n : null;
+};
+const brl = n => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).replace(/\s/g, ' ');
+export function valores(reg) {
+    if (!reg || typeof reg !== 'object' || Array.isArray(reg)) return {};
+    let min = null, max = null, contra = null;
+    for (const [k, v] of Object.entries(reg)) {
+        const c = k.toLowerCase();
+        if (/contrapartida/.test(c)) { if (/(perc|pct|percentual)/.test(c) && contra == null) contra = numero(v); continue; }
+        if (!/(^|_)(vl|valor)(_|$)/.test(c)) continue;
+        if (/(^|_)(min|minimo)(_|$)/.test(c)) { if (min == null) min = numero(v); }
+        else if (/(^|_)(max|maximo)(_|$)/.test(c)) { if (max == null) max = numero(v); }
+    }
+    if (!(min > 0)) min = null;
+    if (!(max > 0)) max = null;
+    if (min && max && min > max) [min, max] = [max, min];
+    const out = {};
+    if (min) out.valorMin = min;
+    if (max) out.valorMax = max;
+    if (min && max) { out.tipoValor = 'faixa'; out.valorNota = `De ${brl(min)} a ${brl(max)} por proposta, segundo as regras do programa no Transferegov.br.`; }
+    else if (max) { out.tipoValor = 'por-proposta'; out.valorNota = `Até ${brl(max)} por proposta, segundo as regras do programa no Transferegov.br.`; }
+    else if (min) out.valorNota = `A partir de ${brl(min)} por proposta, segundo as regras do programa no Transferegov.br. Confira o teto no programa.`;
+    if (contra != null && contra >= 0 && contra <= 100) out.contrapartida = `${String(contra).replace('.', ',')}% do valor (regra do programa no Transferegov.br)`;
+    return out;
+}

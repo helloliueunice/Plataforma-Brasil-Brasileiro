@@ -20,7 +20,13 @@
  *   ANTHROPIC_API_KEY   chave da API (sem ela, o monitor só lista os links novos para revisão manual)
  *   MODELO              modelo usado na extração (padrão: claude-sonnet-5-5)
  *   MAX_NOVOS           máximo de links novos analisados por execução (padrão: 15)
- *   ANTHROPIC_BASE_URL, MONITOR_RAIZ, HOJE   usados em testes
+ *   MAX_CHAMADAS_API    teto de pedidos à API da Anthropic por execução, contando novas tentativas (padrão: 15)
+ *   ANTHROPIC_BASE_URL, MONITOR_RAIZ, HOJE, MONITOR_PERMITIR_LOCAL   usados em testes
+ *
+ * Segurança da leitura: cada fonte só lê endereços dos seus "dominios" (data/fontes.json; padrão: o domínio
+ * do endereço da fonte), checados antes de cada download e a cada redirecionamento (no máximo 5, seguidos
+ * à mão). Endereços de rede interna nunca são lidos. Páginas acima de 5 MB são recusadas e PDFs acima de
+ * 10 MB são pulados (ficam para revisão manual).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,6 +45,10 @@ const API_KEY = process.env.ANTHROPIC_API_KEY || '';
 const API_URL = (process.env.ANTHROPIC_BASE_URL || 'https://api.anthropic.com').replace(/\/+$/, '') + '/v1/messages';
 const MODELO = process.env.MODELO || 'claude-sonnet-5-5';
 const MAX_NOVOS = Number(process.env.MAX_NOVOS || 15);
+// Teto de custo: no máximo N pedidos à API da Anthropic por execução (cada nova tentativa conta). O que sobrar fica para a próxima.
+const MAX_CHAMADAS_API = Math.max(0, Math.floor(Number(process.env.MAX_CHAMADAS_API || 15)) || 0);
+let chamadasApi = 0;
+class ErroTeto extends Error {}
 const HOJE = process.env.HOJE || new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10); // data em Brasília
 const UA = 'Mozilla/5.0 (compatible; FundosBrasilMonitor/1.0; +https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro)';
 
@@ -77,18 +87,80 @@ if (process.argv.includes('--aplicar')) {
 }
 
 /* ============================ Rede ============================ */
-async function baixar(url, { bytes = false } = {}, salto = 0, cookies = '') {
+// Limites de segurança e de custo
+const MAX_REDIRECIONAMENTOS = 5;            // saltos HTTP (3xx) por download, seguidos à mão para checar cada destino
+const LIMITE_PDF = 10 * 1048576;            // PDFs maiores são pulados (vão para revisão manual)
+const LIMITE_HTML = 5 * 1048576;            // páginas maiores são recusadas
+const PERMITIR_LOCAL = process.env.MONITOR_PERMITIR_LOCAL === '1'; // só nos testes (servidor em 127.0.0.1)
+const mb = n => `${(n / 1048576).toFixed(1).replace('.', ',')} MB`;
+
+// Erro que não melhora com nova tentativa (domínio fora da lista, arquivo grande demais, redirecionamentos demais)
+class ErroDefinitivo extends Error {}
+
+const hostDe = u => { try { return new URL(u).hostname.toLowerCase().replace(/\.$/, '').replace(/^www\./, ''); } catch (_) { return ''; } };
+// Endereços internos (rede local, metadados de nuvem): nunca lidos, venha o link de onde vier
+function enderecoInterno(h) {
+    if (h === 'localhost' || /\.(localhost|local|internal)$/.test(h) || h.startsWith('[')) return true;
+    const m = h.match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
+    if (!m) return false;
+    const a = Number(m[1]), b = Number(m[2]);
+    return a === 0 || a === 10 || a === 127 || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127);
+}
+// O endereço pertence a um dos domínios permitidos (o próprio domínio ou um subdomínio dele)?
+// Sem lista (sugestões avulsas e páginas de editais já curados), aceita qualquer endereço público http(s).
+function dominioPermitido(url, dominios) {
+    let u;
+    try { u = new URL(url); } catch (_) { return false; }
+    if (!/^https?:$/.test(u.protocol)) return false;
+    const h = u.hostname.toLowerCase().replace(/\.$/, '');
+    if (!PERMITIR_LOCAL && enderecoInterno(h)) return false;
+    if (!Array.isArray(dominios) || !dominios.length) return true;
+    return dominios.some(d => { d = String(d).toLowerCase().replace(/^\.+|\.+$/g, ''); return !!d && (h === d || h.endsWith('.' + d)); });
+}
+// Domínios de uma fonte: os declarados em "dominios" ou, na falta, o do próprio endereço da fonte
+const dominiosDa = f => (Array.isArray(f.dominios) && f.dominios.length ? f.dominios : [hostDe(f.url)].filter(Boolean));
+
+// Lê o corpo da resposta parando no limite (não confia só no content-length)
+async function lerComLimite(r, limite, rotulo) {
+    if (!r.body) return Buffer.alloc(0);
+    const partes = [];
+    let total = 0;
+    for await (const parte of r.body) {
+        total += parte.length;
+        if (total > limite) throw new ErroDefinitivo(`${rotulo} maior que ${mb(limite)}; pulado`);
+        partes.push(parte);
+    }
+    return Buffer.concat(partes.map(p => Buffer.from(p)));
+}
+
+async function baixar(url, { bytes = false, dominios = null } = {}, salto = 0, cookies = '', saltosHttp = { n: 0 }) {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 30000);
     try {
         const headers = { 'user-agent': UA, accept: 'text/html,application/pdf;q=0.9,*/*;q=0.8' };
         if (cookies) headers.cookie = cookies;
-        const r = await fetch(url, { headers, redirect: 'follow', signal: ctrl.signal });
+        // Redirecionamentos seguidos à mão: cada destino passa pela checagem de domínio antes de ser lido
+        let atual = url, r;
+        for (;;) {
+            if (!dominioPermitido(atual, dominios)) throw new ErroDefinitivo(`endereço fora dos domínios permitidos (${hostDe(atual) || atual})`);
+            r = await fetch(atual, { headers, redirect: 'manual', signal: ctrl.signal });
+            const destino = r.status >= 300 && r.status < 400 ? r.headers.get('location') : null;
+            if (!destino) break;
+            if (r.body) await r.body.cancel().catch(() => {});
+            if (++saltosHttp.n > MAX_REDIRECIONAMENTOS) throw new ErroDefinitivo(`mais de ${MAX_REDIRECIONAMENTOS} redirecionamentos`);
+            atual = new URL(destino, atual).href;
+        }
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         const tipo = r.headers.get('content-type') || '';
-        if (Number(r.headers.get('content-length') || 0) > 20 * 1048576) throw new Error('arquivo maior que 20 MB');
-        const buf = Buffer.from(await r.arrayBuffer());
-        if (bytes || /pdf/i.test(tipo) || /\.pdf($|\?)/i.test(url)) return { tipo: 'pdf', buf, url: r.url };
+        const ehPdf = bytes || /pdf/i.test(tipo) || /\.pdf($|\?)/i.test(atual);
+        const limite = ehPdf ? LIMITE_PDF : LIMITE_HTML;
+        const declarado = Number(r.headers.get('content-length') || 0);
+        if (declarado > limite) {
+            if (r.body) await r.body.cancel().catch(() => {});
+            throw new ErroDefinitivo(`${ehPdf ? 'PDF' : 'página'} de ${mb(declarado)}, acima do limite de ${mb(limite)}; pulado`);
+        }
+        const buf = await lerComLimite(r, limite, ehPdf ? 'PDF' : 'página');
+        if (ehPdf) return { tipo: 'pdf', buf, url: atual };
         // Respeita o charset declarado (alguns portais ainda usam ISO-8859-1)
         let charset = (tipo.match(/charset=([\w-]+)/i) || [])[1];
         if (!charset) charset = (buf.subarray(0, 2048).toString('latin1').match(/<meta[^>]+charset=["']?([\w-]+)/i) || [])[1];
@@ -96,14 +168,19 @@ async function baixar(url, { bytes = false } = {}, salto = 0, cookies = '') {
         try { html = new TextDecoder(charset || 'utf-8').decode(buf); } catch (_) { html = buf.toString('utf8'); }
         // Páginas de "Redirect" (meta refresh ou JavaScript), como as da FAPESP: segue até 3 saltos,
         // levando os cookies definidos pela página intermediária.
+        // Os saltos HTTP somam no mesmo limite de redirecionamentos.
         const destino = salto < 3 && textoDoHtml(html).length < 600 && destinoRedirect(html);
         if (destino) {
-            const prox = new URL(destino, r.url).href;
+            let prox = null;
+            try { prox = new URL(destino, atual).href; } catch (_) { prox = null; }
             const novos = (r.headers.getSetCookie ? r.headers.getSetCookie() : []).map(c => c.split(';')[0]);
             const jar = [...(cookies ? cookies.split('; ') : []), ...novos, ...cookiesDoScript(html)].filter(Boolean).join('; ');
-            if (prox !== r.url || jar !== cookies) return baixar(prox, { bytes }, salto + 1, jar);
+            if (prox && (prox !== atual || jar !== cookies)) {
+                if (++saltosHttp.n > MAX_REDIRECIONAMENTOS) throw new ErroDefinitivo(`mais de ${MAX_REDIRECIONAMENTOS} redirecionamentos`);
+                return baixar(prox, { bytes, dominios }, salto + 1, jar, saltosHttp);
+            }
         }
-        return { tipo: 'html', html, url: r.url };
+        return { tipo: 'html', html, url: atual };
     } finally { clearTimeout(t); }
 }
 function destinoRedirect(html) {
@@ -156,7 +233,8 @@ function linksDe(html, base, fonte = {}) {
         if (/\bresultados?\b|\bhomologa[cç]/.test(t) || /\/resultados?[\/_-]/i.test(url)) continue; // resultados não são chamadas abertas
         const palavras = t.split(' ').filter(Boolean).length;
         const porTexto = rxTexto.test(t) && (texto.length >= minTexto || NUMERO_CHAMADA.test(t)) && palavras >= 3;
-        const porHref = rxHref && rxHref.test(url) && texto.length >= 15 && palavras >= 3;
+        // "hrefSemTexto": para listas em que o link é um botão curto ("Baixar"), o endereço basta
+        const porHref = rxHref && rxHref.test(url) && (fonte.hrefSemTexto === true || (texto.length >= 15 && palavras >= 3));
         if (!porTexto && !porHref) continue;
         if (!vistos.has(url)) vistos.set(url, texto.slice(0, 200));
     }
@@ -240,6 +318,8 @@ async function extrair(item, conteudo) {
     // e, se a resposta vier em texto, pedimos de novo que registre os dados com a ferramenta.
     const mensagens = [{ role: 'user', content: blocos }];
     for (let tentativa = 1; tentativa <= 3; tentativa++) {
+        if (chamadasApi >= MAX_CHAMADAS_API) throw new ErroTeto(`teto de ${MAX_CHAMADAS_API} chamadas à API atingido`);
+        chamadasApi++;
         const r = await fetch(API_URL, {
             method: 'POST',
             headers: { 'content-type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
@@ -339,7 +419,7 @@ estado.vistos ||= {}; estado.paginas ||= {}; estado.execucoes ||= [];
 const pendente = url => { const v = estado.vistos[url]; return !v || v.resultado === 'erro' || (API_KEY && v.resultado === 'manual'); };
 const conhecidos = new Set(base.editais.flatMap(e => [e.link, e.fonte]).filter(Boolean));
 
-const rel = { candidatos: [], descartados: [], manuais: [], mudancas: [], falhasFonte: [], erros: [], adiados: 0 };
+const rel = { candidatos: [], descartados: [], manuais: [], pulados: [], mudancas: [], falhasFonte: [], erros: [], adiados: 0, tetoApi: false };
 
 // Sugestão avulsa (formulário "Sugerir edital"): analisa só o link enviado
 const SUGESTAO = process.argv.includes('--url') ? String(process.env.SUGESTAO_URL || '').trim() : '';
@@ -355,9 +435,20 @@ const fila = [];
 if (SUGESTAO) fila.push({ url: SUGESTAO, texto: 'Sugestão enviada pelo formulário', fonteId: 'sugestao', fonteNome: 'Sugestão de usuário' });
 for (const f of (SUGESTAO ? [] : fontes)) {
     try {
-        const pg = await baixar(f.url);
+        const dominios = dominiosDa(f);
+        if (!/^https:\/\//i.test(f.url) && !PERMITIR_LOCAL) throw new Error('o endereço da fonte precisa começar com https://');
+        const pg = await baixar(f.url, { dominios });
         if (pg.tipo !== 'html') throw new Error('a fonte não é uma página HTML');
-        const links = linksDe(pg.html, pg.url, f);
+        // Links fora dos domínios da fonte não são lidos: ficam registrados uma vez para revisão manual
+        const todos = linksDe(pg.html, pg.url, f);
+        const links = todos.filter(l => dominioPermitido(l.url, dominios));
+        if (!DIAGNOSTICO) {
+            for (const l of todos) {
+                if (links.includes(l) || estado.vistos[l.url] || conhecidos.has(l.url)) continue;
+                rel.pulados.push({ ...l, fonteNome: f.nome, motivo: `fora dos domínios da fonte (${hostDe(l.url)})` });
+                estado.vistos[l.url] = { em: HOJE, fonte: f.id, resultado: 'fora-dominio' };
+            }
+        }
         if (DIAGNOSTICO) {
             const lista = links.map(l => `${estado.vistos[l.url] ? '·' : conhecidos.has(l.url) ? '=' : '+'} ${l.texto}  <${l.url}>`);
             console.log(`\n## ${f.nome}\n${f.url} → ${links.length} link(s)\n${lista.map(x => '  ' + x).join('\n')}`);
@@ -365,7 +456,7 @@ for (const f of (SUGESTAO ? [] : fontes)) {
             // Amostra: como chega a página do primeiro link (ajuda a ver redirecionamentos e bloqueios)
             if (links[0]) {
                 try {
-                    const c = await baixar(links[0].url);
+                    const c = await baixar(links[0].url, { dominios });
                     const bruto = c.tipo === 'pdf' ? `[PDF, ${c.buf.length} bytes]` : c.html.slice(0, 2500);
                     anotar(`Amostra ${f.nome}`, `Pedido: ${links[0].url}\nURL final: ${c.url}\nTexto: ${c.tipo === 'pdf' ? '-' : textoDoHtml(c.html).slice(0, 300)}\n---\n${bruto}`);
                 } catch (e) { anotar(`Amostra ${f.nome}`, `${links[0].url}: ${e.message}`, 'warning'); }
@@ -373,7 +464,7 @@ for (const f of (SUGESTAO ? [] : fontes)) {
             continue;
         }
         if (!links.length) rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: 'nenhum link de chamada encontrado (o layout pode ter mudado)' });
-        for (const l of links) if (pendente(l.url) && !conhecidos.has(l.url)) fila.push({ ...l, fonteId: f.id, fonteNome: f.nome, agencia: f.agencia });
+        for (const l of links) if (pendente(l.url) && !conhecidos.has(l.url)) fila.push({ ...l, fonteId: f.id, fonteNome: f.nome, agencia: f.agencia, dominios });
     } catch (err) {
         rel.falhasFonte.push({ fonte: f.nome, url: f.url, erro: err.message });
     }
@@ -395,11 +486,13 @@ rel.adiados = fila.length - lote.length;
 const novos = [];
 // Endereços oficiais conhecidos (fontes monitoradas e links dos editais já publicados), para alertar sobre sugestões de outros sites.
 const HOSTS_CONHECIDOS = new Set([...fontes.map(f => f.url), ...base.editais.map(e => e.link), ...base.editais.map(e => e.fonte)].map(u => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch (_) { return ''; } }).filter(Boolean));
-for (const item of lote) {
+for (const [i, item] of lote.entries()) {
     if (!API_KEY) { rel.manuais.push(item); estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'manual' }; continue; }
+    // Teto de custo: o que não couber fica na fila (não é marcado como visto) para a próxima execução
+    if (chamadasApi >= MAX_CHAMADAS_API) { rel.tetoApi = true; rel.adiados += lote.length - i; break; }
     try {
-        const conteudo = await baixar(item.url);
-        if (conteudo.tipo === 'pdf' && conteudo.buf.length > 20 * 1048576) throw new Error('PDF maior que 20 MB');
+        // Domínio checado antes de ler (sugestões avulsas não têm lista, mas passam pelo bloqueio de rede interna)
+        const conteudo = await baixar(item.url, { dominios: item.dominios || null });
         const x = await extrair(item, conteudo);
         // Mesmo endereço exato (sem "www."): "evil.org.br" não passa por "fundacao.org.br".
         const host = u => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch (_) { return ''; } };
@@ -424,6 +517,13 @@ for (const item of lote) {
         rel.candidatos.push({ ed, x, item });
         estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'candidato' };
     } catch (err) {
+        if (err instanceof ErroTeto) { rel.tetoApi = true; rel.adiados += lote.length - i; break; } // volta na próxima execução
+        if (err instanceof ErroDefinitivo) {
+            // Arquivo grande demais, domínio fora da lista, redirecionamentos demais: não adianta tentar de novo
+            rel.pulados.push({ ...item, motivo: err.message });
+            estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'pulado', erro: err.message.slice(0, 200) };
+            continue;
+        }
         // Tenta de novo nas próximas execuções, até 3 vezes (evita gasto repetido com erro permanente)
         const ant = estado.vistos[item.url];
         const tentativas = (ant && ant.resultado === 'erro' ? ant.tentativas || 1 : 0) + 1;
@@ -450,7 +550,7 @@ for (const e of (SUGESTAO ? [] : base.editais.filter(e => e.encerramento >= HOJE
 
 /* ============================ Saídas ============================ */
 if (novos.length) gravarJSON(ARQ.novos, novos); else fs.rmSync(ARQ.novos, { force: true });
-estado.execucoes = [{ em: HOJE, fontes: fontes.length, linksNovos: fila.length, candidatos: novos.length, descartados: rel.descartados.length, erros: rel.erros.length + rel.falhasFonte.length }, ...estado.execucoes].slice(0, 30);
+estado.execucoes = [{ em: HOJE, fontes: fontes.length, linksNovos: fila.length, candidatos: novos.length, descartados: rel.descartados.length, erros: rel.erros.length + rel.falhasFonte.length, pulados: rel.pulados.length, chamadasApi }, ...estado.execucoes].slice(0, 30);
 gravarJSON(ARQ.estado, estado);
 
 const linhas = [];
@@ -488,6 +588,12 @@ if (rel.manuais.length) {
     for (const m of rel.manuais) linhas.push(`- [ ] ${md(m.texto)} — ${m.url} _(${md(m.fonteNome)})_`);
     linhas.push('');
 }
+if (rel.pulados.length) {
+    linhas.push('## ⏭️ Links não lidos (confira manualmente se quiser)', '');
+    for (const p of rel.pulados) linhas.push(`- [ ] ${md(p.texto)} — ${p.url} _(${md(p.fonteNome)})_: ${md(p.motivo)}`);
+    linhas.push('');
+}
+if (rel.tetoApi) linhas.push(`> ℹ️ Teto de ${MAX_CHAMADAS_API} chamadas à API atingido nesta execução (variável MAX_CHAMADAS_API); os links restantes ficam para a próxima.`, '');
 if (rel.descartados.length && SUGESTAO) {
     linhas.push('## Não foi possível publicar automaticamente', '');
     for (const d of rel.descartados) linhas.push(`- **Motivo:** ${md(d.motivo)}`);
@@ -503,11 +609,11 @@ if (rel.falhasFonte.length || rel.erros.length) {
     for (const f of rel.erros) linhas.push(`- ${md(f.item.texto)} (${f.item.url}): ${md(f.erro)}`);
     linhas.push('');
 }
-const temItens = rel.candidatos.length || rel.mudancas.length || rel.manuais.length || rel.falhasFonte.length || rel.erros.length || (SUGESTAO && rel.descartados.length);
+const temItens = rel.candidatos.length || rel.mudancas.length || rel.manuais.length || rel.pulados.length || rel.falhasFonte.length || rel.erros.length || (SUGESTAO && rel.descartados.length);
 if (!temItens) linhas.push(SUGESTAO ? 'A análise não retornou resultado.' : 'Nenhuma novidade hoje.');
 fs.writeFileSync(ARQ.relatorio, linhas.join('\n') + '\n');
 
-console.log(`${SUGESTAO ? 'Sugestão' : `Fontes: ${fontes.length}`} · links novos: ${fila.length} · candidatos: ${novos.length} · descartados: ${rel.descartados.length} · mudanças: ${rel.mudancas.length} · falhas: ${rel.falhasFonte.length + rel.erros.length}`);
+console.log(`${SUGESTAO ? 'Sugestão' : `Fontes: ${fontes.length}`} · links novos: ${fila.length} · candidatos: ${novos.length} · descartados: ${rel.descartados.length} · mudanças: ${rel.mudancas.length} · pulados: ${rel.pulados.length} · falhas: ${rel.falhasFonte.length + rel.erros.length} · chamadas à API: ${chamadasApi}/${MAX_CHAMADAS_API}`);
 // Sinaliza ao workflow o que fazer
 if (process.env.GITHUB_OUTPUT) {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `candidatos=${novos.length}\nrevisar=${temItens ? 1 : 0}\n`);

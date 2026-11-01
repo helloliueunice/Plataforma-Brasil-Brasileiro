@@ -16,11 +16,24 @@
  *   node scripts/transferegov.mjs                 atualiza data/transferegov.json
  *   node scripts/transferegov.mjs --diagnostico   só mostra contagens e amostras (anotações no Actions)
  * Variáveis: TRANSFEREGOV_URL (base da API, para testes), HOJE (AAAA-MM-DD), MONITOR_RAIZ.
+ *
+ * Campos preenchidos para municípios:
+ *  - modalidade: do campo modalidade_programa (Convênio, Contrato de repasse, Termo de fomento,
+ *    Termo de colaboração, Termo de compromisso).
+ *  - objeto/resumo: do campo descricao do programa.
+ *  - link: não há URL pública estável por código de programa (a consulta pública do Transferegov.br
+ *    é feita dentro do sistema, por formulário). Mantemos o portal oficial e destacamos o código
+ *    do programa no número, no início do prazoNota e em "linkNota".
+ *  - valores (DESLIGADO): todos-programas não traz valor mínimo/máximo nem contrapartida. Se houver
+ *    um endpoint público com as regras do programa, defina TRANSFEREGOV_VALORES_CAMINHO com o caminho
+ *    (ex.: "discricionarias/<endpoint>"); o script consulta ?id_programa=<id> para cada programa aberto
+ *    e aplica valores() de transferegov-normaliza.mjs (reconhece vl_/valor_ min/max e % de contrapartida).
+ *    Sem a variável, nada muda. Teste antes com --diagnostico.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { limpa, titulo, orgao as nomeOrgao, tema, abrangencia } from './transferegov-normaliza.mjs';
+import { limpa, titulo, orgao as nomeOrgao, tema, abrangencia, modalidade, valores } from './transferegov-normaliza.mjs';
 
 const RAIZ = process.env.MONITOR_RAIZ || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = (process.env.TRANSFEREGOV_URL || 'https://api-publica.transferegov.gestao.gov.br').replace(/\/+$/, '');
@@ -28,6 +41,9 @@ const DIAG = process.argv.includes('--diagnostico');
 const HOJE = process.env.HOJE || new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
 const SAIDA = path.join(RAIZ, 'data', 'transferegov.json');
 const UA = 'FundosBrasil/1.0 (+https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro)';
+const LINK_PORTAL = 'https://www.gov.br/transferegov/pt-br';
+// Endpoint opcional com as regras de valor do programa (desligado sem a variável; ver o cabeçalho)
+const CAMINHO_VALORES = String(process.env.TRANSFEREGOV_VALORES_CAMINHO || '').replace(/^\/+|\/+$/g, '');
 
 const anotar = (titulo, texto, tipo = 'notice') => {
     const e = v => String(v).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
@@ -85,12 +101,14 @@ function publicos(p) {
     return [...s];
 }
 
-function paraEdital(p) {
+function paraEdital(p, regras = null) {
     const ab = iso(p.dt_prog_ini_receb_prop), fim = iso(p.dt_prog_fim_receb_prop);
     const pubs = publicos(p);
     const orgao = nomeOrgao(p.desc_orgao_sup_programa || p.orgao_executor || 'Governo Federal');
     const desc = limpa(p.descricao || p.observacao || '');
-    return {
+    const cod = limpa(p.cod_programa);
+    const mod = modalidade(p.modalidade_programa, p.modalidade_programa_agrupada);
+    const ed = {
         id: 1000000 + Number(p.id_programa),
         numero: `Programa Transferegov ${limpa(p.cod_programa)}`,
         titulo: titulo(p.nome_programa).slice(0, 180),
@@ -98,8 +116,8 @@ function paraEdital(p) {
         agencia: null,
         procedencia: 'nacional',
         tema: tema(p.nome_programa, orgao),
-        tags: ['Transferegov', 'Transferência voluntária', limpa(p.modalidade_programa) && titulo(p.modalidade_programa)].filter(Boolean).slice(0, 4),
-        modalidade: 'Transferência voluntária',
+        tags: ['Transferegov', 'Transferência voluntária', mod !== 'Transferência voluntária' && mod].filter(Boolean).slice(0, 4),
+        modalidade: mod,
         publico: pubs,
         ...abrangencia(p.nome_programa, p.uf_programa),
         moeda: 'BRL',
@@ -109,9 +127,10 @@ function paraEdital(p) {
         publicadoEm: iso(p.data_publicacao) || iso(p.data_disponibilizacao) || ab,
         abertura: ab,
         encerramento: fim,
-        prazoNota: `Proposta cadastrada no Transferegov.br (módulo Discricionárias), pelo código ${limpa(p.cod_programa)}. É preciso cadastro do proponente e, para entes, regularidade no CAUC.`,
+        prazoNota: `Código do programa: ${cod}. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.`,
         resumo: (desc || `Programa do ${orgao} para receber propostas voluntárias de ${pubs.map(x => ({ municipio: 'municípios', estado: 'estados', osc: 'organizações da sociedade civil' })[x]).join(', ') || 'proponentes habilitados'}.`).slice(0, 600),
-        link: 'https://www.gov.br/transferegov/pt-br',
+        link: LINK_PORTAL,
+        linkNota: `No Transferegov.br, procure o programa pelo código ${cod}.`,
         fonte: `${BASE}/discricionarias/todos-programas?id_programa=${p.id_programa}`,
         verificadoEm: HOJE,
         criterios: limpa(p.criterios_de_selecao) ? [{ nome: limpa(p.criterios_de_selecao).slice(0, 200) }] : [],
@@ -120,8 +139,14 @@ function paraEdital(p) {
         tipoValor: 'nao-informado',
         fluxoContinuo: false,
         origem: 'transferegov',
-        codigoPrograma: limpa(p.cod_programa)
+        codigoPrograma: cod
     };
+    if (desc) ed.objeto = desc.slice(0, 600);
+    // Valores e contrapartida só quando o endpoint opcional de regras respondeu com campos reconhecidos
+    const v = valores(regras);
+    if (v.valorMax || v.valorMin) Object.assign(ed, v);
+    else if (v.contrapartida) ed.contrapartida = v.contrapartida;
+    return ed;
 }
 
 /* ---------------- Coleta ---------------- */
@@ -151,10 +176,30 @@ for (const c of consultas) await coletar(c, `${c.expiracao_prog_prop_voluntaria}
 anotar('Consultas', `${falhas} falha(s)\n` + registro.join('\n'), falhas ? 'warning' : 'notice');
 
 const programas = [...porId.values()];
-const editais = programas
-    .map(paraEdital)
-    .filter(e => e.abertura && e.encerramento && e.encerramento >= HOJE && e.publico.length)
+const aberto = e => e.abertura && e.encerramento && e.encerramento >= HOJE && e.publico.length;
+let editais = programas
+    .map(p => paraEdital(p))
+    .filter(aberto)
     .sort((a, b) => a.encerramento.localeCompare(b.encerramento));
+
+// Valores por programa (desligado sem TRANSFEREGOV_VALORES_CAMINHO). Só para os programas abertos; falhas não bloqueiam.
+if (CAMINHO_VALORES) {
+    let comValor = 0, falhasValor = 0;
+    const amostraValor = [];
+    for (const [i, e] of editais.entries()) {
+        const p = porId.get(e.id - 1000000);
+        try {
+            const env = await pedir(CAMINHO_VALORES, { id_programa: p.id_programa });
+            const linhas = Array.isArray(env) ? env : (env && env.data) || [];
+            const regra = linhas.find(l => l && String(l.id_programa ?? p.id_programa) === String(p.id_programa)) || null;
+            if (regra && amostraValor.length < 2) amostraValor.push(regra);
+            const novo = paraEdital(p, regra);
+            if (novo.valorMax || novo.valorMin || novo.contrapartida !== e.contrapartida) comValor++;
+            editais[i] = novo;
+        } catch (_) { falhasValor++; }
+    }
+    anotar('Valores dos programas', `${comValor} de ${editais.length} com valor/contrapartida reconhecidos em ${CAMINHO_VALORES}; ${falhasValor} falha(s).\nAmostra: ${JSON.stringify(amostraValor).slice(0, 3000)}`, falhasValor ? 'warning' : 'notice');
+}
 
 let atualizacao = null;
 try { atualizacao = await pedir('discricionarias/data-atualizacao'); } catch (_) { /* opcional */ }
