@@ -51,6 +51,7 @@
             <a class="btn pequeno" href="../../cal/area-meio-ambiente-e-sustentabilidade.ics" type="text/calendar" data-evento="assinar-calendario">Calendário (.ics)</a>
             <a class="assinar-ajuda" href="../../dados/#assinar">Como assinar</a>
         </div>
+        
         <ul class="cartoes"><li class="cartao">
             <div class="selos"><span class="selo aberto" data-abertura="2026-09-09" data-encerramento="2026-11-10" data-etapa="Pré-proposta">Pré-proposta até 10/11/2026</span> <span class="selo neutro">Auxílio à pesquisa</span></div>
             <h3><a href="../../editais/chamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/">Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES</a></h3>
@@ -108,11 +109,11 @@
     <footer class="rodape">
         <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
         <nav class="rodape-links" aria-label="Editais por perfil"><a href="../../para/pesquisadores/">Editais para pesquisadores</a> · <a href="../../para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="../../para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="../../para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="../../para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="../../para/governos-estaduais/">Programas para governos estaduais</a></nav>
-        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a> · <a href="../../parcerias/">Parcerias</a></p>
+        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a></p>
         <p><a href="../../semana/">Resumo da semana</a> · <a href="../../dados/#assinar">Assinar (RSS e calendário)</a> · <a href="../../dados/">Dados abertos</a> · <a href="../../feed.xml">RSS</a></p>
-        <p></p>
+        <p><a class="btn pequeno" href="../../apoie/" data-evento="apoio">Apoie o Fundos Brasil</a></p>
         <p class="nota">Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
-        <p class="nota"><a href="../../privacidade/">Privacidade</a> · <a href="../../termos/">Termos de uso</a></p>
+        <p class="nota"><a href="../../privacidade/">Privacidade</a> · <a href="../../termos/">Termos de uso</a> · <a href="../../apoie/">Apoie</a> · <a href="../../anuncie/">Anuncie</a></p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)
@@ -128,7 +129,7 @@
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();
-    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;var n=a.getAttribute('data-evento');try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}});
+    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
     </script>
 </body>
 </html>

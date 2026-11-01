@@ -47,11 +47,11 @@
     <footer class="rodape">
         <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
         <nav class="rodape-links" aria-label="Editais por perfil"><a href="/Plataforma-Brasil-Brasileiro/para/pesquisadores/">Editais para pesquisadores</a> · <a href="/Plataforma-Brasil-Brasileiro/para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="/Plataforma-Brasil-Brasileiro/para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="/Plataforma-Brasil-Brasileiro/para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="/Plataforma-Brasil-Brasileiro/para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="/Plataforma-Brasil-Brasileiro/para/governos-estaduais/">Programas para governos estaduais</a></nav>
-        <p><a href="/Plataforma-Brasil-Brasileiro/">Início</a> · <a href="/Plataforma-Brasil-Brasileiro/editais/">Todos os editais</a> · <a href="/Plataforma-Brasil-Brasileiro/prazos/">Prazos</a> · <a href="/Plataforma-Brasil-Brasileiro/guias/">Guias</a> · <a href="/Plataforma-Brasil-Brasileiro/glossario/">Glossário</a> · <a href="/Plataforma-Brasil-Brasileiro/instituicoes/">Instituições</a> · <a href="/Plataforma-Brasil-Brasileiro/sugerir-edital/">Sugerir edital</a> · <a href="/Plataforma-Brasil-Brasileiro/parcerias/">Parcerias</a></p>
+        <p><a href="/Plataforma-Brasil-Brasileiro/">Início</a> · <a href="/Plataforma-Brasil-Brasileiro/editais/">Todos os editais</a> · <a href="/Plataforma-Brasil-Brasileiro/prazos/">Prazos</a> · <a href="/Plataforma-Brasil-Brasileiro/guias/">Guias</a> · <a href="/Plataforma-Brasil-Brasileiro/glossario/">Glossário</a> · <a href="/Plataforma-Brasil-Brasileiro/instituicoes/">Instituições</a> · <a href="/Plataforma-Brasil-Brasileiro/sugerir-edital/">Sugerir edital</a></p>
         <p><a href="/Plataforma-Brasil-Brasileiro/semana/">Resumo da semana</a> · <a href="/Plataforma-Brasil-Brasileiro/dados/#assinar">Assinar (RSS e calendário)</a> · <a href="/Plataforma-Brasil-Brasileiro/dados/">Dados abertos</a> · <a href="/Plataforma-Brasil-Brasileiro/feed.xml">RSS</a></p>
-        <p></p>
+        <p><a class="btn pequeno" href="/Plataforma-Brasil-Brasileiro/apoie/" data-evento="apoio">Apoie o Fundos Brasil</a></p>
         <p class="nota">Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
-        <p class="nota"><a href="/Plataforma-Brasil-Brasileiro/privacidade/">Privacidade</a> · <a href="/Plataforma-Brasil-Brasileiro/termos/">Termos de uso</a></p>
+        <p class="nota"><a href="/Plataforma-Brasil-Brasileiro/privacidade/">Privacidade</a> · <a href="/Plataforma-Brasil-Brasileiro/termos/">Termos de uso</a> · <a href="/Plataforma-Brasil-Brasileiro/apoie/">Apoie</a> · <a href="/Plataforma-Brasil-Brasileiro/anuncie/">Anuncie</a></p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)
@@ -67,7 +67,7 @@
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();
-    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;var n=a.getAttribute('data-evento');try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}});
+    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
     </script>
 </body>
 </html>

@@ -126,6 +126,7 @@ const editais = [];
         fs.writeFileSync(path.join(RAIZ, 'editais.json'), JSON.stringify({ ...fonte, editais: brutos }, null, 2) + '\n');
     }
 }
+const titulosUsados = new Set();
 const slugs = new Set();
 editais.forEach(e => { if (slugs.has(slugEdital(e))) throw new Error(`Slug duplicado: ${slugEdital(e)} (ids repetidos?)`); slugs.add(slugEdital(e)); });
 
@@ -331,11 +332,19 @@ for (const e of editais) {
     const area = AREAS[e.tema] || e.tema;
     // Buscadores exibem ~60 caracteres: título do edital primeiro, instituição e marca só se couberem
     const titulo = (() => {
+        // Títulos de página únicos: programas com nomes parecidos (ex.: Transferegov) ganham UF e final do id
+        const t = tituloBase();
+        if (!titulosUsados.has(t)) { titulosUsados.add(t); return t; }
+        const suf = ` (${(e.ufs && e.ufs[0]) || e.abrangencia || 'BR'} ${String(e.id).slice(-4)})`;
+        const u = corta(e.titulo, 70 - suf.length) + suf;
+        titulosUsados.add(u); return u;
+    })();
+    function tituloBase() {
         const inst = e.instituicao;
         if (`${e.titulo} — ${inst} | ${NOME}`.length <= 70) return `${e.titulo} — ${inst} | ${NOME}`;
         if (`${e.titulo} — ${inst}`.length <= 70) return `${e.titulo} — ${inst}`;
         return inst.length <= 24 ? `${corta(e.titulo, 67 - inst.length)} — ${inst}` : corta(e.titulo, 70);
-    })();
+    }
     const descricao = corta(`${e.numero ? e.numero + '. ' : ''}${e.modalidade}${temValor(e) ? `: até ${valor(e.valorMax, e.moeda)} por proposta` : ''} para ${publicoTxt(e)}. Inscrições de ${data(e.abertura)} a ${data(e.encerramento)}. ${e.resumo}`, 158);
     const textoWhats = `${e.titulo} (${e.instituicao})${temValor(e) ? ` — até ${valor(e.valorMax, e.moeda)} por proposta` : ''}. Inscrições até ${data(e.encerramento)}: ${url}`;
     const etapas = [['Publicação do edital', e.publicadoEm], ['Abertura das inscrições', e.abertura], ['Prazo final', e.encerramento], ['Resultado (previsão)', e.resultado]].filter(([, d]) => isoOk(d));

@@ -21,7 +21,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
     
-    <script>window.SITE_CFG = {"apoio":null,"apoie":false,"apoioTexto":"Apoie o Fundos Brasil","boletim":"","whatsappCanal":"","sugestao":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=sugerir-edital.yml","contato":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=parceria.yml"};</script>
+    <script>window.SITE_CFG = {"apoio":null,"apoie":true,"apoioTexto":"Apoie o Fundos Brasil","boletim":"","whatsappCanal":"","sugestao":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=sugerir-edital.yml","contato":"mailto:contatofundosbrasil@gmail.com"};</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR","description":"Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil."},{"@type":"Organization","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","logo":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/favicon.svg"}]}</script>
     <!-- seo:fim -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1682,7 +1682,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function tipoApoio(e) {
             const m = norm(e.modalidade || '');
             if (/evento/.test(m)) return 'eventos';
-            if (/reembols|subven|fomento direto|premi/.test(m)) return 'subvencao'; // antes de "bolsa": "reembolsável" contém "bolsa"
+            if (/reembols|subven|fomento direto|premi|transfer[eê]ncia volunt|convenio|conv[eê]nio|termo de (fomento|colabora)/.test(m)) return 'subvencao'; // antes de "bolsa": "reembolsável" contém "bolsa"
             if (/\bbolsas?\b/.test(m)) return 'bolsas';
             if (/pesquisa|auxilio/.test(m)) return 'pesquisa';
             return 'outros';
