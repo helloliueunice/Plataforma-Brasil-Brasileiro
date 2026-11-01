@@ -20,6 +20,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { limpa, titulo, orgao as nomeOrgao, tema, abrangencia } from './transferegov-normaliza.mjs';
 
 const RAIZ = process.env.MONITOR_RAIZ || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = (process.env.TRANSFEREGOV_URL || 'https://api-publica.transferegov.gestao.gov.br').replace(/\/+$/, '');
@@ -71,10 +72,7 @@ async function todas(caminho, params, maxLinhas = 20000) {
 }
 
 /* ---------------- Normalização para o formato do editais.json ---------------- */
-const limpa = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const iso = s => (/^\d{4}-\d{2}-\d{2}/.test(String(s || '')) ? String(s).slice(0, 10) : null);
-const capitaliza = s => limpa(s).toLowerCase().replace(/(^|[\s(/-])(\p{L})/gu, (m, a, b) => a + b.toUpperCase())
-    .replace(/\b(De|Da|Do|Das|Dos|E|Para|Em|No|Na|Nos|Nas|A|O|Às|Ao|Aos|Com|Por)\b/g, w => w.toLowerCase());
 
 // Quem pode propor, a partir da natureza jurídica / qualificação informadas no programa
 function publicos(p) {
@@ -87,40 +85,23 @@ function publicos(p) {
     return [...s];
 }
 
-function tema(p) {
-    const t = `${p.desc_orgao_sup_programa} ${p.nome_programa} ${p.descricao || ''}`.toLowerCase();
-    if (/sa[uú]de|sus\b|hospital|aten[cç][aã]o (prim|b[aá]s)/.test(t)) return 'Saúde';
-    if (/educa|escola|ensino/.test(t)) return 'Educação';
-    if (/cultura|patrim[oô]nio|museu|biblioteca/.test(t)) return 'Cultura';
-    if (/esporte|lazer/.test(t)) return 'Desenvolvimento';
-    if (/agric|agro|pecu[aá]ria|rural|pesca|aliment/.test(t)) return 'Agronegocio';
-    if (/meio ambiente|ambiental|clima|saneamento|res[ií]duo|[aá]gua/.test(t)) return 'Meio Ambiente';
-    if (/seguran[cç]a p[uú]blica|defesa civil|pol[ií]cia|justi[cç]a/.test(t)) return 'Segurança';
-    if (/energia/.test(t)) return 'Energia';
-    if (/ci[eê]ncia|tecnolog|inova|digital|conectividade/.test(t)) return 'Tecnologia';
-    if (/obra|infraestrutura|pavimenta|mobilidade|transporte|habita|urban|cidade/.test(t)) return 'Infraestrutura';
-    return 'Desenvolvimento';
-}
-
 function paraEdital(p) {
     const ab = iso(p.dt_prog_ini_receb_prop), fim = iso(p.dt_prog_fim_receb_prop);
     const pubs = publicos(p);
-    const uf = limpa(p.uf_programa).toUpperCase();
-    const orgao = capitaliza(p.desc_orgao_sup_programa || p.orgao_executor || 'Governo Federal');
+    const orgao = nomeOrgao(p.desc_orgao_sup_programa || p.orgao_executor || 'Governo Federal');
     const desc = limpa(p.descricao || p.observacao || '');
     return {
         id: 1000000 + Number(p.id_programa),
         numero: `Programa Transferegov ${limpa(p.cod_programa)}`,
-        titulo: capitaliza(p.nome_programa).slice(0, 180),
+        titulo: titulo(p.nome_programa).slice(0, 180),
         instituicao: orgao,
         agencia: null,
         procedencia: 'nacional',
-        tema: tema(p),
-        tags: ['Transferegov', 'Transferência voluntária', limpa(p.modalidade_programa) && capitaliza(p.modalidade_programa)].filter(Boolean).slice(0, 4),
+        tema: tema(p.nome_programa, orgao),
+        tags: ['Transferegov', 'Transferência voluntária', limpa(p.modalidade_programa) && titulo(p.modalidade_programa)].filter(Boolean).slice(0, 4),
         modalidade: 'Transferência voluntária',
         publico: pubs,
-        abrangencia: /^[A-Z]{2}$/.test(uf) ? uf : 'Nacional',
-        ...( /^[A-Z]{2}$/.test(uf) ? { ufs: [uf] } : {}),
+        ...abrangencia(p.nome_programa, p.uf_programa),
         moeda: 'BRL',
         valorMax: null,
         valorNota: 'Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.',

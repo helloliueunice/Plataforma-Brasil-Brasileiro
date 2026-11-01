@@ -3,15 +3,15 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Infra-Estrutura Básica – Sr(Ba) Superintendência Regional
+X-WR-CALNAME:Infra-Estrutura Básica – SR(BA) Superintendência Regional
  … — Fundos Brasil
-NAME:Infra-Estrutura Básica – Sr(Ba) Superintendência Regional… — F
+NAME:Infra-Estrutura Básica – SR(BA) Superintendência Regional… — F
  undos Brasil
-X-WR-CALDESC:Prazos de Infra-Estrutura Básica – Sr(Ba) Superintendência
-  Regional do Incra na Bahia– Convênio. (Ministério do Desenvolvimento 
+X-WR-CALDESC:Prazos de Infra-Estrutura Básica – SR(BA) Superintendência
+  Regional do INCRA na Bahia– Convênio. (Ministério do Desenvolvimento 
  Agrário e Agricultura Familiar). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de Infra-Estrutura Básica – Sr(Ba) Superintendência 
- Regional do Incra na Bahia– Convênio. (Ministério do Desenvolvimento A
+DESCRIPTION:Prazos de Infra-Estrutura Básica – SR(BA) Superintendência 
+ Regional do INCRA na Bahia– Convênio. (Ministério do Desenvolvimento A
  grário e Agricultura Familiar). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
@@ -21,8 +21,8 @@ UID:edital-1056398-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Ba) Superintendência R
- egional do Incra na Bahia– Convênio.
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(BA) Superintendência R
+ egional do INCRA na Bahia– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260010\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -38,14 +38,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(B
- a) Superintendência Regional do Incra na Bahia– Convênio.
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(B
+ A) Superintendência Regional do INCRA na Bahia– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Ba) Sup
- erintendência Regional do Incra na Bahia– Convênio.
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(BA) Sup
+ erintendência Regional do INCRA na Bahia– Convênio.
 END:VALARM
 END:VEVENT
 END:VCALENDAR

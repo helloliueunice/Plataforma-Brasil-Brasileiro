@@ -393,17 +393,21 @@ anotar(API_KEY ? 'Chave da API encontrada' : 'Chave da API não encontrada',
 const lote = fila.slice(0, MAX_NOVOS);
 rel.adiados = fila.length - lote.length;
 const novos = [];
+// Endereços oficiais conhecidos (fontes monitoradas e links dos editais já publicados), para alertar sobre sugestões de outros sites.
+const HOSTS_CONHECIDOS = new Set([...fontes.map(f => f.url), ...base.editais.map(e => e.link), ...base.editais.map(e => e.fonte)].map(u => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch (_) { return ''; } }).filter(Boolean));
 for (const item of lote) {
     if (!API_KEY) { rel.manuais.push(item); estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'manual' }; continue; }
     try {
         const conteudo = await baixar(item.url);
         if (conteudo.tipo === 'pdf' && conteudo.buf.length > 20 * 1048576) throw new Error('PDF maior que 20 MB');
         const x = await extrair(item, conteudo);
-        const dominio = u => { try { return new URL(u).hostname.split('.').slice(-2).join('.'); } catch (_) { return ''; } };
-        if (!/^https:?\/\//.test(String(x.link || '')) || dominio(x.link) !== dominio(item.url)) {
-            if (x.link && dominio(x.link) !== dominio(item.url)) (x.alertas ||= []).push(`A IA indicou um link de outro domínio (${x.link}); usamos a página oficial lida.`);
+        // Mesmo endereço exato (sem "www."): "evil.org.br" não passa por "fundacao.org.br".
+        const host = u => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch (_) { return ''; } };
+        if (!/^https:\/\/[^\s"'<>`]+$/i.test(String(x.link || '')) || host(x.link) !== host(item.url)) {
+            if (x.link && host(x.link) !== host(item.url)) (x.alertas ||= []).push(`A IA indicou um link de outro endereço (${x.link}); usamos a página oficial lida.`);
             x.link = item.url;
         }
+        if (item.fonteId === 'sugestao' && !HOSTS_CONHECIDOS.has(host(item.url))) (x.alertas ||= []).push(`⚠️ Domínio fora da lista de fontes conhecidas: ${host(item.url)}. Confirme que é o site oficial da instituição antes do merge.`);
         if (!x.eh_chamada_de_fomento) {
             rel.descartados.push({ item, motivo: x.motivo_descarte || 'não é chamada de fomento' });
             estado.vistos[item.url] = { em: HOJE, fonte: item.fonteId, resultado: 'descartado' };
@@ -451,7 +455,7 @@ gravarJSON(ARQ.estado, estado);
 
 const linhas = [];
 if (SUGESTAO) {
-    linhas.push(`# Análise da sugestão — ${dataBR(HOJE)}`, '', `Link analisado: ${SUGESTAO}`, '');
+    linhas.push(`# Análise da sugestão — ${dataBR(HOJE)}`, '', `Link analisado: \`${String(SUGESTAO).replace(/`/g, '')}\``, '');
 } else {
     linhas.push(`# Monitor de editais — ${dataBR(HOJE)}`, '');
     linhas.push(`Fontes verificadas: **${fontes.length}** · links novos: **${fila.length}**${rel.adiados ? ` (${rel.adiados} ficam para a próxima execução)` : ''} · candidatos: **${novos.length}**`, '');
@@ -460,7 +464,7 @@ if (!API_KEY) linhas.push('> ⚠️ Sem `ANTHROPIC_API_KEY` configurada: os link
 if (rel.candidatos.length) {
     linhas.push('## ✅ Candidatos incluídos neste pull request', '', 'Revise cada um no documento oficial antes do merge. Para corrigir, edite o `editais.json` neste branch; para descartar, apague o item.', '');
     for (const { ed, x } of rel.candidatos) {
-        linhas.push(`### ${ed.titulo}`, '');
+        linhas.push(`### ${md(ed.titulo)}`, '');
         linhas.push(`| Campo | Valor |`, `|---|---|`);
         linhas.push(`| Chamada | ${md(ed.numero || '—')} · ${md(ed.instituicao)} |`);
         linhas.push(`| Prazo | ${dataBR(ed.abertura)} a **${dataBR(ed.encerramento)}**${ed.prazoNota ? ` — ${md(ed.prazoNota)}` : ''} |`);

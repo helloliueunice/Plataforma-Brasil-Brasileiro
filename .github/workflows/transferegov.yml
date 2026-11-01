@@ -38,10 +38,14 @@ jobs:
         run: node scripts/transferegov.mjs
       - name: Regenerar páginas
         if: ${{ !inputs.diagnostico }}
-        run: node scripts/gerar-paginas.mjs
+        env:
+          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+        run: node scripts/gerar-paginas.mjs && node scripts/verificar-pix.mjs
       - name: Publicar
         if: ${{ !inputs.diagnostico }}
         id: publicar
+        env:
+          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
         run: |
           if [ -z "$(git status --porcelain)" ]; then echo "Sem mudanças."; exit 0; fi
           git config user.name "github-actions[bot]"

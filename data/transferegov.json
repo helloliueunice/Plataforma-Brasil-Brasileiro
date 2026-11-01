@@ -9,10 +9,10 @@
       "id": 1056835,
       "numero": "Programa Transferegov 2041120260009",
       "titulo": "Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional",
-      "instituicao": "Ministerio da Cultura",
+      "instituicao": "Ministério da Cultura",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Educação",
+      "tema": "Cultura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -21,10 +21,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "SP",
-      "ufs": [
-        "SP"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -51,13 +47,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2041120260009"
+      "codigoPrograma": "2041120260009",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica SP): confira no programa quem pode propor."
     },
     {
       "id": 1056871,
       "numero": "Programa Transferegov 2624420260017",
-      "titulo": "Edupol-Ia: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança",
-      "instituicao": "Ministerio da Educacao",
+      "titulo": "Edupol-IA: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -69,10 +67,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "RS",
-      "ufs": [
-        "RS"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -99,13 +93,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2624420260017"
+      "codigoPrograma": "2624420260017",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RS): confira no programa quem pode propor."
     },
     {
       "id": 1056851,
       "numero": "Programa Transferegov 2624920260003",
       "titulo": "Rede Multidisciplinar de Atenção a Mães e Familiares Vítimas de Desaparecimentos Forçados e da Violência de Estado na Baixada Fluminense",
-      "instituicao": "Ministerio da Educacao",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -117,10 +113,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "AL",
-      "ufs": [
-        "AL"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -143,16 +135,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2624920260003"
+      "codigoPrograma": "2624920260003",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor."
     },
     {
       "id": 1056427,
       "numero": "Programa Transferegov 2800020260010",
       "titulo": "Industrialização da Cadeia Produtiva do Pirarucu",
-      "instituicao": "Ministério do Desenvolvimento, Indústria, comércio e Serviços",
+      "instituicao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Infraestrutura",
+      "tema": "Desenvolvimento",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -161,10 +155,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "TO",
-      "ufs": [
-        "TO"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -191,7 +181,9 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2800020260010"
+      "codigoPrograma": "2800020260010",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica TO): confira no programa quem pode propor."
     },
     {
       "id": 1056853,
@@ -200,7 +192,7 @@
       "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Meio Ambiente",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -209,10 +201,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "TO",
-      "ufs": [
-        "TO"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -239,13 +227,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "4420520260001"
+      "codigoPrograma": "4420520260001",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica TO): confira no programa quem pode propor."
     },
     {
       "id": 1056868,
       "numero": "Programa Transferegov 2624920260004",
       "titulo": "Ri para Todos: Diplomacia Popular, Cidadania Global e Democratização das Relações Internacionais",
-      "instituicao": "Ministerio da Educacao",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -257,10 +247,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "RN",
-      "ufs": [
-        "RN"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -283,16 +269,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2624920260004"
+      "codigoPrograma": "2624920260004",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RN): confira no programa quem pode propor."
     },
     {
       "id": 1055992,
       "numero": "Programa Transferegov 5300020260002",
-      "titulo": "ação 214s - Rotas de Integração Nacional - Rp2",
+      "titulo": "Ação 214S - Rotas de Integração Nacional - RP2",
       "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Agronegocio",
+      "tema": "Desenvolvimento",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -301,10 +289,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "estado"
-      ],
-      "abrangencia": "SE",
-      "ufs": [
-        "SE"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -331,16 +315,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "5300020260002"
+      "codigoPrograma": "5300020260002",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica SE): confira no programa quem pode propor."
     },
     {
       "id": 1055990,
       "numero": "Programa Transferegov 5300020260001",
-      "titulo": "ação 00sx - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - Rp2",
+      "titulo": "Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2",
       "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Tecnologia",
+      "tema": "Desenvolvimento",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -349,10 +335,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "AL",
-      "ufs": [
-        "AL"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -379,16 +361,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "5300020260001"
+      "codigoPrograma": "5300020260001",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor."
     },
     {
       "id": 1055995,
       "numero": "Programa Transferegov 5300020260004",
-      "titulo": "ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - Rp2",
+      "titulo": "Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2",
       "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Educação",
+      "tema": "Infraestrutura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -397,10 +381,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "estado"
-      ],
-      "abrangencia": "PA",
-      "ufs": [
-        "PA"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -427,13 +407,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "5300020260004"
+      "codigoPrograma": "5300020260004",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor."
     },
     {
       "id": 1056755,
       "numero": "Programa Transferegov 4400020260013",
       "titulo": "Prospera Amazônia",
-      "instituicao": "Ministerio do Meio Ambiente",
+      "instituicao": "Ministério do Meio Ambiente",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Meio Ambiente",
@@ -445,10 +427,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "RO",
-      "ufs": [
-        "RO"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -475,7 +453,9 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "4400020260013"
+      "codigoPrograma": "4400020260013",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RO): confira no programa quem pode propor."
     },
     {
       "id": 1056045,
@@ -484,7 +464,7 @@
       "instituicao": "Ministério da Agricultura e Pecuária",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Agronegocio",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -493,10 +473,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "AC",
-      "ufs": [
-        "AC"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -523,16 +499,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2200020260004"
+      "codigoPrograma": "2200020260004",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
     },
     {
       "id": 1056079,
       "numero": "Programa Transferegov 2200020260006",
-      "titulo": "Programa Nacional de Estradas Rurais - Proner",
+      "titulo": "Programa Nacional de Estradas Rurais - PRONER",
       "instituicao": "Ministério da Agricultura e Pecuária",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Infraestrutura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -541,10 +519,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "AC",
-      "ufs": [
-        "AC"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -571,16 +545,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2200020260006"
+      "codigoPrograma": "2200020260006",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
     },
     {
       "id": 1056156,
       "numero": "Programa Transferegov 2200020260022",
-      "titulo": "Programa Nacional de Modernização e Apoio À Produção Agrícola - Promaq",
+      "titulo": "Programa Nacional de Modernização e Apoio à Produção Agrícola - PROMAQ",
       "instituicao": "Ministério da Agricultura e Pecuária",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Agronegocio",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -589,10 +565,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "AC",
-      "ufs": [
-        "AC"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -619,7 +591,9 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2200020260022"
+      "codigoPrograma": "2200020260022",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
     },
     {
       "id": 1056107,
@@ -628,7 +602,7 @@
       "instituicao": "Ministério da Agricultura e Pecuária",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Agronegocio",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -637,10 +611,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "estado"
-      ],
-      "abrangencia": "AC",
-      "ufs": [
-        "AC"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -667,7 +637,9 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2200020260018"
+      "codigoPrograma": "2200020260018",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
     },
     {
       "id": 1056046,
@@ -676,7 +648,7 @@
       "instituicao": "Ministério da Agricultura e Pecuária",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Agronegocio",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -685,10 +657,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "AC",
-      "ufs": [
-        "AC"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -715,13 +683,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2200020260005"
+      "codigoPrograma": "2200020260005",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
     },
     {
       "id": 1056385,
       "numero": "Programa Transferegov 2629120260003",
-      "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Proeb e Inovação Tecnológica",
-      "instituicao": "Ministerio da Educacao",
+      "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -733,10 +703,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "PA",
-      "ufs": [
-        "PA"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -763,13 +729,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2629120260003"
+      "codigoPrograma": "2629120260003",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor."
     },
     {
       "id": 1055941,
       "numero": "Programa Transferegov 2629820260001",
-      "titulo": "Programa Simec/Par",
-      "instituicao": "Ministerio da Educacao",
+      "titulo": "Programa SIMEC/PAR",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -781,10 +749,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "ES",
-      "ufs": [
-        "ES"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -811,13 +775,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2629820260001"
+      "codigoPrograma": "2629820260001",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica ES): confira no programa quem pode propor."
     },
     {
       "id": 1055966,
       "numero": "Programa Transferegov 2629120260002",
-      "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes",
-      "instituicao": "Ministerio da Educacao",
+      "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -829,10 +795,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "PA",
-      "ufs": [
-        "PA"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -859,13 +821,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2629120260002"
+      "codigoPrograma": "2629120260002",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor."
     },
     {
       "id": 1056386,
       "numero": "Programa Transferegov 2629120260004",
-      "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Sistema Uab",
-      "instituicao": "Ministerio da Educacao",
+      "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -877,10 +841,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "BA",
-      "ufs": [
-        "BA"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -907,13 +867,15 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2629120260004"
+      "codigoPrograma": "2629120260004",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica BA): confira no programa quem pode propor."
     },
     {
       "id": 1055945,
       "numero": "Programa Transferegov 2629120260001",
-      "titulo": "Programa Brasileiro de Professores no Cern",
-      "instituicao": "Ministerio da Educacao",
+      "titulo": "Programa Brasileiro de Professores no CERN",
+      "instituicao": "Ministério da Educação",
       "agencia": null,
       "procedencia": "nacional",
       "tema": "Educação",
@@ -925,10 +887,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "osc"
-      ],
-      "abrangencia": "MT",
-      "ufs": [
-        "MT"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -951,16 +909,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2629120260001"
+      "codigoPrograma": "2629120260001",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica MT): confira no programa quem pode propor."
     },
     {
       "id": 1056402,
       "numero": "Programa Transferegov 2220120260014",
-      "titulo": "Infra-Estrutura Básica – Sr(Pr) Superintendência Regional do Incra no Paraná– Convênio.",
+      "titulo": "Infra-Estrutura Básica – SR(PR) Superintendência Regional do INCRA no Paraná– Convênio.",
       "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Infraestrutura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -969,10 +929,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "PR",
-      "ufs": [
-        "PR"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -999,16 +955,20 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220120260014"
+      "codigoPrograma": "2220120260014",
+      "abrangencia": "PR",
+      "ufs": [
+        "PR"
+      ]
     },
     {
       "id": 1056676,
       "numero": "Programa Transferegov 2220120260048",
-      "titulo": "Fomento ao Setor Agropecuário – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(11)rs– Convênio.",
+      "titulo": "Fomento ao Setor Agropecuário – Investimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(11)Rs– Convênio.",
       "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Agronegocio",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -1017,10 +977,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "RS",
-      "ufs": [
-        "RS"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -1047,16 +1003,20 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220120260048"
+      "codigoPrograma": "2220120260048",
+      "abrangencia": "PA",
+      "ufs": [
+        "PA"
+      ]
     },
     {
       "id": 1056398,
       "numero": "Programa Transferegov 2220120260010",
-      "titulo": "Infra-Estrutura Básica – Sr(Ba) Superintendência Regional do Incra na Bahia– Convênio.",
+      "titulo": "Infra-Estrutura Básica – SR(BA) Superintendência Regional do INCRA na Bahia– Convênio.",
       "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Infraestrutura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -1065,10 +1025,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "BA",
-      "ufs": [
-        "BA"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -1095,16 +1051,20 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220120260010"
+      "codigoPrograma": "2220120260010",
+      "abrangencia": "BA",
+      "ufs": [
+        "BA"
+      ]
     },
     {
       "id": 1056404,
       "numero": "Programa Transferegov 2220120260016",
-      "titulo": "Infra-Estrutura Básica – Sr(Rs) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.",
+      "titulo": "Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.",
       "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Infraestrutura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -1113,10 +1073,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "RS",
-      "ufs": [
-        "RS"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -1143,16 +1099,20 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220120260016"
+      "codigoPrograma": "2220120260016",
+      "abrangencia": "RS",
+      "ufs": [
+        "RS"
+      ]
     },
     {
       "id": 1056401,
       "numero": "Programa Transferegov 2220120260013",
-      "titulo": "Infra-Estrutura Básica – Sr(Sp) Superintendência Regional do Incra de São Paulo– Convênio",
+      "titulo": "Infra-Estrutura Básica – SR(SP) Superintendência Regional do INCRA de São Paulo– Convênio",
       "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Infraestrutura",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -1161,10 +1121,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "SP",
-      "ufs": [
-        "SP"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -1191,16 +1147,20 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220120260013"
+      "codigoPrograma": "2220120260013",
+      "abrangencia": "SP",
+      "ufs": [
+        "SP"
+      ]
     },
     {
       "id": 1056721,
       "numero": "Programa Transferegov 2220320260043",
-      "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
+      "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
       "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Cultura",
+      "tema": "Meio Ambiente",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -1209,10 +1169,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "municipio"
-      ],
-      "abrangencia": "PI",
-      "ufs": [
-        "PI"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -1235,16 +1191,18 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220320260043"
+      "codigoPrograma": "2220320260043",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PI): confira no programa quem pode propor."
     },
     {
       "id": 1056725,
       "numero": "Programa Transferegov 2220320260044",
-      "titulo": "2317 - (Ted 7aadaf Sdr/Midr) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp",
+      "titulo": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp",
       "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
       "agencia": null,
       "procedencia": "nacional",
-      "tema": "Tecnologia",
+      "tema": "Desenvolvimento",
       "tags": [
         "Transferegov",
         "Transferência voluntária",
@@ -1253,10 +1211,6 @@
       "modalidade": "Transferência voluntária",
       "publico": [
         "estado"
-      ],
-      "abrangencia": "AL",
-      "ufs": [
-        "AL"
       ],
       "moeda": "BRL",
       "valorMax": null,
@@ -1279,7 +1233,9 @@
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
-      "codigoPrograma": "2220320260044"
+      "codigoPrograma": "2220320260044",
+      "abrangencia": "Nacional",
+      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor."
     }
   ]
 }

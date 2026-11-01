@@ -90,6 +90,8 @@ section, .aviso { margin-top: var(--s-10); }
 .selo.em-breve { background: var(--soon-bg);   color: var(--soon-fg);   border-color: var(--soon-bd); }
 .selo.fechado  { background: var(--closed-bg); color: var(--closed-fg); border-color: var(--closed-bd); }
 .selo.nacional, .selo.internacional, .selo.neutro { background: transparent; color: var(--text-2); border-color: var(--border); }
+.selo.auto { background: transparent; color: var(--text); border-color: var(--text-2); border-style: dashed; text-decoration: none; }
+.aviso-auto { border-left: 3px solid var(--text-2); padding-left: var(--s-3); }
 .selo.patrocinado { background: transparent; color: var(--soon-fg); border-color: var(--soon-bd); }
 
 /* Botões */

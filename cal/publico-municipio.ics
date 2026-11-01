@@ -17,8 +17,8 @@ UID:edital-1055990-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: ação 00sx - Apoio a Projetos de Desenvolvimento Sust
- entável Local Integrado - Rp2
+SUMMARY:Prazo final: Ação 00SX - Apoio a Projetos de Desenvolvimento Sust
+ entável Local Integrado - RP2
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 5300020260001\nValor: ver condições\nQuem pode parti
  cipar: Município\nProposta cadastrada no Transferegov.br (módulo Discric
@@ -33,14 +33,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — ação 00sx - Apoio a Projetos d
- e Desenvolvimento Sustentável Local Integrado - Rp2
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 00SX - Apoio a Projetos d
+ e Desenvolvimento Sustentável Local Integrado - RP2
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — ação 00sx - Apoio a Projetos de Dese
- nvolvimento Sustentável Local Integrado - Rp2
+DESCRIPTION:Amanhã: Prazo final — Ação 00SX - Apoio a Projetos de Dese
+ nvolvimento Sustentável Local Integrado - RP2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -48,26 +48,26 @@ UID:edital-1055941-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Simec/Par
-DESCRIPTION:Ministerio da Educacao · Programa Transferegov 2629820260001\n
- Valor: ver condições\nQuem pode participar: Município\nProposta cadastr
- ada no Transferegov.br (módulo Discricionárias)\, pelo código 262982026
- 0001. É preciso cadastro do proponente e\, para entes\, regularidade no C
- AUC.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Brasi
- l-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data e horário
-  limite no edital oficial: https://www.gov.br/transferegov/pt-br
+SUMMARY:Prazo final: Programa SIMEC/PAR
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262982026000
+ 1\nValor: ver condições\nQuem pode participar: Município\nProposta cada
+ strada no Transferegov.br (módulo Discricionárias)\, pelo código 262982
+ 0260001. É preciso cadastro do proponente e\, para entes\, regularidade n
+ o CAUC.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Br
+ asil-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data e horá
+ rio limite no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
  rograma-simec-par-1055941/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Programa Simec/Par
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa SIMEC/PAR
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Programa Simec/Par
+DESCRIPTION:Amanhã: Prazo final — Programa SIMEC/PAR
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -106,7 +106,7 @@ UID:edital-1056079-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - Proner
+SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - PRONER
 DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
   2200020260006\nValor: ver condições\nQuem pode participar: Município\n
  Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
@@ -122,13 +122,13 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
- rais - Proner
+ rais - PRONER
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
-  Proner
+  PRONER
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -136,8 +136,8 @@ UID:edital-1056156-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio À Produç
- ão Agrícola - Promaq
+SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio à Produç
+ ão Agrícola - PROMAQ
 DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
   2200020260022\nValor: ver condições\nQuem pode participar: Município\n
  Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
@@ -154,13 +154,13 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Modernizaç
- ão e Apoio À Produção Agrícola - Promaq
+ ão e Apoio à Produção Agrícola - PROMAQ
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Modernização e 
- Apoio À Produção Agrícola - Promaq
+ Apoio à Produção Agrícola - PROMAQ
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -168,16 +168,16 @@ UID:edital-1056385-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: ações da Diretoria de Articulação e Inovação em 
- Educação Aberta (Diea) da Capes - Proeb e Inovação Tecnológica
-DESCRIPTION:Ministerio da Educacao · Programa Transferegov 2629120260003\n
- Valor: ver condições\nQuem pode participar: Município\nProposta cadastr
- ada no Transferegov.br (módulo Discricionárias)\, pelo código 262912026
- 0003. É preciso cadastro do proponente e\, para entes\, regularidade no C
- AUC.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Brasi
- l-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educa
- cao-aberta-diea-1056385/\nConfirme data e horário limite no edital oficia
- l: https://www.gov.br/transferegov/pt-br
+SUMMARY:Prazo final: Ações da Diretoria de Articulação e Inovação em 
+ Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
+ 3\nValor: ver condições\nQuem pode participar: Município\nProposta cada
+ strada no Transferegov.br (módulo Discricionárias)\, pelo código 262912
+ 0260003. É preciso cadastro do proponente e\, para entes\, regularidade n
+ o CAUC.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Br
+ asil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-ed
+ ucacao-aberta-diea-1056385/\nConfirme data e horário limite no edital ofi
+ cial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
  5/
@@ -185,15 +185,15 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — ações da Diretoria de Articula
- ção e Inovação em Educação Aberta (Diea) da Capes - Proeb e Inovaç
+DESCRIPTION:Faltam 7 dias: Prazo final — Ações da Diretoria de Articula
+ ção e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovaç
  ão Tecnológica
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — ações da Diretoria de Articulação 
- e Inovação em Educação Aberta (Diea) da Capes - Proeb e Inovação Tec
+DESCRIPTION:Amanhã: Prazo final — Ações da Diretoria de Articulação 
+ e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tec
  nológica
 END:VALARM
 END:VEVENT
@@ -202,8 +202,8 @@ UID:edital-1056398-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Ba) Superintendência R
- egional do Incra na Bahia– Convênio.
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(BA) Superintendência R
+ egional do INCRA na Bahia– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260010\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -219,14 +219,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(B
- a) Superintendência Regional do Incra na Bahia– Convênio.
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(B
+ A) Superintendência Regional do INCRA na Bahia– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Ba) Sup
- erintendência Regional do Incra na Bahia– Convênio.
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(BA) Sup
+ erintendência Regional do INCRA na Bahia– Convênio.
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -234,8 +234,8 @@ UID:edital-1056401-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Sp) Superintendência R
- egional do Incra de São Paulo– Convênio
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(SP) Superintendência R
+ egional do INCRA de São Paulo– Convênio
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260013\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -252,14 +252,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(S
- p) Superintendência Regional do Incra de São Paulo– Convênio
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(S
+ P) Superintendência Regional do INCRA de São Paulo– Convênio
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Sp) Sup
- erintendência Regional do Incra de São Paulo– Convênio
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(SP) Sup
+ erintendência Regional do INCRA de São Paulo– Convênio
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -267,8 +267,8 @@ UID:edital-1056402-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Pr) Superintendência R
- egional do Incra no Paraná– Convênio.
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(PR) Superintendência R
+ egional do INCRA no Paraná– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260014\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -284,14 +284,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(P
- r) Superintendência Regional do Incra no Paraná– Convênio.
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(P
+ R) Superintendência Regional do INCRA no Paraná– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Pr) Sup
- erintendência Regional do Incra no Paraná– Convênio.
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(PR) Sup
+ erintendência Regional do INCRA no Paraná– Convênio.
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -299,8 +299,8 @@ UID:edital-1056404-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Rs) Superintendência R
- egional do Incra no Rio Grande do Sul– Convênio.
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(RS) Superintendência R
+ egional do INCRA no Rio Grande do Sul– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260016\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -317,14 +317,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(R
- s) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(R
+ S) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Rs) Sup
- erintendência Regional do Incra no Rio Grande do Sul– Convênio.
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(RS) Sup
+ erintendência Regional do INCRA no Rio Grande do Sul– Convênio.
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -332,9 +332,9 @@ UID:edital-1056676-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento Sr(Pa)
-  Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(1
- 1)rs– Convênio.
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento SR(PA)
+  Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(1
+ 1)Rs– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260048\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -351,15 +351,15 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário 
- – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do R
- io Grande do Sul - Sr(11)rs– Convênio.
+ – Investimento SR(PA) Superintendência Regional do INCRA no Estado do R
+ io Grande do Sul - SR(11)Rs– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário – Inv
- estimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Gran
- de do Sul - Sr(11)rs– Convênio.
+ estimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Gran
+ de do Sul - SR(11)Rs– Convênio.
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -368,7 +368,7 @@ DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Prazo final: 2321 - Recursos Hídricos: Água em Quantidade e Quali
- dade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barrag
+ dade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barrag
  em Atalaia no Estado do Piauí/ Rp (3)
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 2220320260043\nValor: ver condições\nQuem pode parti
@@ -387,14 +387,14 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — 2321 - Recursos Hídricos: Água
-  em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: 
+  em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: 
  Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — 2321 - Recursos Hídricos: Água em Qu
- antidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Constr
+ antidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Constr
  ução da Barragem Atalaia no Estado do Piauí/ Rp (3)
 END:VALARM
 END:VEVENT

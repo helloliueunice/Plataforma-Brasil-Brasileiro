@@ -3,12 +3,12 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Programa Simec/Par — Fundos Brasil
-NAME:Programa Simec/Par — Fundos Brasil
-X-WR-CALDESC:Prazos de Programa Simec/Par (Ministerio da Educacao). Confirm
- e sempre no edital oficial.
-DESCRIPTION:Prazos de Programa Simec/Par (Ministerio da Educacao). Confirme
-  sempre no edital oficial.
+X-WR-CALNAME:Programa SIMEC/PAR — Fundos Brasil
+NAME:Programa SIMEC/PAR — Fundos Brasil
+X-WR-CALDESC:Prazos de Programa SIMEC/PAR (Ministério da Educação). Conf
+ irme sempre no edital oficial.
+DESCRIPTION:Prazos de Programa SIMEC/PAR (Ministério da Educação). Confi
+ rme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
@@ -17,26 +17,26 @@ UID:edital-1055941-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Simec/Par
-DESCRIPTION:Ministerio da Educacao · Programa Transferegov 2629820260001\n
- Valor: ver condições\nQuem pode participar: Município\nProposta cadastr
- ada no Transferegov.br (módulo Discricionárias)\, pelo código 262982026
- 0001. É preciso cadastro do proponente e\, para entes\, regularidade no C
- AUC.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Brasi
- l-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data e horário
-  limite no edital oficial: https://www.gov.br/transferegov/pt-br
+SUMMARY:Prazo final: Programa SIMEC/PAR
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262982026000
+ 1\nValor: ver condições\nQuem pode participar: Município\nProposta cada
+ strada no Transferegov.br (módulo Discricionárias)\, pelo código 262982
+ 0260001. É preciso cadastro do proponente e\, para entes\, regularidade n
+ o CAUC.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Br
+ asil-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data e horá
+ rio limite no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
  rograma-simec-par-1055941/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Programa Simec/Par
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa SIMEC/PAR
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Programa Simec/Par
+DESCRIPTION:Amanhã: Prazo final — Programa SIMEC/PAR
 END:VALARM
 END:VEVENT
 END:VCALENDAR

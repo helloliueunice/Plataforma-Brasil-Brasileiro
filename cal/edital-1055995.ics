@@ -3,15 +3,15 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:ação 1211 - Implementação de Infraestrutura Básica nos…
+X-WR-CALNAME:Ação 1211 - Implementação de Infraestrutura Básica nos…
   — Fundos Brasil
-NAME:ação 1211 - Implementação de Infraestrutura Básica nos… — Fun
+NAME:Ação 1211 - Implementação de Infraestrutura Básica nos… — Fun
  dos Brasil
-X-WR-CALDESC:Prazos de ação 1211 - Implementação de Infraestrutura Bás
- ica nos Municípios da Região do Calha Norte - Rp2 (Ministério da Integr
+X-WR-CALDESC:Prazos de Ação 1211 - Implementação de Infraestrutura Bás
+ ica nos Municípios da Região do Calha Norte - RP2 (Ministério da Integr
  ação e do Desenvolvimento Regional). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de ação 1211 - Implementação de Infraestrutura Bási
- ca nos Municípios da Região do Calha Norte - Rp2 (Ministério da Integra
+DESCRIPTION:Prazos de Ação 1211 - Implementação de Infraestrutura Bási
+ ca nos Municípios da Região do Calha Norte - RP2 (Ministério da Integra
  ção e do Desenvolvimento Regional). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
@@ -21,8 +21,8 @@ UID:edital-1055995-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: ação 1211 - Implementação de Infraestrutura Básic
- a nos Municípios da Região do Calha Norte - Rp2
+SUMMARY:Prazo final: Ação 1211 - Implementação de Infraestrutura Básic
+ a nos Municípios da Região do Calha Norte - RP2
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 5300020260004\nValor: ver condições\nQuem pode parti
  cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
@@ -37,14 +37,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — ação 1211 - Implementação de
-  Infraestrutura Básica nos Municípios da Região do Calha Norte - Rp2
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 1211 - Implementação de
+  Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — ação 1211 - Implementação de Infra
- estrutura Básica nos Municípios da Região do Calha Norte - Rp2
+DESCRIPTION:Amanhã: Prazo final — Ação 1211 - Implementação de Infra
+ estrutura Básica nos Municípios da Região do Calha Norte - RP2
 END:VALARM
 END:VEVENT
 END:VCALENDAR

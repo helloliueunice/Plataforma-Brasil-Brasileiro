@@ -8,11 +8,11 @@ X-WR-CALNAME:2321 - Recursos Hídricos: Água em Quantidade e Qualidade…
 NAME:2321 - Recursos Hídricos: Água em Quantidade e Qualidade… — Fund
  os Brasil
 X-WR-CALDESC:Prazos de 2321 - Recursos Hídricos: Água em Quantidade e Qua
- lidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barr
+ lidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barr
  agem Atalaia no Estado do Piauí/ Rp (3) (Ministério da Integração e do
   Desenvolvimento Regional). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de 2321 - Recursos Hídricos: Água em Quantidade e Qual
- idade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barra
+ idade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barra
  gem Atalaia no Estado do Piauí/ Rp (3) (Ministério da Integração e do 
  Desenvolvimento Regional). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
@@ -24,7 +24,7 @@ DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Prazo final: 2321 - Recursos Hídricos: Água em Quantidade e Quali
- dade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barrag
+ dade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barrag
  em Atalaia no Estado do Piauí/ Rp (3)
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 2220320260043\nValor: ver condições\nQuem pode parti
@@ -43,14 +43,14 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — 2321 - Recursos Hídricos: Água
-  em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: 
+  em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: 
  Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — 2321 - Recursos Hídricos: Água em Qu
- antidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Constr
+ antidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Constr
  ução da Barragem Atalaia no Estado do Piauí/ Rp (3)
 END:VALARM
 END:VEVENT

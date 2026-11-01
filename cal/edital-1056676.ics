@@ -3,17 +3,17 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Fomento ao Setor Agropecuário – Investimento Sr(Pa)… — 
+X-WR-CALNAME:Fomento ao Setor Agropecuário – Investimento SR(PA)… — 
  Fundos Brasil
-NAME:Fomento ao Setor Agropecuário – Investimento Sr(Pa)… — Fundos B
+NAME:Fomento ao Setor Agropecuário – Investimento SR(PA)… — Fundos B
  rasil
-X-WR-CALDESC:Prazos de Fomento ao Setor Agropecuário – Investimento Sr(P
- a) Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr
- (11)rs– Convênio. (Ministério do Desenvolvimento Agrário e Agricultur
+X-WR-CALDESC:Prazos de Fomento ao Setor Agropecuário – Investimento SR(P
+ A) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR
+ (11)Rs– Convênio. (Ministério do Desenvolvimento Agrário e Agricultur
  a Familiar). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de Fomento ao Setor Agropecuário – Investimento Sr(Pa
- ) Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(
- 11)rs– Convênio. (Ministério do Desenvolvimento Agrário e Agricultura
+DESCRIPTION:Prazos de Fomento ao Setor Agropecuário – Investimento SR(PA
+ ) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(
+ 11)Rs– Convênio. (Ministério do Desenvolvimento Agrário e Agricultura
   Familiar). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
@@ -23,9 +23,9 @@ UID:edital-1056676-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento Sr(Pa)
-  Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(1
- 1)rs– Convênio.
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento SR(PA)
+  Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(1
+ 1)Rs– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260048\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -42,15 +42,15 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário 
- – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do R
- io Grande do Sul - Sr(11)rs– Convênio.
+ – Investimento SR(PA) Superintendência Regional do INCRA no Estado do R
+ io Grande do Sul - SR(11)Rs– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário – Inv
- estimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Gran
- de do Sul - Sr(11)rs– Convênio.
+ estimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Gran
+ de do Sul - SR(11)Rs– Convênio.
 END:VALARM
 END:VEVENT
 END:VCALENDAR

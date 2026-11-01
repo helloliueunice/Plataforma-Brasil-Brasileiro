@@ -9,7 +9,7 @@ export const PUBLICOS_HUB = {
         slug: 'pesquisadores',
         titulo: 'Editais abertos para pesquisadores',
         h1: 'Editais e chamadas abertas para pesquisadores',
-        descricao: 'Auxílios à pesquisa, bolsas de produtividade e cooperação internacional com inscrições abertas: valores, prazos, critérios e documentos, conferidos nas fontes oficiais.',
+        descricao: 'Auxílios à pesquisa, bolsas de produtividade e cooperação internacional com inscrições abertas: valores, prazos, critérios e documentos, de fontes oficiais (curados por pessoa ou lidos automaticamente, sempre identificados).',
         intro: `<p>Agências como CNPq, CAPES, FINEP e as fundações estaduais de amparo à pesquisa (FAPs) abrem chamadas ao longo de todo o ano. Elas financiam projetos de pesquisa, bolsas, eventos científicos, cooperação internacional e infraestrutura. Em geral, quem submete é o pesquisador com doutorado e vínculo formal com uma universidade ou instituto de pesquisa (ICT). Muitas FAPs exigem que a instituição fique no próprio estado.</p>
 <p>Antes de começar, confira três pontos que eliminam muitas propostas: <strong>elegibilidade</strong> (titulação, vínculo, tempo de doutorado), <strong>aderência</strong> às linhas da chamada e <strong>prazo</strong>, incluindo o horário limite no sistema de submissão.</p>`,
         dicas: ['Mantenha o Currículo Lattes atualizado: várias chamadas exigem atualização até a data limite.', 'Leia os critérios de avaliação e os pesos antes de escrever: eles dizem onde concentrar o texto.', 'Confirme se a chamada tem etapa de pré-proposta: o primeiro prazo costuma ser bem anterior ao final.']

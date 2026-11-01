@@ -4,7 +4,7 @@
   <title>Fundos Brasil — editais de Tecnologia e Inovação</title>
   <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/area/tecnologia-e-inovacao/</link>
   <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/area-tecnologia-e-inovacao.xml" rel="self" type="application/rss+xml"/>
-  <description>Editais com inscrições abertas ou previstas (editais de Tecnologia e Inovação), conferidos nas fontes oficiais. Confirme sempre no edital oficial.</description>
+  <description>Editais com inscrições abertas ou previstas (editais de Tecnologia e Inovação), com link para a fonte oficial. Confirme sempre no edital oficial.</description>
   <language>pt-BR</language>
   <ttl>720</ttl>
   <lastBuildDate>Sat, 31 Oct 2026 15:00:00 GMT</lastBuildDate>
@@ -39,15 +39,6 @@
     <description>Chamada Pública CNPq/CAPES nº 30/2026. bolsas (ver condições) · Pesquisador(a), ICT / Universidade · inscrições de 20/08/2026 a 11/12/2026. Bolsas para que estudantes de graduação e pós-graduação de ICTs desenvolvam projetos de interesse de empresas, órgãos públicos e entidades do terceiro setor. A proposta é institucional, apresentada pelo representante indicado pelo dirigente máximo da ICT, que precisa ter pós-graduação reconhecida, NIT constituído e política de inovação. Uma proposta por ICT.</description>
   </item>
   <item>
-    <title>2317 - (Ted 7aadaf Sdr/Midr) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp — Ministério da Integração e do Desenvolvimento Regional</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/</guid>
-    <pubDate>Tue, 14 Jul 2026 15:00:00 GMT</pubDate>
-    <category>Tecnologia e Inovação</category>
-    <category>Estado / DF</category>
-    <description>Programa Transferegov 2220320260044. ver condições · Estado / DF · inscrições de 14/07/2026 a 31/12/2026. 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: PT 15.244.2317.00SX.0001 por intermédio da Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado, tem por finalidade o apoio à infraestrutura produtiva, compreendendo: construção e pavimentação de vias (estradas vicinais) e obras rodoviárias estaduais e municipais destinadas à integração de modais de transporte ou ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnolo</description>
-  </item>
-  <item>
     <title>Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação — FAPES</title>
     <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/</link>
     <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/</guid>
@@ -56,15 +47,6 @@
     <category>Pesquisador(a)</category>
     <category>Empresa / Startup</category>
     <description>Edital FAPES nº 10/2026. até R$ 355,4 mil por proposta · Pesquisador(a), Empresa / Startup · inscrições de 14/10/2026 a 15/12/2026. Chamada da FAPES para financiar projetos de pesquisa e desenvolvimento de produtos, serviços ou processos inovadores, conduzidos por doutores sem vínculo empregatício que atuem no Espírito Santo. O objetivo é criar ou fortalecer micro e pequenas empresas de base tecnológica, em qualquer área do conhecimento. O doutor submete a proposta como pessoa física, com apoio de um tutor acadêmico de IES/ICT sediada no ES, e a empresa é constituída ou formalizada na contratação. O apoio inclui bolsas e subvenção econômica, com execução em 24 meses (prorrogável por até 12).</description>
-  </item>
-  <item>
-    <title>ação 00sx - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - Rp2 — Ministério da Integração e do Desenvolvimento Regional</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/</guid>
-    <pubDate>Thu, 19 Feb 2026 15:00:00 GMT</pubDate>
-    <category>Tecnologia e Inovação</category>
-    <category>Município</category>
-    <description>Programa Transferegov 5300020260001. ver condições · Município · inscrições de 19/02/2026 a 30/11/2026. A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção</description>
   </item>
 </channel>
 </rss>

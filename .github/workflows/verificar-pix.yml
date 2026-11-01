@@ -1,0 +1,46 @@
+name: Vigiar o Pix publicado
+
+# Baixa a página Apoie publicada e confere se a chave do Pix, o código "copia e cola" e o QR Code
+# batem com a variável PIX_CHAVE (Settings → Secrets and variables → Actions → Variables).
+# Se algo não bater, o workflow falha e abre uma issue de alerta. Não tem permissão de escrita no código.
+on:
+  schedule:
+    - cron: '41 10,22 * * *' # 07h41 e 19h41 em Brasília
+  workflow_run:
+    workflows: ['pages-build-deployment']
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Conferir a página publicada
+        id: conferir
+        env:
+          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+          PAGINA: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/apoie/
+        run: |
+          sleep 30
+          node scripts/verificar-pix.mjs --url "$PAGINA?v=$GITHUB_RUN_ID"
+
+      - name: Abrir alerta
+        if: failure() && steps.conferir.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "ALERTA: Pix da página Apoie não confere ($(date -u +%d/%m/%Y))" \
+            --body "O vigia do Pix encontrou diferença entre a página publicada e a chave esperada (variável PIX_CHAVE). Veja o log: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID . Até resolver, considere tirar a página Apoie do ar."

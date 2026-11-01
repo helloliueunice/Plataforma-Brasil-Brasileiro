@@ -22,14 +22,14 @@
     <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
     
     <script>window.SITE_CFG = {"apoio":null,"apoie":true,"apoioTexto":"Apoie o Fundos Brasil","boletim":"","whatsappCanal":"","sugestao":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=sugerir-edital.yml","contato":"mailto:contatofundosbrasil@gmail.com"};</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR","description":"Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil."},{"@type":"Organization","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","logo":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/favicon.svg"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR","description":"Editais abertos de fomento no Brasil, com link para as fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil."},{"@type":"Organization","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","logo":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/favicon.svg"}]}</script>
     <!-- seo:fim -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4/leaflet.css">
+    <script defer src="assets/vendor/leaflet-1.9.4/leaflet.js"></script>
+    <script defer src="assets/vendor/chartjs-3.9.1/chart.min.js"></script>
     <style>
 /* =====================================================================
    FUNDOS BRASIL — DESIGN SYSTEM MINIMALISTA v1
@@ -1023,7 +1023,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <!-- DASHBOARD PAGE -->
     <div id="page-dashboard" class="page-content active">
         <div class="hero-section">
-            <h1 class="hero-title">Recursos em editais com inscrições abertas</h1>
+            <h1 class="hero-title">Editais de fomento com inscrições abertas</h1>
             <div class="hero-value" id="heroValor">—</div>
             <div class="hero-subtitle" id="heroSub"></div>
             <nav class="sou-row" aria-label="Editais por tipo de proponente">
@@ -1481,7 +1481,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 <h2 class="card-title">Perguntas frequentes</h2>
                 <div class="faq">
                     <details><summary>Os editais são reais?</summary>
-                        <p id="faqFonte">Sim. Cada edital é conferido na página ou no documento oficial da instituição, e o detalhe mostra a fonte e a data da conferência. Novas chamadas são monitoradas diariamente e passam por revisão humana antes de entrar. Já <strong>Projetos e prestação de contas</strong> usam dados de demonstração. Em caso de divergência, vale sempre o edital oficial.</p></details>
+                        <p id="faqFonte">Os editais curados são conferidos por pessoa na página ou no documento oficial da instituição, e o detalhe mostra a fonte e a data. Os programas do Transferegov são lidos automaticamente da API pública, sem revisão humana, e aparecem marcados assim. Novas chamadas são monitoradas diariamente e passam por revisão humana antes de entrar. Já <strong>Projetos e prestação de contas</strong> usam dados de demonstração. Em caso de divergência, vale sempre o edital oficial.</p></details>
                     <details><summary>Onde ficam meus dados?</summary>
                         <p>Perfil, favoritos, propostas, checklists, rascunhos e prestações ficam somente neste navegador (armazenamento local) — não chegam até nós. Como em qualquer site, seu endereço IP é visto pelos serviços que entregam a página (hospedagem, fontes e mapas); veja a <a href="privacidade/">Política de Privacidade</a>. Se você limpar os dados do site ou trocar de dispositivo, eles não estarão lá.</p></details>
                     <details><summary>Como a compatibilidade é calculada?</summary>
@@ -1581,7 +1581,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <!-- lista-seo:inicio -->
     <section class="seo-links" aria-labelledby="seoLinksTitulo">
         <h2 id="seoLinksTitulo">Editais abertos agora</h2>
-        <ul><li><a href="editais/bolsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/">Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento</a> — FAPESP, até 01/11/2026</li><li><a href="editais/producao-de-documentario-audiovisual-de-carater-educativo-cientifico-e-1056835/">Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional</a> — Ministerio da Cultura, até 03/11/2026</li><li><a href="editais/fundo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/">Fundo Municipal do Idoso – projetos para a pessoa idosa (cidade de São Paulo)</a> — Prefeitura de São Paulo (SMDHC), até 06/11/2026</li><li><a href="editais/edupol-ia-pesquisa-educacao-cultura-politica-democracia-e-inteligencia-1056871/">Edupol-Ia: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança</a> — Ministerio da Educacao, até 06/11/2026</li><li><a href="editais/chamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/">Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES</a> — FAPES, até 10/11/2026</li><li><a href="editais/chamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/">Chamada Transnacional CONFAP &amp; Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)</a> — FAPES, até 10/11/2026</li><li><a href="editais/chamada-conjunta-fapesp-confap-water4all-sobre-gestao-sustentavel-da-128/">Chamada conjunta FAPESP/CONFAP/Water4All sobre gestão sustentável da água</a> — FAPESP, até 10/11/2026</li><li><a href="editais/chamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistemas-129/">Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novos ecossistemas (BiodivFuture)</a> — FAPESP, até 10/11/2026</li><li><a href="editais/pipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/">PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)</a> — FAPESP, até 12/11/2026</li><li><a href="editais/rede-multidisciplinar-de-atencao-a-maes-e-familiares-vitimas-de-1056851/">Rede Multidisciplinar de Atenção a Mães e Familiares Vítimas de Desaparecimentos Forçados e da Violência de Estado na Baixada Fluminense</a> — Ministerio da Educacao, até 13/11/2026</li><li><a href="editais/procap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/">PROCAP 2027 – Bolsas de mestrado para Programas de Pós-graduação do Espírito Santo</a> — FAPES, até 16/11/2026</li><li><a href="editais/procap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/">PROCAP 2027 – Bolsas de doutorado para Programas de Pós-graduação do Espírito Santo</a> — FAPES, até 16/11/2026</li><li><a href="editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/">Chamada Transnacional Conjunta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES</a> — FAPES, até 16/11/2026</li><li><a href="editais/chamada-conjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/">Chamada Conjunta FAPESP/CONFAP/SBEP para economia azul sustentável e inovadora</a> — FAPESP, até 16/11/2026</li><li><a href="editais/industrializacao-da-cadeia-produtiva-do-pirarucu-1056427/">Industrialização da Cadeia Produtiva do Pirarucu</a> — Ministério do Desenvolvimento, Indústria, comércio e Serviços, até 16/11/2026</li><li><a href="editais/jovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/">Jovens Pesquisadores – chamada para pesquisadores no exterior</a> — FAPESP, até 19/11/2026</li><li><a href="editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/">Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo</a> — FAPESP, até 23/11/2026</li><li><a href="editais/recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-1056853/">Recursos Hídricos: Água em Quantidade e Qualidade para Sempre</a> — Ministério da Integração e do Desenvolvimento Regional, até 23/11/2026</li><li><a href="editais/ri-para-todos-diplomacia-popular-cidadania-global-e-democratizacao-das-1056868/">Ri para Todos: Diplomacia Popular, Cidadania Global e Democratização das Relações Internacionais</a> — Ministerio da Educacao, até 28/11/2026</li><li><a href="editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/">ação 214s - Rotas de Integração Nacional - Rp2</a> — Ministério da Integração e do Desenvolvimento Regional, até 30/11/2026</li><li><a href="editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/">ação 00sx - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - Rp2</a> — Ministério da Integração e do Desenvolvimento Regional, até 30/11/2026</li><li><a href="editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/">ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - Rp2</a> — Ministério da Integração e do Desenvolvimento Regional, até 30/11/2026</li><li><a href="editais/prospera-amazonia-1056755/">Prospera Amazônia</a> — Ministerio do Meio Ambiente, até 01/12/2026</li><li><a href="editais/floresta-viva-aguas-do-sao-francisco-114/">Floresta Viva – Águas do São Francisco</a> — Funbio / BNDES, até 02/12/2026</li><li><a href="editais/chamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/">Chamada Transnacional Conjunta FOREST 2026 (Forest Pathways) – Diretrizes FAPES</a> — FAPES, até 02/12/2026</li><li><a href="editais/auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/">Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)</a> — CNPq, até 04/12/2026</li><li><a href="editais/cooperamais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/">COOPERAMAIS Tecnologia – ICTs com cooperativas da agricultura familiar</a> — Finep, até 08/12/2026</li><li><a href="editais/projeto-inspiracao-jovens-mulheres-negras-na-industria-de-energia-116/">Projeto InspirAÇÃO: jovens mulheres negras na indústria de energia</a> — CNPq, até 08/12/2026</li><li><a href="editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/">Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)</a> — CNPq, até 11/12/2026</li><li><a href="editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026-125/">Bolsa Estágio de Pesquisa no Exterior (BEPE) Mestrado 2026</a> — FAPESP, até 11/12/2026</li><li><a href="editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/">Bolsa Estágio de Pesquisa no Exterior (BEPE) para Iniciação Científica 2026</a> — FAPESP, até 11/12/2026</li><li><a href="editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/">Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação</a> — FAPES, até 15/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-propostas-voluntarias-1056045/">Fomento ao Setor Agropecuário - Propostas Voluntárias</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/programa-nacional-de-estradas-rurais-proner-1056079/">Programa Nacional de Estradas Rurais - Proner</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/programa-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-1056156/">Programa Nacional de Modernização e Apoio À Produção Agrícola - Promaq</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/">Fomento ao Setor Agropecuário - Proposta Voluntária - Obras de Fomento</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-propostas-voluntarias-termo-de-fomento-1056046/">Fomento ao Setor Agropecuário - Propostas Voluntárias - Termo de Fomento</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056385/">ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Proeb e Inovação Tecnológica</a> — Ministerio da Educacao, até 31/12/2026</li><li><a href="editais/programa-simec-par-1055941/">Programa Simec/Par</a> — Ministerio da Educacao, até 31/12/2026</li><li><a href="editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1055966/">ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes</a> — Ministerio da Educacao, até 31/12/2026</li><li><a href="editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/">ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Sistema Uab</a> — Ministerio da Educacao, até 31/12/2026</li><li><a href="editais/programa-brasileiro-de-professores-no-cern-1055945/">Programa Brasileiro de Professores no Cern</a> — Ministerio da Educacao, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/">Infra-Estrutura Básica – Sr(Pr) Superintendência Regional do Incra no Paraná– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/">Fomento ao Setor Agropecuário – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(11)rs– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/">Infra-Estrutura Básica – Sr(Ba) Superintendência Regional do Incra na Bahia– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/">Infra-Estrutura Básica – Sr(Rs) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/">Infra-Estrutura Básica – Sr(Sp) Superintendência Regional do Incra de São Paulo– Convênio</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/2321-recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-1056721/">2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)</a> — Ministério da Integração e do Desenvolvimento Regional, até 31/12/2026</li><li><a href="editais/2317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/">2317 - (Ted 7aadaf Sdr/Midr) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp</a> — Ministério da Integração e do Desenvolvimento Regional, até 31/12/2026</li><li><a href="editais/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/">Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)</a> — CNPq, até 07/01/2027</li><li><a href="editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/">PRONINC 2026 – Tecnologias e inovação social para a economia solidária</a> — FINEP, até 14/01/2027</li><li><a href="editais/sprint-2026-colaboracao-internacional-edicao-2-111/">SPRINT 2026 – colaboração internacional (edição 2)</a> — FAPESP, até 22/02/2027</li><li><a href="editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/">Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital</a> — CNPq, até 31/03/2027</li><li><a href="editais/finep-cooperamais-brasil-tecnologias-empresas-112/">Finep COOPERAMAIS Brasil Tecnologias – Empresas</a> — Finep, até 30/04/2027</li><li><a href="editais/biota-sintese-e-transformacao-109/">BIOTA – Síntese e Transformação</a> — FAPESP, até 04/12/2026</li><li><a href="editais/fapesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/">FAPESP e Instituto Pasteur de Montevideo – Jovem Pesquisador</a> — FAPESP, até 04/03/2027</li><li><a href="editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/">Plataformas digitais baseadas em software livre e protocolos abertos</a> — FAPESP, até 22/02/2027</li><li><a href="editais/tcc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/">TCC Empreendedor Inovador: bolsas para Trabalhos de Conclusão de Curso com foco em inovação</a> — FAPES, até 30/03/2027</li></ul>
+        <ul><li><a href="editais/bolsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/">Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento</a> — FAPESP, até 01/11/2026</li><li><a href="editais/producao-de-documentario-audiovisual-de-carater-educativo-cientifico-e-1056835/">Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional</a> — Ministério da Cultura, até 03/11/2026</li><li><a href="editais/fundo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/">Fundo Municipal do Idoso – projetos para a pessoa idosa (cidade de São Paulo)</a> — Prefeitura de São Paulo (SMDHC), até 06/11/2026</li><li><a href="editais/edupol-ia-pesquisa-educacao-cultura-politica-democracia-e-inteligencia-1056871/">Edupol-IA: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança</a> — Ministério da Educação, até 06/11/2026</li><li><a href="editais/chamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/">Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES</a> — FAPES, até 10/11/2026</li><li><a href="editais/chamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/">Chamada Transnacional CONFAP &amp; Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)</a> — FAPES, até 10/11/2026</li><li><a href="editais/chamada-conjunta-fapesp-confap-water4all-sobre-gestao-sustentavel-da-128/">Chamada conjunta FAPESP/CONFAP/Water4All sobre gestão sustentável da água</a> — FAPESP, até 10/11/2026</li><li><a href="editais/chamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistemas-129/">Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novos ecossistemas (BiodivFuture)</a> — FAPESP, até 10/11/2026</li><li><a href="editais/pipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/">PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)</a> — FAPESP, até 12/11/2026</li><li><a href="editais/rede-multidisciplinar-de-atencao-a-maes-e-familiares-vitimas-de-1056851/">Rede Multidisciplinar de Atenção a Mães e Familiares Vítimas de Desaparecimentos Forçados e da Violência de Estado na Baixada Fluminense</a> — Ministério da Educação, até 13/11/2026</li><li><a href="editais/procap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/">PROCAP 2027 – Bolsas de mestrado para Programas de Pós-graduação do Espírito Santo</a> — FAPES, até 16/11/2026</li><li><a href="editais/procap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/">PROCAP 2027 – Bolsas de doutorado para Programas de Pós-graduação do Espírito Santo</a> — FAPES, até 16/11/2026</li><li><a href="editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/">Chamada Transnacional Conjunta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES</a> — FAPES, até 16/11/2026</li><li><a href="editais/chamada-conjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/">Chamada Conjunta FAPESP/CONFAP/SBEP para economia azul sustentável e inovadora</a> — FAPESP, até 16/11/2026</li><li><a href="editais/industrializacao-da-cadeia-produtiva-do-pirarucu-1056427/">Industrialização da Cadeia Produtiva do Pirarucu</a> — Ministério do Desenvolvimento, Indústria, Comércio e Serviços, até 16/11/2026</li><li><a href="editais/jovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/">Jovens Pesquisadores – chamada para pesquisadores no exterior</a> — FAPESP, até 19/11/2026</li><li><a href="editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/">Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo</a> — FAPESP, até 23/11/2026</li><li><a href="editais/recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-1056853/">Recursos Hídricos: Água em Quantidade e Qualidade para Sempre</a> — Ministério da Integração e do Desenvolvimento Regional, até 23/11/2026</li><li><a href="editais/ri-para-todos-diplomacia-popular-cidadania-global-e-democratizacao-das-1056868/">Ri para Todos: Diplomacia Popular, Cidadania Global e Democratização das Relações Internacionais</a> — Ministério da Educação, até 28/11/2026</li><li><a href="editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/">Ação 214S - Rotas de Integração Nacional - RP2</a> — Ministério da Integração e do Desenvolvimento Regional, até 30/11/2026</li><li><a href="editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/">Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2</a> — Ministério da Integração e do Desenvolvimento Regional, até 30/11/2026</li><li><a href="editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/">Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2</a> — Ministério da Integração e do Desenvolvimento Regional, até 30/11/2026</li><li><a href="editais/prospera-amazonia-1056755/">Prospera Amazônia</a> — Ministério do Meio Ambiente, até 01/12/2026</li><li><a href="editais/floresta-viva-aguas-do-sao-francisco-114/">Floresta Viva – Águas do São Francisco</a> — Funbio / BNDES, até 02/12/2026</li><li><a href="editais/chamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/">Chamada Transnacional Conjunta FOREST 2026 (Forest Pathways) – Diretrizes FAPES</a> — FAPES, até 02/12/2026</li><li><a href="editais/auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/">Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)</a> — CNPq, até 04/12/2026</li><li><a href="editais/cooperamais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/">COOPERAMAIS Tecnologia – ICTs com cooperativas da agricultura familiar</a> — Finep, até 08/12/2026</li><li><a href="editais/projeto-inspiracao-jovens-mulheres-negras-na-industria-de-energia-116/">Projeto InspirAÇÃO: jovens mulheres negras na indústria de energia</a> — CNPq, até 08/12/2026</li><li><a href="editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/">Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)</a> — CNPq, até 11/12/2026</li><li><a href="editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026-125/">Bolsa Estágio de Pesquisa no Exterior (BEPE) Mestrado 2026</a> — FAPESP, até 11/12/2026</li><li><a href="editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/">Bolsa Estágio de Pesquisa no Exterior (BEPE) para Iniciação Científica 2026</a> — FAPESP, até 11/12/2026</li><li><a href="editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/">Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação</a> — FAPES, até 15/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-propostas-voluntarias-1056045/">Fomento ao Setor Agropecuário - Propostas Voluntárias</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/programa-nacional-de-estradas-rurais-proner-1056079/">Programa Nacional de Estradas Rurais - PRONER</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/programa-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-1056156/">Programa Nacional de Modernização e Apoio à Produção Agrícola - PROMAQ</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/">Fomento ao Setor Agropecuário - Proposta Voluntária - Obras de Fomento</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-propostas-voluntarias-termo-de-fomento-1056046/">Fomento ao Setor Agropecuário - Propostas Voluntárias - Termo de Fomento</a> — Ministério da Agricultura e Pecuária, até 31/12/2026</li><li><a href="editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056385/">Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica</a> — Ministério da Educação, até 31/12/2026</li><li><a href="editais/programa-simec-par-1055941/">Programa SIMEC/PAR</a> — Ministério da Educação, até 31/12/2026</li><li><a href="editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1055966/">Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes</a> — Ministério da Educação, até 31/12/2026</li><li><a href="editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/">Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab</a> — Ministério da Educação, até 31/12/2026</li><li><a href="editais/programa-brasileiro-de-professores-no-cern-1055945/">Programa Brasileiro de Professores no CERN</a> — Ministério da Educação, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/">Infra-Estrutura Básica – SR(PR) Superintendência Regional do INCRA no Paraná– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/fomento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/">Fomento ao Setor Agropecuário – Investimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(11)Rs– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/">Infra-Estrutura Básica – SR(BA) Superintendência Regional do INCRA na Bahia– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/">Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/">Infra-Estrutura Básica – SR(SP) Superintendência Regional do INCRA de São Paulo– Convênio</a> — Ministério do Desenvolvimento Agrário e Agricultura Familiar, até 31/12/2026</li><li><a href="editais/2321-recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-1056721/">2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)</a> — Ministério da Integração e do Desenvolvimento Regional, até 31/12/2026</li><li><a href="editais/2317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/">2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp</a> — Ministério da Integração e do Desenvolvimento Regional, até 31/12/2026</li><li><a href="editais/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/">Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)</a> — CNPq, até 07/01/2027</li><li><a href="editais/proninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/">PRONINC 2026 – Tecnologias e inovação social para a economia solidária</a> — FINEP, até 14/01/2027</li><li><a href="editais/sprint-2026-colaboracao-internacional-edicao-2-111/">SPRINT 2026 – colaboração internacional (edição 2)</a> — FAPESP, até 22/02/2027</li><li><a href="editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/">Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital</a> — CNPq, até 31/03/2027</li><li><a href="editais/finep-cooperamais-brasil-tecnologias-empresas-112/">Finep COOPERAMAIS Brasil Tecnologias – Empresas</a> — Finep, até 30/04/2027</li><li><a href="editais/biota-sintese-e-transformacao-109/">BIOTA – Síntese e Transformação</a> — FAPESP, até 04/12/2026</li><li><a href="editais/fapesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/">FAPESP e Instituto Pasteur de Montevideo – Jovem Pesquisador</a> — FAPESP, até 04/03/2027</li><li><a href="editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/">Plataformas digitais baseadas em software livre e protocolos abertos</a> — FAPESP, até 22/02/2027</li><li><a href="editais/tcc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/">TCC Empreendedor Inovador: bolsas para Trabalhos de Conclusão de Curso com foco em inovação</a> — FAPES, até 30/03/2027</li></ul>
         <p><strong>Por perfil:</strong> <a href="para/pesquisadores/">Editais abertos para pesquisadores</a> · <a href="para/universidades-e-icts/">Editais abertos para universidades e ICTs</a> · <a href="para/empresas-e-startups/">Editais abertos para empresas e startups</a> · <a href="para/oscs-e-ongs/">Editais abertos para OSCs e ONGs</a> · <a href="para/municipios-e-prefeituras/">Editais e programas abertos para municípios</a> · <a href="para/governos-estaduais/">Editais e programas abertos para governos estaduais</a></p>
         <p><strong>Guias:</strong> <a href="guias/como-encontrar-editais/">Como encontrar o edital certo para o seu projeto</a> · <a href="guias/documentos-para-editais/">Documentos para editais: checklist por tipo de proponente</a> · <a href="guias/como-escrever-proposta-edital/">Como escrever uma proposta competitiva para edital</a> · <a href="guias/prestacao-de-contas/">Prestação de contas de projetos financiados: guia prático</a> · <a href="guias/leis-de-incentivo-fiscal/">Leis de incentivo fiscal: como captar</a> · <a href="glossario/">Glossário</a> · <a href="prazos/">Prazos</a> · <a href="semana/">Resumo da semana</a> · <a href="dados/">Dados abertos</a></p>
     </section>
@@ -1888,7 +1888,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "publico": [
                     "pesquisador"
                 ],
-                "abrangencia": "São Paulo",
+                "abrangencia": "Pesquisadores no exterior (sede em SP)",
                 "moeda": "BRL",
                 "valorMax": 2500000,
                 "valorNota": "Até 20 propostas selecionadas. Duração de 60 meses, prorrogável por até 12. A Bolsa de Jovem Pesquisador pode ser solicitada à parte.",
@@ -2832,7 +2832,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "publico": [
                     "osc"
                 ],
-                "abrangencia": "SP",
+                "abrangencia": "Cidade de São Paulo",
                 "moeda": "BRL",
                 "valorMax": null,
                 "valorTotal": 12800000,
@@ -4260,10 +4260,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "id": 1056835,
                 "numero": "Programa Transferegov 2041120260009",
                 "titulo": "Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional",
-                "instituicao": "Ministerio da Cultura",
+                "instituicao": "Ministério da Cultura",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Educação",
+                "tema": "Cultura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4272,10 +4272,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "SP",
-                "ufs": [
-                    "SP"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4302,13 +4298,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2041120260009"
+                "codigoPrograma": "2041120260009",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica SP): confira no programa quem pode propor."
             },
             {
                 "id": 1056871,
                 "numero": "Programa Transferegov 2624420260017",
-                "titulo": "Edupol-Ia: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança",
-                "instituicao": "Ministerio da Educacao",
+                "titulo": "Edupol-IA: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -4320,10 +4318,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "RS",
-                "ufs": [
-                    "RS"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4350,13 +4344,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2624420260017"
+                "codigoPrograma": "2624420260017",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RS): confira no programa quem pode propor."
             },
             {
                 "id": 1056851,
                 "numero": "Programa Transferegov 2624920260003",
                 "titulo": "Rede Multidisciplinar de Atenção a Mães e Familiares Vítimas de Desaparecimentos Forçados e da Violência de Estado na Baixada Fluminense",
-                "instituicao": "Ministerio da Educacao",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -4368,10 +4364,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "AL",
-                "ufs": [
-                    "AL"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4394,16 +4386,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2624920260003"
+                "codigoPrograma": "2624920260003",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor."
             },
             {
                 "id": 1056427,
                 "numero": "Programa Transferegov 2800020260010",
                 "titulo": "Industrialização da Cadeia Produtiva do Pirarucu",
-                "instituicao": "Ministério do Desenvolvimento, Indústria, comércio e Serviços",
+                "instituicao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Infraestrutura",
+                "tema": "Desenvolvimento",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4412,10 +4406,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "TO",
-                "ufs": [
-                    "TO"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4442,7 +4432,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2800020260010"
+                "codigoPrograma": "2800020260010",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica TO): confira no programa quem pode propor."
             },
             {
                 "id": 1056853,
@@ -4451,7 +4443,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Meio Ambiente",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4460,10 +4452,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "TO",
-                "ufs": [
-                    "TO"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4490,13 +4478,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "4420520260001"
+                "codigoPrograma": "4420520260001",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica TO): confira no programa quem pode propor."
             },
             {
                 "id": 1056868,
                 "numero": "Programa Transferegov 2624920260004",
                 "titulo": "Ri para Todos: Diplomacia Popular, Cidadania Global e Democratização das Relações Internacionais",
-                "instituicao": "Ministerio da Educacao",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -4508,10 +4498,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "RN",
-                "ufs": [
-                    "RN"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4534,16 +4520,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2624920260004"
+                "codigoPrograma": "2624920260004",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RN): confira no programa quem pode propor."
             },
             {
                 "id": 1055992,
                 "numero": "Programa Transferegov 5300020260002",
-                "titulo": "ação 214s - Rotas de Integração Nacional - Rp2",
+                "titulo": "Ação 214S - Rotas de Integração Nacional - RP2",
                 "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Agronegocio",
+                "tema": "Desenvolvimento",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4552,10 +4540,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "estado"
-                ],
-                "abrangencia": "SE",
-                "ufs": [
-                    "SE"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4582,16 +4566,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "5300020260002"
+                "codigoPrograma": "5300020260002",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica SE): confira no programa quem pode propor."
             },
             {
                 "id": 1055990,
                 "numero": "Programa Transferegov 5300020260001",
-                "titulo": "ação 00sx - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - Rp2",
+                "titulo": "Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2",
                 "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Tecnologia",
+                "tema": "Desenvolvimento",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4600,10 +4586,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "AL",
-                "ufs": [
-                    "AL"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4630,16 +4612,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "5300020260001"
+                "codigoPrograma": "5300020260001",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor."
             },
             {
                 "id": 1055995,
                 "numero": "Programa Transferegov 5300020260004",
-                "titulo": "ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - Rp2",
+                "titulo": "Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2",
                 "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Educação",
+                "tema": "Infraestrutura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4648,10 +4632,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "estado"
-                ],
-                "abrangencia": "PA",
-                "ufs": [
-                    "PA"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4678,13 +4658,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "5300020260004"
+                "codigoPrograma": "5300020260004",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor."
             },
             {
                 "id": 1056755,
                 "numero": "Programa Transferegov 4400020260013",
                 "titulo": "Prospera Amazônia",
-                "instituicao": "Ministerio do Meio Ambiente",
+                "instituicao": "Ministério do Meio Ambiente",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Meio Ambiente",
@@ -4696,10 +4678,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "RO",
-                "ufs": [
-                    "RO"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4726,7 +4704,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "4400020260013"
+                "codigoPrograma": "4400020260013",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RO): confira no programa quem pode propor."
             },
             {
                 "id": 1056045,
@@ -4735,7 +4715,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "instituicao": "Ministério da Agricultura e Pecuária",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Agronegocio",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4744,10 +4724,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "AC",
-                "ufs": [
-                    "AC"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4774,16 +4750,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2200020260004"
+                "codigoPrograma": "2200020260004",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
             },
             {
                 "id": 1056079,
                 "numero": "Programa Transferegov 2200020260006",
-                "titulo": "Programa Nacional de Estradas Rurais - Proner",
+                "titulo": "Programa Nacional de Estradas Rurais - PRONER",
                 "instituicao": "Ministério da Agricultura e Pecuária",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Infraestrutura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4792,10 +4770,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "AC",
-                "ufs": [
-                    "AC"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4822,16 +4796,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2200020260006"
+                "codigoPrograma": "2200020260006",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
             },
             {
                 "id": 1056156,
                 "numero": "Programa Transferegov 2200020260022",
-                "titulo": "Programa Nacional de Modernização e Apoio À Produção Agrícola - Promaq",
+                "titulo": "Programa Nacional de Modernização e Apoio à Produção Agrícola - PROMAQ",
                 "instituicao": "Ministério da Agricultura e Pecuária",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Agronegocio",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4840,10 +4816,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "AC",
-                "ufs": [
-                    "AC"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4870,7 +4842,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2200020260022"
+                "codigoPrograma": "2200020260022",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
             },
             {
                 "id": 1056107,
@@ -4879,7 +4853,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "instituicao": "Ministério da Agricultura e Pecuária",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Agronegocio",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4888,10 +4862,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "estado"
-                ],
-                "abrangencia": "AC",
-                "ufs": [
-                    "AC"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4918,7 +4888,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2200020260018"
+                "codigoPrograma": "2200020260018",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
             },
             {
                 "id": 1056046,
@@ -4927,7 +4899,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "instituicao": "Ministério da Agricultura e Pecuária",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Agronegocio",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -4936,10 +4908,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "AC",
-                "ufs": [
-                    "AC"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -4966,13 +4934,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2200020260005"
+                "codigoPrograma": "2200020260005",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor."
             },
             {
                 "id": 1056385,
                 "numero": "Programa Transferegov 2629120260003",
-                "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Proeb e Inovação Tecnológica",
-                "instituicao": "Ministerio da Educacao",
+                "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -4984,10 +4954,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "PA",
-                "ufs": [
-                    "PA"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5014,13 +4980,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2629120260003"
+                "codigoPrograma": "2629120260003",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor."
             },
             {
                 "id": 1055941,
                 "numero": "Programa Transferegov 2629820260001",
-                "titulo": "Programa Simec/Par",
-                "instituicao": "Ministerio da Educacao",
+                "titulo": "Programa SIMEC/PAR",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -5032,10 +5000,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "ES",
-                "ufs": [
-                    "ES"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5062,13 +5026,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2629820260001"
+                "codigoPrograma": "2629820260001",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica ES): confira no programa quem pode propor."
             },
             {
                 "id": 1055966,
                 "numero": "Programa Transferegov 2629120260002",
-                "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes",
-                "instituicao": "Ministerio da Educacao",
+                "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -5080,10 +5046,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "PA",
-                "ufs": [
-                    "PA"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5110,13 +5072,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2629120260002"
+                "codigoPrograma": "2629120260002",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor."
             },
             {
                 "id": 1056386,
                 "numero": "Programa Transferegov 2629120260004",
-                "titulo": "ações da Diretoria de Articulação e Inovação em Educação Aberta (Diea) da Capes - Sistema Uab",
-                "instituicao": "Ministerio da Educacao",
+                "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -5128,10 +5092,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "BA",
-                "ufs": [
-                    "BA"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5158,13 +5118,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2629120260004"
+                "codigoPrograma": "2629120260004",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica BA): confira no programa quem pode propor."
             },
             {
                 "id": 1055945,
                 "numero": "Programa Transferegov 2629120260001",
-                "titulo": "Programa Brasileiro de Professores no Cern",
-                "instituicao": "Ministerio da Educacao",
+                "titulo": "Programa Brasileiro de Professores no CERN",
+                "instituicao": "Ministério da Educação",
                 "agencia": null,
                 "procedencia": "nacional",
                 "tema": "Educação",
@@ -5176,10 +5138,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "osc"
-                ],
-                "abrangencia": "MT",
-                "ufs": [
-                    "MT"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5202,16 +5160,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2629120260001"
+                "codigoPrograma": "2629120260001",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica MT): confira no programa quem pode propor."
             },
             {
                 "id": 1056402,
                 "numero": "Programa Transferegov 2220120260014",
-                "titulo": "Infra-Estrutura Básica – Sr(Pr) Superintendência Regional do Incra no Paraná– Convênio.",
+                "titulo": "Infra-Estrutura Básica – SR(PR) Superintendência Regional do INCRA no Paraná– Convênio.",
                 "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Infraestrutura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5220,10 +5180,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "PR",
-                "ufs": [
-                    "PR"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5250,16 +5206,20 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220120260014"
+                "codigoPrograma": "2220120260014",
+                "abrangencia": "PR",
+                "ufs": [
+                    "PR"
+                ]
             },
             {
                 "id": 1056676,
                 "numero": "Programa Transferegov 2220120260048",
-                "titulo": "Fomento ao Setor Agropecuário – Investimento Sr(Pa) Superintendência Regional do Incra no Estado do Rio Grande do Sul - Sr(11)rs– Convênio.",
+                "titulo": "Fomento ao Setor Agropecuário – Investimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(11)Rs– Convênio.",
                 "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Agronegocio",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5268,10 +5228,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "RS",
-                "ufs": [
-                    "RS"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5298,16 +5254,20 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220120260048"
+                "codigoPrograma": "2220120260048",
+                "abrangencia": "PA",
+                "ufs": [
+                    "PA"
+                ]
             },
             {
                 "id": 1056398,
                 "numero": "Programa Transferegov 2220120260010",
-                "titulo": "Infra-Estrutura Básica – Sr(Ba) Superintendência Regional do Incra na Bahia– Convênio.",
+                "titulo": "Infra-Estrutura Básica – SR(BA) Superintendência Regional do INCRA na Bahia– Convênio.",
                 "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Infraestrutura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5316,10 +5276,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "BA",
-                "ufs": [
-                    "BA"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5346,16 +5302,20 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220120260010"
+                "codigoPrograma": "2220120260010",
+                "abrangencia": "BA",
+                "ufs": [
+                    "BA"
+                ]
             },
             {
                 "id": 1056404,
                 "numero": "Programa Transferegov 2220120260016",
-                "titulo": "Infra-Estrutura Básica – Sr(Rs) Superintendência Regional do Incra no Rio Grande do Sul– Convênio.",
+                "titulo": "Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.",
                 "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Infraestrutura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5364,10 +5324,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "RS",
-                "ufs": [
-                    "RS"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5394,16 +5350,20 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220120260016"
+                "codigoPrograma": "2220120260016",
+                "abrangencia": "RS",
+                "ufs": [
+                    "RS"
+                ]
             },
             {
                 "id": 1056401,
                 "numero": "Programa Transferegov 2220120260013",
-                "titulo": "Infra-Estrutura Básica – Sr(Sp) Superintendência Regional do Incra de São Paulo– Convênio",
+                "titulo": "Infra-Estrutura Básica – SR(SP) Superintendência Regional do INCRA de São Paulo– Convênio",
                 "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Infraestrutura",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5412,10 +5372,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "SP",
-                "ufs": [
-                    "SP"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5442,16 +5398,20 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220120260013"
+                "codigoPrograma": "2220120260013",
+                "abrangencia": "SP",
+                "ufs": [
+                    "SP"
+                ]
             },
             {
                 "id": 1056721,
                 "numero": "Programa Transferegov 2220320260043",
-                "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7g88.0022/ ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
+                "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
                 "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Cultura",
+                "tema": "Meio Ambiente",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5460,10 +5420,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "municipio"
-                ],
-                "abrangencia": "PI",
-                "ufs": [
-                    "PI"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5486,16 +5442,18 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220320260043"
+                "codigoPrograma": "2220320260043",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PI): confira no programa quem pode propor."
             },
             {
                 "id": 1056725,
                 "numero": "Programa Transferegov 2220320260044",
-                "titulo": "2317 - (Ted 7aadaf Sdr/Midr) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp",
+                "titulo": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp",
                 "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
                 "agencia": null,
                 "procedencia": "nacional",
-                "tema": "Tecnologia",
+                "tema": "Desenvolvimento",
                 "tags": [
                     "Transferegov",
                     "Transferência voluntária",
@@ -5504,10 +5462,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "modalidade": "Transferência voluntária",
                 "publico": [
                     "estado"
-                ],
-                "abrangencia": "AL",
-                "ufs": [
-                    "AL"
                 ],
                 "moeda": "BRL",
                 "valorMax": null,
@@ -5530,7 +5484,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 "tipoValor": "nao-informado",
                 "fluxoContinuo": false,
                 "origem": "transferegov",
-                "codigoPrograma": "2220320260044"
+                "codigoPrograma": "2220320260044",
+                "abrangencia": "Nacional",
+                "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor."
             }
         ];
         // editais:fim
@@ -5624,6 +5580,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         }
         rebuildEditais();
 
+        // Só aceita links https:// sem espaços (bloqueia javascript:, data: e quebras de linha).
+        function urlSegura(u) { const s = String(u || "").trim(); return /^https:\/\/[^\s"<>]+$/i.test(s) ? s : ""; }
         function esc(s) {
             return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
         }
@@ -6104,7 +6062,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     <div class="modal-section">
                         <h3>Resumo</h3>
                         <p>${comGlossario(esc(e.resumo || 'Sem resumo cadastrado. Consulte o edital oficial.'))}</p>
-                        ${e.fonte || e.verificadoEm ? `<p class="nota" style="margin-top:8px;">Informações conferidas${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(e.fonte)}" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;">fonte oficial</a>` : ''}. Vale sempre o texto do edital.</p>` : ''}
+                        ${e.origem === 'transferegov' ? `<p class="nota" style="margin-top:8px;"><strong>Leitura automática, sem revisão humana.</strong> Dados lidos da API pública do Transferegov${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}. Área, abrangência, valores e prazos podem conter erros: confirme no Transferegov.br${e.codigoPrograma ? `, pelo código ${esc(e.codigoPrograma)}` : ''}, antes de agir.${e.abrangenciaNota ? ` ${esc(e.abrangenciaNota)}` : ''}</p>` : (e.fonte || e.verificadoEm ? `<p class="nota" style="margin-top:8px;">Informações conferidas por pessoa${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(urlSegura(e.fonte))}" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;">fonte oficial</a>` : ''}. Vale sempre o texto do edital.</p>` : '')}
                     </div>
 
                     <div class="modal-section">
@@ -6206,7 +6164,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         /* =====================================================================
            AGENDA (.ics) E EXPORTAÇÃO (CSV)
         ===================================================================== */
-        function icsText(s) { return String(s).replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/[,;]/g, m => '\\' + m); }
+        function icsText(s) { return String(s).replace(/\\/g, '\\\\').replace(/\r?\n|\r/g, '\\n').replace(/[,;]/g, m => '\\' + m); }
 
         function icsEvento(e) {
             const ymd = iso => iso.replace(/-/g, '');
@@ -6221,7 +6179,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 `DTEND;VALUE=DATE:${fimStr}`,
                 `SUMMARY:${icsText(`Prazo final: ${e.titulo} (${e.instituicao})`)}`,
                 `DESCRIPTION:${icsText(`${e.resumo}\n\nValor por proposta: ${valorPropostaTxt(e)}\n${e.prazoNota ? e.prazoNota + '\n' : ''}Confirme o horário limite no edital oficial: ${e.link}`)}`,
-                `URL:${e.link}`,
+                ...(urlSegura(e.link) ? [`URL:${urlSegura(e.link)}`] : []),
                 'BEGIN:VALARM', 'TRIGGER:-P7D', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(`Faltam 7 dias: ${e.titulo}`)}`, 'END:VALARM',
                 'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(`Amanhã encerra: ${e.titulo}`)}`, 'END:VALARM',
                 'END:VEVENT'
@@ -6250,7 +6208,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 ['Contrapartida', e => e.contrapartida], ['Abertura', e => fmtDate(e.abertura)], ['Encerramento', e => fmtDate(e.encerramento)],
                 ['Resultado previsto', e => e.resultado ? fmtDate(e.resultado) : ''], ['Link', e => e.link]
             ];
-            const cell = v => `"${String(v).replace(/"/g, '""')}"`;
+            // Neutraliza fórmulas (=, +, -, @, tab) para o Excel não executar conteúdo vindo dos dados
+            const cell = v => { let t = String(v ?? ''); if (/^[=+\-@\t\r]/.test(t)) t = "'" + t; return `"${t.replace(/"/g, '""')}"`; };
             const linhas = [cols.map(c => cell(c[0])).join(';'), ...currentEditais.map(e => cols.map(c => cell(c[1](e))).join(';'))];
             // BOM + ponto e vírgula: abre corretamente no Excel em português
             downloadFile(`editais-${new Date().toISOString().slice(0, 10)}.csv`, '\uFEFF' + linhas.join('\r\n'), 'text/csv;charset=utf-8');
@@ -6610,6 +6569,12 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             if (['publico', 'privado', 'incentivo-fiscal', 'internacional', 'misto'].includes(r.fonteRecurso)) e.fonteRecurso = r.fonteRecurso;
             if (['por-proposta', 'total', 'faixa', 'bolsa', 'nao-informado'].includes(r.tipoValor)) e.tipoValor = r.tipoValor;
             if (typeof r.fluxoContinuo === 'boolean') e.fluxoContinuo = r.fluxoContinuo;
+            // Origem do dado: "transferegov" = lido automaticamente da API pública, sem revisão humana
+            if (r.origem === 'transferegov') {
+                e.origem = 'transferegov';
+                if (/^[\w.-]{1,40}$/.test(String(r.codigoPrograma || ''))) e.codigoPrograma = String(r.codigoPrograma);
+            }
+            if (typeof r.abrangenciaNota === 'string' && r.abrangenciaNota.trim()) e.abrangenciaNota = r.abrangenciaNota.trim().slice(0, 300);
             if (Array.isArray(r.criterios)) {
                 const crit = r.criterios.filter(c => c && c.nome).map(c => ({ nome: String(c.nome), peso: c.peso === null || c.peso === undefined || c.peso === '' ? null : Math.max(0, Math.min(100, Number(c.peso) || 0)) }));
                 if (crit.length) e.criterios = crit;
@@ -6947,7 +6912,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function atualizarBannerFonte() {
             const b = $('demoBanner');
             if (!fonteDados.demonstrativo) {
-                b.innerHTML = `<strong>${plural(fonteDados.total, 'edital real conferido', 'editais reais conferidos')} nas fontes oficiais</strong>${fonteDados.geradoEm ? `, atualizados em ${fmtDate(fonteDados.geradoEm)}` : ''}. Antes de submeter, confirme datas, valores e requisitos no edital oficial — ele sempre prevalece.`;
+                const nAuto = EDITAIS_BASE.filter(e => e.origem === 'transferegov').length, nCur = fonteDados.total - nAuto;
+                b.innerHTML = `<strong>${plural(fonteDados.total, 'edital real', 'editais reais')}</strong>: ${plural(nCur, 'conferido por pessoa', 'conferidos por pessoa')} na fonte oficial${nAuto > 0 ? ` e ${plural(nAuto, 'programa lido', 'programas lidos')} automaticamente do Transferegov, sem revisão` : ''}${fonteDados.geradoEm ? `; atualizados em ${fmtDate(fonteDados.geradoEm)}` : ''}. Antes de submeter, confirme no edital oficial — ele sempre prevalece.`;
             } else {
                 b.innerHTML = `<strong>Dados demonstrativos</strong>${fonteDados.tipo === 'arquivo' && fonteDados.geradoEm ? ` (arquivo de ${fmtDate(fonteDados.geradoEm)})` : ''}. Antes de submeter uma proposta, confirme datas, valores e requisitos no edital oficial publicado pela instituição.`;
             }
@@ -7113,7 +7079,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 case 'interesse':
                     if (st === 'fechado') return { txt: `O edital encerrou em ${fmtDate(e.encerramento)}. Guarde para a próxima edição ou pare de acompanhar.` };
                     if (st === 'em-breve') return { txt: `Abre em ${fmtDate(e.abertura)}. Confira a elegibilidade e comece a separar os documentos.` };
-                    return { alerta: d <= 7, txt: `Leia o edital, confira a elegibilidade e passe para “Em preparação”. Encerra em ${d === 0 ? 'hoje' : plural(d, 'dia', 'dias')}.` };
+                    return { alerta: d <= 7, txt: `Leia o edital, confira a elegibilidade e passe para “Em preparação”. ${d === 0 ? 'Encerra hoje.' : `Encerra em ${plural(d, 'dia', 'dias')}.`}` };
                 case 'preparando':
                     if (st === 'fechado') return { alerta: true, txt: `O prazo terminou em ${fmtDate(e.encerramento)}. Você chegou a submeter? Atualize a etapa.` };
                     if (faltam === 0) return { txt: `Documentos prontos! Submeta no portal oficial ${st === 'aberto' ? `até ${fmtDate(e.encerramento)}` : `a partir de ${fmtDate(e.abertura)}`} e marque como “Submetida”.` };
@@ -7764,8 +7730,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function renderDashboardStats() {
             const abertos = editais.filter(e => statusEdital(e) === 'aberto');
             const total = abertos.reduce((soma, e) => soma + valorBRL(e.valorTotal, e.moeda), 0);
-            $('heroValor').textContent = fmtValor(total, 'BRL');
-            $('heroSub').textContent = `em ${plural(abertos.length, 'edital', 'editais')} · moedas estrangeiras convertidas por cotação de referência`;
+            const enc7 = abertos.filter(e => diasAte(e.encerramento) <= 7).length;
+            $('heroValor').textContent = plural(abertos.length, 'chamada aberta', 'chamadas abertas');
+            $('heroSub').textContent = `${enc7 ? `${plural(enc7, 'encerra', 'encerram')} em até 7 dias · ` : ''}orçamento total declarado nas chamadas: ${fmtValor(total, 'BRL')} (inclui bolsas e verbas de toda a chamada, não é o valor por proposta)`;
             const novos = editais.filter(e => diasAte(e.publicadoEm) >= -30 && diasAte(e.publicadoEm) <= 0).length;
             $('statEditaisAbertos').textContent = abertos.length;
             $('statEditaisNovos').textContent = `↑ ${plural(novos, 'publicado', 'publicados')} nos últimos 30 dias`;

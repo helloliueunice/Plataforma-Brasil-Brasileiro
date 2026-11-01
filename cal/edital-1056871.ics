@@ -3,16 +3,16 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Edupol-Ia: Pesquisa Educação\, Cultura Política\, Democraci
+X-WR-CALNAME:Edupol-IA: Pesquisa Educação\, Cultura Política\, Democraci
  a… — Fundos Brasil
-NAME:Edupol-Ia: Pesquisa Educação\, Cultura Política\, Democracia… —
+NAME:Edupol-IA: Pesquisa Educação\, Cultura Política\, Democracia… —
   Fundos Brasil
-X-WR-CALDESC:Prazos de Edupol-Ia: Pesquisa Educação\, Cultura Política\,
+X-WR-CALDESC:Prazos de Edupol-IA: Pesquisa Educação\, Cultura Política\,
   Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudan
- ça (Ministerio da Educacao). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de Edupol-Ia: Pesquisa Educação\, Cultura Política\, 
+ ça (Ministério da Educação). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Edupol-IA: Pesquisa Educação\, Cultura Política\, 
  Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudan
- ça (Ministerio da Educacao). Confirme sempre no edital oficial.
+ ça (Ministério da Educação). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
@@ -21,17 +21,17 @@ UID:edital-1056871-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
-SUMMARY:Prazo final: Edupol-Ia: Pesquisa Educação\, Cultura Política\, D
+SUMMARY:Prazo final: Edupol-IA: Pesquisa Educação\, Cultura Política\, D
  emocracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudanç
  a
-DESCRIPTION:Ministerio da Educacao · Programa Transferegov 2624420260017\n
- Valor: ver condições\nQuem pode participar: OSC / Cooperativa\nProposta 
- cadastrada no Transferegov.br (módulo Discricionárias)\, pelo código 26
- 24420260017. É preciso cadastro do proponente e\, para entes\, regularida
- de no CAUC.\nPágina do edital: https://helloliueunice.github.io/Plataform
- a-Brasil-Brasileiro/editais/edupol-ia-pesquisa-educacao-cultura-politica-d
- emocracia-e-inteligencia-1056871/\nConfirme data e horário limite no edit
- al oficial: https://www.gov.br/transferegov/pt-br
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262442026001
+ 7\nValor: ver condições\nQuem pode participar: OSC / Cooperativa\nPropos
+ ta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo código
+  2624420260017. É preciso cadastro do proponente e\, para entes\, regular
+ idade no CAUC.\nPágina do edital: https://helloliueunice.github.io/Plataf
+ orma-Brasil-Brasileiro/editais/edupol-ia-pesquisa-educacao-cultura-politic
+ a-democracia-e-inteligencia-1056871/\nConfirme data e horário limite no e
+ dital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/e
  dupol-ia-pesquisa-educacao-cultura-politica-democracia-e-inteligencia-1056
  871/
@@ -39,14 +39,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Edupol-Ia: Pesquisa Educação\,
+DESCRIPTION:Faltam 7 dias: Prazo final — Edupol-IA: Pesquisa Educação\,
   Cultura Política\, Democracia e Inteligência Artificial no Brasil de Ho
  je: Valores em Mudança
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Edupol-Ia: Pesquisa Educação\, Cultu
+DESCRIPTION:Amanhã: Prazo final — Edupol-IA: Pesquisa Educação\, Cultu
  ra Política\, Democracia e Inteligência Artificial no Brasil de Hoje: Va
  lores em Mudança
 END:VALARM

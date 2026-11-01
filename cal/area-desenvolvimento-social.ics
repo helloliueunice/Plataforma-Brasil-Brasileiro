@@ -81,6 +81,132 @@ DESCRIPTION:Amanhã: Prazo final — Fundo Municipal do Idoso – projetos
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:edital-1056427-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Prazo final: Industrialização da Cadeia Produtiva do Pirarucu
+DESCRIPTION:Ministério do Desenvolvimento\, Indústria\, Comércio e Servi
+ ços · Programa Transferegov 2800020260010\nValor: ver condições\nQuem 
+ pode participar: OSC / Cooperativa\nProposta cadastrada no Transferegov.br
+  (módulo Discricionárias)\, pelo código 2800020260010. É preciso cadas
+ tro do proponente e\, para entes\, regularidade no CAUC.\nPágina do edita
+ l: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ ndustrializacao-da-cadeia-produtiva-do-pirarucu-1056427/\nConfirme data e 
+ horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ ndustrializacao-da-cadeia-produtiva-do-pirarucu-1056427/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Industrialização da Cadeia Pro
+ dutiva do Pirarucu
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Industrialização da Cadeia Produtiva
+  do Pirarucu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1055990-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Prazo final: Ação 00SX - Apoio a Projetos de Desenvolvimento Sust
+ entável Local Integrado - RP2
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 5300020260001\nValor: ver condições\nQuem pode parti
+ cipar: Município\nProposta cadastrada no Transferegov.br (módulo Discric
+ ionárias)\, pelo código 5300020260001. É preciso cadastro do proponente
+  e\, para entes\, regularidade no CAUC.\nPágina do edital: https://hellol
+ iueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-
+ projetos-de-desenvolvimento-sustentavel-local-1055990/\nConfirme data e ho
+ rário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ cao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 00SX - Apoio a Projetos d
+ e Desenvolvimento Sustentável Local Integrado - RP2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Ação 00SX - Apoio a Projetos de Dese
+ nvolvimento Sustentável Local Integrado - RP2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1055992-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Prazo final: Ação 214S - Rotas de Integração Nacional - RP2
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 5300020260002\nValor: ver condições\nQuem pode parti
+ cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
+ cionárias)\, pelo código 5300020260002. É preciso cadastro do proponent
+ e e\, para entes\, regularidade no CAUC.\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-214s-rotas-d
+ e-integracao-nacional-rp2-1055992/\nConfirme data e horário limite no edi
+ tal oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ cao-214s-rotas-de-integracao-nacional-rp2-1055992/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 214S - Rotas de Integraç
+ ão Nacional - RP2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Ação 214S - Rotas de Integração Na
+ cional - RP2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056725-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional 
+ e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Proje
+ tos de Desenvolvimento Sustentável Local Integrado/ Rp
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 2220320260044\nValor: ver condições\nQuem pode parti
+ cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
+ cionárias)\, pelo código 2220320260044. É preciso cadastro do proponent
+ e e\, para entes\, regularidade no CAUC.\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-s
+ dr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConfirme data e h
+ orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
+ 317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Des
+ envolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/
+  Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/
+  Rp
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Desenvolv
+ imento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Açã
+ o: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:edital-108-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20270114

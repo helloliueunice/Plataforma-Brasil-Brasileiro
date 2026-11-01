@@ -3,15 +3,15 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Programa Nacional de Modernização e Apoio À Produção… 
+X-WR-CALNAME:Programa Nacional de Modernização e Apoio à Produção… 
  — Fundos Brasil
-NAME:Programa Nacional de Modernização e Apoio À Produção… — Fundo
+NAME:Programa Nacional de Modernização e Apoio à Produção… — Fundo
  s Brasil
-X-WR-CALDESC:Prazos de Programa Nacional de Modernização e Apoio À Produ
- ção Agrícola - Promaq (Ministério da Agricultura e Pecuária). Confirm
+X-WR-CALDESC:Prazos de Programa Nacional de Modernização e Apoio à Produ
+ ção Agrícola - PROMAQ (Ministério da Agricultura e Pecuária). Confirm
  e sempre no edital oficial.
-DESCRIPTION:Prazos de Programa Nacional de Modernização e Apoio À Produ
- ção Agrícola - Promaq (Ministério da Agricultura e Pecuária). Confirm
+DESCRIPTION:Prazos de Programa Nacional de Modernização e Apoio à Produ
+ ção Agrícola - PROMAQ (Ministério da Agricultura e Pecuária). Confirm
  e sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
@@ -21,8 +21,8 @@ UID:edital-1056156-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio À Produç
- ão Agrícola - Promaq
+SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio à Produç
+ ão Agrícola - PROMAQ
 DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
   2200020260022\nValor: ver condições\nQuem pode participar: Município\n
  Proposta cadastrada no Transferegov.br (módulo Discricionárias)\, pelo c
@@ -39,13 +39,13 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Modernizaç
- ão e Apoio À Produção Agrícola - Promaq
+ ão e Apoio à Produção Agrícola - PROMAQ
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Modernização e 
- Apoio À Produção Agrícola - Promaq
+ Apoio à Produção Agrícola - PROMAQ
 END:VALARM
 END:VEVENT
 END:VCALENDAR

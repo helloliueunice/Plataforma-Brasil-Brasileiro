@@ -17,7 +17,7 @@ UID:edital-1055992-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: ação 214s - Rotas de Integração Nacional - Rp2
+SUMMARY:Prazo final: Ação 214S - Rotas de Integração Nacional - RP2
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 5300020260002\nValor: ver condições\nQuem pode parti
  cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
@@ -32,14 +32,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — ação 214s - Rotas de Integraç
- ão Nacional - Rp2
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 214S - Rotas de Integraç
+ ão Nacional - RP2
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — ação 214s - Rotas de Integração Na
- cional - Rp2
+DESCRIPTION:Amanhã: Prazo final — Ação 214S - Rotas de Integração Na
+ cional - RP2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -47,8 +47,8 @@ UID:edital-1055995-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: ação 1211 - Implementação de Infraestrutura Básic
- a nos Municípios da Região do Calha Norte - Rp2
+SUMMARY:Prazo final: Ação 1211 - Implementação de Infraestrutura Básic
+ a nos Municípios da Região do Calha Norte - RP2
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 5300020260004\nValor: ver condições\nQuem pode parti
  cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
@@ -63,14 +63,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — ação 1211 - Implementação de
-  Infraestrutura Básica nos Municípios da Região do Calha Norte - Rp2
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 1211 - Implementação de
+  Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — ação 1211 - Implementação de Infra
- estrutura Básica nos Municípios da Região do Calha Norte - Rp2
+DESCRIPTION:Amanhã: Prazo final — Ação 1211 - Implementação de Infra
+ estrutura Básica nos Municípios da Região do Calha Norte - RP2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -109,8 +109,8 @@ UID:edital-1056725-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: 2317 - (Ted 7aadaf Sdr/Midr) Desenvolvimento Regional 
- e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ ação: Apoio a Proje
+SUMMARY:Prazo final: 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional 
+ e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Proje
  tos de Desenvolvimento Sustentável Local Integrado/ Rp
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 2220320260044\nValor: ver condições\nQuem pode parti
@@ -126,16 +126,16 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — 2317 - (Ted 7aadaf Sdr/Midr) Des
- envolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/
-  ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/
+DESCRIPTION:Faltam 7 dias: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Des
+ envolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/
+  Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/
   Rp
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — 2317 - (Ted 7aadaf Sdr/Midr) Desenvolv
- imento Regional e Ordenamento Territorial: Pt 15.244.2317.00sx.0001/ açã
+DESCRIPTION:Amanhã: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Desenvolv
+ imento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Açã
  o: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp
 END:VALARM
 END:VEVENT

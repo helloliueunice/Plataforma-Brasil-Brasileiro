@@ -1,0 +1,9 @@
+# Arquivos sensíveis: mudanças precisam de revisão da dona quando a proteção do branch main estiver ligada.
+/data/site.json            @helloliueunice
+/data/comercial.json       @helloliueunice
+/scripts/pix.mjs           @helloliueunice
+/scripts/qrcode.mjs        @helloliueunice
+/scripts/verificar-pix.mjs @helloliueunice
+/scripts/gerar-paginas.mjs @helloliueunice
+/apoie/                    @helloliueunice
+/.github/                  @helloliueunice

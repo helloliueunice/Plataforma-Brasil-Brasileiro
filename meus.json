@@ -1,0 +1,76 @@
+{
+  "geradoEm": "2026-11-01",
+  "editais": [
+    {
+      "id": 1056872,
+      "titulo": "Edital Teste Editado",
+      "instituicao": "FNS",
+      "agencia": "fns",
+      "procedencia": "nacional",
+      "tema": "Saúde",
+      "tags": [],
+      "modalidade": "Não informada",
+      "publico": [
+        "municipio"
+      ],
+      "abrangencia": "Bahia",
+      "ufs": [
+        "BA"
+      ],
+      "moeda": "BRL",
+      "valorMax": 200000,
+      "valorTotal": null,
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-10-20",
+      "abertura": "2026-10-20",
+      "encerramento": "2026-11-20",
+      "resumo": "Teste <script>alert(1)</script>",
+      "docsExtras": []
+    },
+    {
+      "id": 1056873,
+      "titulo": "Importado OK",
+      "instituicao": "Prefeitura X",
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [],
+      "modalidade": "Não informada",
+      "publico": [
+        "municipio",
+        "osc"
+      ],
+      "abrangencia": "Nordeste",
+      "moeda": "BRL",
+      "valorMax": 50000,
+      "valorTotal": null,
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-11-01",
+      "abertura": "2026-11-01",
+      "encerramento": "2026-11-30",
+      "link": "https://example.org/e",
+      "docsExtras": []
+    },
+    {
+      "id": 1056874,
+      "titulo": "Inteligência Artificial para Saúde Pública",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [],
+      "modalidade": "Não informada",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 1,
+      "valorTotal": null,
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-15",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-04",
+      "docsExtras": []
+    }
+  ]
+}

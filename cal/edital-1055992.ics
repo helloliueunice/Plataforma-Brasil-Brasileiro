@@ -3,13 +3,13 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:ação 214s - Rotas de Integração Nacional - Rp2 — Fundos 
+X-WR-CALNAME:Ação 214S - Rotas de Integração Nacional - RP2 — Fundos 
  Brasil
-NAME:ação 214s - Rotas de Integração Nacional - Rp2 — Fundos Brasil
-X-WR-CALDESC:Prazos de ação 214s - Rotas de Integração Nacional - Rp2 (
+NAME:Ação 214S - Rotas de Integração Nacional - RP2 — Fundos Brasil
+X-WR-CALDESC:Prazos de Ação 214S - Rotas de Integração Nacional - RP2 (
  Ministério da Integração e do Desenvolvimento Regional). Confirme sempr
  e no edital oficial.
-DESCRIPTION:Prazos de ação 214s - Rotas de Integração Nacional - Rp2 (M
+DESCRIPTION:Prazos de Ação 214S - Rotas de Integração Nacional - RP2 (M
  inistério da Integração e do Desenvolvimento Regional). Confirme sempre
   no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
@@ -20,7 +20,7 @@ UID:edital-1055992-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: ação 214s - Rotas de Integração Nacional - Rp2
+SUMMARY:Prazo final: Ação 214S - Rotas de Integração Nacional - RP2
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 5300020260002\nValor: ver condições\nQuem pode parti
  cipar: Estado / DF\nProposta cadastrada no Transferegov.br (módulo Discri
@@ -35,14 +35,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — ação 214s - Rotas de Integraç
- ão Nacional - Rp2
+DESCRIPTION:Faltam 7 dias: Prazo final — Ação 214S - Rotas de Integraç
+ ão Nacional - RP2
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — ação 214s - Rotas de Integração Na
- cional - Rp2
+DESCRIPTION:Amanhã: Prazo final — Ação 214S - Rotas de Integração Na
+ cional - RP2
 END:VALARM
 END:VEVENT
 END:VCALENDAR

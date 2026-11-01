@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 import { GUIAS, PUBLICOS_HUB, ESQUEMA_CAMPOS } from './conteudo.mjs';
 import { rss, calendario, comparar, semanaISO, somaDias } from './feeds.mjs';
 import { patrocinioAtivo, textoSelo, escolherVaga } from './patrocinio.mjs';
-import { brCodePix } from './pix.mjs';
+import { brCodePix, normalizarChavePix } from './pix.mjs';
 import { qrSvg } from './qrcode.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -91,7 +91,23 @@ const SCRIPT_EVENTOS = `document.addEventListener('click',function(ev){var a=ev.
 
 // Alguma forma de apoio configurada? (senão /apoie/ mostra "em breve")
 const pixCfg = cfg.apoio?.pix || {};
+// Trava de integridade: no GitHub, a chave do data/site.json precisa ser igual à variável PIX_CHAVE
+// (definida pela dona em Settings → Variables). Um commit que troque a chave sozinho não publica.
+if (process.env.PIX_CHAVE && normalizarChavePix(pixCfg.chave) !== normalizarChavePix(process.env.PIX_CHAVE)) {
+    console.error('ERRO: a chave Pix de data/site.json é diferente da variável PIX_CHAVE do repositório. Publicação interrompida.');
+    process.exit(1);
+}
 const apoioConfigurado = !!(pixCfg.chave || cfg.apoio?.apoiase || cfg.apoio?.url);
+
+// Só links https:// sem espaços, aspas ou sinais de tag (bloqueia javascript:, data: e quebras de linha).
+function linkSeguro(u) { const t = String(u || '').trim(); return /^https:\/\/[^\s"'<>`]+$/i.test(t) ? t : ''; }
+
+// De onde veio o dado e quanto confiar: curadoria humana ("conferido") ou leitura automática (Transferegov).
+function origemHTML(e) {
+    if (e.origem === 'transferegov') return `<p class="nota aviso-auto" id="origem"><strong>Leitura automática, sem revisão humana.</strong> Dados lidos da API pública do Transferegov${e.verificadoEm ? ` em ${data(e.verificadoEm)}` : ''}. Área, abrangência, valores e prazos podem conter erros: confirme no <a href="${esc(e.link)}" target="_blank" rel="noopener noreferrer">Transferegov.br</a>, pelo código ${esc(e.codigoPrograma || '')}, antes de agir.</p>`;
+    if (!e.fonte && !e.verificadoEm) return '';
+    return `<p class="nota">Conferido por pessoa${e.verificadoEm ? ` em ${data(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(e.fonte)}" target="_blank" rel="noopener noreferrer">fonte oficial</a>` : ''}.</p>`;
+}
 
 /* ---------- Validação ---------- */
 const avisos = [];
@@ -106,7 +122,8 @@ const editais = [];
     editais.push({
         moeda: 'BRL', procedencia: 'nacional', tema: 'Desenvolvimento', modalidade: 'Não informada', abrangencia: 'Nacional',
         contrapartida: 'Não informada', tags: [], resumo: '', docsExtras: [], valorTotal: null, ...r,
-        link: r.link || (ag ? ag.link : ''),
+        link: linkSeguro(r.link) || (ag ? linkSeguro(ag.link) : ''),
+        fonte: linkSeguro(r.fonte) || undefined,
         criterios: r.criterios && r.criterios.length ? r.criterios : CRITERIOS_PADRAO,
         documentos: [...new Set([...r.publico.flatMap(p => DOCS_POR_PUBLICO[p] || []), ...DOCS_COMUNS, ...(r.docsExtras || [])])]
     });
@@ -243,7 +260,7 @@ ${corpo}
         <nav class="rodape-links" aria-label="Editais por perfil">${Object.values(PUBLICOS_HUB).map(h => `<a href="${rel}para/${h.slug}/">${esc(h.titulo.replace('Editais abertos ', 'Editais ').replace('Editais e programas abertos ', 'Programas '))}</a>`).join(' · ')}</nav>
         <p><a href="${rel}">Início</a> · <a href="${rel}editais/">Todos os editais</a> · <a href="${rel}prazos/">Prazos</a> · <a href="${rel}guias/">Guias</a> · <a href="${rel}glossario/">Glossário</a> · <a href="${rel}instituicoes/">Instituições</a> · <a href="${rel}sugerir-edital/">Sugerir edital</a></p>
         <p><a href="${rel}semana/">Resumo da semana</a> · <a href="${rel}dados/#assinar">Assinar (RSS e calendário)</a> · <a href="${rel}dados/">Dados abertos</a> · <a href="${rel}feed.xml">RSS</a></p>
-        <p>${cfg.boletim?.url ? `<a class="btn pequeno primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a> ` : ''}${cfg.whatsappCanal ? `<a class="btn pequeno whats" href="${esc(cfg.whatsappCanal)}" target="_blank" rel="noopener" data-evento="canal-whatsapp">Canal no WhatsApp</a> ` : ''}${apoioConfigurado ? `<a class="btn pequeno" href="${rel}apoie/" data-evento="apoio">${esc(cfg.apoio?.texto || 'Apoie')}</a>` : ''}</p>
+        <p>${linkSeguro(cfg.boletim?.url) ? `<a class="btn pequeno primario" href="${esc(linkSeguro(cfg.boletim.url))}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a> ` : ''}${cfg.whatsappCanal ? `<a class="btn pequeno whats" href="${esc(cfg.whatsappCanal)}" target="_blank" rel="noopener" data-evento="canal-whatsapp">Canal no WhatsApp</a> ` : ''}${apoioConfigurado ? `<a class="btn pequeno" href="${rel}apoie/" data-evento="apoio">${esc(cfg.apoio?.texto || 'Apoie')}</a>` : ''}</p>
         <p class="nota">${demonstrativo ? 'Dados demonstrativos. ' : ''}Informações de ${data(geradoEm)}. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
         <p class="nota"><a href="${rel}privacidade/">Privacidade</a> · <a href="${rel}termos/">Termos de uso</a> · <a href="${rel}apoie/">Apoie</a> · <a href="${rel}anuncie/">Anuncie</a></p>
     </footer>
@@ -287,7 +304,7 @@ const linkEdital = (e, rel) => `<a href="${rel}editais/${slugEdital(e)}/"${patro
 function cartao(e, rel) {
     const p = patrocinado(e);
     return `<li class="cartao${p ? ' tem-patrocinio' : ''}">
-            <div class="selos">${p ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span></div>
+            <div class="selos">${p ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span>${e.origem === 'transferegov' ? ' <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a>' : ''}</div>
             <h3><a href="${rel}editais/${slugEdital(e)}/"${p ? eventoPatrocinio(e) : ''}>${esc(e.titulo)}</a></h3>
             <p>${esc(e.instituicao)} · <strong>${valorTxt(e)}</strong>${temValor(e) ? ' por proposta' : ''} · ${esc(publicoTxt(e))}</p>
             <p class="nota">Inscrições: ${data(e.abertura)} a ${data(e.encerramento)} · ${esc(e.abrangencia)}</p>
@@ -376,7 +393,7 @@ for (const e of editais) {
 
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(e.titulo)}</span></nav>
-        <div class="selos">${patrocinado(e) ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span>${e.fluxoContinuo === true ? ' <span class="selo neutro">Fluxo contínuo</span>' : ''}</div>
+        <div class="selos">${patrocinado(e) ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span>${e.fluxoContinuo === true ? ' <span class="selo neutro">Fluxo contínuo</span>' : ''}${e.origem === 'transferegov' ? ' <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a>' : ''}</div>
         ${avisoPatrocinador(e)}
         ${e.numero ? `<p class="numero">${esc(e.numero)}</p>` : ''}
         <h1>${esc(e.titulo)}</h1>
@@ -397,7 +414,7 @@ for (const e of editais) {
             <div><dt>Quem pode participar</dt><dd>${e.publico.map(p => PUBLICOS_HUB[p] ? `<a href="${rel}para/${PUBLICOS_HUB[p].slug}/">${esc(PUBLICOS[p] || p)}</a>` : esc(PUBLICOS[p] || p)).join(', ')}</dd></div>
             <div><dt>Contrapartida</dt><dd>${esc(e.contrapartida)}</dd></div>
             ${fonteRec ? `<div><dt>Origem do recurso</dt><dd>${e.fonteRecurso === 'incentivo-fiscal' ? `<a href="${rel}guias/leis-de-incentivo-fiscal/">${esc(fonteRec)}</a>` : esc(fonteRec)}</dd></div>` : ''}
-            <div><dt>Abrangência</dt><dd>${esc(e.abrangencia)}${ufs && ufs.length > 1 ? `<br><small>${ufs.join(', ')}</small>` : ''}</dd></div>
+            <div><dt>Abrangência</dt><dd>${esc(e.abrangencia)}${ufs && ufs.length > 1 ? `<br><small>${ufs.join(', ')}</small>` : ''}${e.abrangenciaNota ? `<br><small>${esc(e.abrangenciaNota)}</small>` : ''}</dd></div>
         </dl>
         ${e.valorNota ? `<p class="destaque">${esc(e.valorNota)}</p>` : ''}
         ${e.moeda !== 'BRL' && temValor(e) ? `<p class="nota">Valores em ${e.moeda}. Equivalente aproximado: até ${valor(e.valorMax * (COTACAO_REF[e.moeda] || 1))} por proposta (cotação de referência).</p>` : ''}
@@ -408,7 +425,7 @@ for (const e of editais) {
             <p class="nota">Lista de conferência rápida; os requisitos completos estão no edital oficial.</p></section>` : ''}
 
         <section><h2>Sobre o edital</h2><p>${esc(e.resumo || 'Consulte o edital oficial para o objetivo completo.')}</p>
-            ${e.fonte || e.verificadoEm ? `<p class="nota">Conferido${e.verificadoEm ? ` em ${data(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(e.fonte)}" target="_blank" rel="noopener noreferrer">fonte oficial</a>` : ''}.</p>` : ''}
+            ${origemHTML(e)}
             ${e.tags.length ? `<p class="tags">${e.tags.map(t => `<span>${esc(t)}</span>`).join('')}</p>` : ''}</section>
 
         <section><h2>Cronograma</h2>
@@ -539,7 +556,7 @@ const urlsExtras = [];
 const linkGuias = rel => `<ul class="lista">${GUIAS.map(g => `<li><a href="${rel}guias/${g.slug}/">${esc(g.titulo)}</a></li>`).join('')}</ul>`;
 const blocoVazio = rel => `<div class="aviso">Nenhuma chamada aberta para este perfil no momento. O monitor verifica as fontes oficiais todos os dias.
     <div class="acoes" style="margin:12px 0 0;">
-        ${cfg.boletim?.url ? `<a class="btn primario" href="${esc(cfg.boletim.url)}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a>` : `<a class="btn primario" href="${rel}feed.xml" data-evento="feed">Assinar o feed de editais</a>`}
+        ${linkSeguro(cfg.boletim?.url) ? `<a class="btn primario" href="${esc(linkSeguro(cfg.boletim.url))}" target="_blank" rel="noopener" data-evento="boletim">Receber novos editais</a>` : `<a class="btn primario" href="${rel}feed.xml" data-evento="feed">Assinar o feed de editais</a>`}
         <a class="btn" href="${rel}sugerir-edital/">Sugerir um edital</a>
     </div></div>`;
 
@@ -583,7 +600,7 @@ for (const [k, nomeArea] of Object.entries(AREAS)) {
     escrever(`area/${slug}/index.html`, layout({
         rel, url, ativo: 'editais', robots: indexavel ? '' : 'noindex,follow', assinatura: { chave: `area-${slug}`, nome: `editais de ${nomeArea}` },
         titulo: `Editais abertos de ${nomeArea} (${mesAno}) | ${NOME}`,
-        descricao: corta(`${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} em ${nomeArea}: valores, prazos, quem pode participar e documentos, conferidos nas fontes oficiais.`, 158),
+        descricao: corta(`${plural(lista.length, 'chamada vigente', 'chamadas vigentes')} em ${nomeArea}: valores, prazos, quem pode participar e documentos, com link para a fonte oficial.`, 158),
         jsonld: { '@context': 'https://schema.org', '@type': 'ItemList', name: `Editais de ${nomeArea}`, itemListElement: lista.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/editais/${slugEdital(e)}/`, name: e.titulo })) },
         corpo: `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(nomeArea)}</span></nav>
@@ -690,9 +707,14 @@ const contatoHref = cfg.contato ? (/^https?:/.test(cfg.contato) ? cfg.contato : 
 const sugestaoHref = cfg.formularioSugestao || `${REPO}/issues/new?template=sugerir-edital.yml`;
 const COM = lerJson(path.join(RAIZ, 'data', 'comercial.json'), {}) || {};
 const ANU = COM.anuncie || {}, APO = COM.apoie || {}, PRO = COM.pro || {};
+// Relatório de cliques só é oferecido quando há medição ativa (GoatCounter); sem ela não se promete (CDC, art. 30).
+if (cfg.analytics?.goatcounter && ANU.relatorioCliques) {
+    for (const p of ANU.pacotes || []) if (p.id !== 'institucional') p.inclui = [...(p.inclui || []), ANU.relatorioCliques.inclui];
+    if (ANU.relatorioCliques.passo) ANU.comoFunciona = [...(ANU.comoFunciona || []), ANU.relatorioCliques.passo];
+}
 const arr = v => (Array.isArray(v) ? v : []);
 const emailOk = s => /^[^@\s<>"]+@[^@\s<>"]+\.[^@\s<>"]+$/.test(String(s || '').trim());
-const urlOk = s => /^https:\/\/\S+$/i.test(String(s || '').trim());
+const urlOk = s => !!linkSeguro(s);
 // Só publica o que está em site.json: e-mail comercial → mailto com assunto; senão formulário; senão o formulário de parceria
 const comercialHref = assunto => (emailOk(cfg.comercial?.email) ? `mailto:${cfg.comercial.email.trim()}?subject=${encodeURIComponent(assunto)}` : urlOk(cfg.comercial?.formulario) ? cfg.comercial.formulario.trim() : contatoHref);
 const contatoEhGithub = !emailOk(cfg.comercial?.email) && !urlOk(cfg.comercial?.formulario) && !cfg.contato;
@@ -709,7 +731,7 @@ const REGRAS_BASE = [
     `Selo “Publicidade · Patrocinado por <nome do patrocinador>” sempre visível, com explicação em texto e link para estas regras.`,
     'O patrocínio não altera a busca, os filtros, a compatibilidade com o perfil nem a ordem das listas.',
     'O destaque ocupa uma vaga reservada e sinalizada (uma por página), fora da lista ordenada.',
-    'Só chamadas reais, com inscrições abertas ou previstas e conferidas na fonte oficial.'
+    'Só chamadas reais, com inscrições abertas ou previstas. As curadas são conferidas por pessoa; as do Transferegov são lidas automaticamente e marcadas assim.'
 ];
 const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
 {
@@ -746,7 +768,7 @@ const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
                 ${arr(p.naoInclui).length ? `<p class="rotulo-lista">Não inclui</p><ul class="lista nao-inclui">${arr(p.naoInclui).map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
                 <a class="btn${p.destaque ? ' primario' : ''}" href="${esc(comercialHref(`Anunciar no ${NOME}: ${p.nome}`))}"${alvo(comercialHref(''))} data-evento="anuncie-pacote-${esc(slugify(p.id || p.nome))}">${esc(botaoTexto)}<span class="sr-only">: ${esc(p.nome)}</span></a>
             </li>`).join('')}</ul>
-            <p class="nota">Cobrança por proposta comercial, combinada diretamente com a equipe. Publicar uma chamada continua gratuito: <a href="${rel}sugerir-edital/">sugira um edital</a>.</p></section>` : ''}
+            <p class="nota">Cobrança por proposta comercial, combinada diretamente com a responsável pelo site. Publicar uma chamada continua gratuito: <a href="${rel}sugerir-edital/">sugira um edital</a>.</p></section>` : ''}
         ${arr(ANU.comoFunciona).length ? `<section aria-labelledby="como-funciona"><h2 id="como-funciona">Como funciona</h2><ol class="passos">${arr(ANU.comoFunciona).map(b => `<li><h3>${esc(b.titulo)}</h3><p>${esc(b.texto)}</p></li>`).join('')}</ol></section>` : ''}
         <section id="regras" aria-labelledby="regras-titulo"><h2 id="regras-titulo">Regras do patrocínio</h2>
             <ul class="lista">${regras.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
@@ -874,16 +896,17 @@ const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
         <section><h2>O que fica só no seu navegador</h2><p>Perfil, favoritos, propostas, checklists, rascunhos, prestações de contas de demonstração e o nome/e-mail do “login” de demonstração são gravados apenas no armazenamento local do seu navegador. <strong>Esses dados não chegam até nós.</strong> Para apagá-los, use “Apagar meus dados” na plataforma ou limpe os dados do site no navegador.</p></section>
         <section><h2>Serviços de terceiros que recebem seu endereço IP</h2><ul class="lista">
             <li><strong>GitHub Pages</strong> (hospedagem do site).</li>
-            <li><strong>Google Fonts</strong> (fontes) e <strong>Cloudflare/cdnjs</strong> (bibliotecas de mapa e gráfico).</li>
+            <li><strong>Google Fonts</strong> (fontes). As bibliotecas de mapa e gráfico são servidas pelo próprio site.</li>
             <li><strong>OpenStreetMap</strong> (imagens do mapa, só na página Mapa).</li>
             ${cfg.analytics?.goatcounter ? '<li><strong>GoatCounter</strong> (contagem agregada de visitas, sem cookies e sem identificar pessoas).</li>' : ''}
             ${cfg.analytics?.ga4 ? '<li><strong>Google Analytics</strong> (medição de uso; carregado só com o seu consentimento).</li>' : ''}
         </ul><p>Esses serviços podem estar fora do Brasil (transferência internacional, art. 33 da LGPD) e seguem as próprias políticas. Usamos esses serviços por legítimo interesse, para que o site funcione.</p></section>
-        <section><h2>Sugestões de edital e pedidos de parceria</h2><p>${contatoEhGithub ? 'São feitos no GitHub e ficam <strong>públicos</strong>. Não informe telefone, CPF, endereço ou e-mail pessoal nesses formulários.' : 'Sugestões de edital feitas no GitHub ficam <strong>públicas</strong>: não informe dados pessoais nelas. Pedidos comerciais enviados pelo contato de <a href="' + rel + 'anuncie/">Anuncie</a> são usados só para responder e preparar a proposta.'}</p></section>
-        <section><h2>Apoio (Pix e Apoia.se)</h2><p>A página <a href="${rel}apoie/">Apoie</a> não coleta nenhum dado: o código Pix e o QR Code são gerados no próprio site e o pagamento acontece no app do seu banco. Como em qualquer Pix, o banco informa a quem recebe o nome de quem pagou e parte do CPF ou CNPJ; usamos essas informações apenas para controle financeiro e obrigações legais, sem publicá-las nem compartilhá-las. Contribuições pelo Apoia.se seguem a política de privacidade daquela plataforma.</p></section>
+        <section><h2>Sugestões de edital e pedidos de parceria</h2><p>${contatoEhGithub ? 'São feitos no GitHub e ficam <strong>públicos</strong>. Não informe telefone, CPF, endereço ou e-mail pessoal nesses formulários.' : 'Sugestões de edital feitas no GitHub ficam <strong>públicas</strong>: não informe dados pessoais nelas. Pedidos comerciais enviados pelo contato de <a href="' + rel + 'anuncie/">Anuncie</a> são usados só para responder e preparar a proposta (base legal: procedimentos preliminares a contrato, art. 7º, V). Guardamos esses e-mails por até 2 anos após o último contato, ou por 5 anos se houver contratação, por obrigações fiscais.'}</p></section>
+        <section><h2>E-mail do projeto</h2><p>O e-mail de contato é hospedado pelo Google (Gmail), que atua como operador e pode armazenar mensagens fora do Brasil (art. 33 da LGPD).</p></section>
+        <section><h2>Apoio (Pix e Apoia.se)</h2><p>A página <a href="${rel}apoie/">Apoie</a> não coleta nenhum dado: o código Pix e o QR Code são gerados no próprio site e o pagamento acontece no app do seu banco. Como em qualquer Pix, o banco informa a quem recebe o nome de quem pagou e parte do CPF ou CNPJ; usamos essas informações apenas para controle financeiro e cumprimento de obrigações legais e fiscais (art. 7º, II), guardadas por 5 anos, sem publicá-las nem compartilhá-las. Contribuições pelo Apoia.se seguem a política de privacidade daquela plataforma.</p></section>
         <section><h2>Lista de espera do Plano Pro</h2><p>Se você entrar na lista de espera, coletamos nome e e-mail por um formulário de terceiro, que trata os dados conforme a própria política (pode haver transferência internacional, art. 33 da LGPD). Finalidade: avisar sobre o lançamento. Base legal: consentimento (art. 7º, I), que você pode revogar a qualquer momento pelo contato acima. Os dados são apagados até 6 meses após o lançamento ou se o plano for cancelado.</p></section>
         <section><h2>Patrocinadores</h2><p>Editais em destaque patrocinado são sinalizados com “Patrocinado por” e o nome de quem patrocina. Patrocinadores recebem só números agregados (quantos cliques o destaque teve), contados sem cookies e sem identificar pessoas. Nenhum dado pessoal de quem usa o site é vendido ou repassado.</p></section>
-        <section><h2>Seus direitos</h2><p>Você pode pedir confirmação, acesso, correção ou eliminação de dados pessoais que porventura tratemos (art. 18 da LGPD) pelo contato acima, e também pode recorrer à Autoridade Nacional de Proteção de Dados (ANPD).</p></section>
+        <section><h2>Seus direitos e canal do titular</h2><p>Você pode pedir confirmação, acesso, correção ou eliminação de dados pessoais que porventura tratemos (art. 18 da LGPD) pelo canal de comunicação com titulares: ${canal}. Respondemos em até 15 dias. Como agente de tratamento de pequeno porte, o projeto não nomeia encarregado, mas mantém este canal (Resolução CD/ANPD nº 2/2022). Você também pode recorrer à Autoridade Nacional de Proteção de Dados (ANPD).</p></section>
         <section><h2>Atualizações</h2><p>Mudanças nesta política serão publicadas nesta página, com a data da versão.</p></section>`
     }));
     escrever('termos/index.html', layout({
@@ -895,8 +918,8 @@ const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
         <h1>Termos de uso</h1>
         <p class="sub">Versão de 01/11/2026.</p>
         <ul class="lista">
-            <li><strong>Serviço informativo e gratuito.</strong> O ${NOME} reúne e resume editais públicos e privados de fomento. <strong>Não é canal oficial</strong> e não tem vínculo com os órgãos e instituições citados.</li>
-            <li><strong>O edital oficial sempre prevalece.</strong> Cada resumo informa a fonte e a data em que foi conferido. Prazos, valores e requisitos podem mudar (retificações, prorrogações); não garantimos que estejam completos ou atualizados. Confirme sempre no documento oficial antes de submeter.</li>
+            <li><strong>Serviço informativo e gratuito.</strong> O ${NOME} reúne e resume editais públicos e privados de fomento. <strong>Não é canal oficial</strong> e não tem vínculo com os órgãos e instituições citados. <strong>Também não tem vínculo com o Fundo Brasil de Direitos Humanos</strong>, fundação que publica editais próprios.</li>
+            <li><strong>O edital oficial sempre prevalece.</strong> Cada resumo informa a fonte e a data em que foi conferido. Os programas do Transferegov são <strong>lidos automaticamente</strong> da API pública, sem revisão humana, e aparecem marcados assim; o monitor de editais usa inteligência artificial para preparar rascunhos, que só são publicados depois de revisados por pessoa. Prazos, valores e requisitos podem mudar (retificações, prorrogações); não garantimos que estejam completos ou atualizados. Confirme sempre no documento oficial antes de submeter.</li>
             <li><strong>Inscrições, propostas e prestações de contas reais</strong> são feitas apenas nos sistemas da instituição financiadora. As áreas de projetos e prestação de contas desta plataforma são <strong>simulações</strong>: nada é enviado a ninguém.</li>
             <li><strong>Nomes de instituições</strong> são usados apenas para identificá-las. Textos de editais publicados por órgãos públicos são atos oficiais (Lei 9.610/1998, art. 8º, IV); chamadas de entidades privadas e internacionais são resumidas com redação própria, com link para o original.</li>
             <li><strong>Conteúdo patrocinado</strong> é sempre sinalizado com o selo “Patrocinado por” e o nome de quem patrocina, ocupa só vagas reservadas e não altera a busca, os filtros, a compatibilidade nem a ordem das listas. As regras estão em <a href="${rel}anuncie/#regras">Anuncie</a>. A curadoria continua independente: patrocínio não garante publicação de chamada que não atenda aos critérios.</li>
@@ -986,7 +1009,7 @@ for (const r of RECORTES) {
     const itens = lista.filter(e => statusEm(e) !== 'fechado').map(itemRss).sort((a, b) => b.data.localeCompare(a.data) || a.link.localeCompare(b.link));
     escrever(`feeds/${r.chave}.xml`, rss({
         titulo: `${NOME} — ${r.nome}`, link: r.pagina, self: `${SITE}/feeds/${r.chave}.xml`, atualizado: geradoEm, itens,
-        descricao: `Editais com inscrições abertas ou previstas (${r.nome}), conferidos nas fontes oficiais. Confirme sempre no edital oficial.`
+        descricao: `Editais com inscrições abertas ou previstas (${r.nome}), com link para a fonte oficial. Confirme sempre no edital oficial.`
     }));
     const eventos = lista.flatMap(e => eventosDe(e, hoje)).sort((a, b) => a.data.localeCompare(b.data) || a.uid.localeCompare(b.uid));
     escrever(`cal/${r.chave}.ics`, calendario({
@@ -1069,7 +1092,7 @@ for (const e of editais) {
         descricao: `Baixe os ${editais.length} editais em JSON (licença CC BY 4.0), veja o esquema dos campos e assine feeds RSS e calendários por perfil, área e instituição.`,
         jsonld: { '@context': 'https://schema.org', '@type': 'Dataset', '@id': `${url}#dataset`,
             name: `${NOME}: editais de fomento abertos no Brasil`,
-            description: `Editais e chamadas públicas de fomento (pesquisa, inovação, cultura, meio ambiente, social) conferidos nas fontes oficiais: instituição, público, valores, datas de abertura e encerramento, etapas, critérios e links oficiais. Atualizado diariamente, com histórico de alterações de prazo e valor.`,
+            description: `Editais e chamadas públicas de fomento (pesquisa, inovação, cultura, meio ambiente, social) de fontes oficiais: instituição, público, valores, datas de abertura e encerramento, etapas, critérios e links oficiais. Atualizado diariamente, com histórico de alterações de prazo e valor.`,
             url, license: 'https://creativecommons.org/licenses/by/4.0/', isAccessibleForFree: true, inLanguage: 'pt-BR', dateModified: geradoEm,
             keywords: ['editais', 'fomento', 'chamadas públicas', 'financiamento', 'pesquisa', 'inovação', 'OSC'],
             spatialCoverage: { '@type': 'Place', name: 'Brasil' },
@@ -1090,7 +1113,7 @@ for (const e of editais) {
             <a class="btn" href="${rel}data/alteracoes.json" type="application/json" data-evento="dados-alteracoes">Histórico de alterações (JSON)</a>
         </div>
         <section><h2>O que é</h2>
-            <p>O <code>editais.json</code> é a mesma base usada pela plataforma e pelas páginas deste site: editais e chamadas públicas de fomento, conferidos nas fontes oficiais. Cada edital traz quem financia, quem pode participar, valores, datas, etapas, critérios e o link oficial.</p>
+            <p>O <code>editais.json</code> é a mesma base usada pela plataforma e pelas páginas deste site: editais e chamadas públicas de fomento: os curados são conferidos por pessoa na fonte oficial; os do Transferegov (campo <code>origem</code>) são lidos automaticamente da API pública, sem revisão. Cada edital traz quem financia, quem pode participar, valores, datas, etapas, critérios e o link oficial.</p>
             <p>O arquivo é um objeto <code>{ "geradoEm", "demonstrativo", "editais": [...] }</code>. Datas usam o formato <code>AAAA-MM-DD</code> e o fuso de Brasília; valores são números na moeda do campo <code>moeda</code>. Campos opcionais podem não existir em todos os editais.</p></section>
         <section><h2>Licença</h2>
             <p>Os dados estão sob a licença <a href="${LICENCA}" target="_blank" rel="noopener license">Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)</a>: você pode copiar, redistribuir e adaptar, inclusive para uso comercial, desde que cite a fonte, por exemplo: “Dados: ${NOME} (${SITE}/dados/)”.</p>
@@ -1147,7 +1170,7 @@ if (!fs.existsSync(path.join(RAIZ, '.nojekyll'))) escrever('.nojekyll', '');
     const embutidos = [...brutos, ...brutosTG].filter(r => editais.some(e => e.id === r.id));
     const bloco = `// editais:inicio (gerado por scripts/gerar-paginas.mjs a partir do editais.json — não edite aqui)
         const DADOS_META = ${JSON.stringify({ geradoEm, demonstrativo })};
-        let EDITAIS_BASE = ${ind(JSON.stringify(embutidos, null, 4)).replace(/<\/(script)/gi, '<\\/$1')};
+        let EDITAIS_BASE = ${ind(JSON.stringify(embutidos, null, 4)).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029')};
         // editais:fim`;
     indexHtml = indexHtml.replace(reDados, () => bloco);
 }

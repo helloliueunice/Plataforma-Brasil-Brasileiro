@@ -3,15 +3,15 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Infra-Estrutura Básica – Sr(Sp) Superintendência Regional
+X-WR-CALNAME:Infra-Estrutura Básica – SR(SP) Superintendência Regional
  … — Fundos Brasil
-NAME:Infra-Estrutura Básica – Sr(Sp) Superintendência Regional… — F
+NAME:Infra-Estrutura Básica – SR(SP) Superintendência Regional… — F
  undos Brasil
-X-WR-CALDESC:Prazos de Infra-Estrutura Básica – Sr(Sp) Superintendência
-  Regional do Incra de São Paulo– Convênio (Ministério do Desenvolvime
+X-WR-CALDESC:Prazos de Infra-Estrutura Básica – SR(SP) Superintendência
+  Regional do INCRA de São Paulo– Convênio (Ministério do Desenvolvime
  nto Agrário e Agricultura Familiar). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de Infra-Estrutura Básica – Sr(Sp) Superintendência 
- Regional do Incra de São Paulo– Convênio (Ministério do Desenvolvimen
+DESCRIPTION:Prazos de Infra-Estrutura Básica – SR(SP) Superintendência 
+ Regional do INCRA de São Paulo– Convênio (Ministério do Desenvolvimen
  to Agrário e Agricultura Familiar). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
@@ -21,8 +21,8 @@ UID:edital-1056401-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Sp) Superintendência R
- egional do Incra de São Paulo– Convênio
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(SP) Superintendência R
+ egional do INCRA de São Paulo– Convênio
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260013\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -39,14 +39,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(S
- p) Superintendência Regional do Incra de São Paulo– Convênio
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(S
+ P) Superintendência Regional do INCRA de São Paulo– Convênio
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Sp) Sup
- erintendência Regional do Incra de São Paulo– Convênio
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(SP) Sup
+ erintendência Regional do INCRA de São Paulo– Convênio
 END:VALARM
 END:VEVENT
 END:VCALENDAR

@@ -22,16 +22,60 @@ on:
         type: boolean
         default: false
 
+# Permissão mínima por padrão; só o job "gerar" pode escrever no repositório.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: gerar-paginas
   cancel-in-progress: false
 
 jobs:
-  gerar:
+  # Imagens de prévia: instala pacotes do npm (Playwright), por isso roda isolado, SEM credencial de escrita.
+  # Entrega só as imagens como artefato; o job "gerar" aceita apenas .jpg de assets/og e o manifesto.
+  imagens:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      geradas: ${{ steps.img.outputs.geradas }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Imagens de prévia (só quando algum edital mudou)
+        id: img
+        run: |
+          if node scripts/gerar-imagens.mjs --verificar; then
+            echo "Imagens em dia."
+            echo "geradas=nao" >> "$GITHUB_OUTPUT"
+          else
+            npm install --no-save --no-package-lock playwright@1.49.1 > /dev/null
+            npx playwright install --with-deps chromium > /dev/null
+            node scripts/gerar-imagens.mjs
+            echo "geradas=sim" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Guardar imagens
+        if: steps.img.outputs.geradas == 'sim'
+        uses: actions/upload-artifact@v4
+        with:
+          name: imagens-og
+          path: |
+            assets/og/*.jpg
+            data/og-manifest.json
+          retention-days: 1
+
+  gerar:
+    needs: imagens
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,18 +85,36 @@ jobs:
         with:
           node-version: 22
 
-      - name: Imagens de prévia (só quando algum edital mudou)
+      - name: Receber imagens
+        if: needs.imagens.outputs.geradas == 'sim'
+        uses: actions/download-artifact@v4
+        with:
+          name: imagens-og
+          path: /tmp/imagens-og
+
+      - name: Aplicar imagens (só .jpg e o manifesto)
+        if: needs.imagens.outputs.geradas == 'sim'
         run: |
-          if node scripts/gerar-imagens.mjs --verificar; then
-            echo "Imagens em dia."
-          else
-            npm install --no-save --no-package-lock playwright@1.49.1 > /dev/null
-            npx playwright install --with-deps chromium > /dev/null
-            node scripts/gerar-imagens.mjs
-          fi
+          set -e
+          mkdir -p assets/og
+          find /tmp/imagens-og -type f | while read -r f; do
+            rel="${f#/tmp/imagens-og/}"
+            case "$rel" in
+              assets/og/*.jpg) [ "$(head -c 3 "$f" | od -An -tx1 | tr -d ' \n')" = "ffd8ff" ] && cp "$f" "$rel" || echo "Ignorado (não é JPEG): $rel" ;;
+              data/og-manifest.json) node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f" && cp "$f" "$rel" ;;
+              *) echo "Ignorado (fora do permitido): $rel" ;;
+            esac
+          done
 
       - name: Gerar páginas
+        env:
+          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
         run: node scripts/gerar-paginas.mjs
+
+      - name: Conferir o Pix da página Apoie
+        env:
+          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+        run: node scripts/verificar-pix.mjs
 
       - name: Publicar alterações
         id: publicar

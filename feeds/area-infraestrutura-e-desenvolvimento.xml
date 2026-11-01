@@ -4,18 +4,63 @@
   <title>Fundos Brasil — editais de Infraestrutura e Desenvolvimento</title>
   <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/area/infraestrutura-e-desenvolvimento/</link>
   <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/area-infraestrutura-e-desenvolvimento.xml" rel="self" type="application/rss+xml"/>
-  <description>Editais com inscrições abertas ou previstas (editais de Infraestrutura e Desenvolvimento), conferidos nas fontes oficiais. Confirme sempre no edital oficial.</description>
+  <description>Editais com inscrições abertas ou previstas (editais de Infraestrutura e Desenvolvimento), com link para a fonte oficial. Confirme sempre no edital oficial.</description>
   <language>pt-BR</language>
   <ttl>720</ttl>
   <lastBuildDate>Sat, 31 Oct 2026 15:00:00 GMT</lastBuildDate>
   <item>
-    <title>Industrialização da Cadeia Produtiva do Pirarucu — Ministério do Desenvolvimento, Indústria, comércio e Serviços</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/industrializacao-da-cadeia-produtiva-do-pirarucu-1056427/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/industrializacao-da-cadeia-produtiva-do-pirarucu-1056427/</guid>
-    <pubDate>Fri, 16 Oct 2026 15:00:00 GMT</pubDate>
+    <title>Infra-Estrutura Básica – SR(SP) Superintendência Regional do INCRA de São Paulo– Convênio — Ministério do Desenvolvimento Agrário e Agricultura Familiar</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/</guid>
+    <pubDate>Thu, 25 Jun 2026 15:00:00 GMT</pubDate>
     <category>Infraestrutura e Desenvolvimento</category>
-    <category>OSC / Cooperativa</category>
-    <description>Programa Transferegov 2800020260010. ver condições · OSC / Cooperativa · inscrições de 16/10/2026 a 16/11/2026. O termo de colaboração terá por objeto a concessão de apoio da Administração Pública para a execução de projeto voltado ao desenvolvimento alternativo na região do Vale do Javari, por meio de atividades de industrialização da cadeia produtiva do pirarucu, com a finalidade de diminuir a vulnerabilidade dos povos indígenas e comunidades ribeirinhas aos riscos associados ao tráfico de drogas e crimes correlatos, conforme diretrizes do Programa Território Seguro, Amazônia Soberana.Objetivos específicos da parceria:a) Implementação de estrutura física para pré-processamento industrial do Pirarucu,</description>
+    <category>Município</category>
+    <description>Programa Transferegov 2220120260013. ver condições · Município · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
+  </item>
+  <item>
+    <title>Infra-Estrutura Básica – SR(BA) Superintendência Regional do INCRA na Bahia– Convênio. — Ministério do Desenvolvimento Agrário e Agricultura Familiar</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/</guid>
+    <pubDate>Tue, 26 May 2026 15:00:00 GMT</pubDate>
+    <category>Infraestrutura e Desenvolvimento</category>
+    <category>Município</category>
+    <description>Programa Transferegov 2220120260010. ver condições · Município · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
+  </item>
+  <item>
+    <title>Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio. — Ministério do Desenvolvimento Agrário e Agricultura Familiar</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/</guid>
+    <pubDate>Thu, 07 May 2026 15:00:00 GMT</pubDate>
+    <category>Infraestrutura e Desenvolvimento</category>
+    <category>Município</category>
+    <description>Programa Transferegov 2220120260016. ver condições · Município · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
+  </item>
+  <item>
+    <title>Infra-Estrutura Básica – SR(PR) Superintendência Regional do INCRA no Paraná– Convênio. — Ministério do Desenvolvimento Agrário e Agricultura Familiar</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/</guid>
+    <pubDate>Thu, 09 Apr 2026 15:00:00 GMT</pubDate>
+    <category>Infraestrutura e Desenvolvimento</category>
+    <category>Município</category>
+    <description>Programa Transferegov 2220120260014. ver condições · Município · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
+  </item>
+  <item>
+    <title>Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2 — Ministério da Integração e do Desenvolvimento Regional</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/</guid>
+    <pubDate>Thu, 19 Feb 2026 15:00:00 GMT</pubDate>
+    <category>Infraestrutura e Desenvolvimento</category>
+    <category>Estado / DF</category>
+    <description>Programa Transferegov 5300020260004. ver condições · Estado / DF · inscrições de 19/02/2026 a 30/11/2026. Apoio à implantação de infraestrutura básica, produtiva e social nos municípios da área de abrangência do Programa Calha Norte, compreendendo, de forma não exaustiva, a construção, ampliação ou adequação de obras de infraestrutura viária e produtiva, incluindo pavimentação de vias urbanas e rurais, obras rodoviárias estaduais e municipais, estruturas de engenharia, de apoio à produção sustentável e de integração urbana, a exemplo de orlas públicas em áreas ribeirinhas e costeiras. Abrange, ainda, a aquisição de máquinas, equipamentos, veículos e outros bens permanentes de interesse público; o</description>
+  </item>
+  <item>
+    <title>Programa Nacional de Estradas Rurais - PRONER — Ministério da Agricultura e Pecuária</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-rurais-proner-1056079/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-rurais-proner-1056079/</guid>
+    <pubDate>Mon, 09 Feb 2026 15:00:00 GMT</pubDate>
+    <category>Infraestrutura e Desenvolvimento</category>
+    <category>Município</category>
+    <description>Programa Transferegov 2200020260006. ver condições · Município · inscrições de 11/02/2026 a 31/12/2026. O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis</description>
   </item>
 </channel>
 </rss>

@@ -3,15 +3,15 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Infra-Estrutura Básica – Sr(Pr) Superintendência Regional
+X-WR-CALNAME:Infra-Estrutura Básica – SR(PR) Superintendência Regional
  … — Fundos Brasil
-NAME:Infra-Estrutura Básica – Sr(Pr) Superintendência Regional… — F
+NAME:Infra-Estrutura Básica – SR(PR) Superintendência Regional… — F
  undos Brasil
-X-WR-CALDESC:Prazos de Infra-Estrutura Básica – Sr(Pr) Superintendência
-  Regional do Incra no Paraná– Convênio. (Ministério do Desenvolviment
+X-WR-CALDESC:Prazos de Infra-Estrutura Básica – SR(PR) Superintendência
+  Regional do INCRA no Paraná– Convênio. (Ministério do Desenvolviment
  o Agrário e Agricultura Familiar). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de Infra-Estrutura Básica – Sr(Pr) Superintendência 
- Regional do Incra no Paraná– Convênio. (Ministério do Desenvolvimento
+DESCRIPTION:Prazos de Infra-Estrutura Básica – SR(PR) Superintendência 
+ Regional do INCRA no Paraná– Convênio. (Ministério do Desenvolvimento
   Agrário e Agricultura Familiar). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
@@ -21,8 +21,8 @@ UID:edital-1056402-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – Sr(Pr) Superintendência R
- egional do Incra no Paraná– Convênio.
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(PR) Superintendência R
+ egional do INCRA no Paraná– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260014\nValor: ver condições\nQuem pode 
  participar: Município\nProposta cadastrada no Transferegov.br (módulo Di
@@ -38,14 +38,14 @@ TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – Sr(P
- r) Superintendência Regional do Incra no Paraná– Convênio.
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(P
+ R) Superintendência Regional do INCRA no Paraná– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – Sr(Pr) Sup
- erintendência Regional do Incra no Paraná– Convênio.
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(PR) Sup
+ erintendência Regional do INCRA no Paraná– Convênio.
 END:VALARM
 END:VEVENT
 END:VCALENDAR

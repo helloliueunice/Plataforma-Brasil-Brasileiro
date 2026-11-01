@@ -1,7 +1,7 @@
 {
   "_leia": "Configuração pública do site. Campos vazios ficam invisíveis. Depois de editar, o site é regenerado automaticamente (workflow 'Gerar páginas de editais').",
   "nome": "Fundos Brasil",
-  "descricaoCurta": "Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil.",
+  "descricaoCurta": "Editais abertos de fomento no Brasil, com link para as fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil.",
   "googleVerificacao": "",
   "bingVerificacao": "",
   "analytics": {
@@ -37,5 +37,5 @@
   "formularioSugestao": "",
   "contato": "contatofundosbrasil@gmail.com",
   "indexnowChave": "a3f9c1e7b2d84f60925e1c7d8b4a6f13",
-  "responsavel": "Eunice Liu, CPF 222.989.028-01, São Paulo/SP"
+  "responsavel": "Eunice Liu, São Paulo/SP"
 }

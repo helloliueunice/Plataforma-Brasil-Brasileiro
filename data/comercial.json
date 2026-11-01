@@ -25,8 +25,8 @@
         "texto": "Todo destaque leva o selo \"Patrocinado por\" com o nome de quem pagou. O patrocínio não muda a busca, os filtros nem a ordem da lista. Isso protege o leitor e a credibilidade da sua chamada."
       },
       {
-        "titulo": "Preço de lançamento e relatório no fim",
-        "texto": "O site é novo e ainda não publica números de audiência. Por isso os preços de lançamento valem para propostas aceitas até 31/01/2027; ao fim do período você recebe um relatório com os cliques registrados no seu destaque."
+        "titulo": "Preço de lançamento",
+        "texto": "O site é novo e ainda não publica números de audiência. Por isso os preços de lançamento valem para propostas aceitas até 31/01/2027."
       }
     ],
     "pacotes": [
@@ -40,12 +40,11 @@
         "inclui": [
           "1ª vaga do bloco de destaques em uma página de público ou de área, à sua escolha",
           "Selo \"Publicidade · Patrocinado por <patrocinador>\" sempre visível",
-          "Página do edital revisada, com link direto para a fonte oficial",
-          "Relatório de cliques no destaque ao fim do período"
+          "Página do edital revisada, com link direto para a fonte oficial"
         ],
         "naoInclui": [
           "Vaga na página inicial",
-          "Menção no resumo semanal",
+          "Menção no Resumo da semana",
           "Mudança na posição do edital na busca, nos filtros ou na lista",
           "Garantia de número de visitas, cliques ou inscrições"
         ],
@@ -62,10 +61,9 @@
         "inclui": [
           "1ª vaga do destaque da página inicial",
           "1ª vaga nas páginas de público e de área ligadas à chamada (até 3 páginas)",
-          "Bloco patrocinado e sinalizado em 4 edições do resumo semanal",
+          "Bloco patrocinado e sinalizado em 4 edições do Resumo da semana (página /semana/ e RSS)",
           "Selo \"Publicidade · Patrocinado por <patrocinador>\" em todos os pontos",
-          "Página do edital revisada, com link direto para a fonte oficial",
-          "Relatório de cliques por ponto de exibição ao fim do período"
+          "Página do edital revisada, com link direto para a fonte oficial"
         ],
         "naoInclui": [
           "Envio de e-mail exclusivo ou lista de contatos",
@@ -86,9 +84,8 @@
         "inclui": [
           "Tudo do Destaque ampliado durante o período de inscrição (até 60 dias)",
           "Publicação da página do edital em até 2 dias úteis após a conferência na fonte",
-          "Bloco patrocinado no resumo semanal da semana de abertura e da última semana de inscrições",
-          "Resumo do edital em linguagem simples (prazos, quem pode concorrer, valores, documentos), revisado com você e identificado na página como “revisado com o patrocinador”",
-          "Relatório de cliques parcial no meio do período e relatório final"
+          "Bloco patrocinado no Resumo da semana (página /semana/ e RSS) da semana de abertura e da última semana de inscrições",
+          "Resumo do edital em linguagem simples (prazos, quem pode concorrer, valores, documentos), revisado com você e identificado na página como “revisado com o patrocinador”"
         ],
         "naoInclui": [
           "Divulgação antes da publicação oficial da chamada",
@@ -114,7 +111,7 @@
         ],
         "naoInclui": [
           "Destaque de chamada ou edital",
-          "Menção no resumo semanal",
+          "Menção no Resumo da semana",
           "Qualquer influência sobre quais editais são publicados ou como são descritos",
           "Relatório de cliques"
         ],
@@ -125,7 +122,7 @@
     "comoFunciona": [
       {
         "titulo": "Envie a chamada",
-        "texto": "Preencha o formulário com o link oficial do edital, o pacote desejado e os dados para a proposta. Respondemos com a proposta comercial e a data de início."
+        "texto": "Escreva para o e-mail comercial com o link oficial do edital e o pacote desejado. Respondemos em até 2 dias úteis com a proposta comercial numerada e a data de início."
       },
       {
         "titulo": "Conferimos na fonte",
@@ -133,11 +130,7 @@
       },
       {
         "titulo": "Publicamos com selo",
-        "texto": "Com a proposta aceita e o pagamento feito por Pix ou boleto, o destaque entra no ar na vaga reservada, com o selo \"Patrocinado por\" e link para a fonte oficial. Se a chamada for encerrada ou cancelada, o destaque sai do ar."
-      },
-      {
-        "titulo": "Relatório de cliques",
-        "texto": "Ao fim do período, enviamos um relatório com os cliques registrados no destaque e no link para a fonte oficial, por página e por semana."
+        "texto": "Com a proposta aceita e o pagamento feito por Pix, o destaque entra no ar na vaga reservada, com o selo \"Patrocinado por\" e link para a fonte oficial. Se a chamada for encerrada ou cancelada, o destaque sai do ar."
       }
     ],
     "regras": [
@@ -147,14 +140,15 @@
       "Destaques ocupam apenas vagas reservadas e sinalizadas, como a 1ª vaga do destaque da página inicial.",
       "O texto do destaque descreve a chamada de forma fiel ao edital. Não usamos promessas de aprovação nem informações que não estejam no documento oficial.",
       "Recusamos chamadas encerradas, sem fonte oficial ou com publicidade enganosa ou abusiva (Código de Defesa do Consumidor, arts. 36 e 37; Código do CONAR).",
-      "Contratação por órgãos públicos estará disponível em breve.",
       "Cancelamento e reembolso: (a) antes de o destaque entrar no ar, reembolso integral; (b) se a chamada for encerrada, suspensa ou cancelada durante o período, o destaque sai do ar e o patrocinador escolhe entre usar os dias restantes em outra chamada em até 6 meses ou receber reembolso proporcional aos dias não exibidos; (c) se recusarmos o destaque por critério editorial depois do pagamento, reembolso integral; (d) reembolsos em até 10 dias úteis, pelo mesmo meio do pagamento.",
-      "A proposta comercial aceita por escrito (e-mail) é o contrato: define pacote, vagas, período, preço e forma de pagamento. Não garantimos visitas, cliques, inscrições nem aprovação."
+      "Cada vaga é vendida para um único patrocinador por período. Se, por exceção prevista na proposta, duas chamadas dividirem a mesma vaga, a exibição alterna por dia e o período é estendido até completar os dias contratados.",
+      "Neste momento a contratação é feita com pessoa física (a responsável pelo site), sem emissão de nota fiscal. Organizações que precisam de nota fiscal, inclusive órgãos públicos, poderão contratar quando o CNPJ estiver ativo.",
+      "A proposta comercial numerada, aceita por escrito por e-mail (“Aceito a proposta nº X”), é o contrato: define partes, pacote, vagas, período, preço, forma de pagamento, uso do nome e do logo do patrocinador e as regras desta página. Não garantimos visitas, cliques, inscrições nem aprovação."
     ],
     "faq": [
       {
         "pergunta": "Quantas pessoas vão ver meu destaque?",
-        "resposta": "O Fundos Brasil foi lançado em outubro de 2026 e ainda não publica números de audiência. Não prometemos visitas nem cliques. Por isso os preços de lançamento são reduzidos e você recebe, ao fim do período, um relatório com os cliques registrados no seu destaque."
+        "resposta": "O Fundos Brasil foi lançado em outubro de 2026 e ainda não publica números de audiência. Não prometemos visitas nem cliques. Por isso os preços de lançamento são reduzidos. A proposta comercial informa se o relatório de cliques está incluído, o que depende de a medição de audiência estar ativa."
       },
       {
         "pergunta": "O patrocínio coloca meu edital no topo da busca?",
@@ -166,11 +160,11 @@
       },
       {
         "pergunta": "Como funciona o pagamento?",
-        "resposta": "Não há checkout no site. Você preenche o formulário, recebe uma proposta comercial e, depois de aceitar, paga por Pix ou boleto. O destaque entra no ar após a confirmação do pagamento."
+        "resposta": "Não há checkout no site. Você escreve para o e-mail comercial, recebe uma proposta numerada e, depois de aceitar por escrito, paga por Pix. O destaque entra no ar após a confirmação do pagamento. Ainda não emitimos nota fiscal."
       },
       {
         "pergunta": "Sou um órgão público. Posso contratar?",
-        "resposta": "A contratação por órgãos públicos estará disponível em breve. Órgãos e entidades públicas contratam conforme o próprio processo (Lei 14.133/2021), e cabe ao órgão definir o enquadramento da contratação."
+        "resposta": "Ainda não. A contratação por órgãos públicos depende de CNPJ e de regularidade fiscal, que estão em preparação. Órgãos públicos podem enviar a chamada para publicação gratuita: todo edital aberto e conferido é publicado sem custo."
       },
       {
         "pergunta": "Posso escrever o texto do destaque?",
@@ -189,6 +183,14 @@
       "titulo": "Tem uma chamada aberta?",
       "texto": "Envie o link oficial e o pacote que interessa. Respondemos com a proposta comercial e as datas disponíveis. As vagas de lançamento são limitadas por página.",
       "botao": "Pedir proposta"
+    },
+    "relatorioCliques": {
+      "inclui": "Relatório de cliques no destaque ao fim do período (contagem agregada, sem cookies e sem dados pessoais)",
+      "passo": {
+        "titulo": "Relatório de cliques",
+        "texto": "Ao fim do período, enviamos um relatório com os cliques registrados no destaque e no link para a fonte oficial, por página e por semana."
+      },
+      "_leia": "Só aparece no site quando data/site.json → analytics.goatcounter estiver preenchido. Sem medição ativa, não prometemos relatório."
     }
   },
   "apoie": {
