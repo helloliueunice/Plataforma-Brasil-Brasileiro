@@ -14,35 +14,51 @@ on:
         type: boolean
         default: false
 
+# Permissão mínima por padrão; só o job que publica pode escrever.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: transferegov
   cancel-in-progress: false
 
 jobs:
-  atualizar:
+  diagnostico:
+    if: ${{ inputs.diagnostico }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
       - name: Diagnóstico
-        if: inputs.diagnostico
         run: node scripts/transferegov.mjs --diagnostico
+
+  atualizar:
+    if: ${{ !inputs.diagnostico }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write # commit de data/transferegov.json e das páginas regeneradas
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Testes do normalizador
+        run: node --test scripts/testes/transferegov.test.mjs
       - name: Atualizar programas
-        if: ${{ !inputs.diagnostico }}
         run: node scripts/transferegov.mjs
       - name: Regenerar páginas
-        if: ${{ !inputs.diagnostico }}
         env:
           PIX_CHAVE: ${{ vars.PIX_CHAVE }}
         run: node scripts/gerar-paginas.mjs && node scripts/verificar-pix.mjs
       - name: Publicar
-        if: ${{ !inputs.diagnostico }}
         id: publicar
         env:
           PIX_CHAVE: ${{ vars.PIX_CHAVE }}

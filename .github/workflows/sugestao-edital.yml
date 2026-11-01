@@ -2,61 +2,155 @@ name: Sugestão de edital
 
 # Quando alguém envia um edital pelo formulário (issue com o rótulo sugestao-edital),
 # a IA extrai os dados do link e abre um pull request para revisão. Quem sugeriu é avisado na issue.
-# Para evitar custo de API por abuso: roda sozinho para quem é dono/membro/colaborador do repositório;
-# sugestões de outras pessoas rodam quando a mantenedora aplica o rótulo "sugestao-aprovada".
+# Para evitar custo de API por abuso: roda sozinho quando o AUTOR tem permissão de escrita no repositório;
+# sugestões de outras pessoas rodam quando alguém com permissão de escrita aplica o rótulo "sugestao-aprovada".
+# A aprovação vale para o texto do momento do rótulo: se a issue for editada depois, nada roda
+# (revise e aplique o rótulo de novo). Ver .github/scripts/autorizar-sugestao.mjs.
+#
+# Separação de privilégios: "autorizar" só lê; "analisar" lê a página sugerida e chama a IA sem
+# credencial de escrita; "publicar" (com escrita) aplica o resultado validado e abre o PR.
 on:
   issues:
     types: [opened, labeled]
 
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
+  contents: read
 
 concurrency:
   group: sugestao-${{ github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
-  analisar:
+  autorizar:
     if: >-
       github.event.issue.state == 'open' && (
         (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'sugestao-edital') &&
           contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)) ||
         (github.event.action == 'labeled' && github.event.label.name == 'sugestao-aprovada'))
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    env:
-      GH_TOKEN: ${{ github.token }}
-      NUM: ${{ github.event.issue.number }}
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: read
+    outputs:
+      ok: ${{ steps.auth.outputs.ok }}
+      url: ${{ steps.auth.outputs.url }}
+      motivo: ${{ steps.auth.outputs.motivo }}
+      avisar: ${{ steps.auth.outputs.avisar }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/scripts
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
 
-      - name: Extrair o link da sugestão
-        id: link
+      - name: Conferir permissão de quem pediu e se a issue mudou depois do rótulo
+        id: auth
         # O texto da issue é de terceiros: é lido pelo Node a partir do arquivo do evento, nunca interpolado no shell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node .github/scripts/autorizar-sugestao.mjs
+
+  recusar:
+    needs: autorizar
+    if: needs.autorizar.outputs.ok != '1' && needs.autorizar.outputs.avisar == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      NUM: ${{ github.event.issue.number }}
+      MOTIVO: ${{ needs.autorizar.outputs.motivo }}
+    steps:
+      - name: Explicar por que a análise não rodou
         run: |
-          node -e '
-            const ev = JSON.parse(require("fs").readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
-            const corpo = String(ev.issue.body || "");
-            const m = corpo.match(/https?:\/\/[^\s<>()"\x27\]]+/i);
-            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `url=${m ? m[0].replace(/[.,;]+$/, "") : ""}\n`);
-          '
+          printf 'A análise automática não rodou: %s.\n' "$MOTIVO" > /tmp/resposta.md
+          gh issue comment "$NUM" --body-file /tmp/resposta.md
+
+  analisar:
+    needs: autorizar
+    if: needs.autorizar.outputs.ok == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    outputs:
+      candidatos: ${{ steps.monitor.outputs.candidatos }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
 
       - name: Analisar com IA
         id: monitor
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MODELO: ${{ vars.MODELO }}
-          SUGESTAO_URL: ${{ steps.link.outputs.url }}
+          SUGESTAO_URL: ${{ needs.autorizar.outputs.url }}
+          MAX_CHAMADAS_API: '3'
         run: node scripts/monitorar-fontes.mjs --url
 
+      - name: Guardar resultado
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: sugestao-resultado
+          path: |
+            relatorio-monitor.md
+            data/novos-editais.json
+          if-no-files-found: error
+          retention-days: 3
+
+  publicar:
+    needs: analisar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write       # branch com o candidato
+      pull-requests: write  # abrir o PR de revisão
+      issues: write         # responder na issue
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NUM: ${{ github.event.issue.number }}
+      CANDIDATOS: ${{ needs.analisar.outputs.candidatos }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+
+      - name: Receber resultado
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: sugestao-resultado
+          path: /tmp/sugestao
+
+      - name: Aplicar resultado (só os arquivos esperados, JSON validado)
+        run: |
+          set -e
+          [[ "$CANDIDATOS" =~ ^[0-9]+$ ]] || { echo "Saída inesperada da análise: candidatos='$CANDIDATOS'"; exit 1; }
+          node -e '
+            const fs = require("fs");
+            const novos = "/tmp/sugestao/data/novos-editais.json";
+            if (fs.existsSync(novos)) {
+              const lista = JSON.parse(fs.readFileSync(novos, "utf8"));
+              if (!Array.isArray(lista) || lista.length > 1 || lista.some(x => !x || typeof x !== "object" || Array.isArray(x))) throw new Error("novos-editais inválido");
+              fs.copyFileSync(novos, "data/novos-editais.json");
+            }
+            fs.writeFileSync("relatorio-monitor.md", fs.readFileSync("/tmp/sugestao/relatorio-monitor.md", "utf8").slice(0, 60000));
+          '
+
       - name: Abrir pull request
-        if: steps.monitor.outputs.candidatos != '0'
+        if: env.CANDIDATOS != '0'
         run: |
           RAMO="sugestao/issue-$NUM"
           cp relatorio-monitor.md /tmp/relatorio.md
@@ -79,13 +173,13 @@ jobs:
           fi
 
       - name: Responder quando não houver candidato
-        if: steps.monitor.outputs.candidatos == '0'
+        if: env.CANDIDATOS == '0'
         run: |
           {
             echo "Obrigado pela sugestão! Veja o resultado da análise automática:"
             echo
             cat relatorio-monitor.md
             echo
-            echo "Se algo estiver errado, edite a issue com o link correto da chamada oficial e a análise roda de novo."
+            echo "Se algo estiver errado, edite a issue com o link correto da chamada oficial; a mantenedora revisa e aplica o rótulo sugestao-aprovada para analisar de novo."
           } > /tmp/resposta.md
           gh issue comment "$NUM" --body-file /tmp/resposta.md

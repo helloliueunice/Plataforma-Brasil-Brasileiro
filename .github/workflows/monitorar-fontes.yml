@@ -3,7 +3,11 @@ name: Monitorar editais
 # Todo dia, lê as fontes oficiais (data/fontes.json), extrai as chamadas novas com IA
 # e abre um pull request para revisão humana. Publicar = fazer o merge.
 # Requer o segredo ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions).
-# Opcional: variável MODELO para trocar o modelo de extração.
+# Opcional: variável MODELO para trocar o modelo de extração e MAX_CHAMADAS_API para o teto de chamadas à API.
+#
+# Segurança: o job "monitorar" lê páginas de terceiros e fala com a IA SEM credencial de escrita
+# (checkout sem token salvo, permissão só de leitura). Ele entrega o resultado como artefato; o job
+# "publicar" (com escrita) só aceita os três arquivos esperados, valida o JSON e roda o código do repositório.
 on:
   schedule:
     - cron: '43 10 * * *' # 07h43 em Brasília
@@ -19,9 +23,7 @@ on:
         default: 15
 
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
+  contents: read
 
 concurrency:
   group: monitorar-editais
@@ -31,12 +33,17 @@ jobs:
   monitorar:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    env:
-      GH_TOKEN: ${{ github.token }}
+    permissions:
+      contents: read
+    outputs:
+      candidatos: ${{ steps.monitor.outputs.candidatos }}
+      revisar: ${{ steps.monitor.outputs.revisar }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
 
@@ -51,10 +58,69 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MODELO: ${{ vars.MODELO }}
           MAX_NOVOS: ${{ inputs.max_novos || 15 }}
+          MAX_CHAMADAS_API: ${{ vars.MAX_CHAMADAS_API || inputs.max_novos || 15 }}
         run: node scripts/monitorar-fontes.mjs
 
-      - name: Guardar o que já foi analisado
+      - name: Guardar resultado
         if: ${{ !inputs.diagnostico }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: monitor-resultado
+          path: |
+            relatorio-monitor.md
+            data/monitor-estado.json
+            data/novos-editais.json
+          if-no-files-found: error
+          retention-days: 3
+
+  publicar:
+    needs: monitorar
+    if: ${{ !inputs.diagnostico }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write       # estado do monitor e branch com os candidatos
+      pull-requests: write  # abrir o PR de revisão
+      issues: write         # registrar itens para revisão
+    env:
+      GH_TOKEN: ${{ github.token }}
+      CANDIDATOS: ${{ needs.monitorar.outputs.candidatos }}
+      REVISAR: ${{ needs.monitorar.outputs.revisar }}
+      NUM_EXECUCAO: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+
+      - name: Receber resultado
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: monitor-resultado
+          path: /tmp/monitor
+
+      - name: Aplicar resultado (só os arquivos esperados, JSON validado)
+        run: |
+          set -e
+          [[ "$CANDIDATOS" =~ ^[0-9]+$ ]] || { echo "Saída inesperada do monitor: candidatos='$CANDIDATOS'"; exit 1; }
+          node -e '
+            const fs = require("fs");
+            const ler = f => JSON.parse(fs.readFileSync(f, "utf8"));
+            const estado = ler("/tmp/monitor/data/monitor-estado.json");
+            if (!estado || typeof estado !== "object" || Array.isArray(estado)) throw new Error("estado inválido");
+            fs.copyFileSync("/tmp/monitor/data/monitor-estado.json", "data/monitor-estado.json");
+            const novos = "/tmp/monitor/data/novos-editais.json";
+            if (fs.existsSync(novos)) {
+              const lista = ler(novos);
+              if (!Array.isArray(lista) || lista.some(x => !x || typeof x !== "object" || Array.isArray(x))) throw new Error("novos-editais inválido");
+              fs.copyFileSync(novos, "data/novos-editais.json");
+            }
+            const rel = fs.readFileSync("/tmp/monitor/relatorio-monitor.md", "utf8");
+            fs.writeFileSync("relatorio-monitor.md", rel.slice(0, 60000));
+          '
+
+      - name: Guardar o que já foi analisado
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -65,16 +131,16 @@ jobs:
           fi
 
       - name: Abrir pull request com os candidatos
-        if: ${{ !inputs.diagnostico && steps.monitor.outputs.candidatos != '0' }}
+        if: env.CANDIDATOS != '0'
         run: |
-          RAMO="monitor/$(date -u +%Y-%m-%d)-${{ github.run_number }}"
+          RAMO="monitor/$(date -u +%Y-%m-%d)-$NUM_EXECUCAO"
           cp relatorio-monitor.md /tmp/relatorio.md
           git switch -c "$RAMO"
           node scripts/monitorar-fontes.mjs --aplicar
           git add editais.json
           git commit -m "Novos editais encontrados pelo monitor ($(date -u +%Y-%m-%d))"
           git push -u origin "$RAMO"
-          TITULO="Novos editais para revisar — $(date -u +%d/%m/%Y) (${{ steps.monitor.outputs.candidatos }})"
+          TITULO="Novos editais para revisar — $(date -u +%d/%m/%Y) ($CANDIDATOS)"
           if ! gh pr create --base main --head "$RAMO" --title "$TITULO" --body-file /tmp/relatorio.md; then
             # Se o repositório não permitir que o Actions abra PRs, registra numa issue com o link do branch
             printf '\n\n---\nNão foi possível abrir o pull request automaticamente. Abra-o a partir do branch `%s`, ou ative em Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".\n' "$RAMO" >> /tmp/relatorio.md
@@ -82,7 +148,7 @@ jobs:
           fi
 
       - name: Registrar itens para revisão (sem candidatos novos)
-        if: ${{ !inputs.diagnostico && steps.monitor.outputs.candidatos == '0' && steps.monitor.outputs.revisar == '1' }}
+        if: env.CANDIDATOS == '0' && env.REVISAR == '1'
         run: |
           TITULO="Monitor de editais: itens para revisar"
           NUM=$(gh issue list --state open --search "in:title \"$TITULO\"" --json number --jq '.[0].number')
