@@ -11,7 +11,7 @@ O site oferece:
 
 - uma página por edital, com prazos, valores, quem pode concorrer e link para a fonte oficial;
 - páginas por público (pesquisa, OSCs, municípios, estados) e por área temática;
-- resumo semanal dos editais (/semana/);
+- resumo semanal dos editais (página /semana/ e feeds RSS; não há envio por e-mail);
 - calendários e feeds RSS que cada público pode assinar.
 
 O site foi lançado em outubro de 2026. Ainda não publicamos números de audiência e não fazemos promessas de alcance. Os preços abaixo são de lançamento e refletem isso.
@@ -36,9 +36,11 @@ São pessoas que chegam ao site procurando um edital para se inscrever. As pági
 
 Nenhum pacote inclui: mudança de posição na busca, nos filtros ou na lista; envio de e-mail exclusivo; divulgação antes da publicação oficial; garantia de visitas, cliques ou inscrições.
 
+**Consultorias e softwares (espaço Serviços):** anúncios de serviços só aparecem no espaço “Serviços”, com o selo “Publicidade · Serviço”, separado das listas de editais e nunca ao lado de uma chamada. Consultorias e fornecedores não patrocinam o destaque de uma chamada. Espaço em preparação; preço sob consulta.
+
 ## Como funciona
 
-1. **Envio da chamada.** Você manda o link oficial do edital e o pacote desejado. Respondemos com a proposta comercial.
+1. **Envio do pedido.** Pelo formulário de /anuncie/, que monta um e-mail com o link oficial do edital, o pacote, o período e se precisa de nota fiscal. Respondemos em até 2 dias úteis com a proposta comercial.
 2. **Conferência na fonte.** Verificamos se a chamada está aberta, publicada em fonte oficial e se os dados conferem com o documento.
 3. **Publicação com selo.** Após o aceite e o pagamento (Pix ou boleto), o destaque entra no ar na vaga reservada, com o selo "Patrocinado por <patrocinador>".
 4. **Relatório de cliques.** Ao fim do período, enviamos os cliques registrados no destaque e no link para a fonte oficial.

@@ -129,7 +129,9 @@ O plano de lançamento, com distribuição, indicadores e monetização, está e
 - **Páginas por intenção de busca** (`para/`, `area/`, `prazos/`), **guias** (`guias/`, conteúdo em `scripts/conteudo.mjs`) e **glossário** (`glossario/`). Páginas com menos de 2 chamadas ficam com `noindex` e fora do sitemap.
 - **Imagem de prévia por edital** (`assets/og/`), gerada por `scripts/gerar-imagens.mjs` só quando os dados exibidos mudam.
 - **Sugerir edital:** formulário de issue → workflow `Sugestão de edital` → IA extrai os dados → pull request para revisão → quem sugeriu é avisado. Para evitar gasto de API por abuso, a análise roda sozinha só para quem é dono/colaborador do repositório; sugestões de outras pessoas rodam quando a mantenedora aplica o rótulo `sugestao-aprovada`.
-- **Privacidade e termos:** páginas `/privacidade/` e `/termos/` geradas pelo `gerar-paginas.mjs`; preencha `responsavel` e `contato` em `data/site.json` para identificar quem responde pelo site (LGPD).
+- **Privacidade, termos e acessibilidade:** páginas `/privacidade/`, `/termos/` e `/acessibilidade/` (declaração: padrão WCAG 2.2 AA, o que foi feito, limitações conhecidas e canal para relatar barreiras, com prazo de resposta) geradas pelo `gerar-paginas.mjs`; preencha `responsavel` e `contato` em `data/site.json` para identificar quem responde pelo site (LGPD).
+- **Menu e rodapé:** todas as páginas estáticas usam o mesmo menu da plataforma (Editais · Prazos · Para você · Minhas propostas · Transparência · Ajuda), com submenus em `<details>` operáveis por teclado e gaveta “Menu” no celular; o rodapé tem no máximo três grupos curtos (Editais, Para você, Sobre). A lista completa de editais fica em `editais/`.
+- **Segurança (CSP):** toda página gerada, e o `index.html` (no bloco `seo`), recebe `<meta http-equiv="Content-Security-Policy">` e `<meta name="referrer" content="strict-origin-when-cross-origin">`. O gerador calcula o hash sha256 de cada `<script>` inline executável **sobre o conteúdo final** e libera só esses hashes, além de `'self'`, Google Fonts, imagens do OpenStreetMap e, se configurados, GoatCounter/GA4. Consequência: **qualquer edição de um `<script>` inline do `index.html` exige rodar `node scripts/gerar-paginas.mjs` de novo** (o workflow faz isso a cada publicação); sem isso o navegador bloqueia o script. Não use `onclick=` e outros atributos de evento: eles são bloqueados pela política.
 - **Design:** design system minimalista (tokens no topo do `<style>` do `index.html` e em `assets/paginas.css`), com modo escuro automático e sem emojis como ícones.
 - **IndexNow:** `scripts/notificar-buscadores.mjs` avisa Bing e outros buscadores a cada página alterada (chave em `data/site.json` e no arquivo `<chave>.txt` da raiz).
 - **Medição do funil:** eventos `edital-abrir`, `edital-whatsapp`, `edital-oficial`, `proposta-*`, `perfil-salvo`, `agenda`, `prestacao-enviada` etc.
@@ -181,7 +183,8 @@ Lista patrocínios ativos, agendados e encerrados, com período, vagas, páginas
 
 ### Textos e contatos
 
-- **`data/comercial.json`**: textos de `/anuncie/` (título, para quem, por que, pacotes com `precoCheio` e `precoLancamento` — preço 0 aparece como “Sob consulta” —, como funciona, regras, FAQ, chamada), de `/apoie/` (por que, uso do dinheiro, formas `pix`/`apoiase`, transparência, nota) e do Plano Pro. O arquivo atual é um **exemplo** (`"_exemplo": true`).
+- **`data/comercial.json`**: textos de `/anuncie/` (título, para quem, por que, pacotes com `precoCheio` e `precoLancamento` — preço 0 aparece como “Sob consulta” —, `servicos` (espaço próprio para consultorias e softwares, selo “Publicidade · Serviço”, nunca ao lado de uma chamada), como funciona, regras, FAQ, chamada), de `/apoie/` (por que, uso do dinheiro, formas `pix`/`apoiase`, transparência, nota) e do Plano Pro (página própria `/pro/`). O arquivo atual é um **exemplo** (`"_exemplo": true`).
+- **`/anuncie/`** abre com uma tabela-resumo de preços logo abaixo do título e termina com um formulário de pedido sem servidor: ele monta um e-mail (`mailto:` para `comercial.email`) com assunto e corpo preenchidos (organização, link oficial do edital, pacote, período, nota fiscal). Nada é enviado nem guardado pelo site.
 - **`data/site.json`** (vazio = oculto):
   - `comercial.email`: e-mail **profissional** publicado em `/anuncie/` (botões abrem o e-mail com assunto preenchido); ou `comercial.formulario` (URL de formulário). Sem nenhum dos dois, os botões levam ao formulário de parceria do GitHub (público). Nenhum e-mail é publicado se não estiver aqui.
   - `apoio.pix.chave`, `apoio.pix.nome` (até 25 letras), `apoio.pix.cidade` (até 15): geram em `/apoie/` a chave com botão de copiar, o **Pix copia e cola** (BR Code estático EMV com CRC16-CCITT, `scripts/pix.mjs`) e o **QR Code** em SVG (`scripts/qrcode.mjs`, sem dependências). Chave: e-mail, telefone `+55DDNÚMERO`, CPF/CNPJ só com números ou chave aleatória.
@@ -198,8 +201,9 @@ A plataforma em si é uma página só; para o Google e para o WhatsApp, cada edi
 - `sitemap.xml`, `robots.txt` e `404.html`;
 - **Assinaturas:** feeds RSS em `feeds/` (`todos.xml`, `publico-<publico>.xml`, `area-<slug>.xml`, `instituicao-<agencia>.xml`, `alteracoes.xml`) e calendários iCalendar em `cal/` (mesmos recortes, mais `edital-<id>.ics`), com um evento de dia inteiro por prazo e lembretes 7 dias e 1 dia antes. Todos os arquivos existem mesmo sem itens;
 - **Histórico de alterações:** a cada execução, o gerador compara os campos-chave com `data/editais-snapshot.json` e acrescenta as mudanças (prazo, valor, link, título, novo edital) em `data/alteracoes.json`. Na primeira execução só cria o snapshot. A comparação é idempotente, então pode rodar várias vezes por dia. Esses dois arquivos são gravados pelo workflow; não edite à mão;
-- **Resumo semanal:** `semana/` (semana ISO atual, fuso de Brasília) e `semana/AAAA-SS/` (arquivo; semanas anteriores são mantidas);
+- **Resumo semanal:** `semana/` (semana ISO atual, fuso de Brasília) e `semana/AAAA-SS/` (arquivo; semanas anteriores são mantidas), mais os feeds RSS. “Resumo semanal” é sempre isso: a página `/semana/` e o RSS. Não há envio por e-mail;
 - **Dados abertos:** `dados/` explica o `editais.json` (licença CC BY 4.0), o esquema dos campos (em `ESQUEMA_CAMPOS`, `scripts/conteudo.mjs`) e lista feeds e calendários;
+- **Instituições sem chamada aberta ou prevista:** a página `instituicoes/<id>/` mostra “Sem chamadas abertas agora”, o portal oficial e como acompanhar (feed e calendário da instituição); fica com `noindex,follow` e fora do sitemap até haver chamada;
 - metatags da página inicial (bloco entre `<!-- seo:inicio -->` e `<!-- seo:fim -->`).
 
 Para gerar: `node scripts/gerar-paginas.mjs` (Node 18+, sem dependências). A automação `.github/workflows/gerar-paginas.yml` faz isso sozinha a cada mudança no `editais.json` e todo dia às 06h17, para a situação “aberto/encerrado” acompanhar a data. Não edite os arquivos gerados à mão.
@@ -218,3 +222,9 @@ O endereço usado nos links absolutos vem, nesta ordem, da variável `SITE_URL`,
 3. Mantenha `"demonstrativo": false` e atualize `"geradoEm"`: a faixa do site mostra quantos editais foram conferidos e quando.
 
 O gerador também grava os editais dentro do `index.html` (entre `// editais:inicio` e `// editais:fim`), para que a plataforma abra com os dados reais mesmo sem servidor.
+
+## Licença dos dados
+
+Os dados de `editais.json`, `data/alteracoes.json`, feeds e calendários estão sob a licença [Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br). A licença CC BY 4.0 cobre a seleção, a organização e os textos próprios do Fundos Brasil. Textos oficiais, nomes e marcas de terceiros não são licenciados por nós; atos oficiais são de domínio público (Lei 9.610/1998, art. 8º, IV).
+
+O Fundos Brasil não tem vínculo com o Fundo Brasil de Direitos Humanos.
