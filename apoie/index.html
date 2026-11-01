@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-EIAq+B0qVbuabTSL+rR8oO7aEB3rT7S2XnDb9pOcSEM=' 'sha256-JhSy53tKlU6mawmf7Bv7tu3aSATOzPEPCz/dkbdMQCw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apoie o Fundos Brasil | Fundos Brasil</title>
     <meta name="description" content="O site é gratuito e vai continuar gratuito. Se ele ajuda você ou sua organização a encontrar financiamento, você pode ajudar a mantê-lo. Apoie o Fundos…">
@@ -30,18 +33,27 @@
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
     <header class="topo">
         <a class="marca" href="../"><span class="marca-icone" aria-hidden="true"></span>Fundos Brasil</a>
-        <nav aria-label="Navegação principal">
-            <a href="../editais/">Editais</a>
-            <a href="../prazos/">Prazos</a>
-            <a href="../semana/">Semana</a>
-            <a href="../guias/">Guias</a>
-            <a href="../instituicoes/">Instituições</a>
-            <a class="btn primario pequeno" href="../#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
+        <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal"><span class="menu-icone" aria-hidden="true"></span>Menu</button>
+        <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+            <ul class="menu-lista">
+            <li><a href="../editais/">Editais</a></li>
+            <li><a href="../prazos/">Prazos</a></li>
+            <li class="menu-sub"><details>
+                <summary aria-controls="menu-para">Para você<span class="seta" aria-hidden="true"></span></summary>
+                <ul id="menu-para"><li><a href="../para/pesquisadores/">Pesquisador</a></li><li><a href="../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../para/empresas-e-startups/">Empresa</a></li><li><a href="../para/oscs-e-ongs/">OSC</a></li><li><a href="../para/municipios-e-prefeituras/">Município</a></li><li><a href="../para/governos-estaduais/">Estado</a></li></ul>
+            </details></li>
+            <li><a href="../#propostas" data-evento="topo-propostas">Minhas propostas</a></li>
+            <li class="menu-sub"><details>
+                <summary aria-controls="menu-transparencia">Transparência<span class="seta" aria-hidden="true"></span></summary>
+                <ul id="menu-transparencia"><li><a href="../instituicoes/">Instituições</a></li><li><a href="../#projetos">Projetos</a></li><li><a href="../#mapa">Mapa</a></li><li><a href="../dados/">Dados</a></li></ul>
+            </details></li>
+            <li><a href="../guias/">Ajuda</a></li>
+            </ul>
         </nav>
     </header>
     <main id="conteudo" class="pagina">
 
-        <nav class="migalhas" aria-label="Você está em"><a href="../">Início</a> › <span aria-current="page">Apoie</span></nav>
+        <nav class="migalhas" aria-label="Você está em"><a href="../">Início</a> <span class="sep" aria-hidden="true">›</span> <span aria-current="page">Apoie</span></nav>
         <h1>Apoie o Fundos Brasil</h1>
         <p class="sub">O site é gratuito e vai continuar gratuito. Se ele ajuda você ou sua organização a encontrar financiamento, você pode ajudar a mantê-lo.</p>
         
@@ -69,6 +81,7 @@
         <section aria-labelledby="transparencia-titulo"><h2 id="transparencia-titulo">Transparência</h2><p>A cada trimestre publicamos nesta página o total arrecadado com apoios e patrocínios e como o dinheiro foi usado, item por item. Publicamos só totais agregados.</p></section>
         <p class="aviso">As contribuições são feitas diretamente à pessoa física responsável pelo site. Não somos uma OSC nem entidade beneficente, e a contribuição não é dedutível do Imposto de Renda. Dependendo do estado e do valor, doações podem estar sujeitas ao ITCMD. Os recursos pagam custos do site e podem remunerar o tempo de curadoria. O site continua gratuito para todos.</p>
         <p class="nota">Organizações que querem divulgar uma chamada: veja <a href="../anuncie/">Anuncie</a>. Nada é cobrado de quem procura editais.</p>
+        <p class="nota">Consultorias e captadores que acompanham editais para vários clientes: conheça o <a href="../pro/">Plano Pro (em breve)</a>.</p>
         <script>
         document.querySelectorAll('[data-copiar]').forEach(function (b) {
             b.addEventListener('click', function () {
@@ -82,13 +95,25 @@
         </script>
     </main>
     <footer class="rodape">
-        <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
-        <nav class="rodape-links" aria-label="Editais por perfil"><a href="../para/pesquisadores/">Editais para pesquisadores</a> · <a href="../para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="../para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="../para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="../para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="../para/governos-estaduais/">Programas para governos estaduais</a></nav>
-        <p><a href="../">Início</a> · <a href="../editais/">Todos os editais</a> · <a href="../prazos/">Prazos</a> · <a href="../guias/">Guias</a> · <a href="../glossario/">Glossário</a> · <a href="../instituicoes/">Instituições</a> · <a href="../sugerir-edital/">Sugerir edital</a></p>
-        <p><a href="../semana/">Resumo da semana</a> · <a href="../dados/#assinar">Assinar (RSS e calendário)</a> · <a href="../dados/">Dados abertos</a> · <a href="../feed.xml">RSS</a></p>
-        <p><a class="btn pequeno" href="../apoie/" data-evento="apoio">Apoie o Fundos Brasil</a></p>
-        <p class="nota">Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
-        <p class="nota"><a href="../privacidade/">Privacidade</a> · <a href="../termos/">Termos de uso</a> · <a href="../apoie/">Apoie</a> · <a href="../anuncie/">Anuncie</a></p>
+        <div class="rodape-grupos">
+            <nav aria-labelledby="rodape-editais"><h2 id="rodape-editais">Editais</h2><ul>
+                <li><a href="../editais/">Todos os editais</a></li>
+                <li><a href="../prazos/">Prazos</a></li>
+                <li><a href="../semana/">Resumo da semana</a></li>
+                
+            </ul></nav>
+            <nav aria-labelledby="rodape-para"><h2 id="rodape-para">Para você</h2><ul><li><a href="../para/pesquisadores/">Pesquisador</a></li><li><a href="../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../para/empresas-e-startups/">Empresa</a></li><li><a href="../para/oscs-e-ongs/">OSC</a></li><li><a href="../para/municipios-e-prefeituras/">Município</a></li><li><a href="../para/governos-estaduais/">Estado</a></li></ul></nav>
+            <nav aria-labelledby="rodape-sobre"><h2 id="rodape-sobre">Sobre</h2><ul>
+                <li><a href="../anuncie/">Anuncie</a></li>
+                <li><a href="../apoie/">Apoie</a></li>
+                <li><a href="../dados/">Dados abertos</a></li>
+                <li><a href="../acessibilidade/">Acessibilidade</a></li>
+                <li><a href="../privacidade/">Privacidade</a></li>
+                <li><a href="../termos/">Termos de uso</a></li>
+                <li><a href="mailto:contatofundosbrasil@gmail.com">Contato</a></li>
+            </ul></nav>
+        </div>
+        <p class="nota"><strong>Fundos Brasil</strong>: editais de fomento reunidos em um só lugar. Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição. Sem vínculo com o Fundo Brasil de Direitos Humanos.</p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)
@@ -105,6 +130,7 @@
         });
     })();
     document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
+    (function(){var t=document.querySelector('.topo'),b=document.querySelector('.menu-botao'),s=[].slice.call(document.querySelectorAll('.menu-sub details')),largo=window.matchMedia('(min-width: 901px)');if(!t)return;function gaveta(a){t.classList.toggle('aberto',a);b.setAttribute('aria-expanded',a?'true':'false');}if(b)b.addEventListener('click',function(){gaveta(!t.classList.contains('aberto'));});s.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)s.forEach(function(o){if(o!==d)o.open=false;});});d.addEventListener('focusout',function(){setTimeout(function(){if(largo.matches&&!d.contains(document.activeElement))d.open=false;},0);});});document.addEventListener('keydown',function(ev){if(ev.key!=='Escape')return;var d=s.filter(function(x){return x.open;})[0];if(d){d.open=false;d.querySelector('summary').focus();}else if(t.classList.contains('aberto')){gaveta(false);b.focus();}});document.addEventListener('click',function(ev){if(!largo.matches||!ev.target.closest)return;if(!ev.target.closest('.menu-sub'))s.forEach(function(d){d.open=false;});});})();
     </script>
 </body>
 </html>

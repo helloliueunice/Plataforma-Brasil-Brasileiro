@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-JhSy53tKlU6mawmf7Bv7tu3aSATOzPEPCz/dkbdMQCw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editais e programas abertos para municípios (Novembro de 2026)</title>
     <meta name="description" content="12 chamadas abertas agora. Programas e seleções de propostas para prefeituras: transferências voluntárias, fundo a fundo e emendas, com prazos, requisitos e…">
@@ -31,18 +34,27 @@
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
     <header class="topo">
         <a class="marca" href="../../"><span class="marca-icone" aria-hidden="true"></span>Fundos Brasil</a>
-        <nav aria-label="Navegação principal">
-            <a href="../../editais/" aria-current="page">Editais</a>
-            <a href="../../prazos/">Prazos</a>
-            <a href="../../semana/">Semana</a>
-            <a href="../../guias/">Guias</a>
-            <a href="../../instituicoes/">Instituições</a>
-            <a class="btn primario pequeno" href="../../#editais" data-evento="topo-plataforma">Abrir a plataforma</a>
+        <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal"><span class="menu-icone" aria-hidden="true"></span>Menu</button>
+        <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+            <ul class="menu-lista">
+            <li><a href="../../editais/">Editais</a></li>
+            <li><a href="../../prazos/">Prazos</a></li>
+            <li class="menu-sub"><details>
+                <summary class="ativo" aria-controls="menu-para">Para você<span class="seta" aria-hidden="true"></span></summary>
+                <ul id="menu-para"><li><a href="../../para/pesquisadores/">Pesquisador</a></li><li><a href="../../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../../para/empresas-e-startups/">Empresa</a></li><li><a href="../../para/oscs-e-ongs/">OSC</a></li><li><a href="../../para/municipios-e-prefeituras/" aria-current="page">Município</a></li><li><a href="../../para/governos-estaduais/">Estado</a></li></ul>
+            </details></li>
+            <li><a href="../../#propostas" data-evento="topo-propostas">Minhas propostas</a></li>
+            <li class="menu-sub"><details>
+                <summary aria-controls="menu-transparencia">Transparência<span class="seta" aria-hidden="true"></span></summary>
+                <ul id="menu-transparencia"><li><a href="../../instituicoes/">Instituições</a></li><li><a href="../../#projetos">Projetos</a></li><li><a href="../../#mapa">Mapa</a></li><li><a href="../../dados/">Dados</a></li></ul>
+            </details></li>
+            <li><a href="../../guias/">Ajuda</a></li>
+            </ul>
         </nav>
     </header>
     <main id="conteudo" class="pagina">
 
-        <nav class="migalhas" aria-label="Você está em"><a href="../../">Início</a> › <a href="../../editais/">Editais</a> › <span aria-current="page">para municípios</span></nav>
+        <nav class="migalhas" aria-label="Você está em"><a href="../../">Início</a> <span class="sep" aria-hidden="true">›</span> <a href="../../editais/">Editais</a> <span class="sep" aria-hidden="true">›</span> <span aria-current="page">para municípios</span></nav>
         <h1>Editais e programas federais abertos para municípios e prefeituras</h1>
         <p class="sub">12 chamadas vigentes · atualizado em 31/10/2026</p>
         <div class="acoes"><a class="btn primario" href="../../#editais?publico=municipio" data-evento="hub-plataforma">Ver compatibilidade com o meu perfil</a></div>
@@ -54,62 +66,62 @@
         </div>
         
         <section><h2>Chamadas abertas e previstas</h2><ul class="cartoes"><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-02-19" data-encerramento="2026-11-30">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-02-19" data-encerramento="2026-11-30">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/">Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2</a></h3>
             <p>Ministério da Integração e do Desenvolvimento Regional · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 19/02/2026 a 30/11/2026 · Nacional</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-02-09" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-02-09" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Contrato de repasse</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/fomento-ao-setor-agropecuario-propostas-voluntarias-1056045/">Fomento ao Setor Agropecuário - Propostas Voluntárias</a></h3>
             <p>Ministério da Agricultura e Pecuária · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 09/02/2026 a 31/12/2026 · Nacional</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-02-11" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-02-11" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/programa-nacional-de-estradas-rurais-proner-1056079/">Programa Nacional de Estradas Rurais - PRONER</a></h3>
             <p>Ministério da Agricultura e Pecuária · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 11/02/2026 a 31/12/2026 · Nacional</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-02-11" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-02-11" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Termo de compromisso</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/programa-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-1056156/">Programa Nacional de Modernização e Apoio à Produção Agrícola - PROMAQ</a></h3>
             <p>Ministério da Agricultura e Pecuária · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 11/02/2026 a 31/12/2026 · Nacional</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056385/">Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica</a></h3>
             <p>Ministério da Educação · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 10/03/2026 a 31/12/2026 · Nacional</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-01-02" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-01-02" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Termo de compromisso</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/programa-simec-par-1055941/">Programa SIMEC/PAR</a></h3>
             <p>Ministério da Educação · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 02/01/2026 a 31/12/2026 · Nacional</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/">Infra-Estrutura Básica – SR(PR) Superintendência Regional do INCRA no Paraná– Convênio.</a></h3>
             <p>Ministério do Desenvolvimento Agrário e Agricultura Familiar · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 10/03/2026 a 31/12/2026 · PR</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-06-30" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-06-30" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/fomento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/">Fomento ao Setor Agropecuário – Investimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(11)Rs– Convênio.</a></h3>
             <p>Ministério do Desenvolvimento Agrário e Agricultura Familiar · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 30/06/2026 a 31/12/2026 · PA</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/">Infra-Estrutura Básica – SR(BA) Superintendência Regional do INCRA na Bahia– Convênio.</a></h3>
             <p>Ministério do Desenvolvimento Agrário e Agricultura Familiar · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 10/03/2026 a 31/12/2026 · BA</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/">Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.</a></h3>
             <p>Ministério do Desenvolvimento Agrário e Agricultura Familiar · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 10/03/2026 a 31/12/2026 · RS</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-03-10" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/">Infra-Estrutura Básica – SR(SP) Superintendência Regional do INCRA de São Paulo– Convênio</a></h3>
             <p>Ministério do Desenvolvimento Agrário e Agricultura Familiar · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 10/03/2026 a 31/12/2026 · SP</p>
         </li><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-07-13" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Transferência voluntária</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-07-13" data-encerramento="2026-12-31">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
             <h3><a href="../../editais/2321-recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-1056721/">2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)</a></h3>
             <p>Ministério da Integração e do Desenvolvimento Regional · <strong>ver condições</strong> · Município</p>
             <p class="nota">Inscrições: 13/07/2026 a 31/12/2026 · Nacional</p>
@@ -120,15 +132,28 @@
         <section><h2>Documentos que costumam ser pedidos</h2><ul class="lista"><li>Proposta e plano de trabalho cadastrados no Transferegov.br</li><li>Situação regular no CAUC</li><li>Declaração de contrapartida (quando exigida)</li><li>Orçamento detalhado por rubrica</li><li>Cronograma físico-financeiro</li></ul>
             <p class="nota">Veja o <a href="../../guias/documentos-para-editais/">checklist completo de documentos</a>. Cada edital define a lista oficial.</p></section>
         <section><h2>Guias</h2><ul class="lista"><li><a href="../../guias/como-encontrar-editais/">Como encontrar o edital certo para o seu projeto</a></li><li><a href="../../guias/documentos-para-editais/">Documentos para editais: checklist por tipo de proponente</a></li><li><a href="../../guias/como-escrever-proposta-edital/">Como escrever uma proposta competitiva para edital</a></li><li><a href="../../guias/prestacao-de-contas/">Prestação de contas de projetos financiados: guia prático</a></li><li><a href="../../guias/leis-de-incentivo-fiscal/">Leis de incentivo fiscal: como captar</a></li></ul></section>
+        
     </main>
     <footer class="rodape">
-        <p><strong>Fundos Brasil</strong> — plataforma para encontrar editais, organizar propostas e acompanhar recursos públicos.</p>
-        <nav class="rodape-links" aria-label="Editais por perfil"><a href="../../para/pesquisadores/">Editais para pesquisadores</a> · <a href="../../para/universidades-e-icts/">Editais para universidades e ICTs</a> · <a href="../../para/empresas-e-startups/">Editais para empresas e startups</a> · <a href="../../para/oscs-e-ongs/">Editais para OSCs e ONGs</a> · <a href="../../para/municipios-e-prefeituras/">Programas para municípios</a> · <a href="../../para/governos-estaduais/">Programas para governos estaduais</a></nav>
-        <p><a href="../../">Início</a> · <a href="../../editais/">Todos os editais</a> · <a href="../../prazos/">Prazos</a> · <a href="../../guias/">Guias</a> · <a href="../../glossario/">Glossário</a> · <a href="../../instituicoes/">Instituições</a> · <a href="../../sugerir-edital/">Sugerir edital</a></p>
-        <p><a href="../../semana/">Resumo da semana</a> · <a href="../../dados/#assinar">Assinar (RSS e calendário)</a> · <a href="../../dados/">Dados abertos</a> · <a href="../../feed.xml">RSS</a></p>
-        <p><a class="btn pequeno" href="../../apoie/" data-evento="apoio">Apoie o Fundos Brasil</a></p>
-        <p class="nota">Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição.</p>
-        <p class="nota"><a href="../../privacidade/">Privacidade</a> · <a href="../../termos/">Termos de uso</a> · <a href="../../apoie/">Apoie</a> · <a href="../../anuncie/">Anuncie</a></p>
+        <div class="rodape-grupos">
+            <nav aria-labelledby="rodape-editais"><h2 id="rodape-editais">Editais</h2><ul>
+                <li><a href="../../editais/">Todos os editais</a></li>
+                <li><a href="../../prazos/">Prazos</a></li>
+                <li><a href="../../semana/">Resumo da semana</a></li>
+                
+            </ul></nav>
+            <nav aria-labelledby="rodape-para"><h2 id="rodape-para">Para você</h2><ul><li><a href="../../para/pesquisadores/">Pesquisador</a></li><li><a href="../../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../../para/empresas-e-startups/">Empresa</a></li><li><a href="../../para/oscs-e-ongs/">OSC</a></li><li><a href="../../para/municipios-e-prefeituras/">Município</a></li><li><a href="../../para/governos-estaduais/">Estado</a></li></ul></nav>
+            <nav aria-labelledby="rodape-sobre"><h2 id="rodape-sobre">Sobre</h2><ul>
+                <li><a href="../../anuncie/">Anuncie</a></li>
+                <li><a href="../../apoie/">Apoie</a></li>
+                <li><a href="../../dados/">Dados abertos</a></li>
+                <li><a href="../../acessibilidade/">Acessibilidade</a></li>
+                <li><a href="../../privacidade/">Privacidade</a></li>
+                <li><a href="../../termos/">Termos de uso</a></li>
+                <li><a href="mailto:contatofundosbrasil@gmail.com">Contato</a></li>
+            </ul></nav>
+        </div>
+        <p class="nota"><strong>Fundos Brasil</strong>: editais de fomento reunidos em um só lugar. Informações de 31/10/2026. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição. Sem vínculo com o Fundo Brasil de Direitos Humanos.</p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)
@@ -145,6 +170,7 @@
         });
     })();
     document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
+    (function(){var t=document.querySelector('.topo'),b=document.querySelector('.menu-botao'),s=[].slice.call(document.querySelectorAll('.menu-sub details')),largo=window.matchMedia('(min-width: 901px)');if(!t)return;function gaveta(a){t.classList.toggle('aberto',a);b.setAttribute('aria-expanded',a?'true':'false');}if(b)b.addEventListener('click',function(){gaveta(!t.classList.contains('aberto'));});s.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)s.forEach(function(o){if(o!==d)o.open=false;});});d.addEventListener('focusout',function(){setTimeout(function(){if(largo.matches&&!d.contains(document.activeElement))d.open=false;},0);});});document.addEventListener('keydown',function(ev){if(ev.key!=='Escape')return;var d=s.filter(function(x){return x.open;})[0];if(d){d.open=false;d.querySelector('summary').focus();}else if(t.classList.contains('aberto')){gaveta(false);b.focus();}});document.addEventListener('click',function(ev){if(!largo.matches||!ev.target.closest)return;if(!ev.target.closest('.menu-sub'))s.forEach(function(d){d.open=false;});});})();
     </script>
 </body>
 </html>
