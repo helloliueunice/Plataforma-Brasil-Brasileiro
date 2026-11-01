@@ -4,8 +4,8 @@
     "subtitulo": "O Fundos Brasil reúne editais de fomento abertos para pesquisadores, organizações da sociedade civil, municípios e estados. Sua chamada pode aparecer em destaque, sinalizada como patrocinada, nas páginas que esse público já consulta.",
     "paraQuem": [
       "Financiadores que querem divulgar sua chamada a quem procura edital: fundações de amparo à pesquisa, fundações e institutos empresariais, fundos socioambientais, ministérios, secretarias e prefeituras",
-      "Consultorias de captação de recursos e elaboração de projetos que querem ser lembradas por quem está procurando edital",
-      "Empresas de software e serviços para o terceiro setor e para a gestão de projetos (gestão de OSC, prestação de contas, captação, avaliação)"
+      "Consultorias de captação de recursos e de elaboração de projetos, no espaço Serviços, separado das chamadas",
+      "Empresas de software e serviços para o terceiro setor e para a gestão de projetos (gestão de OSC, prestação de contas, captação, avaliação), também no espaço Serviços"
     ],
     "porQue": [
       {
@@ -44,7 +44,7 @@
         ],
         "naoInclui": [
           "Vaga na página inicial",
-          "Menção no Resumo da semana",
+          "Menção no Resumo da semana (página /semana/ e RSS)",
           "Mudança na posição do edital na busca, nos filtros ou na lista",
           "Garantia de número de visitas, cliques ou inscrições"
         ],
@@ -111,7 +111,7 @@
         ],
         "naoInclui": [
           "Destaque de chamada ou edital",
-          "Menção no Resumo da semana",
+          "Menção no Resumo da semana (página /semana/ e RSS)",
           "Qualquer influência sobre quais editais são publicados ou como são descritos",
           "Relatório de cliques"
         ],
@@ -119,10 +119,23 @@
         "validadeLancamento": "31/01/2027"
       }
     ],
+    "servicos": {
+      "titulo": "Espaço Serviços (consultorias e softwares)",
+      "periodo": "a combinar",
+      "selo": "Publicidade · Serviço",
+      "texto": "Anúncios de consultorias, softwares e outros serviços não ficam junto das chamadas. Eles só aparecem no espaço “Serviços”, com selo próprio, separado das listas de editais.",
+      "regras": [
+        "Selo “Publicidade · Serviço” sempre visível, com o nome de quem anuncia.",
+        "Nunca ao lado de uma chamada, de um edital ou de um destaque patrocinado de chamada, nem dentro das listas e resultados de busca.",
+        "Destaques de chamada (pacotes acima) são contratados por quem financia ou divulga a própria chamada, não por consultorias ou fornecedores de serviços.",
+        "Anunciar um serviço não dá prioridade na curadoria nem muda a busca, os filtros ou a ordem das listas."
+      ],
+      "nota": "O espaço Serviços está em preparação. Preço sob consulta: peça pelo formulário abaixo, escolhendo “Espaço Serviços”."
+    },
     "comoFunciona": [
       {
-        "titulo": "Envie a chamada",
-        "texto": "Escreva para o e-mail comercial com o link oficial do edital e o pacote desejado. Respondemos em até 2 dias úteis com a proposta comercial numerada e a data de início."
+        "titulo": "Envie o pedido",
+        "texto": "Preencha o formulário desta página: ele monta um e-mail com o link oficial do edital, o pacote e o período. Respondemos em até 2 dias úteis com a proposta comercial numerada e a data de início."
       },
       {
         "titulo": "Conferimos na fonte",
@@ -138,6 +151,7 @@
       "Todo destaque leva o selo \"Publicidade · Patrocinado por <patrocinador>\", sempre visível, com explicação em texto. Quando o patrocinador não é o responsável pelo edital, isso é informado.",
       "O patrocínio não altera a busca, os filtros, a compatibilidade nem a ordem da lista de editais.",
       "Destaques ocupam apenas vagas reservadas e sinalizadas, como a 1ª vaga do destaque da página inicial.",
+      "Anúncios de consultorias, softwares e outros serviços só aparecem no espaço “Serviços”, com o selo “Publicidade · Serviço”, nunca ao lado de uma chamada ou de um edital.",
       "O texto do destaque descreve a chamada de forma fiel ao edital. Não usamos promessas de aprovação nem informações que não estejam no documento oficial.",
       "Recusamos chamadas encerradas, sem fonte oficial ou com publicidade enganosa ou abusiva (Código de Defesa do Consumidor, arts. 36 e 37; Código do CONAR).",
       "Cancelamento e reembolso: (a) antes de o destaque entrar no ar, reembolso integral; (b) se a chamada for encerrada, suspensa ou cancelada durante o período, o destaque sai do ar e o patrocinador escolhe entre usar os dias restantes em outra chamada em até 6 meses ou receber reembolso proporcional aos dias não exibidos; (c) se recusarmos o destaque por critério editorial depois do pagamento, reembolso integral; (d) reembolsos em até 10 dias úteis, pelo mesmo meio do pagamento.",
@@ -172,7 +186,7 @@
       },
       {
         "pergunta": "Sou uma consultoria ou empresa de software. Posso anunciar meu serviço?",
-        "resposta": "Os destaques são para chamadas e editais. Consultorias e empresas podem patrocinar o destaque de uma chamada real, com seu nome no selo, ou aparecer como marca apoiadora no Apoio institucional. Anúncios de produtos fora desses formatos não são aceitos neste momento."
+        "resposta": "Sim, mas só no espaço “Serviços”, com o selo “Publicidade · Serviço”, separado das listas de editais e nunca ao lado de uma chamada. Os destaques de chamada são para quem financia ou divulga a própria chamada; consultorias e fornecedores não patrocinam o destaque de uma chamada. Também é possível aparecer como marca apoiadora no Apoio institucional."
       },
       {
         "pergunta": "O que acontece se o edital for prorrogado ou cancelado?",
@@ -180,8 +194,8 @@
       }
     ],
     "chamada": {
-      "titulo": "Tem uma chamada aberta?",
-      "texto": "Envie o link oficial e o pacote que interessa. Respondemos com a proposta comercial e as datas disponíveis. As vagas de lançamento são limitadas por página.",
+      "titulo": "Peça uma proposta",
+      "texto": "Preencha os campos e o seu programa de e-mail abre com o pedido pronto. Respondemos com a proposta comercial e as datas disponíveis. As vagas de lançamento são limitadas por página.",
       "botao": "Pedir proposta"
     },
     "relatorioCliques": {
@@ -191,7 +205,8 @@
         "texto": "Ao fim do período, enviamos um relatório com os cliques registrados no destaque e no link para a fonte oficial, por página e por semana."
       },
       "_leia": "Só aparece no site quando data/site.json → analytics.goatcounter estiver preenchido. Sem medição ativa, não prometemos relatório."
-    }
+    },
+    "notaResumo": "“Resumo da semana” é a página /semana/ do site e os feeds RSS: não há envio por e-mail."
   },
   "apoie": {
     "titulo": "Apoie o Fundos Brasil",
