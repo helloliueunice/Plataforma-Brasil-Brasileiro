@@ -276,6 +276,9 @@ const publicoTxt = e => e.publico.map(p => PUBLICOS[p] || p).join(', ');
 // Selo de patrocínio (CDC arts. 36-37; CONAR): sempre com o nome de quem patrocina e a explicação
 const AVISO_PATROCINIO = 'Destaque pago. Não altera a busca, os filtros, a compatibilidade nem a ordem das listas.';
 const seloPatrocinio = (e, rel) => `<span class="selo patrocinado" title="${AVISO_PATROCINIO}">${esc(textoSelo(e))}</span> <a class="por-que" href="${rel}anuncie/#regras">Por que estou vendo isto?</a>`;
+// Aviso visível quando quem patrocina não é o responsável pelo edital (evita sugerir vínculo)
+const avisoPatrocinador = e => (patrocinado(e) && e.patrocinador && !String(e.instituicao || '').toLowerCase().includes(String(e.patrocinador).toLowerCase().trim())
+    ? `<p class="nota aviso-patrocinio">${esc(e.patrocinador)} patrocina este destaque e não é o responsável por este edital. Destaques patrocinados ocupam vagas reservadas e não mudam a ordem das listas.</p>` : '');
 const eventoPatrocinio = e => ` data-evento="patrocinio-clique patrocinio-${e.id}"`;
 // Em listas de uma linha (prazos, semana): link com medição + selo
 const linkEdital = (e, rel) => `<a href="${rel}editais/${slugEdital(e)}/"${patrocinado(e) ? eventoPatrocinio(e) : ''}>${esc(e.titulo)}</a>${patrocinado(e) ? ' ' + seloPatrocinio(e, rel) : ''}`;
@@ -365,6 +368,7 @@ for (const e of editais) {
     const corpo = `
         <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <a href="${rel}editais/">Editais</a> › <span aria-current="page">${esc(e.titulo)}</span></nav>
         <div class="selos">${patrocinado(e) ? seloPatrocinio(e, rel) + ' ' : ''}${selo(e)} <span class="selo neutro">${esc(e.modalidade)}</span> <span class="selo ${e.procedencia === 'internacional' ? 'internacional' : 'nacional'}">${e.procedencia === 'internacional' ? 'Internacional' : 'Nacional'}</span>${e.fluxoContinuo === true ? ' <span class="selo neutro">Fluxo contínuo</span>' : ''}</div>
+        ${avisoPatrocinador(e)}
         ${e.numero ? `<p class="numero">${esc(e.numero)}</p>` : ''}
         <h1>${esc(e.titulo)}</h1>
         <p class="sub">${ag ? `<a href="${rel}instituicoes/${e.agencia}/">${esc(e.instituicao)}</a>` : esc(e.instituicao)} · ${esc(area)} · ${esc(e.abrangencia)}</p>
@@ -687,12 +691,13 @@ const alvo = href => (/^mailto:/.test(href) ? '' : ' target="_blank" rel="noopen
 const brl = n => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 }).format(Number(n));
 const precoHTML = p => {
     const cheio = Number(p.precoCheio) || 0, lanc = Number(p.precoLancamento) || 0;
-    if (lanc > 0 && cheio > lanc) return `<span class="preco-cheio"><span class="sr-only">De </span><s>${brl(cheio)}</s></span> <strong class="preco-atual"><span class="sr-only">por </span>${brl(lanc)}</strong> <span class="selo em-breve">Preço de lançamento</span>`;
+    // Sem "de/por" riscado: o preço cheio ainda não foi praticado (CDC art. 37, §1º)
+    if (lanc > 0 && cheio > lanc) return `<strong class="preco-atual">${brl(lanc)}</strong> <span class="selo em-breve">Preço de lançamento</span><span class="preco-nota">válido para propostas aceitas até ${esc(p.validadeLancamento || '')}; depois, a tabela prevista é de ${brl(cheio)}</span>`;
     if (lanc > 0 || cheio > 0) return `<strong class="preco-atual">${brl(lanc || cheio)}</strong>`;
     return '<strong class="preco-atual">Sob consulta</strong>';
 };
 const REGRAS_BASE = [
-    `Selo “Patrocinado por <nome do patrocinador>” sempre visível, com link para estas regras.`,
+    `Selo “Publicidade · Patrocinado por <nome do patrocinador>” sempre visível, com explicação em texto e link para estas regras.`,
     'O patrocínio não altera a busca, os filtros, a compatibilidade com o perfil nem a ordem das listas.',
     'O destaque ocupa uma vaga reservada e sinalizada (uma por página), fora da lista ordenada.',
     'Só chamadas reais, com inscrições abertas ou previstas e conferidas na fonte oficial.'
@@ -704,7 +709,7 @@ const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
     urlsExtras.push([url, 'monthly', '0.5']);
     const pacotes = arr(ANU.pacotes);
     const regras = arr(ANU.regras).length ? arr(ANU.regras) : REGRAS_BASE;
-    const proHref = urlOk(cfg.pro?.listaEspera) ? cfg.pro.listaEspera.trim() : comercialHref(`Lista de espera — ${PRO.nome || 'Plano Pro'}`);
+    const proHref = urlOk(cfg.pro?.listaEspera) ? cfg.pro.listaEspera.trim() : (emailOk(cfg.comercial?.email) ? comercialHref(`Lista de espera — ${PRO.nome || 'Plano Pro'}`) : '');
     const precoPro = Number(PRO.preco) > 0 ? Number(PRO.preco) : 49;
     const offers = [
         ...pacotes.filter(p => Number(p.precoLancamento || p.precoCheio) > 0).map(p => ({ '@type': 'Offer', name: p.nome, price: Number(p.precoLancamento || p.precoCheio), priceCurrency: 'BRL', description: [p.periodo, p.vagas].filter(Boolean).join(' · '), url: `${url}#pacote-${slugify(p.id || p.nome)}` })),
@@ -743,7 +748,8 @@ const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
             <p class="preco"><strong class="preco-atual">${brl(precoPro)}</strong><span><span aria-hidden="true">/</span><span class="sr-only">por </span>${esc(PRO.periodo || 'mês')}</span></p>
             ${arr(PRO.inclui).length ? `<ul class="lista">${arr(PRO.inclui).map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
             <p class="nota">Ainda não está à venda: a lista de espera não gera cobrança nem compromisso. Tudo o que é gratuito hoje continua gratuito.</p>
-            <div class="acoes"><a class="btn" href="${esc(proHref)}"${alvo(proHref)} data-evento="pro-lista-espera">${esc(PRO.chamada || 'Entrar na lista de espera')}</a></div>
+            ${PRO.chamada ? `<p>${esc(PRO.chamada)}</p>` : ''}
+            <div class="acoes">${proHref ? `<a class="btn" href="${esc(proHref)}"${alvo(proHref)} data-evento="pro-lista-espera">${esc(PRO.botao || 'Entrar na lista de espera')}</a>` : '<p class="nota">A lista de espera abre em breve.</p>'}</div>
         </section>
         <section class="chamada" aria-labelledby="chamada-titulo">
             <h2 id="chamada-titulo">${esc(ANU.chamada?.titulo || 'Vamos conversar?')}</h2>
@@ -866,6 +872,7 @@ const botaoTexto = ANU.chamada?.botao || 'Pedir proposta';
         </ul><p>Esses serviços podem estar fora do Brasil (transferência internacional, art. 33 da LGPD) e seguem as próprias políticas. Usamos esses serviços por legítimo interesse, para que o site funcione.</p></section>
         <section><h2>Sugestões de edital e pedidos de parceria</h2><p>${contatoEhGithub ? 'São feitos no GitHub e ficam <strong>públicos</strong>. Não informe telefone, CPF, endereço ou e-mail pessoal nesses formulários.' : 'Sugestões de edital feitas no GitHub ficam <strong>públicas</strong>: não informe dados pessoais nelas. Pedidos comerciais enviados pelo contato de <a href="' + rel + 'anuncie/">Anuncie</a> são usados só para responder e preparar a proposta.'}</p></section>
         <section><h2>Apoio (Pix e Apoia.se)</h2><p>A página <a href="${rel}apoie/">Apoie</a> não coleta nenhum dado: o código Pix e o QR Code são gerados no próprio site e o pagamento acontece no app do seu banco. Como em qualquer Pix, o banco informa a quem recebe o nome de quem pagou e parte do CPF ou CNPJ; usamos essas informações apenas para controle financeiro e obrigações legais, sem publicá-las nem compartilhá-las. Contribuições pelo Apoia.se seguem a política de privacidade daquela plataforma.</p></section>
+        <section><h2>Lista de espera do Plano Pro</h2><p>Se você entrar na lista de espera, coletamos nome e e-mail por um formulário de terceiro, que trata os dados conforme a própria política (pode haver transferência internacional, art. 33 da LGPD). Finalidade: avisar sobre o lançamento. Base legal: consentimento (art. 7º, I), que você pode revogar a qualquer momento pelo contato acima. Os dados são apagados até 6 meses após o lançamento ou se o plano for cancelado.</p></section>
         <section><h2>Patrocinadores</h2><p>Editais em destaque patrocinado são sinalizados com “Patrocinado por” e o nome de quem patrocina. Patrocinadores recebem só números agregados (quantos cliques o destaque teve), contados sem cookies e sem identificar pessoas. Nenhum dado pessoal de quem usa o site é vendido ou repassado.</p></section>
         <section><h2>Seus direitos</h2><p>Você pode pedir confirmação, acesso, correção ou eliminação de dados pessoais que porventura tratemos (art. 18 da LGPD) pelo contato acima, e também pode recorrer à Autoridade Nacional de Proteção de Dados (ANPD).</p></section>
         <section><h2>Atualizações</h2><p>Mudanças nesta política serão publicadas nesta página, com a data da versão.</p></section>`

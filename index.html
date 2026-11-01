@@ -21,7 +21,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="alternate" type="application/rss+xml" title="Fundos Brasil — novos editais" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feed.xml">
     
-    <script>window.SITE_CFG = {"apoio":null,"boletim":"","whatsappCanal":"","sugestao":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=sugerir-edital.yml","contato":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=parceria.yml"};</script>
+    <script>window.SITE_CFG = {"apoio":null,"apoie":false,"apoioTexto":"Apoie o Fundos Brasil","boletim":"","whatsappCanal":"","sugestao":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=sugerir-edital.yml","contato":"https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro/issues/new?template=parceria.yml"};</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","inLanguage":"pt-BR","description":"Editais abertos de fomento no Brasil, conferidos nas fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil."},{"@type":"Organization","name":"Fundos Brasil","url":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/","logo":"https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/favicon.svg"}]}</script>
     <!-- seo:fim -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -5989,7 +5989,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function patrocinioAtivo(e, vaga) {
             const hoje = isoDe(HOJE);
             const iso = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
-            return !!e.patrocinado
+            return !!e.patrocinado && !!String(e.patrocinador || '').trim()
                 && (!iso(e.patrocinioInicio) || e.patrocinioInicio <= hoje)
                 && (!iso(e.patrocinioAte) || e.patrocinioAte >= hoje)
                 && statusEdital(e) !== 'fechado'
@@ -5997,7 +5997,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         }
         function textoPatrocinio(e) {
             const nome = String(e.patrocinador || '').replace(/\s+/g, ' ').trim().slice(0, 80);
-            return nome ? `Patrocinado por ${nome}` : 'Patrocinado';
+            return nome ? `Publicidade · Patrocinado por ${nome}` : 'Publicidade · Patrocinado';
         }
         function seloPatrocinioHTML(e) {
             return `<span class="badge badge-patrocinado" title="${AVISO_PATROCINIO}">${esc(textoPatrocinio(e))}<span class="sr-only">. ${AVISO_PATROCINIO}</span></span>`;

@@ -17,7 +17,7 @@ export const VAGA_ROTULO = { inicio: 'Página inicial (1ª vaga do destaque)', p
 const isoOk = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
 
 export const nomePatrocinador = e => String(e?.patrocinador ?? '').replace(/\s+/g, ' ').trim().slice(0, 80);
-export const textoSelo = e => (nomePatrocinador(e) ? `Patrocinado por ${nomePatrocinador(e)}` : 'Patrocinado');
+export const textoSelo = e => (nomePatrocinador(e) ? `Publicidade · Patrocinado por ${nomePatrocinador(e)}` : 'Publicidade · Patrocinado');
 
 export function vagasDe(e) {
     const v = Array.isArray(e?.patrocinioVagas) ? e.patrocinioVagas.filter(x => VAGAS.includes(x)) : [];
@@ -27,6 +27,7 @@ export function vagasDe(e) {
 /** Situação do patrocínio em um dia: 'ativo', 'agendado', 'expirado' (período acabou) ou 'chamada-encerrada'. null se não é patrocinado. */
 export function situacaoPatrocinio(e, hoje) {
     if (!e || !e.patrocinado) return null;
+    if (!nomePatrocinador(e)) return 'sem-patrocinador'; // selo exige o nome de quem paga (transparência publicitária)
     if (isoOk(e.patrocinioInicio) && e.patrocinioInicio > hoje) return 'agendado';
     if (isoOk(e.patrocinioAte) && e.patrocinioAte < hoje) return 'expirado';
     if (isoOk(e.encerramento) && e.encerramento < hoje) return 'chamada-encerrada';

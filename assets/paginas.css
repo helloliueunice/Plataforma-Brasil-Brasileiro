@@ -264,3 +264,5 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .pacotes + .nota, #regras .nota, .bloco-pro .nota, .bloco-pro .lista { margin-top: var(--s-3); }
 .vaga-rotulo .por-que, .por-que { display: inline-block; padding: 2px 0; }
 .forma > p + .pix, .forma > p + .acoes { margin-top: var(--s-3); }
+.preco-nota { display: block; font-size: var(--fs-13); color: var(--text-3); margin-top: var(--s-1); }
+.aviso-patrocinio { margin-top: var(--s-2); }
