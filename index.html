@@ -870,14 +870,7 @@ dialog.modal::backdrop { background: rgba(9, 9, 11, 0.45); }
 }
 @media (max-width: 768px) {
     :root { --header-h: 56px; }
-    header { height: auto; flex-wrap: wrap; gap: 0; padding: 0 var(--s-4); }
-    .logo { height: var(--header-h); }
-    .header-right { display: contents; }
-    .header-actions { margin-left: auto; height: var(--header-h); }
-    .main-nav { order: 3; width: calc(100% + 2 * var(--s-4)); margin: 0 calc(-1 * var(--s-4)); padding: 0 var(--s-2);
-        overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; border-top: var(--bw) solid var(--border); }
-    .main-nav::-webkit-scrollbar { display: none; }
-    .main-nav a { height: 44px; padding: 0 var(--s-3); }
+    header { padding: 0 var(--s-4); gap: var(--s-2); }
     .container { padding: var(--s-6) var(--s-4) var(--s-12); }
     .hero-section, #page-dashboard .hero-section { padding: var(--s-8) var(--s-4) var(--s-6); }
     .hero-title { font-size: var(--fs-24); }
@@ -911,7 +904,6 @@ dialog.modal::backdrop { background: rgba(9, 9, 11, 0.45); }
     dialog.modal { width: 100%; max-width: none; max-height: 92vh; margin: auto 0 0; border-radius: var(--r-xl) var(--r-xl) 0 0; }
     .glossario { grid-template-columns: 1fr; gap: 2px; }
     .glossario dd { margin-bottom: var(--s-3); }
-    .toasts { top: auto; bottom: var(--s-4); left: var(--s-4); right: var(--s-4); max-width: none; }
     .menu-panel { right: 0; left: auto; transform: none; }
     .cal-wrap { padding: var(--s-3); }
     .cal-day { min-height: 48px; }
@@ -930,7 +922,7 @@ dialog.modal::backdrop { background: rgba(9, 9, 11, 0.45); }
 
 /* ---------- 19. IMPRESSÃO ---------- */
 @media print {
-    body > *:not(#editalModal) { display: none !important; }
+    body:not(.print-relatorio) > *:not(#editalModal) { display: none !important; }
     body { background: #fff; color: #000; }
     dialog.modal { position: static; max-width: none; width: 100%; max-height: none; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
     dialog.modal::backdrop { background: none; }
@@ -959,9 +951,6 @@ dialog.modal::backdrop { background: rgba(9, 9, 11, 0.45); }
 .page-content:not(#page-dashboard) .hero-value { display: none; }
 /* Lista de editais do rodapé (para buscadores) só aparece no início e em Editais */
 body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: none; }
-@media (max-width: 760px) {
-    .main-nav { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
-}
 @media (pointer: coarse) {
     .btn-small, .chip-toggle, .facet-chip { min-height: 44px; }
     .site-footer a { display: inline-block; padding: 10px 2px; }
@@ -971,6 +960,234 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
 .sucesso-icone { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto var(--s-3);
     background: var(--open-bg); color: var(--open-fg); font-size: 24px; font-weight: 600; }
 .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -3px; }
+
+/* =====================================================================
+   ONDA 2 — UX E ACESSIBILIDADE DA PLATAFORMA
+   ===================================================================== */
+
+/* ---------- Navegação: mesmo menu das páginas estáticas ---------- */
+.nav-lista { display: flex; align-items: center; gap: var(--s-1); list-style: none; }
+.nav-lista > li { position: relative; }
+.nav-sub-btn {
+    position: relative; display: inline-flex; align-items: center; gap: var(--s-1);
+    height: var(--header-h); padding: 0 var(--s-3); border: 0; background: none; cursor: pointer;
+    font-size: var(--fs-14); font-weight: var(--fw-medium); color: var(--text-2); white-space: nowrap;
+}
+.nav-sub-btn:hover, .nav-sub-btn[aria-expanded="true"] { color: var(--text); }
+.nav-sub-btn.active { color: var(--text); }
+.nav-sub-btn.active::after { content: ""; position: absolute; left: var(--s-3); right: var(--s-3); bottom: -1px; height: 2px; background: var(--brand); }
+.chevron { width: 14px; height: 14px; transition: transform var(--ease); }
+[aria-expanded="true"] > .chevron { transform: rotate(180deg); }
+.nav-sub-painel, .dropdown-painel {
+    position: absolute; left: 0; top: calc(100% + 2px); z-index: 1100;
+    min-width: 220px; padding: var(--s-1); list-style: none;
+    display: flex; flex-direction: column;
+    background: var(--bg); border: var(--bw) solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+}
+.main-nav .nav-sub-painel a, .dropdown-painel a, .dropdown-painel button {
+    display: flex; align-items: center; gap: var(--s-2); width: 100%; height: auto; min-height: 40px;
+    padding: var(--s-2) var(--s-3); border: 0; border-radius: var(--r-sm); background: none;
+    font-size: var(--fs-14); font-weight: var(--fw-regular); color: var(--text); text-align: left; text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.main-nav .nav-sub-painel a:hover, .dropdown-painel a:hover, .dropdown-painel button:hover { background: var(--surface); color: var(--text); }
+.main-nav .nav-sub-painel a[aria-current="page"] { color: var(--brand); font-weight: var(--fw-semibold); background: var(--brand-subtle); }
+.main-nav .nav-sub-painel a[aria-current="page"]::after { display: none; }
+.menu-btn {
+    display: none; align-items: center; gap: var(--s-2);
+    min-height: 44px; padding: 0 var(--s-3); border: var(--bw) solid var(--border-strong); border-radius: var(--r-md);
+    background: var(--bg); color: var(--text); font-size: var(--fs-14); font-weight: var(--fw-medium); cursor: pointer;
+}
+.menu-btn[aria-expanded="true"] { background: var(--surface); }
+.rotulo-curto { display: none; }
+.so-gaveta { display: none; }
+@media (max-width: 600px) {
+    #loginBtn, #userInfo, #userInfo.active { display: none; }
+    body.menu-aberto .so-gaveta { display: list-item; }
+}
+.menu-nota { padding: var(--s-2) var(--s-3); font-size: var(--fs-12); color: var(--text-3); max-width: 260px; }
+.selo-demo {
+    display: inline-flex; align-items: center; height: 20px; padding: 0 var(--s-2); margin-left: var(--s-1); vertical-align: 2px;
+    border: var(--bw) solid var(--soon-bd); border-radius: var(--r-sm); background: var(--soon-bg); color: var(--soon-fg);
+    font-size: var(--fs-12); font-weight: var(--fw-semibold); letter-spacing: 0; white-space: nowrap;
+}
+.selo-demo-grande { height: 26px; padding: 0 var(--s-3); font-size: var(--fs-13); vertical-align: 6px; margin-left: var(--s-2); }
+.selo-demo-mini { height: 18px; font-size: 11px; margin-left: auto; }
+.demo-forte { background: var(--soon-bg); border-color: var(--soon-bd); color: var(--soon-fg); font-size: var(--fs-14); }
+.demo-forte strong { color: inherit; }
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .rotulo-longo { display: none; }
+    .rotulo-curto { display: inline; }
+    .main-nav a, .nav-sub-btn { padding: 0 var(--s-2); }
+}
+/* Celular e tablet: menu em gaveta, aberto pelo botão "Menu" (aria-expanded) */
+@media (max-width: 1023px) {
+    header { gap: var(--s-2); }
+    .header-right { flex: 1; justify-content: flex-end; gap: var(--s-2); }
+    .menu-btn { display: inline-flex; }
+    .rotulo-longo { display: none; }
+    .rotulo-curto { display: inline; }
+    #loginBtn { min-height: 44px; }
+    .main-nav { display: none; }
+    body.menu-aberto .main-nav {
+        display: block; position: fixed; z-index: 1050; left: 0; right: 0; top: var(--header-h); bottom: 0;
+        overflow-y: auto; overscroll-behavior: contain; padding: var(--s-2) var(--s-4) var(--s-10);
+        background: var(--bg); border-top: var(--bw) solid var(--border);
+    }
+    body.menu-aberto { overflow: hidden; }
+    .nav-lista { flex-direction: column; align-items: stretch; gap: 0; }
+    .nav-lista > li { border-bottom: var(--bw) solid var(--border); }
+    .main-nav a, .nav-sub-btn { width: 100%; height: auto; min-height: 52px; padding: 0 var(--s-2); font-size: var(--fs-16); justify-content: space-between; }
+    .main-nav a.active::after, .main-nav a[aria-current="page"]::after, .nav-sub-btn.active::after { left: 0; right: auto; top: 12px; bottom: 12px; width: 3px; height: auto; }
+    .nav-sub-painel { position: static; box-shadow: none; border: 0; padding: 0 0 var(--s-2) var(--s-4); min-width: 0; }
+    .nav-nome-btn { color: var(--brand); }
+    .main-nav .nav-sub-painel a { min-height: 48px; font-size: var(--fs-16); }
+}
+
+/* ---------- Início ---------- */
+.home-hero { padding-top: var(--s-12) !important; padding-bottom: var(--s-8) !important; }
+.home-busca {
+    display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: var(--s-3);
+    align-items: end; margin-top: var(--s-6);
+}
+.home-busca-campo label { display: block; margin-bottom: var(--s-1); font-size: var(--fs-13); font-weight: var(--fw-semibold); color: var(--text); }
+.home-busca-campo input, .home-busca-campo select, #homeSearchInput {
+    width: 100%; min-height: 52px; padding: var(--s-2) var(--s-3); font-size: var(--fs-16);
+    background-color: var(--bg); color: var(--text); border: var(--bw) solid var(--border-strong); border-radius: var(--r-md);
+}
+.home-busca-campo input[type="search"], #homeSearchInput { padding-left: 40px; }
+.home-busca-campo input:focus, .home-busca-campo select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-subtle); }
+.home-busca-btn { height: 52px; padding: 0 var(--s-6); font-size: var(--fs-16); }
+.home-resumo { margin-top: var(--s-4); font-size: var(--fs-14); color: var(--text-2); }
+.home-resumo a { color: var(--text); text-decoration: none; border-bottom: var(--bw) solid var(--border-strong); }
+.home-resumo a:hover { color: var(--brand); border-color: var(--brand); }
+.home-resumo strong { font-weight: var(--fw-semibold); font-variant-numeric: tabular-nums; }
+.home-resumo a.urgente strong { color: var(--urgent-fg); }
+.card-title-h { font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; }
+.jornadas { margin-top: var(--s-2); }
+@media (max-width: 768px) {
+    .home-hero { padding-top: var(--s-6) !important; padding-bottom: var(--s-6) !important; }
+    #page-dashboard .hero-title { font-size: var(--fs-24); }
+    .home-busca { grid-template-columns: 1fr 1fr; margin-top: var(--s-4); }
+    .home-busca-q, .home-busca-btn { grid-column: 1 / -1; }
+}
+
+/* ---------- Editais: contagem, busca, rodapé de origem ---------- */
+.busca-editais { margin-bottom: var(--s-3); }
+.busca-editais label { font-size: var(--fs-13); font-weight: var(--fw-semibold); color: var(--text); }
+.atalho-teclado { font-weight: var(--fw-regular); color: var(--text-3); }
+@media (hover: none) { .atalho-teclado { display: none; } }
+.lista-rodape { margin-top: var(--s-4); padding-top: var(--s-3); border-top: var(--bw) solid var(--border); font-size: var(--fs-13); color: var(--text-3); }
+.lista-rodape strong { color: var(--text-2); font-weight: var(--fw-semibold); }
+.lista-rodape:empty { display: none; }
+.filtro-uf { margin-bottom: var(--s-4); }
+.pular-resultados { position: absolute; left: -9999px; top: auto; }
+.pular-resultados:focus { position: static; display: inline-flex; margin-bottom: var(--s-3); padding: var(--s-2) var(--s-3);
+    background: var(--brand); color: var(--on-brand); border-radius: var(--r-md); text-decoration: none; }
+#resultadosTitulo:focus { outline: none; }
+.filtros-fab { display: none; }
+
+/* ---------- Gaveta de filtros (celular e tablet) ---------- */
+@media (max-width: 1023px) {
+    .editais-layout > .filter-section { display: none; }
+    .limpar-desktop { display: none; }
+    #page-editais .hero-section { padding-top: var(--s-4); padding-bottom: var(--s-3); }
+    #page-editais .container { padding-top: var(--s-4); padding-bottom: 96px; }
+    .perfil-card { flex-wrap: nowrap; padding: var(--s-2) var(--s-3); margin-bottom: var(--s-3); gap: var(--s-2); }
+    .perfil-card #perfilResumo { display: none; }
+    .perfil-card strong { font-size: var(--fs-13); font-weight: var(--fw-medium); }
+    .perfil-card .perfil-acoes { flex-wrap: nowrap; }
+    /* Linha 1: contagem + Mais ações; linha 2: Lista/Calendário + ordenação */
+    .results-toolbar { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--s-2); padding-bottom: var(--s-2); }
+    .toolbar-actions { display: contents; }
+    .results-count { grid-column: 1; grid-row: 1; font-size: var(--fs-13); }
+    .toolbar-actions details.menu { grid-column: 2; grid-row: 1; justify-self: end; }
+    .toolbar-actions .view-toggle { grid-column: 1; grid-row: 2; }
+    .toolbar-actions select { grid-column: 2; grid-row: 2; width: 100%; min-width: 0; }
+    body.menu-aberto .filtros-fab { display: none; }
+    #capAcoesBusca { margin-bottom: var(--s-1); }
+    .cap-acoes-busca { padding-top: var(--s-2); }
+    .filtros-fab {
+        display: inline-flex; align-items: center; gap: var(--s-1);
+        position: fixed; z-index: 1400; left: 50%; bottom: var(--s-4); transform: translateX(-50%);
+        min-height: 48px; padding: 0 var(--s-6); border: 0; border-radius: var(--r-full);
+        background: var(--text); color: var(--bg); box-shadow: var(--shadow-lg);
+        font-size: var(--fs-14); font-weight: var(--fw-semibold); cursor: pointer;
+    }
+    body.comparando .filtros-fab { bottom: 84px; }
+}
+dialog.gaveta { display: none; }
+dialog.gaveta[open] { display: flex; flex-direction: column; }
+dialog.gaveta {
+    width: 100%; max-width: 480px; height: 100%; max-height: none; margin: 0 0 0 auto; border-radius: 0; border: 0;
+    overflow: hidden;
+}
+.gaveta-topo { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3);
+    padding: var(--s-3) var(--s-4); border-bottom: var(--bw) solid var(--border); }
+.gaveta-topo h2 { font-size: var(--fs-18); }
+.gaveta-topo .modal-close { position: static; }
+.gaveta-corpo { flex: 1; overflow-y: auto; padding: var(--s-4); overscroll-behavior: contain; }
+.gaveta-corpo .filter-section { display: block; margin: 0; }
+.gaveta-corpo .filter-title { display: none; }
+.gaveta-corpo .faceta-chips { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
+.gaveta-corpo .facet-chip { white-space: normal; }
+.gaveta-rodape { display: flex; gap: var(--s-2); justify-content: space-between; padding: var(--s-3) var(--s-4);
+    border-top: var(--bw) solid var(--border); background: var(--bg); }
+.gaveta-rodape .btn { min-height: 48px; }
+.gaveta-rodape .btn-primary { flex: 1; }
+
+/* ---------- Modal do edital ---------- */
+.prazo-valor { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--s-3) var(--s-6);
+    margin-top: var(--s-4); padding: var(--s-4) 0; border-bottom: var(--bw) solid var(--border); }
+.prazo-valor dt { font-size: var(--fs-12); color: var(--text-3); }
+.prazo-valor dd { font-size: var(--fs-18); font-weight: var(--fw-semibold); color: var(--text); font-variant-numeric: tabular-nums; }
+.prazo-rel { display: block; font-size: var(--fs-13); font-weight: var(--fw-medium); color: var(--text-2); }
+.prazo-rel.urgente { color: var(--urgent-fg); }
+.selo-auto {
+    display: inline-flex; align-items: center; min-height: 28px; margin: var(--s-1) 0 var(--s-2); padding: 0 var(--s-3);
+    border: 1.5px dashed var(--soon-fg); border-radius: var(--r-sm); background: transparent;
+    color: var(--soon-fg); font-size: var(--fs-12); font-weight: var(--fw-semibold); text-decoration: none;
+}
+.selo-auto:hover { background: var(--soon-bg); color: var(--soon-fg); }
+.nota-origem { padding: var(--s-2) var(--s-3); border: 1.5px dashed var(--soon-bd); border-radius: var(--r-md); transition: background-color .3s ease; }
+.nota-origem.realce { background: var(--soon-bg); }
+.nota-origem:focus { outline: 2px solid var(--focus); outline-offset: 2px; }
+.dropdown { position: relative; display: inline-flex; }
+.dropdown-painel { left: auto; right: 0; min-width: 260px; }
+@media (max-width: 768px) { .dropdown-painel { left: 0; right: auto; } }
+.posso-veredito { margin-bottom: var(--s-2); }
+.posso-veredito.ok strong { color: var(--open-fg); }
+.posso-veredito.no strong { color: var(--urgent-fg); }
+.posso-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0 var(--s-4); }
+.posso-campos .form-group { margin-bottom: var(--s-3); }
+.posso-resultado .btn { margin-top: var(--s-2); margin-left: calc(-1 * var(--s-3)); }
+.posso-slot:empty { display: none; }
+.posso-slot { margin-top: var(--s-4); }
+.motivos li.ok::before { content: "✓" / ""; }
+.motivos li.no::before { content: "✕" / ""; }
+.aviso-local { display: flex; gap: var(--s-2); align-items: flex-start; margin-bottom: var(--s-4); padding: var(--s-2) var(--s-3);
+    background: var(--surface); border: var(--bw) solid var(--border); border-radius: var(--r-md); font-size: var(--fs-13); color: var(--text-2); }
+.aviso-local .icon { margin-top: 2px; color: var(--text-3); }
+.aviso-local a { font-weight: var(--fw-semibold); }
+
+/* ---------- Toasts: canto inferior, no máximo 2, fora dos botões fixos ---------- */
+.toasts { top: auto; bottom: var(--s-5); right: var(--s-5); left: auto; }
+body.comparando .toasts { bottom: 88px; }
+@media (max-width: 1023px) {
+    .toasts { left: var(--s-4); right: var(--s-4); bottom: var(--s-4); max-width: none; }
+    body.rota-editais .toasts { bottom: 80px; }
+    body.rota-editais.comparando .toasts { bottom: 144px; }
+    body.comparando:not(.rota-editais) .toasts { bottom: 88px; }
+}
+
+/* ---------- Alvos de toque ---------- */
+@media (pointer: coarse), (max-width: 768px) {
+    .favorite-btn, .modal-close { width: 44px; height: 44px; }
+    .btn-small, .chip-toggle, .facet-chip, .active-filter, .view-toggle button { min-height: 44px; }
+    .toolbar-actions select, .menu-btn, .bell-btn { min-height: 44px; }
+    .edital-card .edital-actions .btn { height: 44px; }
+    .dropdown-painel a, .dropdown-painel button { min-height: 44px; }
+}
     </style>
     <link rel="stylesheet" href="assets/captacao.css">
 </head>
@@ -988,32 +1205,57 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             <span>Fundos Brasil</span>
         </a>
         <div class="header-right">
-            <nav class="main-nav" aria-label="Navegação principal">
-                <a href="#dashboard" data-page="dashboard">Início</a>
-                <a href="#editais" data-page="editais">Editais</a>
-                <a href="#propostas" data-page="propostas">Minhas propostas <span class="nav-count" id="navPropostasCount" hidden></span></a>
-                <a href="#projetos" data-page="projetos">Projetos</a>
-                <a href="#fundos" data-page="fundos">Fundos</a>
-                <a href="#mapa" data-page="mapa">Mapa</a>
-                <a href="#ajuda" data-page="ajuda">Ajuda</a>
+            <!-- Mesma arquitetura do menu das páginas estáticas: Editais · Prazos · Para você · Minhas propostas · Transparência · Ajuda -->
+            <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+                <ul class="nav-lista">
+                    <li><a href="#editais" data-page="editais">Editais</a></li>
+                    <li><a href="prazos/">Prazos</a></li>
+                    <li class="nav-sub">
+                        <button type="button" class="nav-sub-btn" aria-expanded="false" aria-controls="navParaVoce">Para você<svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>
+                        <ul class="nav-sub-painel" id="navParaVoce" hidden>
+                            <li><a href="para/pesquisadores/">Pesquisador</a></li>
+                            <li><a href="para/universidades-e-icts/">Universidade/ICT</a></li>
+                            <li><a href="para/empresas-e-startups/">Empresa</a></li>
+                            <li><a href="para/oscs-e-ongs/">OSC</a></li>
+                            <li><a href="para/municipios-e-prefeituras/">Município</a></li>
+                            <li><a href="para/governos-estaduais/">Estado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#propostas" data-page="propostas">Minhas propostas <span class="nav-count" id="navPropostasCount" hidden></span></a></li>
+                    <li class="nav-sub">
+                        <button type="button" class="nav-sub-btn" id="navTransparenciaBtn" aria-expanded="false" aria-controls="navTransparencia">Transparência<svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>
+                        <ul class="nav-sub-painel" id="navTransparencia" hidden>
+                            <li><a href="#fundos" data-page="fundos">Instituições</a></li>
+                            <li><a href="#projetos" data-page="projetos">Projetos <span class="selo-demo selo-demo-mini">Demonstração</span></a></li>
+                            <li><a href="#mapa" data-page="mapa">Mapa</a></li>
+                            <li><a href="dados/">Dados abertos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#ajuda" data-page="ajuda">Ajuda</a></li>
+                    <!-- Celular: o botão "Seu nome" sai do cabeçalho e fica aqui -->
+                    <li class="so-gaveta"><button type="button" class="nav-sub-btn nav-nome-btn" id="navNomeBtn" data-action="open-login">Seu nome (para relatórios)</button></li>
+                </ul>
             </nav>
             <div class="header-actions">
                 <button class="bell-btn" id="alertBadge" data-action="show-alertas" aria-label="Alertas de prazo" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg> <span id="alertCount">0</span></button>
-                <button class="btn btn-primary" id="loginBtn" data-action="open-login">Entrar</button>
+                <!-- Não é conta: só um nome guardado neste navegador para assinar relatórios e comprovantes -->
+                <button class="btn btn-outline btn-small" id="loginBtn" data-action="open-login" aria-label="Seu nome (para relatórios)"><span class="rotulo-longo">Seu nome (para relatórios)</span><span class="rotulo-curto" aria-hidden="true">Seu nome</span></button>
                 <div class="user-info" id="userInfo">
                     <details class="menu">
-                        <summary class="user-summary" aria-label="Menu da conta">
+                        <summary class="user-summary" aria-label="Seu nome nos relatórios">
                             <span class="user-avatar" id="userAvatar" aria-hidden="true">?</span>
                             <span id="userName"></span> <span aria-hidden="true">▾</span>
                         </summary>
                         <div class="menu-panel">
-                            <a href="#propostas">Minhas propostas</a>
+                            <p class="menu-nota">Seu nome aparece nos relatórios e comprovantes. Não é uma conta: fica só neste navegador.</p>
+                            <button data-action="open-login">Alterar nome</button>
                             <button data-action="edit-perfil">Meu perfil de proponente</button>
-                            <a href="#projetos">Meus projetos</a>
-                            <button data-action="logout">Sair</button>
+                            <a href="#propostas">Minhas propostas</a>
+                            <button data-action="logout">Remover meu nome</button>
                         </div>
                     </details>
                 </div>
+                <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Menu</button>
             </div>
         </div>
     </header>
@@ -1022,105 +1264,45 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
 
     <!-- DASHBOARD PAGE -->
     <div id="page-dashboard" class="page-content active">
-        <div class="hero-section">
-            <h1 class="hero-title">Editais de fomento com inscrições abertas</h1>
-            <div class="hero-value" id="heroValor">—</div>
-            <div class="hero-subtitle" id="heroSub"></div>
-            <nav class="sou-row" aria-label="Editais por tipo de proponente">
-                <span class="sou-label">Sou</span>
-                <a href="#editais?publico=pesquisador">Pesquisador(a)</a>
-                <a href="#editais?publico=ict">Universidade ou ICT</a>
-                <a href="#editais?publico=empresa">Empresa ou startup</a>
-                <a href="#editais?publico=osc">OSC ou cooperativa</a>
-                <a href="#editais?publico=municipio">Município</a>
-                <a href="#editais?publico=estado">Governo estadual</a>
-            </nav>
+        <!-- Ordem: título → busca (Sou… + Estado) → resumo em uma linha → Encerram em breve → Suas propostas → jornadas -->
+        <div class="hero-section home-hero">
+            <h1 class="hero-title">Encontre editais abertos para sua organização</h1>
+            <form class="home-busca" id="homeSearchForm" role="search" aria-label="Buscar editais">
+                <div class="home-busca-campo home-busca-q">
+                    <label for="homeSearchInput">Palavra-chave</label>
+                    <input type="search" id="homeSearchInput" placeholder="Tema, instituição ou programa (ex.: saúde, amazônia)" autocomplete="off">
+                </div>
+                <div class="home-busca-campo">
+                    <label for="homeFilterPublico">Sou…</label>
+                    <select id="homeFilterPublico">
+                        <option value="">Qualquer proponente</option>
+                    </select>
+                </div>
+                <div class="home-busca-campo">
+                    <label for="homeFilterUF">Estado (UF)</label>
+                    <select id="homeFilterUF">
+                        <option value="">Todo o Brasil</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary home-busca-btn" type="submit">Buscar</button>
+            </form>
+            <!-- Contagens da mesma lista usada em #editais (editais[]) -->
+            <p class="home-resumo" id="heroValor" aria-live="polite">—</p>
         </div>
 
         <div class="container">
-            <section aria-labelledby="jornadasTitulo" class="jornadas">
-                <h2 id="jornadasTitulo" class="section-title">Como podemos ajudar?</h2>
-                <div class="jornadas-grid">
-                    <a class="jornada-card" href="#editais">
-                        <strong>Quero captar recursos</strong>
-                        <span>Encontre editais compatíveis com seu perfil, organize os documentos e acompanhe sua proposta.</span>
-                        <span class="jornada-cta">Buscar editais →</span>
-                    </a>
-                    <a class="jornada-card" href="#projetos">
-                        <strong>Gerencio um projeto financiado</strong>
-                        <span>Simule a prestação de contas e conheça o fluxo, do preenchimento ao histórico (demonstração).</span>
-                        <span class="jornada-cta">Prestar contas →</span>
-                    </a>
-                    <a class="jornada-card" href="#fundos">
-                        <strong>Quero acompanhar o dinheiro público</strong>
-                        <span>Veja instituições, desembolsos, projetos financiados e onde estão.</span>
-                        <span class="jornada-cta">Explorar fundos →</span>
-                    </a>
+            <div class="card">
+                <div class="card-title">
+                    <h2 id="destaquesTitulo" class="card-title-h">Encerram em breve</h2>
+                    <a class="btn btn-outline btn-small" href="#editais?status=aberto">Ver todos os abertos <span aria-hidden="true">→</span></a>
                 </div>
-            </section>
-
-            <!-- BUSCA NA HOME -->
-            <div class="home-search">
-                <h2 class="section-title" style="margin-bottom: 12px;">Busca rápida de editais</h2>
-                <form class="search-grid" id="homeSearchForm" role="search">
-                    <div class="filter-item">
-                        <label for="homeSearchInput" class="sr-only">Palavra-chave</label>
-                        <input type="search" id="homeSearchInput" placeholder="Palavra-chave (ex.: saúde, amazônia, startups)">
-                    </div>
-                    <div class="filter-item">
-                        <label for="homeFilterStatus" class="sr-only">Situação</label>
-                        <select id="homeFilterStatus">
-                            <option value="">Qualquer situação</option>
-                            <option value="aberto">Abertos</option>
-                            <option value="em-breve">Em breve</option>
-                            <option value="fechado">Encerrados</option>
-                        </select>
-                    </div>
-                    <div class="filter-item">
-                        <label for="homeFilterProcedencia" class="sr-only">Procedência</label>
-                        <select id="homeFilterProcedencia">
-                            <option value="">Nacional e internacional</option>
-                            <option value="nacional">Nacional</option>
-                            <option value="internacional">Internacional</option>
-                        </select>
-                    </div>
-                    <div class="filter-item">
-                        <label for="homeFilterArea" class="sr-only">Área</label>
-                        <select id="homeFilterArea">
-                            <option value="">Todas as áreas</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Buscar</button>
-                </form>
-            </div>
-
-            <div class="stats-grid">
-                <a class="stat-card" href="#editais?status=aberto">
-                    <div class="stat-label">Editais abertos</div>
-                    <div class="stat-value" id="statEditaisAbertos">0</div>
-                    <div class="stat-change positive" id="statEditaisNovos"></div>
-                </a>
-                <a class="stat-card stat-urgente" href="#editais?prazo=7">
-                    <div class="stat-label">Encerram em 7 dias</div>
-                    <div class="stat-value" id="statEncerrando">0</div>
-                    <div class="stat-change" id="statEncerrandoSub"></div>
-                </a>
-                <a class="stat-card" href="#fundos">
-                    <div class="stat-label">Instituições</div>
-                    <div class="stat-value" id="statInstituicoes">0</div>
-                    <div class="stat-change" id="statInstituicoesSub"></div>
-                </a>
-                <a class="stat-card" href="#projetos">
-                    <div class="stat-label">Projetos financiados</div>
-                    <div class="stat-value" id="statProjetos">0</div>
-                    <div class="stat-change" id="statProjetosSub"></div>
-                </a>
+                <div id="destaquesList"></div>
             </div>
 
             <div class="card" id="dashPropostasCard" hidden>
                 <div class="card-title">
-                    <span>Suas propostas</span>
-                    <a class="btn btn-outline btn-small" href="#propostas">Ver todas →</a>
+                    <h2 class="card-title-h">Suas propostas</h2>
+                    <a class="btn btn-outline btn-small" href="#propostas">Ver todas <span aria-hidden="true">→</span></a>
                 </div>
                 <div id="dashPropostas"></div>
             </div>
@@ -1128,21 +1310,29 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             <!-- Ferramentas do captador (assets/captacao.js): buscas salvas -->
             <section class="card" id="capBuscasHome" aria-labelledby="capBuscasHomeTitulo" hidden></section>
 
-            <div class="card">
-                <div class="card-title">
-                    <span id="destaquesTitulo">Editais em Destaque</span>
-                    <a class="btn btn-outline btn-small" href="#editais">Ver todos →</a>
-                </div>
-                <div id="destaquesList"></div>
-            </div>
-
             <div class="card" id="dashVistosCard" hidden>
-                <div class="card-title"><span>Vistos recentemente</span></div>
+                <div class="card-title"><h2 class="card-title-h">Vistos recentemente</h2></div>
                 <ul class="vistos-list" id="dashVistos"></ul>
             </div>
 
-            <div class="card">
-                <div class="card-title">Recursos em editais por área</div>
+            <section aria-labelledby="jornadasTitulo" class="jornadas">
+                <h2 id="jornadasTitulo" class="section-title">Depois do edital</h2>
+                <div class="jornadas-grid">
+                    <a class="jornada-card" href="#projetos">
+                        <strong>Prestar contas de um projeto financiado <span class="selo-demo">Demonstração</span></strong>
+                        <span>Simule o fluxo da prestação de contas, do preenchimento ao histórico. Nada é enviado às instituições.</span>
+                        <span class="jornada-cta">Conhecer o fluxo <span aria-hidden="true">→</span></span>
+                    </a>
+                    <a class="jornada-card" href="#fundos">
+                        <strong>Acompanhar o dinheiro público</strong>
+                        <span>Veja as <span id="statInstituicoes">0</span> instituições financiadoras, seus editais, projetos e onde estão.</span>
+                        <span class="jornada-cta">Ver transparência <span aria-hidden="true">→</span></span>
+                    </a>
+                </div>
+            </section>
+
+            <div class="card" id="areaChartCard">
+                <div class="card-title"><h2 class="card-title-h">Recursos em editais por área</h2></div>
                 <canvas id="areaChart" style="max-height: 300px;" aria-label="Gráfico da soma dos valores dos editais por área" role="img"></canvas>
                 <p class="nota" id="areaChartFallback">Soma do valor total dos editais cadastrados, em reais (moedas estrangeiras convertidas por cotação de referência).</p>
             </div>
@@ -1152,7 +1342,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <!-- FUNDOS PAGE -->
     <div id="page-fundos" class="page-content">
         <div class="hero-section">
-            <h1 class="hero-title">Fundos e Agências</h1>
+            <h1 class="hero-title">Instituições financiadoras</h1>
             <div class="hero-value" id="fundosCount">0</div>
             <div class="hero-subtitle" id="fundosSub">instituições cadastradas</div>
         </div>
@@ -1160,11 +1350,11 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         <div class="container">
             <p class="nota" style="margin-bottom:16px;">Selecione uma instituição para ver desembolsos, áreas de atuação, editais e projetos. Valores anuais são ilustrativos.</p>
             <div class="card">
-                <h2 class="card-title">Fundos nacionais</h2>
+                <h2 class="card-title">Instituições nacionais</h2>
                 <div class="fundos-container" id="fundosNacionais"></div>
             </div>
             <div class="card">
-                <h2 class="card-title">Fundos internacionais</h2>
+                <h2 class="card-title">Instituições internacionais</h2>
                 <div class="fundos-container" id="fundosInternacionais"></div>
             </div>
         </div>
@@ -1173,15 +1363,14 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <!-- EDITAIS PAGE -->
     <div id="page-editais" class="page-content">
         <div class="hero-section">
-            <h1 class="hero-title">Editais e Chamadas</h1>
+            <h1 class="hero-title">Editais e chamadas</h1>
             <div class="hero-value" id="editaisCount">0</div>
-            <div class="hero-subtitle" id="editaisSubtitle">Oportunidades disponíveis</div>
+            <!-- Frase única de contagem, derivada da mesma lista (editais[]) que a barra de resultados -->
+            <div class="hero-subtitle" id="editaisSubtitle"></div>
         </div>
 
         <div class="container">
-            <div class="demo-banner" role="note" id="demoBanner">
-                <strong>Dados demonstrativos.</strong> Antes de submeter uma proposta, confirme datas, valores e requisitos no edital oficial publicado pela instituição.
-            </div>
+            <a class="pular-resultados" href="#resultadosTitulo" data-action="pular-resultados">Pular para os resultados</a>
 
             <div class="perfil-card" id="perfilCard">
                 <div>
@@ -1194,15 +1383,16 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 </div>
             </div>
 
-            <div class="editais-layout">
-            <div class="filter-section">
+            <div class="editais-layout" id="editaisLayout">
+            <div class="filter-section" id="filtrosPainel">
                 <!-- Ferramentas do captador (assets/captacao.js): buscas salvas -->
                 <div id="capBuscasEditais"></div>
-                <h2 class="filter-title">Filtros</h2>
+                <h2 class="filter-title" id="filtrosTitulo">Filtros</h2>
 
-                <div class="filter-item">
-                    <label for="searchInput">Busca <span class="nota" style="text-transform:none;letter-spacing:0;font-weight:500;">· atalho: tecla /</span></label>
-                    <input type="search" id="searchInput" placeholder="Título, instituição, tema ou palavra-chave (ex.: saude digital, amazonia)" autocomplete="off">
+                <!-- Estado (UF) é filtro principal: não fica escondido em "Mais filtros" -->
+                <div class="filter-item filtro-uf">
+                    <label for="filterUF">Estado de atuação</label>
+                    <select id="filterUF"><option value="">Todo o Brasil</option></select>
                 </div>
 
                 <div class="facetas" id="facetas">
@@ -1222,7 +1412,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                         <span class="faceta-label" id="facetaStatusLabel">Situação</span>
                         <div class="faceta-chips" data-faceta="status"></div>
                     </div>
-                    <p class="faceta-ajuda">Os números mostram quantos editais você encontra ao escolher cada opção, considerando os outros filtros. Clique de novo para desmarcar.</p>
+                    <p class="faceta-ajuda">Os números mostram quantos editais você encontra ao escolher cada opção, considerando os outros filtros. Toque ou clique de novo para desmarcar.</p>
                 </div>
 
                 <!-- Estado dos filtros de tipologia (controlado pelos chips acima; mantém a URL e a busca da página inicial) -->
@@ -1258,10 +1448,6 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                             </select>
                         </div>
                         <div class="filter-item">
-                            <label for="filterUF">Estado de atuação</label>
-                            <select id="filterUF"><option value="">Todo o Brasil</option></select>
-                        </div>
-                        <div class="filter-item">
                             <label for="filterValor">Valor por proposta</label>
                             <select id="filterValor">
                                 <option value="">Qualquer valor</option>
@@ -1286,16 +1472,20 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     <span class="preset-label">Atalhos:</span>
                     <button class="chip-toggle" data-preset="urgentes" aria-pressed="false">Encerram em 30 dias</button>
                     <button class="chip-toggle" data-preset="internacional" aria-pressed="false">Internacionais</button>
-                    <button class="chip-toggle" id="toggleFavoritos" aria-pressed="false">★ Meus favoritos</button>
+                    <button class="chip-toggle" id="toggleFavoritos" aria-pressed="false"><span aria-hidden="true">★</span> Meus favoritos</button>
                 </div>
             </div>
 
             <div class="editais-resultados">
+            <div class="filter-item busca-editais">
+                <label for="searchInput">Buscar editais <span class="atalho-teclado">· atalho: tecla /</span></label>
+                <input type="search" id="searchInput" placeholder="Título, instituição ou tema (ex.: saúde digital, amazônia)" autocomplete="off">
+            </div>
             <div class="results-toolbar">
                 <div class="results-count" id="resultsCount" aria-live="polite"></div>
                 <div class="toolbar-actions">
                     <div class="view-toggle" role="group" aria-label="Modo de visualização">
-                        <button data-view="lista" aria-pressed="true">☰ Lista</button>
+                        <button data-view="lista" aria-pressed="true">Lista</button>
                         <button data-view="calendario" aria-pressed="false">Calendário</button>
                     </div>
                     <label for="sortSelect" class="sr-only">Ordenar por</label>
@@ -1307,7 +1497,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                         <option value="az">Ordenar: A–Z</option>
                     </select>
                     <details class="menu">
-                        <summary class="btn btn-outline btn-small">⋯ Mais ações</summary>
+                        <summary class="btn btn-outline btn-small"><span aria-hidden="true">⋯</span> Mais ações</summary>
                         <div class="menu-panel">
                             <button data-action="export-csv">Exportar resultados (CSV)</button>
                             <button data-action="export-ics-all">Prazos dos resultados na agenda (.ics)</button>
@@ -1316,18 +1506,23 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                             <a href="prazos/">Página de prazos</a>
                         </div>
                     </details>
-                    <button class="btn btn-secondary btn-small" data-action="clear-filters">Limpar filtros</button>
+                    <button class="btn btn-secondary btn-small limpar-desktop" data-action="clear-filters">Limpar filtros</button>
                 </div>
             </div>
             <!-- Ferramentas do captador (assets/captacao.js): assinar alertas e salvar a busca -->
             <div id="capAcoesBusca"></div>
+            <h2 class="sr-only" id="resultadosTitulo" tabindex="-1">Resultados</h2>
             <div class="active-filters" id="activeFilters"></div>
 
             <div id="editaisList"></div>
             <div id="calendarView" hidden></div>
+            <!-- Origem dos dados: linha de rodapé da lista (não empurra os resultados para baixo) -->
+            <p class="lista-rodape" role="note" id="demoBanner"></p>
             </div>
             </div>
         </div>
+        <!-- Celular: botão fixo que abre a gaveta de filtros -->
+        <button type="button" class="filtros-fab" id="filtrosFab" aria-haspopup="dialog" aria-controls="filtrosDrawer">Filtros <span id="filtrosFabN">(0)</span></button>
     </div>
 
     <!-- MINHAS PROPOSTAS PAGE -->
@@ -1338,6 +1533,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             <div class="hero-subtitle">Acompanhe cada edital da intenção ao resultado</div>
         </div>
         <div class="container">
+            <p class="aviso-local" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Seus dados ficam só neste navegador — <a href="#capBackupTitulo" data-action="ir-backup">faça backup</a>.</span></p>
             <!-- Ferramentas do captador (assets/captacao.js): Lista | Quadro, avisos de certidões -->
             <div id="capPropostasBarra"></div>
             <div class="pipeline" id="pipelineResumo" role="group" aria-label="Filtrar por etapa"></div>
@@ -1353,13 +1549,13 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <!-- PROJETOS PAGE -->
     <div id="page-projetos" class="page-content">
         <div class="hero-section">
-            <h1 class="hero-title">Projetos financiados</h1>
+            <h1 class="hero-title">Projetos financiados <span class="selo-demo selo-demo-grande">Demonstração</span></h1>
             <div class="hero-value" id="projetosCount">0</div>
             <div class="hero-subtitle" id="projetosSub">Acompanhe a execução e preste contas</div>
         </div>
 
         <div class="container">
-            <div class="demo-banner" role="note"><strong>Área de demonstração.</strong> Os projetos e as prestações de contas abaixo são exemplos para conhecer o fluxo; os envios não chegam às instituições financiadoras.</div>
+            <div class="demo-banner demo-forte" role="note"><strong>Área de demonstração.</strong> Os projetos e as prestações de contas abaixo são exemplos fictícios para conhecer o fluxo; nada do que você preencher aqui chega às instituições financiadoras. A prestação de contas real é feita no sistema do financiador.</div>
             <div class="filter-section">
                 <div class="filter-grid" style="margin-top:0;">
                     <div class="filter-item span-2">
@@ -1394,7 +1590,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <!-- MAPA PAGE -->
     <div id="page-mapa" class="page-content">
         <div class="hero-section">
-            <h1 class="hero-title">Mapa de fundos</h1>
+            <h1 class="hero-title">Mapa das instituições</h1>
             <div class="hero-value">Brasil e mundo</div>
             <div class="hero-subtitle">Onde estão as instituições financiadoras</div>
         </div>
@@ -1450,7 +1646,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 <div class="card ajuda-passos">
                     <h2 class="card-title">Prestar contas</h2>
                     <ol>
-                        <li>Em <a href="#projetos">Projetos</a>, localize o projeto e clique em <strong>Prestar contas</strong>.</li>
+                        <li>Em <a href="#projetos">Transparência → Projetos</a> (demonstração), localize o projeto e clique em <strong>Prestar contas</strong>.</li>
                         <li>Preencha relatório, resultados e valor executado; anexe os comprovantes. O rascunho é salvo sozinho.</li>
                         <li>Revise o resumo e confirme o envio.</li>
                         <li>Guarde o <strong>protocolo</strong> e o comprovante. A situação da análise aparece no histórico do projeto.</li>
@@ -1459,9 +1655,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 <div class="card ajuda-passos">
                     <h2 class="card-title">Acompanhar recursos</h2>
                     <ol>
-                        <li>Em <a href="#fundos">Fundos</a>, escolha uma instituição para ver desembolsos e áreas.</li>
+                        <li>Em <a href="#fundos">Transparência → Instituições</a>, escolha uma instituição para ver desembolsos e áreas.</li>
                         <li>Veja os editais e projetos que ela financia.</li>
-                        <li>No <a href="#mapa">Mapa</a>, filtre instituições nacionais e internacionais.</li>
+                        <li>No <a href="#mapa">Mapa</a> (também em Transparência), filtre instituições nacionais e internacionais.</li>
                     </ol>
                 </div>
             </div>
@@ -1507,7 +1703,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
     <div id="page-agencia" class="page-content">
         <div class="container">
             <div class="breadcrumb">
-                <a href="#fundos">← Fundos e agências</a> / 
+                <a href="#fundos"><span aria-hidden="true">←</span> Instituições</a> / 
                 <span id="agenciaBreadcrumb"></span>
             </div>
 
@@ -1605,37 +1801,50 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
 
     <!-- MODAL: DETALHES DO EDITAL -->
     <dialog id="editalModal" class="modal" aria-labelledby="editalModalTitle">
-        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar"><span aria-hidden="true">✕</span></button>
         <div id="editalModalContent"></div>
+    </dialog>
+
+    <!-- GAVETA DE FILTROS (celular): recebe o painel #filtrosPainel enquanto aberta -->
+    <dialog id="filtrosDrawer" class="modal gaveta" aria-labelledby="filtrosDrawerTitulo">
+        <div class="gaveta-topo">
+            <h2 id="filtrosDrawerTitulo">Filtros</h2>
+            <button class="modal-close" data-action="close-modal" aria-label="Fechar filtros"><span aria-hidden="true">✕</span></button>
+        </div>
+        <div class="gaveta-corpo" id="filtrosDrawerCorpo"></div>
+        <div class="gaveta-rodape">
+            <button type="button" class="btn btn-secondary" data-action="clear-filters">Limpar filtros</button>
+            <button type="button" class="btn btn-primary" data-action="close-modal" id="filtrosVerBtn">Ver resultados</button>
+        </div>
     </dialog>
 
     <!-- MODAL: COMPARAÇÃO -->
     <dialog id="compareModal" class="modal" aria-labelledby="compareModalTitle">
-        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar"><span aria-hidden="true">✕</span></button>
         <div id="compareModalContent"></div>
     </dialog>
 
     <!-- MODAL: PERFIL -->
     <dialog id="perfilModal" class="modal" aria-labelledby="perfilModalTitle">
-        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar"><span aria-hidden="true">✕</span></button>
         <div id="perfilModalContent"></div>
     </dialog>
 
     <!-- MODAL: GERENCIAR EDITAIS -->
     <dialog id="gerenciarModal" class="modal" aria-labelledby="gerenciarModalTitle">
-        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar"><span aria-hidden="true">✕</span></button>
         <div id="gerenciarModalContent"></div>
     </dialog>
 
     <!-- MODAL: LOGIN -->
     <dialog id="loginModal" class="modal" aria-labelledby="loginModalTitle" style="max-width:480px;">
-        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar"><span aria-hidden="true">✕</span></button>
         <div id="loginModalContent"></div>
     </dialog>
 
     <!-- MODAL: PROJETO / PRESTAÇÃO DE CONTAS -->
     <dialog id="projetoModal" class="modal" aria-labelledby="projetoModalTitle">
-        <button class="modal-close" data-action="close-modal" aria-label="Fechar">✕</button>
+        <button class="modal-close" data-action="close-modal" aria-label="Fechar"><span aria-hidden="true">✕</span></button>
         <div id="projetoModalContent"></div>
     </dialog>
 
@@ -5614,14 +5823,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const st = statusEdital(e);
             if (st === 'aberto') {
                 const d = diasAte(e.encerramento);
+                // Microcopy: "Encerra hoje / amanhã / em N dias" quando é urgente; senão a data, que é o que a pessoa anota
                 const et = e.etapaPrazo ? `${esc(e.etapaPrazo)}: ` : '';
-                if (d === 0) return `<span class="badge badge-urgente">${et || 'Encerra '}${et ? 'encerra hoje' : 'hoje'}</span>`;
-                if (d <= 7) return `<span class="badge badge-urgente">${et ? et + 'encerra' : 'Encerra'} em ${plural(d, 'dia', 'dias')}</span>`;
-                return `<span class="badge badge-aberto">${et ? et + plural(d, 'dia', 'dias') : 'Aberto · ' + plural(d, 'dia restante', 'dias restantes')}</span>`;
+                const quando = d === 0 ? 'encerra hoje' : d === 1 ? 'encerra amanhã' : `encerra em ${plural(d, 'dia', 'dias')}`;
+                if (d <= 7) return `<span class="badge badge-urgente">${et}${et ? quando : quando.charAt(0).toUpperCase() + quando.slice(1)}</span>`;
+                return `<span class="badge badge-aberto">${et ? `${et}até ${fmtDate(e.encerramento)}` : `Aberto até ${fmtDate(e.encerramento)}`}</span>`;
             }
             if (st === 'em-breve') {
                 const d = diasAte(e.abertura);
-                return `<span class="badge badge-em-breve">Abre em ${plural(d, 'dia', 'dias')} (${fmtDate(e.abertura)})</span>`;
+                return `<span class="badge badge-em-breve">Abre ${d === 1 ? 'amanhã' : `em ${plural(d, 'dia', 'dias')}`} (${fmtDate(e.abertura)})</span>`;
             }
             return '<span class="badge badge-fechado">Encerrado</span>';
         }
@@ -5744,7 +5954,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
            Cada opção mostra quantos editais ficam se ela for escolhida, mantidos os demais
            filtros — evita becos sem saída (prevenção de erros) e mostra o tamanho da oferta.
         ===================================================================== */
-        const ADVANCED = ['formato', 'procedencia', 'uf', 'valor', 'prazo'];
+        const ADVANCED = ['formato', 'procedencia', 'valor', 'prazo']; // UF virou filtro principal (fora de "Mais filtros")
         function opcoesFaceta(k) {
             if (k === 'publico') return Object.keys(PUBLICOS).map(v => [v, PUBLICOS[v], ICONE_PUBLICO[v]]);
             if (k === 'modalidade') return Object.keys(TIPOS_APOIO).filter(v => editais.some(e => tipoApoio(e) === v)).map(v => [v, TIPOS_APOIO[v].nome, TIPOS_APOIO[v].icone]);
@@ -5858,10 +6068,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             for (const k of ['status', 'publico', 'area', 'modalidade', 'formato', 'procedencia', 'uf', 'valor', 'prazo']) {
                 if (f[k]) chips.push({ k, txt: labelDe(FILTER_FIELDS[k]) });
             }
-            if (f.fav) chips.push({ k: 'fav', txt: '★ Favoritos' });
+            if (f.fav) chips.push({ k: 'fav', txt: 'Favoritos' });
             if (f.rec) chips.push({ k: 'rec', txt: 'Compatíveis com meu perfil' });
             $('activeFilters').innerHTML = chips.map(c =>
-                `<button class="active-filter" data-action="remove-filter" data-key="${c.k}" aria-label="Remover filtro ${esc(c.txt)}">${esc(c.txt)} ✕</button>`
+                `<button class="active-filter" data-action="remove-filter" data-key="${c.k}" aria-label="Remover filtro ${esc(c.txt)}">${esc(c.txt)} <span aria-hidden="true">✕</span></button>`
             ).join('');
         }
 
@@ -5883,7 +6093,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const patrocinio = patrocinioAtivo(e);
             return `
             <article class="edital-card ${st}" data-action="details" data-id="${e.id}"${patrocinio ? ` data-patrocinio="${e.id}"` : ''} tabindex="0" aria-label="Edital: ${esc(e.titulo)}, ${STATUS_LABEL[st]}${patrocinio ? `, ${esc(textoPatrocinio(e).toLowerCase())}` : ''}">
-                <button class="favorite-btn ${fav ? 'active' : ''}" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Favoritar'}: ${esc(e.titulo)}">${fav ? '★' : '☆'}</button>
+                <button class="favorite-btn ${fav ? 'active' : ''}" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Favoritar'}: ${esc(e.titulo)}"><span aria-hidden="true">${fav ? '★' : '☆'}</span></button>
                 <div class="edital-badges">
                     ${patrocinio ? seloPatrocinioHTML(e) : ''}
                     ${compatBadge(e)}
@@ -5911,21 +6121,33 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 <div class="edital-actions">
                     ${compacto ? '' : `<label class="compare-check"><input type="checkbox" data-action="compare" data-id="${e.id}" ${compareSet.has(e.id) ? 'checked' : ''}> Comparar</label>`}
                     <button class="btn btn-primary btn-small" data-action="details" data-id="${e.id}">Ver detalhes</button>
-                    ${st !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}" aria-label="Adicionar prazo à agenda">Agenda</button>` : ''}
-                    <a class="btn btn-outline btn-small" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-action="external">Portal oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+                    ${st !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}" aria-label="Baixar o prazo para a agenda (.ics): ${esc(e.titulo)}">Agenda (.ics)</button>
+                    <a class="btn btn-outline btn-small" href="${esc(googleAgendaUrl(e))}" target="_blank" rel="noopener noreferrer" data-action="google-agenda" aria-label="Adicionar ao Google Agenda: ${esc(e.titulo)} (abre em nova aba)">Google Agenda <span aria-hidden="true">↗</span></a>` : ''}
+                    <a class="btn btn-outline btn-small" href="${esc(urlSegura(e.link) || e.link)}" target="_blank" rel="noopener noreferrer" data-action="external">Portal oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
                 </div>
             </article>`;
         }
 
+        // Link de evento do Google Agenda (dia inteiro no prazo final); todos os campos passam por encodeURIComponent
+        function googleAgendaUrl(e) {
+            const ymd = d => `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}`;
+            const ini = parseDate(e.encerramento), fim = new Date(ini.getTime() + DIA_MS);
+            const link = urlSegura(e.link);
+            const detalhes = `${e.instituicao}. Valor por proposta: ${valorPropostaTxt(e)}.${e.prazoNota ? ' ' + e.prazoNota : ''}\nConfirme o horário limite no edital oficial${link ? ': ' + link : '.'}`;
+            return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+                + `&text=${encodeURIComponent(`Prazo final: ${e.titulo}`)}`
+                + `&dates=${ymd(ini)}/${ymd(fim)}`
+                + `&details=${encodeURIComponent(detalhes)}`;
+        }
+
         function renderEditais(lista, f = getFiltros()) {
             currentEditais = lista;
+            // Todas as contagens saem de editais[] (e do recorte filtrado dela), com a mesma frase
             const total = editais.length;
-            const abertos = lista.filter(e => statusEdital(e) === 'aberto').length;
-            $('editaisCount').textContent = lista.length;
-            $('editaisSubtitle').textContent = `${plural(abertos, 'aberto', 'abertos')} entre os resultados`;
-            $('resultsCount').textContent = lista.length === total
-                ? `${plural(total, 'edital', 'editais')}`
-                : `${lista.length} de ${plural(total, 'edital', 'editais')}`;
+            $('editaisCount').textContent = total;
+            $('editaisSubtitle').textContent = fraseContagem(editais);
+            $('resultsCount').textContent = lista.length === total ? fraseContagem(lista) : fraseContagem(lista, total);
+            atualizarFiltrosFab(f, lista.length);
 
             const container = $('editaisList');
             container.hidden = viewMode === 'calendario';
@@ -5933,6 +6155,38 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             if (viewMode === 'calendario') { renderCalendario(lista); return; }
             if (lista.length === 0) { container.innerHTML = semResultadosHTML(f); return; }
             container.innerHTML = lista.map(e => editalCardHTML(e)).join('');
+        }
+
+        // "58 editais · 54 com inscrições abertas" (ou "12 de 58 editais · 10 com inscrições abertas")
+        function fraseContagem(lista, total) {
+            const abertos = lista.filter(e => statusEdital(e) === 'aberto').length;
+            const qtd = total !== undefined ? `${lista.length} de ${plural(total, 'edital', 'editais')}` : plural(lista.length, 'edital', 'editais');
+            return `${qtd} · ${abertos} com inscrições abertas`;
+        }
+
+        // Celular: "Filtros (n)" conta os filtros ativos da gaveta (a busca por palavra fica fora dela)
+        function filtrosAtivosN(f) {
+            return ['status', 'publico', 'area', 'modalidade', 'formato', 'procedencia', 'uf', 'valor', 'prazo'].filter(k => f[k]).length + (f.fav ? 1 : 0) + (f.rec ? 1 : 0);
+        }
+        function atualizarFiltrosFab(f, nResultados) {
+            const n = filtrosAtivosN(f);
+            $('filtrosFabN').textContent = `(${n})`;
+            $('filtrosFab').setAttribute('aria-label', n ? `Filtros: ${plural(n, 'filtro ativo', 'filtros ativos')}` : 'Filtros: nenhum ativo');
+            $('filtrosVerBtn').textContent = `Ver ${plural(nResultados, 'resultado', 'resultados')}`;
+        }
+
+        /* Gaveta de filtros (celular): o mesmo painel #filtrosPainel é movido para o <dialog> e devolvido ao fechar */
+        const mqDesktop = window.matchMedia ? window.matchMedia('(min-width: 1024px)') : { matches: true, addEventListener() {} };
+        function abrirGavetaFiltros() {
+            const d = $('filtrosDrawer');
+            $('filtrosDrawerCorpo').appendChild($('filtrosPainel'));
+            abrirDialog(d);
+            const alvo = d.querySelector('#filterUF');
+            if (alvo) alvo.focus();
+        }
+        function devolverPainelFiltros() {
+            const layout = $('editaisLayout'), painel = $('filtrosPainel');
+            if (painel.parentElement !== layout) layout.insertBefore(painel, layout.firstChild);
         }
 
         /* Destaque patrocinado — mesmas regras de scripts/patrocinio.mjs: período (patrocinioInicio..patrocinioAte),
@@ -5973,14 +6227,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             track('patrocinio-' + id);
         }
 
+        // Início: "Encerram em breve" — 3 abertos com o prazo mais próximo (do seu perfil, se houver)
         function renderDestaques() {
             const usarPerfil = perfilAtivo();
-            $('destaquesTitulo').textContent = usarPerfil ? 'Recomendados para você' : 'Editais em Destaque';
+            $('destaquesTitulo').textContent = usarPerfil ? 'Encerram em breve para o seu perfil' : 'Encerram em breve';
             const candidatos = editais.filter(e => statusEdital(e) === 'aberto' && (!usarPerfil || avaliarCompat(e).elegivel));
             // Um patrocinado (sinalizado, vaga "inicio") pode ocupar o primeiro lugar do destaque; o restante segue a ordem normal
             const escolhido = escolherVagaPatrocinada(editais.filter(e => patrocinioAtivo(e, 'inicio') && (!usarPerfil || avaliarCompat(e).elegivel)));
             const patro = escolhido ? [escolhido] : [];
-            const destaques = [...patro, ...ordenar(candidatos.filter(e => !patro.includes(e)), usarPerfil ? 'compat' : 'prazo')].slice(0, 3);
+            const destaques = [...patro, ...ordenar(candidatos.filter(e => !patro.includes(e)), 'prazo')].slice(0, 3);
             const vaga = e => `<div class="vaga-patrocinada" role="group" aria-label="Destaque patrocinado">
                     <p class="vaga-rotulo"><strong>Destaque patrocinado</strong> <span>vaga reservada, fora da ordem da lista</span> <a class="por-que" href="anuncie/#regras">Por que estou vendo isto?</a></p>
                     ${editalCardHTML(e, { compacto: true })}</div>`;
@@ -6021,7 +6276,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const proxima = etapas.findIndex(et => parseDate(et.data) >= HOJE);
 
             const modal = $('editalModal');
+            const focoAntes = modal.open ? assinaturaFoco(modal) : null;
             modal.dataset.id = e.id;
+            const dPrazo = diasAte(e.encerramento);
+            const linkOficial = urlSegura(e.link) || e.link;
             $('editalModalContent').innerHTML = `
                 <div class="modal-header">
                     <div class="edital-badges" style="padding-right:0;margin-bottom:0;">
@@ -6032,37 +6290,46 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     </div>
                     ${e.numero ? `<p class="nota" style="margin-top:8px;">${esc(e.numero)}</p>` : ''}
                     <h2 id="editalModalTitle">${esc(e.titulo)}</h2>
+                    ${e.origem === 'transferegov' ? `<a class="selo-auto" href="#notaOrigem-${e.id}" data-action="ir-nota-origem" data-id="${e.id}">Leitura automática<span class="sr-only">: dados lidos do Transferegov sem revisão humana. Ver a nota de origem</span></a>` : ''}
                     <p>${esc(e.instituicao)} · ${esc(AREAS[e.tema] || e.tema)} · ${esc(e.abrangencia)}</p>
                 </div>
                 <div class="modal-body">
+                    <!-- 1. Prazo e valor -->
+                    <dl class="prazo-valor">
+                        <div><dt>${st === 'em-breve' ? 'Abre em' : 'Prazo final'}</dt><dd>${fmtDate(st === 'em-breve' ? e.abertura : e.encerramento)}${st === 'aberto' ? ` <span class="prazo-rel${dPrazo <= 7 ? ' urgente' : ''}">${dPrazo === 0 ? 'encerra hoje' : dPrazo === 1 ? 'encerra amanhã' : `faltam ${plural(dPrazo, 'dia', 'dias')}`}</span>` : st === 'fechado' ? ' <span class="prazo-rel">encerrado</span>' : ''}</dd></div>
+                        <div><dt>Valor por proposta</dt><dd>${valorPropostaTxt(e)}</dd></div>
+                        ${e.valorTotal > 0 ? `<div><dt>Total do edital</dt><dd>${fmtValor(e.valorTotal, e.moeda)}</dd></div>` : ''}
+                    </dl>
                     <div class="modal-actions">
-                        <a class="btn btn-primary btn-small" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer">Portal oficial</a>
-                        ${st !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}">Adicionar à agenda</button>` : ''}
-                        <button class="btn btn-outline btn-small" data-action="whatsapp" data-id="${e.id}">WhatsApp</button>
-                        <button class="btn btn-outline btn-small" data-action="share" data-id="${e.id}">Compartilhar</button>
-                        <button class="btn btn-outline btn-small" data-action="fav" data-id="${e.id}" aria-pressed="${fav}">${fav ? '★ Favorito' : '☆ Favoritar'}</button>
+                        <a class="btn btn-primary btn-small" href="${esc(linkOficial)}" target="_blank" rel="noopener noreferrer">Portal oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+                        <button class="btn btn-outline btn-small" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Favoritar'}: ${esc(e.titulo)}"><span aria-hidden="true">${fav ? '★' : '☆'}</span> ${fav ? 'Favorito' : 'Favoritar'}</button>
                         ${agencias[e.agencia] ? `<button class="btn btn-outline btn-small" data-action="agencia" data-key="${e.agencia}">Ver instituição</button>` : ''}
-                        <button class="btn btn-outline btn-small" data-action="print">Imprimir / PDF</button>
+                        <div class="dropdown" data-dropdown>
+                            <button type="button" class="btn btn-outline btn-small dropdown-btn" aria-expanded="false" aria-controls="compartilharMenu-${e.id}">Compartilhar <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>
+                            <div class="dropdown-painel" id="compartilharMenu-${e.id}" hidden>
+                                <button type="button" data-action="share" data-id="${e.id}">Copiar ou enviar o link</button>
+                                <button type="button" data-action="whatsapp" data-id="${e.id}">Enviar pelo WhatsApp</button>
+                                ${st !== 'fechado' ? `<button type="button" data-action="ics" data-id="${e.id}">Baixar para a agenda (.ics)</button>
+                                <a href="${esc(googleAgendaUrl(e))}" target="_blank" rel="noopener noreferrer" data-action="google-agenda">Adicionar ao Google Agenda <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>` : ''}
+                                <button type="button" data-action="print">Imprimir ou salvar em PDF</button>
+                            </div>
+                        </div>
                         ${e.custom ? `<button class="btn btn-outline btn-small" data-action="edit-edital" data-id="${e.id}">Editar</button>
                         <button class="btn btn-danger btn-small" data-action="delete-edital" data-id="${e.id}">Excluir</button>` : ''}
                     </div>
                     <p class="print-only" style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Ficha gerada em ${fmtDate(isoDe(HOJE))} na plataforma Fundos Brasil. Confirme todas as informações no edital oficial: ${esc(e.link)}</p>
 
-                    ${compat ? `
-                    <div class="modal-section">
-                        <h3>Compatibilidade com seu perfil · ${compat.elegivel ? `${compat.score}%` : 'fora do perfil'}</h3>
-                        <ul class="motivos">${compat.motivos.map(m => `<li class="${m.ok ? 'ok' : 'no'}">${esc(m.txt)}</li>`).join('')}</ul>
-                    </div>` : `
-                    <div class="modal-section no-print">
-                        <p style="font-size:14px;color:var(--gray-dark);"><button class="btn btn-outline btn-small" data-action="edit-perfil">Defina seu perfil</button> para ver se você pode participar deste edital.</p>
-                    </div>`}
+                    <!-- 2. Posso concorrer? (perfil ou teste rápido; o teste de requisitos do edital entra no slot) -->
+                    ${possoConcorrerHTML(e, compat)}
 
+                    <!-- 3. Acompanhar -->
                     ${acompanhamentoHTML(e)}
 
+                    <!-- 4. Resumo -->
                     <div class="modal-section">
                         <h3>Resumo</h3>
                         <p>${comGlossario(esc(e.resumo || 'Sem resumo cadastrado. Consulte o edital oficial.'))}</p>
-                        ${e.origem === 'transferegov' ? `<p class="nota" style="margin-top:8px;"><strong>Leitura automática, sem revisão humana.</strong> Dados lidos da API pública do Transferegov${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}. Área, abrangência, valores e prazos podem conter erros: confirme no Transferegov.br${e.codigoPrograma ? `, pelo código ${esc(e.codigoPrograma)}` : ''}, antes de agir.${e.abrangenciaNota ? ` ${esc(e.abrangenciaNota)}` : ''}</p>` : (e.fonte || e.verificadoEm ? `<p class="nota" style="margin-top:8px;">Informações conferidas por pessoa${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(urlSegura(e.fonte))}" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;">fonte oficial</a>` : ''}. Vale sempre o texto do edital.</p>` : '')}
+                        ${e.origem === 'transferegov' ? `<p class="nota nota-origem" id="notaOrigem-${e.id}" tabindex="-1" style="margin-top:8px;"><strong>Leitura automática, sem revisão humana.</strong> Dados lidos da API pública do Transferegov${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}. Área, abrangência, valores e prazos podem conter erros: confirme no Transferegov.br${e.codigoPrograma ? `, pelo código ${esc(e.codigoPrograma)}` : ''}, antes de agir.${e.abrangenciaNota ? ` ${esc(e.abrangenciaNota)}` : ''}</p>` : (e.fonte || e.verificadoEm ? `<p class="nota" style="margin-top:8px;">Informações conferidas por pessoa${e.verificadoEm ? ` em ${fmtDate(e.verificadoEm)}` : ''}${e.fonte ? ` na <a href="${esc(urlSegura(e.fonte))}" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;">fonte oficial</a>` : ''}. Vale sempre o texto do edital.</p>` : '')}
                     </div>
 
                     <div class="modal-section">
@@ -6112,19 +6379,33 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                             ${e.documentos.map((d, i) => `
                                 <label><input type="checkbox" data-action="check" data-id="${e.id}" data-index="${i}" ${checks.includes(i) ? 'checked' : ''}><span>${comGlossario(esc(d))}</span></label>`).join('')}
                         </div>
-                        <p style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Lista de referência para organizar sua proposta; o progresso fica salvo neste navegador. A lista oficial é a do edital. Termos sublinhados têm explicação — passe o mouse ou veja o <a href="#ajuda" style="color:var(--primary);font-weight:600;">glossário</a>.</p>
+                        <p style="font-size:12px;color:var(--gray-dark);margin-top:8px;">Lista de referência para organizar sua proposta; o progresso fica salvo neste navegador. A lista oficial é a do edital. Termos sublinhados têm explicação — toque ou passe o mouse sobre eles, ou veja o <a href="#ajuda" style="color:var(--primary);font-weight:600;">glossário</a>.</p>
                     </div>
                 </div>`;
 
-            if (!modal.open) {
-                if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
-            }
+            if (!modal.open) abrirDialog(modal, { id: e.id });
+            else restaurarFocoInterno(modal, focoAntes);
             history.replaceState(null, '', `#edital-${e.id}`);
             document.title = `${e.titulo} · Fundos Brasil`;
         }
 
         function closeModal(modal) {
             if (typeof modal.close === 'function') modal.close(); else modal.removeAttribute('open');
+        }
+
+        /* Re-renderizar o modal aberto (favoritar, mudar etapa…) não pode jogar o foco no <body>:
+           guarda a "assinatura" do controle focado e foca o equivalente no conteúdo novo */
+        function assinaturaFoco(modal) {
+            const a = document.activeElement;
+            if (!a || !modal.contains(a) || a === modal) return null;
+            if (a.id) return `#${CSS.escape(a.id)}`;
+            const attrs = ['data-action', 'data-etapa', 'data-key', 'data-index', 'data-cap', 'aria-controls', 'name'].filter(k => a.hasAttribute(k));
+            return attrs.length ? attrs.map(k => `[${k}="${CSS.escape(a.getAttribute(k))}"]`).join('') : null;
+        }
+        function restaurarFocoInterno(modal, sel) {
+            if (!sel) return;
+            const el = modal.querySelector(sel);
+            if (el) el.focus({ preventScroll: true });
         }
 
 
@@ -6233,6 +6514,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const bar = $('compareBar');
             $('compareCount').textContent = `${plural(compareSet.size, 'edital selecionado', 'editais selecionados')}`;
             bar.classList.toggle('active', compareSet.size > 0);
+            document.body.classList.toggle('comparando', compareSet.size > 0); // toasts e botão de filtros sobem acima da barra
             $('compareOpenBtn').disabled = compareSet.size < 2;
         }
 
@@ -6265,7 +6547,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     </div>
                 </div>`;
             const modal = $('compareModal');
-            if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+            abrirDialog(modal);
         }
 
         function clearCompare() {
@@ -6312,6 +6594,55 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             else motivos.push({ ok: false, txt: 'Submissões encerradas' });
 
             return { elegivel, score: elegivel ? Math.min(100, pontos) : 0, motivos };
+        }
+
+        /* "Posso concorrer?" no detalhe do edital: com perfil, mostra a compatibilidade; sem perfil, um teste
+           rápido (quem propõe + UF) pré-preenchido pelo chip/filtro ativo. O teste de requisitos do edital
+           (assets/captacao.js) entra no slot [data-eleg-slot]. */
+        const testeRapido = { publico: '', uf: '' };
+        function motivosBasicos(e, pub, uf) {
+            const motivos = [];
+            let ok = true;
+            if (pub) {
+                if (e.publico.includes(pub)) motivos.push({ ok: true, txt: `Aceita ${PUBLICOS[pub]}` });
+                else { ok = false; motivos.push({ ok: false, txt: `Não aceita ${PUBLICOS[pub]} (aceita: ${e.publico.map(p => PUBLICOS[p]).join(', ')})` }); }
+            }
+            if (uf) {
+                if (atendeUF(e, uf)) motivos.push({ ok: true, txt: !ufsDoEdital(e) ? `Abrangência nacional: inclui ${UFS[uf]}` : `Abrange ${UFS[uf]} (${e.abrangencia})` });
+                else { ok = false; motivos.push({ ok: false, txt: `Não abrange ${UFS[uf]} (abrangência: ${e.abrangencia})` }); }
+            }
+            return { ok, motivos };
+        }
+        const motivosHTML = ms => `<ul class="motivos">${ms.map(m => `<li class="${m.ok ? 'ok' : 'no'}"><span class="sr-only">${m.ok ? 'Atende: ' : 'Não atende: '}</span>${esc(m.txt)}</li>`).join('')}</ul>`;
+        function possoResultadoHTML(e, pub, uf) {
+            if (!pub && !uf) return '<p class="nota">Escolha quem vai propor e o estado para saber se este edital aceita sua organização.</p>';
+            const r = motivosBasicos(e, pub, uf);
+            const veredito = !r.ok ? 'Não, pelo que você informou.' : (pub && uf ? 'Sim, pelo que você informou.' : 'Até aqui, sim. Informe também o outro campo.');
+            return `<p class="posso-veredito ${r.ok ? 'ok' : 'no'}"><strong>${veredito}</strong></p>${motivosHTML(r.motivos)}
+                <button type="button" class="btn btn-ghost btn-small no-print" data-action="posso-salvar-perfil" data-id="${e.id}">Usar como meu perfil</button>`;
+        }
+        function possoConcorrerHTML(e, compat) {
+            const slot = `<div class="posso-slot" data-eleg-slot="${e.id}"></div>`;
+            const tit = `<h3 id="possoTitulo-${e.id}">Posso concorrer?</h3>`;
+            if (compat) {
+                return `<section class="modal-section posso" aria-labelledby="possoTitulo-${e.id}">${tit}
+                    <p class="posso-veredito ${compat.elegivel ? 'ok' : 'no'}"><strong>${compat.elegivel ? `Sim, pelo seu perfil · ${compat.score}% compatível` : 'Pelo seu perfil, não'}</strong> <span class="nota">(${esc(resumoPerfil())})</span></p>
+                    ${motivosHTML(compat.motivos)}
+                    <p class="no-print"><button type="button" class="link-btn" data-action="edit-perfil">Editar meu perfil</button></p>
+                    ${slot}</section>`;
+            }
+            const pub = testeRapido.publico || val('filterPublico');
+            const uf = testeRapido.uf || val('filterUF');
+            const opts = (obj, atual) => Object.entries(obj).map(([v, t]) => `<option value="${esc(v)}"${v === atual ? ' selected' : ''}>${esc(t)}</option>`).join('');
+            return `<section class="modal-section posso" aria-labelledby="possoTitulo-${e.id}">${tit}
+                <div class="posso-campos no-print">
+                    <div class="form-group"><label for="possoPublico-${e.id}">Quem vai propor</label>
+                        <select id="possoPublico-${e.id}" data-posso="publico" data-id="${e.id}"><option value="">Escolha…</option>${opts(PUBLICOS, pub)}</select></div>
+                    <div class="form-group"><label for="possoUF-${e.id}">Estado de atuação</label>
+                        <select id="possoUF-${e.id}" data-posso="uf" data-id="${e.id}"><option value="">Escolha…</option>${opts(UFS, uf)}</select></div>
+                </div>
+                <div class="posso-resultado" aria-live="polite">${possoResultadoHTML(e, pub, uf)}</div>
+                ${slot}</section>`;
         }
 
         function compatBadge(e) {
@@ -6454,9 +6785,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                     <div class="cal-header">
                         <h3>${(m => m.charAt(0).toUpperCase() + m.slice(1))(calMes.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' }))}</h3>
                         <div class="cal-nav">
-                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="-1" aria-label="Mês anterior">←</button>
+                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="-1" aria-label="Mês anterior"><span aria-hidden="true">←</span></button>
                             <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="0">Hoje</button>
-                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="1" aria-label="Próximo mês">→</button>
+                            <button class="btn btn-outline btn-small" data-action="cal-nav" data-delta="1" aria-label="Próximo mês"><span aria-hidden="true">→</span></button>
                         </div>
                     </div>
                     <div class="cal-grid" role="grid">
@@ -6791,8 +7122,70 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             showNotification('Editais próprios removidos');
         }
 
-        function abrirDialog(modal) {
-            if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+        /* Diálogos: guarda quem abriu (document.activeElement) e devolve o foco ao fechar (WCAG 2.4.3).
+           Se o elemento de origem foi re-renderizado, procura o equivalente pelo id do edital/projeto. */
+        const origemDialog = new WeakMap();
+        function abrirDialog(modal, ref = {}) {
+            if (!modal.open) {
+                const a = document.activeElement;
+                origemDialog.set(modal, { el: a && a !== document.body && !modal.contains(a) ? a : null, id: ref.id, sel: ref.sel });
+            }
+            if (typeof modal.showModal === 'function') { if (!modal.open) modal.showModal(); } else modal.setAttribute('open', '');
+        }
+        function visivel(el) { return !!(el && el.isConnected && el.getClientRects().length && !el.closest('[hidden], dialog:not([open])')); }
+        function devolverFoco(modal) {
+            const o = origemDialog.get(modal);
+            origemDialog.delete(modal);
+            if (!o) return;
+            // Uma navegação (link dentro do modal) já levou o foco para outro lugar: não disputa
+            const a = document.activeElement;
+            if (a && a !== document.body && !modal.contains(a) && a !== $('main-content')) return;
+            if (a === $('main-content') && !visivel(o.el)) return;
+            let alvo = visivel(o.el) ? o.el : null;
+            if (!alvo && o.el && o.el.dataset && o.el.dataset.action && o.id != null) {
+                alvo = [...document.querySelectorAll(`[data-action="${CSS.escape(o.el.dataset.action)}"][data-id="${CSS.escape(String(o.id))}"]`)].find(visivel);
+            }
+            if (!alvo && o.id != null) alvo = [...document.querySelectorAll(`.edital-card[data-id="${CSS.escape(String(o.id))}"], [data-action="details"][data-id="${CSS.escape(String(o.id))}"]`)].find(visivel);
+            if (!alvo && o.sel) alvo = [...document.querySelectorAll(o.sel)].find(visivel);
+            if (alvo) alvo.focus();
+        }
+        // Prende o Tab dentro do diálogo aberto (o showModal já torna o resto inerte; isto evita sair para a barra do navegador)
+        function prenderFoco(ev) {
+            if (ev.key !== 'Tab') return;
+            const d = [...document.querySelectorAll('dialog[open]')].pop();
+            if (!d) return;
+            const foc = [...d.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type=hidden]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')].filter(visivel);
+            if (!foc.length) return;
+            const prim = foc[0], ult = foc[foc.length - 1];
+            if (ev.shiftKey && (document.activeElement === prim || !d.contains(document.activeElement))) { ev.preventDefault(); ult.focus(); }
+            else if (!ev.shiftKey && (document.activeElement === ult || !d.contains(document.activeElement))) { ev.preventDefault(); prim.focus(); }
+        }
+
+        /* Menus suspensos (submenus da navegação e "Compartilhar"): botão com aria-expanded, Esc fecha e devolve o foco */
+        function alternarDropdown(btn, abrir) {
+            const painel = $(btn.getAttribute('aria-controls'));
+            if (!painel) return;
+            const aberto = abrir === undefined ? btn.getAttribute('aria-expanded') !== 'true' : abrir;
+            if (aberto) fecharDropdowns(btn);
+            btn.setAttribute('aria-expanded', String(aberto));
+            painel.hidden = !aberto;
+        }
+        function fecharDropdowns(exceto) {
+            document.querySelectorAll('.nav-sub-btn[aria-expanded="true"], .dropdown-btn[aria-expanded="true"]').forEach(b => {
+                if (b === exceto) return;
+                // No menu em gaveta (celular) os submenus funcionam como sanfona: não fecham uns aos outros
+                if (exceto && b.classList.contains('nav-sub-btn') && exceto.classList.contains('nav-sub-btn') && document.body.classList.contains('menu-aberto')) return;
+                b.setAttribute('aria-expanded', 'false');
+                const p = $(b.getAttribute('aria-controls')); if (p) p.hidden = true;
+            });
+        }
+        // Menu principal em gaveta (celular)
+        function alternarMenu(abrir) {
+            const btn = $('menuBtn');
+            const aberto = abrir === undefined ? btn.getAttribute('aria-expanded') !== 'true' : abrir;
+            btn.setAttribute('aria-expanded', String(aberto));
+            document.body.classList.toggle('menu-aberto', aberto);
+            if (aberto) { const a = $('mainNav').querySelector('a, button'); if (a) a.focus(); }
         }
 
         /* =====================================================================
@@ -6804,21 +7197,47 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         /* =====================================================================
            FEEDBACK: TOASTS COM AÇÃO (desfazer) E ANÚNCIOS PARA LEITOR DE TELA
         ===================================================================== */
-        function showNotification(msg, type = 'success', acao = null) {
-            const n = document.createElement('div');
-            n.className = `notification ${type}`;
-            const txt = document.createElement('span');
-            txt.textContent = msg;
-            n.appendChild(txt);
-            if (acao) {
-                const b = document.createElement('button');
-                b.className = 'toast-action';
-                b.textContent = acao.label;
-                b.addEventListener('click', () => { n.remove(); acao.fn(); });
-                n.appendChild(b);
+        /* Toasts: no máximo 2 visíveis, 4 s cada (pausa enquanto o mouse ou o foco estão nele), canto inferior,
+           fora dos botões fixos. Mensagens repetidas se agrupam: opcoes.grupo + opcoes.plural(n) → "3 editais adicionados". */
+        const TOAST_MAX = 2, TOAST_MS = 4000;
+        function showNotification(msg, type = 'success', acao = null, opcoes = {}) {
+            const box = $('toasts');
+            const chave = opcoes.grupo || msg;
+            let n = [...box.children].find(t => t.dataset.chave === chave);
+            // Com ação (ex.: "Desfazer"), o toast novo substitui o anterior: a ação vale para o último evento
+            if (n && acao) { clearTimeout(n._t); n.remove(); n = null; }
+            if (n) {
+                const qtd = Number(n.dataset.qtd || 1) + 1;
+                n.dataset.qtd = qtd;
+                n.querySelector('.toast-txt').textContent = opcoes.plural ? opcoes.plural(qtd) : `${msg} (${qtd}×)`;
+                box.appendChild(n); // vai para o fim (mais recente)
+            } else {
+                n = document.createElement('div');
+                n.className = `notification ${type}`;
+                n.dataset.chave = chave;
+                const txt = document.createElement('span');
+                txt.className = 'toast-txt';
+                txt.textContent = msg;
+                n.appendChild(txt);
+                if (acao) {
+                    const b = document.createElement('button');
+                    b.className = 'toast-action';
+                    b.textContent = acao.label;
+                    b.addEventListener('click', () => { n.remove(); acao.fn(); });
+                    n.appendChild(b);
+                }
+                n.addEventListener('mouseenter', () => { n.dataset.pausa = '1'; });
+                n.addEventListener('mouseleave', () => { delete n.dataset.pausa; agendarSaida(n); });
+                n.addEventListener('focusin', () => { n.dataset.pausa = '1'; });
+                n.addEventListener('focusout', () => { delete n.dataset.pausa; agendarSaida(n); });
+                box.appendChild(n);
+                while (box.children.length > TOAST_MAX) box.firstElementChild.remove();
             }
-            $('toasts').appendChild(n);
-            setTimeout(() => n.remove(), acao ? 7000 : 3800);
+            agendarSaida(n);
+        }
+        function agendarSaida(n) {
+            clearTimeout(n._t);
+            n._t = setTimeout(() => { if (n.dataset.pausa) return; n.remove(); }, TOAST_MS);
         }
 
         // Medição do funil (GoatCounter ou GA4, conforme data/site.json); silenciosa se não houver ferramenta
@@ -6912,8 +7331,11 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function atualizarBannerFonte() {
             const b = $('demoBanner');
             if (!fonteDados.demonstrativo) {
-                const nAuto = EDITAIS_BASE.filter(e => e.origem === 'transferegov').length, nCur = fonteDados.total - nAuto;
-                b.innerHTML = `<strong>${plural(fonteDados.total, 'edital real', 'editais reais')}</strong>: ${plural(nCur, 'conferido por pessoa', 'conferidos por pessoa')} na fonte oficial${nAuto > 0 ? ` e ${plural(nAuto, 'programa lido', 'programas lidos')} automaticamente do Transferegov, sem revisão` : ''}${fonteDados.geradoEm ? `; atualizados em ${fmtDate(fonteDados.geradoEm)}` : ''}. Antes de submeter, confirme no edital oficial — ele sempre prevalece.`;
+                // Mesma lista da contagem de resultados (editais[]): os números batem com "58 editais · 54 com inscrições abertas"
+                const nAuto = editais.filter(e => !e.custom && e.origem === 'transferegov').length;
+                const nSeus = editais.filter(e => e.custom).length;
+                const nCur = editais.length - nAuto - nSeus;
+                b.innerHTML = `<strong>Origem dos ${plural(editais.length, 'edital', 'editais')}:</strong> ${plural(nCur, 'conferido por pessoa', 'conferidos por pessoa')} na fonte oficial${nAuto > 0 ? `, ${plural(nAuto, 'programa lido', 'programas lidos')} automaticamente do Transferegov, sem revisão` : ''}${nSeus ? `, ${plural(nSeus, 'cadastrado por você', 'cadastrados por você')}` : ''}${fonteDados.geradoEm ? `; atualizados em ${fmtDate(fonteDados.geradoEm)}` : ''}. Antes de submeter, confirme no edital oficial — ele sempre prevalece.`;
             } else {
                 b.innerHTML = `<strong>Dados demonstrativos</strong>${fonteDados.tipo === 'arquivo' && fonteDados.geradoEm ? ` (arquivo de ${fmtDate(fonteDados.geradoEm)})` : ''}. Antes de submeter uma proposta, confirme datas, valores e requisitos no edital oficial publicado pela instituição.`;
             }
@@ -6933,6 +7355,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const logado = !!usuario;
             $('loginBtn').hidden = logado;
             $('userInfo').classList.toggle('active', logado);
+            $('navNomeBtn').textContent = logado ? `Seu nome nos relatórios: ${usuario.nome}` : 'Seu nome (para relatórios)';
             if (logado) {
                 $('userAvatar').textContent = iniciais(usuario.nome);
                 $('userName').textContent = usuario.nome.split(/\s+/)[0];
@@ -6942,21 +7365,22 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function openLogin(depois = null, motivo = '') {
             aposLogin = depois;
             $('loginModalContent').innerHTML = `
-                <div class="modal-header"><h2 id="loginModalTitle">Entrar</h2><p>${esc(motivo || 'Identifique-se para registrar propostas e prestações de contas com seu nome.')}</p></div>
+                <div class="modal-header"><h2 id="loginModalTitle">Seu nome para relatórios</h2><p>${esc(motivo || 'O nome aparece nos relatórios de propostas e nos comprovantes que você gera.')}</p></div>
                 <div class="modal-body">
+                    <p class="aviso-local" role="note" style="margin-top:16px;"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><strong>Não é uma conta.</strong> Não há senha nem cadastro: o nome fica só neste navegador e não é enviado a ninguém.</span></p>
                     <form id="loginForm" novalidate style="margin-top:16px;">
-                        <div class="form-group"><label for="loginNome">Nome completo</label>
-                            <input id="loginNome" autocomplete="name" aria-describedby="err-loginNome"><span class="field-error" id="err-loginNome"></span></div>
-                        <div class="form-group"><label for="loginEmail">E-mail</label>
-                            <input id="loginEmail" type="email" autocomplete="email" aria-describedby="err-loginEmail"><span class="field-error" id="err-loginEmail"></span></div>
-                        <p class="nota">Demonstração: não há senha e nada é enviado a um servidor — seus dados ficam só neste navegador.</p>
+                        <div class="form-group"><label for="loginNome">Nome</label>
+                            <input id="loginNome" autocomplete="name" value="${usuario ? esc(usuario.nome) : ''}" aria-describedby="err-loginNome"><span class="field-error" id="err-loginNome"></span></div>
+                        <div class="form-group"><label for="loginEmail">E-mail <span class="nota">(opcional, sai no comprovante)</span></label>
+                            <input id="loginEmail" type="email" autocomplete="email" value="${usuario ? esc(usuario.email || '') : ''}" aria-describedby="err-loginEmail"><span class="field-error" id="err-loginEmail"></span></div>
                         <div class="modal-actions">
-                            <button type="submit" class="btn btn-primary">Entrar</button>
+                            <button type="submit" class="btn btn-primary">Usar este nome</button>
                             <button type="button" class="btn btn-secondary" data-action="close-modal">Cancelar</button>
+                            ${usuario ? '<button type="button" class="btn btn-danger" data-action="logout">Remover meu nome</button>' : ''}
                         </div>
                     </form>
                 </div>`;
-            abrirDialog($('loginModal'));
+            abrirDialog($('loginModal'), { sel: '#loginBtn, .user-summary' });
             $('loginNome').focus();
         }
 
@@ -6965,14 +7389,14 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const email = val('loginEmail').trim();
             const erros = {};
             if (nome.length < 3) erros.loginNome = 'Informe seu nome (pelo menos 3 letras).';
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) erros.loginEmail = 'Informe um e-mail válido, como nome@exemplo.org.';
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) erros.loginEmail = 'Informe um e-mail válido, como nome@exemplo.org, ou deixe em branco.';
             if (mostrarErros(erros, ['loginNome', 'loginEmail'])) return;
             usuario = { nome, email };
             store.set('usuario', usuario);
             closeModal($('loginModal'));
             renderUsuario();
-            const n = alertasDePrazo().length;
-            showNotification(`Olá, ${nome.split(' ')[0]}! ${n ? ` Você tem ${plural(n, 'prazo próximo', 'prazos próximos')} nos editais que acompanha.` : ''}`);
+            if (paginaAtual() === 'propostas') renderPropostas();
+            showNotification(`Pronto: “${nome}” vai nos relatórios e comprovantes.`);
             if (aposLogin) { const fn = aposLogin; aposLogin = null; fn(); }
         }
 
@@ -6980,7 +7404,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             usuario = null;
             store.set('usuario', null);
             renderUsuario();
-            showNotification('Você saiu. Suas propostas e rascunhos continuam neste navegador.');
+            if (paginaAtual() === 'propostas') renderPropostas();
+            showNotification('Nome removido. Suas propostas e rascunhos continuam neste navegador.');
         }
 
         /* =====================================================================
@@ -6993,7 +7418,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             refreshAll();
             reabrirModalSe(id);
             if (era) showNotification('Removido dos favoritos', 'success', { label: 'Desfazer', fn: () => toggleFavorite(id) });
-            else showNotification('★ Adicionado aos favoritos');
+            else showNotification('Adicionado aos favoritos', 'success', null, { grupo: 'fav-add', plural: n => `${n} editais adicionados aos favoritos` });
         }
 
         // Prazos em até 15 dias de editais que a pessoa acompanha (ou favoritou, se ainda não acompanha)
@@ -7020,7 +7445,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function showAlertas() {
             const lista = alertasDePrazo();
             if (!lista.length) { showNotification('Nenhum prazo próximo nos editais que você acompanha.'); return; }
-            showNotification('' + lista.map(e => `${e.titulo}: ${diasAte(e.encerramento) === 0 ? 'hoje' : plural(diasAte(e.encerramento), 'dia', 'dias')}`).join(' · '),
+            showNotification(lista.map(e => `${e.titulo}: ${diasAte(e.encerramento) === 0 ? 'hoje' : plural(diasAte(e.encerramento), 'dia', 'dias')}`).join(' · '),
                 'warning', { label: 'Ver propostas', fn: () => navigateTo('propostas') });
         }
 
@@ -7139,7 +7564,8 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 </div>
                 <div class="edital-actions">
                     <span class="nota" style="margin-right:auto;">Atualizado em ${new Date(p.atualizadoEm).toLocaleDateString('pt-BR')}</span>
-                    ${statusEdital(e) !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}">Agenda</button>` : ''}
+                    ${statusEdital(e) !== 'fechado' ? `<button class="btn btn-outline btn-small" data-action="ics" data-id="${e.id}" aria-label="Baixar o prazo para a agenda (.ics): ${esc(e.titulo)}">Agenda (.ics)</button>
+                    <a class="btn btn-outline btn-small" href="${esc(googleAgendaUrl(e))}" target="_blank" rel="noopener noreferrer" data-action="google-agenda" aria-label="Adicionar ao Google Agenda: ${esc(e.titulo)} (abre em nova aba)">Google Agenda <span aria-hidden="true">↗</span></a>` : ''}
                     <a class="btn btn-outline btn-small" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-action="external">Portal oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
                     <button class="btn btn-secondary btn-small" data-action="unfollow" data-id="${e.id}">Parar de acompanhar</button>
                 </div>
@@ -7182,7 +7608,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const sugestoes = editais.filter(e => favorites.includes(e.id) && !propostas[e.id] && statusEdital(e) !== 'fechado');
             $('propostasSugestoes').innerHTML = sugestoes.length ? `
                 <div class="card">
-                    <h2 class="card-title">★ Favoritos que você ainda não acompanha</h2>
+                    <h2 class="card-title">Favoritos que você ainda não acompanha</h2>
                     <ul class="vistos-list">${sugestoes.map(e => `
                         <li><span><button class="link-btn" data-action="details" data-id="${e.id}">${esc(e.titulo)}</button> ${prazoBadge(e)}</span>
                             <button class="btn btn-outline btn-small" data-action="follow" data-id="${e.id}">Acompanhar</button></li>`).join('')}</ul>
@@ -7205,17 +7631,17 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const p = propostas[e.id];
             if (!p) return `
                 <div class="modal-section no-print">
-                    <h3>Minha proposta</h3>
-                    <p style="font-size:14px;margin-bottom:10px;">Vai concorrer? Acompanhe este edital para organizar documentos, prazos e o resultado.</p>
+                    <h3>Acompanhar</h3>
+                    <p style="font-size:14px;margin-bottom:10px;">Vai concorrer? Acompanhe este edital para organizar documentos, prazos e o resultado em Minhas propostas.</p>
                     <button class="btn btn-success btn-small" data-action="follow" data-id="${e.id}">Acompanhar este edital</button>
                 </div>`;
             const a = proximaAcao(e, p);
             return `
                 <div class="modal-section no-print">
-                    <h3>Minha proposta</h3>
+                    <h3>Acompanhar · sua proposta</h3>
                     ${stepperHTML(e, p)}
                     <div class="proxima-acao ${a.alerta ? 'alerta' : ''}"><strong>Próximo passo:</strong> ${esc(a.txt)}</div>
-                    <a class="link-btn" href="#propostas">Ver em Minhas propostas →</a>
+                    <a class="link-btn" href="#propostas">Ver em Minhas propostas <span aria-hidden="true">→</span></a>
                 </div>`;
         }
 
@@ -7367,6 +7793,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const prox = proximaDe(p);
             return `
                 <div class="modal-header">
+                    <p><span class="selo-demo">Demonstração</span></p>
                     <h2 id="projetoModalTitle">Prestação de contas — ${esc(prox.periodo)}</h2>
                     <p>${esc(p.titulo)} · prazo ${fmtDate(prox.prazo)} (${relDias(prox.prazo)})</p>
                     ${stepsHTML(0)}
@@ -7425,12 +7852,12 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                         <tr><th scope="row">Relatório de atividades</th><td>${resumo(r.relatorio.trim())}</td></tr>
                         <tr><th scope="row">Resultados alcançados</th><td>${resumo(r.resultados.trim())}</td></tr>
                         <tr><th scope="row">Comprovantes</th><td>${r.arquivos.map(a => `${esc(a.nome)}`).join('<br>')}</td></tr>
-                        <tr><th scope="row">Responsável pelo envio</th><td>${usuario ? `${esc(usuario.nome)} (${esc(usuario.email)})` : '<span style="color:#B21B05;font-weight:600;">Você precisará entrar para enviar.</span>'}</td></tr>
+                        <tr><th scope="row">Responsável pelo envio</th><td>${usuario ? `${esc(usuario.nome)}${usuario.email ? ` (${esc(usuario.email)})` : ''}` : '<span style="color:var(--urgent-fg);font-weight:600;">Informe seu nome para registrar o envio.</span>'}</td></tr>
                     </table>
                     <p class="nota" style="margin-top:12px;">Nesta simulação, o envio gera um número de demonstração e um histórico de exemplo. Na vida real, a análise é feita pela instituição financiadora no sistema dela.</p>
                     <div class="modal-actions">
                         <button class="btn btn-secondary" data-action="pc-voltar" data-id="${p.id}">← Voltar e editar</button>
-                        <button class="btn btn-success" data-action="pc-enviar" data-id="${p.id}">${usuario ? 'Confirmar envio' : 'Entrar e enviar'}</button>
+                        <button class="btn btn-success" data-action="pc-enviar" data-id="${p.id}">${usuario ? 'Confirmar envio' : 'Informar nome e enviar'}</button>
                     </div>
                 </div>`;
         }
@@ -7549,7 +7976,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             const p = projetos.find(x => x.id === id);
             const erros = validarPC(p, pcDados);
             if (Object.keys(erros).length) { openPrestacao(id, 'form', erros); return; }
-            if (!usuario) { openLogin(() => openPrestacao(id, 'revisar'), 'Entre para enviar a prestação de contas com seu nome. Seu preenchimento está guardado.'); return; }
+            if (!usuario) { openLogin(() => openPrestacao(id, 'revisar'), 'Informe o nome que vai no comprovante da simulação. Seu preenchimento está guardado.'); return; }
             const seq = (store.get('pcSeq', 500) || 500) + 1;
             store.set('pcSeq', seq);
             const pc = {
@@ -7588,7 +8015,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 `Instituição financiadora: ${p.instituicao}`,
                 `Período de referência: ${pc.periodo}`,
                 `Valor executado acumulado: ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: p.moeda }).format(pc.valorExecutado)}`,
-                `Enviado por: ${pc.responsavel.nome} <${pc.responsavel.email}>`,
+                `Enviado por: ${pc.responsavel.nome}${pc.responsavel.email ? ` <${pc.responsavel.email}>` : ''}`,
                 `Data e hora: ${new Date(pc.enviadaEmHora).toLocaleString('pt-BR')}`,
                 `Situação: ${PC_LABEL[pc.status]}`,
                 '',
@@ -7728,23 +8155,19 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         }
 
         function renderDashboardStats() {
+            // Uma linha, uma fonte: as mesmas contagens de #editais (editais[])
             const abertos = editais.filter(e => statusEdital(e) === 'aberto');
-            const total = abertos.reduce((soma, e) => soma + valorBRL(e.valorTotal, e.moeda), 0);
             const enc7 = abertos.filter(e => diasAte(e.encerramento) <= 7).length;
-            $('heroValor').textContent = plural(abertos.length, 'chamada aberta', 'chamadas abertas');
-            $('heroSub').textContent = `${enc7 ? `${plural(enc7, 'encerra', 'encerram')} em até 7 dias · ` : ''}orçamento total declarado nas chamadas: ${fmtValor(total, 'BRL')} (inclui bolsas e verbas de toda a chamada, não é o valor por proposta)`;
-            const novos = editais.filter(e => diasAte(e.publicadoEm) >= -30 && diasAte(e.publicadoEm) <= 0).length;
-            $('statEditaisAbertos').textContent = abertos.length;
-            $('statEditaisNovos').textContent = `↑ ${plural(novos, 'publicado', 'publicados')} nos últimos 30 dias`;
-            const enc = abertos.filter(e => diasAte(e.encerramento) <= 7).sort((a, b) => a.encerramento.localeCompare(b.encerramento));
-            $('statEncerrando').textContent = enc.length;
-            $('statEncerrandoSub').textContent = enc.length ? `o primeiro ${diasAte(enc[0].encerramento) === 0 ? 'encerra hoje' : `em ${plural(diasAte(enc[0].encerramento), 'dia', 'dias')}`}` : 'nenhum prazo nesta semana';
-            const nac = Object.values(agencias).filter(a => procAgencia(a) === 'nacional').length;
+            const conferido = fonteDados.geradoEm ? fmtDate(fonteDados.geradoEm).slice(0, 5) : '';
+            $('heroValor').innerHTML = `<a href="#editais?status=aberto"><strong id="statEditaisAbertos">${abertos.length}</strong> ${abertos.length === 1 ? 'chamada aberta' : 'chamadas abertas'}</a>`
+                + ` <span aria-hidden="true">·</span> <a href="#editais?prazo=7"${enc7 ? ' class="urgente"' : ''}><strong id="statEncerrando">${enc7}</strong> ${enc7 === 1 ? 'encerra' : 'encerram'} em 7 dias</a>`
+                + (conferido ? ` <span aria-hidden="true">·</span> <span>conferidos em ${conferido}</span>` : '');
             $('statInstituicoes').textContent = Object.keys(agencias).length;
-            $('statInstituicoesSub').textContent = `${nac} nacionais · ${Object.keys(agencias).length - nac} internacionais`;
-            const pend = projetos.filter(p => situacaoPC(p) === 'pendente').length;
-            $('statProjetos').textContent = projetos.length;
-            $('statProjetosSub').textContent = pend ? `${plural(pend, 'com prestação pendente', 'com prestação pendente')}` : 'prestações em dia';
+            // Início: "Sou…" e "Estado" começam com o perfil, se houver
+            if (perfil && !$('homeSearchForm').contains(document.activeElement)) {
+                if (perfil.publico && !val('homeFilterPublico')) $('homeFilterPublico').value = perfil.publico;
+                if (perfil.uf && !val('homeFilterUF')) $('homeFilterUF').value = perfil.uf;
+            }
             renderDashPropostas();
             renderVistos();
         }
@@ -7853,7 +8276,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
            NAVEGAÇÃO (rotas por hash: #editais, #edital-3, #agencia-cnpq ...)
         ===================================================================== */
         const PAGES = ['dashboard', 'editais', 'propostas', 'projetos', 'fundos', 'mapa', 'ajuda', 'agencia'];
-        const TITULOS = { dashboard: 'Início', editais: 'Editais', propostas: 'Minhas propostas', projetos: 'Projetos financiados', fundos: 'Fundos e agências', mapa: 'Mapa', ajuda: 'Ajuda', agencia: 'Instituição' };
+        const TITULOS = { dashboard: 'Início', editais: 'Editais', propostas: 'Minhas propostas', projetos: 'Projetos financiados (demonstração)', fundos: 'Instituições', mapa: 'Mapa', ajuda: 'Ajuda', agencia: 'Instituição' };
         let primeiraRota = true;
 
         function paginaAtual() { const el = document.querySelector('.page-content.active'); return el ? el.id.replace('page-', '') : 'dashboard'; }
@@ -7868,6 +8291,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 a.classList.toggle('active', ativo);
                 if (ativo) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
             });
+            // O botão do submenu fica marcado quando a página atual está dentro dele (ex.: Transparência → Mapa)
+            document.querySelectorAll('.nav-sub').forEach(li => li.querySelector('.nav-sub-btn').classList.toggle('active', !!li.querySelector('a[aria-current="page"]')));
+            fecharDropdowns();
+            if (document.body.classList.contains('menu-aberto')) alternarMenu(false);
             const renders = { dashboard: renderDashboardStats, propostas: renderPropostas, projetos: renderProjetos, fundos: renderFundos, mapa: initMap, ajuda: renderGlossario };
             if (renders[page]) renders[page]();
             const titulo = page === 'agencia' ? ($('agenciaBreadcrumb').textContent || TITULOS.agencia) : TITULOS[page];
@@ -7880,6 +8307,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         function route() {
             const bruto = location.hash.slice(1);
             if (bruto === 'main-content') return; // link "Pular para o conteúdo" não é rota
+            if (/^(resultadosTitulo|capBackupTitulo|notaOrigem-\d+)$/.test(bruto)) return; // âncoras internas (o clique já é tratado)
             let [page, qs] = bruto.split('?');
             try { page = decodeURIComponent(page); } catch (_) { page = ''; }
             if (page === 'inicio') page = 'dashboard';
@@ -7922,6 +8350,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             renderDashboardStats();
             renderPerfilCard();
             updateAlertBadge();
+            atualizarBannerFonte();
             const pg = paginaAtual();
             if (pg === 'propostas') renderPropostas();
             if (pg === 'projetos') renderProjetos();
@@ -7964,14 +8393,16 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
         }
 
 
+        // Busca do início: palavra-chave + "Sou…" + Estado viram parâmetros da URL de #editais (a rota aplica os filtros)
         function searchFromHome() {
-            clearFilters(true);
-            $('searchInput').value = val('homeSearchInput');
-            $('filterStatus').value = val('homeFilterStatus');
-            $('filterProcedencia').value = val('homeFilterProcedencia');
-            $('filterArea').value = val('homeFilterArea');
-            showPage('editais');
-            filterEditais();
+            const params = new URLSearchParams();
+            const q = val('homeSearchInput').trim(), pub = val('homeFilterPublico'), uf = val('homeFilterUF');
+            if (q) params.set('q', q);
+            if (pub) params.set('publico', pub);
+            if (uf) params.set('uf', uf);
+            track('busca-inicio');
+            const destino = `#editais${params.toString() ? '?' + params : ''}`;
+            if (location.hash === destino) route(); else location.hash = destino;
         }
 
         /* =====================================================================
@@ -7994,8 +8425,9 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             };
             const areasUsadas = Object.entries(AREAS).filter(([k]) => editais.some(e => e.tema === k));
             addOptions('filterArea', areasUsadas);
-            addOptions('homeFilterArea', areasUsadas);
             addOptions('filterPublico', Object.entries(PUBLICOS));
+            addOptions('homeFilterPublico', Object.entries(PUBLICOS));
+            addOptions('homeFilterUF', Object.entries(UFS));
             addOptions('filterModalidade', Object.keys(TIPOS_APOIO).filter(v => editais.some(e => tipoApoio(e) === v)).map(v => [v, TIPOS_APOIO[v].nome]));
             montarFacetas();
             addOptions('filterUF', Object.entries(UFS));
@@ -8015,11 +8447,25 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             document.querySelectorAll('details.menu[open]').forEach(d => {
                 if (!d.contains(ev.target) || ev.target.closest('.menu-panel a, .menu-panel button')) d.removeAttribute('open');
             });
+            // Submenus da navegação e menu "Compartilhar"
+            const ddBtn = ev.target.closest && ev.target.closest('.nav-sub-btn, .dropdown-btn');
+            if (ddBtn) { alternarDropdown(ddBtn); return; }
+            document.querySelectorAll('.nav-sub-btn[aria-expanded="true"], .dropdown-btn[aria-expanded="true"]').forEach(b => {
+                const p = $(b.getAttribute('aria-controls'));
+                if (p && (!p.contains(ev.target) || ev.target.closest('a, button'))) alternarDropdown(b, false);
+            });
+            if (ev.target.closest('#menuBtn')) { alternarMenu(); return; }
+            if (document.body.classList.contains('menu-aberto') && !ev.target.closest('#mainNav')) alternarMenu(false);
+            if (ev.target.closest('#filtrosFab')) { abrirGavetaFiltros(); return; }
             const el = ev.target.closest('[data-action]');
             if (!el) return;
             const action = el.dataset.action;
             const id = Number(el.dataset.id);
             if (action === 'external') track('edital-oficial');
+            if (action === 'google-agenda') { track('agenda-google'); ev.stopPropagation(); return; }
+            if (action === 'pular-resultados') { ev.preventDefault(); const r = $('resultadosTitulo'); r.focus(); r.scrollIntoView({ block: 'start' }); return; }
+            if (action === 'ir-backup') { ev.preventDefault(); const t = $('capBackupTitulo'); if (t) { t.scrollIntoView({ block: 'start' }); t.focus({ preventScroll: true }); } return; }
+            if (action === 'ir-nota-origem') { ev.preventDefault(); const n = $(`notaOrigem-${id}`); if (n) { n.scrollIntoView({ block: 'center' }); n.focus({ preventScroll: true }); n.classList.add('realce'); setTimeout(() => n.classList.remove('realce'), 1600); } return; }
             if (action === 'external' || action === 'compare' || action === 'check') { ev.stopPropagation(); return; }
             if (el.tagName === 'LABEL' || ev.target.closest('label.compare-check')) return;
             ev.stopPropagation();
@@ -8051,7 +8497,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 case 'print': window.print(); break;
                 case 'whatsapp': whatsappEdital(id); break;
                 case 'open-login': openLogin(); break;
-                case 'logout': logout(); break;
+                case 'logout': if ($('loginModal').open) closeModal($('loginModal')); logout(); break;
                 case 'show-alertas': showAlertas(); break;
                 case 'follow': acompanhar(id); break;
                 case 'unfollow': pararDeAcompanhar(id); break;
@@ -8070,6 +8516,17 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 case 'focus-campo': $(el.dataset.campo).focus(); break;
                 case 'baixar-comprovante': baixarComprovante(id, el.dataset.protocolo); break;
                 case 'limpar-dados': limparDados(); break;
+                case 'posso-salvar-perfil': {
+                    const pub = val(`possoPublico-${id}`), uf = val(`possoUF-${id}`);
+                    perfil = { ...(perfil || {}), publico: pub || (perfil && perfil.publico) || '', uf: uf || (perfil && perfil.uf) || '' };
+                    store.set('perfil', perfil);
+                    if (perfilAtivo()) $('sortSelect').value = 'compat';
+                    refreshAll();
+                    openEdital(id);
+                    const b = document.querySelector('#editalModal [data-action="edit-perfil"]'); if (b) b.focus();
+                    showNotification('Perfil salvo: os editais mostram a compatibilidade com ele.');
+                    break;
+                }
                 case 'clear-proj': $('projSearch').value = ''; $('projStatus').value = ''; $('projPrestacao').value = ''; renderProjetos(); break;
             }
         });
@@ -8080,6 +8537,13 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             if (el.dataset.action === 'check') toggleChecklist(Number(el.dataset.id), Number(el.dataset.index), el.checked);
             if (el.id === 'geImportFile' && el.files[0]) importarJSON(el.files[0]);
             if (el.id === 'pcArquivos' && el.files.length) adicionarArquivos(el.files);
+            if (el.dataset.posso) {
+                // Teste rápido "Posso concorrer?": atualiza só o resultado (o foco fica no seletor)
+                testeRapido[el.dataset.posso] = el.value;
+                const e = editais.find(x => x.id === Number(el.dataset.id));
+                const box = el.closest('.posso') && el.closest('.posso').querySelector('.posso-resultado');
+                if (e && box) box.innerHTML = possoResultadoHTML(e, val(`possoPublico-${e.id}`), val(`possoUF-${e.id}`));
+            }
             if (el.closest && el.closest('#prestacaoForm') && el.id !== 'pcArquivos') salvarRascunhoPC();
             if (el.id === 'geAgencia' && agencias[el.value]) {
                 const a = agencias[el.value];
@@ -8113,6 +8577,15 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             if (ev.target.id === 'editalForm') { ev.preventDefault(); salvarFormEdital(); }
         });
 
+        // Esc fecha primeiro o submenu/menu aberto (e devolve o foco ao botão), antes de fechar um diálogo
+        document.addEventListener('keydown', ev => {
+            if (ev.key === 'Tab') prenderFoco(ev);
+            if (ev.key !== 'Escape') return;
+            const btn = document.querySelector('.nav-sub-btn[aria-expanded="true"], .dropdown-btn[aria-expanded="true"]');
+            if (btn) { ev.preventDefault(); ev.stopPropagation(); alternarDropdown(btn, false); btn.focus(); return; }
+            if (document.body.classList.contains('menu-aberto')) { ev.preventDefault(); alternarMenu(false); $('menuBtn').focus(); }
+        }, true);
+
         // Enter/Espaço abre o card focado (acessibilidade por teclado); "/" vai para a busca; Esc fecha menus
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape') document.querySelectorAll('details.menu[open]').forEach(d => d.removeAttribute('open'));
@@ -8142,7 +8615,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
                 const b = ev.target.closest('[data-facet]');
                 if (b) escolherFaceta(b.dataset.facet, b.dataset.value);
             });
-            if (window.matchMedia && window.matchMedia('(min-width: 900px)').matches) $('maisFiltros').open = true;
+            if (mqDesktop.matches) $('maisFiltros').open = true;
+            // Ao passar para o desktop com a gaveta aberta, fecha a gaveta (o painel volta para a lateral)
+            mqDesktop.addEventListener('change', () => { if (mqDesktop.matches && $('filtrosDrawer').open) closeModal($('filtrosDrawer')); if (mqDesktop.matches && document.body.classList.contains('menu-aberto')) alternarMenu(false); });
+            $('filtrosDrawer').addEventListener('close', devolverPainelFiltros);
             document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => applyPreset(btn.dataset.preset)));
             $('toggleFavoritos').addEventListener('click', () => {
                 somenteFavoritos = !somenteFavoritos;
@@ -8162,6 +8638,7 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             // Fechar modal clicando fora; restaurar URL ao fechar
             document.querySelectorAll('dialog.modal').forEach(d => {
                 d.addEventListener('click', ev => { if (ev.target === d) closeModal(d); });
+                d.addEventListener('close', () => { fecharDropdowns(); devolverFoco(d); });
             });
             $('editalModal').addEventListener('close', () => {
                 if (paginaAtual() === 'editais') document.title = `${TITULOS.editais} · Fundos Brasil`;
@@ -8195,8 +8672,10 @@ body:not(.rota-dashboard):not(.rota-editais) .site-footer .seo-links { display: 
             route();
             window.addEventListener('hashchange', route);
 
+            const linhas = Object.keys(AREAS).map(k => [AREAS[k], editais.filter(e => e.tema === k).reduce((s, e) => s + valorBRL(e.valorTotal, e.moeda), 0)]).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+            // Com menos de 3 áreas o gráfico não compara nada (uma barra só): fica escondido
+            if (linhas.length < 3) { $('areaChartCard').hidden = true; return; }
             if (!window.Chart) {
-                const linhas = Object.keys(AREAS).map(k => [AREAS[k], editais.filter(e => e.tema === k).reduce((s, e) => s + valorBRL(e.valorTotal, e.moeda), 0)]).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
                 const max = Math.max(...linhas.map(([, v]) => v));
                 $('areaChart').replaceWith(Object.assign(document.createElement('div'), { id: 'areaChart', innerHTML: linhas.map(([n, v]) => `
                     <div class="criterio"><div class="criterio-top"><span>${esc(n)}</span><strong>≈ ${fmtValor(v, 'BRL')}</strong></div>

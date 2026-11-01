@@ -64,7 +64,8 @@
         cadeado: svg('<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'),
         alerta: svg('<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/>'),
         baixar: svg('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>'),
-        subir: svg('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>')
+        subir: svg('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>'),
+        imprimir: svg('<path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>')
     };
 
     /* ---------------------------------------------------------------------
@@ -672,19 +673,35 @@
                     <div class="cap-cartao-gng">${seloGNGCartao(e.id)}</div>
                     ${alertas.length ? `<p class="cap-cartao-alerta">${ICONE.alerta}<span>${alertas.length === 1 ? `${esc(nomeDoc(alertas[0].d))} vence antes do prazo` : `${alertas.length} certidões vencem antes do prazo`}</span></p>` : ''}
                     <div class="cap-mover">
-                        <label for="capMover-${e.id}">Mover para</label>
-                        <select id="capMover-${e.id}">
-                            ${ETAPAS.filter(et => et.k !== p.etapa).map(et => `<option value="${et.k}">${esc(et.nome)}</option>`).join('')}
-                        </select>
-                        <button type="button" class="btn btn-outline btn-small" data-cap="mover" data-id="${e.id}" aria-label="Mover “${esc(e.titulo)}” para a etapa escolhida">Mover</button>
+                        ${setasMoverHTML(e, p)}
+                        <details class="cap-mover-outra">
+                            <summary>Outra etapa</summary>
+                            <div class="cap-mover-sel">
+                                <label for="capMover-${e.id}">Mover para</label>
+                                <select id="capMover-${e.id}">
+                                    ${ETAPAS.filter(et => et.k !== p.etapa).map(et => `<option value="${et.k}">${esc(et.nome)}</option>`).join('')}
+                                </select>
+                                <button type="button" class="btn btn-outline btn-small" data-cap="mover" data-id="${e.id}" aria-label="Mover “${esc(e.titulo)}” para a etapa escolhida">Mover</button>
+                            </div>
+                        </details>
                     </div>
                 </article>
             </li>`;
     }
 
+    // ← / → levam à etapa vizinha; o seletor "Outra etapa" continua como alternativa acessível
+    function setasMoverHTML(e, p) {
+        const i = ETAPAS.findIndex(et => et.k === p.etapa);
+        const ant = ETAPAS[i - 1], prox = ETAPAS[i + 1];
+        const seta = (et, dir, glifo) => et
+            ? `<button type="button" class="btn btn-outline btn-small cap-seta" data-cap="mover-dir" data-dir="${dir}" data-id="${e.id}" data-etapa="${et.k}" aria-label="Mover para ${esc(et.nome)}: ${esc(e.titulo)}" title="Mover para ${esc(et.nome)}"><span aria-hidden="true">${glifo}</span></button>`
+            : `<span class="cap-seta-vazia" aria-hidden="true"></span>`;
+        return `<div class="cap-setas" role="group" aria-label="Mover entre etapas">${seta(ant, 'ant', '←')}<span class="cap-seta-etapa">${esc(ETAPA[p.etapa].nome)}</span>${seta(prox, 'prox', '→')}</div>`;
+    }
+
     function quadroHTML(itens, conflitos) {
         return `
-            <p class="nota cap-quadro-ajuda">Arraste os cartões entre as colunas ou use “Mover para” (funciona com teclado e leitor de tela).</p>
+            <p class="nota cap-quadro-ajuda">Arraste os cartões entre as colunas ou use as setas ← → de cada cartão (também em “Outra etapa”, com teclado e leitor de tela).</p>
             <div class="cap-quadro">
                 ${ETAPAS.map(et => {
                     const daEtapa = itens.filter(x => x.p.etapa === et.k);
@@ -699,12 +716,17 @@
             </div>`;
     }
 
-    function mover(id, etapa) {
+    function mover(id, etapa, dir) {
         const p = propostas[id];
         if (!p || !ETAPA[etapa] || p.etapa === etapa) return;
         acompanhar(id, etapa); // reaproveita a regra existente (toast com "Desfazer" e re-renderização)
-        const sel = document.getElementById(`capMover-${id}`);
-        if (sel) sel.focus();
+        // O cartão foi redesenhado na nova coluna: o foco segue o cartão (mesma seta, ou a outra se acabou a fila)
+        const card = document.querySelector(`#capQuadro .cap-cartao[data-id="${id}"]`);
+        const alvo = card && (dir
+            ? (card.querySelector(`[data-cap="mover-dir"][data-dir="${dir}"]`) || card.querySelector('[data-cap="mover-dir"]'))
+            : card.querySelector(`#capMover-${id}`));
+        if (alvo) alvo.focus();
+        anunciar(`Movido para ${ETAPA[etapa].nome}.`);
     }
 
     function barraPropostasHTML(itens, conflitos) {
@@ -748,9 +770,11 @@
                     <button type="button" class="btn btn-outline btn-small" data-cap="exportar-json">${ICONE.baixar} Exportar backup (JSON)</button>
                     <button type="button" class="btn btn-outline btn-small" data-cap="importar-json" aria-describedby="capImportAjuda">${ICONE.subir} Importar backup</button>
                     <button type="button" class="btn btn-outline btn-small" data-cap="exportar-csv">${ICONE.baixar} Exportar quadro (CSV)</button>
+                    <button type="button" class="btn btn-outline btn-small" data-cap="imprimir-relatorio" aria-describedby="capRelAjuda">${ICONE.imprimir} Imprimir relatório</button>
                     <input type="file" id="capImportFile" accept=".json,application/json" hidden>
                 </div>
                 <p class="nota" id="capImportAjuda">Importar junta o arquivo aos dados deste navegador; registros do mesmo edital são substituídos pelos do arquivo. O CSV abre direto no Excel.</p>
+                <p class="nota" id="capRelAjuda">O relatório para a diretoria sai em uma página limpa (imprima ou salve em PDF), com etapa, prazo, valor, go/no-go e próximo passo de cada proposta${usuario ? `, assinado por ${esc(usuario.nome)}` : ''}.${usuario ? '' : ' <button type="button" class="link-btn" data-action="open-login">Informe seu nome</button> para assiná-lo.'}</p>
                 <div id="capImportRelatorio" class="import-report" role="status"${ultimoRelatorio ? '' : ' hidden'}>${esc(ultimoRelatorio)}</div>
             </section>`;
     }
@@ -806,6 +830,55 @@
         downloadFile(`minhas-propostas-${hojeISO()}.csv`, '﻿' + linhas.join('\r\n'), 'text/csv;charset=utf-8');
         track('quadro-csv');
         showNotification(`${plural(itens.length, 'proposta exportada', 'propostas exportadas')} em CSV.`);
+    }
+
+    /* Relatório para a diretoria: uma página limpa montada a partir das propostas e impressa com
+       window.print() (o CSS de impressão esconde todo o resto). Sem bibliotecas: o navegador salva em PDF. */
+    function relatorioHTML() {
+        const itens = itensPropostas();
+        const porEtapa = ETAPAS.map(et => [et.nome, itens.filter(x => x.p.etapa === et.k).length]).filter(([, n]) => n);
+        const linha = ({ e, p }) => {
+            const r = resultadoGNG(gonogo[e.id]);
+            const acao = proximaAcao(e, p);
+            return `<tr>
+                <td>${esc(ETAPA[p.etapa].nome)}</td>
+                <td><strong>${esc(e.titulo)}</strong><br><span>${esc(e.instituicao)}${e.numero ? ` · ${esc(e.numero)}` : ''}</span></td>
+                <td>${fmtDate(e.encerramento)}${statusEdital(e) === 'aberto' ? `<br><span>${diasAte(e.encerramento) === 0 ? 'hoje' : `em ${plural(diasAte(e.encerramento), 'dia', 'dias')}`}</span>` : `<br><span>${esc(STATUS_LABEL[statusEdital(e)])}</span>`}</td>
+                <td>${esc(valorPropostaTxt(e))}</td>
+                <td>${r.k ? `${esc(GNG[r.k].nome)} (${r.total}/25)` : '—'}</td>
+                <td>${esc(acao.txt)}${p.protocolo ? `<br><span>Protocolo: ${esc(p.protocolo)}</span>` : ''}</td>
+            </tr>`;
+        };
+        return `
+            <div class="rel-topo">
+                <p class="rel-marca">Fundos Brasil · Relatório de propostas</p>
+                <h1>Propostas em acompanhamento</h1>
+                <p>Gerado em ${new Date().toLocaleString('pt-BR', { dateStyle: 'long', timeStyle: 'short' })}${usuario ? ` por ${esc(usuario.nome)}` : ''}. ${plural(itens.length, 'proposta', 'propostas')}${porEtapa.length ? ': ' + porEtapa.map(([n, q]) => `${q} ${esc(n.toLowerCase())}`).join(', ') : ''}.</p>
+            </div>
+            ${itens.length ? `<table class="rel-tabela">
+                <thead><tr><th scope="col">Etapa</th><th scope="col">Edital</th><th scope="col">Prazo final</th><th scope="col">Valor por proposta</th><th scope="col">Go/no-go</th><th scope="col">Próximo passo</th></tr></thead>
+                <tbody>${itens.map(linha).join('')}</tbody>
+            </table>` : '<p>Nenhuma proposta em acompanhamento.</p>'}
+            <p class="rel-nota">Dados organizados no navegador de quem gerou o relatório. Prazos, valores e requisitos devem ser confirmados no edital oficial de cada instituição.</p>`;
+    }
+
+    function imprimirRelatorio() {
+        if (!itensPropostas().length) { showNotification('Nenhuma proposta para o relatório.', 'warning'); return; }
+        let box = document.getElementById('relatorioPropostas');
+        if (!box) {
+            box = document.createElement('div');
+            box.id = 'relatorioPropostas';
+            box.className = 'relatorio-impressao';
+            box.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(box);
+        }
+        box.innerHTML = relatorioHTML();
+        document.body.classList.add('print-relatorio');
+        const fim = () => { document.body.classList.remove('print-relatorio'); window.removeEventListener('afterprint', fim); };
+        window.addEventListener('afterprint', fim);
+        track('relatorio-imprimir');
+        window.print();
+        setTimeout(fim, 1000); // navegadores que não disparam afterprint
     }
 
     /* Validação do arquivo importado: nada é aceito sem checagem de tipo e tamanho.
@@ -941,7 +1014,7 @@
     function elegibilidadeHTML(e) {
         const resp = respostasDe(e);
         return `
-            <h3 id="capElegTitulo-${e.id}">Teste rápido de elegibilidade</h3>
+            <h4 class="cap-eleg-titulo" id="capElegTitulo-${e.id}">Requisitos deste edital</h4>
             <p class="nota">Triagem com os principais requisitos do edital. Responda pela sua organização; as respostas ficam salvas neste navegador.</p>
             <ol class="cap-eleg-lista">
                 ${e.elegibilidade.map((q, i) => `
@@ -969,10 +1042,13 @@
         if (antigo) antigo.remove();
         if (!Array.isArray(e.elegibilidade) || !e.elegibilidade.length) return;
         const sec = document.createElement('section');
-        sec.className = 'modal-section no-print cap-eleg';
+        sec.className = 'no-print cap-eleg';
         sec.setAttribute('aria-labelledby', `capElegTitulo-${e.id}`);
         sec.innerHTML = elegibilidadeHTML(e);
-        // Logo depois da compatibilidade com o perfil (primeira seção do corpo)
+        // Dentro de "Posso concorrer?" (slot reservado pelo index.html); sem o slot, logo depois da primeira seção
+        const slot = corpo.querySelector(`[data-eleg-slot="${e.id}"]`);
+        if (slot) { slot.appendChild(sec); return; }
+        sec.classList.add('modal-section');
         const ref = corpo.querySelector(':scope > .modal-section');
         if (ref) ref.after(sec); else corpo.prepend(sec);
     }
@@ -1064,6 +1140,8 @@
                 anunciar(vista === 'quadro' ? 'Mostrando o quadro por etapa' : 'Mostrando a lista de propostas');
                 break;
             case 'mover': { const sel = document.getElementById(`capMover-${id}`); if (sel) mover(Number(id), sel.value); break; }
+            case 'mover-dir': mover(Number(id), el.dataset.etapa, el.dataset.dir); break;
+            case 'imprimir-relatorio': imprimirRelatorio(); break;
             case 'abrir-gng': {
                 const n = Number(id);
                 gngAbertos.add(n);

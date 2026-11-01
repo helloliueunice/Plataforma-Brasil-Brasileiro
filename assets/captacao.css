@@ -109,7 +109,7 @@
 .cap-cartao-alerta .icon { width: 14px; height: 14px; margin-top: 1px; }
 .cap-mover { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); align-items: center;
     padding-top: var(--s-2); border-top: var(--bw) solid var(--border); }
-.cap-mover label { flex: 1 1 100%; font-size: var(--fs-12); color: var(--text-3); }
+.cap-mover label { font-size: var(--fs-12); color: var(--text-3); }
 .cap-mover select {
     flex: 1 1 120px; min-width: 0; min-height: 32px; padding: var(--s-1) var(--s-2);
     background: var(--bg); color: var(--text); border: var(--bw) solid var(--border-strong); border-radius: var(--r-md); font-size: var(--fs-13);
@@ -206,6 +206,38 @@
     .cap-escala-opcoes span { width: 44px; height: 40px; }
 }
 
+/* ---------- Quadro: setas ← / → e seletor alternativo ---------- */
+.cap-setas { display: flex; align-items: center; gap: var(--s-1); width: 100%; }
+.cap-seta { width: 40px; padding: 0; font-size: var(--fs-16); }
+.cap-seta-vazia { width: 40px; flex: none; }
+.cap-seta-etapa { flex: 1; text-align: center; font-size: var(--fs-12); color: var(--text-3); }
+.cap-mover-outra { width: 100%; }
+.cap-mover-outra > summary { min-height: 32px; display: inline-flex; align-items: center; cursor: pointer;
+    font-size: var(--fs-12); color: var(--brand); font-weight: var(--fw-medium); }
+.cap-mover-sel { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); align-items: center; margin-top: var(--s-1); }
+.cap-eleg-titulo { margin-bottom: var(--s-1); font-size: var(--fs-14); font-weight: var(--fw-semibold); color: var(--text); }
+@media (pointer: coarse), (max-width: 768px) {
+    .cap-seta, .cap-seta-vazia { width: 44px; min-height: 44px; }
+    .cap-mover-outra > summary { min-height: 44px; }
+}
+
+/* ---------- Relatório para a diretoria (só na impressão) ---------- */
+.relatorio-impressao { display: none; }
+
 @media print {
     .cap-gng, .cap-mover, #capAcoesBusca, #capBuscasEditais, #capBackup { display: none !important; }
+    body.print-relatorio > *:not(#relatorioPropostas) { display: none !important; }
+    body.print-relatorio #relatorioPropostas { display: block !important; }
+    .relatorio-impressao { font: 11pt/1.45 var(--font); color: #000; background: #fff; }
+    .rel-topo { margin-bottom: 14pt; padding-bottom: 8pt; border-bottom: 1.5pt solid #000; }
+    .rel-marca { font-size: 9pt; letter-spacing: .04em; text-transform: uppercase; color: #444; }
+    .rel-topo h1 { margin: 4pt 0; font-size: 18pt; color: #000; }
+    .rel-topo p { font-size: 10pt; color: #222; }
+    .rel-tabela { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+    .rel-tabela th, .rel-tabela td { padding: 5pt 6pt; text-align: left; vertical-align: top; border-bottom: .5pt solid #999; }
+    .rel-tabela th { font-weight: 600; border-bottom: 1pt solid #000; }
+    .rel-tabela td span { color: #444; font-size: 8.5pt; }
+    .rel-tabela tr { break-inside: avoid; }
+    .rel-nota { margin-top: 12pt; font-size: 8.5pt; color: #444; }
+    @page { margin: 14mm; }
 }
