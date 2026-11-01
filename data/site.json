@@ -22,7 +22,7 @@
   },
   "comercial": {
     "_leia": "Contato para anunciantes em /anuncie/. email: endereço PROFISSIONAL que pode ser publicado no site (botões abrem o e-mail com o assunto preenchido). formulario: URL de um formulário (Google Forms, Tally). Vazio nos dois = usa o formulário de parceria do GitHub.",
-    "email": "",
+    "email": "contatofundosbrasil@gmail.com",
     "formulario": ""
   },
   "pro": {
@@ -35,7 +35,7 @@
   },
   "whatsappCanal": "",
   "formularioSugestao": "",
-  "contato": "",
+  "contato": "contatofundosbrasil@gmail.com",
   "indexnowChave": "a3f9c1e7b2d84f60925e1c7d8b4a6f13",
   "responsavel": "Eunice Liu, CPF 222.989.028-01, São Paulo/SP"
 }
