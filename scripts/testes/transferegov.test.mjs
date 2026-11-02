@@ -8,7 +8,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { titulo, tema, abrangencia, orgao, modalidade, valores } from '../transferegov-normaliza.mjs';
+import { titulo, tema, abrangencia, orgao, modalidade, valores, prazoNotaPrograma, docsExtrasPrograma, contrapartidaPadrao } from '../transferegov-normaliza.mjs';
 
 const SCRIPT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'transferegov.mjs');
 
@@ -47,13 +47,28 @@ test('tema(): título do programa primeiro, ministério depois, Desenvolvimento 
 test('abrangencia(): só restringe quando o título indica a superintendência regional', () => {
     assert.deepEqual(abrangencia('Infra-Estrutura Básica – SR(PR) Superintendência', 'PR'), { abrangencia: 'PR', ufs: ['PR'] });
     assert.deepEqual(abrangencia('Fomento – SR (pa) Superintendência', 'DF'), { abrangencia: 'PA', ufs: ['PA'] });
-    const n = abrangencia('Programa nacional', 'SP');
-    assert.equal(n.abrangencia, 'Nacional');
-    assert.equal(n.ufs, undefined);
-    assert.match(n.abrangenciaNota, /indica SP/);
-    assert.doesNotMatch(abrangencia('Programa', '').abrangenciaNota, /indica/);
-    // Sigla inexistente não restringe
-    assert.equal(abrangencia('Teste SR(XX)', '').abrangencia, 'Nacional');
+    // Sem confirmação no título: "Não informada" (nunca "Nacional"), UF do cadastro à parte e sem ufs
+    assert.deepEqual(abrangencia('Programa nacional', 'sp'), {
+        abrangencia: 'Não informada', ufCadastro: 'SP',
+        abrangenciaNota: 'A fonte não informa onde o programa vale. O cadastro indica SP. Confira no programa antes de propor.'
+    });
+    assert.deepEqual(abrangencia('Programa', ''), {
+        abrangencia: 'Não informada',
+        abrangenciaNota: 'A fonte não informa onde o programa vale. Confira no programa antes de propor.'
+    });
+    assert.equal(abrangencia('Programa', 'XX').ufCadastro, undefined, 'UF inválida no cadastro é ignorada');
+    // Sigla que não é UF não restringe (nem "SR(IA)", que é sigla mas não estado)
+    assert.equal(abrangencia('Teste SR(XX)', '').abrangencia, 'Não informada');
+    assert.equal(abrangencia('Teste SR(IA)', 'DF').abrangencia, 'Não informada');
+});
+
+test('textos por público: CAUC só para entes, contrapartida do MROSC', () => {
+    assert.match(prazoNotaPrograma('123', ['municipio']), /CAUC/);
+    assert.doesNotMatch(prazoNotaPrograma('123', ['osc']), /CAUC/, 'OSC não recebe CAUC');
+    assert.match(prazoNotaPrograma('123', ['osc']), /^Código do programa: 123\./);
+    assert.ok(!docsExtrasPrograma().some(d => /CAUC/.test(d)), 'CAUC vem da lista por público, sem duplicar');
+    assert.match(contrapartidaPadrao('Termo de colaboração'), /MROSC/);
+    assert.match(contrapartidaPadrao('Convênio'), /Lei de Diretrizes Orçamentárias/);
 });
 
 test('modalidade(): instrumentos do Transferegov com acento e caixa de frase', () => {
@@ -143,6 +158,14 @@ test('coletor: modalidade, código em destaque e valores desligados por padrão'
         assert.ok(osc.tags.includes('Termo de colaboração'));
         assert.equal(osc.valorMax, null);
         assert.equal(osc.tipoValor, 'nao-informado');
+        assert.equal(osc.abrangencia, 'Não informada', 'sem confirmação no título, nada de "Nacional"');
+        assert.equal(osc.ufCadastro, 'AL');
+        assert.equal(osc.ufs, undefined);
+        assert.match(osc.abrangenciaNota, /O cadastro indica AL\./);
+        assert.ok(!osc.docsExtras.some(d => /CAUC/.test(d)) && !/CAUC/.test(osc.prazoNota), 'OSC sem CAUC');
+        assert.match(mun.prazoNota, /CAUC/);
+        assert.equal(mun.abrangencia, 'PR');
+        assert.equal(mun.ufCadastro, undefined);
         assert.equal(mun.modalidade, 'Convênio');
         assert.deepEqual(mun.publico, ['municipio']);
         assert.deepEqual(mun.ufs, ['PR']);

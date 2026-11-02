@@ -21,14 +21,14 @@ DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Prazo final: Mestrado e Doutorado Acadêmico para Inovação (MAI/D
  AI)
-DESCRIPTION:CNPq · Chamada Pública CNPq/CAPES nº 30/2026\nValor: bolsas 
- (ver condições)\nQuem pode participar: Pesquisador(a)\, ICT / Universida
- de\nAté 23h59 (Brasília). Julgamento em janeiro e decisão final previst
- a para fevereiro de 2027.\nPágina do edital: https://helloliueunice.githu
- b.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-doutorado-academico-p
- ara-inovacao-mai-dai-106/\nConfirme data e horário limite no edital ofici
- al: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026
- /chamada-no-30-2026/chamada-publica-cnpq-N-30-2026
+DESCRIPTION:CNPq · Chamada Pública CNPq/CAPES nº 30/2026\nValor: bolsas:
+  valores no edital oficial\nQuem pode participar: Pesquisador(a)\, Univers
+ idade ou instituto\nAté 23h59 (Brasília). Julgamento em janeiro e decis
+ ão final prevista para fevereiro de 2027.\nPágina do edital: https://hel
+ loliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-dout
+ orado-academico-para-inovacao-mai-dai-106/\nConfirme data e horário limit
+ e no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chama
+ das/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/m
  estrado-e-doutorado-academico-para-inovacao-mai-dai-106/
 TRANSP:TRANSPARENT
@@ -53,16 +53,16 @@ DTEND;VALUE=DATE:20261216
 SUMMARY:Prazo final: Dr. Empreendedor Capixaba: apoio a doutores empreended
  ores com projetos de inovação
 DESCRIPTION:FAPES · Edital FAPES nº 10/2026\nValor: até R$ 355\,4 mil 
- por proposta\nQuem pode participar: Pesquisador(a)\, Empresa / Startup\nEs
- ta é a 2ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes
-  até as 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilita
- ção a partir de 08/01/2027\, apresentação oral entre 03/02 e 18/03/202
- 7 e resultado homologado previsto a partir de 27/04/2027.\nPágina do edit
- al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
- dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
- \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
- br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capix
- aba_-_1a_alteracao_.pdf
+ por proposta\nQuem pode participar: Pesquisador(a)\, Empresa\nEsta é a 2
+ ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes até as 
+ 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilitação a p
+ artir de 08/01/2027\, apresentação oral entre 03/02 e 18/03/2027 e resul
+ tado homologado previsto a partir de 27/04/2027.\nPágina do edital: https
+ ://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/dr-empree
+ ndedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/\nConfirm
+ e data e horário limite no edital oficial: https://fapes.es.gov.br/media/
+ Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_
+ alteracao_.pdf
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/d
  r-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
 TRANSP:TRANSPARENT
@@ -87,12 +87,12 @@ DTEND;VALUE=DATE:20270223
 SUMMARY:Prazo final: Plataformas digitais baseadas em software livre e prot
  ocolos abertos
 DESCRIPTION:FAPESP · Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026\nValor: a
- té R$ 5\,0 mi por proposta\nQuem pode participar: Pesquisador(a)\, ICT 
- / Universidade\nSubmissão pelo SAGe a partir de 05/11/2026.\nPágina do e
- dital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edita
- is/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-10
- 1/\nConfirme data e horário limite no edital oficial: https://fapesp.br/1
- 8444
+ té R$ 5\,0 mi por proposta\nQuem pode participar: Pesquisador(a)\, Univ
+ ersidade ou instituto\nSubmissão pelo SAGe a partir de 05/11/2026.\nPági
+ na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
+ o/editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abe
+ rtos-101/\nConfirme data e horário limite no edital oficial: https://fape
+ sp.br/18444
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
  lataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/
 TRANSP:TRANSPARENT
@@ -117,14 +117,14 @@ DTEND;VALUE=DATE:20270401
 SUMMARY:Prazo final: Cooperação Brasil–França em pesquisa: Saúde Úni
  ca e continuum digital
 DESCRIPTION:CNPq · Chamada Pública MCTI/CNPq/ANR nº 32/2026\nValor: até
-  R$ 1\,5 mi por proposta\nQuem pode participar: Pesquisador(a)\, ICT / U
- niversidade\nAté 23h59 (Brasília). Resultado a partir de outubro de 2027
- \; contratação em janeiro de 2028.\nPágina do edital: https://helloliue
- unice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-brasil-fra
- nca-em-pesquisa-saude-unica-e-continuum-digital-107/\nConfirme data e hor
- ário limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/tod
- as-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-
- 2026
+  R$ 1\,5 mi por proposta\nQuem pode participar: Pesquisador(a)\, Univers
+ idade ou instituto\nAté 23h59 (Brasília). Resultado a partir de outubro 
+ de 2027\; contratação em janeiro de 2028.\nPágina do edital: https://he
+ lloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-bra
+ sil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/\nConfirme data
+  e horário limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamad
+ as/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq
+ -N-32-2026
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
  ooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/
 TRANSP:TRANSPARENT

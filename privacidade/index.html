@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-JhSy53tKlU6mawmf7Bv7tu3aSATOzPEPCz/dkbdMQCw=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-UBggQf1pc7yOuWksQjNkoYPxs8LXddcY2c9Lr+9wJDs=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@
             <li><a href="../prazos/">Prazos</a></li>
             <li class="menu-sub"><details>
                 <summary aria-controls="menu-para">Para você<span class="seta" aria-hidden="true"></span></summary>
-                <ul id="menu-para"><li><a href="../para/pesquisadores/">Pesquisador</a></li><li><a href="../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../para/empresas-e-startups/">Empresa</a></li><li><a href="../para/oscs-e-ongs/">OSC</a></li><li><a href="../para/municipios-e-prefeituras/">Município</a></li><li><a href="../para/governos-estaduais/">Estado</a></li></ul>
+                <ul id="menu-para"><li><a href="../para/pesquisadores/" data-evento="para-pesquisador">Pesquisador</a></li><li><a href="../para/universidades-e-icts/" data-evento="para-ict">Universidade/ICT</a></li><li><a href="../para/empresas-e-startups/" data-evento="para-empresa">Empresa</a></li><li><a href="../para/oscs-e-ongs/" data-evento="para-osc">OSC</a></li><li><a href="../para/municipios-e-prefeituras/" data-evento="para-municipio">Município</a></li><li><a href="../para/governos-estaduais/" data-evento="para-estado">Estado</a></li></ul>
             </details></li>
             <li><a href="../#propostas" data-evento="topo-propostas">Minhas propostas</a></li>
             <li class="menu-sub"><details>
@@ -55,7 +55,7 @@
 
         <nav class="migalhas" aria-label="Você está em"><a href="../">Início</a> <span class="sep" aria-hidden="true">›</span> <span aria-current="page">Privacidade</span></nav>
         <h1>Política de Privacidade</h1>
-        <p class="sub">Versão de 01/11/2026. Escrita em linguagem simples, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Marco Civil da Internet (Lei 12.965/2014).</p>
+        <p class="sub">Versão de 02/11/2026. Escrita em linguagem simples, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Marco Civil da Internet (Lei 12.965/2014).</p>
         <section><h2>Quem somos</h2><p>O Fundos Brasil é um serviço gratuito e informativo mantido por Eunice Liu, São Paulo/SP. Contato: <a href="mailto:contatofundosbrasil@gmail.com">contatofundosbrasil@gmail.com</a>.</p></section>
         <section><h2>O que fica só no seu navegador</h2><p>Perfil, favoritos, propostas, checklists, rascunhos, prestações de contas de demonstração e o nome/e-mail do “login” de demonstração são gravados apenas no armazenamento local do seu navegador. <strong>Esses dados não chegam até nós.</strong> Para apagá-los, use “Apagar meus dados” na plataforma ou limpe os dados do site no navegador.</p></section>
         <section><h2>Serviços de terceiros que recebem seu endereço IP</h2><ul class="lista">
@@ -71,11 +71,16 @@
         <section><h2>E-mail do projeto</h2><p>O e-mail de contato é hospedado pelo Google (Gmail), que atua como operador e pode armazenar mensagens fora do Brasil (art. 33 da LGPD).</p></section>
         <section><h2>Apoio (Pix e Apoia.se)</h2><p>A página <a href="../apoie/">Apoie</a> não coleta nenhum dado: o código Pix e o QR Code são gerados no próprio site e o pagamento acontece no app do seu banco. Como em qualquer Pix, o banco informa a quem recebe o nome de quem pagou e parte do CPF ou CNPJ; usamos essas informações apenas para controle financeiro e cumprimento de obrigações legais e fiscais (art. 7º, II), guardadas por 5 anos, sem publicá-las nem compartilhá-las. Contribuições pelo Apoia.se seguem a política de privacidade daquela plataforma.</p></section>
         <section><h2>Lista de espera do Plano Pro</h2><p>Se você entrar na lista de espera, coletamos nome e e-mail por um formulário de terceiro, que trata os dados conforme a própria política (pode haver transferência internacional, art. 33 da LGPD). Finalidade: avisar sobre o lançamento. Base legal: consentimento (art. 7º, I), que você pode revogar a qualquer momento pelo contato acima. Os dados são apagados até 6 meses após o lançamento ou se o plano for cancelado.</p></section>
+        <section id="experiencia"><h2>Pergunta “Foi fácil?” e contagem de páginas</h2><ul class="lista">
+            <li>A pergunta “Foi fácil encontrar o que procurava?”, no fim das páginas de editais e por perfil, é <strong>anônima</strong>: tem só três botões, <strong>sem texto livre</strong>, e guardamos apenas o total de cada resposta (dado agregado), sem ligar a resposta a você. No seu navegador fica só a data em que você respondeu (chave <code>fb:ces</code>), para não perguntarmos de novo por 30 dias.</li>
+            <li>A contagem de páginas e de cliques em botões da plataforma e destas páginas é feita pelo GoatCounter, sem cookies e sem identificar pessoas (veja acima). Sem JavaScript, a resposta à pergunta é contada por uma imagem de 1 pixel do GoatCounter. Os resultados agregados são publicados em <a href="../dados/#experiencia">Dados abertos</a>.</li>
+        </ul></section>
         <section><h2>Patrocinadores</h2><p>Editais em destaque patrocinado são sinalizados com “Patrocinado por” e o nome de quem patrocina. Patrocinadores recebem só números agregados (quantos cliques o destaque teve), contados sem cookies e sem identificar pessoas. Nenhum dado pessoal de quem usa o site é vendido ou repassado.</p></section>
         <section><h2>Seus direitos e canal do titular</h2><p>Você pode pedir confirmação, acesso, correção ou eliminação de dados pessoais que porventura tratemos (art. 18 da LGPD) pelo canal de comunicação com titulares: <a href="mailto:contatofundosbrasil@gmail.com">contatofundosbrasil@gmail.com</a>. Respondemos em até 15 dias. Como agente de tratamento de pequeno porte, o projeto não nomeia encarregado, mas mantém este canal (Resolução CD/ANPD nº 2/2022). Você também pode recorrer à Autoridade Nacional de Proteção de Dados (ANPD).</p></section>
         <section><h2>Atualizações</h2><p>Mudanças nesta política serão publicadas nesta página, com a data da versão.</p></section>
     </main>
     <footer class="rodape">
+        
         <div class="rodape-grupos">
             <nav aria-labelledby="rodape-editais"><h2 id="rodape-editais">Editais</h2><ul>
                 <li><a href="../editais/">Todos os editais</a></li>
@@ -112,6 +117,7 @@
     })();
     document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
     (function(){var t=document.querySelector('.topo'),b=document.querySelector('.menu-botao'),s=[].slice.call(document.querySelectorAll('.menu-sub details')),largo=window.matchMedia('(min-width: 901px)');if(!t)return;function gaveta(a){t.classList.toggle('aberto',a);b.setAttribute('aria-expanded',a?'true':'false');}if(b)b.addEventListener('click',function(){gaveta(!t.classList.contains('aberto'));});s.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)s.forEach(function(o){if(o!==d)o.open=false;});});d.addEventListener('focusout',function(){setTimeout(function(){if(largo.matches&&!d.contains(document.activeElement))d.open=false;},0);});});document.addEventListener('keydown',function(ev){if(ev.key!=='Escape')return;var d=s.filter(function(x){return x.open;})[0];if(d){d.open=false;d.querySelector('summary').focus();}else if(t.classList.contains('aberto')){gaveta(false);b.focus();}});document.addEventListener('click',function(ev){if(!largo.matches||!ev.target.closest)return;if(!ev.target.closest('.menu-sub'))s.forEach(function(d){d.open=false;});});})();
+    
     </script>
 </body>
 </html>

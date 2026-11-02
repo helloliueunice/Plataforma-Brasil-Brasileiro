@@ -64,12 +64,21 @@ export function tema(nomePrograma, nomeOrgao) {
 
 // Abrangência: a UF cadastrada no programa costuma ser a do órgão/unidade que o cadastrou, não um limite
 // de quem pode propor. Só restringimos quando o próprio título indica a unidade regional, ex.: "Sr(Sp)".
+// Sem essa confirmação, não afirmamos "Nacional": a abrangência fica "Não informada", com a UF do cadastro
+// em ufCadastro (sem ufs, para não filtrar quem pode estar apto) e uma nota pedindo conferência.
+export const ABRANGENCIA_NAO_INFORMADA = 'Não informada';
+const UFS_VALIDAS = new Set(['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO']);
 export function abrangencia(nomePrograma, ufPrograma) {
     const m = limpa(nomePrograma).match(/\bsr\s*\(\s*([a-z]{2})\s*\)/i);
     const uf = m ? m[1].toUpperCase() : '';
-    if (uf && SIGLAS.has(uf)) return { abrangencia: uf, ufs: [uf] };
+    if (uf && UFS_VALIDAS.has(uf)) return { abrangencia: uf, ufs: [uf] };
     const cad = limpa(ufPrograma).toUpperCase();
-    return { abrangencia: 'Nacional', abrangenciaNota: `Abrangência não informada pela API${/^[A-Z]{2}$/.test(cad) ? ` (o cadastro do programa indica ${cad})` : ''}: confira no programa quem pode propor.` };
+    const temCad = UFS_VALIDAS.has(cad);
+    return {
+        abrangencia: ABRANGENCIA_NAO_INFORMADA,
+        ...(temCad ? { ufCadastro: cad } : {}),
+        abrangenciaNota: `A fonte não informa onde o programa vale.${temCad ? ` O cadastro indica ${cad}.` : ''} Confira no programa antes de propor.`
+    };
 }
 
 // Modalidade do instrumento, a partir de modalidade_programa (ou modalidade_programa_agrupada) da API.
@@ -90,6 +99,23 @@ export function modalidade(...valores) {
         return t[0].toUpperCase() + t.slice(1);
     }
     return 'Transferência voluntária';
+}
+
+// Textos em linguagem simples que dependem de quem pode pedir (Lei 15.263/2025: linguagem simples).
+// CAUC só vale para entes (prefeituras, estados, DF): OSC não consulta nem recebe CAUC. O item de CAUC do
+// checklist vem da lista por público (DOCS_POR_PUBLICO), por isso não é repetido aqui.
+const ehEnte = pubs => (pubs || []).some(p => p === 'municipio' || p === 'estado');
+export function docsExtrasPrograma() {
+    return ['Cadastro de quem vai pedir o recurso atualizado no Transferegov.br'];
+}
+export function prazoNotaPrograma(cod, pubs) {
+    return `Código do programa: ${cod}. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br${ehEnte(pubs) ? ' e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses)' : ''}.`;
+}
+// Termo de fomento/colaboração seguem o MROSC (Lei 13.019/2014, art. 35, § 1º): sem contrapartida em dinheiro.
+export function contrapartidaPadrao(mod) {
+    return /^termo de (fomento|colabora)/i.test(mod || '')
+        ? 'Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa'
+        : 'Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa';
 }
 
 // Valores por proposta e contrapartida (DESLIGADO por padrão).
