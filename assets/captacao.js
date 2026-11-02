@@ -9,8 +9,14 @@
    3. Quadro (kanban) em Minhas propostas
    4. Go/no-go por proposta
    5. Cofre de certidões e documentos (com aviso de vencimento x prazo)
-   6. Teste de elegibilidade no detalhe do edital
+   6. (Quem pode participar: agora no index.html, uma pergunta por vez — aqui só backup)
    7. Backup (JSON) e exportação do quadro (CSV)
+   8. As 3 perguntas da primeira visita (bloco no início, com entradas por situação)
+   9. "Desde sua última visita" (faixa no início)
+  10. Pesquisa de 1 pergunta (CES) depois de "Portal oficial" / "Quero participar"
+  11. Lista compartilhável (#lista?ids=…) e "Compartilhar minha lista"
+  12. Aviso no navegador (só quando a pessoa pede)
+  13. Meus dados (#meus-dados): o que está salvo, exportar, apagar tudo
 
    Tudo fica no localStorage deste navegador, em chaves com prefixo "fb:".
    Nenhum dado digitado ou importado vai para innerHTML sem passar por esc().
@@ -29,7 +35,16 @@
         gonogo: 'fb:gonogo',
         cofre: 'fb:cofre',
         elegib: 'fb:elegibilidade',
-        vista: 'fb:propostasVista'
+        vista: 'fb:propostasVista',
+        onboarding: 'fb:onboarding',       // 'feito' | 'pulado'
+        ultimaVisita: 'fb:ultimaVisita',   // AAAA-MM-DD do último dia em que o site foi aberto
+        vistosIds: 'fb:vistosIds',         // ids dos editais que existiam na última visita
+        vistosPrazos: 'fb:vistosPrazos',   // { id: prazo } na última visita (para "prazos mudaram")
+        desde: 'fb:desdeVisita',           // { data, ids, prazos } da visita anterior (a faixa usa este retrato)
+        desdeFechado: 'fb:desdeFechado',   // dia em que a faixa foi vista/fechada
+        ces: 'fb:ces',                     // { em, resposta } — pesquisa de 1 pergunta, no máximo a cada 30 dias
+        notificar: 'fb:notificar',         // '1' quando a pessoa pediu aviso neste navegador
+        notificadoEm: 'fb:notificadoEm'
     };
     const objeto = v => v && typeof v === 'object' && !Array.isArray(v);
     const ler = (k, padrao) => { const v = store.get(k, padrao); return v === null || v === undefined ? padrao : v; };
@@ -37,18 +52,17 @@
     let buscas = ler(K.buscas, []);
     let gonogo = ler(K.gonogo, {});
     let cofre = ler(K.cofre, []);
-    let elegib = ler(K.elegib, {});
     let vista = ler(K.vista, 'lista') === 'quadro' ? 'quadro' : 'lista';
     // Dados corrompidos (ou de outra versão) não podem quebrar a página
     if (!Array.isArray(buscas)) buscas = [];
     if (!objeto(gonogo)) gonogo = {};
     if (!Array.isArray(cofre)) cofre = [];
-    if (!objeto(elegib)) elegib = {};
 
     const salvarBuscas = () => store.set(K.buscas, buscas);
     const salvarGonogo = () => store.set(K.gonogo, gonogo);
     const salvarCofre = () => store.set(K.cofre, cofre);
-    const salvarElegib = () => store.set(K.elegib, elegib);
+    // Respostas de "Quem pode participar": quem grava é o index.html (responderEleg); aqui só leitura para o backup
+    const lerElegib = () => { const v = store.get(K.elegib, {}); return objeto(v) ? v : {}; };
 
     const hojeISO = () => isoDe(HOJE);
     const isoValido = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s) && isoDe(parseDate(s)) === s;
@@ -123,10 +137,10 @@
             <h2 class="cap-painel-titulo" id="capAssinarTitulo">Receber os prazos de <strong>${esc(l.recorte.nome)}</strong></h2>
             <p>Assine uma vez: os prazos aparecem e se atualizam sozinhos no seu calendário, inclusive quando um edital novo entra ou um prazo é prorrogado.</p>
             <div class="cap-links">
-                <a class="btn btn-primary btn-small" href="${esc(l.google)}" target="_blank" rel="noopener noreferrer" data-track="assinar-google">Adicionar ao Google Agenda<span class="sr-only"> (abre em nova aba)</span></a>
-                <a class="btn btn-outline btn-small" href="${esc(l.webcal)}" data-track="assinar-webcal">Outlook ou Apple Calendário</a>
+                <a class="btn btn-primary btn-small" href="${esc(l.google)}" target="_blank" rel="noopener noreferrer" data-evento="assinar-google">Adicionar ao Google Agenda<span class="sr-only"> (abre em nova aba)</span></a>
+                <a class="btn btn-outline btn-small" href="${esc(l.webcal)}" data-evento="assinar-webcal">Outlook ou Apple Calendário</a>
                 <button type="button" class="btn btn-outline btn-small" data-cap="copiar-cal">Copiar link do calendário</button>
-                <a class="btn btn-outline btn-small" href="${esc(l.rss)}" target="_blank" rel="noopener" data-track="assinar-rss">RSS<span class="sr-only"> (abre em nova aba)</span></a>
+                <a class="btn btn-outline btn-small" href="${esc(l.rss)}" target="_blank" rel="noopener" data-evento="assinar-rss">RSS<span class="sr-only"> (abre em nova aba)</span></a>
             </div>
             <div class="form-group cap-link-cal">
                 <label for="capLinkCal">Link do calendário (para colar em “Adicionar calendário → Da internet”)</label>
@@ -737,9 +751,11 @@
                     <button type="button" data-cap="vista" data-vista="lista" aria-pressed="${vista === 'lista'}">Lista</button>
                     <button type="button" data-cap="vista" data-vista="quadro" aria-pressed="${vista === 'quadro'}">Quadro</button>
                 </div>
+                <button type="button" class="btn btn-outline btn-small" data-cap="compartilhar-lista">Compartilhar minha lista</button>
                 <button type="button" class="btn btn-ghost btn-small" data-cap="ir-cofre">Cofre de certidões</button>
                 <button type="button" class="btn btn-ghost btn-small" data-cap="ir-backup">Backup</button>
             </div>
+            ${avisoNavegadorHTML()}
             ${conflitos.length ? `<p class="cap-alerta cap-alerta-curto">${ICONE.alerta}<span>${plural(conflitos.length, 'certidão vence', 'certidões vencem')} antes do prazo de editais que você acompanha. <button type="button" class="link-btn" data-cap="ir-cofre">Ver no cofre</button></span></p>` : ''}`;
     }
 
@@ -765,7 +781,7 @@
         return `
             <section class="card" aria-labelledby="capBackupTitulo">
                 <h2 class="card-title" id="capBackupTitulo" tabindex="-1">Backup e exportação</h2>
-                <p class="cap-texto">Guarde uma cópia ou leve para outro dispositivo: propostas, checklists, avaliações go/no-go, cofre de certidões, respostas de elegibilidade e buscas salvas vão em um único arquivo. Ele fica com você — nada é enviado para servidores.</p>
+                <p class="cap-texto">Guarde uma cópia ou leve para outro dispositivo: propostas, checklists, avaliações go/no-go, cofre de certidões, respostas de quem pode participar e buscas salvas vão em um único arquivo. Ele fica com você — nada é enviado para servidores.</p>
                 <div class="cap-links">
                     <button type="button" class="btn btn-outline btn-small" data-cap="exportar-json">${ICONE.baixar} Exportar backup (JSON)</button>
                     <button type="button" class="btn btn-outline btn-small" data-cap="importar-json" aria-describedby="capImportAjuda">${ICONE.subir} Importar backup</button>
@@ -793,7 +809,7 @@
     function exportarJSON() {
         const dados = {
             formato: FORMATO, versao: 1, exportadoEm: new Date().toISOString(),
-            propostas, checklists: checklistsAtuais(), gonogo, cofre, elegibilidade: elegib, buscas
+            propostas, checklists: checklistsAtuais(), gonogo, cofre, elegibilidade: lerElegib(), buscas
         };
         downloadFile(`fundos-brasil-backup-${hojeISO()}.json`, JSON.stringify(dados, null, 2), 'application/json');
         track('backup-exportar');
@@ -962,7 +978,7 @@
             salvarPropostas();
             Object.entries(v.checklists).forEach(([k, lista]) => store.set(`checklist-${k}`, lista));
             Object.assign(gonogo, v.gonogo); salvarGonogo();
-            Object.assign(elegib, v.elegibilidade); salvarElegib();
+            store.set(K.elegib, { ...lerElegib(), ...v.elegibilidade });
             v.cofre.forEach(doc => {
                 const i = cofre.findIndex(d => d.id === doc.id);
                 if (i >= 0) cofre[i] = doc; else if (cofre.length < 200) cofre.push(doc);
@@ -985,86 +1001,384 @@
     }
 
     /* ---------------------------------------------------------------------
-       6. TESTE DE ELEGIBILIDADE — no detalhe do edital, se ele tiver e.elegibilidade
-       Respostas por edital: elegib[id] = { "pergunta": true|false }
+       8. AS 3 PERGUNTAS DA PRIMEIRA VISITA — bloco no início (não é modal, dá para pular)
+       1 "Quem vai pedir o recurso?"  2 "Onde vocês atuam?"  3 "Para quê?" (opcional, até 3 áreas)
+       As respostas viram o perfil (o mesmo de "Sobre você"), com "Desfazer".
     --------------------------------------------------------------------- */
-    function respostasDe(e) {
-        const salvas = objeto(elegib[e.id]) ? elegib[e.id] : {};
-        return e.elegibilidade.map(q => (typeof salvas[q.pergunta] === 'boolean' ? salvas[q.pergunta] : null));
+    const SITUACOES = [
+        { k: 'pesquisador', txt: 'Preciso de bolsa de pesquisa' },
+        { k: 'osc', txt: 'Projeto social da minha ONG' },
+        { k: 'municipio', txt: 'Obra ou serviço na minha cidade' },
+        { k: 'empresa', txt: 'Inovação na minha empresa' }
+    ];
+    const MAX_AREAS_ONB = 3;
+    const onb = { passo: 1, pub: '', uf: '', ufSel: '', areas: [], forcar: false };
+
+    function situacoesHTML(sozinhas) {
+        return `<div class="onb-situacoes">
+                ${sozinhas ? '<h2 class="onb-titulo" id="onbTitulo">Comece pela sua situação</h2>' : '<p class="onb-sit-tit">Ou comece pela sua situação:</p>'}
+                <div class="onb-sit-lista">${SITUACOES.map(s => `<button type="button" class="onb-sit" data-cap="onb-situacao" data-valor="${s.k}">${esc(s.txt)}</button>`).join('')}</div>
+                ${sozinhas ? '<p class="nota"><button type="button" class="link-btn" data-cap="onb-abrir">Ou responda as 3 perguntas</button> · fica só neste aparelho.</p>' : ''}
+            </div>`;
     }
 
-    function resultadoElegHTML(e) {
-        const resp = respostasDe(e);
-        const falhaElim = e.elegibilidade.filter((q, i) => resp[i] !== null && q.eliminatoria && resp[i] !== q.esperado);
-        const falhaOutros = e.elegibilidade.filter((q, i) => resp[i] !== null && !q.eliminatoria && resp[i] !== q.esperado);
-        const faltam = resp.filter(r => r === null).length;
-        const ressalva = ' Confira no edital oficial — ele sempre prevalece.';
-        if (falhaElim.length) {
-            return `<p class="cap-eleg-msg alerta"><strong>Atenção: requisito eliminatório não atendido:</strong> ${esc(falhaElim.map(q => q.pergunta).join(' · '))}.${ressalva}</p>`;
-        }
-        if (faltam) {
-            return `<p class="cap-eleg-msg">${faltam === resp.length ? `Responda ${plural(faltam, 'pergunta', 'perguntas')} para ver o resultado.` : `Faltam ${plural(faltam, 'pergunta', 'perguntas')}.`}${ressalva}</p>`;
-        }
-        if (falhaOutros.length) {
-            return `<p class="cap-eleg-msg aviso"><strong>Você atende aos requisitos eliminatórios, mas não a ${plural(falhaOutros.length, 'item', 'itens')}:</strong> ${esc(falhaOutros.map(q => q.pergunta).join(' · '))}. Isso pode reduzir sua pontuação.${ressalva}</p>`;
-        }
-        return `<p class="cap-eleg-msg ok"><strong>Pelo que você respondeu, você atende aos requisitos listados.</strong>${ressalva}</p>`;
-    }
-
-    function elegibilidadeHTML(e) {
-        const resp = respostasDe(e);
+    function perguntaHTML() {
+        if (onb.passo === 1) return `
+            <fieldset class="onb-pergunta">
+                <legend class="onb-legenda" tabindex="-1">Quem vai pedir o recurso?</legend>
+                <div class="onb-opcoes">${Object.entries(PUBLICOS_PERGUNTA).map(([k, t]) => `<button type="button" class="onb-op" data-cap="onb-pub" data-valor="${k}" aria-pressed="${onb.pub === k}">${esc(t)}</button>`).join('')}</div>
+            </fieldset>
+            ${situacoesHTML(false)}`;
+        if (onb.passo === 2) return `
+            <fieldset class="onb-pergunta">
+                <legend class="onb-legenda" tabindex="-1">Onde vocês atuam?</legend>
+                <div class="onb-uf">
+                    <div class="form-group"><label for="onbUF">Estado</label>
+                        <select id="onbUF"><option value="">Escolha o estado</option>${Object.entries(UFS).map(([k, t]) => `<option value="${k}"${(onb.ufSel || onb.uf) === k ? ' selected' : ''}>${esc(t)}</option>`).join('')}</select></div>
+                    <button type="button" class="btn btn-primary" data-cap="onb-uf-ok">Continuar</button>
+                </div>
+                <p class="onb-ou">ou</p>
+                <button type="button" class="btn btn-outline onb-brasil" data-cap="onb-uf-brasil">Todo o Brasil</button>
+            </fieldset>`;
         return `
-            <h4 class="cap-eleg-titulo" id="capElegTitulo-${e.id}">Requisitos deste edital</h4>
-            <p class="nota">Triagem com os principais requisitos do edital. Responda pela sua organização; as respostas ficam salvas neste navegador.</p>
-            <ol class="cap-eleg-lista">
-                ${e.elegibilidade.map((q, i) => `
-                    <li>
-                        <fieldset>
-                            <legend>${esc(q.pergunta)}${q.eliminatoria ? ' <span class="badge badge-neutral">Eliminatório</span>' : ''}</legend>
-                            <div class="cap-eleg-opcoes">
-                                <label><input type="radio" name="capEleg-${e.id}-${i}" value="sim" data-cap-eleg="${i}" data-id="${e.id}"${resp[i] === true ? ' checked' : ''}> Sim</label>
-                                <label><input type="radio" name="capEleg-${e.id}-${i}" value="nao" data-cap-eleg="${i}" data-id="${e.id}"${resp[i] === false ? ' checked' : ''}> Não</label>
-                            </div>
-                        </fieldset>
-                    </li>`).join('')}
-            </ol>
-            <div class="cap-eleg-resultado" aria-live="polite">${resultadoElegHTML(e)}</div>
-            ${resp.some(r => r !== null) ? `<button type="button" class="btn btn-ghost btn-small" data-cap="limpar-eleg" data-id="${e.id}">Limpar respostas</button>` : ''}`;
+            <fieldset class="onb-pergunta">
+                <legend class="onb-legenda" tabindex="-1">Para quê? <span class="onb-opcional">(opcional, até ${MAX_AREAS_ONB} áreas)</span></legend>
+                <div class="onb-areas">${Object.entries(AREAS).map(([k, t]) => `<label class="onb-area"><input type="checkbox" name="onbArea" value="${esc(k)}"${onb.areas.includes(k) ? ' checked' : ''}> <span>${esc(t)}</span></label>`).join('')}</div>
+                <p class="nota" id="onbAreasAviso" aria-live="polite"></p>
+            </fieldset>
+            <div class="onb-acoes">
+                <button type="button" class="btn btn-primary" data-cap="onb-concluir">Ver os editais que servem</button>
+                <button type="button" class="btn btn-outline" data-cap="onb-concluir" data-sem-areas="1">Pular</button>
+            </div>`;
     }
 
-    function inserirElegibilidade(id) {
-        const modal = document.getElementById('editalModal');
-        const e = editais.find(x => x.id === id);
-        if (!modal || !e || Number(modal.dataset.id) !== id) return;
-        const corpo = modal.querySelector('#editalModalContent .modal-body');
-        if (!corpo) return;
-        const antigo = corpo.querySelector('.cap-eleg');
-        if (antigo) antigo.remove();
-        if (!Array.isArray(e.elegibilidade) || !e.elegibilidade.length) return;
-        const sec = document.createElement('section');
-        sec.className = 'no-print cap-eleg';
-        sec.setAttribute('aria-labelledby', `capElegTitulo-${e.id}`);
-        sec.innerHTML = elegibilidadeHTML(e);
-        // Dentro de "Posso concorrer?" (slot reservado pelo index.html); sem o slot, logo depois da primeira seção
-        const slot = corpo.querySelector(`[data-eleg-slot="${e.id}"]`);
-        if (slot) { slot.appendChild(sec); return; }
-        sec.classList.add('modal-section');
-        const ref = corpo.querySelector(':scope > .modal-section');
-        if (ref) ref.after(sec); else corpo.prepend(sec);
+    function renderOnboarding(focar) {
+        const box = document.getElementById('capOnboarding');
+        if (!box) return;
+        const estado = ler(K.onboarding, '');
+        const perguntas = onb.forcar || (!estado && !perfilAtivo());
+        if (!perguntas) {
+            // Sem perfil e já pulou: ficam só as entradas por situação (abrem as perguntas com a 1ª respondida)
+            box.hidden = perfilAtivo();
+            box.innerHTML = perfilAtivo() ? '' : `<div class="onb-card onb-compacto">${situacoesHTML(true)}</div>`;
+            return;
+        }
+        // Não redesenha debaixo do dedo de quem está respondendo (atualizações de dados chamam isto de novo)
+        if (!focar && box.contains(document.activeElement) && box.dataset.passo === String(onb.passo)) return;
+        box.hidden = false;
+        box.dataset.passo = String(onb.passo);
+        box.innerHTML = `
+            <div class="onb-card" data-passo="${onb.passo}">
+                <div class="onb-topo">
+                    <h2 class="onb-titulo" id="onbTitulo">Responda 3 perguntas e veja só o que serve para você</h2>
+                    <p class="onb-progresso"><span class="sr-only">Pergunta </span>${onb.passo} de 3
+                        <span class="onb-barra" aria-hidden="true"><span style="width:${Math.round(onb.passo / 3 * 100)}%"></span></span></p>
+                </div>
+                ${perguntaHTML()}
+                <div class="onb-rodape">
+                    ${onb.passo > 1 ? '<button type="button" class="btn btn-ghost btn-small" data-cap="onb-voltar"><span aria-hidden="true">←</span> Voltar</button>' : ''}
+                    <p class="onb-privacidade">Suas respostas ficam só neste aparelho. Você pode <a href="#meus-dados">apagar quando quiser</a>.</p>
+                    <button type="button" class="btn btn-ghost btn-small" data-cap="onb-pular">Agora não</button>
+                </div>
+            </div>`;
+        if (focar) {
+            const l = box.querySelector('.onb-legenda');
+            if (l) {
+                l.focus({ preventScroll: true });
+                const topo = box.getBoundingClientRect().top;
+                if (topo < 72 || topo > innerHeight * 0.6) box.scrollIntoView({ block: 'start' }); // scroll-margin-top: abaixo do cabeçalho fixo
+            }
+        }
     }
 
-    function responderEleg(input) {
-        const id = Number(input.dataset.id), i = Number(input.dataset.capEleg);
-        const e = editais.find(x => x.id === id);
-        if (!e || !e.elegibilidade || !e.elegibilidade[i]) return;
-        const atual = objeto(elegib[id]) ? elegib[id] : {};
-        atual[e.elegibilidade[i].pergunta] = input.value === 'sim';
-        elegib[id] = atual;
-        salvarElegib();
-        const sec = input.closest('.cap-eleg');
-        sec.querySelector('.cap-eleg-resultado').innerHTML = resultadoElegHTML(e);
-        if (!sec.querySelector('[data-cap="limpar-eleg"]')) sec.insertAdjacentHTML('beforeend', `<button type="button" class="btn btn-ghost btn-small" data-cap="limpar-eleg" data-id="${e.id}">Limpar respostas</button>`);
+    function onbEscolherPub(k) {
+        if (!PUBLICOS[k]) return;
+        onb.pub = k;
+        onb.passo = 2;
+        renderOnboarding(true);
     }
+    function onbSituacao(k) {
+        if (!PUBLICOS[k]) return;
+        track('onboarding-situacao');
+        onb.forcar = true;
+        onb.pub = k;
+        onb.passo = 2;
+        if (paginaAtual() !== 'dashboard') location.hash = 'dashboard';
+        renderOnboarding(true);
+    }
+    function onbEscolherUF(uf) {
+        onb.uf = UFS[uf] ? uf : '';
+        onb.passo = 3;
+        renderOnboarding(true);
+    }
+    function onbConcluir(semAreas) {
+        const areas = semAreas ? [] : [...document.querySelectorAll('#capOnboarding input[name="onbArea"]:checked')].map(i => i.value).filter(a => AREAS[a]).slice(0, MAX_AREAS_ONB);
+        naoLembrarPerfil = false;
+        atualizarPerfil({ publico: onb.pub || (perfil && perfil.publico) || '', uf: onb.uf, areas });
+        store.set(K.onboarding, 'feito');
+        track('onboarding-concluir');
+        onb.forcar = false;
+        refreshAll();
+        location.hash = 'editais';
+    }
+    function onbPular() {
+        store.set(K.onboarding, 'pulado');
+        track('onboarding-pular');
+        onb.forcar = false;
+        renderOnboarding(false);
+        const alvo = document.querySelector('#capOnboarding .onb-sit') || document.getElementById('homeSearchInput');
+        if (alvo) alvo.focus();
+    }
+
+    /* ---------------------------------------------------------------------
+       9. "DESDE SUA ÚLTIMA VISITA" — faixa no início
+       Guarda o dia da visita (fb:ultimaVisita), os ids vistos e os prazos; na volta, compara.
+    --------------------------------------------------------------------- */
+    function prepararDesde() {
+        const hoje = hojeISO();
+        const ultima = ler(K.ultimaVisita, '');
+        if (isoValido(ultima) && ultima < hoje) {
+            store.set(K.desde, { data: ultima, ids: ler(K.vistosIds, null), prazos: ler(K.vistosPrazos, null) });
+        }
+        store.set(K.ultimaVisita, hoje);
+    }
+    // O retrato desta visita (o que a pessoa já viu) — refeito quando os dados publicados chegam
+    function guardarVistos() {
+        store.set(K.vistosIds, editais.map(e => e.id));
+        store.set(K.vistosPrazos, Object.fromEntries(editais.map(e => [e.id, e.encerramento])));
+    }
+    let desdeIds = [];
+    function renderDesde() {
+        const box = document.getElementById('capDesde');
+        if (!box) return;
+        const d = ler(K.desde, null);
+        const hoje = hojeISO();
+        if (!objeto(d) || !isoValido(d.data) || d.data >= hoje || ler(K.desdeFechado, '') === hoje) { box.innerHTML = ''; return; }
+        const ids = Array.isArray(d.ids) ? new Set(d.ids) : null;
+        const servem = e => statusEdital(e) !== 'fechado' && (!perfilAtivo() || (avaliarCompat(e) || {}).elegivel);
+        const novos = editais.filter(e => servem(e) && !e.custom && (ids ? !ids.has(e.id) : (e.publicadoEm && e.publicadoEm > d.data)));
+        const mudaram = objeto(d.prazos) ? editais.filter(e => d.prazos[e.id] && d.prazos[e.id] !== e.encerramento && statusEdital(e) !== 'fechado') : [];
+        const fav = editais.filter(e => favorites.includes(e.id) && statusEdital(e) === 'aberto' && diasAte(e.encerramento) <= 15)
+            .sort((a, b) => a.encerramento.localeCompare(b.encerramento))[0];
+        if (!novos.length && !mudaram.length && !fav) { box.innerHTML = ''; return; }
+        const partes = [];
+        if (novos.length) partes.push(`${novos.length === 1 ? '1 novo' : `${novos.length} novos`}${perfilAtivo() ? ' para você' : ''}`);
+        if (mudaram.length) partes.push(plural(mudaram.length, 'prazo mudou', 'prazos mudaram'));
+        if (fav) {
+            const n = diasAte(fav.encerramento);
+            const curto = fav.titulo.length > 60 ? fav.titulo.slice(0, 57).replace(/\s+\S*$/, '') + '…' : fav.titulo;
+            partes.push(`${esc(curto)} fecha ${n === 0 ? 'hoje' : n === 1 ? 'amanhã' : `em ${n} dias`}`);
+        }
+        desdeIds = [...new Set([...novos, ...mudaram, ...(fav ? [fav] : [])].map(e => e.id))];
+        box.innerHTML = `
+            <section class="desde" aria-labelledby="desdeTitulo">
+                <p id="desdeTitulo"><strong>Desde ${fmtDate(d.data).slice(0, 5)}:</strong> ${partes.join(' · ')}</p>
+                <div class="desde-acoes">
+                    <button type="button" class="btn btn-primary btn-small" data-cap="desde-ver" data-evento="novidades-ver">Ver</button>
+                    <button type="button" class="btn btn-ghost btn-small" data-cap="desde-fechar" aria-label="Fechar o aviso de novidades">Fechar</button>
+                </div>
+            </section>`;
+    }
+    function desdeVer() {
+        store.set(K.desdeFechado, hojeISO());
+        location.hash = `lista?ids=${desdeIds.join(',')}&de=novidades`;
+    }
+    function desdeFechar() {
+        store.set(K.desdeFechado, hojeISO());
+        renderDesde();
+        const h = document.getElementById('destaquesTitulo');
+        if (h) { h.setAttribute('tabindex', '-1'); h.focus(); }
+    }
+
+    /* ---------------------------------------------------------------------
+       10. PESQUISA DE 1 PERGUNTA (CES) — no detalhe, depois de "Portal oficial" ou "Quero participar"
+       Sem texto livre; não pergunta de novo por 30 dias (fb:ces).
+    --------------------------------------------------------------------- */
+    let cesPendente = null;
+    function cesPodePerguntar() {
+        const c = ler(K.ces, null);
+        return !objeto(c) || !c.em || isNaN(Date.parse(c.em)) || Date.now() - Date.parse(c.em) > 30 * 86400000;
+    }
+    function mostrarCES(id) {
+        if (!id || !cesPodePerguntar()) return;
+        cesPendente = id;
+        reinserirCES(id);
+    }
+    function reinserirCES(id) {
+        if (cesPendente !== id) return;
+        const slot = document.querySelector(`#editalModal [data-ces-slot="${id}"]`);
+        if (!slot || slot.querySelector('.ces')) return;
+        slot.innerHTML = `
+            <div class="ces" role="group" aria-labelledby="cesPergunta">
+                <p id="cesPergunta"><strong>Foi fácil encontrar o que procurava?</strong></p>
+                <div class="ces-opcoes">
+                    <button type="button" class="btn btn-outline btn-small" data-cap="ces" data-valor="facil">Fácil</button>
+                    <button type="button" class="btn btn-outline btn-small" data-cap="ces" data-valor="medio">Mais ou menos</button>
+                    <button type="button" class="btn btn-outline btn-small" data-cap="ces" data-valor="dificil">Difícil</button>
+                </div>
+            </div>`;
+    }
+    function responderCES(v) {
+        if (!['facil', 'medio', 'dificil'].includes(v)) return;
+        track(`ces-${v}`);
+        store.set(K.ces, { em: new Date().toISOString(), resposta: v });
+        cesPendente = null;
+        const slot = document.querySelector('#editalModal .ces-slot');
+        if (slot) {
+            slot.innerHTML = '<p class="ces-obrigado" role="status" tabindex="-1">Obrigado</p>';
+            slot.firstChild.focus();
+        }
+    }
+    // Reconhece o clique na captura (antes de o index.html redesenhar o modal) e pergunta logo depois
+    document.addEventListener('click', ev => {
+        const a = ev.target.closest && ev.target.closest('#editalModal [data-action="external"], #editalModal [data-action="follow"]');
+        if (!a) return;
+        const id = Number(document.getElementById('editalModal').dataset.id);
+        setTimeout(() => seguro(() => mostrarCES(id)), 0);
+    }, true);
+
+    /* ---------------------------------------------------------------------
+       11. LISTA COMPARTILHÁVEL — #lista?ids=101,1056835
+    --------------------------------------------------------------------- */
+    function idsDaLista() {
+        const p = new URLSearchParams(location.hash.split('?')[1] || '');
+        return [...new Set(String(p.get('ids') || '').split(',').map(s => s.trim()).filter(s => /^\d{1,9}$/.test(s)).map(Number))].slice(0, 100);
+    }
+    function renderLista() {
+        const box = document.getElementById('capLista');
+        if (!box) return;
+        const ids = idsDaLista();
+        const novidades = new URLSearchParams(location.hash.split('?')[1] || '').get('de') === 'novidades';
+        const achados = ids.map(id => editais.find(e => e.id === id)).filter(Boolean);
+        const faltam = ids.length - achados.length;
+        document.getElementById('capListaSub').textContent = novidades ? 'O que mudou desde a sua última visita'
+            : achados.length ? `${plural(achados.length, 'edital escolhido', 'editais escolhidos')} por quem compartilhou este link` : 'Lista vazia';
+        box.innerHTML = achados.length ? `
+            <div class="lista-topo">
+                <p class="nota">${plural(achados.length, 'edital', 'editais')}${faltam ? ` · ${plural(faltam, 'não está mais no site', 'não estão mais no site')}` : ''}. Toque em <strong>Posso concorrer?</strong> para ver se cada um serve para você.</p>
+                <button type="button" class="btn btn-outline btn-small" data-cap="lista-copiar">Copiar o link desta lista</button>
+            </div>
+            <div class="lista-editais">${achados.map(e => editalCardHTML(e)).join('')}</div>`
+            : `<div class="card empty-state"><div class="empty-state-title">Nenhum edital nesta lista</div>
+                <p>O link pode estar incompleto ou os editais saíram do site.</p>
+                <a class="btn btn-primary" href="#editais">Ver todos os editais</a></div>`;
+        document.title = `Lista de editais · Fundos Brasil`;
+    }
+    function linkDaLista(ids) {
+        const base = /^https?:$/.test(location.protocol) ? location.href.split('#')[0] : (baseSite() || location.href.split('#')[0]);
+        return `${base}#lista?ids=${ids.join(',')}`;
+    }
+    async function compartilharLink(url, titulo, texto) {
+        if (navigator.share) {
+            try { await navigator.share({ title: titulo, text: texto, url }); } catch (_) { /* cancelado */ }
+            return;
+        }
+        try { await navigator.clipboard.writeText(url); showNotification('Link copiado. Cole onde quiser compartilhar.'); }
+        catch (_) { prompt('Copie o link:', url); }
+    }
+    function compartilharLista() {
+        const ids = itensPropostas().map(x => x.e.id);
+        if (!ids.length) { showNotification('Escolha um edital primeiro.', 'warning'); return; }
+        track('lista-compartilhar');
+        compartilharLink(linkDaLista(ids), 'Minha lista de editais', `${plural(ids.length, 'edital', 'editais')} que estou acompanhando no Fundos Brasil`);
+    }
+
+    /* ---------------------------------------------------------------------
+       12. AVISO NO NAVEGADOR (opcional) — só depois que a pessoa pede; nunca pedimos sozinhos
+    --------------------------------------------------------------------- */
+    const notifSuportada = () => 'Notification' in window;
+    function avisoNavegadorHTML() {
+        if (!notifSuportada()) return '';
+        const ligado = ler(K.notificar, null) === '1' && Notification.permission === 'granted';
+        if (ligado) return `<p class="cap-notif nota">Avisos neste navegador ligados: quando você abrir o site e um prazo estiver perto. <button type="button" class="link-btn" data-cap="parar-notificacao">Desligar</button></p>`;
+        if (Notification.permission === 'denied') return '<p class="cap-notif nota">Os avisos deste site estão bloqueados nas configurações do navegador.</p>';
+        return '<p class="cap-notif"><button type="button" class="btn btn-ghost btn-small" data-cap="pedir-notificacao">Avisar neste navegador quando eu abrir o site e algo estiver perto do prazo</button></p>';
+    }
+    async function pedirNotificacao() {
+        if (!notifSuportada()) return;
+        let p = Notification.permission;
+        if (p === 'default') { try { p = await Notification.requestPermission(); } catch (_) { p = 'denied'; } }
+        if (p === 'granted') {
+            store.set(K.notificar, '1');
+            track('notificacao-ligar');
+            showNotification('Pronto: quando você abrir o site e um prazo estiver perto, avisamos neste navegador.');
+            avisarPrazosNoNavegador(true);
+        } else showNotification('O navegador não permitiu os avisos. Dá para mudar nas configurações do site.', 'warning');
+        if (paginaAtual() === 'propostas') renderPropostas();
+        if (paginaAtual() === 'meus-dados') renderMeusDados();
+    }
+    function avisarPrazosNoNavegador(forcar) {
+        if (!notifSuportada() || Notification.permission !== 'granted' || ler(K.notificar, null) !== '1') return;
+        const hoje = hojeISO();
+        if (!forcar && ler(K.notificadoEm, '') === hoje) return;
+        const lista = alertasDePrazo();
+        if (!lista.length) return;
+        store.set(K.notificadoEm, hoje);
+        const e = lista[0], n = diasAte(e.encerramento);
+        try {
+            new Notification('Fundos Brasil: prazo perto', {
+                body: `${e.titulo}: ${n === 0 ? 'encerra hoje' : n === 1 ? 'encerra amanhã' : `faltam ${n} dias`}${lista.length > 1 ? ` (e mais ${lista.length - 1})` : ''}`,
+                tag: 'fundos-brasil-prazos'
+            });
+        } catch (_) { /* alguns celulares só aceitam avisos por service worker */ }
+    }
+
+    /* ---------------------------------------------------------------------
+       13. MEUS DADOS — #meus-dados: o que está salvo, com datas; exportar e apagar tudo
+    --------------------------------------------------------------------- */
+    const CHAVES_MINHAS = /^(favorites|perfil|propostas|editaisCustom|vistos|prestacoes|usuario|pcSeq|checklist-|rascunho-pc-|fb:)/;
+    const dataBR = iso => (iso && !isNaN(Date.parse(iso)) ? new Date(iso).toLocaleDateString('pt-BR') : '—');
+    const maisRecente = lista => lista.filter(x => x && !isNaN(Date.parse(x))).sort().pop() || '';
+    function renderMeusDados() {
+        const box = document.getElementById('capMeusDados');
+        if (!box) return;
+        const props = itensPropostas();
+        const favs = (store.get('favorites', []) || []).filter(Number.isInteger);
+        const eleg = lerElegib();
+        const d = ler(K.desde, null);
+        const linhas = [
+            ['Sobre você (perfil)', perfilAtivo() ? resumoPerfil() : 'Nada salvo', perfilAtivo() ? dataBR(ler('fb:perfilEm', '')) : '—',
+                '<button type="button" class="link-btn" data-action="edit-perfil">Ver ou mudar</button>'],
+            ['Favoritos', plural(favs.length, 'edital', 'editais'), favs.length ? dataBR(ler('fb:favoritosEm', '')) : '—', favs.length ? '<a href="#editais?fav=1">Ver</a>' : ''],
+            ['Minhas propostas', plural(props.length, 'edital escolhido', 'editais escolhidos'), props.length ? dataBR(maisRecente(props.map(x => x.p.atualizadoEm))) : '—', props.length ? '<a href="#propostas">Ver</a>' : ''],
+            ['Cofre de certidões', plural(cofre.length, 'documento', 'documentos'), cofre.length ? dataBR(maisRecente(cofre.map(x => x.atualizadoEm))) : '—', cofre.length ? '<a href="#propostas">Ver</a>' : ''],
+            ['Buscas salvas', plural(buscas.length, 'busca', 'buscas'), buscas.length ? dataBR(maisRecente(buscas.map(x => x.criadoEm))) : '—', ''],
+            ['Respostas de “quem pode participar”', plural(Object.keys(eleg).length, 'edital respondido', 'editais respondidos'), '—', ''],
+            ['Última visita', objeto(d) && isoValido(d.data) ? `antes de hoje: ${fmtDate(d.data)}` : 'Primeira visita neste aparelho', dataBR(ler(K.ultimaVisita, '') ? ler(K.ultimaVisita, '') + 'T12:00:00' : ''), ''],
+            ['Seu nome nos relatórios', usuario ? usuario.nome : 'Não informado', '—', ''],
+            ['Aviso neste navegador', ler(K.notificar, null) === '1' ? 'Ligado' : 'Desligado', '—', '']
+        ];
+        box.innerHTML = `
+            <p class="aviso-local" role="note">${ICONE.cadeado}<span><strong>Nada disto sai do seu aparelho.</strong> Não há conta nem cadastro: tudo fica no armazenamento deste navegador. Se você limpar os dados do site ou trocar de aparelho, eles não estarão lá.</span></p>
+            <div class="compare-table-wrap">
+                <table class="projetos-table meus-dados-tabela">
+                    <caption class="sr-only">O que está salvo neste aparelho</caption>
+                    <thead><tr><th scope="col">O quê</th><th scope="col">Situação</th><th scope="col">Última mudança</th><th scope="col"><span class="sr-only">Ações</span></th></tr></thead>
+                    <tbody>${linhas.map(([o, s, q, a]) => `<tr><th scope="row">${esc(o)}</th><td>${esc(s)}</td><td>${esc(q)}</td><td>${a}</td></tr>`).join('')}</tbody>
+                </table>
+            </div>
+            ${avisoNavegadorHTML()}
+            <div class="modal-actions meus-dados-acoes">
+                <button type="button" class="btn btn-outline" data-cap="meus-exportar">${ICONE.baixar} Exportar</button>
+                <button type="button" class="btn btn-danger" data-cap="meus-apagar">Apagar tudo</button>
+            </div>
+            <p class="nota">Exportar baixa um arquivo .json com tudo isso. Apagar tudo remove os dados deste aparelho e volta para as 3 perguntas do início. Para levar só as propostas para outro aparelho, use o <a href="#propostas">backup de Minhas propostas</a>.</p>`;
+    }
+    function exportarMeusDados() {
+        const dados = {};
+        try {
+            Object.keys(localStorage).forEach(k => { if (CHAVES_MINHAS.test(k)) dados[k] = store.get(k, null); });
+        } catch (_) { /* armazenamento indisponível */ }
+        downloadFile(`fundos-brasil-meus-dados-${hojeISO()}.json`, JSON.stringify({ formato: 'fundos-brasil/meus-dados', versao: 1, exportadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
+        track('meus-dados-exportar');
+        showNotification('Arquivo com seus dados baixado.');
+    }
+    function apagarTudo() {
+        track('meus-dados-apagar');
+        limparDados(); // confirma, apaga as chaves deste site e recarrega no início (as 3 perguntas voltam)
+    }
+    window.renderMeusDados = () => seguro(renderMeusDados);
+    window.renderLista = () => seguro(renderLista);
 
     /* ---------------------------------------------------------------------
        GANCHOS NO SCRIPT PRINCIPAL (sem duplicar renderizações)
@@ -1075,7 +1389,7 @@
 
     openEdital = function (id) {
         original.openEdital(id);
-        seguro(() => inserirElegibilidade(id));
+        seguro(() => reinserirCES(id));
     };
 
     // syncUrl roda ao fim de todo filterEditais (inclusive na busca com atraso): ponto único para "filtros mudaram"
@@ -1087,6 +1401,9 @@
     renderDashboardStats = function () {
         original.renderDashboardStats();
         seguro(renderBuscas);
+        seguro(() => renderOnboarding(false));
+        seguro(renderDesde);
+        seguro(guardarVistos);
     };
 
     renderPropostas = function () {
@@ -1168,16 +1485,28 @@
             case 'exportar-json': exportarJSON(); break;
             case 'importar-json': { const inp = document.getElementById('capImportFile'); if (inp) { inp.value = ''; inp.click(); } break; }
             case 'exportar-csv': exportarCSV(); break;
-            case 'limpar-eleg': {
-                const n = Number(id);
-                delete elegib[n];
-                salvarElegib();
-                const sec = el.closest('.cap-eleg');
-                const e = editais.find(x => x.id === n);
-                if (sec && e) { sec.innerHTML = elegibilidadeHTML(e); const r = sec.querySelector('input[type=radio]'); if (r) r.focus(); }
-                anunciar('Respostas apagadas.');
+            case 'compartilhar-lista': compartilharLista(); break;
+            case 'pedir-notificacao': pedirNotificacao(); break;
+            case 'parar-notificacao': store.set(K.notificar, null); showNotification('Pronto: não vamos mais avisar neste navegador.'); renderPropostas(); if (paginaAtual() === 'meus-dados') renderMeusDados(); break;
+            case 'onb-pub': onbEscolherPub(el.dataset.valor); break;
+            case 'onb-uf-brasil': onbEscolherUF(''); break;
+            case 'onb-voltar': onb.passo = Math.max(1, onb.passo - 1); renderOnboarding(true); break;
+            case 'onb-pular': onbPular(); break;
+            case 'onb-concluir': onbConcluir(el.dataset.semAreas === '1'); break;
+            case 'onb-uf-ok': {
+                const s = document.getElementById('onbUF');
+                if (!s || !s.value) { if (s) { s.setAttribute('aria-invalid', 'true'); s.focus(); } anunciar('Escolha o estado ou toque em Todo o Brasil.'); break; }
+                onbEscolherUF(s.value);
                 break;
             }
+            case 'lista-copiar': compartilharLink(location.href, 'Lista de editais', 'Editais no Fundos Brasil'); break;
+            case 'onb-situacao': onbSituacao(el.dataset.valor); break;
+            case 'onb-abrir': onb.passo = 1; onb.forcar = true; renderOnboarding(true); break;
+            case 'desde-ver': desdeVer(); break;
+            case 'desde-fechar': desdeFechar(); break;
+            case 'ces': responderCES(el.dataset.valor); break;
+            case 'meus-exportar': exportarMeusDados(); break;
+            case 'meus-apagar': apagarTudo(); break;
         }
     });
 
@@ -1233,7 +1562,14 @@
         if (el.id === 'capImportFile' && el.files && el.files[0]) importarArquivo(el.files[0]);
         if (el.id === 'capDocTipo' || el.id === 'capDocEmissao') sugerirValidade();
         if (el.id === 'capDocValidade') validadeAuto = !el.value; // a pessoa digitou: não recalcula mais
-        if (el.dataset && el.dataset.capEleg !== undefined && el.checked) responderEleg(el);
+        if (el.id === 'onbUF') { onb.ufSel = el.value; el.removeAttribute('aria-invalid'); }
+        if (el.name === 'onbArea') {
+            const marcadas = [...document.querySelectorAll('#capOnboarding input[name="onbArea"]:checked')];
+            const aviso = document.getElementById('onbAreasAviso');
+            if (marcadas.length > MAX_AREAS_ONB) { el.checked = false; if (aviso) aviso.textContent = `Escolha até ${MAX_AREAS_ONB} áreas.`; }
+            else if (aviso) aviso.textContent = '';
+            onb.areas = [...document.querySelectorAll('#capOnboarding input[name="onbArea"]:checked')].map(i => i.value);
+        }
         if (el.dataset && el.dataset.capGng === 'nota' && el.checked) {
             const id = Number(el.dataset.id);
             const g = gonogo[id] || { notas: {}, justificativa: '' };
@@ -1316,4 +1652,9 @@
     // Estado inicial (o script principal ainda vai chamar route() no DOMContentLoaded)
     seguro(montarAcoesBusca);
     seguro(renderBuscas);
+    seguro(prepararDesde);
+    seguro(() => renderOnboarding(false));
+    seguro(renderDesde);
+    // Aviso no navegador: só se a pessoa ligou antes (nunca pede permissão sozinho)
+    setTimeout(() => seguro(() => avisarPrazosNoNavegador(false)), 1500);
 })();
