@@ -789,7 +789,8 @@ for (const [pub, h] of Object.entries(PUBLICOS_HUB)) {
         <section><h2>Documentos que costumam ser pedidos</h2><ul class="lista">${docs.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
             <p class="nota">Veja o <a href="${rel}guias/documentos-para-editais/">checklist completo de documentos</a>. Cada edital define a lista oficial.</p></section>
         <section><h2>Guias</h2>${linkGuias(rel)}</section>
-        ${pub === 'empresa' || pub === 'osc' ? `<p class="nota">Acompanha editais para vários clientes ou projetos? O <a href="${rel}pro/">${esc(PRO.nome || 'Plano Pro')}</a> está em preparação.</p>` : ''}`
+        ${pub === 'empresa' || pub === 'osc' ? `<p class="nota">Acompanha editais para vários clientes ou projetos? O <a href="${rel}pro/" data-evento="pro-ver">${esc(PRO.nome || 'Plano Pro')}</a> está em preparação.</p>` : ''}
+        ${pub === 'municipio' || pub === 'estado' ? `<p class="nota">Associação ou consórcio de municípios? Conheça o <a href="${rel}radar-municipios/" data-evento="radar-ver">Radar de captação para municípios</a>, em preparação.</p>` : ''}`
     }));
 }
 
@@ -1033,6 +1034,47 @@ const SCRIPT_PEDIDO = `(function(){var f=document.getElementById('pedido-form');
         ${emailCom ? `<script>${SCRIPT_PEDIDO}</script>` : ''}`
     }));
 }
+// Copiar texto de um campo (botões com data-copiar="<id>")
+const SCRIPT_COPIAR = `document.querySelectorAll('[data-copiar]').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.getAttribute('data-copiar')),st=document.getElementById('copiaStatus');var ok=function(){st.textContent='Texto copiado. Confira antes de publicar.';};var manual=function(){el.focus();el.select();st.textContent='Selecionamos o texto: use Copiar do seu aparelho.';};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(el.value).then(ok,manual);else manual();});});`;
+// Lista de espera sem servidor: monta um e-mail com as respostas (cada campo tem data-rotulo).
+const SCRIPT_ESPERA = `document.querySelectorAll('form[data-espera]').forEach(function(f){var st=f.querySelector('[role=status]');f.addEventListener('submit',function(ev){ev.preventDefault();if(!f.reportValidity())return;var linhas=[],vistos={};[].forEach.call(f.elements,function(el){if(!el.name||vistos[el.name]||el.type==='submit')return;var r=el.getAttribute('data-rotulo')||el.name;var v;if(el.type==='checkbox'||el.type==='radio'){vistos[el.name]=1;v=[].filter.call(f.querySelectorAll('[name="'+el.name+'"]'),function(x){return x.checked;}).map(function(x){return x.value;}).join('; ');r=(f.querySelector('[name="'+el.name+'"]').closest('fieldset')||{}).getAttribute?f.querySelector('[name="'+el.name+'"]').closest('fieldset').getAttribute('data-rotulo')||r:r;}else{v=String(el.value||'').trim();}if(v)linhas.push(r.replace(/[?:]\s*$/,'')+': '+v);});var org=(f.elements.organizacao||{}).value||'';var assunto=f.getAttribute('data-assunto')+(org?' — '+org.trim():'');var url='mailto:'+f.getAttribute('data-email')+'?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(linhas.join('\\n')+'\\n');if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:f.getAttribute('data-evento')+'-enviar',title:f.getAttribute('data-evento'),event:true});st.textContent='Abrimos o seu e-mail com as respostas prontas. Revise e envie. Se nada abriu, escreva para '+f.getAttribute('data-email')+'.';window.location.href=url;});});`;
+const CAMPOS_PRO = [
+    { nome: 'organizacao', rotulo: 'Organização ou nome profissional', tipo: 'text', obrig: true, auto: 'organization' },
+    { nome: 'perfil', rotulo: 'Você é', tipo: 'select', opcoes: ['Consultoria de captação', 'Captador(a) autônomo(a)', 'ONG, associação ou cooperativa', 'Universidade ou instituto', 'Empresa', 'Prefeitura ou governo', 'Outro'] },
+    { nome: 'clientes', rotulo: 'Para quantos clientes ou projetos você procura editais?', tipo: 'select', opcoes: ['Só para a minha organização', '2 a 5', '6 a 20', 'Mais de 20'] },
+    { nome: 'prioridades', rotulo: 'O que seria mais útil? (marque até 3)', tipo: 'checkbox', opcoes: ['Alertas por e-mail', 'Alertas por WhatsApp', 'Um perfil para cada cliente', 'Acesso da equipe', 'Relatório com a minha marca', 'Histórico de cada financiador'] },
+    { nome: 'preco', rotulo: 'Quanto pagaria por mês?', tipo: 'radio', opcoes: ['Até R$ 29', 'R$ 49', 'R$ 99 a R$ 149 para a equipe', 'Não pagaria; uso só o gratuito'] },
+    { nome: 'consentimento', rotulo: 'Consentimento', tipo: 'aceite', texto: 'Quero ser avisado(a) do lançamento. Posso sair da lista quando quiser.' }
+];
+const CAMPOS_RADAR = [
+    { nome: 'organizacao', rotulo: 'Entidade', tipo: 'text', obrig: true, auto: 'organization', dica: 'Ex.: Associação dos Municípios do …, Consórcio …, Prefeitura de …' },
+    { nome: 'tipo', rotulo: 'Tipo', tipo: 'select', opcoes: ['Associação de municípios', 'Consórcio público', 'Prefeitura', 'Governo estadual', 'Consultoria que atende municípios', 'Outro'] },
+    { nome: 'uf', rotulo: 'Estado (UF)', tipo: 'text', obrig: true, auto: 'address-level1' },
+    { nome: 'municipios', rotulo: 'Quantos municípios a entidade atende?', tipo: 'select', opcoes: ['1', '2 a 10', '11 a 30', 'Mais de 30'] },
+    { nome: 'funcao', rotulo: 'Sua função', tipo: 'text' },
+    { nome: 'interesse', rotulo: 'Interesse', tipo: 'radio', opcoes: ['Participar do piloto', 'Receber uma proposta', 'Só conhecer por enquanto'] },
+    { nome: 'consentimento', rotulo: 'Consentimento', tipo: 'aceite', texto: 'Aceito ser contatado(a) sobre o Radar. Posso sair da lista quando quiser.' }
+];
+function formEspera({ id, titulo, assunto, evento, campos }) {
+    const email = cfg.comercial.email.trim();
+    const campo = c => {
+        const idc = `${id}-${c.nome}`;
+        if (c.tipo === 'select') return `<div class="campo"><label for="${idc}">${esc(c.rotulo)}</label><select id="${idc}" name="${c.nome}" data-rotulo="${esc(c.rotulo)}">${c.opcoes.map(o => `<option>${esc(o)}</option>`).join('')}</select></div>`;
+        if (c.tipo === 'checkbox' || c.tipo === 'radio') return `<fieldset class="campo" data-rotulo="${esc(c.rotulo)}"><legend>${esc(c.rotulo)}</legend><div class="opcoes">${c.opcoes.map((o, i) => `<label><input type="${c.tipo}" name="${c.nome}" value="${esc(o)}"${c.tipo === 'radio' && i === 0 ? '' : ''}> ${esc(o)}</label>`).join('')}</div></fieldset>`;
+        if (c.tipo === 'aceite') return `<div class="campo"><label><input type="checkbox" name="${c.nome}" value="Sim" required data-rotulo="${esc(c.rotulo)}"> ${esc(c.texto)}</label></div>`;
+        return `<div class="campo"><label for="${idc}">${esc(c.rotulo)}${c.obrig ? ' <span class="obrig">(obrigatório)</span>' : ''}</label><input id="${idc}" name="${c.nome}" type="text"${c.obrig ? ' required' : ''}${c.auto ? ` autocomplete="${c.auto}"` : ''} data-rotulo="${esc(c.rotulo)}">${c.dica ? `<p class="dica">${esc(c.dica)}</p>` : ''}</div>`;
+    };
+    return `<section class="chamada" id="${id}" aria-labelledby="${id}-titulo">
+            <h2 id="${id}-titulo">${esc(titulo)}</h2>
+            <form class="formulario" data-espera data-email="${esc(email)}" data-assunto="${esc(assunto)}" data-evento="${esc(evento)}" action="mailto:${esc(email)}" method="get" enctype="text/plain">
+                ${campos.map(campo).join('\n                ')}
+                <div class="acoes"><button type="submit" class="btn primario" data-evento="${esc(evento)}">Montar e-mail de inscrição</button></div>
+                <p class="nota">Nada é enviado por este site: o botão abre o seu programa de e-mail com as respostas prontas para ${esc(email)}. Você revisa e envia. Seu e-mail de contato é o próprio remetente.</p>
+                <p class="nota" role="status" aria-live="polite"></p>
+            </form>
+        </section>`;
+}
+
 /* ---------- Plano Pro (em breve): página própria, fora de /anuncie/ ---------- */
 {
     const rel = '../';
@@ -1053,9 +1095,75 @@ const SCRIPT_PEDIDO = `(function(){var f=document.getElementById('pedido-form');
             <p class="preco"><strong class="preco-atual">${brl(precoPro)}</strong><span><span aria-hidden="true">/</span><span class="sr-only">por </span>${esc(PRO.periodo || 'mês')}</span></p>
             ${arr(PRO.inclui).length ? `<ul class="lista">${arr(PRO.inclui).map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
             <p class="nota">Ainda não está à venda: a lista de espera não gera cobrança nem compromisso. Tudo o que é gratuito hoje continua gratuito.</p>
-            <div class="acoes">${proHref ? `<a class="btn primario" href="${esc(proHref)}"${alvo(proHref)} data-evento="pro-lista-espera">${esc(PRO.botao || 'Entrar na lista de espera')}</a>` : '<p class="nota">A lista de espera abre em breve.</p>'}</div>
         </section>
-        <p class="nota">Como tratamos os dados da lista de espera: veja a <a href="${rel}privacidade/">Política de Privacidade</a>.</p>`
+        ${emailOk(cfg.comercial?.email) && !urlOk(cfg.pro?.listaEspera) ? formEspera({ id: 'espera-pro', titulo: 'Entrar na lista de espera', assunto: `Lista de espera — ${PRO.nome || 'Plano Pro'}`, evento: 'pro-lista-espera', campos: CAMPOS_PRO }) : `<div class="acoes">${proHref ? `<a class="btn primario" href="${esc(proHref)}"${alvo(proHref)} data-evento="pro-lista-espera">${esc(PRO.botao || 'Entrar na lista de espera')}</a>` : '<p class="nota">A lista de espera abre em breve.</p>'}</div>`}
+        <p class="nota">Como tratamos os dados da lista de espera: veja a <a href="${rel}privacidade/#lista-espera">Política de Privacidade</a>.</p>
+        <script>${SCRIPT_ESPERA}</script>`
+    }));
+}
+
+/* ---------- Radar de captação para municípios (em preparação): lista de espera e piloto ---------- */
+{
+    const rel = '../';
+    const url = `${SITE}/radar-municipios/`;
+    urlsExtras.push([url, 'monthly', '0.4']);
+    const progMun = editais.filter(e => statusEm(e) !== 'fechado' && e.publico.includes('municipio')).length;
+    escrever('radar-municipios/index.html', layout({
+        rel, url,
+        titulo: `Radar de captação para municípios (em preparação) | ${NOME}`,
+        descricao: corta('Programas federais e editais abertos para cada município do seu grupo, com prazos, documentos e relatório mensal. Piloto com associações e consórcios de municípios.', 158),
+        corpo: `
+        <nav class="migalhas" aria-label="Você está em"><a href="${rel}">Início</a> › <span aria-current="page">Radar para municípios</span></nav>
+        <p class="selos"><span class="selo neutro">Em preparação</span></p>
+        <h1>Radar de captação para municípios</h1>
+        <p class="sub">Para associações de municípios, consórcios públicos e governos estaduais que apoiam prefeituras a buscar recursos. Hoje o site já reúne ${plural(progMun, 'programa ou edital aberto', 'programas e editais abertos')} para municípios; o Radar organiza isso por município, com prazos e avisos.</p>
+        <section aria-labelledby="radar-inclui"><h2 id="radar-inclui">O que o Radar vai fazer</h2><ul class="lista">
+            <li>Mostrar, para cada município do grupo, os programas federais e editais abertos em que ele pode entrar.</li>
+            <li>Avisar prazos com antecedência e listar os documentos de cada programa.</li>
+            <li>Gerar um relatório mensal simples, pronto para enviar a prefeitos e câmaras.</li>
+            <li>Uma página com o nome da associação ou do consórcio, para compartilhar com as prefeituras.</li>
+        </ul></section>
+        <section aria-labelledby="radar-piloto"><h2 id="radar-piloto">Piloto</h2>
+            <p>Estamos escolhendo até 3 associações ou consórcios para construir o Radar junto, com condições especiais para quem participar do piloto.</p>
+            <p class="nota">A contratação por órgãos públicos depende do CNPJ do projeto, que está em preparação. Entrar na lista não gera cobrança nem compromisso.</p></section>
+        ${emailOk(cfg.comercial?.email) ? formEspera({ id: 'espera-radar', titulo: 'Quero participar ou saber mais', assunto: 'Lista de espera — Radar para municípios', evento: 'radar-lista-espera', campos: CAMPOS_RADAR }) : ''}
+        <p class="nota">Como tratamos os dados da lista de espera: veja a <a href="${rel}privacidade/#lista-espera">Política de Privacidade</a>.</p>
+        <script>${SCRIPT_ESPERA}</script>`
+    }));
+}
+
+/* ---------- Divulgar (uso interno): post semanal pronto para WhatsApp e LinkedIn ---------- */
+{
+    const rel = '../';
+    const fimJanela = somaDias(hoje, 15);
+    const fecham = editais.filter(e => statusEm(e) === 'aberto' && e.encerramento <= fimJanela && !patrocinado(e)).sort((a, b) => a.encerramento.localeCompare(b.encerramento)).slice(0, 10);
+    const novos = editais.filter(e => statusEm(e) !== 'fechado' && e.publicadoEm && e.publicadoEm >= somaDias(hoje, -7) && e.publicadoEm <= hoje).slice(0, 6);
+    const curto = t => (t.length > 90 ? t.slice(0, 87).replace(/\s+\S*$/, '') + '…' : t);
+    const linhaWhats = e => `• *${curto(e.titulo)}* (${e.instituicao})\nQuem pode pedir: ${quemPodePedir(e)} · Prazo: ${data(e.encerramento)}\n${SITE}/editais/${slugEdital(e)}/`;
+    const linhaLinked = e => `→ ${curto(e.titulo)} (${e.instituicao}). Prazo: ${data(e.encerramento)}. ${SITE}/editais/${slugEdital(e)}/`;
+    const whats = [`*Editais que fecham nos próximos 15 dias* (atualizado em ${data(hoje)})`, '', ...fecham.map(linhaWhats).join('\n\n').split('\n'),
+        ...(novos.length ? ['', '*Novos esta semana*', '', ...novos.map(linhaWhats).join('\n\n').split('\n')] : []),
+        '', `Todos os prazos: ${SITE}/prazos/`, `${NOME}: editais de fomento com fonte oficial, de graça.`].join('\n');
+    const linked = [`Editais de fomento que fecham nos próximos 15 dias (${data(hoje)}):`, '', ...fecham.map(linhaLinked),
+        ...(novos.length ? ['', 'Novos esta semana:', ...novos.map(linhaLinked)] : []),
+        '', `A lista completa, com quem pode participar e o teste "Posso concorrer?", está em ${SITE}/prazos/`, '', '#captaçãoderecursos #editais #terceirosetor #pesquisa #fomento'].join('\n');
+    escrever('divulgar/index.html', layout({
+        rel, url: `${SITE}/divulgar/`, robots: 'noindex,nofollow',
+        titulo: `Divulgar: post semanal pronto | ${NOME}`,
+        descricao: 'Texto pronto para divulgar os editais da semana no WhatsApp e no LinkedIn.',
+        corpo: `
+        <h1>Post semanal pronto</h1>
+        <p class="sub">Atualizado todo dia. Copie, confira e publique no canal do WhatsApp, em grupos e no LinkedIn. ${plural(fecham.length, 'edital fecha', 'editais fecham')} nos próximos 15 dias${novos.length ? `; ${plural(novos.length, 'novo', 'novos')} nesta semana` : ''}.</p>
+        <section aria-labelledby="t-whats"><h2 id="t-whats">WhatsApp</h2>
+            <textarea id="postWhats" class="pix-codigo" rows="16" readonly spellcheck="false">${esc(whats)}</textarea>
+            <p><button type="button" class="btn primario" data-copiar="postWhats" data-evento="divulgar-copiar-whats">Copiar texto do WhatsApp</button>
+            <a class="btn" href="https://wa.me/?text=${encodeURIComponent(whats)}" target="_blank" rel="noopener noreferrer">Abrir no WhatsApp</a></p></section>
+        <section aria-labelledby="t-linked"><h2 id="t-linked">LinkedIn</h2>
+            <textarea id="postLinked" class="pix-codigo" rows="14" readonly spellcheck="false">${esc(linked)}</textarea>
+            <p><button type="button" class="btn primario" data-copiar="postLinked" data-evento="divulgar-copiar-linkedin">Copiar texto do LinkedIn</button></p></section>
+        <p class="nota" role="status" aria-live="polite" id="copiaStatus"></p>
+        <p class="nota">Esta página não aparece no Google nem no menu. Editais patrocinados ficam de fora do post, para manter a lista neutra.</p>
+        <script>${SCRIPT_COPIAR}</script>`
     }));
 }
 {
@@ -1175,7 +1283,7 @@ const SCRIPT_PEDIDO = `(function(){var f=document.getElementById('pedido-form');
         <section><h2>Formulário de pedido em Anuncie</h2><p>O formulário de <a href="${rel}anuncie/#pedido">Anuncie</a> não envia nem guarda nada: ele só monta uma mensagem no seu programa de e-mail, que você revisa e envia. O tratamento começa quando o e-mail chega até nós (veja acima).</p></section>
         <section><h2>E-mail do projeto</h2><p>O e-mail de contato é hospedado pelo Google (Gmail), que atua como operador e pode armazenar mensagens fora do Brasil (art. 33 da LGPD).</p></section>
         <section><h2>Apoio (Pix e Apoia.se)</h2><p>A página <a href="${rel}apoie/">Apoie</a> não coleta nenhum dado: o código Pix e o QR Code são gerados no próprio site e o pagamento acontece no app do seu banco. Como em qualquer Pix, o banco informa a quem recebe o nome de quem pagou e parte do CPF ou CNPJ; usamos essas informações apenas para controle financeiro e cumprimento de obrigações legais e fiscais (art. 7º, II), guardadas por 5 anos, sem publicá-las nem compartilhá-las. Contribuições pelo Apoia.se seguem a política de privacidade daquela plataforma.</p></section>
-        <section><h2>Lista de espera do Plano Pro</h2><p>Se você entrar na lista de espera, coletamos nome e e-mail por um formulário de terceiro, que trata os dados conforme a própria política (pode haver transferência internacional, art. 33 da LGPD). Finalidade: avisar sobre o lançamento. Base legal: consentimento (art. 7º, I), que você pode revogar a qualquer momento pelo contato acima. Os dados são apagados até 6 meses após o lançamento ou se o plano for cancelado.</p></section>
+        <section id="lista-espera"><h2>Listas de espera (Plano Pro e Radar para municípios)</h2><p>As listas de espera funcionam por e-mail: o formulário só monta uma mensagem no seu programa de e-mail, e nada é gravado por este site. Recebemos o que você escrever (organização, perfil, respostas) e o seu endereço de e-mail como remetente. Finalidade: avisar sobre o lançamento, convidar para o piloto e entender que recursos priorizar. Base legal: consentimento (art. 7º, I), que você pode revogar a qualquer momento respondendo ao e-mail ou pelo contato acima. As respostas sobre preço e prioridades são analisadas só em conjunto. Os dados são apagados até 6 meses após o lançamento ou se o produto for cancelado.</p></section>
         <section id="experiencia"><h2>Pergunta “Foi fácil?” e contagem de páginas</h2><ul class="lista">
             <li>A pergunta “Foi fácil encontrar o que procurava?”, no fim das páginas de editais e por perfil, é <strong>anônima</strong>: tem só três botões, <strong>sem texto livre</strong>, e guardamos apenas o total de cada resposta (dado agregado), sem ligar a resposta a você. No seu navegador fica só a data em que você respondeu (chave <code>fb:ces</code>), para não perguntarmos de novo por 30 dias.</li>
             <li>${cfg.analytics?.goatcounter ? 'A contagem de páginas e de cliques em botões da plataforma e destas páginas é feita pelo GoatCounter, sem cookies e sem identificar pessoas (veja acima). Sem JavaScript, a resposta à pergunta é contada por uma imagem de 1 pixel do GoatCounter.' : 'Hoje o site não conta visitas nem cliques: as respostas à pergunta não são registradas.'} Os resultados agregados são publicados em <a href="${rel}dados/#experiencia">Dados abertos</a>.</li>
