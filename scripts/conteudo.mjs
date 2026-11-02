@@ -10,7 +10,7 @@ export const PUBLICOS_HUB = {
         titulo: 'Editais abertos para pesquisadores',
         h1: 'Editais e chamadas abertas para pesquisadores',
         descricao: 'Auxílios à pesquisa, bolsas de produtividade e cooperação internacional com inscrições abertas: valores, prazos, critérios e documentos, de fontes oficiais (curados por pessoa ou lidos automaticamente, sempre identificados).',
-        intro: `<p>Agências como CNPq, CAPES, FINEP e as fundações estaduais de amparo à pesquisa (FAPs) abrem chamadas ao longo de todo o ano. Elas financiam projetos de pesquisa, bolsas, eventos científicos, cooperação internacional e infraestrutura. Em geral, quem submete é o pesquisador com doutorado e vínculo formal com uma universidade ou instituto de pesquisa (ICT). Muitas FAPs exigem que a instituição fique no próprio estado.</p>
+        intro: `<p>Agências como CNPq, CAPES, FINEP e as fundações estaduais de amparo à pesquisa (<a href="{raiz}glossario/#fap" data-evento="glossario-abrir">FAPs</a>) abrem chamadas ao longo de todo o ano. Elas financiam projetos de pesquisa, bolsas, eventos científicos, cooperação internacional e infraestrutura. Em geral, quem submete é o pesquisador com doutorado e vínculo formal com uma universidade ou instituto de pesquisa (<a href="{raiz}glossario/#ict" data-evento="glossario-abrir">ICT</a>). Muitas FAPs exigem que a instituição fique no próprio estado.</p>
 <p>Antes de começar, confira três pontos que eliminam muitas propostas: <strong>elegibilidade</strong> (titulação, vínculo, tempo de doutorado), <strong>aderência</strong> às linhas da chamada e <strong>prazo</strong>, incluindo o horário limite no sistema de submissão.</p>`,
         dicas: ['Mantenha o Currículo Lattes atualizado: várias chamadas exigem atualização até a data limite.', 'Leia os critérios de avaliação e os pesos antes de escrever: eles dizem onde concentrar o texto.', 'Confirme se a chamada tem etapa de pré-proposta: o primeiro prazo costuma ser bem anterior ao final.']
     },
@@ -37,8 +37,8 @@ export const PUBLICOS_HUB = {
         titulo: 'Editais abertos para OSCs e ONGs',
         h1: 'Editais abertos para OSCs, ONGs, associações e cooperativas',
         descricao: 'Chamamentos públicos e editais para organizações da sociedade civil: termos de fomento, prêmios e apoio a projetos, com prazos, valores e documentos exigidos.',
-        intro: `<p>Organizações da sociedade civil acessam recursos públicos principalmente por <strong>chamamentos públicos</strong> regidos pelo Marco Regulatório das OSCs (MROSC, Lei nº 13.019/2014), além de editais de fundações, institutos e empresas.</p>
-<p>O MROSC exige, entre outros pontos, um tempo mínimo de existência com CNPJ ativo: em regra, 1 ano para parcerias com municípios, 2 com estados e o Distrito Federal e 3 com a União, prazo que o ente pode reduzir por ato específico quando nenhuma organização o atingir (Lei 13.019/2014, art. 33, V, “a”). Esse requisito não se aplica a acordos de cooperação. Também exige experiência prévia no objeto e capacidade técnica e operacional. O estatuto precisa prever objetivos de relevância pública e social.</p>`,
+        intro: `<p>Organizações da sociedade civil acessam recursos públicos principalmente por <strong>chamamentos públicos</strong> regidos pelo Marco Regulatório das Organizações da Sociedade Civil (<a href="{raiz}glossario/#mrosc" data-evento="glossario-abrir">MROSC</a>, Lei nº 13.019/2014), além de editais de fundações, institutos e empresas.</p>
+<p>O MROSC exige, entre outros pontos, um tempo mínimo de existência com <a href="{raiz}glossario/#cnpj" data-evento="glossario-abrir">CNPJ</a> (Cadastro Nacional da Pessoa Jurídica) ativo: em regra, 1 ano para parcerias com municípios, 2 com estados e o Distrito Federal e 3 com a União, prazo que o ente pode reduzir por ato específico quando nenhuma organização o atingir (Lei 13.019/2014, art. 33, V, “a”). Esse requisito não se aplica a acordos de cooperação. Também exige experiência prévia no objeto e capacidade técnica e operacional. O estatuto precisa prever objetivos de relevância pública e social.</p>`,
         dicas: ['Mantenha atas, estatuto e certidões em dia: são cobrados em quase todos os chamamentos.', 'Documente a experiência prévia com fotos, relatórios, declarações de parceiros e matérias.', 'Leia o plano de trabalho exigido: metas, indicadores e orçamento precisam conversar.']
     },
     municipio: {
@@ -47,7 +47,7 @@ export const PUBLICOS_HUB = {
         h1: 'Editais e programas federais abertos para municípios e prefeituras',
         descricao: 'Programas e seleções de propostas para prefeituras: transferências voluntárias, fundo a fundo e emendas, com prazos, requisitos e documentos.',
         intro: `<p>Municípios captam recursos federais por transferências voluntárias (convênios e contratos de repasse), transferências fundo a fundo e seleções de programas, quase sempre com propostas cadastradas no <strong>Transferegov.br</strong>.</p>
-<p>Antes de qualquer seleção, mantenha o município regular no <strong>CAUC</strong>, o cadastro do Tesouro Nacional que verifica as exigências fiscais e legais para receber transferências voluntárias. Também deixe pronto um banco de projetos (terrenos regularizados, projetos de engenharia, estudos): muitas seleções abrem com prazos curtos.</p>`,
+<p>Antes de qualquer seleção, mantenha o município regular no <strong><a href="{raiz}glossario/#cauc" data-evento="glossario-abrir">CAUC</a></strong> (Serviço Auxiliar de Informações para Transferências Voluntárias), o cadastro do Tesouro Nacional que verifica as exigências fiscais e legais para receber transferências voluntárias. Também deixe pronto um banco de projetos (terrenos regularizados, projetos de engenharia, estudos): muitas seleções abrem com prazos curtos.</p>`,
         dicas: ['Consulte o CAUC com antecedência: pendências travam a celebração do convênio.', 'Mantenha usuários do Transferegov.br ativos e com os perfis corretos.', 'Tenha projetos básicos e documentação de terrenos prontos para as seleções do ano.']
     },
     estado: {
@@ -72,12 +72,12 @@ export const GUIAS = [
 <h2>1. Comece pelo seu perfil, não pelo valor</h2>
 <p>O primeiro filtro de qualquer edital é <strong>quem pode submeter</strong>. Uma chamada milionária não serve se ela só aceita propostas institucionais e você é pesquisador individual, ou se exige empresa com sede em outro estado. Defina com clareza:</p>
 <ul>
-<li><strong>Tipo de proponente:</strong> pesquisador, universidade ou ICT, empresa, OSC, município ou estado.</li>
+<li><strong>Quem vai pedir o recurso:</strong> pesquisador, universidade ou ICT, empresa, OSC, município ou estado.</li>
 <li><strong>Onde você atua:</strong> muitas fundações estaduais financiam só instituições do próprio estado.</li>
 <li><strong>Área e tema:</strong> as chamadas têm linhas temáticas; propostas fora delas são eliminadas.</li>
 <li><strong>Tamanho do projeto:</strong> o valor por proposta precisa ser compatível com o que você pretende fazer.</li>
 </ul>
-<p>Na <a href="{raiz}#editais">plataforma</a>, o perfil de proponente faz esse filtro e mostra o percentual de compatibilidade de cada edital, explicando os motivos.</p>
+<p>Na <a href="{raiz}#editais">plataforma</a>, o seu perfil faz esse filtro e mostra o percentual de compatibilidade de cada edital, explicando os motivos.</p>
 
 <h2>2. Saiba onde as chamadas são publicadas</h2>
 <ul>
@@ -93,7 +93,7 @@ export const GUIAS = [
 <p>Um edital tem dezenas de páginas. Leia primeiro o que pode eliminar você:</p>
 <ol>
 <li><strong>Cronograma:</strong> prazo final, horário limite e etapas (há pré-proposta? cadastro prévio?).</li>
-<li><strong>Elegibilidade:</strong> requisitos do proponente, da instituição e da equipe.</li>
+<li><strong>Quem pode participar:</strong> requisitos de quem vai pedir o recurso, da instituição e da equipe.</li>
 <li><strong>Itens financiáveis e vedados:</strong> o que o dinheiro pode e não pode pagar.</li>
 <li><strong>Critérios de avaliação e pesos:</strong> mostram o que o avaliador vai pontuar.</li>
 <li><strong>Documentos exigidos</strong> e o formato da proposta (limite de páginas, anexos, idioma).</li>
@@ -182,7 +182,7 @@ export const GUIAS = [
 <li>Respeite tamanho e formato dos arquivos: sistemas recusam PDFs grandes ou protegidos.</li>
 <li>Não deixe para a última hora: sistemas de submissão ficam lentos perto do prazo.</li>
 </ul>
-<p>Na <a href="{raiz}#editais">plataforma</a>, cada edital traz um checklist já adaptado ao tipo de proponente, e você marca o que está pronto. Termos técnicos estão explicados no <a href="{raiz}glossario/">glossário</a>.</p>`
+<p>Na <a href="{raiz}#editais">plataforma</a>, cada edital traz um checklist já adaptado a quem vai pedir o recurso, e você marca o que está pronto. Termos técnicos estão explicados no <a href="{raiz}glossario/">glossário</a>.</p>`
     },
     {
         slug: 'como-escrever-proposta-edital',
@@ -383,8 +383,10 @@ export const ESQUEMA_CAMPOS = [
     ['tags', 'lista de textos', 'não', 'Palavras-chave da chamada.'],
     ['modalidade', 'texto', 'não', 'Tipo de apoio: auxílio à pesquisa, subvenção, bolsa, termo de fomento, prêmio etc.'],
     ['publico', 'lista de textos', 'sim', 'Quem pode submeter: pesquisador, ict, empresa, osc, municipio, estado.'],
-    ['abrangencia', 'texto', 'não', '"Nacional", uma região ou uma UF.'],
+    ['abrangencia', 'texto', 'não', '"Nacional", uma região, uma UF ou "Não informada" (programas do Transferegov cuja fonte não diz onde valem).'],
     ['ufs', 'lista de textos', 'não', 'Siglas das UFs atendidas, quando a abrangência é um conjunto específico.'],
+    ['ufCadastro', 'texto', 'não (contrato)', 'Só no Transferegov, com abrangência "Não informada": UF que aparece no cadastro do programa. Não limita quem pode propor; serve de pista.'],
+    ['abrangenciaNota', 'texto', 'não (contrato)', 'Explicação da abrangência quando ela não é confirmada pela fonte.'],
     ['moeda', 'texto', 'não', 'BRL (padrão), USD ou EUR.'],
     ['valorMax', 'número ou null', 'sim, ou valorNota', 'Valor máximo por proposta; null quando não há teto.'],
     ['valorTotal', 'número ou null', 'não', 'Valor total reservado para a chamada.'],
@@ -413,4 +415,49 @@ export const ESQUEMA_CAMPOS = [
     ['patrocinioInicio', 'data', 'não (contrato)', 'Início do destaque patrocinado.'],
     ['patrocinioAte', 'data', 'não (contrato)', 'Fim do destaque patrocinado.'],
     ['patrocinioVagas', 'lista de textos', 'não (contrato)', 'Vagas reservadas do destaque: "inicio", "publico", "area", "semana" (padrão ["inicio"]).']
+];
+
+/**
+ * Glossário em linguagem simples (Lei 15.263/2025; ISO 24495-1): completa e substitui, nas páginas
+ * estáticas, as definições do GLOSSARIO do index.html com o mesmo termo (a âncora é o termo sem acento,
+ * ex.: glossario/#cauc, glossario/#termo-de-fomento).
+ */
+export const GLOSSARIO_SIMPLES = [
+    { termo: 'Edital / chamada pública', def: 'Documento em que quem financia anuncia que vai escolher projetos: diz o objetivo, quem pode participar, quanto dinheiro há, os prazos e como as propostas serão avaliadas.' },
+    { termo: 'Chamamento público', def: 'Nome da chamada pública quando o governo escolhe organizações da sociedade civil (OSCs) para uma parceria, pelas regras do MROSC (Lei 13.019/2014).' },
+    { termo: 'ICT', def: 'Instituição Científica, Tecnológica e de Inovação: universidade, instituto ou centro de pesquisa, público ou privado sem fins lucrativos, que tem a pesquisa ou o desenvolvimento de tecnologia entre suas missões (Lei 10.973/2004, art. 2º, V).' },
+    { termo: 'FAP', def: 'Fundação de Amparo à Pesquisa: agência de um estado que financia pesquisa e inovação, como a FAPESP (São Paulo) e a FAPES (Espírito Santo). Em geral, só atende quem trabalha ou tem sede no próprio estado.' },
+    { termo: 'CNPJ', def: 'Cadastro Nacional da Pessoa Jurídica: o número de registro de empresas, associações e outras organizações na Receita Federal. Muitos editais pedem um tempo mínimo de CNPJ ativo.' },
+    { termo: 'MROSC', def: 'Marco Regulatório das Organizações da Sociedade Civil (Lei 13.019/2014): a lei que diz como o governo faz parcerias com ONGs, associações, fundações privadas e algumas cooperativas, da seleção à prestação de contas.' },
+    { termo: 'CAUC', def: 'Serviço Auxiliar de Informações para Transferências Voluntárias, do Tesouro Nacional. Mostra se uma prefeitura, um estado ou o Distrito Federal está em dia com as exigências para receber dinheiro da União por convênio ou contrato de repasse. Vale só para esses governos: ONGs e associações não são consultadas no CAUC.' },
+    { termo: 'Contrapartida', def: 'Parte do custo do projeto que você paga: em dinheiro ou em bens e serviços (por exemplo, uso de sala, equipe ou equipamentos). Cada edital diz se é exigida e quanto. Nas parcerias com OSCs pelo MROSC, não se exige contrapartida em dinheiro; pode haver em bens e serviços (Lei 13.019/2014, art. 35, § 1º).' },
+    { termo: 'Termo de fomento', def: 'Parceria com o governo em que a ideia do projeto é da ONG (OSC): a organização propõe e o governo apoia com dinheiro. Previsto no MROSC (Lei 13.019/2014, art. 2º, VIII).' },
+    { termo: 'Termo de colaboração', def: 'Parceria com o governo em que a ideia do projeto é do governo: ele define o que quer e escolhe uma ONG (OSC) para executar, com repasse de dinheiro. Previsto no MROSC (Lei 13.019/2014, art. 2º, VII).' },
+    { termo: 'Convênio', def: 'Acordo para fazer juntos um projeto de interesse comum, com repasse de dinheiro, em geral entre órgãos públicos (por exemplo, a União e uma prefeitura). Com ONGs, só em casos específicos previstos em lei, como na saúde.' },
+    { termo: 'Contrato de repasse', def: 'Parecido com o convênio, mas o dinheiro da União passa por um banco público (em geral a Caixa), que acompanha a execução. Muito usado em obras de prefeituras e estados.' },
+    { termo: 'Fluxo contínuo', def: 'A chamada recebe propostas a qualquer momento enquanto estiver aberta, sem uma data única de entrega. As propostas são avaliadas aos poucos, por ordem de chegada ou em rodadas.' },
+    { termo: 'Pré-proposta', def: 'Primeira etapa, mais curta, de algumas chamadas: você manda um resumo do projeto e só quem for aprovado é convidado a enviar a proposta completa. O prazo da pré-proposta costuma vir bem antes do prazo final.' },
+    { termo: 'Proponente', def: 'Quem vai pedir o recurso: a pessoa ou organização que apresenta a proposta e, se ela for aprovada, assina o termo e presta contas.' }
+];
+
+// Nomes simples de quem pode pedir (bloco "Posso concorrer?" e mensagem de WhatsApp)
+export const PUBLICO_SIMPLES = {
+    pesquisador: 'pesquisador(a)',
+    ict: 'universidade ou instituto de pesquisa',
+    empresa: 'empresa ou startup',
+    osc: 'ONG ou associação',
+    municipio: 'prefeitura',
+    estado: 'governo estadual ou do DF'
+};
+
+// Siglas explicadas na primeira vez em que aparecem numa página: [sigla, nome completo, âncora no glossário]
+export const SIGLAS_PAGINA = [
+    ['MROSC', 'Marco Regulatório das Organizações da Sociedade Civil', 'mrosc'],
+    ['CAUC', 'Serviço Auxiliar de Informações para Transferências Voluntárias', 'cauc'],
+    ['FAPs', 'Fundações de Amparo à Pesquisa', 'fap'],
+    ['FAP', 'Fundação de Amparo à Pesquisa', 'fap'],
+    ['ICTs', 'Instituições Científicas, Tecnológicas e de Inovação', 'ict'],
+    ['ICT', 'Instituição Científica, Tecnológica e de Inovação', 'ict'],
+    ['CNPJ', 'Cadastro Nacional da Pessoa Jurídica', 'cnpj'],
+    ['LDO', 'Lei de Diretrizes Orçamentárias', '']
 ];
