@@ -56,12 +56,12 @@ jobs:
         run: node scripts/transferegov.mjs
       - name: Regenerar páginas
         env:
-          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+          PIX_CHAVE: ${{ vars.PIX_CHAVE || secrets.PIX_CHAVE }}
         run: node scripts/gerar-paginas.mjs && node scripts/verificar-pix.mjs
       - name: Publicar
         id: publicar
         env:
-          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+          PIX_CHAVE: ${{ vars.PIX_CHAVE || secrets.PIX_CHAVE }}
         run: |
           if [ -z "$(git status --porcelain)" ]; then echo "Sem mudanças."; exit 0; fi
           git config user.name "github-actions[bot]"

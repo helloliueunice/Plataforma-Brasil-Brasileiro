@@ -33,7 +33,7 @@ jobs:
       - name: Conferir a página publicada
         id: conferir
         env:
-          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+          PIX_CHAVE: ${{ vars.PIX_CHAVE || secrets.PIX_CHAVE }}
           PAGINA: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/apoie/
         run: |
           sleep 30

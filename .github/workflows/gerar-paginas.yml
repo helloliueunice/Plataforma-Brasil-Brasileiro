@@ -108,12 +108,12 @@ jobs:
 
       - name: Gerar páginas
         env:
-          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+          PIX_CHAVE: ${{ vars.PIX_CHAVE || secrets.PIX_CHAVE }}
         run: node scripts/gerar-paginas.mjs
 
       - name: Conferir o Pix da página Apoie
         env:
-          PIX_CHAVE: ${{ vars.PIX_CHAVE }}
+          PIX_CHAVE: ${{ vars.PIX_CHAVE || secrets.PIX_CHAVE }}
         run: node scripts/verificar-pix.mjs
 
       - name: Publicar alterações
