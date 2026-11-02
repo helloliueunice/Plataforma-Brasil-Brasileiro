@@ -12,7 +12,8 @@
     --closed-fg: #52525B; --closed-bg: #F1F1F3; --closed-bd: #DCDCE0;
     --urgent-fg: #B3261E; --urgent-bg: #FCECEA; --urgent-bd: #F2B8B3;
     --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --fs-12: .75rem; --fs-13: .8125rem; --fs-14: .875rem; --fs-16: 1rem; --fs-18: 1.125rem; --fs-20: 1.25rem; --fs-24: 1.5rem; --fs-30: 1.875rem; --fs-36: 2.25rem;
+    /* Legibilidade: nada abaixo de 14 px (selos, notas); texto corrido em 16 px. --fs-12 e --fs-13 ficam como aliases. */
+    --fs-12: .875rem; --fs-13: .875rem; --fs-14: .875rem; --fs-16: 1rem; --fs-18: 1.125rem; --fs-20: 1.25rem; --fs-24: 1.5rem; --fs-30: 1.875rem; --fs-36: 2.25rem;
     --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px;
     --r-sm: 4px; --r-md: 6px; --r-lg: 8px; --r-full: 999px;
     --header-h: 60px;
@@ -334,6 +335,42 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .sem-chamadas h3 { margin-top: var(--s-5); margin-bottom: var(--s-2); font-size: var(--fs-16); }
 .resumo-origem { margin-top: var(--s-2); padding-left: var(--s-3); border-left: 3px solid var(--text-2); }
 .migalhas .sep { color: var(--text-3); }
+
+/* Onda 3: legibilidade (corpo 16 px, selos e notas 14 px), "Posso concorrer?", lembrete ao lado do prazo e pergunta "Foi fácil?" */
+.cartao p, .aviso, .destaque, .cronograma li, .criterios, .agenda li, .glossario, .elegibilidade li, .tabela,
+.faq details p, .grade-blocos p, .passos p, .pacote .lista, .rodape, .campo label, .campo legend, .assinar-rotulo { font-size: var(--fs-16); }
+.btn { font-size: var(--fs-16); }
+.btn.pequeno { font-size: var(--fs-14); }
+.selo { height: auto; min-height: 24px; padding: 1px var(--s-2); line-height: 1.35; }
+.cartao .nota { font-size: var(--fs-14); }
+.fatos dd small { display: inline-block; margin-top: 2px; line-height: 1.45; }
+.fatos .fato-prazo { grid-column: 1 / -1; }
+.fato-prazo dd { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4); font-size: var(--fs-18); }
+.prazo-acoes { display: flex; flex-wrap: wrap; gap: var(--s-2); font-weight: 400; }
+.posso { margin-top: var(--s-8); padding: var(--s-5); border: 1px solid var(--brand-border); border-radius: var(--r-lg); background: var(--brand-subtle); }
+.posso h2 { margin-bottom: var(--s-2); }
+.posso p + p, .posso p + .elegibilidade, .posso .elegibilidade + p { margin-top: var(--s-3); }
+.posso-resumo { font-size: var(--fs-18); color: var(--text); }
+.posso-resumo strong { font-weight: 600; }
+.posso .elegibilidade { border-top-color: var(--brand-border); }
+.posso .elegibilidade li { border-bottom-color: var(--brand-border); }
+.posso-alerta { font-weight: 600; color: var(--text); }
+.posso .nota { color: var(--text-2); }
+.rodape .ces { padding-bottom: var(--s-6); border-bottom: 1px solid var(--border); }
+.rodape .ces h2 { margin-bottom: var(--s-3); font-size: var(--fs-18); }
+.ces-opcoes { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.ces-opcoes .btn { min-width: 9em; }
+.ces [hidden], .ces[hidden] { display: none; }
+.ces-obrigado { font-weight: 600; color: var(--text); }
+.ces .nota { margin-top: var(--s-3); }
+.rodape .ces .nota a { text-decoration: underline; }
+.pixel { position: absolute; width: 1px; height: 1px; opacity: 0; }
+@media (max-width: 640px) {
+    .ces-opcoes .btn { flex: 1 1 100%; }
+    .posso { padding: var(--s-4); }
+    .prazo-acoes .btn { flex: 1 1 auto; }
+}
+@media print { .ces, .prazo-acoes { display: none; } }
 /* Alvos de toque de pelo menos 44 px no celular */
 @media (max-width: 640px), (pointer: coarse) {
     .btn, .btn.pequeno { min-height: 44px; height: auto; }

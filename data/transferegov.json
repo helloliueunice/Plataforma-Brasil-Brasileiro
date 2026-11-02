@@ -25,11 +25,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-09-30",
       "abertura": "2026-09-30",
       "encerramento": "2026-11-03",
-      "prazoNota": "Código do programa: 2041120260009. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2041120260009. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "Execução de projeto de produção de documentário audiovisual de caráter educativo, científico e institucional, que evidencie como os arranjos institucionais associados ao desenvolvimento do setor espacial brasileiro, com destaque para a trajetória da Alcântara Cyclone Space, contribuíram para a formação de capacidades científicas, tecnológicas e organizacionais no país, e para a promoção da educação científica, da cultura de inovação e do interesse de estudantes e jovens por áreas STEM (ciência, tecnologia, engenharia e matemática), sobretudo com reflexos no município de Alcântara/MA.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2041120260009.",
@@ -41,16 +41,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2041120260009",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica SP): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "SP",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SP. Confira no programa antes de propor.",
       "objeto": "Execução de projeto de produção de documentário audiovisual de caráter educativo, científico e institucional, que evidencie como os arranjos institucionais associados ao desenvolvimento do setor espacial brasileiro, com destaque para a trajetória da Alcântara Cyclone Space, contribuíram para a formação de capacidades científicas, tecnológicas e organizacionais no país, e para a promoção da educação científica, da cultura de inovação e do interesse de estudantes e jovens por áreas STEM (ciência, tecnologia, engenharia e matemática), sobretudo com reflexos no município de Alcântara/MA."
     },
     {
@@ -73,11 +73,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-10-29",
       "abertura": "2026-10-29",
       "encerramento": "2026-11-06",
-      "prazoNota": "Código do programa: 2624420260017. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2624420260017. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "Execução do Projeto, conforme Plano de Trabalho aprovado pelo órgão financiador e pela UFRGS a serexecutado por uma fundação de apoio - Serviços de Terceiros – Pessoa Jurídica.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624420260017.",
@@ -89,16 +89,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2624420260017",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RS): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "RS",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RS. Confira no programa antes de propor.",
       "objeto": "Execução do Projeto, conforme Plano de Trabalho aprovado pelo órgão financiador e pela UFRGS a serexecutado por uma fundação de apoio - Serviços de Terceiros – Pessoa Jurídica."
     },
     {
@@ -121,11 +121,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-10-14",
       "abertura": "2026-10-14",
       "encerramento": "2026-11-13",
-      "prazoNota": "Código do programa: 2624920260003. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2624920260003. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "O projeto tem por objetivo oferecer atendimentos psicossocial, jurídico e assistencia social qualificados a mães e familiares de vítimas de violencia estatal e desaparecimentos forçados, incluindo em ambos os casos a violencia na o estatal resultante da conivencia, participação direta ou omissa o do Estado, fortalecendo redes de apoio, analisar pra ticas de cuidado existentes, identificando desafios teoricos e metodologicos, identificar redes de atenção psicosssocial com as quais se possa desenvolver interações e parcerias, e desenvolver ações no campo da arteterapia, escrevive ncia (escrita d",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260003.",
@@ -133,16 +133,16 @@
       "verificadoEm": "2026-11-01",
       "criterios": [],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2624920260003",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor.",
       "objeto": "O projeto tem por objetivo oferecer atendimentos psicossocial, jurídico e assistencia social qualificados a mães e familiares de vítimas de violencia estatal e desaparecimentos forçados, incluindo em ambos os casos a violencia na o estatal resultante da conivencia, participação direta ou omissa o do Estado, fortalecendo redes de apoio, analisar pra ticas de cuidado existentes, identificando desafios teoricos e metodologicos, identificar redes de atenção psicosssocial com as quais se possa desenvolver interações e parcerias, e desenvolver ações no campo da arteterapia, escrevive ncia (escrita d"
     },
     {
@@ -165,11 +165,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-10-16",
       "abertura": "2026-10-16",
       "encerramento": "2026-11-16",
-      "prazoNota": "Código do programa: 2800020260010. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2800020260010. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "O termo de colaboração terá por objeto a concessão de apoio da Administração Pública para a execução de projeto voltado ao desenvolvimento alternativo na região do Vale do Javari, por meio de atividades de industrialização da cadeia produtiva do pirarucu, com a finalidade de diminuir a vulnerabilidade dos povos indígenas e comunidades ribeirinhas aos riscos associados ao tráfico de drogas e crimes correlatos, conforme diretrizes do Programa Território Seguro, Amazônia Soberana.Objetivos específicos da parceria:a) Implementação de estrutura física para pré-processamento industrial do Pirarucu, ",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2800020260010.",
@@ -181,16 +181,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2800020260010",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica TO): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor.",
       "objeto": "O termo de colaboração terá por objeto a concessão de apoio da Administração Pública para a execução de projeto voltado ao desenvolvimento alternativo na região do Vale do Javari, por meio de atividades de industrialização da cadeia produtiva do pirarucu, com a finalidade de diminuir a vulnerabilidade dos povos indígenas e comunidades ribeirinhas aos riscos associados ao tráfico de drogas e crimes correlatos, conforme diretrizes do Programa Território Seguro, Amazônia Soberana.Objetivos específicos da parceria:a) Implementação de estrutura física para pré-processamento industrial do Pirarucu, "
     },
     {
@@ -213,11 +213,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-10-21",
       "abertura": "2026-10-21",
       "encerramento": "2026-11-23",
-      "prazoNota": "Código do programa: 4420520260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 4420520260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "Assegurar a disponibilidade de água em padrões de qualidade e quantidade adequados aos usos múltiplos (como abastecimento humano, dessedentação animal, agricultura e indústria), por meio de infraestrutura adequada, conservação, recuperação e uso racional dos recursos naturais.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 4420520260001.",
@@ -229,16 +229,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "4420520260001",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica TO): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor.",
       "objeto": "Assegurar a disponibilidade de água em padrões de qualidade e quantidade adequados aos usos múltiplos (como abastecimento humano, dessedentação animal, agricultura e indústria), por meio de infraestrutura adequada, conservação, recuperação e uso racional dos recursos naturais."
     },
     {
@@ -261,11 +261,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-10-28",
       "abertura": "2026-10-28",
       "encerramento": "2026-11-28",
-      "prazoNota": "Código do programa: 2624920260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2624920260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "RI para todos: diplomacia popular, cidadania global e democratização das Relações Internacionais. O projeto parte da premissa que vivemos em um contexto internacional caracterizado por profundas transformaçoes geopolíticas, marcado pelo recrudescimento de conflitos armados, crises humanitarias, deslocamentos forçados, mudanças clima ticas, insegurança alimentar, pandemias, avanço da desinformaçao e crescimento de discursos de intolerancia e polarizaçao. Essas questoes, antes percebidas como distantes do cotidiano, produzem impactos diretos sobre a vida das pessoas, das cidades e das instituiço",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260004.",
@@ -273,16 +273,16 @@
       "verificadoEm": "2026-11-01",
       "criterios": [],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2624920260004",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RN): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "RN",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RN. Confira no programa antes de propor.",
       "objeto": "RI para todos: diplomacia popular, cidadania global e democratização das Relações Internacionais. O projeto parte da premissa que vivemos em um contexto internacional caracterizado por profundas transformaçoes geopolíticas, marcado pelo recrudescimento de conflitos armados, crises humanitarias, deslocamentos forçados, mudanças clima ticas, insegurança alimentar, pandemias, avanço da desinformaçao e crescimento de discursos de intolerancia e polarizaçao. Essas questoes, antes percebidas como distantes do cotidiano, produzem impactos diretos sobre a vida das pessoas, das cidades e das instituiço"
     },
     {
@@ -305,11 +305,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-19",
       "abertura": "2026-02-19",
       "encerramento": "2026-11-30",
-      "prazoNota": "Código do programa: 5300020260002. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 5300020260002. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "As Rotas de Integração Nacional são redes de Arranjos Produtivos Locais - APLs. Os beneficiários da Ação são produtores e população das áreas de abrangência dos Polos das Rotas de Integração Nacional. Poderão ser apoiadas ações de qualificação técnica e gerencial dos atores vinculados às cadeias produtivas apoiadas pela iniciativa Rotas de Integração Nacional (Portaria nº 080/2018-MI): cursos, palestras, capacitações, oficinas, workshop, treinamentos e dias de campo, como: a) Fortalecimento do cooperativismo e associativismo: cursos, palestras, capacitações, oficinas, workshop, treinamentos e ",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260002.",
@@ -321,16 +321,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "5300020260002",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica SE): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "SE",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SE. Confira no programa antes de propor.",
       "objeto": "As Rotas de Integração Nacional são redes de Arranjos Produtivos Locais - APLs. Os beneficiários da Ação são produtores e população das áreas de abrangência dos Polos das Rotas de Integração Nacional. Poderão ser apoiadas ações de qualificação técnica e gerencial dos atores vinculados às cadeias produtivas apoiadas pela iniciativa Rotas de Integração Nacional (Portaria nº 080/2018-MI): cursos, palestras, capacitações, oficinas, workshop, treinamentos e dias de campo, como: a) Fortalecimento do cooperativismo e associativismo: cursos, palestras, capacitações, oficinas, workshop, treinamentos e "
     },
     {
@@ -353,11 +353,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-19",
       "abertura": "2026-02-19",
       "encerramento": "2026-11-30",
-      "prazoNota": "Código do programa: 5300020260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 5300020260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260001.",
@@ -369,16 +369,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "5300020260001",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor.",
       "objeto": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção"
     },
     {
@@ -401,11 +401,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-19",
       "abertura": "2026-02-19",
       "encerramento": "2026-11-30",
-      "prazoNota": "Código do programa: 5300020260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 5300020260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Apoio à implantação de infraestrutura básica, produtiva e social nos municípios da área de abrangência do Programa Calha Norte, compreendendo, de forma não exaustiva, a construção, ampliação ou adequação de obras de infraestrutura viária e produtiva, incluindo pavimentação de vias urbanas e rurais, obras rodoviárias estaduais e municipais, estruturas de engenharia, de apoio à produção sustentável e de integração urbana, a exemplo de orlas públicas em áreas ribeirinhas e costeiras. Abrange, ainda, a aquisição de máquinas, equipamentos, veículos e outros bens permanentes de interesse público; o ",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260004.",
@@ -417,16 +417,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "5300020260004",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PA. Confira no programa antes de propor.",
       "objeto": "Apoio à implantação de infraestrutura básica, produtiva e social nos municípios da área de abrangência do Programa Calha Norte, compreendendo, de forma não exaustiva, a construção, ampliação ou adequação de obras de infraestrutura viária e produtiva, incluindo pavimentação de vias urbanas e rurais, obras rodoviárias estaduais e municipais, estruturas de engenharia, de apoio à produção sustentável e de integração urbana, a exemplo de orlas públicas em áreas ribeirinhas e costeiras. Abrange, ainda, a aquisição de máquinas, equipamentos, veículos e outros bens permanentes de interesse público; o "
     },
     {
@@ -449,11 +449,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-07-02",
       "abertura": "2026-08-03",
       "encerramento": "2026-12-01",
-      "prazoNota": "Código do programa: 4400020260013. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 4400020260013. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "O objetivo do presente edital é a seleção de redes multi-institucionais para implementação de núcleos de desenvolvimento da sociobioeconomia na Amazônia-Prospera Amazônia, para submissão de projetos ao Fundo Amazônia, gerido pelo BNDES.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 4400020260013.",
@@ -465,16 +465,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "4400020260013",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica RO): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "RO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RO. Confira no programa antes de propor.",
       "objeto": "O objetivo do presente edital é a seleção de redes multi-institucionais para implementação de núcleos de desenvolvimento da sociobioeconomia na Amazônia-Prospera Amazônia, para submissão de projetos ao Fundo Amazônia, gerido pelo BNDES."
     },
     {
@@ -497,11 +497,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-09",
       "abertura": "2026-02-09",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2200020260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2200020260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de ações de custeio e investimentos em infraestrutura, capacitação, insumos, máquinas e equipamentos. As ações contempladas incluem: Custeio de atividades agropecuárias, por meio do financiamento de: Realização de eventos técnicos e promocionais; Programas de capacitação para produtores; Aquisição de insumos agropecuários. Aquisição de máquinas e equipamentos agrícolas e agroindustriais, com foco no fortalecimento da produção, transformação, comercialização e distribuição de produtos, ",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260004.",
@@ -513,16 +513,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260004",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de ações de custeio e investimentos em infraestrutura, capacitação, insumos, máquinas e equipamentos. As ações contempladas incluem: Custeio de atividades agropecuárias, por meio do financiamento de: Realização de eventos técnicos e promocionais; Programas de capacitação para produtores; Aquisição de insumos agropecuários. Aquisição de máquinas e equipamentos agrícolas e agroindustriais, com foco no fortalecimento da produção, transformação, comercialização e distribuição de produtos, "
     },
     {
@@ -545,11 +545,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-09",
       "abertura": "2026-02-11",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2200020260006. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2200020260006. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260006.",
@@ -561,16 +561,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260006",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "objeto": "O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis"
     },
     {
@@ -593,11 +593,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-11",
       "abertura": "2026-02-11",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2200020260022. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2200020260022. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "O Programa Nacional de Modernização e Apoio à Produção Agrícola (PROMAQ), instituído pela Portaria MAPA nº 775/2025, é uma política pública estratégica voltada para o desenvolvimento do agronegócio brasileiro através da modernização tecnológica do campo. Coordenado pela Subsecretaria de Orçamento, Planejamento e Administração do MAPA, o programa atua em todo o território nacional com ênfase nas regiões de menor desenvolvimento agrícola. Seus objetivos principais incluem ampliar o acesso a tecnologias agrícolas modernas, aumentar a produtividade rural por meio da mecanização, promover práticas ",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260022.",
@@ -609,16 +609,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260022",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "objeto": "O Programa Nacional de Modernização e Apoio à Produção Agrícola (PROMAQ), instituído pela Portaria MAPA nº 775/2025, é uma política pública estratégica voltada para o desenvolvimento do agronegócio brasileiro através da modernização tecnológica do campo. Coordenado pela Subsecretaria de Orçamento, Planejamento e Administração do MAPA, o programa atua em todo o território nacional com ênfase nas regiões de menor desenvolvimento agrícola. Seus objetivos principais incluem ampliar o acesso a tecnologias agrícolas modernas, aumentar a produtividade rural por meio da mecanização, promover práticas "
     },
     {
@@ -641,11 +641,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-02-10",
       "abertura": "2026-02-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2200020260018. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2200020260018. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260018.",
@@ -657,16 +657,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260018",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor"
     },
     {
@@ -689,11 +689,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-02-09",
       "abertura": "2026-02-09",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2200020260005. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2200020260005. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "O Programa tem como objetivo apoiar e incentivar projetos de fomento ao setor agropecuário, por meio de investimentos na aquisição e fornecimento de máquinas e equipamentos agrícolas, bem como de ações de custeio voltadas à realização de eventos, capacitações, aquisição de insumos agrícolas e implantação de hortas comunitárias. As iniciativas devem estar em conformidade com os objetos financiáveis definidos na Ação 20ZV – Fomento ao Setor Agropecuário, na Instrução Normativa MAPA nº 25, de 12 de julho de 2023, na Lei nº 13.019/2014 e no Decreto nº 8.726/2016. A principal finalidade do Programa",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260005.",
@@ -705,16 +705,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260005",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AC): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "objeto": "O Programa tem como objetivo apoiar e incentivar projetos de fomento ao setor agropecuário, por meio de investimentos na aquisição e fornecimento de máquinas e equipamentos agrícolas, bem como de ações de custeio voltadas à realização de eventos, capacitações, aquisição de insumos agrícolas e implantação de hortas comunitárias. As iniciativas devem estar em conformidade com os objetos financiáveis definidos na Ação 20ZV – Fomento ao Setor Agropecuário, na Instrução Normativa MAPA nº 25, de 12 de julho de 2023, na Lei nº 13.019/2014 e no Decreto nº 8.726/2016. A principal finalidade do Programa"
     },
     {
@@ -737,11 +737,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-05-03",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2629120260003. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2629120260003. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente: - a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica; - a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260003.",
@@ -753,16 +753,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2629120260003",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PA. Confira no programa antes de propor.",
       "objeto": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente: - a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica; - a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos."
     },
     {
@@ -785,11 +785,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-10-27",
       "abertura": "2026-01-02",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2629820260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2629820260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Atendimento das demandas do PAR 4 por meio do Sistema Integrado de Monitoramento, Execu??o e Controle do MEC - SIMEC.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629820260001.",
@@ -801,16 +801,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2629820260001",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica ES): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "ES",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica ES. Confira no programa antes de propor.",
       "objeto": "Atendimento das demandas do PAR 4 por meio do Sistema Integrado de Monitoramento, Execu??o e Controle do MEC - SIMEC."
     },
     {
@@ -833,11 +833,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-01-16",
       "abertura": "2026-01-16",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2629120260002. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2629120260002. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente:- a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica;- a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos;- o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Univ",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260002.",
@@ -849,16 +849,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2629120260002",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PA): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PA. Confira no programa antes de propor.",
       "objeto": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente:- a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica;- a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos;- o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Univ"
     },
     {
@@ -881,11 +881,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-03-12",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2629120260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2629120260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Universidade Aberta do Brasil - UAB.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260004.",
@@ -897,16 +897,16 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2629120260004",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica BA): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "BA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica BA. Confira no programa antes de propor.",
       "objeto": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Universidade Aberta do Brasil - UAB."
     },
     {
@@ -929,11 +929,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
       "publicadoEm": "2026-01-15",
       "abertura": "2026-01-02",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2629120260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2629120260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "O Programa Brasileiro de Professores no CERN é voltado à formação de professores brasileiros que lecionam Física e Ciências na rede pública de educação básica, mediante oferta de atividades formativas realizadas no Laboratório Europeu de Física de Partículas (CERN), em Genebra, Suíça. O Programa CERN visa fortalecer a formação científica de docentes brasileiros, promover o intercâmbio internacional em ciência e educação, ampliar o impacto na educação básica do conhecimento produzido na área da física contemporânea e fomentar o interesse dos estudantes pela ciência e pela tecnologia, em benefíc",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260001.",
@@ -941,16 +941,16 @@
       "verificadoEm": "2026-11-01",
       "criterios": [],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2629120260001",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica MT): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "MT",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
       "objeto": "O Programa Brasileiro de Professores no CERN é voltado à formação de professores brasileiros que lecionam Física e Ciências na rede pública de educação básica, mediante oferta de atividades formativas realizadas no Laboratório Europeu de Física de Partículas (CERN), em Genebra, Suíça. O Programa CERN visa fortalecer a formação científica de docentes brasileiros, promover o intercâmbio internacional em ciência e educação, ampliar o impacto na educação básica do conhecimento produzido na área da física contemporânea e fomentar o interesse dos estudantes pela ciência e pela tecnologia, em benefíc"
     },
     {
@@ -973,11 +973,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-04-09",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220120260014. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220120260014. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260014.",
@@ -989,8 +989,7 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
@@ -1023,11 +1022,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-06-30",
       "abertura": "2026-06-30",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220120260048. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220120260048. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260048.",
@@ -1039,8 +1038,7 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
@@ -1073,11 +1071,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-05-26",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220120260010. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220120260010. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260010.",
@@ -1089,8 +1087,7 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
@@ -1123,11 +1120,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-05-07",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220120260016. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220120260016. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260016.",
@@ -1139,8 +1136,7 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
@@ -1173,11 +1169,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-06-25",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220120260013. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220120260013. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260013.",
@@ -1189,8 +1185,7 @@
         }
       ],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
@@ -1223,11 +1218,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-07-13",
       "abertura": "2026-07-13",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220320260043. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220320260043. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "O Programa 2321 - Recursos Hídricos: Água em Quantidade e Qualidade para sempre: PT 18.544.2321.7G88.0022 por intermédio da Ação: Construção da Barragem Atalaia no Estado do Piauí, tem por finalidade a implantação da Barragem Atalaia e suas estruturas associadas, bem como ações e estudos complementares, regularização fundiária, jurídica, ambiental, socioeconômica, dentre outras ações para abastecimento de água dos Municípios circunvizinhos de Sebastião Barros, Corrente e Cristalândia do Piauí, irrigação à montante e jusante da barragem, aproveitamento hidroagrícola em torno lago, implantação d",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260043.",
@@ -1235,16 +1230,16 @@
       "verificadoEm": "2026-11-01",
       "criterios": [],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2220320260043",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica PI): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PI",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PI. Confira no programa antes de propor.",
       "objeto": "O Programa 2321 - Recursos Hídricos: Água em Quantidade e Qualidade para sempre: PT 18.544.2321.7G88.0022 por intermédio da Ação: Construção da Barragem Atalaia no Estado do Piauí, tem por finalidade a implantação da Barragem Atalaia e suas estruturas associadas, bem como ações e estudos complementares, regularização fundiária, jurídica, ambiental, socioeconômica, dentre outras ações para abastecimento de água dos Municípios circunvizinhos de Sebastião Barros, Corrente e Cristalândia do Piauí, irrigação à montante e jusante da barragem, aproveitamento hidroagrícola em torno lago, implantação d"
     },
     {
@@ -1267,11 +1262,11 @@
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
-      "contrapartida": "Conforme a LDO e as regras do programa",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
       "publicadoEm": "2026-07-14",
       "abertura": "2026-07-14",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2220320260044. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.",
+      "prazoNota": "Código do programa: 2220320260044. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: PT 15.244.2317.00SX.0001 por intermédio da Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado, tem por finalidade o apoio à infraestrutura produtiva, compreendendo: construção e pavimentação de vias (estradas vicinais) e obras rodoviárias estaduais e municipais destinadas à integração de modais de transporte ou ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnolo",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260044.",
@@ -1279,16 +1274,16 @@
       "verificadoEm": "2026-11-01",
       "criterios": [],
       "docsExtras": [
-        "Cadastro do proponente atualizado no Transferegov.br",
-        "Regularidade no CAUC (entes federativos)"
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
       ],
       "fonteRecurso": "publico",
       "tipoValor": "nao-informado",
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2220320260044",
-      "abrangencia": "Nacional",
-      "abrangenciaNota": "Abrangência não informada pela API (o cadastro do programa indica AL): confira no programa quem pode propor.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor.",
       "objeto": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: PT 15.244.2317.00SX.0001 por intermédio da Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado, tem por finalidade o apoio à infraestrutura produtiva, compreendendo: construção e pavimentação de vias (estradas vicinais) e obras rodoviárias estaduais e municipais destinadas à integração de modais de transporte ou ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnolo"
     }
   ]

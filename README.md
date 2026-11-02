@@ -121,6 +121,15 @@ O workflow **Programas do Transferegov** (`.github/workflows/transferegov.yml`, 
 - Quem pode propor vem da natureza jurídica do programa: administração municipal e consórcios → municípios; administração estadual/DF → estados; organizações da sociedade civil → OSCs.
 - A consulta é pesada (a visão junta programas e propostas): o script divide por órgão e por UF quando o serviço falha, e mantém o arquivo anterior se a coleta vier incompleta.
 - Diagnóstico: *Actions → Programas do Transferegov → Run workflow* com `diagnostico` marcado mostra contagens e amostras sem alterar nada.
+- **Abrangência honesta:** a UF do cadastro (`uf_programa`) costuma ser a da unidade que cadastrou, não um limite. Só restringimos quando o título indica a superintendência regional (`SR(XX)` → `abrangencia: "XX"`, `ufs: ["XX"]`). Nos demais casos: `abrangencia: "Não informada"`, `ufCadastro: "<UF>"` (se houver), **sem** `ufs`, e `abrangenciaNota` pedindo conferência. As páginas mostram “Abrangência: não informada (cadastro: SP)” e o selo “Federal”, nunca “Nacional”.
+- **Checklist:** o CAUC só aparece para prefeituras e estados (vem de `DOCS_POR_PUBLICO`); `docsExtras` do Transferegov não o repete e OSC não recebe CAUC.
+
+## Jornada de consulta nas páginas estáticas
+
+- **“Posso concorrer?”** logo abaixo do resumo de cada `editais/<slug>/`, sem JavaScript: quem pode pedir, onde vale e as perguntas eliminatórias. O botão principal é “Posso concorrer? Fazer o teste” (abre `#edital-<id>` na plataforma); os lembretes de calendário (.ics e Google Agenda) ficam ao lado do prazo.
+- **Linguagem simples** (Lei 15.263/2025; ISO 24495-1): siglas (MROSC, CAUC, FAP, ICT, CNPJ, LDO) com nome completo e link para o glossário na primeira vez em cada página; definições simples em `GLOSSARIO_SIMPLES` (`scripts/conteudo.mjs`), que substituem as de mesmo termo do `GLOSSARIO` do `index.html` só nas páginas estáticas.
+- **Pergunta “Foi fácil?”** no rodapé de `editais/<slug>/` e `para/<perfil>/`: três botões, anônimos, sem texto livre. Com JavaScript conta `evento/ces-facil|ces-medio|ces-dificil`, agradece e grava `fb:ces` (não pergunta de novo por 30 dias); sem JavaScript, os botões levam a `obrigado/<resposta>/` (noindex, fora do sitemap), que conta por um pixel do GoatCounter.
+- **Eventos medidos** (agregados, sem dados pessoais) e o compromisso de publicar o resultado mensal estão em `dados/#experiencia`.
 
 ## Crescimento, busca e sustentação
 

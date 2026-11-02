@@ -33,7 +33,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { limpa, titulo, orgao as nomeOrgao, tema, abrangencia, modalidade, valores } from './transferegov-normaliza.mjs';
+import { limpa, titulo, orgao as nomeOrgao, tema, abrangencia, modalidade, valores, docsExtrasPrograma, prazoNotaPrograma, contrapartidaPadrao } from './transferegov-normaliza.mjs';
 
 const RAIZ = process.env.MONITOR_RAIZ || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = (process.env.TRANSFEREGOV_URL || 'https://api-publica.transferegov.gestao.gov.br').replace(/\/+$/, '');
@@ -123,18 +123,18 @@ function paraEdital(p, regras = null) {
         moeda: 'BRL',
         valorMax: null,
         valorNota: 'Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.',
-        contrapartida: 'Conforme a LDO e as regras do programa',
+        contrapartida: contrapartidaPadrao(mod),
         publicadoEm: iso(p.data_publicacao) || iso(p.data_disponibilizacao) || ab,
         abertura: ab,
         encerramento: fim,
-        prazoNota: `Código do programa: ${cod}. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso cadastro do proponente e, para entes, regularidade no CAUC.`,
+        prazoNota: prazoNotaPrograma(cod, pubs),
         resumo: (desc || `Programa do ${orgao} para receber propostas voluntárias de ${pubs.map(x => ({ municipio: 'municípios', estado: 'estados', osc: 'organizações da sociedade civil' })[x]).join(', ') || 'proponentes habilitados'}.`).slice(0, 600),
         link: LINK_PORTAL,
         linkNota: `No Transferegov.br, procure o programa pelo código ${cod}.`,
         fonte: `${BASE}/discricionarias/todos-programas?id_programa=${p.id_programa}`,
         verificadoEm: HOJE,
         criterios: limpa(p.criterios_de_selecao) ? [{ nome: limpa(p.criterios_de_selecao).slice(0, 200) }] : [],
-        docsExtras: ['Cadastro do proponente atualizado no Transferegov.br', 'Regularidade no CAUC (entes federativos)'],
+        docsExtras: docsExtrasPrograma(),
         fonteRecurso: 'publico',
         tipoValor: 'nao-informado',
         fluxoContinuo: false,
