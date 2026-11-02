@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-4hdMf3r8nsVSj9kny6T4xMupPv/NVyYd2suj4V1ZGSQ=' 'sha256-JhSy53tKlU6mawmf7Bv7tu3aSATOzPEPCz/dkbdMQCw=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-4hdMf3r8nsVSj9kny6T4xMupPv/NVyYd2suj4V1ZGSQ=' 'sha256-UBggQf1pc7yOuWksQjNkoYPxs8LXddcY2c9Lr+9wJDs=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@
             <li><a href="../prazos/">Prazos</a></li>
             <li class="menu-sub"><details>
                 <summary aria-controls="menu-para">Para você<span class="seta" aria-hidden="true"></span></summary>
-                <ul id="menu-para"><li><a href="../para/pesquisadores/">Pesquisador</a></li><li><a href="../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../para/empresas-e-startups/">Empresa</a></li><li><a href="../para/oscs-e-ongs/">OSC</a></li><li><a href="../para/municipios-e-prefeituras/">Município</a></li><li><a href="../para/governos-estaduais/">Estado</a></li></ul>
+                <ul id="menu-para"><li><a href="../para/pesquisadores/" data-evento="para-pesquisador">Pesquisador</a></li><li><a href="../para/universidades-e-icts/" data-evento="para-ict">Universidade/ICT</a></li><li><a href="../para/empresas-e-startups/" data-evento="para-empresa">Empresa</a></li><li><a href="../para/oscs-e-ongs/" data-evento="para-osc">OSC</a></li><li><a href="../para/municipios-e-prefeituras/" data-evento="para-municipio">Município</a></li><li><a href="../para/governos-estaduais/" data-evento="para-estado">Estado</a></li></ul>
             </details></li>
             <li><a href="../#propostas" data-evento="topo-propostas">Minhas propostas</a></li>
             <li class="menu-sub"><details>
@@ -138,6 +138,7 @@
         <script>(function(){var f=document.getElementById('pedido-form');if(!f)return;var st=document.getElementById('pedidoStatus'),sel=document.getElementById('pedPacote'),lk=document.getElementById('pedLink');function ajusta(){var serv=sel.value==='servicos';lk.required=!serv;document.getElementById('pedLinkObrig').hidden=serv;}sel.addEventListener('change',ajusta);ajusta();document.querySelectorAll('[data-pacote]').forEach(function(a){a.addEventListener('click',function(){sel.value=a.getAttribute('data-pacote');ajusta();setTimeout(function(){document.getElementById('pedOrg').focus();},0);});});f.addEventListener('submit',function(ev){ev.preventDefault();if(!f.reportValidity())return;var v=function(n){var el=f.elements[n];return el?String(el.value||'').trim():'';};var pac=sel.options[sel.selectedIndex].text;var nf=(f.querySelector('input[name=nf]:checked')||{}).value||'Não informado';var assunto='Pedido de proposta: '+pac+' — '+v('organizacao');var corpo=['Organização: '+v('organizacao'),'Link oficial do edital: '+(v('link')||'(não se aplica)'),'Pacote: '+pac,'Período desejado: '+(v('periodo')||'a combinar'),'Precisa de nota fiscal: '+nf,v('observacoes')?'Observações: '+v('observacoes'):''].filter(Boolean).join('\n');var url='mailto:'+f.getAttribute('data-email')+'?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(corpo+'\n');st.textContent='Abrimos o seu programa de e-mail com o pedido pronto. Revise e envie. Se nada abriu, escreva para '+f.getAttribute('data-email')+'.';window.location.href=url;});})();</script>
     </main>
     <footer class="rodape">
+        
         <div class="rodape-grupos">
             <nav aria-labelledby="rodape-editais"><h2 id="rodape-editais">Editais</h2><ul>
                 <li><a href="../editais/">Todos os editais</a></li>
@@ -174,6 +175,7 @@
     })();
     document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
     (function(){var t=document.querySelector('.topo'),b=document.querySelector('.menu-botao'),s=[].slice.call(document.querySelectorAll('.menu-sub details')),largo=window.matchMedia('(min-width: 901px)');if(!t)return;function gaveta(a){t.classList.toggle('aberto',a);b.setAttribute('aria-expanded',a?'true':'false');}if(b)b.addEventListener('click',function(){gaveta(!t.classList.contains('aberto'));});s.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)s.forEach(function(o){if(o!==d)o.open=false;});});d.addEventListener('focusout',function(){setTimeout(function(){if(largo.matches&&!d.contains(document.activeElement))d.open=false;},0);});});document.addEventListener('keydown',function(ev){if(ev.key!=='Escape')return;var d=s.filter(function(x){return x.open;})[0];if(d){d.open=false;d.querySelector('summary').focus();}else if(t.classList.contains('aberto')){gaveta(false);b.focus();}});document.addEventListener('click',function(ev){if(!largo.matches||!ev.target.closest)return;if(!ev.target.closest('.menu-sub'))s.forEach(function(d){d.open=false;});});})();
+    
     </script>
 </body>
 </html>

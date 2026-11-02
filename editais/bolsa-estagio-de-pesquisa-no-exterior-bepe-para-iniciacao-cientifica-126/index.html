@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-JhSy53tKlU6mawmf7Bv7tu3aSATOzPEPCz/dkbdMQCw=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-MtHiIbnisl9gQ+7cCwuFHObP5DJpEMUhgDJ1ZpU1d/8=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
             <li><a href="../../prazos/">Prazos</a></li>
             <li class="menu-sub"><details>
                 <summary aria-controls="menu-para">Para você<span class="seta" aria-hidden="true"></span></summary>
-                <ul id="menu-para"><li><a href="../../para/pesquisadores/">Pesquisador</a></li><li><a href="../../para/universidades-e-icts/">Universidade/ICT</a></li><li><a href="../../para/empresas-e-startups/">Empresa</a></li><li><a href="../../para/oscs-e-ongs/">OSC</a></li><li><a href="../../para/municipios-e-prefeituras/">Município</a></li><li><a href="../../para/governos-estaduais/">Estado</a></li></ul>
+                <ul id="menu-para"><li><a href="../../para/pesquisadores/" data-evento="para-pesquisador">Pesquisador</a></li><li><a href="../../para/universidades-e-icts/" data-evento="para-ict">Universidade/ICT</a></li><li><a href="../../para/empresas-e-startups/" data-evento="para-empresa">Empresa</a></li><li><a href="../../para/oscs-e-ongs/" data-evento="para-osc">OSC</a></li><li><a href="../../para/municipios-e-prefeituras/" data-evento="para-municipio">Município</a></li><li><a href="../../para/governos-estaduais/" data-evento="para-estado">Estado</a></li></ul>
             </details></li>
             <li><a href="../../#propostas" data-evento="topo-propostas">Minhas propostas</a></li>
             <li class="menu-sub"><details>
@@ -55,7 +55,7 @@
     <main id="conteudo" class="pagina">
 
         <nav class="migalhas" aria-label="Você está em"><a href="../../">Início</a> <span class="sep" aria-hidden="true">›</span> <a href="../../editais/">Editais</a> <span class="sep" aria-hidden="true">›</span> <span aria-current="page">Bolsa Estágio de Pesquisa no Exterior (BEPE) para Iniciação Científica 2026</span></nav>
-        <div class="selos"><span class="selo aberto" data-abertura="2026-10-01" data-encerramento="2026-12-11">Inscrições abertas</span> <span class="selo neutro">Bolsa</span> <span class="selo nacional">Nacional</span></div>
+        <div class="selos"><span class="selo aberto" data-abertura="2026-10-01" data-encerramento="2026-12-11">Inscrições abertas</span> <span class="selo neutro">Bolsa</span> <span class="selo neutro">São Paulo</span></div>
         
         
         <p class="numero">Chamada de Propostas BEPE Iniciação Científica – 2026</p>
@@ -64,28 +64,35 @@
         
 
         <div class="acoes">
-            <a class="btn primario" href="../../#edital-126" data-evento="edital-acompanhar">Acompanhar e ver o checklist</a>
+            <a class="btn primario" href="../../#edital-126" data-evento="edital-teste">Posso concorrer? Fazer o teste</a>
             <a class="btn" href="https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-iniciacao-cientifica-2026" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial">Edital oficial</a>
-            <a class="btn whats" href="https://wa.me/?text=Bolsa%20Est%C3%A1gio%20de%20Pesquisa%20no%20Exterior%20(BEPE)%20para%20Inicia%C3%A7%C3%A3o%20Cient%C3%ADfica%202026%20(FAPESP).%20Inscri%C3%A7%C3%B5es%20at%C3%A9%2011%2F12%2F2026%3A%20https%3A%2F%2Fhelloliueunice.github.io%2FPlataforma-Brasil-Brasileiro%2Feditais%2Fbolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126%2F" target="_blank" rel="noopener noreferrer" data-evento="edital-whatsapp">Enviar no WhatsApp</a>
+            <a class="btn whats" href="https://wa.me/?text=Bolsa%20Est%C3%A1gio%20de%20Pesquisa%20no%20Exterior%20(BEPE)%20para%20Inicia%C3%A7%C3%A3o%20Cient%C3%ADfica%202026%0APrazo%3A%2011%2F12%2F2026%0AQuem%20pode%20pedir%3A%20Pesquisador(a)%0Ahttps%3A%2F%2Fhelloliueunice.github.io%2FPlataforma-Brasil-Brasileiro%2Feditais%2Fbolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126%2F" target="_blank" rel="noopener noreferrer" data-evento="edital-whatsapp">Enviar no WhatsApp</a>
         </div>
 
         <dl class="fatos">
-            <div><dt>Bolsa</dt><dd>bolsas (ver condições)</dd></div>
-            <div><dt>Valor total do edital</dt><dd>Não informado</dd></div>
-            <div><dt>Prazo final</dt><dd>11/12/2026</dd></div>
+            <div class="fato-prazo" id="prazo"><dt>Prazo final</dt><dd>11/12/2026<span class="prazo-acoes"><a class="btn pequeno" href="../../cal/edital-126.ics" type="text/calendar" data-evento="edital-ics">Pôr no meu calendário (.ics)</a> <a class="btn pequeno" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Prazo%20final%3A%20Bolsa%20Est%C3%A1gio%20de%20Pesquisa%20no%20Exterior%20(BEPE)%20para%20Inicia%C3%A7%C3%A3o%20Cient%C3%ADfica%202026&amp;dates=20261211/20261212&amp;details=FAPESP.%20Confirme%20o%20hor%C3%A1rio%20limite%20no%20edital%20oficial.%20https%3A%2F%2Fhelloliueunice.github.io%2FPlataforma-Brasil-Brasileiro%2Feditais%2Fbolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126%2F" target="_blank" rel="noopener noreferrer" data-evento="edital-google-agenda">Google Agenda<span class="sr-only">: prazo final</span></a></span></dd></div>
             
-            <div><dt>Quem pode participar</dt><dd><a href="../../para/pesquisadores/">Pesquisador(a)</a></dd></div>
-            <div><dt>Contrapartida</dt><dd>Não informada</dd></div>
+            <div><dt>Bolsa</dt><dd>Veja no edital oficial</dd></div>
+            <div><dt>Valor total do edital</dt><dd>Veja no edital oficial</dd></div>
+            <div><dt>Quem pode participar</dt><dd><a href="../../para/pesquisadores/" data-evento="para-pesquisador">Pesquisador(a)</a></dd></div>
+            <div><dt>Contrapartida (parte do custo paga por você)</dt><dd>Não informada</dd></div>
             <div><dt>Origem do recurso</dt><dd>Recurso público</dd></div>
             <div><dt>Abrangência</dt><dd>São Paulo</dd></div>
+            
         </dl>
         <p class="destaque">Bolsa de 4 meses, improrrogável, no exterior. Cobre manutenção mensal, passagens, seguro-viagem, auxílio instalação (uma mensalidade adicional) e reserva técnica de 10% da manutenção. Os valores da manutenção estão em tabela externa (fapesp.br/17871), que não está no texto.</p>
         
 
-        <section aria-labelledby="elig-titulo"><h2 id="elig-titulo">Quem pode participar — confira antes</h2>
-            <p class="nota">Compare cada requisito com a sua situação. Se você não atende a um requisito eliminatório, a proposta não pode ser aceita.</p>
-            <ol class="elegibilidade"><li><span class="pergunta">Você é bolsista FAPESP de Iniciação Científica (Regular ou BCO) com Bolsa no País aprovada até 31/08/2026 e contratada?</span> <span class="requisito">Precisa ser: <strong>Sim</strong></span> <span class="selo eliminatoria">Eliminatória</span></li><li><span class="pergunta">O estágio no exterior faz parte do projeto da sua Bolsa no País?</span> <span class="requisito">Precisa ser: <strong>Sim</strong></span> <span class="selo eliminatoria">Eliminatória</span></li><li><span class="pergunta">Você tem um supervisor no exterior disposto a dar aceite e parecer?</span> <span class="requisito">Precisa ser: <strong>Sim</strong></span> <span class="selo eliminatoria">Eliminatória</span></li><li><span class="pergunta">Seu orientador pode atestar sua proficiência no idioma?</span> <span class="requisito">Precisa ser: <strong>Sim</strong></span> <span class="selo eliminatoria">Eliminatória</span></li><li><span class="pergunta">Você vai voltar ao Brasil e reativar a Bolsa no País por pelo menos 4 meses após o estágio?</span> <span class="requisito">Precisa ser: <strong>Sim</strong></span> <span class="selo eliminatoria">Eliminatória</span></li></ol>
-            <p class="nota">Lista de conferência rápida; os requisitos completos estão no edital oficial.</p></section>
+        <section class="posso" aria-labelledby="posso-titulo">
+            <h2 id="posso-titulo">Posso concorrer?</h2>
+            <p class="posso-resumo"><strong>Quem pode pedir:</strong> Pesquisador(a) <span aria-hidden="true">·</span> <strong>Onde:</strong> São Paulo</p>
+            <p>Você precisa responder <strong>SIM</strong> a todas:</p>
+            <ol class="elegibilidade"><li><span class="pergunta">Você é bolsista FAPESP de Iniciação Científica (Regular ou BCO) com Bolsa no País aprovada até 31/08/2026 e contratada?</span></li><li><span class="pergunta">O estágio no exterior faz parte do projeto da sua Bolsa no País?</span></li><li><span class="pergunta">Você tem um supervisor no exterior disposto a dar aceite e parecer?</span></li><li><span class="pergunta">Seu orientador pode atestar sua proficiência no idioma?</span></li><li><span class="pergunta">Você vai voltar ao Brasil e reativar a Bolsa no País por pelo menos 4 meses após o estágio?</span></li></ol>
+            
+            <p class="posso-alerta">Se alguma resposta for diferente, você não pode concorrer.</p>
+            
+            <p class="nota">Lista para conferência rápida; vale o edital oficial. <a href="../../#edital-126" data-evento="edital-teste">Fazer o teste completo na plataforma</a>.</p>
+        </section>
 
         <section><h2>Sobre o edital</h2><p>A FAPESP seleciona bolsistas de Iniciação Científica para um estágio de pesquisa de 4 meses em instituição estrangeira de excelência. O estágio deve fazer parte do projeto da Bolsa no País. Podem submeter bolsistas FAPESP de IC (Regular ou BCO) com Bolsa no País aprovada até 31/08/2026 e contratada. Depois do estágio, o bolsista volta ao Brasil e reativa a Bolsa no País por pelo menos 4 meses.</p>
             <p class="nota">Conferido por pessoa em 31/10/2026 na <a href="https://fapesp.br/18416" target="_blank" rel="noopener noreferrer">fonte oficial</a>.</p>
@@ -94,11 +101,7 @@
         <section><h2>Cronograma</h2>
             <ol class="cronograma"><li><strong>Publicação do edital</strong> <span>25/09/2026</span></li><li><strong>Abertura das inscrições</strong> <span>01/10/2026</span></li><li><strong>Prazo final</strong> <span>11/12/2026</span></li></ol>
             <p class="destaque">Submissão apenas pelo SAGe até 11/12/2026. A instituição e o supervisor no exterior precisam estar cadastrados no SAGe antes (o cadastro da instituição leva cerca de 2 dias úteis). Carta da instituição estrangeira, procuração e declaração de retorno podem ser entregues na contratação.</p>
-            <div class="assinar" role="group" aria-label="Adicionar ao calendário">
-                <span class="assinar-rotulo">Adicionar ao calendário</span>
-                <a class="btn pequeno" href="../../cal/edital-126.ics" type="text/calendar" data-evento="edital-ics">Arquivo .ics (Apple, Outlook)</a>
-                <a class="btn pequeno" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Prazo%20final%3A%20Bolsa%20Est%C3%A1gio%20de%20Pesquisa%20no%20Exterior%20(BEPE)%20para%20Inicia%C3%A7%C3%A3o%20Cient%C3%ADfica%202026&amp;dates=20261211/20261212&amp;details=FAPESP.%20Confirme%20o%20hor%C3%A1rio%20limite%20no%20edital%20oficial.%20https%3A%2F%2Fhelloliueunice.github.io%2FPlataforma-Brasil-Brasileiro%2Feditais%2Fbolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126%2F" target="_blank" rel="noopener noreferrer" data-evento="edital-google-agenda">Google Agenda: prazo final</a>
-            </div></section>
+            <p class="nota">Para lembrar do prazo, use os botões de calendário <a href="#prazo">ao lado da data</a>.</p></section>
 
         <section><h2>Documentos usuais</h2>
             <ul class="lista"><li>Currículo Lattes atualizado</li><li>Projeto de pesquisa no modelo do edital</li><li>Comprovante de vínculo com a instituição executora</li><li>Orçamento detalhado por rubrica</li><li>Cronograma físico-financeiro</li><li>Projeto de pesquisa do estágio (itens a.1 a a.5 em até 5 páginas)</li><li>Currículo resumido e declaração do supervisor no exterior (parecer, aceite e parecer sobre o relatório final)</li><li>Declaração do orientador atestando proficiência no idioma</li><li>Histórico escolar atualizado da graduação</li><li>Relatório científico parcial resumido da Bolsa no País</li><li>Carta da instituição no exterior, procuração pública e declaração de retorno (na contratação)</li></ul>
@@ -112,10 +115,10 @@
         <section><h2>Como se preparar</h2><ul class="lista"><li><a href="../../guias/como-encontrar-editais/">Como encontrar o edital certo para o seu projeto</a></li><li><a href="../../guias/documentos-para-editais/">Documentos para editais: checklist por tipo de proponente</a></li><li><a href="../../guias/como-escrever-proposta-edital/">Como escrever uma proposta competitiva para edital</a></li></ul></section>
 
         <section><h2>Editais relacionados</h2><ul class="cartoes"><li class="cartao">
-            <div class="selos"><span class="selo aberto" data-abertura="2026-10-29" data-encerramento="2026-11-06">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <a class="selo auto" href="#origem" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Leitura automática</a></div>
+            <div class="selos"><span class="selo aberto" data-abertura="2026-10-29" data-encerramento="2026-11-06">Inscrições abertas</span> <span class="selo neutro">Convênio</span> <span class="selo auto" title="Dados lidos automaticamente do Transferegov, sem revisão humana">Não revisado por pessoa</span></div>
             <h3><a href="../../editais/edupol-ia-pesquisa-educacao-cultura-politica-democracia-e-inteligencia-1056871/">Edupol-IA: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança</a></h3>
-            <p>Ministério da Educação · <strong>ver condições</strong> · OSC / Cooperativa</p>
-            <p class="nota">Inscrições: 29/10/2026 a 06/11/2026 · Nacional</p>
+            <p>Ministério da Educação · <strong>valor não informado pela fonte</strong> · ONG/associação</p>
+            <p class="nota">Inscrições: 29/10/2026 a 06/11/2026 · Abrangência: não informada (cadastro: RS)</p>
         </li><li class="cartao">
             <div class="selos"><span class="selo aberto" data-abertura="2026-09-24" data-encerramento="2026-11-10" data-etapa="Pré-proposta">Pré-proposta até 10/11/2026</span> <span class="selo neutro">Auxílio à pesquisa</span></div>
             <h3><a href="../../editais/chamada-conjunta-fapesp-confap-water4all-sobre-gestao-sustentavel-da-128/">Chamada conjunta FAPESP/CONFAP/Water4All sobre gestão sustentável da água</a></h3>
@@ -129,11 +132,17 @@
         </li><li class="cartao">
             <div class="selos"><span class="selo aberto" data-abertura="2026-10-21" data-encerramento="2026-11-12" data-etapa="Pré-proposta">Pré-proposta até 12/11/2026</span> <span class="selo neutro">Não reembolsável</span></div>
             <h3><a href="../../editais/pipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/">PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)</a></h3>
-            <p>FAPESP · <strong>até R$ 500,0 mil</strong> por proposta · Empresa / Startup</p>
+            <p>FAPESP · <strong>até R$ 500,0 mil</strong> por proposta · Empresa</p>
             <p class="nota">Inscrições: 21/10/2026 a 12/11/2026 · São Paulo</p>
         </li></ul></section>
     </main>
     <footer class="rodape">
+        <section class="ces" aria-labelledby="ces-titulo" data-ces-bloco>
+            <h2 id="ces-titulo">Foi fácil encontrar o que procurava?</h2>
+            <div class="ces-opcoes" role="group" aria-labelledby="ces-titulo"><a class="btn" href="../../obrigado/facil/" rel="nofollow" data-ces="facil" data-evento="ces-facil">Fácil</a><a class="btn" href="../../obrigado/medio/" rel="nofollow" data-ces="medio" data-evento="ces-medio">Mais ou menos</a><a class="btn" href="../../obrigado/dificil/" rel="nofollow" data-ces="dificil" data-evento="ces-dificil">Difícil</a></div>
+            <p class="ces-obrigado" role="status" aria-live="polite"></p>
+            <p class="nota">Resposta anônima, sem dados pessoais: contamos só o total de cada opção. <a href="../../dados/#experiencia">Como medimos a experiência</a>.</p>
+        </section>
         <div class="rodape-grupos">
             <nav aria-labelledby="rodape-editais"><h2 id="rodape-editais">Editais</h2><ul>
                 <li><a href="../../editais/">Todos os editais</a></li>
@@ -170,6 +179,7 @@
     })();
     document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-evento]');if(!a)return;a.getAttribute('data-evento').split(' ').forEach(function(n){if(!n)return;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'evento/'+n,title:n,event:true});if(window.gtag)gtag('event',n)}catch(e){}})});
     (function(){var t=document.querySelector('.topo'),b=document.querySelector('.menu-botao'),s=[].slice.call(document.querySelectorAll('.menu-sub details')),largo=window.matchMedia('(min-width: 901px)');if(!t)return;function gaveta(a){t.classList.toggle('aberto',a);b.setAttribute('aria-expanded',a?'true':'false');}if(b)b.addEventListener('click',function(){gaveta(!t.classList.contains('aberto'));});s.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)s.forEach(function(o){if(o!==d)o.open=false;});});d.addEventListener('focusout',function(){setTimeout(function(){if(largo.matches&&!d.contains(document.activeElement))d.open=false;},0);});});document.addEventListener('keydown',function(ev){if(ev.key!=='Escape')return;var d=s.filter(function(x){return x.open;})[0];if(d){d.open=false;d.querySelector('summary').focus();}else if(t.classList.contains('aberto')){gaveta(false);b.focus();}});document.addEventListener('click',function(ev){if(!largo.matches||!ev.target.closest)return;if(!ev.target.closest('.menu-sub'))s.forEach(function(d){d.open=false;});});})();
+    (function(){var c=document.querySelector('[data-ces-bloco]');if(!c)return;var K='fb:ces',D=30*864e5;try{var v=Number(localStorage.getItem(K));if(v&&Date.now()-v<D){c.hidden=true;return;}}catch(_){}c.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-ces]');if(!a)return;ev.preventDefault();try{localStorage.setItem(K,String(Date.now()));}catch(_){}c.querySelector('.ces-opcoes').hidden=true;c.querySelector('.ces-obrigado').textContent='Obrigado! Sua resposta ajuda a melhorar o site.';});})();
     </script>
 </body>
 </html>
