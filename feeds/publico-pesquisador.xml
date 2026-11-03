@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Capta Brasil — editais para pesquisadores</title>
+  <title>Radar Fomento — editais para pesquisadores</title>
   <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/para/pesquisadores/</link>
   <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/publico-pesquisador.xml" rel="self" type="application/rss+xml"/>
   <description>Editais com inscrições abertas ou previstas (editais para pesquisadores), com link para a fonte oficial. Confirme sempre no edital oficial.</description>

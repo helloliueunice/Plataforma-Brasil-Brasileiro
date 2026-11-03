@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Capta Brasil//Prazos de editais//PT-BR
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:BIOTA – Síntese e Transformação — Capta Brasil
-NAME:BIOTA – Síntese e Transformação — Capta Brasil
+X-WR-CALNAME:BIOTA – Síntese e Transformação — Radar Fomento
+NAME:BIOTA – Síntese e Transformação — Radar Fomento
 X-WR-CALDESC:Prazos de BIOTA – Síntese e Transformação (FAPESP). Confi
  rme sempre no edital oficial.
 DESCRIPTION:Prazos de BIOTA – Síntese e Transformação (FAPESP). Confir

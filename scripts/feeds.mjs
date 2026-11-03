@@ -102,7 +102,7 @@ export function calendario({ nome, descricao, eventos }) {
     const linhas = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//Capta Brasil//Prazos de editais//PT-BR',
+        'PRODID:-//Radar Fomento//Prazos de editais//PT-BR',
         'CALSCALE:GREGORIAN',
         'METHOD:PUBLISH',
         `X-WR-CALNAME:${icsTexto(nome)}`,

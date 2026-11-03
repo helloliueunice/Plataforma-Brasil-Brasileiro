@@ -30,7 +30,7 @@ const PADRAO = 'https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro';
 const cname = fs.existsSync(path.join(RAIZ, 'CNAME')) ? fs.readFileSync(path.join(RAIZ, 'CNAME'), 'utf8').trim() : '';
 const SITE = (process.env.SITE_URL || (cname ? `https://${cname}` : PADRAO)).replace(/\/+$/, '');
 const cfg = JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8'));
-const NOME = cfg.nome || 'Capta Brasil';
+const NOME = cfg.nome || 'Radar Fomento';
 const REPO = 'https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro';
 
 /* ---------- Dados: reaproveita o bloco de configuração do index.html ---------- */

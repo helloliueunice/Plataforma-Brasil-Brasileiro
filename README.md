@@ -239,9 +239,9 @@ O gerador também grava os editais dentro do `index.html` (entre `// editais:ini
 
 ## Licença dos dados
 
-Os dados de `editais.json`, `data/alteracoes.json`, feeds e calendários estão sob a licença [Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br). A licença CC BY 4.0 cobre a seleção, a organização e os textos próprios do Capta Brasil. Textos oficiais, nomes e marcas de terceiros não são licenciados por nós; atos oficiais são de domínio público (Lei 9.610/1998, art. 8º, IV).
+Os dados de `editais.json`, `data/alteracoes.json`, feeds e calendários estão sob a licença [Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br). A licença CC BY 4.0 cobre a seleção, a organização e os textos próprios do Radar Fomento. Textos oficiais, nomes e marcas de terceiros não são licenciados por nós; atos oficiais são de domínio público (Lei 9.610/1998, art. 8º, IV).
 
-O Capta Brasil (antigo Fundos Brasil) não tem vínculo com o Fundo Brasil de Direitos Humanos.
+O Radar Fomento (antigo Fundos Brasil) não tem vínculo com o Fundo Brasil de Direitos Humanos.
 
 ## Segurança
 

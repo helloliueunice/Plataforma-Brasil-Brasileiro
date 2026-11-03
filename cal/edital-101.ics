@@ -1,11 +1,11 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Capta Brasil//Prazos de editais//PT-BR
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Plataformas digitais baseadas em software livre e… — Capta
-  Brasil
-NAME:Plataformas digitais baseadas em software livre e… — Capta Brasil
+X-WR-CALNAME:Plataformas digitais baseadas em software livre e… — Radar
+  Fomento
+NAME:Plataformas digitais baseadas em software livre e… — Radar Fomento
 X-WR-CALDESC:Prazos de Plataformas digitais baseadas em software livre e pr
  otocolos abertos (FAPESP). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de Plataformas digitais baseadas em software livre e pro

@@ -41,8 +41,8 @@ function dados(e) {
     };
 }
 // O nome do site entra na assinatura: trocar a marca regenera as imagens de prévia
-const MARCA = (() => { try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8')).nome || 'Capta Brasil'; } catch (_) { return 'Capta Brasil'; } })();
-const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'sinal-verde-1' })).digest('hex').slice(0, 16);
+const MARCA = (() => { try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8')).nome || 'Radar Fomento'; } catch (_) { return 'Radar Fomento'; } })();
+const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'sinal-verde-radar-2' })).digest('hex').slice(0, 16);
 
 function html(d) {
     const tam = d.titulo.length > 90 ? 50 : d.titulo.length > 60 ? 58 : 66;
@@ -61,7 +61,7 @@ h1{margin-top:12px;font-size:${tam}px;line-height:1.1;font-weight:800;letter-spa
 .pub{flex:1;overflow:hidden}
 .pub b{font-size:24px;white-space:normal;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style></head><body><div class="circ"></div>
-<div class="marca"><svg width="52" height="52" viewBox="0 0 88 88"><rect width="88" height="88" rx="22" fill="#FFFFFF"/><path d="M60 30a20 20 0 1 0 0 28" fill="none" stroke="#0B4F9C" stroke-width="9" stroke-linecap="round"/><path d="M40 44l7 7 14-15" fill="none" stroke="#2BB673" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>${esc(MARCA)} · Edital de fomento</div>
+<div class="marca"><svg width="52" height="52" viewBox="0 0 88 88"><rect width="88" height="88" rx="22" fill="#FFFFFF"/><path d="M24 22a42 42 0 0 1 42 42" fill="none" stroke="#0B4F9C" stroke-width="7" stroke-linecap="round"/><path d="M24 40a24 24 0 0 1 24 24" fill="none" stroke="#0B4F9C" stroke-width="7" stroke-linecap="round" opacity="0.7"/><circle cx="26" cy="62" r="8" fill="#2BB673"/></svg>${esc(MARCA)} · Edital de fomento</div>
 <div class="topo">${esc(d.topo)}</div>
 <h1>${esc(d.titulo)}</h1>
 <div class="base">

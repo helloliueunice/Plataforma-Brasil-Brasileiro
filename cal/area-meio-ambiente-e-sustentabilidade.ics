@@ -1,11 +1,12 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Capta Brasil//Prazos de editais//PT-BR
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Prazos de editais de Meio Ambiente e Sustentabilidade — Capt
- a Brasil
-NAME:Prazos de editais de Meio Ambiente e Sustentabilidade — Capta Brasil
+X-WR-CALNAME:Prazos de editais de Meio Ambiente e Sustentabilidade — Rada
+ r Fomento
+NAME:Prazos de editais de Meio Ambiente e Sustentabilidade — Radar Foment
+ o
 X-WR-CALDESC:Prazos de editais de Meio Ambiente e Sustentabilidade\, com le
  mbretes 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edit
  al oficial.
