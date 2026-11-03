@@ -241,8 +241,10 @@ header {
 .fonte-oficial { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); margin: var(--s-4) 0; padding: var(--s-4) var(--s-5); border: 0; border-radius: var(--r-lg); background: var(--surface); }
 .fonte-oficial div { display: flex; flex-direction: column; gap: 2px; }
 .fonte-oficial span { font-size: var(--fs-14, .875rem); color: var(--text-2); }
-.logo-icon { width: 32px; height: 32px; flex: none; display: inline-block; border-radius: 0;
-    background: url("assets/marca.svg") center / contain no-repeat; }   /* balão Sol com o radar de pontos: funciona nos dois temas */
+.logo-icon { position: relative; width: 30px; height: 30px; flex: none; display: inline-block; border-radius: 0;
+    /* Símbolo de partículas: os pontos seguem a cor do texto (carvão no claro, areia no escuro); o ponto verde é sempre o Sinal */
+    background: var(--text); -webkit-mask: url("assets/marca.svg") center / contain no-repeat; mask: url("assets/marca.svg") center / contain no-repeat; }
+.logo-icon::after { content: ""; position: absolute; left: 0; top: calc(100% * 132 / 160); width: calc(100% * 28 / 160); height: calc(100% * 28 / 160); border-radius: 50%; background: var(--signal); }
 .header-right { display: flex; align-items: center; gap: var(--s-6); min-width: 0; }
 .main-nav { display: flex; align-items: center; gap: var(--s-1); }
 .main-nav a {

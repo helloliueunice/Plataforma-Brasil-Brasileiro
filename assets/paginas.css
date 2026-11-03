@@ -243,8 +243,10 @@ section, .aviso { margin-top: var(--s-10); }
 }
 
 /* Complementos */
-.marca-icone { width: 32px; height: 32px; flex: none; display: inline-block; border-radius: 0;
-    background: url("marca.svg") center / contain no-repeat; }   /* balão Sol com o radar de pontos: funciona nos dois temas */
+.marca-icone { position: relative; width: 30px; height: 30px; flex: none; display: inline-block; border-radius: 0;
+    /* Símbolo de partículas: os pontos seguem a cor do texto (carvão no claro, areia no escuro); o ponto verde é sempre o Sinal */
+    background: var(--text); -webkit-mask: url("marca.svg") center / contain no-repeat; mask: url("marca.svg") center / contain no-repeat; }
+.marca-icone::after { content: ""; position: absolute; left: 0; top: calc(100% * 132 / 160); width: calc(100% * 28 / 160); height: calc(100% * 28 / 160); border-radius: 50%; background: var(--signal); }
 .pular { top: auto; transform: translateY(-200%); display: inline-flex; align-items: center; min-height: 44px; }
 .pular:focus { transform: none; top: var(--s-2); }
 .selo { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }

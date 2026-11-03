@@ -42,9 +42,9 @@ function dados(e) {
 }
 // O nome do site entra na assinatura: trocar a marca regenera as imagens de prévia
 const MARCA = (() => { try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8')).nome || 'Radar Fomento'; } catch (_) { return 'Radar Fomento'; } })();
-const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'praca-pontos-1' })).digest('hex').slice(0, 16);
+const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'praca-pontos-2' })).digest('hex').slice(0, 16);
 
-// Símbolo: radar de pontos dentro do balão de conversa Sol: o mesmo de assets/marca.svg
+// Símbolo: radar de pontos em carvão com o ponto verde (Sinal): o mesmo de assets/marca.svg
 const SIMBOLO = (tam) => fs.readFileSync(path.join(RAIZ, 'assets', 'marca.svg'), 'utf8').trim()
     .replace(/<title>.*?<\/title>/, '').replace('<svg ', `<svg width="${tam}" height="${tam}" aria-hidden="true" `);
 // Nome com contraste de peso: primeira palavra em 800, o resto em 400 ("Radar" + "Fomento")
