@@ -113,6 +113,7 @@ const contatoHref = cfg.contato ? (/^https?:/.test(cfg.contato) ? cfg.contato : 
 const apoioConfigurado = !!(pixCfg.chave || cfg.apoio?.apoiase || cfg.apoio?.url);
 
 // Só links https:// sem espaços, aspas ou sinais de tag (bloqueia javascript:, data: e quebras de linha).
+function dominioDe(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (_) { return ''; } }
 function linkSeguro(u) { const t = String(u || '').trim(); return /^https:\/\/[^\s"'<>`]+$/i.test(t) ? t : ''; }
 
 // Formulários externos (data/site.json → formularios): preenchido = botão para o formulário; vazio = fluxo atual (e-mail montado)
@@ -689,9 +690,10 @@ for (const e of editais) {
         <div class="acoes">
             ${encerrado ? `<a class="btn primario" href="${parecidos.length ? '#parecidos' : `${rel}editais/`}" data-evento="encerrado-parecidos">Ver editais parecidos abertos</a>`
                 : `<a class="btn primario" href="${rel}#edital-${e.id}" data-evento="edital-teste">Posso concorrer? Fazer o teste</a>`}
-            ${e.link ? `<a class="btn" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial${patrocinado(e) ? ` patrocinio-oficial-${e.id}` : ''}">Edital oficial</a>` : ''}
+            ${e.link ? `<a class="btn oficial" href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial${patrocinado(e) ? ` patrocinio-oficial-${e.id}` : ''}">Abrir edital oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba, ${esc(dominioDe(e.link))})</span></a>` : ''}
             ${encerrado ? '' : `<a class="btn whats" href="https://wa.me/?text=${encodeURIComponent(textoWhats)}" target="_blank" rel="noopener noreferrer" data-evento="edital-whatsapp">Enviar no WhatsApp</a>`}
         </div>
+        ${e.link ? `<p class="fonte-linha">Fonte oficial: <a href="${esc(e.link)}" target="_blank" rel="noopener noreferrer" data-evento="edital-oficial">${esc(dominioDe(e.link))}</a>${e.verificadoEm ? ` · ${e.origem === 'transferegov' ? 'lido' : 'conferido'} em ${data(e.verificadoEm)}` : ''}. O edital oficial sempre prevalece.</p>` : ''}
         <p class="aviso-golpe">Nunca pague para se inscrever. <a href="${rel}nunca-cobramos/" data-evento="golpe-saiba-mais">Saiba como evitar golpes <span aria-hidden="true">→</span></a></p>
 
         <dl class="fatos">

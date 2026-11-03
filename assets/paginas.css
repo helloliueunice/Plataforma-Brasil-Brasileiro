@@ -135,6 +135,10 @@ section, .aviso { margin-top: var(--s-10); }
     font-size: var(--fs-14); font-weight: 500; text-decoration: none; white-space: nowrap; }
 .btn:hover { background: var(--surface); color: var(--text); }
 .btn.primario { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.btn.oficial { border: 2px solid var(--brand); color: var(--brand); background: var(--brand-subtle); font-weight: 600; }
+.btn.oficial:hover { background: var(--brand); color: var(--on-brand); }
+.fonte-linha { margin: var(--s-3) 0 var(--s-4); font-size: var(--fs-14); color: var(--text-2); }
+.fonte-linha + .aviso-golpe { margin-top: 0; }
 .btn.primario:hover { background: var(--brand-hover); border-color: var(--brand-hover); color: var(--on-brand); }
 .btn.whats { color: var(--text); }
 .btn.pequeno { height: 32px; padding: 0 var(--s-3); font-size: var(--fs-13); }

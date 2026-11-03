@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Fomento — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-EzMDc+NeS8cGwMEGZqHOebbS+kJzb4QGV6+J7Sg9Qq0=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-hkn3YHQPAOWP/pQVp+2NXQt6fLkLY5k4cUPuJ7QnsEI=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
@@ -206,6 +206,11 @@ header {
     font-size: var(--fs-18, 1.125rem); font-weight: 700; letter-spacing: -0.01em;
     color: var(--text); text-decoration: none; white-space: nowrap;
 }
+.btn.btn-oficial, a.btn.btn-oficial { border: 2px solid var(--brand); color: var(--brand); background: var(--brand-subtle); font-weight: 600; text-decoration: none; }
+.btn.btn-oficial:hover, a.btn.btn-oficial:hover { background: var(--brand); color: var(--on-brand, #fff); }
+.fonte-oficial { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); margin: var(--s-4) 0; padding: var(--s-4); border: 1px solid var(--brand-border); border-radius: var(--r-md, 8px); background: var(--brand-subtle); }
+.fonte-oficial div { display: flex; flex-direction: column; gap: 2px; }
+.fonte-oficial span { font-size: var(--fs-14, .875rem); color: var(--text-2); }
 .logo-icon { width: 28px; height: 28px; border-radius: 7px; background: url("assets/marca.svg") center / contain no-repeat;
     display: inline-block; flex: none; }
 .header-right { display: flex; align-items: center; gap: var(--s-6); min-width: 0; }
@@ -5940,6 +5945,8 @@ body.comparando .toasts { bottom: 88px; }
             if (/^n[aã]o informada$/i.test(ab)) return 'Federal';
             return ab;
         }
+        // Endereço curto da fonte (ex.: fapesp.br) para mostrar de onde vem o edital
+        function dominioDe(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (_) { return ''; } }
         function urlSegura(u) { const s = String(u || "").trim(); return /^https:\/\/[^\s"<>]+$/i.test(s) ? s : ""; }
         function esc(s) {
             return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -6283,13 +6290,13 @@ body.comparando .toasts { bottom: 88px; }
                 <!-- No máximo 2 ações visíveis (Posso concorrer? e a estrela); o resto fica em "Mais" -->
                 <div class="edital-actions">
                     <button class="btn btn-primary btn-small btn-posso" data-action="details" data-foco="posso" data-id="${e.id}" aria-label="Posso concorrer? ${esc(e.titulo)}">Posso concorrer?</button>
+                    ${urlSegura(e.link) ? `<a class="btn btn-small btn-oficial" href="${esc(urlSegura(e.link))}" target="_blank" rel="noopener noreferrer" data-action="external" data-id="${e.id}" aria-label="Edital oficial de ${esc(e.titulo)} (abre em nova aba, ${esc(dominioDe(e.link))})">Edital oficial <span aria-hidden="true">↗</span></a>` : ''}
                     <details class="menu card-mais">
                         <summary class="btn btn-outline btn-small" aria-label="Mais ações: ${esc(e.titulo)}">Mais <span aria-hidden="true">▾</span></summary>
                         <div class="menu-panel">
                             ${compacto ? '' : `<label class="compare-check"><input type="checkbox" data-action="compare" data-id="${e.id}" ${compareSet.has(e.id) ? 'checked' : ''}> Comparar com outros</label>`}
                             ${st !== 'fechado' ? `<button type="button" data-action="ics" data-id="${e.id}">Baixar o prazo para a agenda (.ics)</button>
                             <a href="${esc(googleAgendaUrl(e))}" target="_blank" rel="noopener noreferrer" data-action="google-agenda">Adicionar ao Google Agenda <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>` : ''}
-                            <a href="${esc(urlSegura(e.link) || e.link)}" target="_blank" rel="noopener noreferrer" data-action="external">Portal oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
                         </div>
                     </details>
                 </div>
@@ -6478,6 +6485,12 @@ body.comparando .toasts { bottom: 88px; }
                         ${e.valorTotal > 0 ? `<div><dt>Total do edital</dt><dd>${fmtValor(e.valorTotal, e.moeda)}</dd></div>` : ''}
                     </dl>
 
+                    <!-- Fonte oficial sempre à vista: o edital oficial é o que vale -->
+                    ${urlSegura(linkOficial) ? `<div class="fonte-oficial">
+                        <div><strong>Edital oficial</strong><span>${esc(dominioDe(linkOficial))}${e.verificadoEm ? ` · ${e.origem === 'transferegov' ? 'lido' : 'conferido'} em ${fmtDate(e.verificadoEm)}` : ''}</span></div>
+                        <a class="btn btn-oficial" href="${esc(urlSegura(linkOficial))}" target="_blank" rel="noopener noreferrer" data-action="external" data-id="${e.id}">Abrir edital oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+                    </div>` : ''}
+
                     <!-- 2. Posso concorrer? vem antes de qualquer link para fora (o botão principal fica aqui dentro) -->
                     ${possoConcorrerHTML(e)}
                     <div class="ces-slot no-print" data-ces-slot="${e.id}"></div>
@@ -6488,7 +6501,7 @@ body.comparando .toasts { bottom: 88px; }
                     <!-- 4. Ações secundárias: o portal oficial deixa de ser o botão principal -->
                     <div class="modal-actions modal-acoes-sec">
                         <button class="btn btn-outline btn-small" data-action="fav" data-id="${e.id}" aria-pressed="${fav}" aria-label="${fav ? 'Remover dos favoritos' : 'Favoritar'}: ${esc(e.titulo)}"><span aria-hidden="true">${fav ? '★' : '☆'}</span> ${fav ? 'Favorito' : 'Favoritar'}</button>
-                        <a class="btn btn-outline btn-small" href="${esc(linkOficial)}" target="_blank" rel="noopener noreferrer" data-action="external" data-id="${e.id}">Portal oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+                        <a class="btn btn-outline btn-small" href="${esc(urlSegura(linkOficial) || linkOficial)}" target="_blank" rel="noopener noreferrer" data-action="external" data-id="${e.id}">Edital oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
                         ${agencias[e.agencia] ? `<button class="btn btn-outline btn-small" data-action="agencia" data-key="${e.agencia}">Ver instituição</button>` : ''}
                         <div class="dropdown" data-dropdown>
                             <button type="button" class="btn btn-outline btn-small dropdown-btn" aria-expanded="false" aria-controls="compartilharMenu-${e.id}">Compartilhar <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>
