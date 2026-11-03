@@ -424,3 +424,28 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
     .alertas .btn, .destaque-radar .btn { flex: 1 1 100%; }
 }
 @media print { .aviso-golpe, .alertas, .destaque-radar .acoes { display: none; } .relatorio { border-color: #999; } }
+
+/* Auditoria de estados e acessibilidade (nov/2026) */
+/* Formulários sem servidor: erro junto ao campo (texto + borda; não depende só de cor) e mensagem pronta para copiar */
+.erro { margin: 0; font-size: var(--fs-14); font-weight: 500; color: var(--urgent-fg); }
+.erro::before { content: "⚠ "; }
+.campo [aria-invalid="true"]:not([type="checkbox"]):not([type="radio"]) { border-color: var(--urgent-fg); border-width: 2px; }
+.campo input[type="checkbox"][aria-invalid="true"], .campo input[type="radio"][aria-invalid="true"] { outline: 2px solid var(--urgent-fg); outline-offset: 2px; }
+.email-pronto { display: grid; gap: var(--s-2); padding: var(--s-4); background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); }
+.email-pronto textarea { width: 100%; padding: var(--s-2) var(--s-3); font: var(--fs-14)/1.5 var(--font); color: var(--text); background: var(--bg);
+    border: 1px solid var(--border-strong); border-radius: var(--r-md); resize: vertical; }
+.email-pronto .acoes { margin: 0; }
+.formulario [role="status"]:not(:empty) { padding: var(--s-3) var(--s-4); font-size: var(--fs-16); color: var(--text); background: var(--soon-bg); border: 1px solid var(--soon-bd); border-radius: var(--r-lg); }
+.email-pronto [role="status"]:not(:empty) { padding: 0; background: none; border: 0; font-size: var(--fs-14); }
+/* Medida de linha do texto corrido: até ~72 caracteres por linha (era até 94 em /anuncie/) */
+.pagina p, .pagina li, .pagina dd { max-width: 72ch; }
+.pagina .tabela p, .pagina .tabela li, .pagina .pacote li, .pagina .pacote p, .pagina .cartoes > li { max-width: none; }
+/* Alvos de toque no celular: título do cartão, migalhas e links curtos do rodapé com pelo menos 44 × 44 px */
+@media (max-width: 640px), (pointer: coarse) {
+    .cartao h3 a { display: inline-block; padding-block: 11px; margin-block: -11px; }
+    .migalhas a, .rodape li a { min-width: 44px; justify-content: center; }
+    .email-pronto .btn { width: 100%; }
+    .pagina ul:not(.cartoes) > li > a:only-child, .pagina dd a, .pagina dd small a { display: inline-block; min-width: 44px; padding-block: 12px; margin-block: -12px; }
+}
+@media (min-width: 641px) and (pointer: fine) { .migalhas a { display: inline-block; min-height: 24px; line-height: 24px; } }
+

@@ -467,3 +467,35 @@
 .edital-card .edital-actions .btn.btn-oficial { border: 2px solid var(--brand); background: var(--brand-subtle); color: var(--brand); font-weight: 600; padding: 0 var(--s-3); }
 .edital-card .edital-actions .btn.btn-oficial:hover { background: var(--brand); color: var(--on-brand); }
 @media (max-width: 640px) { .edital-card .edital-actions .btn.btn-oficial { height: 44px; } }
+
+/* ---------- Auditoria de estados e acessibilidade (nov/2026) ---------- */
+/* Avisos do sistema: sem internet, armazenamento indisponível, falha ao baixar a lista, lista desatualizada */
+.avisos-sistema:empty { display: none; }
+.avisos-sistema { display: grid; gap: var(--s-2); max-width: var(--container); margin: var(--s-4) auto 0; padding: 0 var(--s-6); }
+.aviso-sistema { max-width: none; padding: var(--s-3) var(--s-4); font-size: var(--fs-14); line-height: var(--lh-snug); color: var(--text);
+    background: var(--soon-bg); border: var(--bw) solid var(--soon-bd); border-left: 4px solid var(--soon-fg); border-radius: var(--r-md); }
+.aviso-sistema.aviso-erro { background: var(--urgent-bg); border-color: var(--urgent-bd); border-left-color: var(--urgent-fg); }
+.aviso-sistema a, .aviso-sistema .link-btn { color: var(--text); text-decoration: underline; font-weight: var(--fw-semibold); }
+@media (max-width: 640px) { .avisos-sistema { padding: 0 var(--s-4); } }
+/* Foco visível nos campos: o anel claro (#E3EDF9 sobre branco, 1,2:1) não aparecia; agora contorno de 2 px na cor da marca (8:1) */
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--focus) !important; outline-offset: 1px; }
+/* Alvos: "Desfazer"/"Ver" do aviso e links-botão com pelo menos 24 px (desktop) e 44 px (toque) */
+.toast-action { min-height: 44px; min-width: 44px; padding: 0 var(--s-2); margin-block: -11px; align-self: center; }
+.link-btn { min-height: 24px; }
+.site-footer a { display: inline-block; min-height: 24px; line-height: 24px; }
+.skip-link, .pular-resultados:focus { min-height: 44px; display: inline-flex; align-items: center; }
+/* Medida de linha: notas longas com até ~72 caracteres por linha (eram 83 e 114) */
+.lista-rodape, #capRelAjuda, .container .nota { max-width: 72ch; }
+@media (max-width: 640px), (pointer: coarse) {
+    .btn { min-height: 44px; height: auto; }
+    input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select { min-height: 44px; }
+    summary, .mais-filtros > summary, .cap-gng > summary { min-height: 44px; }
+    a.logo { min-height: 44px; }
+    .site-footer a { padding: 11px 2px; line-height: 22px; }
+    p .link-btn, .nota .link-btn { padding-block: 12px; margin-block: -12px; }
+    .filter-item input, .filter-item select, .form-group input, .form-group select, .proposta-grid input { min-height: 44px; }
+    .etapas-stepper button, .chip-toggle, .check-chips label, .checklist label, .link-btn { min-height: 44px; }
+    .site-footer a { min-width: 44px; text-align: center; }
+}
+a.link-btn { display: inline-flex; align-items: center; }
+

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Fomento — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-hkn3YHQPAOWP/pQVp+2NXQt6fLkLY5k4cUPuJ7QnsEI=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-xhchTVd7hSltx6GqKwQVg7E1fZqaxFt6U6rR9ahdMkI=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
@@ -1267,6 +1267,8 @@ body.comparando .toasts { bottom: 88px; }
     </header>
 
     <main id="main-content" tabindex="-1">
+    <!-- Estados do sistema (sem internet, armazenamento indisponível, falha ao baixar a lista, lista desatualizada) -->
+    <div id="avisosSistema" class="avisos-sistema" role="status" aria-live="polite"></div>
 
     <!-- DASHBOARD PAGE -->
     <div id="page-dashboard" class="page-content active">
@@ -5923,9 +5925,26 @@ body.comparando .toasts { bottom: 88px; }
         const $ = id => document.getElementById(id);
         const val = id => ($(id) ? $(id).value : '');
 
+        // Armazenamento local. Estados: ok | indisponível desde o início (janela anônima, bloqueio de dados do site)
+        // | falhou ao gravar (espaço cheio). Nos dois últimos, nada de "salvo": o aviso do sistema diz o que vale.
         const store = {
+            ok: (() => { try { const k = '__teste_armazenamento__'; localStorage.setItem(k, '1'); localStorage.removeItem(k); return true; } catch (_) { return false; } })(),
+            falhou: false,
             get(k, fallback) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch (_) { return fallback; } },
-            set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) { /* armazenamento indisponível */ } }
+            set(k, v) {
+                try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (_) {
+                    if (store.ok && !store.falhou) {
+                        store.falhou = true; store.ok = false;
+                        setTimeout(() => {
+                            try {
+                                showNotification('Não conseguimos salvar neste navegador. Baixe uma cópia em Meus dados para não perder nada.', 'error', { label: 'Meus dados', fn: () => navigateTo('meus-dados') });
+                                atualizarAvisosSistema();
+                            } catch (_) { /* ainda iniciando */ }
+                        }, 0);
+                    }
+                    return false;
+                }
+            }
         };
 
         // Editais cadastrados/importados pelo usuário (salvos neste navegador)
@@ -6276,7 +6295,7 @@ body.comparando .toasts { bottom: 88px; }
                     <div class="edital-title">${esc(e.titulo)}${e.numero ? `<small class="edital-numero">${esc(e.numero)}</small>` : ''}</div>
                     <div class="edital-value">
                         ${temValor(e) ? fmtValor(e.valorMax, e.moeda) : (/bolsa/i.test(e.modalidade) ? 'Bolsas' : e.origem === 'transferegov' ? '<span class="valor-ausente">Valor não informado pela fonte</span>' : '<span class="valor-ausente">Valor: veja no edital oficial</span>')}
-                        <small>${[temValor(e) ? 'por proposta' : e.origem === 'transferegov' ? `— veja o programa${e.codigoPrograma ? ' ' + esc(e.codigoPrograma) : ''}` : /bolsa/i.test(e.modalidade) ? 'veja no edital oficial' : '', e.valorTotal > 0 ? `total ${fmtValor(e.valorTotal, e.moeda)}` : ''].filter(Boolean).join(' · ')}</small>
+                        <small>${[temValor(e) ? 'por proposta' : e.origem === 'transferegov' ? (e.numero ? '' : `— veja o programa${e.codigoPrograma ? ' ' + esc(e.codigoPrograma) : ''}`) : /bolsa/i.test(e.modalidade) ? 'veja no edital oficial' : '', e.valorTotal > 0 ? `total ${fmtValor(e.valorTotal, e.moeda)}` : ''].filter(Boolean).join(' · ')}</small>
                     </div>
                 </div>
                 ${st === 'aberto' ? `<div class="window-bar ${urgente ? 'urgente' : ''}" title="Janela de submissão decorrida"><span style="width:${janelaPct(e).toFixed(0)}%"></span></div>` : ''}
@@ -7715,14 +7734,44 @@ body.comparando .toasts { bottom: 88px; }
                     });
                     if (!validos.length) throw new Error('vazio');
                     EDITAIS_BASE = validos;
-                    fonteDados = { tipo: 'arquivo', geradoEm: toISO(d && d.geradoEm), demonstrativo: !!(d && d.demonstrativo), total: validos.length, ignorados: itens.length - validos.length };
+                    fonteDados = { tipo: 'arquivo', geradoEm: toISO(d && d.geradoEm), demonstrativo: !!(d && d.demonstrativo), total: validos.length, ignorados: itens.length - validos.length, falhaDownload: false };
                     rebuildEditais();
                     popularSelects();
                     refreshAll();
                     if ($('editalModal').open) openEdital(Number($('editalModal').dataset.id));
-                } catch (_) { /* sem arquivo publicado: mantém os dados de exemplo */ }
+                } catch (_) {
+                    // Sem arquivo publicado ou sem rede: mantém a cópia embutida e AVISA (estado de erro com "Tentar de novo")
+                    fonteDados.falhaDownload = true;
+                }
             }
             atualizarBannerFonte();
+            atualizarAvisosSistema();
+        }
+
+        /* Avisos do sistema: o que vale agora, dito no topo de todas as telas (uma linha por estado) */
+        const DIAS_DESATUALIZADO = 7;
+        let avisosChave = '';
+        function atualizarAvisosSistema() {
+            const box = $('avisosSistema');
+            if (!box) return;
+            const av = [];
+            if (navigator.onLine === false) av.push(['offline', '<strong>Você está sem internet.</strong> A lista já carregada continua aqui; links para editais oficiais, downloads e páginas novas só abrem quando a conexão voltar.']);
+            if (!store.ok) av.push(['armazenamento', store.falhou
+                ? '<strong>Não estamos conseguindo salvar neste navegador.</strong> O que você fizer agora pode se perder ao fechar a aba. <a href="#meus-dados">Baixe uma cópia em Meus dados</a>.'
+                : '<strong>Este navegador não está guardando dados</strong> (janela anônima ou bloqueio de dados do site). Perfil, favoritos e propostas valem só até você fechar esta aba. <a href="#meus-dados">Baixe uma cópia em Meus dados</a> antes de sair.']);
+            if (fonteDados.falhaDownload) av.push(['erro', `<strong>Não conseguimos baixar a lista mais recente.</strong> Mostramos a cópia guardada nesta página${fonteDados.geradoEm ? `, de ${fmtDate(fonteDados.geradoEm)}` : ''}. <button type="button" class="link-btn" data-action="recarregar-dados">Tentar de novo</button>`]);
+            const idade = fonteDados.geradoEm ? -diasAte(fonteDados.geradoEm) : 0;
+            if (idade > DIAS_DESATUALIZADO) av.push(['desatualizado', `<strong>A lista foi conferida pela última vez há ${plural(idade, 'dia', 'dias')}</strong> (${fmtDate(fonteDados.geradoEm)}). Prazos e valores podem ter mudado: confirme no edital oficial antes de se organizar.`]);
+            const chave = av.map(a => a[0]).join('|');
+            if (chave === avisosChave) return;
+            avisosChave = chave;
+            box.innerHTML = av.map(([tipo, html]) => `<p class="aviso-sistema aviso-${tipo}">${html}</p>`).join('');
+        }
+        async function recarregarDados() {
+            const antes = fonteDados.falhaDownload;
+            await carregarEditaisPublicados();
+            if (antes && !fonteDados.falhaDownload) showNotification('Lista atualizada.');
+            else if (fonteDados.falhaDownload) anunciar('Ainda não conseguimos baixar a lista. Continuamos mostrando a cópia guardada.');
         }
 
         function atualizarBannerFonte() {
@@ -7819,6 +7868,7 @@ body.comparando .toasts { bottom: 88px; }
             refreshAll();
             reabrirModalSe(id);
             if (era) showNotification('Removido dos favoritos', 'success', { label: 'Desfazer', fn: () => toggleFavorite(id) });
+            else if (!store.ok) showNotification('Adicionado aos favoritos só nesta aba (o navegador não está guardando dados)', 'warning', null, { grupo: 'fav-add' });
             else showNotification('Adicionado aos favoritos', 'success', null, { grupo: 'fav-add', plural: n => `${n} editais adicionados aos favoritos` });
         }
 
@@ -7883,6 +7933,7 @@ body.comparando .toasts { bottom: 88px; }
             reabrirModalSe(id);
             if (silencioso) return;
             if (atual) showNotification(`Etapa atualizada: ${ETAPA[etapa].icone} ${ETAPA[etapa].nome}`, 'success', { label: 'Desfazer', fn: () => acompanhar(id, atual.etapa, true) });
+            else if (!store.ok) showNotification('Seu passo a passo com datas está aberto, mas não vai ficar salvo: este navegador não está guardando dados.', 'warning', { label: 'Ver', fn: () => navigateTo('propostas') });
             else showNotification('Pronto! Seu passo a passo com datas está no edital e em Minhas propostas.', 'success', { label: 'Ver', fn: () => navigateTo('propostas') });
         }
 
@@ -9036,6 +9087,7 @@ body.comparando .toasts { bottom: 88px; }
                 case 'print': window.print(); break;
                 case 'whatsapp': whatsappEdital(id); break;
                 case 'open-login': openLogin(); break;
+                case 'recarregar-dados': recarregarDados(); break;
                 case 'logout': if ($('loginModal').open) closeModal($('loginModal')); logout(); break;
                 case 'show-alertas': showAlertas(); break;
                 case 'follow': {
@@ -9203,6 +9255,9 @@ body.comparando .toasts { bottom: 88px; }
             });
             try { if (sessionStorage.getItem('dadosApagados')) { sessionStorage.removeItem('dadosApagados'); setTimeout(() => showNotification('Seus dados foram apagados deste navegador.'), 300); } } catch (_) { /* sem sessionStorage */ }
             carregarEditaisPublicados();
+            atualizarAvisosSistema();
+            window.addEventListener('offline', atualizarAvisosSistema);
+            window.addEventListener('online', () => { atualizarAvisosSistema(); anunciar('Conexão de volta.'); if (fonteDados.falhaDownload) recarregarDados(); });
             renderEditais(ordenar(editais, val('sortSelect')));
             updateAlertBadge();
             updateCompareBar();
