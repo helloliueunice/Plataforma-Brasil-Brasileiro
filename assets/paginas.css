@@ -379,3 +379,44 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
     .selo.auto::after { content: ""; position: absolute; left: -4px; right: -4px; top: -11px; bottom: -11px; }
     .faq summary { min-height: 44px; }
 }
+
+/* Onda 4: editais encerrados, aviso de golpe, alertas semanais, destaque e modelo de relatório do Radar */
+.aviso-encerrado { margin: var(--s-2) 0 var(--s-4); padding: var(--s-3) var(--s-4); background: var(--closed-bg); border: 1px solid var(--closed-bd); border-left: 3px solid var(--closed-fg); border-radius: var(--r-lg); color: var(--text); }
+.aviso-encerrado p + p { margin-top: var(--s-1); color: var(--text-2); }
+.aviso-golpe { margin: calc(-1 * var(--s-3)) 0 var(--s-4); font-size: var(--fs-14); color: var(--text-2); }
+.aviso-golpe a, .aviso-pix a { font-weight: 500; }
+.aviso-pix { margin: var(--s-3) 0; padding: var(--s-2) var(--s-3); font-size: var(--fs-14); border-left: 3px solid var(--soon-bd); background: var(--soon-bg); color: var(--text); border-radius: 0 var(--r-md) var(--r-md) 0; }
+.sub + .aviso-golpe { margin-top: calc(-1 * var(--s-2)); }
+.alertas { padding: var(--s-5); border: 1px solid var(--border); border-radius: var(--r-lg); }
+.alertas h2 { margin-bottom: var(--s-2); }
+.alertas .acoes { margin: var(--s-3) 0 var(--s-2); }
+.destaque-radar { margin: var(--s-2) 0 var(--s-6); padding: var(--s-5); border: 1px solid var(--brand-border); border-radius: var(--r-lg); background: var(--brand-subtle); }
+.destaque-radar h2 { margin: var(--s-2) 0 var(--s-1); }
+.destaque-radar .acoes { margin: var(--s-4) 0 0; }
+.relatorio { margin-top: var(--s-4); padding: var(--s-5); border: 1px solid var(--border-strong); border-radius: var(--r-lg); background: var(--bg); }
+.relatorio section { margin-top: var(--s-6); }
+.relatorio h3 { margin: 0; }
+.relatorio h4 { margin-bottom: var(--s-2); font-size: var(--fs-16); font-weight: 600; color: var(--text); }
+.relatorio-rotulo { margin: calc(-1 * var(--s-5)) calc(-1 * var(--s-5)) var(--s-4); padding: var(--s-2) var(--s-5); background: var(--soon-bg); border-bottom: 1px solid var(--soon-bd); border-radius: var(--r-lg) var(--r-lg) 0 0; color: var(--soon-fg); font-size: var(--fs-14); }
+.relatorio-topo { padding-bottom: var(--s-3); border-bottom: 1px solid var(--border); }
+.semaforo { list-style: none; display: grid; gap: 0; margin-top: var(--s-2); border-top: 1px solid var(--border); }
+.semaforo li { display: grid; grid-template-columns: 11em 1fr; gap: var(--s-1) var(--s-3); align-items: start; padding: var(--s-3) 0; border-bottom: 1px solid var(--border); }
+.semaforo p { margin-top: 2px; color: var(--text-2); }
+.sinal { display: inline-flex; align-items: center; gap: 6px; padding: 1px var(--s-2); border: 1px solid; border-radius: var(--r-sm); font-size: var(--fs-14); font-weight: 600; line-height: 1.35; }
+.sinal::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.sinal-regular .sinal { background: var(--open-bg); color: var(--open-fg); border-color: var(--open-bd); }
+.sinal-atencao .sinal { background: var(--soon-bg); color: var(--soon-fg); border-color: var(--soon-bd); }
+.sinal-bloqueia .sinal { background: var(--urgent-bg); color: var(--urgent-fg); border-color: var(--urgent-bd); }
+.tarefas { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--border); }
+.tarefas li { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-3); padding: var(--s-2) 0; border-bottom: 1px solid var(--border); }
+.tarefas .data { min-width: 6.5em; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.tarefas li span:last-child { flex: 1 1 16em; }
+.relatorio .tabela td:first-child { white-space: normal; min-width: 12em; }
+.relatorio .tabela td:last-child { min-width: 10em; }
+@media (max-width: 640px) {
+    .semaforo li { grid-template-columns: 1fr; }
+    .relatorio, .alertas, .destaque-radar { padding: var(--s-4); }
+    .relatorio-rotulo { margin: calc(-1 * var(--s-4)) calc(-1 * var(--s-4)) var(--s-4); padding: var(--s-2) var(--s-4); }
+    .alertas .btn, .destaque-radar .btn { flex: 1 1 100%; }
+}
+@media print { .aviso-golpe, .alertas, .destaque-radar .acoes { display: none; } .relatorio { border-color: #999; } }

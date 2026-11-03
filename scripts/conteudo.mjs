@@ -402,6 +402,7 @@ export const ESQUEMA_CAMPOS = [
     ['preProposta', 'booleano', 'não', 'true quando há pré-proposta ou consulta de elegibilidade.'],
     ['fluxoContinuo', 'booleano', 'não (contrato)', 'true quando a chamada recebe propostas continuamente.'],
     ['resultado', 'data', 'não', 'Previsão de divulgação do resultado.'],
+    ['proximaEdicao', 'data ou texto', 'não (contrato)', 'Depois do encerramento: data prevista (AAAA-MM-DD) ou texto curto sobre a próxima edição, ex.: "costuma abrir em março". Aparece na página do edital encerrado.'],
     ['prazoNota', 'texto', 'não', 'Horário limite, etapas seguintes, cadastro prévio exigido.'],
     ['elegibilidade', 'lista de objetos', 'não (contrato)', 'Perguntas de elegibilidade: {"pergunta", "esperado" (true/false), "eliminatoria" (true/false)}.'],
     ['resumo', 'texto', 'não', 'Objetivo da chamada em linguagem simples.'],

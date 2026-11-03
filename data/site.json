@@ -33,6 +33,12 @@
     "_leia": "Link de inscrição no boletim semanal (ex.: Substack, Buttondown, Google Forms). Vazio = usa o feed RSS.",
     "url": ""
   },
+  "formularios": {
+    "_leia": "Formulários externos (Google Forms, Tally, Buttondown etc.): cole o endereço https completo. Preenchido = o botão abre o formulário em outra aba (sem iframe). Vazio = alertas: o bloco oferece calendário, RSS e o canal do WhatsApp, sem prometer e-mail; pro e radar: o site monta um e-mail com as respostas. alertas = inscrição para receber os prazos por e-mail toda semana; pro = lista de espera do Plano Pro (substitui pro.listaEspera); radar = contato e piloto do Radar para municípios. A Política de Privacidade passa a citar o serviço sozinha.",
+    "alertas": "",
+    "pro": "",
+    "radar": ""
+  },
   "whatsappCanal": "",
   "formularioSugestao": "",
   "contato": "contatofundosbrasil@gmail.com",

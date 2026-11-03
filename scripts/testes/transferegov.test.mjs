@@ -8,7 +8,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { titulo, tema, abrangencia, orgao, modalidade, valores, prazoNotaPrograma, docsExtrasPrograma, contrapartidaPadrao } from '../transferegov-normaliza.mjs';
+import { titulo, tituloLegivel, tema, abrangencia, orgao, modalidade, valores, prazoNotaPrograma, docsExtrasPrograma, contrapartidaPadrao } from '../transferegov-normaliza.mjs';
 
 const SCRIPT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'transferegov.mjs');
 
@@ -23,6 +23,18 @@ test('titulo(): caixa alta da API vira título legível, com siglas e códigos p
     // Preposição no início continua maiúscula; siglas de 2 letras soltas não viram sigla (ex.: "a", "de")
     assert.equal(titulo('DE OLHO NA ESCOLA'), 'De Olho na Escola');
     assert.equal(titulo(''), '');
+});
+
+test('tituloLegivel(): tira códigos crus do início e a referência orçamentária, guardando os códigos', () => {
+    assert.deepEqual(tituloLegivel('2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp'),
+        { nome: 'Desenvolvimento Regional e Ordenamento Territorial — Apoio a Projetos de Desenvolvimento Sustentável Local Integrado', codigo: '2317 · (TED 7AADAF SDR/MIDR) · PT 15.244.2317.00SX.0001' });
+    assert.deepEqual(tituloLegivel('Ação 214S - Rotas de Integração Nacional - RP2'), { nome: 'Rotas de Integração Nacional', codigo: 'Ação 214S' });
+    assert.deepEqual(tituloLegivel('2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)'),
+        { nome: 'Recursos Hídricos: Água em Quantidade e Qualidade para Sempre — Construção da Barragem Atalaia no Estado do Piauí', codigo: '2321 · PT 18.544.2321.7G88.0022' });
+    // Sem nome descritivo depois do código, ou sem código: nada muda
+    assert.deepEqual(tituloLegivel('2317 - (TED)'), { nome: '2317 - (TED)', codigo: '' });
+    assert.deepEqual(tituloLegivel('Programa SIMEC/PAR'), { nome: 'Programa SIMEC/PAR', codigo: '' });
+    assert.deepEqual(tituloLegivel('Edupol-IA: Pesquisa Educação'), { nome: 'Edupol-IA: Pesquisa Educação', codigo: '' });
 });
 
 test('orgao(): devolve acentos que a API omite', () => {

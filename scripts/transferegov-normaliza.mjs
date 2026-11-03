@@ -24,6 +24,27 @@ export function titulo(s) {
     });
 }
 
+// Nome para exibir (título da página, cartões, feeds): tira os códigos crus do início — "2317 - ", "(TED 7AADAF SDR/MIDR) ",
+// "Ação 00SX - " — quando há nome descritivo depois, troca a referência orçamentária do meio (": Pt 15.244.2317.00SX.0001/ Ação: ")
+// por um travessão e tira a marca "RP" do fim. O título original continua em e.titulo (gera o slug); os códigos tirados
+// voltam em `codigo`, para aparecer junto do número do programa.
+export function tituloLegivel(t) {
+    let s = limpa(t);
+    const codigos = [];
+    const PREFIXOS = [/^\d{3,5}\s*[-–]\s*/, /^\([^)]*\d[^)]*\)\s*/, /^A[cç][aã]o\s+[0-9A-Z]{4}\s*[-–]\s*/i];
+    for (let mudou = true; mudou;) {
+        mudou = false;
+        for (const re of PREFIXOS) {
+            const m = s.match(re);
+            // Só tira o código se sobrar um nome descritivo (pelo menos uma palavra de 4+ letras)
+            if (m && /\p{L}{4,}/u.test(s.slice(m[0].length))) { codigos.push(m[0].replace(/\s*[-–]\s*$/, '').trim()); s = s.slice(m[0].length); mudou = true; }
+        }
+    }
+    s = s.replace(/:\s*Pt\s+([0-9A-Z.]+)\s*\/?\s*(A[cç][aã]o:\s*)?/i, (m, pt, acao) => { codigos.push(`PT ${pt}`); return acao ? ' — ' : ': '; });
+    s = s.replace(/\s*[-–/]\s*RP\s*(?:\(?\d\)?)?\.?\s*$/i, '').trim();
+    return { nome: s || limpa(t), codigo: codigos.join(' · ') };
+}
+
 // Nomes de órgãos chegam sem acento na API ("Ministerio da Educacao").
 const ACENTOS = [[/\bMinisterio\b/g, 'Ministério'], [/\bEducacao\b/g, 'Educação'], [/\bSaude\b/g, 'Saúde'], [/\bIntegracao\b/g, 'Integração'],
     [/\bCiencia\b/g, 'Ciência'], [/\bInovacao\b/g, 'Inovação'], [/\bComunicacoes\b/g, 'Comunicações'], [/\bPecuaria\b/g, 'Pecuária'], [/\bAgrario\b/g, 'Agrário'],
