@@ -1,11 +1,11 @@
-# Fundos Brasil — Mídia kit 2026/2027
+# Capta Brasil — Mídia kit 2026/2027
 
 **Portal gratuito de editais de fomento para pesquisa, sociedade civil e poder público.**
 Contato comercial: [seu e-mail]
 
 ## O que é
 
-O Fundos Brasil reúne, em um só lugar, editais de fomento abertos e conferidos na fonte oficial. Hoje são 31 editais curados de financiadores como FAPESP, CNPq, Finep, FAPES, Funbio/BNDES e Prefeitura de São Paulo, mais 27 programas federais do Transferegov para municípios, estados e organizações da sociedade civil.
+O Capta Brasil reúne, em um só lugar, editais de fomento abertos e conferidos na fonte oficial. Hoje são 31 editais curados de financiadores como FAPESP, CNPq, Finep, FAPES, Funbio/BNDES e Prefeitura de São Paulo, mais 27 programas federais do Transferegov para municípios, estados e organizações da sociedade civil.
 
 O site oferece:
 

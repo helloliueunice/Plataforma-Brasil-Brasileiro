@@ -1,11 +1,11 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Prazos de editais de Segurança Pública e Defesa — Fundos B
- rasil
-NAME:Prazos de editais de Segurança Pública e Defesa — Fundos Brasil
+X-WR-CALNAME:Prazos de editais de Segurança Pública e Defesa — Capta Br
+ asil
+NAME:Prazos de editais de Segurança Pública e Defesa — Capta Brasil
 X-WR-CALDESC:Prazos de editais de Segurança Pública e Defesa\, com lembre
  tes 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital o
  ficial.

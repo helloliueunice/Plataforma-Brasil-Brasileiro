@@ -1,8 +1,8 @@
-# Política de Segurança — Fundos Brasil
+# Política de Segurança — Capta Brasil
 
 *Versão 1.0 · 02/11/2026 · [English summary below](#english-summary)*
 
-O Fundos Brasil leva a sério a segurança do site, dos dados e das pessoas que o usam. Esta política explica como relatar uma vulnerabilidade, o que esperar de nós e quais cuidados pedimos a quem pesquisa. Ela segue a ISO/IEC 29147 (divulgação de vulnerabilidades), a ISO/IEC 30111 (tratamento de vulnerabilidades), as recomendações do CERT.br, a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Regulamento de Comunicação de Incidente de Segurança da ANPD (Resolução CD/ANPD nº 15/2024).
+O Capta Brasil leva a sério a segurança do site, dos dados e das pessoas que o usam. Esta política explica como relatar uma vulnerabilidade, o que esperar de nós e quais cuidados pedimos a quem pesquisa. Ela segue a ISO/IEC 29147 (divulgação de vulnerabilidades), a ISO/IEC 30111 (tratamento de vulnerabilidades), as recomendações do CERT.br, a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Regulamento de Comunicação de Incidente de Segurança da ANPD (Resolução CD/ANPD nº 15/2024).
 
 ## Como relatar
 
@@ -34,7 +34,7 @@ Aceitamos relatos em português, inglês ou espanhol.
 - A gravidade é classificada pelo **CVSS v4.0**, considerando o impacto real no contexto do projeto.
 - Mantemos você informado durante a correção e avisamos quando ela for publicada.
 - Quando fizer sentido, publicamos um aviso de segurança (GitHub Security Advisory) e pedimos identificador CVE.
-- O Fundos Brasil é um projeto independente e gratuito, mantido por uma pessoa: **não há programa de recompensa em dinheiro**. Com sua autorização, agradecemos publicamente na seção [Agradecimentos](#agradecimentos).
+- O Capta Brasil é um projeto independente e gratuito, mantido por uma pessoa: **não há programa de recompensa em dinheiro**. Com sua autorização, agradecemos publicamente na seção [Agradecimentos](#agradecimentos).
 
 ## Escopo
 

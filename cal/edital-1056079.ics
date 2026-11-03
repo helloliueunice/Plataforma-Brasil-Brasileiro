@@ -1,11 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Programa Nacional de Estradas Rurais - PRONER — Fundos Brasi
- l
-NAME:Programa Nacional de Estradas Rurais - PRONER — Fundos Brasil
+X-WR-CALNAME:Programa Nacional de Estradas Rurais - PRONER — Capta Brasil
+NAME:Programa Nacional de Estradas Rurais - PRONER — Capta Brasil
 X-WR-CALDESC:Prazos de Programa Nacional de Estradas Rurais - PRONER (Minis
  tério da Agricultura e Pecuária). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de Programa Nacional de Estradas Rurais - PRONER (Minist

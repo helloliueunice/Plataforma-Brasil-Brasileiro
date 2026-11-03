@@ -30,7 +30,7 @@ const PADRAO = 'https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro';
 const cname = fs.existsSync(path.join(RAIZ, 'CNAME')) ? fs.readFileSync(path.join(RAIZ, 'CNAME'), 'utf8').trim() : '';
 const SITE = (process.env.SITE_URL || (cname ? `https://${cname}` : PADRAO)).replace(/\/+$/, '');
 const cfg = JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8'));
-const NOME = cfg.nome || 'Fundos Brasil';
+const NOME = cfg.nome || 'Capta Brasil';
 const REPO = 'https://github.com/helloliueunice/Plataforma-Brasil-Brasileiro';
 
 /* ---------- Dados: reaproveita o bloco de configuração do index.html ---------- */
@@ -450,7 +450,7 @@ ${corpo}
                 <li><a href="${esc(contatoHref)}"${/^mailto:/.test(contatoHref) ? '' : ' target="_blank" rel="noopener"'}>Contato</a></li>
             </ul></nav>
         </div>
-        <p class="nota"><strong>${NOME}</strong>: editais de fomento reunidos em um só lugar. ${demonstrativo ? 'Dados demonstrativos. ' : ''}Informações de ${data(geradoEm)}. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição. Sem vínculo com o Fundo Brasil de Direitos Humanos.</p>
+        <p class="nota"><strong>${NOME}</strong>: editais de fomento reunidos em um só lugar. ${demonstrativo ? 'Dados demonstrativos. ' : ''}Informações de ${data(geradoEm)}. Não somos canal oficial dos financiadores: confirme sempre no edital oficial da instituição. Antigo Fundos Brasil. Sem vínculo com o Fundo Brasil de Direitos Humanos.</p>
     </footer>
     <script>
     // Atualiza a situação pela data de hoje (a página pode ter sido gerada há alguns dias)

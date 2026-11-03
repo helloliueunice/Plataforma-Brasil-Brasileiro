@@ -811,7 +811,7 @@
             formato: FORMATO, versao: 1, exportadoEm: new Date().toISOString(),
             propostas, checklists: checklistsAtuais(), gonogo, cofre, elegibilidade: lerElegib(), buscas
         };
-        downloadFile(`fundos-brasil-backup-${hojeISO()}.json`, JSON.stringify(dados, null, 2), 'application/json');
+        downloadFile(`capta-brasil-backup-${hojeISO()}.json`, JSON.stringify(dados, null, 2), 'application/json');
         track('backup-exportar');
         showNotification('Backup exportado. Guarde o arquivo em local seguro.');
     }
@@ -867,7 +867,7 @@
         };
         return `
             <div class="rel-topo">
-                <p class="rel-marca">Fundos Brasil · Relatório de propostas</p>
+                <p class="rel-marca">Capta Brasil · Relatório de propostas</p>
                 <h1>Propostas em acompanhamento</h1>
                 <p>Gerado em ${new Date().toLocaleString('pt-BR', { dateStyle: 'long', timeStyle: 'short' })}${usuario ? ` por ${esc(usuario.nome)}` : ''}. ${plural(itens.length, 'proposta', 'propostas')}${porEtapa.length ? ': ' + porEtapa.map(([n, q]) => `${q} ${esc(n.toLowerCase())}`).join(', ') : ''}.</p>
             </div>
@@ -959,13 +959,13 @@
 
     function importarArquivo(file) {
         if (!file) return;
-        if (file.size > 2 * 1024 * 1024) { relatorio('Arquivo grande demais (máximo de 2 MB). Confira se é um backup do Fundos Brasil.'); return; }
+        if (file.size > 2 * 1024 * 1024) { relatorio('Arquivo grande demais (máximo de 2 MB). Confira se é um backup do Capta Brasil.'); return; }
         const leitor = new FileReader();
         leitor.onload = () => {
             let bruto;
             try { bruto = JSON.parse(String(leitor.result)); } catch (_) { relatorio('O arquivo não é um JSON válido.'); return; }
             const v = validarBackup(bruto);
-            if (!v) { relatorio('Este arquivo não é um backup do Fundos Brasil (exportado em Minhas propostas → Exportar backup).'); return; }
+            if (!v) { relatorio('Este arquivo não é um backup do Capta Brasil (exportado em Minhas propostas → Exportar backup).'); return; }
             const n = {
                 propostas: Object.keys(v.propostas).length, gonogo: Object.keys(v.gonogo).length,
                 cofre: v.cofre.length, buscas: v.buscas.length
@@ -1262,7 +1262,7 @@
             : `<div class="card empty-state"><div class="empty-state-title">Nenhum edital nesta lista</div>
                 <p>O link pode estar incompleto ou os editais saíram do site.</p>
                 <a class="btn btn-primary" href="#editais">Ver todos os editais</a></div>`;
-        document.title = `Lista de editais · Fundos Brasil`;
+        document.title = `Lista de editais · Capta Brasil`;
     }
     function linkDaLista(ids) {
         const base = /^https?:$/.test(location.protocol) ? location.href.split('#')[0] : (baseSite() || location.href.split('#')[0]);
@@ -1280,7 +1280,7 @@
         const ids = itensPropostas().map(x => x.e.id);
         if (!ids.length) { showNotification('Escolha um edital primeiro.', 'warning'); return; }
         track('lista-compartilhar');
-        compartilharLink(linkDaLista(ids), 'Minha lista de editais', `${plural(ids.length, 'edital', 'editais')} que estou acompanhando no Fundos Brasil`);
+        compartilharLink(linkDaLista(ids), 'Minha lista de editais', `${plural(ids.length, 'edital', 'editais')} que estou acompanhando no Capta Brasil`);
     }
 
     /* ---------------------------------------------------------------------
@@ -1316,7 +1316,7 @@
         store.set(K.notificadoEm, hoje);
         const e = lista[0], n = diasAte(e.encerramento);
         try {
-            new Notification('Fundos Brasil: prazo perto', {
+            new Notification('Capta Brasil: prazo perto', {
                 body: `${e.titulo}: ${n === 0 ? 'encerra hoje' : n === 1 ? 'encerra amanhã' : `faltam ${n} dias`}${lista.length > 1 ? ` (e mais ${lista.length - 1})` : ''}`,
                 tag: 'fundos-brasil-prazos'
             });
@@ -1369,7 +1369,7 @@
         try {
             Object.keys(localStorage).forEach(k => { if (CHAVES_MINHAS.test(k)) dados[k] = store.get(k, null); });
         } catch (_) { /* armazenamento indisponível */ }
-        downloadFile(`fundos-brasil-meus-dados-${hojeISO()}.json`, JSON.stringify({ formato: 'fundos-brasil/meus-dados', versao: 1, exportadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
+        downloadFile(`capta-brasil-meus-dados-${hojeISO()}.json`, JSON.stringify({ formato: 'fundos-brasil/meus-dados', versao: 1, exportadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
         track('meus-dados-exportar');
         showNotification('Arquivo com seus dados baixado.');
     }
@@ -1499,7 +1499,7 @@
                 onbEscolherUF(s.value);
                 break;
             }
-            case 'lista-copiar': compartilharLink(location.href, 'Lista de editais', 'Editais no Fundos Brasil'); break;
+            case 'lista-copiar': compartilharLink(location.href, 'Lista de editais', 'Editais no Capta Brasil'); break;
             case 'onb-situacao': onbSituacao(el.dataset.valor); break;
             case 'onb-abrir': onb.passo = 1; onb.forcar = true; renderOnboarding(true); break;
             case 'desde-ver': desdeVer(); break;

@@ -1,11 +1,11 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Plataformas digitais baseadas em software livre e… — Fundo
- s Brasil
-NAME:Plataformas digitais baseadas em software livre e… — Fundos Brasil
+X-WR-CALNAME:Plataformas digitais baseadas em software livre e… — Capta
+  Brasil
+NAME:Plataformas digitais baseadas em software livre e… — Capta Brasil
 X-WR-CALDESC:Prazos de Plataformas digitais baseadas em software livre e pr
  otocolos abertos (FAPESP). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de Plataformas digitais baseadas em software livre e pro

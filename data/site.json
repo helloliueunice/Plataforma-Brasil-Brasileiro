@@ -1,6 +1,6 @@
 {
   "_leia": "Configuração pública do site. Campos vazios ficam invisíveis. Depois de editar, o site é regenerado automaticamente (workflow 'Gerar páginas de editais').",
-  "nome": "Fundos Brasil",
+  "nome": "Capta Brasil",
   "descricaoCurta": "Editais abertos de fomento no Brasil, com link para as fontes oficiais, com checklist, prazos e compatibilidade com o seu perfil.",
   "googleVerificacao": "",
   "bingVerificacao": "",
@@ -12,7 +12,7 @@
   "apoio": {
     "_leia": "Formas de apoio exibidas em /apoie/. Vazio = oculto (a página mostra 'em breve'). pix: chave (e-mail, telefone +55DDNÚMERO, CPF/CNPJ só com números ou chave aleatória), nome do recebedor (até 25 letras) e cidade (até 15) — usados para gerar o Pix copia e cola e o QR Code. apoiase: endereço da campanha no Apoia.se. url: outro link de apoio (Catarse etc.), opcional.",
     "url": "",
-    "texto": "Apoie o Fundos Brasil",
+    "texto": "Apoie o Capta Brasil",
     "pix": {
       "chave": "e9562a1b-90aa-4b79-b35f-435cb5a64f93",
       "nome": "Eunice Liu",

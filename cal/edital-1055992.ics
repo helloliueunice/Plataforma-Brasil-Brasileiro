@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Rotas de Integração Nacional — Fundos Brasil
-NAME:Rotas de Integração Nacional — Fundos Brasil
+X-WR-CALNAME:Rotas de Integração Nacional — Capta Brasil
+NAME:Rotas de Integração Nacional — Capta Brasil
 X-WR-CALDESC:Prazos de Rotas de Integração Nacional (Ministério da Integ
  ração e do Desenvolvimento Regional). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de Rotas de Integração Nacional (Ministério da Integr

@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Programa Brasileiro de Professores no CERN — Fundos Brasil
-NAME:Programa Brasileiro de Professores no CERN — Fundos Brasil
+X-WR-CALNAME:Programa Brasileiro de Professores no CERN — Capta Brasil
+NAME:Programa Brasileiro de Professores no CERN — Capta Brasil
 X-WR-CALDESC:Prazos de Programa Brasileiro de Professores no CERN (Ministé
  rio da Educação). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de Programa Brasileiro de Professores no CERN (Ministér

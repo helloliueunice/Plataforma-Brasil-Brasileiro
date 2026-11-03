@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Prazos de editais FAPES — Fundos Brasil
-NAME:Prazos de editais FAPES — Fundos Brasil
+X-WR-CALNAME:Prazos de editais FAPES — Capta Brasil
+NAME:Prazos de editais FAPES — Capta Brasil
 X-WR-CALDESC:Prazos de editais FAPES\, com lembretes 7 dias e 1 dia antes. 
  Atualizado todo dia. Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de editais FAPES\, com lembretes 7 dias e 1 dia antes. A

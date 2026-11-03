@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Prazos de editais para empresas e startups — Fundos Brasil
-NAME:Prazos de editais para empresas e startups — Fundos Brasil
+X-WR-CALNAME:Prazos de editais para empresas e startups — Capta Brasil
+NAME:Prazos de editais para empresas e startups — Capta Brasil
 X-WR-CALDESC:Prazos de editais para empresas e startups\, com lembretes 7 d
  ias e 1 dia antes. Atualizado todo dia. Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de editais para empresas e startups\, com lembretes 7 di

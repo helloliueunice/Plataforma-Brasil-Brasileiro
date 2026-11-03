@@ -1,7 +1,7 @@
 {
   "anuncie": {
     "titulo": "Divulgue sua chamada para quem procura financiamento",
-    "subtitulo": "O Fundos Brasil reúne editais de fomento abertos para pesquisadores, organizações da sociedade civil, municípios e estados. Sua chamada pode aparecer em destaque, sinalizada como patrocinada, nas páginas que esse público já consulta.",
+    "subtitulo": "O Capta Brasil reúne editais de fomento abertos para pesquisadores, organizações da sociedade civil, municípios e estados. Sua chamada pode aparecer em destaque, sinalizada como patrocinada, nas páginas que esse público já consulta.",
     "paraQuem": [
       "Financiadores que querem divulgar sua chamada a quem procura edital: fundações de amparo à pesquisa, fundações e institutos empresariais, fundos socioambientais, ministérios, secretarias e prefeituras",
       "Consultorias de captação de recursos e de elaboração de projetos, no espaço Serviços, separado das chamadas",
@@ -10,7 +10,7 @@
     "porQue": [
       {
         "titulo": "Público que está procurando edital",
-        "texto": "Quem chega ao Fundos Brasil está buscando financiamento para um projeto. Não é público genérico: são pesquisadores, equipes de OSCs, gestores municipais e estaduais e captadores que buscam editais para se inscrever."
+        "texto": "Quem chega ao Capta Brasil está buscando financiamento para um projeto. Não é público genérico: são pesquisadores, equipes de OSCs, gestores municipais e estaduais e captadores que buscam editais para se inscrever."
       },
       {
         "titulo": "Páginas organizadas por público e por área",
@@ -162,7 +162,7 @@
     "faq": [
       {
         "pergunta": "Quantas pessoas vão ver meu destaque?",
-        "resposta": "O Fundos Brasil foi lançado em outubro de 2026 e ainda não publica números de audiência. Não prometemos visitas nem cliques. Por isso os preços de lançamento são reduzidos. A proposta comercial informa se o relatório de cliques está incluído, o que depende de a medição de audiência estar ativa."
+        "resposta": "O Capta Brasil foi lançado em outubro de 2026 e ainda não publica números de audiência. Não prometemos visitas nem cliques. Por isso os preços de lançamento são reduzidos. A proposta comercial informa se o relatório de cliques está incluído, o que depende de a medição de audiência estar ativa."
       },
       {
         "pergunta": "O patrocínio coloca meu edital no topo da busca?",
@@ -209,7 +209,7 @@
     "notaResumo": "“Resumo da semana” é a página /semana/ do site e os feeds RSS: não há envio por e-mail."
   },
   "apoie": {
-    "titulo": "Apoie o Fundos Brasil",
+    "titulo": "Apoie o Capta Brasil",
     "subtitulo": "O site é gratuito e vai continuar gratuito. Se ele ajuda você ou sua organização a encontrar financiamento, você pode ajudar a mantê-lo.",
     "porQue": [
       "Informação sobre editais está espalhada em dezenas de sites oficiais. Reunir tudo em um lugar, conferido e em linguagem simples, dá trabalho todos os dias.",

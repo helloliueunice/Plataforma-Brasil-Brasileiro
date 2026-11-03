@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Prazos de editais NIH — Fundos Brasil
-NAME:Prazos de editais NIH — Fundos Brasil
+X-WR-CALNAME:Prazos de editais NIH — Capta Brasil
+NAME:Prazos de editais NIH — Capta Brasil
 X-WR-CALDESC:Prazos de editais NIH\, com lembretes 7 dias e 1 dia antes. At
  ualizado todo dia. Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de editais NIH\, com lembretes 7 dias e 1 dia antes. Atu

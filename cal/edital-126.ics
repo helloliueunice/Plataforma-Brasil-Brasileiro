@@ -1,12 +1,11 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Bolsa Estágio de Pesquisa no Exterior (BEPE) para… — Fund
- os Brasil
-NAME:Bolsa Estágio de Pesquisa no Exterior (BEPE) para… — Fundos Brasi
- l
+X-WR-CALNAME:Bolsa Estágio de Pesquisa no Exterior (BEPE) para… — Capt
+ a Brasil
+NAME:Bolsa Estágio de Pesquisa no Exterior (BEPE) para… — Capta Brasil
 X-WR-CALDESC:Prazos de Bolsa Estágio de Pesquisa no Exterior (BEPE) para I
  niciação Científica 2026 (FAPESP). Confirme sempre no edital oficial.
 DESCRIPTION:Prazos de Bolsa Estágio de Pesquisa no Exterior (BEPE) para In

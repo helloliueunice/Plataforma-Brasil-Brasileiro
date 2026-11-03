@@ -40,7 +40,9 @@ function dados(e) {
         publico: (e.publico || []).map(p => PUB[p] || p).join(' · ')
     };
 }
-const assinatura = d => crypto.createHash('sha256').update(JSON.stringify(d)).digest('hex').slice(0, 16);
+// O nome do site entra na assinatura: trocar a marca regenera as imagens de prévia
+const MARCA = (() => { try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8')).nome || 'Capta Brasil'; } catch (_) { return 'Capta Brasil'; } })();
+const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA })).digest('hex').slice(0, 16);
 
 function html(d) {
     const tam = d.titulo.length > 90 ? 50 : d.titulo.length > 60 ? 58 : 66;
@@ -59,7 +61,7 @@ h1{margin-top:12px;font-size:${tam}px;line-height:1.1;font-weight:800;letter-spa
 .pub{flex:1;overflow:hidden}
 .pub b{font-size:24px;white-space:normal;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style></head><body><div class="circ"></div>
-<div class="marca"><svg width="52" height="52" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#168821"/><path d="M32 10 56 32 32 54 8 32z" fill="#FFCD07"/><circle cx="32" cy="32" r="11" fill="#1351B4"/></svg>Fundos Brasil · Edital de fomento</div>
+<div class="marca"><svg width="52" height="52" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#168821"/><path d="M32 10 56 32 32 54 8 32z" fill="#FFCD07"/><circle cx="32" cy="32" r="11" fill="#1351B4"/></svg>${esc(MARCA)} · Edital de fomento</div>
 <div class="topo">${esc(d.topo)}</div>
 <h1>${esc(d.titulo)}</h1>
 <div class="base">

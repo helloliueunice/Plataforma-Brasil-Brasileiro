@@ -1,12 +1,12 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
+PRODID:-//Capta Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Prazos de editais de Agronegócio e Segurança Alimentar — F
- undos Brasil
-NAME:Prazos de editais de Agronegócio e Segurança Alimentar — Fundos Br
- asil
+X-WR-CALNAME:Prazos de editais de Agronegócio e Segurança Alimentar — C
+ apta Brasil
+NAME:Prazos de editais de Agronegócio e Segurança Alimentar — Capta Bra
+ sil
 X-WR-CALDESC:Prazos de editais de Agronegócio e Segurança Alimentar\, com
   lembretes 7 dias e 1 dia antes. Atualizado todo dia. Confirme sempre no e
  dital oficial.
