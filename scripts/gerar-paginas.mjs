@@ -401,7 +401,7 @@ function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', js
     <meta name="description" content="${esc(descricao)}">
     ${robots ? `<meta name="robots" content="${robots}">` : ''}
     <link rel="canonical" href="${esc(url)}">
-    <meta name="theme-color" content="#1B1B1B">
+    <meta name="theme-color" content="#1A1A2E">
     <meta property="og:type" content="${tipo}">
     <meta property="og:site_name" content="${NOME}">
     <meta property="og:locale" content="pt_BR">
@@ -1934,7 +1934,7 @@ const seoHome = `<!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
     ${metasSeguranca}
     <meta name="description" content="${esc(corta(`Encontre editais e chamadas públicas compatíveis com seu perfil (${plural(abertosHoje, 'aberto', 'abertos')} agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.`, 158))}">
     <link rel="canonical" href="${SITE}/">
-    <meta name="theme-color" content="#1B1B1B">
+    <meta name="theme-color" content="#1A1A2E">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="${NOME}">
     <meta property="og:locale" content="pt_BR">

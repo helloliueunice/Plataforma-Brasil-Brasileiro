@@ -1,19 +1,20 @@
-/* Páginas estáticas (editais, instituições, guias, prazos) — identidade "7 · Partículas"
+/* Páginas estáticas (editais, instituições, guias, prazos) — identidade "7 + 4 · Praça de pontos"
    Mesmos tokens de index.html. Substitui assets/paginas.css por inteiro. */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
     color-scheme: light;
-    /* Identidade "7 · Partículas": areia, branco e carvão; acentos (Sinal, Brasa, Sol) só em pontos e formas */
-    --bg: #F4EDE2; --card: #FFFFFF; --surface: #F7F1E8; --surface-2: #EDE4D6;
-    --border: #E3D8C8; --border-strong: #9A8C7B;
-    --text: #1B1B1B; --text-2: #5A5148; --text-3: #5A5148;
-    --ink: #1B1B1B; --ink-hover: #333333; --on-ink: #FFF6EA;
-    --signal: #13C27A; --on-signal: #1B1B1B; --brasa: #FF5A36; --sol: #FFC21A;
-    --brand: #0F7A4D; --brand-hover: #0A5C3A; --brand-subtle: #E3F5EC; --brand-border: #9FD9BC; --on-brand: #FFFFFF;
+    /* Identidade "7 + 4 · Praça de pontos": creme, branco e carvão; ação em Sol, links em Anil; Sinal e Pitanga só em pontos */
+    --bg: #FFF8EC; --card: #FFFFFF; --surface: #FFF3DE; --surface-2: #F5EDDC;
+    --border: #E6D8BC; --border-strong: #9A8F78;
+    --text: #1A1A2E; --text-2: #4B4B63; --text-3: #4B4B63;
+    --ink: #1A1A2E; --ink-hover: #2E2E48; --on-ink: #FFF8EC;
+    --acao: #FFC93C; --acao-hover: #F5B800; --on-acao: #1A1A2E;
+    --signal: #13C27A; --pitanga: #E8505B; --sol: #FFC93C;
+    --brand: #1E40AF; --brand-hover: #172F7F; --brand-subtle: #E5ECFB; --brand-border: #A9BBF0; --on-brand: #FFFFFF;
     --open-fg: #0B6B42;   --open-bg: #E3F5EC;   --open-bd: #9FD9BC;
     --soon-fg: #6E4A00;   --soon-bg: #FFF3CC;   --soon-bd: #F2D27A;
-    --closed-fg: #5A5148; --closed-bg: #EDE4D6; --closed-bd: #E3D8C8;
-    --urgent-fg: #8A2A12; --urgent-bg: #FFE4DC; --urgent-bd: #FFB9A6;
+    --closed-fg: #4B4B63; --closed-bg: #F5EDDC; --closed-bd: #E6D8BC;
+    --urgent-fg: #8A1F27; --urgent-bg: #FDE2E4; --urgent-bd: #F6B3B9;
     --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     /* Legibilidade: nada abaixo de 14 px (selos, notas); texto corrido em 16 px. --fs-12 e --fs-13 ficam como aliases. */
     --fs-12: .875rem; --fs-13: .875rem; --fs-14: .875rem; --fs-16: 1rem; --fs-18: 1.125rem; --fs-20: 1.25rem; --fs-24: 1.5rem; --fs-30: 1.875rem; --fs-36: 2.25rem;
@@ -29,28 +30,30 @@
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         color-scheme: dark;
-        --bg: #141312; --card: #1F1D1B; --surface: #1A1917; --surface-2: #2A2725;
-        --border: #3A3632; --border-strong: #7A7168;
-        --text: #F4EDE2; --text-2: #C8BFB3; --text-3: #B5ACA0;
-        --ink: #F4EDE2; --ink-hover: #FFFFFF; --on-ink: #141312; --signal: #13C27A; --on-signal: #1B1B1B;
-        --brand: #4FD69A; --brand-hover: #7FE3B6; --brand-subtle: #12291E; --brand-border: #2A5C43; --on-brand: #0E0E0E;
+        --bg: #12121C; --card: #1E1E2C; --surface: #191926; --surface-2: #2A2A3A;
+        --border: #34344A; --border-strong: #77778F;
+        --text: #FFF8EC; --text-2: #C9C6D6; --text-3: #B3B0C2;
+        --ink: #FFF8EC; --ink-hover: #FFFFFF; --on-ink: #12121C; --signal: #13C27A;
+        --acao: #FFC93C; --acao-hover: #FFD66B; --on-acao: #1A1A2E;
+        --brand: #8FA8FF; --brand-hover: #B9C6FF; --brand-subtle: #1A2347; --brand-border: #34478A; --on-brand: #12121C;
         --open-fg: #6FDCA9;   --open-bg: #12291E;   --open-bd: #2A5C43;
         --soon-fg: #F2C46B;   --soon-bg: #2B220E;   --soon-bd: #5C4718;
-        --closed-fg: #B5ACA0; --closed-bg: #2A2725; --closed-bd: #3A3632;
-        --urgent-fg: #FF9C85; --urgent-bg: #3A1A12; --urgent-bd: #6B2A1A;
+        --closed-fg: #B3B0C2; --closed-bg: #2A2A3A; --closed-bd: #34344A;
+        --urgent-fg: #FF9AA0; --urgent-bg: #3A1418; --urgent-bd: #6B2A30;
     }
 }
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --bg: #141312; --card: #1F1D1B; --surface: #1A1917; --surface-2: #2A2725;
-        --border: #3A3632; --border-strong: #7A7168;
-        --text: #F4EDE2; --text-2: #C8BFB3; --text-3: #B5ACA0;
-        --ink: #F4EDE2; --ink-hover: #FFFFFF; --on-ink: #141312; --signal: #13C27A; --on-signal: #1B1B1B;
-        --brand: #4FD69A; --brand-hover: #7FE3B6; --brand-subtle: #12291E; --brand-border: #2A5C43; --on-brand: #0E0E0E;
+    --bg: #12121C; --card: #1E1E2C; --surface: #191926; --surface-2: #2A2A3A;
+        --border: #34344A; --border-strong: #77778F;
+        --text: #FFF8EC; --text-2: #C9C6D6; --text-3: #B3B0C2;
+        --ink: #FFF8EC; --ink-hover: #FFFFFF; --on-ink: #12121C; --signal: #13C27A;
+        --acao: #FFC93C; --acao-hover: #FFD66B; --on-acao: #1A1A2E;
+        --brand: #8FA8FF; --brand-hover: #B9C6FF; --brand-subtle: #1A2347; --brand-border: #34478A; --on-brand: #12121C;
         --open-fg: #6FDCA9;   --open-bg: #12291E;   --open-bd: #2A5C43;
         --soon-fg: #F2C46B;   --soon-bg: #2B220E;   --soon-bd: #5C4718;
-        --closed-fg: #B5ACA0; --closed-bg: #2A2725; --closed-bd: #3A3632;
-        --urgent-fg: #FF9C85; --urgent-bg: #3A1A12; --urgent-bd: #6B2A1A;
+        --closed-fg: #B3B0C2; --closed-bg: #2A2A3A; --closed-bd: #34344A;
+        --urgent-fg: #FF9AA0; --urgent-bg: #3A1418; --urgent-bd: #6B2A30;
 }
 
 body { font-family: var(--font); font-size: var(--fs-16); line-height: 1.55; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
@@ -65,7 +68,8 @@ a:hover { color: var(--brand-hover); }
 .topo { position: sticky; top: 0; z-index: 10; min-height: var(--header-h); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--s-4);
     padding: 0 var(--s-6); background: var(--bg); border-bottom: 1px solid var(--border); }
 .marca { display: inline-flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 400; line-height: 1; color: var(--text); text-decoration: none; letter-spacing: -0.03em; }
-.marca b { font-weight: 800; }   /* "Radar" 800 + "Fomento" 400 */
+.marca > span:not(.marca-icone) { color: var(--brand); }   /* "Fomento" 400 em anil */
+.marca b { font-weight: 800; color: var(--text); }   /* "Radar" 800 em carvão */
 .marca:hover { color: var(--text); }
 .marca { min-height: 44px; }
 /* Menu único: Editais · Prazos · Para você ▾ · Minhas propostas · Transparência ▾ · Ajuda */
@@ -131,7 +135,7 @@ section, .aviso { margin-top: var(--s-10); }
 .selo.aberto, .selo.urgente, .selo.em-breve, .selo.fechado { font-weight: 600; }
 .selo.aberto::before, .selo.urgente::before, .selo.em-breve::before, .selo.fechado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
 .selo.aberto::before { background: var(--signal); }
-.selo.urgente::before { background: var(--brasa); }
+.selo.urgente::before { background: var(--pitanga); }
 .selo.em-breve::before { background: var(--sol); }
 .selo.aberto   { background: var(--open-bg);   color: var(--open-fg);   border-color: var(--open-bd); }
 .selo.urgente  { background: var(--urgent-bg); color: var(--urgent-fg); border-color: transparent; }
@@ -148,12 +152,12 @@ section, .aviso { margin-top: var(--s-10); }
     border: 1px solid var(--border-strong); border-radius: var(--r-full); background: var(--card); color: var(--text);
     font-size: var(--fs-14); font-weight: 500; text-decoration: none; white-space: nowrap; }
 .btn:hover { background: var(--surface); color: var(--text); }
-.btn.primario { background: var(--ink); border-color: var(--ink); color: var(--on-ink); font-weight: 600; }
+.btn.primario { background: var(--acao); border-color: var(--acao); color: var(--on-acao); font-weight: 700; }
 .btn.oficial { border: 2px solid var(--brand); color: var(--brand); background: var(--card); font-weight: 600; }
 .btn.oficial:hover { background: var(--brand-subtle); border-color: var(--brand-hover); color: var(--brand-hover); }
 .fonte-linha { margin: var(--s-3) 0 var(--s-4); font-size: var(--fs-14); color: var(--text-2); }
 .fonte-linha + .aviso-golpe { margin-top: 0; }
-.btn.primario:hover { background: var(--ink-hover); border-color: var(--ink-hover); color: var(--on-ink); }
+.btn.primario:hover { background: var(--acao-hover); border-color: var(--acao-hover); color: var(--on-acao); }
 .btn.whats { color: var(--text); }
 .btn.pequeno { height: 32px; padding: 0 var(--s-3); font-size: var(--fs-13); }
 .atalhos { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: calc(-1 * var(--s-2)) 0 var(--s-2); }
@@ -239,10 +243,8 @@ section, .aviso { margin-top: var(--s-10); }
 }
 
 /* Complementos */
-.marca-icone { position: relative; width: 30px; height: 30px; flex: none; display: inline-block; border-radius: 0;
-    /* Símbolo de partículas: os pontos seguem a cor do texto (carvão no claro, areia no escuro); o ponto verde é sempre o Sinal */
-    background: var(--text); -webkit-mask: url("marca.svg") center / contain no-repeat; mask: url("marca.svg") center / contain no-repeat; }
-.marca-icone::after { content: ""; position: absolute; left: 0; top: calc(100% * 132 / 160); width: calc(100% * 28 / 160); height: calc(100% * 28 / 160); border-radius: 50%; background: var(--signal); }
+.marca-icone { width: 32px; height: 32px; flex: none; display: inline-block; border-radius: 0;
+    background: url("marca.svg") center / contain no-repeat; }   /* balão Sol com o radar de pontos: funciona nos dois temas */
 .pular { top: auto; transform: translateY(-200%); display: inline-flex; align-items: center; min-height: 44px; }
 .pular:focus { transform: none; top: var(--s-2); }
 .selo { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }

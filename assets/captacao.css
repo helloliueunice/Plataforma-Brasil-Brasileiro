@@ -263,9 +263,9 @@
 /* ---------- Cartão de resultado: 2 ações visíveis + menu "Mais" ---------- */
 .edital-card .edital-actions { gap: var(--s-2); margin-left: 0; }
 .edital-card .edital-actions .btn-posso {
-    height: 44px; padding: 0 var(--s-4); border-color: var(--ink); background: var(--card); color: var(--text); font-size: var(--fs-14); font-weight: var(--fw-semibold);
+    height: 44px; padding: 0 var(--s-4); border-color: var(--acao); background: var(--acao); color: var(--on-acao); font-size: var(--fs-14); font-weight: var(--fw-bold, 700); border-radius: var(--r-full);
 }
-.edital-card .edital-actions .btn-posso:hover { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.edital-card .edital-actions .btn-posso:hover { background: var(--acao-hover); border-color: var(--acao-hover); color: var(--on-acao); }
 .card-mais > summary.btn { height: 44px; padding: 0 var(--s-3); background: transparent; border-color: transparent; color: var(--text-2); font-size: var(--fs-14); }
 .card-mais > summary.btn:hover, .card-mais[open] > summary.btn { background: var(--surface-2); color: var(--text); }
 .card-mais .menu-panel { left: 0; right: auto; min-width: 260px; max-width: calc(100vw - 32px); cursor: default; }
@@ -477,7 +477,7 @@
 .aviso-sistema.aviso-erro { background: var(--urgent-bg); border-color: var(--urgent-bd); border-left-color: var(--urgent-fg); }
 .aviso-sistema a, .aviso-sistema .link-btn { color: var(--text); text-decoration: underline; font-weight: var(--fw-semibold); }
 @media (max-width: 640px) { .avisos-sistema { padding: 0 var(--s-4); } }
-/* Foco visível nos campos: contorno de 2 px em carvão (15,9:1 sobre a areia) */
+/* Foco visível nos campos: contorno de 2 px em carvão (16,2:1 sobre o creme) */
 input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--focus) !important; outline-offset: 1px; }
 /* Alvos: "Desfazer"/"Ver" do aviso e links-botão com pelo menos 24 px (desktop) e 44 px (toque) */
 .toast-action { min-height: 44px; min-width: 44px; padding: 0 var(--s-2); margin-block: -11px; align-self: center; }

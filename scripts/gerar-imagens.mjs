@@ -42,14 +42,14 @@ function dados(e) {
 }
 // O nome do site entra na assinatura: trocar a marca regenera as imagens de prévia
 const MARCA = (() => { try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8')).nome || 'Radar Fomento'; } catch (_) { return 'Radar Fomento'; } })();
-const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'particulas-1' })).digest('hex').slice(0, 16);
+const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'praca-pontos-1' })).digest('hex').slice(0, 16);
 
-// Símbolo de partículas (arcos do radar feitos de pontos + ponto verde): o mesmo de assets/marca.svg
+// Símbolo: radar de pontos dentro do balão de conversa Sol: o mesmo de assets/marca.svg
 const SIMBOLO = (tam) => fs.readFileSync(path.join(RAIZ, 'assets', 'marca.svg'), 'utf8').trim()
     .replace(/<title>.*?<\/title>/, '').replace('<svg ', `<svg width="${tam}" height="${tam}" aria-hidden="true" `);
 // Nome com contraste de peso: primeira palavra em 800, o resto em 400 ("Radar" + "Fomento")
 const NOME_MARCA = esc(MARCA).replace(/^(\S+)/, '<b>$1</b>');
-// Identidade "7 · Partículas": areia, carvão, Inter em tudo; Brasa (#FF5A36) só no ponto do prazo
+// Identidade "7 + 4 · Praça de pontos": creme, carvão, Inter em tudo; Pitanga (#E8505B) só no ponto do prazo
 const SANS = `Inter, 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif`;
 const FONTES = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap';
 
@@ -57,20 +57,20 @@ function html(d) {
     const tam = d.titulo.length > 90 ? 50 : d.titulo.length > 60 ? 58 : 68;
     return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="${FONTES}"><style>
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;font-family:${SANS};background:#F4EDE2;color:#1B1B1B;padding:52px 72px;position:relative;overflow:hidden}
+body{width:1200px;height:630px;font-family:${SANS};background:#FFF8EC;color:#1A1A2E;padding:52px 72px;position:relative;overflow:hidden}
 .marca{display:flex;align-items:center;gap:18px}
 .marca .nome{font-size:36px;font-weight:400;line-height:1;letter-spacing:-.035em}
-.marca .nome b{font-weight:800}
-.marca span.tipo{margin-left:auto;font-size:19px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5A5148}
-.topo{margin-top:36px;font-size:24px;font-weight:600;color:#0F7A4D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:1056px}
+.marca .nome{color:#1E40AF}.marca .nome b{font-weight:800;color:#1A1A2E}
+.marca span.tipo{margin-left:auto;font-size:19px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4B4B63}
+.topo{margin-top:36px;font-size:24px;font-weight:600;color:#1E40AF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:1056px}
 h1{margin-top:12px;font-weight:800;font-size:${tam}px;line-height:1.04;letter-spacing:-.035em;max-width:1056px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .base{position:absolute;left:72px;right:72px;bottom:48px;display:flex;gap:14px;align-items:stretch}
 .box{background:#FFFFFF;border-radius:24px;padding:16px 24px;min-width:0}
 .box b{display:block;font-size:31px;font-weight:800;letter-spacing:-.025em;white-space:nowrap}
-.box span{display:block;font-size:19px;color:#5A5148;margin-top:2px;white-space:nowrap}
-.prazo{background:#FFE4DC;color:#8A2A12;padding-left:52px;position:relative}
-.prazo span{color:#8A2A12}
-.prazo::before{content:"";position:absolute;left:24px;top:30px;width:16px;height:16px;border-radius:50%;background:#FF5A36}
+.box span{display:block;font-size:19px;color:#4B4B63;margin-top:2px;white-space:nowrap}
+.prazo{background:#FDE2E4;color:#8A1F27;padding-left:52px;position:relative}
+.prazo span{color:#8A1F27}
+.prazo::before{content:"";position:absolute;left:24px;top:30px;width:16px;height:16px;border-radius:50%;background:#E8505B}
 .pub{flex:1;overflow:hidden}
 .pub b{font-size:23px;font-weight:700;letter-spacing:-.015em;white-space:normal;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style></head><body>

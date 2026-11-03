@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Fomento — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-y7Y03hCu6WaKlVkiDMtEkMfxvYNnPg5qlmJ5R4h9pTI=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-kWxXm6GlVC6dszjqey+sDV8GDbcflun1kifE50VdHK4=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
-    <meta name="theme-color" content="#1B1B1B">
+    <meta name="theme-color" content="#1A1A2E">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Radar Fomento">
     <meta property="og:locale" content="pt_BR">
@@ -39,44 +39,46 @@
    ===================================================================== */
 
 /* ---------- 1. TOKENS ---------- */
-/* Identidade "7 · Partículas": areia, branco e carvão; Inter em tudo (800 + 400 nos títulos).
-   Acentos vibrantes (Sinal #13C27A, Brasa #FF5A36, Sol #FFC21A) só em pontos e formas;
-   texto sempre em carvão ou no verde texto (--brand #0F7A4D). */
+/* Identidade "7 + 4 · Praça de pontos": creme, branco e carvão; Inter em tudo (800 + 400 nos títulos).
+   Ação primária em pílula Sol (#FFC93C) com texto carvão; links e secundários em Anil (#1E40AF);
+   Sinal (#13C27A) e Pitanga (#E8505B, prazo) só em pontos e barras. */
 :root {
     color-scheme: light;
 
-    /* Areia, superfícies e linhas */
-    --bg: #F4EDE2;               /* Areia — fundo da página */
+    /* Creme, superfícies e linhas */
+    --bg: #FFF8EC;               /* Creme — fundo da página */
     --card: #FFFFFF;             /* Branco — cartões, campos, diálogos */
-    --surface: #F7F1E8;          /* faixas, hover de linha */
-    --surface-2: #EDE4D6;        /* areia escura — chips/neutros preenchidos */
-    --border: #E3D8C8;           /* linha */
-    --border-strong: #9A8C7B;    /* campos (3,3:1 sobre branco) */
-    --text: #1B1B1B;             /* Carvão — 15,9:1 sobre a areia */
-    --text-2: #5A5148;           /* texto secundário — 6,7:1 na areia, 7,8:1 no branco */
-    --text-3: #5A5148;           /* metadados — 6,2:1 sobre a areia escura */
+    --surface: #FFF3DE;          /* faixas, hover de linha */
+    --surface-2: #F5EDDC;        /* creme escuro — chips/neutros preenchidos */
+    --border: #E6D8BC;           /* linha */
+    --border-strong: #9A8F78;    /* campos (3,2:1 sobre branco) */
+    --text: #1A1A2E;             /* Carvão — 16,2:1 sobre o creme */
+    --text-2: #4B4B63;           /* texto secundário — 8,0:1 no creme, 8,5:1 no branco */
+    --text-3: #4B4B63;           /* metadados — 7,3:1 sobre o creme escuro */
 
-    /* Carvão (botão primário) e acentos só de forma: Sinal, Brasa (prazo), Sol (novo) */
-    --ink: #1B1B1B;
-    --ink-hover: #333333;
-    --on-ink: #FFF6EA;
-    --signal: #13C27A;           /* pontos, barras, blocos de destaque (carvão por cima: 7,4:1) */
-    --on-signal: #1B1B1B;
-    --brasa: #FF5A36;            /* só ponto/marcador de prazo */
-    --sol: #FFC21A;              /* só ponto/marcador de "novo" */
+    /* Carvão (superfícies escuras, seleção) e Sol (ação primária: pílula amarela com texto carvão, 11,1:1) */
+    --ink: #1A1A2E;
+    --ink-hover: #2E2E48;
+    --on-ink: #FFF8EC;
+    --acao: #FFC93C;
+    --acao-hover: #F5B800;       /* texto carvão 9,5:1 */
+    --on-acao: #1A1A2E;
+    --signal: #13C27A;           /* Sinal — só pontos e barras */
+    --pitanga: #E8505B;          /* Pitanga — só ponto/marcador de prazo */
+    --sol: #FFC93C;              /* Sol — ponto de "novo/em breve" */
 
-    /* Verde texto: links, destaques e botões secundários com borda */
-    --brand: #0F7A4D;            /* 4,6:1 na areia; 5,4:1 no branco */
-    --brand-hover: #0A5C3A;      /* 6,9:1 na areia */
-    --brand-subtle: #E3F5EC;     /* fundo de item selecionado (texto verde 4,7:1) */
-    --brand-border: #9FD9BC;
+    /* Anil: links, destaques e botões secundários com borda */
+    --brand: #1E40AF;            /* 8,3:1 no creme; 8,7:1 no branco */
+    --brand-hover: #172F7F;
+    --brand-subtle: #E5ECFB;     /* fundo de item selecionado (texto anil 7,4:1) */
+    --brand-border: #A9BBF0;
     --on-brand: #FFFFFF;
 
     /* Semânticas — texto/fundo/borda, todas AA (≥4,5:1 texto sobre fundo) */
     --open-fg: #0B6B42;   --open-bg: #E3F5EC;   --open-bd: #9FD9BC;    /* aberto   5,8:1 */
     --soon-fg: #6E4A00;   --soon-bg: #FFF3CC;   --soon-bd: #F2D27A;    /* em breve 7,2:1 */
-    --closed-fg: #5A5148; --closed-bg: #EDE4D6; --closed-bd: #E3D8C8;  /* encerrado 6,2:1 */
-    --urgent-fg: #8A2A12; --urgent-bg: #FFE4DC; --urgent-bd: #FFB9A6;  /* prazo    7,2:1 */
+    --closed-fg: #4B4B63; --closed-bg: #F5EDDC; --closed-bd: #E6D8BC;  /* encerrado 7,3:1 */
+    --urgent-fg: #8A1F27; --urgent-bg: #FDE2E4; --urgent-bd: #F6B3B9;  /* prazo    7,5:1 */
     --info-fg: var(--brand); --info-bg: var(--brand-subtle);
 
     /* Tipografia: só Inter (400–800); títulos em 700–800 com espaçamento negativo */
@@ -144,29 +146,31 @@
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         color-scheme: dark;
-        --bg: #141312; --card: #1F1D1B; --surface: #1A1917; --surface-2: #2A2725;
-        --border: #3A3632; --border-strong: #7A7168;
-        --text: #F4EDE2; --text-2: #C8BFB3; --text-3: #B5ACA0;
-        --ink: #F4EDE2; --ink-hover: #FFFFFF; --on-ink: #141312; --signal: #13C27A; --on-signal: #1B1B1B;
-        --brand: #4FD69A; --brand-hover: #7FE3B6; --brand-subtle: #12291E; --brand-border: #2A5C43; --on-brand: #0E0E0E;
+        --bg: #12121C; --card: #1E1E2C; --surface: #191926; --surface-2: #2A2A3A;
+        --border: #34344A; --border-strong: #77778F;
+        --text: #FFF8EC; --text-2: #C9C6D6; --text-3: #B3B0C2;
+        --ink: #FFF8EC; --ink-hover: #FFFFFF; --on-ink: #12121C; --signal: #13C27A;
+        --acao: #FFC93C; --acao-hover: #FFD66B; --on-acao: #1A1A2E;
+        --brand: #8FA8FF; --brand-hover: #B9C6FF; --brand-subtle: #1A2347; --brand-border: #34478A; --on-brand: #12121C;
         --open-fg: #6FDCA9;   --open-bg: #12291E;   --open-bd: #2A5C43;
         --soon-fg: #F2C46B;   --soon-bg: #2B220E;   --soon-bd: #5C4718;
-        --closed-fg: #B5ACA0; --closed-bg: #2A2725; --closed-bd: #3A3632;
-        --urgent-fg: #FF9C85; --urgent-bg: #3A1A12; --urgent-bd: #6B2A1A;
+        --closed-fg: #B3B0C2; --closed-bg: #2A2A3A; --closed-bd: #34344A;
+        --urgent-fg: #FF9AA0; --urgent-bg: #3A1418; --urgent-bd: #6B2A30;
         --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.45);
     }
 }
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --bg: #141312; --card: #1F1D1B; --surface: #1A1917; --surface-2: #2A2725;
-        --border: #3A3632; --border-strong: #7A7168;
-        --text: #F4EDE2; --text-2: #C8BFB3; --text-3: #B5ACA0;
-        --ink: #F4EDE2; --ink-hover: #FFFFFF; --on-ink: #141312; --signal: #13C27A; --on-signal: #1B1B1B;
-        --brand: #4FD69A; --brand-hover: #7FE3B6; --brand-subtle: #12291E; --brand-border: #2A5C43; --on-brand: #0E0E0E;
+    --bg: #12121C; --card: #1E1E2C; --surface: #191926; --surface-2: #2A2A3A;
+        --border: #34344A; --border-strong: #77778F;
+        --text: #FFF8EC; --text-2: #C9C6D6; --text-3: #B3B0C2;
+        --ink: #FFF8EC; --ink-hover: #FFFFFF; --on-ink: #12121C; --signal: #13C27A;
+        --acao: #FFC93C; --acao-hover: #FFD66B; --on-acao: #1A1A2E;
+        --brand: #8FA8FF; --brand-hover: #B9C6FF; --brand-subtle: #1A2347; --brand-border: #34478A; --on-brand: #12121C;
         --open-fg: #6FDCA9;   --open-bg: #12291E;   --open-bd: #2A5C43;
         --soon-fg: #F2C46B;   --soon-bg: #2B220E;   --soon-bd: #5C4718;
-        --closed-fg: #B5ACA0; --closed-bg: #2A2725; --closed-bd: #3A3632;
-        --urgent-fg: #FF9C85; --urgent-bg: #3A1A12; --urgent-bd: #6B2A1A;
+        --closed-fg: #B3B0C2; --closed-bg: #2A2A3A; --closed-bd: #34344A;
+        --urgent-fg: #FF9AA0; --urgent-bg: #3A1418; --urgent-bd: #6B2A30;
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
@@ -190,7 +194,8 @@ h1, h2, h3, h4 { line-height: var(--lh-tight); font-weight: var(--fw-bold); colo
 .edital-title, .cal-header h3, .gaveta-topo h2, .jornada-card strong { font-weight: var(--fw-bold); letter-spacing: -0.02em; }
 #page-dashboard .hero-title { letter-spacing: -0.04em; }
 /* Marca: "Radar" 800 + "Fomento" 400 */
-.logo b { font-weight: var(--fw-black); }
+.logo > span:not(.logo-icon) { color: var(--brand); }   /* "Fomento" em anil */
+.logo b { font-weight: var(--fw-black); color: var(--text); }
 a { color: var(--brand); text-underline-offset: 2px; }
 a:hover { color: var(--brand-hover); }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -236,10 +241,8 @@ header {
 .fonte-oficial { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); margin: var(--s-4) 0; padding: var(--s-4) var(--s-5); border: 0; border-radius: var(--r-lg); background: var(--surface); }
 .fonte-oficial div { display: flex; flex-direction: column; gap: 2px; }
 .fonte-oficial span { font-size: var(--fs-14, .875rem); color: var(--text-2); }
-.logo-icon { position: relative; width: 30px; height: 30px; flex: none; display: inline-block; border-radius: 0;
-    /* Símbolo de partículas: os pontos seguem a cor do texto (carvão no claro, areia no escuro); o ponto verde é sempre o Sinal */
-    background: var(--text); -webkit-mask: url("assets/marca.svg") center / contain no-repeat; mask: url("assets/marca.svg") center / contain no-repeat; }
-.logo-icon::after { content: ""; position: absolute; left: 0; top: calc(100% * 132 / 160); width: calc(100% * 28 / 160); height: calc(100% * 28 / 160); border-radius: 50%; background: var(--signal); }
+.logo-icon { width: 32px; height: 32px; flex: none; display: inline-block; border-radius: 0;
+    background: url("assets/marca.svg") center / contain no-repeat; }   /* balão Sol com o radar de pontos: funciona nos dois temas */
 .header-right { display: flex; align-items: center; gap: var(--s-6); min-width: 0; }
 .main-nav { display: flex; align-items: center; gap: var(--s-1); }
 .main-nav a {
@@ -310,8 +313,8 @@ a.btn { text-decoration: none; }
 .btn:disabled, .btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
 .btn-small { height: 32px; padding: 0 var(--s-3); font-size: var(--fs-13); }
 /* Primário — 1 por área de tela */
-.btn-primary, .btn-success { background: var(--ink); color: var(--on-ink); border-color: var(--ink); font-weight: var(--fw-semibold); }
-.btn-primary:hover, .btn-success:hover { background: var(--ink-hover); border-color: var(--ink-hover); color: var(--on-ink); }
+.btn-primary, .btn-success { background: var(--acao); color: var(--on-acao); border-color: var(--acao); font-weight: var(--fw-bold); }
+.btn-primary:hover, .btn-success:hover { background: var(--acao-hover); border-color: var(--acao-hover); color: var(--on-acao); }
 /* Secundário */
 .btn-outline { background: var(--card); color: var(--text); border-color: var(--border-strong); }
 .btn-outline:hover { background: var(--surface); border-color: var(--text-3); color: var(--text); }
@@ -572,7 +575,7 @@ fieldset.form-group { border: 0; padding: 0; }
     content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none;
 }
 .badge-aberto::before { background: var(--signal); }
-.badge-urgente::before { background: var(--brasa); }
+.badge-urgente::before { background: var(--pitanga); }
 .badge-em-breve::before { background: var(--sol); }
 .badge-urgente { border-color: transparent; }
 .badge-aberto   { background: var(--open-bg);   color: var(--open-fg);   border-color: var(--open-bd); }
@@ -865,7 +868,7 @@ dialog.modal::backdrop { background: rgba(27, 27, 27, 0.5); }
     box-shadow: var(--shadow-lg); animation: slideIn .2s ease;
 }
 .toasts .notification { position: static; display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s-3); max-width: none; }
-.notification.error { border-left-color: var(--brasa); }
+.notification.error { border-left-color: var(--pitanga); }
 .notification.warning { border-left-color: var(--sol); }
 @keyframes slideIn { from { transform: translateY(-6px); opacity: 0; } to { transform: none; opacity: 1; } }
 .compare-bar {
@@ -876,7 +879,7 @@ dialog.modal::backdrop { background: rgba(27, 27, 27, 0.5); }
     font-size: var(--fs-14); font-weight: var(--fw-medium);
 }
 .compare-bar.active { display: flex; }
-.compare-bar .btn-primary { background: var(--on-ink); color: var(--ink); border-color: var(--on-ink); }
+.compare-bar .btn-primary { background: var(--acao); color: var(--on-acao); border-color: var(--acao); }
 .compare-bar .btn-secondary { color: var(--on-ink); opacity: .85; }
 .compare-bar .btn-secondary:hover { background: transparent; opacity: 1; }
 .spinner { width: 24px; height: 24px; margin: var(--s-5) auto; border: 2px solid var(--border); border-top-color: var(--brand); border-radius: 50%; animation: spin .8s linear infinite; }
@@ -8648,7 +8651,7 @@ body.comparando .toasts { bottom: 88px; }
                 const proc = procAgencia(a);
                 if (mapaFiltro && proc !== mapaFiltro) continue;
                 const ab = abertosDaAgencia(k);
-                L.circleMarker([a.lat, a.lng], { radius: 9, color: '#FFFFFF', weight: 2, fillColor: proc === 'nacional' ? '#13C27A' : '#1B1B1B', fillOpacity: 0.95 })
+                L.circleMarker([a.lat, a.lng], { radius: 9, color: '#FFFFFF', weight: 2, fillColor: proc === 'nacional' ? '#13C27A' : '#1E40AF', fillOpacity: 0.95 })
                     .bindTooltip(a.sigla)
                     .bindPopup(`<strong>${esc(a.sigla)}</strong><br>${esc(a.cidade)}<br>${plural(ab, 'edital aberto', 'editais abertos')}<br><a href="#agencia-${k}">Ver instituição →</a>`)
                     .addTo(mapaCamada);
@@ -9332,7 +9335,7 @@ body.comparando .toasts { bottom: 88px; }
                         labels: usadas.map(k => AREAS[k]),
                         datasets: [{
                             data: porArea.filter(v => v > 0).map(v => Math.round(v)),
-                            backgroundColor: ['#13C27A', '#1B1B1B', '#FF5A36', '#FFC21A', '#0F7A4D', '#9A8C7B', '#9FD9BC', '#5A5148', '#FFB9A6', '#E3D8C8'] // paleta Partículas
+                            backgroundColor: ['#1E40AF', '#FFC93C', '#13C27A', '#E8505B', '#1A1A2E', '#8FA8FF', '#9FD9BC', '#4B4B63', '#F6B3B9', '#E6D8BC'] // paleta Praça de pontos
                         }]
                     },
                     options: {
