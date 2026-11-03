@@ -17,31 +17,30 @@ UID:edital-1055992-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: Ação 214S - Rotas de Integração Nacional - RP2
+SUMMARY:Prazo final: Rotas de Integração Nacional
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 5300020260002\nValor: valor não informado pela fonte\
- nQuem pode participar: Governo do estado\nCódigo do programa: 53000202600
- 02. A proposta é cadastrada no Transferegov.br (módulo Discricionárias)
- \, buscando por esse código. É preciso ter cadastro no Transferegov.br e
- \, para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro 
- Nacional que mostra se o ente pode receber repasses).\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao
- -214s-rotas-de-integracao-nacional-rp2-1055992/\nConfirme data e horário 
- limite no edital oficial: https://www.gov.br/transferegov/pt-br
+ ograma Transferegov 5300020260002 · Ação 214S\nValor: valor não inform
+ ado pela fonte\nQuem pode participar: Governo do estado\nCódigo do progra
+ ma: 5300020260002. A proposta é cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, buscando por esse código. É preciso ter cadastro no Tr
+ ansferegov.br e\, para prefeituras e estados\, estar em dia no CAUC (servi
+ ço do Tesouro Nacional que mostra se o ente pode receber repasses).\nPág
+ ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
+ ro/editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  cao-214s-rotas-de-integracao-nacional-rp2-1055992/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Ação 214S - Rotas de Integraç
- ão Nacional - RP2
+DESCRIPTION:Faltam 7 dias: Prazo final — Rotas de Integração Nacional
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Ação 214S - Rotas de Integração Na
- cional - RP2
+DESCRIPTION:Amanhã: Prazo final — Rotas de Integração Nacional
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -49,33 +48,33 @@ UID:edital-1055995-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: Ação 1211 - Implementação de Infraestrutura Básic
- a nos Municípios da Região do Calha Norte - RP2
+SUMMARY:Prazo final: Implementação de Infraestrutura Básica nos Municíp
+ ios da Região do Calha Norte
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 5300020260004\nValor: valor não informado pela fonte\
- nQuem pode participar: Governo do estado\nCódigo do programa: 53000202600
- 04. A proposta é cadastrada no Transferegov.br (módulo Discricionárias)
- \, buscando por esse código. É preciso ter cadastro no Transferegov.br e
- \, para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro 
- Nacional que mostra se o ente pode receber repasses).\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao
- -1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/\nC
- onfirme data e horário limite no edital oficial: https://www.gov.br/trans
- feregov/pt-br
+ ograma Transferegov 5300020260004 · Ação 1211\nValor: valor não inform
+ ado pela fonte\nQuem pode participar: Governo do estado\nCódigo do progra
+ ma: 5300020260004. A proposta é cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, buscando por esse código. É preciso ter cadastro no Tr
+ ansferegov.br e\, para prefeituras e estados\, estar em dia no CAUC (servi
+ ço do Tesouro Nacional que mostra se o ente pode receber repasses).\nPág
+ ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
+ ro/editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios
+ -da-1055995/\nConfirme data e horário limite no edital oficial: https://w
+ ww.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  cao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Ação 1211 - Implementação de
-  Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2
+DESCRIPTION:Faltam 7 dias: Prazo final — Implementação de Infraestrutur
+ a Básica nos Municípios da Região do Calha Norte
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Ação 1211 - Implementação de Infra
- estrutura Básica nos Municípios da Região do Calha Norte - RP2
+DESCRIPTION:Amanhã: Prazo final — Implementação de Infraestrutura Bás
+ ica nos Municípios da Região do Calha Norte
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -116,37 +115,35 @@ UID:edital-1056725-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional 
- e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Proje
- tos de Desenvolvimento Sustentável Local Integrado/ Rp
+SUMMARY:Prazo final: Desenvolvimento Regional e Ordenamento Territorial —
+  Apoio a Projetos de Desenvolvimento Sustentável Local Integrado
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 2220320260044\nValor: valor não informado pela fonte\
- nQuem pode participar: Governo do estado\nCódigo do programa: 22203202600
- 44. A proposta é cadastrada no Transferegov.br (módulo Discricionárias)
- \, buscando por esse código. É preciso ter cadastro no Transferegov.br e
- \, para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro 
- Nacional que mostra se o ente pode receber repasses).\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317
- -ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConf
- irme data e horário limite no edital oficial: https://www.gov.br/transfer
- egov/pt-br
+ ograma Transferegov 2220320260044 · 2317 · (TED 7AADAF SDR/MIDR) · PT 1
+ 5.244.2317.00SX.0001\nValor: valor não informado pela fonte\nQuem pode pa
+ rticipar: Governo do estado\nCódigo do programa: 2220320260044. A propost
+ a é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando p
+ or esse código. É preciso ter cadastro no Transferegov.br e\, para prefe
+ ituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que 
+ mostra se o ente pode receber repasses).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-s
+ dr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConfirme data e h
+ orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
  317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Des
- envolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/
-  Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/
-  Rp
+DESCRIPTION:Faltam 7 dias: Prazo final — Desenvolvimento Regional e Orden
+ amento Territorial — Apoio a Projetos de Desenvolvimento Sustentável Lo
+ cal Integrado
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Desenvolv
- imento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Açã
- o: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp
+DESCRIPTION:Amanhã: Prazo final — Desenvolvimento Regional e Ordenamento
+  Territorial — Apoio a Projetos de Desenvolvimento Sustentável Local In
+ tegrado
 END:VALARM
 END:VEVENT
 END:VCALENDAR

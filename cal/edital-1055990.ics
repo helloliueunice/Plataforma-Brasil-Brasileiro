@@ -3,15 +3,16 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Ação 00SX - Apoio a Projetos de Desenvolvimento… — Fundo
- s Brasil
-NAME:Ação 00SX - Apoio a Projetos de Desenvolvimento… — Fundos Brasil
-X-WR-CALDESC:Prazos de Ação 00SX - Apoio a Projetos de Desenvolvimento Su
- stentável Local Integrado - RP2 (Ministério da Integração e do Desenvo
- lvimento Regional). Confirme sempre no edital oficial.
-DESCRIPTION:Prazos de Ação 00SX - Apoio a Projetos de Desenvolvimento Sus
- tentável Local Integrado - RP2 (Ministério da Integração e do Desenvol
- vimento Regional). Confirme sempre no edital oficial.
+X-WR-CALNAME:Apoio a Projetos de Desenvolvimento Sustentável Local… — 
+ Fundos Brasil
+NAME:Apoio a Projetos de Desenvolvimento Sustentável Local… — Fundos B
+ rasil
+X-WR-CALDESC:Prazos de Apoio a Projetos de Desenvolvimento Sustentável Loc
+ al Integrado (Ministério da Integração e do Desenvolvimento Regional). 
+ Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Apoio a Projetos de Desenvolvimento Sustentável Loca
+ l Integrado (Ministério da Integração e do Desenvolvimento Regional). C
+ onfirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
@@ -20,33 +21,33 @@ UID:edital-1055990-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: Ação 00SX - Apoio a Projetos de Desenvolvimento Sust
- entável Local Integrado - RP2
+SUMMARY:Prazo final: Apoio a Projetos de Desenvolvimento Sustentável Local
+  Integrado
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 5300020260001\nValor: valor não informado pela fonte\
- nQuem pode participar: Município\nCódigo do programa: 5300020260001. A p
- roposta é cadastrada no Transferegov.br (módulo Discricionárias)\, busc
- ando por esse código. É preciso ter cadastro no Transferegov.br e\, para
-  prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Naciona
- l que mostra se o ente pode receber repasses).\nPágina do edital: https:/
- /helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-a
- poio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/\nConfirme da
- ta e horário limite no edital oficial: https://www.gov.br/transferegov/pt
- -br
+ ograma Transferegov 5300020260001 · Ação 00SX\nValor: valor não inform
+ ado pela fonte\nQuem pode participar: Município\nCódigo do programa: 530
+ 0020260001. A proposta é cadastrada no Transferegov.br (módulo Discricio
+ nárias)\, buscando por esse código. É preciso ter cadastro no Transfere
+ gov.br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do 
+ Tesouro Nacional que mostra se o ente pode receber repasses).\nPágina do 
+ edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
+ ais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-105599
+ 0/\nConfirme data e horário limite no edital oficial: https://www.gov.br/
+ transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  cao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Ação 00SX - Apoio a Projetos d
- e Desenvolvimento Sustentável Local Integrado - RP2
+DESCRIPTION:Faltam 7 dias: Prazo final — Apoio a Projetos de Desenvolvime
+ nto Sustentável Local Integrado
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Ação 00SX - Apoio a Projetos de Dese
- nvolvimento Sustentável Local Integrado - RP2
+DESCRIPTION:Amanhã: Prazo final — Apoio a Projetos de Desenvolvimento Su
+ stentável Local Integrado
 END:VALARM
 END:VEVENT
 END:VCALENDAR

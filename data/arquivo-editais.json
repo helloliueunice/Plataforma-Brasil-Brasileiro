@@ -1,0 +1,3813 @@
+{
+  "_leia": "Gerado por scripts/gerar-paginas.mjs (regras em scripts/arquivo.mjs): última versão de cada edital publicado, para manter no ar a página de quem saiu da fonte depois do prazo. Para tirar uma página do ar de vez, apague a entrada aqui e no editais.json.",
+  "editais": {
+    "101": {
+      "id": 101,
+      "numero": "Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026",
+      "titulo": "Plataformas digitais baseadas em software livre e protocolos abertos",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "Software livre",
+        "Protocolos abertos",
+        "Arquiteturas federadas",
+        "Internet"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": 5000000,
+      "valorTotal": 21000000,
+      "valorNota": "Projeto Temático: até R$ 5 milhões em 5 anos (R$ 15 milhões reservados). Auxílio à Pesquisa Regular: até R$ 200 mil por ano, por 2 a 3 anos (R$ 6 milhões reservados).",
+      "contrapartida": "Não informada na chamada",
+      "publicadoEm": "2026-10-15",
+      "abertura": "2026-11-05",
+      "encerramento": "2027-02-22",
+      "prazoNota": "Submissão pelo SAGe a partir de 05/11/2026.",
+      "resumo": "Financia pesquisa e desenvolvimento de plataformas digitais baseadas em software livre e protocolos abertos, especialmente arquiteturas federadas. As propostas devem atender a uma ou mais linhas: desenvolvimento e aprimoramento de softwares livres e plataformas descentralizadas; estudos de viabilidade econômica e modelos de negócio; e estudos de impacto socioambiental. São admitidas parcerias com empresas, cooperativas, organizações de trabalhadores e comunidades.",
+      "link": "https://fapesp.br/18444",
+      "fonte": "https://fapesp.br/18445/nova-chamada-destinara-r-21-milhoes-a-pesquisas-sobre-plataformas-digitais-abertas",
+      "verificadoEm": "2026-10-28",
+      "docsExtras": [
+        "Proposta submetida pelo SAGe (sistema de submissão da FAPESP)",
+        "Indicação da(s) linha(s) de pesquisa atendida(s)"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem vínculo com instituição de ensino ou pesquisa no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu projeto atende a pelo menos uma das linhas: software livre e plataformas descentralizadas, viabilidade econômica ou impacto socioambiental?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "102": {
+      "id": 102,
+      "numero": "Chamada FAPESP nº 53/2026",
+      "titulo": "PIPE Jornada Tecnológica – Tecnologias Educacionais (Fase 1)",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Startups",
+        "Tecnologia educacional",
+        "PIPE",
+        "Pequenas empresas"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "empresa"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": 500000,
+      "valorTotal": 25000000,
+      "valorNota": "Inclui bolsas de treinamento técnico e de pesquisa em pequenas empresas. Duração de até 12 meses.",
+      "contrapartida": "Não informada na chamada",
+      "publicadoEm": "2026-10-21",
+      "abertura": "2026-10-21",
+      "encerramento": "2026-11-12",
+      "prazoNota": "Prazo da pré-proposta. As pré-propostas consideradas elegíveis enviam a proposta completa até 13/01/2027.",
+      "preProposta": true,
+      "resumo": "Apoio não reembolsável a projetos de pesquisa científica e tecnológica em tecnologias educacionais desenvolvidos por pequenas empresas (até 250 empregados) com sede ou unidade de P&D no estado de São Paulo. O pesquisador responsável deve ser sócio da empresa e residir no estado durante a execução; até dois pesquisadores principais podem complementar a equipe.",
+      "link": "https://fapesp.br/18434",
+      "fonte": "https://agencia.fapesp.br/programa-pesquisa-inovativa-em-pequenas-empresas-vai-apoiar-projetos-de-tecnologias-educacionais/59435",
+      "verificadoEm": "2026-10-28",
+      "docsExtras": [
+        "Pré-proposta submetida pelo SAGe",
+        "Comprovação de que o pesquisador responsável é sócio da empresa",
+        "Comprovação de até 250 empregados e sede ou unidade de P&D em SP"
+      ],
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-01-13",
+      "elegibilidade": [
+        {
+          "pergunta": "Sua empresa tem até 250 empregados?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua empresa tem sede ou unidade de P&D no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você, como pesquisador responsável, é sócio da empresa?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você vai morar no estado de São Paulo durante a execução do projeto?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto é de pesquisa em tecnologias educacionais?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "103": {
+      "id": 103,
+      "numero": "Chamada FAPESP nº 47/2026",
+      "titulo": "Jovens Pesquisadores – chamada para pesquisadores no exterior",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Jovem Pesquisador",
+        "Atração de talentos",
+        "Pesquisa no exterior"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Pesquisadores no exterior (sede em SP)",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": 2500000,
+      "valorNota": "Até 20 propostas selecionadas. Duração de 60 meses, prorrogável por até 12. A Bolsa de Jovem Pesquisador pode ser solicitada à parte.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-09-23",
+      "abertura": "2026-09-23",
+      "encerramento": "2026-11-19",
+      "prazoNota": "Prazo da proposta completa. Depois há avaliação por painel externo, apresentação oral e entrevista on-line.",
+      "resumo": "Atrai cientistas de qualquer nacionalidade que vivem e trabalham no exterior há pelo menos dois anos após o doutorado para criar, numa instituição paulista, um laboratório e um programa de pesquisa independente e competitivo internacionalmente.",
+      "link": "https://fapesp.br/18389",
+      "fonte": "https://agencia.fapesp.br/fapesp-lanca-chamada-para-atrair-jovens-pesquisadores-do-exterior/59256",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        {
+          "nome": "Originalidade e impacto potencial"
+        },
+        {
+          "nome": "Qualidade científica e viabilidade"
+        },
+        {
+          "nome": "Formação científica e histórico do candidato"
+        },
+        {
+          "nome": "Capacidade de liderar um programa de pesquisa independente e competitivo"
+        }
+      ],
+      "docsExtras": [
+        "Comprovação de pelo menos 2 anos de trabalho no exterior após o doutorado",
+        "Residência no exterior na data da submissão",
+        "Concordância da instituição paulista que vai sediar o laboratório"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você vive e trabalha no exterior há pelo menos 2 anos depois do doutorado?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você mora no exterior hoje?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Uma instituição no estado de São Paulo concorda em sediar seu laboratório?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "104": {
+      "id": 104,
+      "numero": "Chamada CNPq nº 33/2026",
+      "titulo": "Bolsas de Produtividade em Pesquisa e em Desenvolvimento Tecnológico (PQ, DT e PQ-Sr)",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Bolsa de produtividade",
+        "PQ",
+        "DT",
+        "Todas as áreas"
+      ],
+      "modalidade": "Bolsas",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 448963200,
+      "valorNota": "Bolsa mensal e adicional de bancada conforme a tabela vigente do CNPq. Vigência de até 60 meses (nível A e PQ-Sr), 48 (nível B) ou 36 (nível C). Orçamento: R$ 23,5 mi para DT e R$ 425,4 mi para PQ e PQ-Sr.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-10-07",
+      "abertura": "2026-10-07",
+      "encerramento": "2027-01-07",
+      "resultado": "2027-06-30",
+      "prazoNota": "Até 23h59 (Brasília). Resultado preliminar em 05/05/2027; bolsas a partir de 01/08/2027.",
+      "resumo": "Bolsas para pesquisadores com produção científica, tecnológica e de inovação de destaque, em três linhas: Desenvolvimento Tecnológico e Extensão Inovadora (DT, níveis A a C), Pesquisa (PQ, níveis A a C) e Pesquisa Sênior (PQ-Sr). Exige doutorado e vínculo formal com a instituição de execução; para o nível C, doutorado concluído até 2024. Uma proposta por pessoa, numa única linha. Os critérios abaixo são os de PQ e PQ-Sr; DT tem critérios próprios.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/chamada-publica-cnpq-N-33-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-2026/Chamada_Produtividade_33_2026.pdf",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        {
+          "nome": "Relevância e caráter inovador da contribuição ao longo da carreira, com ênfase na atividade recente",
+          "peso": 30
+        },
+        {
+          "nome": "Mérito, originalidade e impacto do projeto",
+          "peso": 20
+        },
+        {
+          "nome": "Formação de recursos humanos e atuação na graduação e pós-graduação",
+          "peso": 20
+        },
+        {
+          "nome": "Cooperação com grupos e instituições e participação em redes",
+          "peso": 20
+        },
+        {
+          "nome": "Atuação em sociedades científicas, editoria, gestão, prêmios e distinções",
+          "peso": 10
+        }
+      ],
+      "docsExtras": [
+        "Formulário na Plataforma Integrada Carlos Chagas",
+        "Súmula curricular com até 5 realizações de maior impacto",
+        "Comprovante de vínculo formal com a instituição de execução"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo formal com a instituição onde o projeto será executado?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você está sem pendências (inadimplência) com o CNPq e a Administração Pública Federal?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu Currículo Lattes estará atualizado até o prazo de submissão?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você mora de forma permanente no exterior?",
+          "esperado": false,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "105": {
+      "id": 105,
+      "numero": "Chamada CNPq nº 34/2026",
+      "titulo": "Auxílio à Promoção de Eventos Científicos, Tecnológicos e de Inovação (ARC)",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Eventos científicos",
+        "Congressos",
+        "Divulgação científica"
+      ],
+      "modalidade": "Auxílio a eventos",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 200000,
+      "valorTotal": 20000000,
+      "valorNota": "Linhas 1 (eventos mundiais) e 2 (eventos tradicionais): até R$ 200 mil. Linha 3 (eventos não tradicionais): até R$ 150 mil. Só custeio.",
+      "contrapartida": "Não exigida (auxílio estudantil, se pedido, exige contrapartida igual do promotor)",
+      "publicadoEm": "2026-10-14",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-12-04",
+      "resultado": "2027-04-30",
+      "prazoNota": "Até 23h59 (Brasília). Resultado preliminar em 15/03/2027.",
+      "resumo": "Apoia eventos científicos de grande porte realizados no Brasil, de abrangência mundial, internacional ou nacional, entre 01/07/2027 e 30/06/2028 (eventos mundiais até 31/07/2028). O evento deve incluir ações de educação, popularização ou divulgação científica e se relacionar a ao menos um eixo da ENCTI 2024–2034. Eventos locais, regionais, de médio ou pequeno porte não são elegíveis.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/chamada-publica-cnpq-N-34-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026/Chamada_ARC_34_2026.pdf",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        {
+          "nome": "Mérito e relevância do evento para o desenvolvimento científico, tecnológico e de inovação",
+          "peso": 30
+        },
+        {
+          "nome": "Impacto potencial e abrangência na área do conhecimento",
+          "peso": 30
+        },
+        {
+          "nome": "Qualificação e experiência do proponente na organização de eventos",
+          "peso": 20
+        },
+        {
+          "nome": "Adequação do orçamento aos objetivos, atividades e metas",
+          "peso": 20
+        }
+      ],
+      "docsExtras": [
+        "Formulário na Plataforma Integrada Carlos Chagas",
+        "Anexo obrigatório em PDF (até 1 MB) com promotor, programação, comissão organizadora e histórico do evento",
+        "Concordância escrita das instituições e membros da equipe"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo formal com a instituição que vai executar o projeto?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você será o coordenador e fará parte da comissão organizadora do evento?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O evento será no Brasil entre 01/07/2027 e 30/06/2028 (eventos mundiais: até 31/07/2028)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O evento é de grande porte e de abrangência mundial, internacional ou nacional?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O evento terá ações de educação, popularização ou divulgação científica?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "106": {
+      "id": 106,
+      "numero": "Chamada Pública CNPq/CAPES nº 30/2026",
+      "titulo": "Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI)",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "Bolsas",
+        "Pós-graduação",
+        "Parceria com empresas",
+        "CAPES"
+      ],
+      "modalidade": "Bolsas",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 62440000,
+      "valorNota": "Só bolsas. Linha 1: até 10 de mestrado, 10 de doutorado, 5 de pós-doutorado empresarial, 15 de iniciação tecnológica e 1 DTI. Linha 2: até 5 de mestrado, 5 de doutorado, 10 de iniciação tecnológica e 1 DTI.",
+      "contrapartida": "Do parceiro, por bolsa: R$ 15 mil (mestrado), R$ 30 mil (doutorado) e R$ 10 mil (pós-doutorado). Empresas médias e grandes pagam ao menos 50% em dinheiro.",
+      "publicadoEm": "2026-08-19",
+      "abertura": "2026-08-20",
+      "encerramento": "2026-12-11",
+      "prazoNota": "Até 23h59 (Brasília). Julgamento em janeiro e decisão final prevista para fevereiro de 2027.",
+      "resumo": "Bolsas para que estudantes de graduação e pós-graduação de ICTs desenvolvam projetos de interesse de empresas, órgãos públicos e entidades do terceiro setor. A proposta é institucional, apresentada pelo representante indicado pelo dirigente máximo da ICT, que precisa ter pós-graduação reconhecida, NIT constituído e política de inovação. Uma proposta por ICT.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        {
+          "nome": "Mérito, clareza, relevância e aderência do plano de trabalho",
+          "peso": 20
+        },
+        {
+          "nome": "Capacidade dos programas de pós-graduação frente às bolsas pedidas",
+          "peso": 10
+        },
+        {
+          "nome": "Histórico de projetos de P&D com parceiros nos últimos quatro anos",
+          "peso": 10
+        },
+        {
+          "nome": "Experiência da ICT em ecossistemas de inovação",
+          "peso": 20
+        },
+        {
+          "nome": "Grau de inovação e impacto potencial",
+          "peso": 20
+        },
+        {
+          "nome": "Estrutura administrativa para gerir o programa",
+          "peso": 10
+        },
+        {
+          "nome": "Plano de divulgação dos resultados para a sociedade",
+          "peso": 10
+        }
+      ],
+      "docsExtras": [
+        "Plano de trabalho (Anexo II)",
+        "Declaração do representante institucional (Anexo III)",
+        "Carta de anuência de cada parceiro (Anexo IV)",
+        "Comprovação de NIT constituído e política de inovação da ICT"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você foi indicado pelo dirigente máximo da sua ICT como representante institucional do MAI/DAI?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo formal com a ICT?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua ICT mantém programa de pós-graduação stricto sensu reconhecido?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua ICT tem Núcleo de Inovação Tecnológica (NIT) constituído e política de inovação?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Há parceiro (empresa, órgão de governo ou entidade do terceiro setor) disposto a assinar carta com contrapartida?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "107": {
+      "id": 107,
+      "numero": "Chamada Pública MCTI/CNPq/ANR nº 32/2026",
+      "titulo": "Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "internacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "Cooperação internacional",
+        "França",
+        "Saúde Única",
+        "Doenças infecciosas",
+        "IA",
+        "Computação quântica"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador",
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 1500000,
+      "valorTotal": 6000000,
+      "valorNota": "Até 4 projetos; só custeio (materiais, serviços, missões Brasil–França); até 48 meses, sem prorrogação. A equipe francesa é financiada pela ANR.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-09-03",
+      "abertura": "2026-09-03",
+      "encerramento": "2027-03-31",
+      "prazoNota": "Até 23h59 (Brasília). Resultado a partir de outubro de 2027; contratação em janeiro de 2028.",
+      "resumo": "Seleciona projetos conjuntos de grupos brasileiros e franceses em duas frentes: Saúde Única (imunologia, doenças infecciosas e inflamação; doenças infecciosas e ambiente) e continuum digital (modelagem, simulação, HPC, tecnologias digitais sustentáveis e ciências e tecnologias quânticas). O CNPq conduz a avaliação; o coordenador francês envia cópia da proposta à ANR com o mesmo título e acrônimo.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq-N-32-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/ChamadaPblicaANR322026_2766435.pdf",
+      "verificadoEm": "2026-10-28",
+      "criterios": [
+        {
+          "nome": "Excelência científica e tecnológica",
+          "peso": 20
+        },
+        {
+          "nome": "Metodologia",
+          "peso": 20
+        },
+        {
+          "nome": "Organização e execução do projeto",
+          "peso": 20
+        },
+        {
+          "nome": "Estrutura e contribuição da colaboração internacional",
+          "peso": 20
+        },
+        {
+          "nome": "Impacto",
+          "peso": 20
+        }
+      ],
+      "docsExtras": [
+        "Proposta em PDF (até 1 MB), de preferência em inglês, com orçamento em R$ e em €",
+        "Cópia da proposta enviada à ANR pelo coordenador francês",
+        "Plano de missões técnicas entre os grupos"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Seu projeto será feito em conjunto com um grupo na França, com coordenador francês?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto se encaixa em Saúde Única ou em continuum digital?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O coordenador francês vai enviar à ANR uma cópia da proposta com o mesmo título e acrônimo?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "108": {
+      "id": 108,
+      "numero": "Chamada Pública PRONINC 2026",
+      "titulo": "PRONINC 2026 – Tecnologias e inovação social para a economia solidária",
+      "instituicao": "FINEP",
+      "agencia": "finep",
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "Economia solidária",
+        "Agroecologia",
+        "Saneamento",
+        "Energia renovável",
+        "Incubadoras",
+        "FNDCT"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 5000000,
+      "valorTotal": 100000000,
+      "valorNota": "Entre R$ 2 milhões e R$ 5 milhões por proposta; até 2 propostas por ICT executora; até 36 meses. Recursos do FNDCT.",
+      "contrapartida": "Não informada na notícia oficial; confira o edital",
+      "publicadoEm": "2026-09-18",
+      "abertura": "2026-09-18",
+      "encerramento": "2027-01-14",
+      "prazoNota": "Atenção: instituições sem cadastro aprovado na Finep precisavam se cadastrar até 16/10/2026.",
+      "resumo": "Financia ICTs públicas (por meio de fundações de apoio) e ICTs privadas sem fins lucrativos qualificadas como OS ou ICES, em articulação com Incubadoras Tecnológicas de Cooperativas Populares (ITCPs) e NITs, para desenvolver tecnologias para a economia solidária: agroecologia e soberania alimentar; saneamento e reaproveitamento de resíduos; sistemas digitais e finanças solidárias; energias renováveis; e saúde, cuidado e bem-viver nos territórios.",
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1057230",
+      "fonte": "https://agenciagov.ebc.com.br/noticias/202609/finep-publica-chamada-de-r-100-milhoes-para-impulsionar-solucoes-tecnologicas-na-economia-solidaria",
+      "verificadoEm": "2026-10-28",
+      "docsExtras": [
+        "Cadastro da proponente e da ICT executora aprovado na Finep",
+        "Ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos",
+        "Comprovação da articulação com ITCP e NIT"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Sua instituição é ICT pública (via fundação de apoio) ou ICT privada sem fins lucrativos qualificada como OS ou ICES?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto será articulado com uma Incubadora Tecnológica de Cooperativas Populares (ITCP) e com um NIT?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Há ao menos uma organização parceira que represente os empreendimentos, grupos ou territórios envolvidos?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua instituição tem cadastro aprovado na Finep (ou o pediu até 16/10/2026)?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "faixa",
+      "fluxoContinuo": false
+    },
+    "109": {
+      "id": 109,
+      "numero": "Chamada FAPESP nº 57/2026",
+      "titulo": "BIOTA – Síntese e Transformação",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Biodiversidade",
+        "BIOTA",
+        "Políticas públicas",
+        "Coprodução"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 15000000,
+      "valorNota": "Total de R$ 15 milhões na chamada, sem teto por proposta divulgado. Segue as normas do Auxílio à Pesquisa Regular; no eixo Síntese, o orçamento deve incluir de 2 a 4 reuniões de imersão em SP.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-10-20",
+      "abertura": "2026-11-04",
+      "encerramento": "2026-12-04",
+      "resultado": "2027-08-01",
+      "prazoNota": "Atenção: consulta de elegibilidade e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2026; só quem for considerado elegível submete a proposta completa no SAGe até 22/02/2027. Uma proposta por pesquisador, em um único eixo (Síntese ou Transformação).",
+      "preProposta": true,
+      "resumo": "Apoia projetos de síntese de conhecimento sobre biodiversidade (reanálise e modelagem de dados já existentes) ou de transformação (coprodução com gestores, comunidades e tomadores de decisão para subsidiar políticas socioambientais), dentro do Plano BIOTA 2030.",
+      "link": "https://fapesp.br/18456",
+      "fonte": "https://fapesp.br/18456/chamada-de-propostas-biota-sintese-e-transformacao",
+      "verificadoEm": "2026-10-30",
+      "criterios": [
+        {
+          "nome": "Excelência científica e natureza inovadora",
+          "peso": null
+        },
+        {
+          "nome": "Relevância para a chamada e aderência ao eixo",
+          "peso": null
+        },
+        {
+          "nome": "Composição, diversidade e qualidade da equipe",
+          "peso": null
+        },
+        {
+          "nome": "Viabilidade do programa de trabalho",
+          "peso": null
+        },
+        {
+          "nome": "Adequação do orçamento",
+          "peso": null
+        },
+        {
+          "nome": "Disseminação de conhecimento e dados",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Pré-proposta (até 1.200 palavras) e descrição da equipe (até 400 palavras)",
+        "Súmulas curriculares no modelo FAPESP",
+        "Estimativa simplificada de orçamento",
+        "Justificativa de concomitância, se já coordena outro auxílio"
+      ],
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-02-22",
+      "elegibilidade": [
+        {
+          "pergunta": "Você é pesquisador com vínculo a instituição no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu projeto se encaixa em um único eixo: Síntese ou Transformação?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você vai enviar a consulta de elegibilidade e a pré-proposta por e-mail até 04/12/2026?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Esta será sua única proposta nesta chamada?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "total",
+      "fluxoContinuo": false
+    },
+    "110": {
+      "id": 110,
+      "numero": "Chamada FAPESP nº 56/2026",
+      "titulo": "FAPESP e Instituto Pasteur de Montevideo – Jovem Pesquisador",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "internacional",
+      "tema": "Saúde",
+      "tags": [
+        "Jovem Pesquisador",
+        "Biomedicina",
+        "Cooperação internacional",
+        "Uruguai"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Financia as despesas do Auxílio Jovem Pesquisador e a Bolsa Jovem Pesquisador por até 60 meses (prorrogáveis por 12), sem teto de valor divulgado na chamada.",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-10-20",
+      "abertura": "2026-11-04",
+      "encerramento": "2027-03-04",
+      "resultado": "2027-08-01",
+      "prazoNota": "Submissão só pelo SAGe. Os pré-selecionados fazem entrevista on-line a partir de julho de 2027.",
+      "resumo": "Para jovens doutores com pelo menos 2 anos de pós-doutorado no exterior criarem um grupo de pesquisa em biomedicina (genômica, bioinformática, biologia molecular e celular) numa instituição paulista, em colaboração com o Instituto Pasteur de Montevideo.",
+      "link": "https://fapesp.br/18455",
+      "fonte": "https://fapesp.br/18455/chamada-de-propostas-fapesp-e-instituto-pasteur-de-montevideo-2026",
+      "verificadoEm": "2026-10-30",
+      "criterios": [
+        {
+          "nome": "Histórico acadêmico e produção do candidato",
+          "peso": null
+        },
+        {
+          "nome": "Capacidade de liderar um novo grupo de pesquisa",
+          "peso": null
+        },
+        {
+          "nome": "Objetivos, originalidade e importância do projeto",
+          "peso": null
+        },
+        {
+          "nome": "Fundamentos e métodos",
+          "peso": null
+        },
+        {
+          "nome": "Adequação dos recursos solicitados",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Projeto de pesquisa em inglês",
+        "Três publicações relevantes e duas cartas de recomendação",
+        "Plano de pesquisa do grupo (2 páginas)",
+        "Carta de compromisso do Instituto Pasteur de Montevideo",
+        "Plano de gestão de dados"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem pelo menos 2 anos de pós-doutorado no exterior?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu projeto é em biomedicina (genômica, bioinformática, biologia molecular ou celular)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Uma instituição no estado de São Paulo vai sediar seu grupo de pesquisa?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem carta de compromisso do Instituto Pasteur de Montevideo?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false
+    },
+    "111": {
+      "id": 111,
+      "numero": "Chamada FAPESP nº 48/2026",
+      "titulo": "SPRINT 2026 – colaboração internacional (edição 2)",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "internacional",
+      "tema": "Educação",
+      "tags": [
+        "Internacionalização",
+        "Mobilidade",
+        "SPRINT",
+        "Cooperação internacional"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "USD",
+      "valorMax": 50000,
+      "valorNota": "Até US$ 12.500 no 1º ano para mobilidade; mais US$ 12.500 no 2º e US$ 25.000 no 3º ano, se os resultados forem aprovados (até US$ 50.000 no total).",
+      "contrapartida": "Não se aplica",
+      "publicadoEm": "2026-09-21",
+      "abertura": "2026-09-21",
+      "encerramento": "2027-02-22",
+      "resultado": "2027-06-01",
+      "prazoNota": "Prazo da edição 2 (a edição 1 encerrou em 26/10/2026). Submissão pelo SAGe.",
+      "resumo": "Financia a internacionalização de pesquisadores paulistas em fases: mobilidade inicial para uma instituição estrangeira parceira, intercâmbio nos dois sentidos e, depois, recursos semente para formar redes de pesquisa.",
+      "link": "https://fapesp.br/sprint/chamada2026",
+      "fonte": "https://fapesp.br/sprint/chamada2026",
+      "verificadoEm": "2026-10-30",
+      "criterios": [],
+      "docsExtras": [
+        "Concordância do parceiro na instituição estrangeira"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você é pesquisador com vínculo a instituição no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem um parceiro em instituição estrangeira que concorda com a proposta?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "112": {
+      "id": 112,
+      "numero": "Seleção Pública MCTI/Finep/FNDCT – Fluxo Contínuo",
+      "titulo": "Finep COOPERAMAIS Brasil Tecnologias – Empresas",
+      "instituicao": "Finep",
+      "agencia": "finep",
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Agricultura familiar",
+        "Cooperativas",
+        "Agroindústria",
+        "Segurança alimentar",
+        "Subvenção econômica"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "empresa"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 20000000,
+      "valorTotal": 120000000,
+      "valorNota": "Subvenção de R$ 5 milhões a R$ 20 milhões por proposta, para projetos de até 36 meses. Pelo menos R$ 36 milhões reservados para projetos no Norte, Nordeste e Centro-Oeste.",
+      "contrapartida": "Financeira, de 2% (micro e pequenas) a 15% ou mais (grandes), conforme a receita da empresa",
+      "publicadoEm": "2026-09-22",
+      "abertura": "2026-09-22",
+      "encerramento": "2027-04-30",
+      "prazoNota": "Fluxo contínuo até 30/04/2027, 17h, pela Plataforma de Apoio e Financiamento da Finep. A empresa precisa de parceria formalizada com cooperativa com CAF e pelo menos 70% de agricultores familiares.",
+      "resumo": "Subvenção econômica para empresas desenvolverem produtos ou processos inovadores para a agroindústria nacional e a segurança alimentar, em parceria com cooperativas da agricultura familiar.",
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1060720",
+      "fonte": "https://www.finep.gov.br/e/chamada-publica/222684/1060720",
+      "verificadoEm": "2026-10-30",
+      "criterios": [],
+      "docsExtras": [
+        "Carta de manifestação de interesse da cooperativa",
+        "Declaração de instrumento jurídico firmado entre a empresa e a cooperativa",
+        "Declaração ambiental e de outros aspectos regulatórios",
+        "Definição do nível de maturidade tecnológica (TRL)"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Sua empresa tem parceria formalizada, por instrumento jurídico, com uma cooperativa da agricultura familiar?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "A cooperativa parceira tem CAF e pelo menos 70% de agricultores familiares?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto desenvolve produto ou processo inovador para a agroindústria ou a segurança alimentar?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua empresa pode dar contrapartida financeira (de 2% a 15% ou mais, conforme a receita)?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "faixa",
+      "fluxoContinuo": true
+    },
+    "113": {
+      "id": 113,
+      "numero": "Chamada Pública MCTI/Finep/FNDCT – CT-Agro",
+      "titulo": "COOPERAMAIS Tecnologia – ICTs com cooperativas da agricultura familiar",
+      "instituicao": "Finep",
+      "agencia": "finep",
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Agricultura familiar",
+        "Cooperativas",
+        "Economia circular",
+        "Transição climática"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": 15000000,
+      "valorTotal": 100000000,
+      "valorNota": "De R$ 3 milhões a R$ 15 milhões por proposta, para projetos de até 36 meses. Pelo menos 30% dos recursos para o Norte, Nordeste e Centro-Oeste.",
+      "contrapartida": "Financeira (ver edital)",
+      "publicadoEm": "2026-09-22",
+      "abertura": "2026-09-22",
+      "encerramento": "2026-12-08",
+      "prazoNota": "Até 08/12/2026, 18h, pelo sistema SISGON. Cada ICT pode ser executora principal de uma só proposta. O projeto deve partir de TRL 3 ou superior (eliminatório).",
+      "resumo": "P,D&I de ICTs públicas e privadas em soluções para a agricultura familiar (comercialização, agroindustrialização, transformação digital, economia circular e resiliência climática), obrigatoriamente com cooperativa parceira há pelo menos 1 ano.",
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1060260",
+      "fonte": "https://www.finep.gov.br/e/chamada-publica/222684/1060260",
+      "verificadoEm": "2026-10-30",
+      "criterios": [],
+      "docsExtras": [
+        "Carta de manifestação de interesse da cooperativa",
+        "Extrato CAF Pessoa Jurídica da cooperativa",
+        "Documento da parceria com a cooperativa há pelo menos 1 ano",
+        "Política de Inovação (ICTs públicas)",
+        "Justificativa do TRL inicial e final"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Sua instituição é uma ICT pública ou privada?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua ICT tem parceria com cooperativa da agricultura familiar há pelo menos 1 ano?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "A solução do projeto parte de TRL 3 ou superior?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Esta será a única proposta em que sua ICT é executora principal?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua ICT pode oferecer contrapartida financeira?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "faixa",
+      "fluxoContinuo": false
+    },
+    "114": {
+      "id": 114,
+      "numero": "Edital Funbio nº 04/2026",
+      "titulo": "Floresta Viva – Águas do São Francisco",
+      "instituicao": "Funbio / BNDES",
+      "agencia": "funbio",
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Restauração ecológica",
+        "Rio São Francisco",
+        "Recursos hídricos",
+        "Floresta Viva"
+      ],
+      "modalidade": "Não reembolsável",
+      "publico": [
+        "osc"
+      ],
+      "abrangencia": "Nordeste",
+      "ufs": [
+        "BA",
+        "PE"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 17760000,
+      "valorNota": "R$ 17,76 milhões para até 7 projetos, sem teto por proposta informado na página da chamada. Recursos do BNDES e do Comitê Gestor da CPR São Francisco e Parnaíba (Axia Energia).",
+      "contrapartida": "Prevista no edital (financeira ou não financeira)",
+      "publicadoEm": "2026-10-01",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-02",
+      "prazoNota": "Até 02/12/2026, 19h, no Portal de Chamadas do Funbio. Dúvidas até 25/11; reunião on-line de esclarecimento em 13/11.",
+      "resumo": "Projetos de restauração ecológica e revitalização dos recursos hídricos nas bacias da área de influência das usinas de Sobradinho e Itaparica, com fortalecimento da cadeia produtiva da restauração. Para associações, fundações e cooperativas sem fins lucrativos com pelo menos 2 anos.",
+      "link": "https://chamadas.funbio.org.br/floresta-viva-sao-francisco",
+      "fonte": "https://chamadas.funbio.org.br/floresta-viva-sao-francisco",
+      "verificadoEm": "2026-10-30",
+      "criterios": [],
+      "docsExtras": [
+        "Currículo institucional (Anexo B) e cartas de parceria",
+        "Planilha padrão de coordenadas geográficas das áreas",
+        "Comprovação de constituição há pelo menos 2 anos"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Sua organização é associação, fundação ou cooperativa sem fins lucrativos?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua organização foi constituída há pelo menos 2 anos?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto será nas bacias da área de influência das usinas de Sobradinho e Itaparica (BA e PE)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua organização pode oferecer contrapartida, financeira ou não financeira?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "misto",
+      "tipoValor": "total",
+      "fluxoContinuo": false
+    },
+    "115": {
+      "id": 115,
+      "numero": "Edital de Chamamento Público nº 008/2026/SMDHC/FMID",
+      "titulo": "Fundo Municipal do Idoso – projetos para a pessoa idosa (cidade de São Paulo)",
+      "instituicao": "Prefeitura de São Paulo (SMDHC)",
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "Pessoa idosa",
+        "MROSC",
+        "Termo de fomento",
+        "Direitos humanos"
+      ],
+      "modalidade": "Não reembolsável (termo de fomento)",
+      "publico": [
+        "osc"
+      ],
+      "abrangencia": "Cidade de São Paulo",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 12800000,
+      "valorNota": "R$ 12,8 milhões em repasse direto em 2027 para 32 OSCs (cerca de R$ 400 mil cada). Aprovadas não contempladas recebem certificado para captar doações incentivadas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-24",
+      "abertura": "2026-09-24",
+      "encerramento": "2026-11-06",
+      "resultado": "2027-04-30",
+      "prazoNota": "Inscrição e entrega das propostas até 06/11/2026. Até 3 propostas por OSC; projetos de 12 a 24 meses. Só para OSCs que atuam na cidade de São Paulo, com registro (ou pedido) no Conselho Municipal da Pessoa Idosa.",
+      "resumo": "Financia projetos de educação, proteção e garantia de direitos, saúde e cultura para pessoas com 60 anos ou mais na cidade de São Paulo, priorizando territórios mais vulneráveis e ao menos um projeto por subprefeitura.",
+      "link": "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573",
+      "fonte": "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573",
+      "verificadoEm": "2026-10-30",
+      "criterios": [],
+      "docsExtras": [
+        "Declaração da organização (Anexo I)",
+        "Plano de trabalho no modelo do edital (Anexo II)",
+        "Planilha orçamentária anual (Anexo III)",
+        "Protocolo de intenção de registro no CMI (Anexo IV)"
+      ],
+      "ufs": [
+        "SP"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Sua organização é uma OSC que atua na cidade de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua OSC tem registro no Conselho Municipal da Pessoa Idosa (ou já o pediu)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto atende pessoas com 60 anos ou mais?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O projeto terá duração de 12 a 24 meses?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "total",
+      "fluxoContinuo": false
+    },
+    "116": {
+      "id": 116,
+      "numero": "Chamada Pública CNPq/Petrobras nº 31/2026",
+      "titulo": "Projeto InspirAÇÃO: jovens mulheres negras na indústria de energia",
+      "instituicao": "CNPq",
+      "agencia": "cnpq",
+      "procedencia": "nacional",
+      "tema": "Energia",
+      "tags": [
+        "Petrobras",
+        "Cenpes",
+        "mulheres negras",
+        "indústria de energia",
+        "ICT",
+        "IES"
+      ],
+      "modalidade": "Bolsas (ATP-B)",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Nacional",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 30240000,
+      "valorNota": "R$ 30,24 milhões destinados só a bolsas ATP-B, sem teto por proposta; financiamento da Petrobras, operado pelo CNPq. Detalhes no texto da chamada.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-10-26",
+      "abertura": "2026-10-26",
+      "encerramento": "2026-12-08",
+      "prazoNota": "Inscrições até 08/12/2026. Exige indicação de um Representante Institucional pela Pró-Reitoria de Extensão (ou cargo equivalente).",
+      "resumo": "O CNPq, em parceria com o Cenpes e com financiamento da Petrobras, convida ICTs e/ou IES a apresentarem propostas para implementar o Projeto InspirAÇÃO. O objetivo é ampliar a participação de jovens mulheres negras em setores estratégicos da indústria de energia. A proposta é institucional e usa formulário próprio e a lista de territórios priorizados.",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026",
+      "fonte": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Anexo I - Formulário de Proposta Institucional",
+        "Anexo II - Documento de indicação do Representante Institucional nomeado pelo(a) Pró-Reitor(a) de Extensão ou cargo equivalente da IES/ICT",
+        "Anexo III - Lista de Territórios Priorizados (consulta)"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Sua instituição é ICT ou IES constituída no Brasil e cadastrada no Diretório de Instituições do CNPq?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você é Pró-Reitor(a) de Extensão (ou cargo equivalente) ou foi indicado(a) por essa Pró-Reitoria?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo formal com a instituição executora?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu Currículo Lattes estará atualizado até o prazo de submissão?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "As escolas parceiras do projeto são públicas?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "misto",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "117": {
+      "id": 117,
+      "numero": "Edital FAPES nº 01/2026",
+      "titulo": "TCC Empreendedor Inovador: bolsas para Trabalhos de Conclusão de Curso com foco em inovação",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "TCC",
+        "graduação",
+        "inovação",
+        "empreendedorismo",
+        "Espírito Santo",
+        "bolsa BTCC"
+      ],
+      "modalidade": "Bolsas (BTCC) e auxílio de orientação, cooperação financeira não reembolsável",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": 11000,
+      "valorTotal": 1600000,
+      "valorNota": "Orçamento total de R$ 1,6 milhão (Funcitec), dividido em três chamadas (R$ 800 mil, R$ 400 mil e R$ 400 mil); a 3ª chamada tem R$ 400 mil, com vigência no 2º semestre de 2027. Cada proposta recebe bolsas BTCC de 2 a 4 meses para 3 a 5 alunos, mais até dois auxílios de orientação ao professor, com teto de R$ 11.000 por proposta.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-01-26",
+      "abertura": "2027-02-02",
+      "encerramento": "2027-03-30",
+      "prazoNota": "Submissão até as 17h59 pelo Sigfapes, com anuência prévia do gestor institucional da IES. As 1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026); resta a 3ª chamada (02/02/2027 a 30/03/2027), com resultado preliminar a partir de 24/05/2027 e homologação a partir de 22/06/2027.",
+      "resumo": "A FAPES oferece bolsas de apoio a Trabalhos de Conclusão de Curso (BTCC) de graduação com foco em inovação, empreendedorismo e impacto no Espírito Santo, alinhados aos ODS (especialmente 4, 8, 9, 10 e 17) e ao Plano ES 500 Anos. O professor orientador, com vínculo por tempo indeterminado em IES do ES, submete a proposta com 3 a 5 alunos de graduação que tenham coeficiente de rendimento de 7,0 ou mais. As propostas concorrem por microrregião, e a nota mínima para classificação é 70.",
+      "link": "https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Relevância e Aplicabilidade",
+          "peso": 25
+        },
+        {
+          "nome": "Inovação e Criatividade",
+          "peso": 25
+        },
+        {
+          "nome": "Qualidade Técnica",
+          "peso": 20
+        },
+        {
+          "nome": "Contribuição ao Plano ES 500 Anos",
+          "peso": 15
+        },
+        {
+          "nome": "Contribuição aos ODS",
+          "peso": 15
+        }
+      ],
+      "docsExtras": [
+        "Formulário de submissão preenchido (Anexo I)",
+        "Histórico escolar dos alunos orientados com coeficiente de rendimento igual ou superior a 7,0",
+        "Declaração da coordenação do curso confirmando tema e orientador (Anexo II)",
+        "Currículo Lattes do proponente atualizado há menos de 6 meses",
+        "Anuência da IES via Sigfapes por gestor institucional",
+        "Na contratação: regularidade fiscal, declaração da IES e comprovação de matrícula dos alunos"
+      ],
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você é professor com vínculo por tempo indeterminado em instituição de ensino superior do Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você mora no Espírito Santo ou em município vizinho (limítrofe)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Os alunos que você vai orientar são da graduação da sua IES e têm coeficiente de rendimento de 7,0 ou mais?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O gestor institucional da sua IES vai dar anuência no Sigfapes antes da submissão?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu Currículo Lattes foi atualizado há menos de 6 meses?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "118": {
+      "id": 118,
+      "numero": "Edital FAPES nº 10/2026",
+      "titulo": "Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Tecnologia",
+      "tags": [
+        "doutor empreendedor",
+        "inovação",
+        "startups",
+        "subvenção econômica",
+        "bolsa POSDOC",
+        "Espírito Santo"
+      ],
+      "modalidade": "Subvenção econômica e bolsas (POSDOC e ICT)",
+      "publico": [
+        "pesquisador",
+        "empresa"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": 355400,
+      "valorTotal": 10662000,
+      "valorNota": "Até R$ 355.400 por projeto, em 24 meses: bolsa POSDOC (R$ 163.800), bolsa ICT (R$ 21.600) e subvenção econômica de custeio e capital de até R$ 170.000, dos quais R$ 50.000 vão para consultoria de aceleradoras credenciadas. São 15 projetos por chamada (30 no total).",
+      "contrapartida": "Contrapartida financeira de 5% do valor subvencionado, paga em até duas parcelas anuais em conta específica; pode ser usada em custeio e capital ligados ao projeto.",
+      "publicadoEm": "2026-04-30",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-12-15",
+      "prazoNota": "Esta é a 2ª chamada (a 1ª encerrou em 07/07/2026). Submissão no Sigfapes até as 17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilitação a partir de 08/01/2027, apresentação oral entre 03/02 e 18/03/2027 e resultado homologado previsto a partir de 27/04/2027.",
+      "resumo": "Chamada da FAPES para financiar projetos de pesquisa e desenvolvimento de produtos, serviços ou processos inovadores, conduzidos por doutores sem vínculo empregatício que atuem no Espírito Santo. O objetivo é criar ou fortalecer micro e pequenas empresas de base tecnológica, em qualquer área do conhecimento. O doutor submete a proposta como pessoa física, com apoio de um tutor acadêmico de IES/ICT sediada no ES, e a empresa é constituída ou formalizada na contratação. O apoio inclui bolsas e subvenção econômica, com execução em 24 meses (prorrogável por até 12).",
+      "link": "https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Mérito: relevância da pesquisa/tecnologia utilizada no projeto",
+          "peso": 25
+        },
+        {
+          "nome": "Mérito: alcance e potencial mercadológico da aplicação",
+          "peso": 20
+        },
+        {
+          "nome": "Mérito: grau de inovação da solução e impacto potencial",
+          "peso": 20
+        },
+        {
+          "nome": "Mérito: relevância da instituição de vínculo do tutor acadêmico",
+          "peso": 5
+        },
+        {
+          "nome": "Apresentação oral: potencial de inovação, produto/processo e viabilidade técnico-econômica",
+          "peso": 10
+        },
+        {
+          "nome": "Apresentação oral: perfil, competência e experiência do doutor e da equipe",
+          "peso": 5
+        },
+        {
+          "nome": "Apresentação oral: capacidade de argumentação e domínio do tema",
+          "peso": 15
+        }
+      ],
+      "docsExtras": [
+        "Formulário de submissão da proposta (Anexo I), assinado pelo coordenador e pelo tutor acadêmico",
+        "Declaração de apoio do tutor acadêmico (Anexo II) e da instituição copartícipe (Anexo III)",
+        "Declaração de não acumulação de bolsas (Anexo IV)",
+        "Diploma de doutorado ou atestado de previsão de conclusão com comprovante de aprovação da qualificação da tese",
+        "Comprovante de residência no ES, RG/CPF ou CNH e Currículo Lattes atualizado nos últimos 3 meses",
+        "Declaração de Ciência do NIT (Anexo IX), exigida na contratação quando a instituição copartícipe estiver vinculada à contemplada no Edital FAPES 12/2025"
+      ],
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor (ou atestado de previsão de conclusão do doutorado)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você está sem emprego ou atividade remunerada (exceto como sócio de micro ou pequena empresa capixaba aberta desde 2023)?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você mora no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem um tutor acadêmico doutor com vínculo em IES ou ICT sediada no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você aceita abrir ou formalizar uma empresa até a contratação, se aprovado?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você pode pagar contrapartida financeira de 5% do valor subvencionado?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "119": {
+      "id": 119,
+      "numero": "Edital Fapes nº 26/2026",
+      "titulo": "PROCAP 2027 – Bolsas de mestrado para Programas de Pós-graduação do Espírito Santo",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "pós-graduação",
+        "bolsas de mestrado",
+        "PROCAP",
+        "Espírito Santo",
+        "Capes"
+      ],
+      "modalidade": "Bolsas",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 16128000,
+      "valorNota": "210 bolsas de mestrado com 24 parcelas mensais cada. Cada PPG habilitado recebe 2 bolsas na Etapa I; as restantes são distribuídas unitariamente na Etapa II por nota Capes, antiguidade e número de doutores. O valor mensal segue a Tabela de Valores de Bolsas e Auxílios da Fapes (não informado no edital).",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-28",
+      "abertura": "2026-09-28",
+      "encerramento": "2026-11-16",
+      "resultado": "2026-12-21",
+      "prazoNota": "Envio até 16/11/2026 às 17h59 (horário de Brasília) pelo Sistema de Gestão da Fapes (SigFapes), com login próprio do coordenador. Cada PPG pode enviar uma só proposta; vale a última enviada. Recurso administrativo em até 5 dias úteis após o resultado preliminar (a partir de 14/12/2026); indicação regular de bolsistas de março a novembro de 2027.",
+      "resumo": "A Fapes concede bolsas de mestrado, acadêmico ou profissional, a Programas de Pós-graduação stricto sensu aprovados ou recomendados pela Capes e vinculados a instituições de ensino superior ou pesquisa do Espírito Santo. O coordenador do PPG submete a proposta e depois indica os bolsistas. Para participar, o PPG precisa ter regimento com seleção por chamada pública, exigir dissertação para a titulação e ter política de ações afirmativas. São 210 bolsas de 24 parcelas, financiadas pelo Funcitec.",
+      "link": "https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Etapa II: maior nota na última avaliação Capes homologada (PPG sem avaliação recebe nota 3)",
+          "peso": null
+        },
+        {
+          "nome": "Etapa II: PPG mais antigo em data de início do curso",
+          "peso": null
+        },
+        {
+          "nome": "Etapa II: maior número de doutores",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Anexo I – Formulário de Submissão do PPG preenchido e assinado pelo coordenador via E-Docs (assinatura escaneada ou colada como imagem não é aceita)",
+        "Portaria, ata do colegiado do PPG ou ato interno da IES/P que designe o proponente como coordenador do PPG",
+        "Anuência do Gestor Institucional da IES/P no Sistema de Gestão da Fapes",
+        "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema",
+        "Regimento interno com seleção por chamada pública e dissertação como requisito para o título",
+        "Política regulamentada de ações afirmativas de reserva de vagas"
+      ],
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você coordena um programa de pós-graduação stricto sensu aprovado ou recomendado pela Capes?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O programa é vinculado a instituição de ensino superior ou pesquisa do Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O regimento do programa prevê seleção por chamada pública e exige dissertação para o título?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O programa tem política regulamentada de ações afirmativas com reserva de vagas?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "120": {
+      "id": 120,
+      "numero": "Edital Fapes nº 27/2026",
+      "titulo": "PROCAP 2027 – Bolsas de doutorado para Programas de Pós-graduação do Espírito Santo",
+      "instituicao": "FAPES",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "bolsas de doutorado",
+        "pós-graduação",
+        "PROCAP",
+        "Espírito Santo",
+        "Capes"
+      ],
+      "modalidade": "Bolsas",
+      "publico": [
+        "ict"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 27000000,
+      "valorNota": "São 125 bolsas de doutorado de até 48 parcelas mensais cada, distribuídas entre os PPG habilitados (2 bolsas por PPG na Etapa I, e as restantes por ranking). O valor mensal segue a Tabela de Valores de Bolsas e Auxílios da Fapes, não informado no edital.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-28",
+      "abertura": "2026-09-28",
+      "encerramento": "2026-11-16",
+      "resultado": "2026-12-21",
+      "prazoNota": "Submissão até 16/11/2026, às 17h59 (Brasília), pelo Sistema de Gestão da Fapes, com login do coordenador; cada PPG envia apenas uma proposta (vale a última). Resultado preliminar a partir de 14/12/2026, recurso em 5 dias úteis, homologação a partir de 21/12/2026; indicação de bolsistas de março a novembro de 2027.",
+      "resumo": "A Fapes concede bolsas de doutorado a Programas de Pós-graduação stricto sensu (acadêmicos ou profissionais) aprovados ou recomendados pela Capes, vinculados a instituições de ensino superior ou pesquisa do Espírito Santo. A proposta é enviada pelo coordenador do PPG. Cada PPG habilitado recebe 2 bolsas, e as bolsas restantes são distribuídas por nota Capes, antiguidade do curso e número de doutores. Depois, o PPG indica os doutorandos bolsistas, que precisam cumprir os requisitos do edital (por exemplo, residir no ES ou em município limítrofe e não acumular outra bolsa).",
+      "link": "https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/procap-2027-doutorado.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Maior nota na última avaliação Capes homologada (PPG sem avaliação recebe nota 4)",
+          "peso": null
+        },
+        {
+          "nome": "PPG mais antigo em data de início do curso",
+          "peso": null
+        },
+        {
+          "nome": "Maior número de doutores",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Anexo I – Formulário de Submissão do PPG, assinado pelo coordenador exclusivamente via E-Docs",
+        "Portaria, ata do colegiado ou ato interno da IES/P designando o proponente como coordenador do PPG",
+        "Anuência do Gestor Institucional no Sistema de Gestão da Fapes",
+        "Orientadores do PPG inseridos como membros de equipe e com participação validada no sistema",
+        "Regimento interno com seleção por chamada pública e aprovação de tese como requisito para o título",
+        "Política regulamentada de ações afirmativas de reserva de vagas"
+      ],
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você coordena um programa de pós-graduação stricto sensu aprovado ou recomendado pela Capes?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O programa é vinculado a instituição de ensino superior ou pesquisa do Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O regimento do programa prevê seleção por chamada pública e exige aprovação de tese para o título?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O programa tem política regulamentada de ações afirmativas com reserva de vagas?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "121": {
+      "id": 121,
+      "numero": "Chamada Transnacional Conjunta FOREST 2026 (CONFAP & FOREST 2026)",
+      "titulo": "Chamada Transnacional Conjunta FOREST 2026 (Forest Pathways) – Diretrizes FAPES",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "florestas",
+        "bioeconomia florestal",
+        "Horizon Europe",
+        "cooperação internacional",
+        "CONFAP",
+        "Espírito Santo"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorTotal": 75000,
+      "valorNota": "A FAPES apoia apenas 1 projeto, de até € 75.000 (limite de € 25.000 por ano, até 36 meses). Cobre mobilidade, custeio e capital, exceto bolsas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-15",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-12-02",
+      "resultado": "2027-09-21",
+      "prazoNota": "Pré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET), obrigatória para a 2ª fase. Propostas completas até 02/06/2027; submissão em inglês pelo sistema EPSS.",
+      "resumo": "Chamada conjunta da Parceria Europeia FOREST (Horizon Europe), da qual a FAPES participa pelo CONFAP. Financia projetos transnacionais de pesquisa e inovação sobre florestas, silvicultura e o setor de base florestal. Podem submeter pesquisadores doutores com vínculo ativo com instituição de ensino superior ou pesquisa no Espírito Santo, que residam no estado, sejam brasileiros ou estrangeiros com visto permanente e sejam coordenadores (PI) do projeto. Cada proponente pode submeter no máximo 1 proposta.",
+      "link": "https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Excelência Científica",
+          "peso": 33.3
+        },
+        {
+          "nome": "Relevância e Impacto Potencial",
+          "peso": 33.3
+        },
+        {
+          "nome": "Qualidade e Eficiência da Implementação",
+          "peso": 33.3
+        }
+      ],
+      "docsExtras": [
+        "Pré-proposta e proposta completa em inglês, nos modelos da Chamada, via EPSS",
+        "Consórcio transnacional com no mínimo 3 parceiros financiáveis de 3 países diferentes (máximo 7 parceiros)",
+        "Documentos de regularidade conforme Instrução de Serviços nº 082/2025",
+        "Cadastro do projeto e documentação no SigFapes após a seleção",
+        "Estar adimplente com a FAPES na data limite de submissão"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-06-02",
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo ativo com instituição de ensino superior ou pesquisa no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você mora no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você é brasileiro ou estrangeiro com visto permanente?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você será o coordenador (PI) do projeto?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio terá pelo menos 3 parceiros financiáveis de 3 países diferentes?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "122": {
+      "id": 122,
+      "numero": "Chamada Transnacional Conjunta CONFAP & Biodiversa+ (BiodivFuture) 2026-2027",
+      "titulo": "Chamada Transnacional Conjunta Biodiversa+ (BiodivFuture) 2026-2027 – Diretrizes FAPES",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "biodiversidade",
+        "ecossistemas emergentes",
+        "cooperação internacional",
+        "Biodiversa+",
+        "Horizon Europe",
+        "CONFAP"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorTotal": 75000,
+      "valorNota": "A FAPES apoiará apenas 1 projeto, com até € 75.000 (limite de € 25.000 por ano, por até 36 meses). Cobre mobilidade, custeio e capital, exceto bolsas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-09",
+      "abertura": "2026-09-09",
+      "encerramento": "2026-11-10",
+      "prazoNota": "Pré-proposta (1ª fase, obrigatória) até 10/11/2026 às 12h00 (CEST), em inglês, pelo sistema EPSS. Propostas completas até 16/04/2027 às 12h (CEST).",
+      "resumo": "Chamada transnacional conjunta CONFAP e Biodiversa+, cofinanciada pelo Horizon Europe, sobre ecossistemas emergentes, biodiversidade e trajetórias futuras. A FAPES financia um único projeto de pesquisador doutor, coordenador ou PI do consórcio, vinculado a instituição de ensino superior ou pesquisa no Espírito Santo. O consórcio deve ter parceiros de pelo menos três países.",
+      "link": "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Pré-proposta obrigatória na 1ª fase, em inglês, via EPSS com os modelos da Chamada",
+        "Documentos de regularidade conforme Instrução de Serviços nº 082/2025",
+        "Consórcio com ao menos 3 parceiros financiáveis de 3 países diferentes (máximo de 7 parceiros)",
+        "Ao menos 2 entidades jurídicas independentes de Estados-Membros da UE ou países associados ao Horizon Europe",
+        "Cadastro posterior dos projetos selecionados no SigFapes"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-04-16",
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo com instituição de ensino superior ou pesquisa no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você será coordenador ou PI no consórcio?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio terá pelo menos 3 parceiros financiáveis de 3 países diferentes?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O consórcio inclui ao menos 2 entidades de Estados-Membros da UE ou países associados ao Horizon Europe?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "123": {
+      "id": 123,
+      "numero": "Chamada Transnacional Conjunta CONFAP & Water4All 2026",
+      "titulo": "Chamada Transnacional CONFAP & Water4All 2026 – Gestão Sustentável dos Recursos Hídricos (diretrizes FAPES)",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "recursos hídricos",
+        "Water4All",
+        "Horizon Europe",
+        "cooperação internacional",
+        "Espírito Santo",
+        "CONFAP"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorNota": "A FAPES apoiará apenas 1 projeto, com até € 75.000 (limite de € 25.000 por ano, por até 36 meses), com recursos do FUNCITEC. Cobre mobilidade, custeio e capital; bolsas não são permitidas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-08",
+      "abertura": "2026-09-08",
+      "encerramento": "2026-11-10",
+      "prazoNota": "Pré-proposta (1ª fase) até 10/11/2026, às 15h00 (CEST), obrigatória para a 2ª fase. Seleção das pré-propostas no início de fevereiro/2027; propostas completas até 06/04/2027 às 15h (CEST); resultado em setembro/2027.",
+      "resumo": "Chamada conjunta CONFAP & Water4All, cofinanciada pelo Horizon Europe, para projetos transnacionais de pesquisa e inovação em gestão sustentável dos recursos hídricos. Exclui eventos extremos e economia circular. A FAPES convida pesquisadores doutores vinculados a instituições de ensino superior e/ou pesquisa do Espírito Santo, que atuem como PI ou coordenadores em consórcios internacionais. Os temas são monitoramento e avaliação integrados, soluções baseadas na natureza, infraestruturas hídricas inteligentes e governança/políticas públicas. A FAPES financia 1 projeto de até € 75.000.",
+      "link": "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Proposta e pré-proposta em inglês, nos modelos da Chamada, via Electronic Proposal Submission System (EPSS)",
+        "Comprovação de regularidade conforme documentos da Instrução de Serviços nº 082/2025 da FAPES",
+        "Consórcio transnacional com ao menos 3 parceiros financiáveis de 3 países diferentes, e no máximo 7 parceiros",
+        "Após a seleção, cadastro do projeto e envio de documentos no SigFapes",
+        "Cada pesquisador pode submeter apenas 1 proposta"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-04-06",
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo com instituição de ensino superior ou pesquisa no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você será coordenador ou PI no consórcio internacional?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio terá pelo menos 3 parceiros financiáveis de 3 países diferentes?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Esta será sua única proposta nesta chamada?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "124": {
+      "id": 124,
+      "numero": "Chamada CONFAP & SBEP 2026",
+      "titulo": "Chamada Transnacional Conjunta da Parceria de Economia Azul Sustentável (SBEP) 2026 – Diretrizes FAPES",
+      "instituicao": "FAPES",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "economia azul",
+        "transnacional",
+        "Horizon Europe",
+        "CONFAP",
+        "Espírito Santo",
+        "cooperação internacional"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "Espírito Santo",
+      "ufs": [
+        "ES"
+      ],
+      "moeda": "EUR",
+      "valorMax": 75000,
+      "valorNota": "A FAPES apoia até 1 projeto, com limite de € 25.000 por ano (até 36 meses). Cobre mobilidade, custeio e capital, exceto bolsas.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-15",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-16",
+      "prazoNota": "Prazo da pré-proposta (1ª fase): 16/11/2026 às 15:00 CET, obrigatória para a 2ª fase. Propostas completas até 14/06/2027, em inglês, pelo sistema EPSS.",
+      "resumo": "Chamada transnacional do Horizon Europe (parceria SBEP) para projetos de pesquisa e inovação em economia azul sustentável. A FAPES financia pesquisadores doutores de instituições de ensino superior ou pesquisa do Espírito Santo, que participam de consórcios internacionais. Os temas são: transição dos setores azuis, gestão do uso do mar com abordagens digitais, biorrecursos azuis e resiliência de comunidades costeiras.",
+      "link": "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf",
+      "fonte": "https://fapes.es.gov.br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Excelência Científica",
+          "peso": 33.3
+        },
+        {
+          "nome": "Relevância e Impacto Potencial",
+          "peso": 33.3
+        },
+        {
+          "nome": "Qualidade e Eficiência da Implementação",
+          "peso": 33.3
+        }
+      ],
+      "docsExtras": [
+        "Proposta em inglês, enviada pelo EPSS com os modelos da Chamada",
+        "Consórcio com pelo menos 3 parceiros financiados de 3 países diferentes (máximo 7 parceiros)",
+        "Pelo menos 2 entidades de 2 Estados-Membros da UE ou países associados ao Horizon Europe",
+        "Documentos de regularidade da Instrução de Serviços nº 082/2025",
+        "Cadastro posterior do projeto selecionado no SigFapes"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "propostaCompleta": "2027-06-14",
+      "agencia": "fapes",
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem título de doutor?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo com instituição de ensino superior ou pesquisa no Espírito Santo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio terá pelo menos 3 parceiros financiados de 3 países diferentes?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O consórcio inclui ao menos 2 entidades de Estados-Membros da UE ou países associados ao Horizon Europe?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "125": {
+      "id": 125,
+      "numero": "Chamada de Propostas BEPE Mestrado – 2026",
+      "titulo": "Bolsa Estágio de Pesquisa no Exterior (BEPE) Mestrado 2026",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "BEPE",
+        "Mestrado",
+        "Bolsa no exterior",
+        "FAPESP",
+        "Estágio de pesquisa",
+        "São Paulo"
+      ],
+      "modalidade": "Bolsa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Bolsa de 6 meses, improrrogável, com manutenção mensal (conforme tabela da FAPESP), passagem aérea econômica e terrestre, seguro-viagem, auxílio instalação (uma mensalidade adicional) e Reserva Técnica de 10% da manutenção. Não cobre taxas escolares nem benefícios para dependentes.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-25",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-11",
+      "prazoNota": "Submissão exclusivamente pelo SAGe até 11/12/2026 (horário limite não informado). A instituição e o supervisor no exterior precisam estar cadastrados no SAGe; o cadastro da instituição leva cerca de 2 dias úteis. Resultados previstos para março de 2027.",
+      "resumo": "A FAPESP seleciona bolsistas de Mestrado para um estágio de pesquisa de 6 meses no exterior, em instituição e grupo de excelência. O estágio deve fazer parte do projeto da Bolsa no País e contribuir com a pesquisa feita em São Paulo. Podem submeter bolsistas FAPESP de Mestrado com Bolsa no País (Regular ou BCO) aprovada até 31/08/2026. Depois do estágio, o bolsista deve voltar ao Brasil e reativar a Bolsa no País por pelo menos 6 meses.",
+      "link": "https://fapesp.br/18417/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026",
+      "fonte": "https://fapesp.br/18417",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Projeto de Pesquisa (contribuição do estágio, objetivos, compatibilidade com o período)",
+          "peso": null
+        },
+        {
+          "nome": "Relatório Científico da Bolsa no País",
+          "peso": null
+        },
+        {
+          "nome": "Histórico Escolar e Acadêmico do Candidato",
+          "peso": null
+        },
+        {
+          "nome": "Supervisor do Estágio no Exterior",
+          "peso": null
+        },
+        {
+          "nome": "Instituição e Grupo de Pesquisa no Exterior",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Projeto de pesquisa do estágio (até 5 páginas, itens a.1 a a.5)",
+        "Currículo resumido e declaração do supervisor no exterior (parecer, aceite e parecer sobre o relatório final)",
+        "Declaração do orientador no País atestando proficiência na língua estrangeira",
+        "Histórico escolar atualizado e relatório científico parcial da Bolsa no País",
+        "Carta de aceite da instituição no exterior, declaração de retorno ao Brasil e procuração pública (na contratação)"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você é bolsista FAPESP de Mestrado (Regular ou BCO) com Bolsa no País aprovada até 31/08/2026?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O estágio no exterior faz parte do projeto da sua Bolsa no País?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem um supervisor no exterior disposto a dar aceite e parecer?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu orientador no Brasil pode atestar sua proficiência na língua estrangeira?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você vai voltar ao Brasil e reativar a Bolsa no País por pelo menos 6 meses após o estágio?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "126": {
+      "id": 126,
+      "numero": "Chamada de Propostas BEPE Iniciação Científica – 2026",
+      "titulo": "Bolsa Estágio de Pesquisa no Exterior (BEPE) para Iniciação Científica 2026",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "BEPE",
+        "Iniciação Científica",
+        "Bolsa no exterior",
+        "FAPESP",
+        "SAGe",
+        "Estágio de pesquisa"
+      ],
+      "modalidade": "Bolsa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Bolsa de 4 meses, improrrogável, no exterior. Cobre manutenção mensal, passagens, seguro-viagem, auxílio instalação (uma mensalidade adicional) e reserva técnica de 10% da manutenção. Os valores da manutenção estão em tabela externa (fapesp.br/17871), que não está no texto.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-25",
+      "abertura": "2026-10-01",
+      "encerramento": "2026-12-11",
+      "prazoNota": "Submissão apenas pelo SAGe até 11/12/2026. A instituição e o supervisor no exterior precisam estar cadastrados no SAGe antes (o cadastro da instituição leva cerca de 2 dias úteis). Carta da instituição estrangeira, procuração e declaração de retorno podem ser entregues na contratação.",
+      "resumo": "A FAPESP seleciona bolsistas de Iniciação Científica para um estágio de pesquisa de 4 meses em instituição estrangeira de excelência. O estágio deve fazer parte do projeto da Bolsa no País. Podem submeter bolsistas FAPESP de IC (Regular ou BCO) com Bolsa no País aprovada até 31/08/2026 e contratada. Depois do estágio, o bolsista volta ao Brasil e reativa a Bolsa no País por pelo menos 4 meses.",
+      "link": "https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-iniciacao-cientifica-2026",
+      "fonte": "https://fapesp.br/18416",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Projeto de Pesquisa (contribuição do estágio, objetivos e compatibilidade com o período)",
+          "peso": null
+        },
+        {
+          "nome": "Relatório Científico da Bolsa no País",
+          "peso": null
+        },
+        {
+          "nome": "Histórico Escolar e Acadêmico do Candidato",
+          "peso": null
+        },
+        {
+          "nome": "Supervisor do Estágio no Exterior",
+          "peso": null
+        },
+        {
+          "nome": "Instituição e Grupo de Pesquisa no Exterior",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Projeto de pesquisa do estágio (itens a.1 a a.5 em até 5 páginas)",
+        "Currículo resumido e declaração do supervisor no exterior (parecer, aceite e parecer sobre o relatório final)",
+        "Declaração do orientador atestando proficiência no idioma",
+        "Histórico escolar atualizado da graduação",
+        "Relatório científico parcial resumido da Bolsa no País",
+        "Carta da instituição no exterior, procuração pública e declaração de retorno (na contratação)"
+      ],
+      "elegibilidade": [
+        {
+          "pergunta": "Você é bolsista FAPESP de Iniciação Científica (Regular ou BCO) com Bolsa no País aprovada até 31/08/2026 e contratada?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O estágio no exterior faz parte do projeto da sua Bolsa no País?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem um supervisor no exterior disposto a dar aceite e parecer?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu orientador pode atestar sua proficiência no idioma?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você vai voltar ao Brasil e reativar a Bolsa no País por pelo menos 4 meses após o estágio?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "127": {
+      "id": 127,
+      "numero": "Chamada Conjunta de Propostas FAPESP/CONFAP/SBEP 2026/2027",
+      "titulo": "Chamada Conjunta FAPESP/CONFAP/SBEP para economia azul sustentável e inovadora",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "economia azul",
+        "oceano",
+        "Horizon Europe",
+        "cooperação internacional",
+        "FAPESP",
+        "SBEP"
+      ],
+      "modalidade": "Auxílio à pesquisa - Regular",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": 600000,
+      "valorNota": "Até R$ 600.000,00 por projeto de 36 meses, sem contar a Reserva Técnica e a Reserva Técnica Institucional. A FAPESP destina até 800 mil euros no total para propostas de pesquisadores de SP (valor em euros, não convertido).",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-24",
+      "abertura": "2026-09-24",
+      "encerramento": "2026-11-16",
+      "prazoNota": "A data limite de 16/11/2026 vale tanto para a FAPESP quanto para a SBEP; não há horário informado. Só quem tiver pré-proposta aprovada pode enviar a proposta completa pelo SAGe.",
+      "resumo": "Chamada transnacional da Sustainable Blue Economy Partnership (SBEP, cofinanciada pelo Horizon Europe) sobre o tema \"Building a sustainable and innovative Blue Economy\". A FAPESP financia pesquisadores do estado de São Paulo que integrem consórcios internacionais. O consórcio precisa ter ao menos duas outras agências de fomento de países distintos e ao menos duas entidades jurídicas independentes de dois Estados-Membros da UE ou Países Associados. A submissão tem duas etapas: pré-proposta e proposta completa.",
+      "link": "https://fapesp.br/18415/chamada-conjunta-de-propostas-fapespconfapsbep-20262027",
+      "fonte": "https://fapesp.br/18415",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Súmula curricular do Pesquisador Responsável em inglês",
+        "Tempo estimado de dedicação semanal (recomendado mínimo de 12h/semana)",
+        "Duração e orçamento total previsto em R$ (sem descritivo)",
+        "Título, pesquisador coordenador do consórcio e sua instituição",
+        "Pre-proposal form da SBEP, submetido pelo coordenador do consórcio na plataforma Biodiversa+",
+        "Consortium Agreement em caso de aprovação"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "elegibilidade": [
+        {
+          "pergunta": "Você é pesquisador com vínculo a instituição no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio internacional tem ao menos duas outras agências de fomento de países distintos?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O consórcio inclui ao menos 2 entidades independentes de dois Estados-Membros da UE ou Países Associados?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "128": {
+      "id": 128,
+      "numero": "Chamada Conjunta de Propostas FAPESP/CONFAP/Water4All 2026-2027",
+      "titulo": "Chamada conjunta FAPESP/CONFAP/Water4All sobre gestão sustentável da água",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Water4All",
+        "água",
+        "Horizon Europe",
+        "cooperação internacional",
+        "CONFAP",
+        "consórcio"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": 600000,
+      "valorNota": "Até R$ 600.000,00 por projeto de 36 meses para o pesquisador em SP, além da Reserva Técnica e da Reserva Técnica Institucional. A FAPESP reserva até 800 mil euros no total para os projetos paulistas aprovados.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-24",
+      "abertura": "2026-09-24",
+      "encerramento": "2026-11-10",
+      "prazoNota": "O prazo de 10/11/2026 vale para a FAPESP e para a Water4All. A pré-proposta vai à Water4All (plataforma etag.ee) pelo coordenador do consórcio, e o pesquisador de SP envia à FAPESP, por e-mail, súmula curricular em inglês, dedicação semanal, duração e orçamento, e título e coordenador. A proposta completa vai depois pelo SAGe, só para quem tiver pré-proposta aprovada.",
+      "resumo": "Chamada transnacional da Water4All, aberta pela FAPESP a convite do CONFAP, para pesquisas sobre gestão sustentável da água. Os tópicos são monitoramento integrado, soluções baseadas na natureza, infraestruturas hídricas inteligentes e sistemas hídricos resilientes. O Pesquisador Responsável deve estar no estado de São Paulo e integrar um consórcio com pelo menos dois parceiros de outros países, com no máximo 7 parceiros. O consórcio precisa incluir pelo menos duas entidades jurídicas independentes de dois Estados-Membros da UE ou Países Associados ao Horizon Europe como beneficiárias do apoio financeiro. Cada pesquisador pode submeter só uma proposta.",
+      "link": "https://fapesp.br/18414/chamada-conjunta-de-propostas-fapespconfapwater4all-2026-2027",
+      "fonte": "https://fapesp.br/18414",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Súmula curricular do Pesquisador Responsável em inglês, enviada por e-mail à FAPESP",
+        "Tempo estimado de dedicação semanal (recomendado mínimo de 12h/semana), com justificativa de concomitância se houver APR vigente",
+        "Duração da proposta e orçamento total previsto em R$ (sem descritivo)",
+        "Pré-proposta no Pre-proposal template da Water4All, submetida pelo coordenador do consórcio",
+        "Consortium Agreement entre as instituições do consórcio, em caso de aprovação"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "elegibilidade": [
+        {
+          "pergunta": "Você é pesquisador com vínculo a instituição no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio tem pelo menos 2 parceiros de outros países e no máximo 7 parceiros?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O consórcio inclui ao menos 2 entidades independentes de dois Estados-Membros da UE ou Países Associados?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Esta será sua única proposta nesta chamada?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "129": {
+      "id": 129,
+      "numero": "Chamada Conjunta FAPESP/CONFAP/Biodiversa+ 2026-2027",
+      "titulo": "Chamada conjunta FAPESP/CONFAP/Biodiversa+ sobre novos ecossistemas (BiodivFuture)",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "internacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Biodiversa+",
+        "biodiversidade",
+        "novos ecossistemas",
+        "cooperação internacional",
+        "Horizon Europe",
+        "CONFAP"
+      ],
+      "modalidade": "Auxílio à pesquisa",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": 600000,
+      "valorNota": "Até R$ 600.000 para projetos de 36 meses ou R$ 400.000 para projetos de 24 meses, sem contar Reserva Técnica e Reserva Técnica Institucional. A FAPESP destina até 800 mil euros no total para propostas de São Paulo.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-02",
+      "abertura": "2026-09-02",
+      "encerramento": "2026-11-10",
+      "prazoNota": "Prazo de 10/11/2026 igual na FAPESP e na Biodiversa+. O coordenador do consórcio submete a pré-proposta na plataforma da Biodiversa+ e o pesquisador de SP envia as informações por e-mail à FAPESP. Só quem tiver pré-proposta aprovada pode enviar a proposta completa pelo SAGe.",
+      "resumo": "Chamada conjunta com a Biodiversa+ (Horizon Europe) para projetos de pesquisa em colaboração internacional sobre novos ecossistemas. Os temas são funcionamento, trajetórias e repartição equitativa dos benefícios da biodiversidade. O Pesquisador Responsável deve atuar em São Paulo e integrar um consórcio com pelo menos outros dois parceiros de países diferentes que financiem a chamada. Pelo menos dois deles devem ser Estados-Membros ou Países Associados da UE. Há duas etapas: pré-proposta e proposta completa.",
+      "link": "https://fapesp.br/18366/chamada-conjunta-de-propostas-fapespconfapbiodiversa-2026-2027",
+      "fonte": "https://fapesp.br/18366",
+      "verificadoEm": "2026-10-31",
+      "docsExtras": [
+        "Súmula curricular do Pesquisador Responsável em inglês",
+        "Estimativa de dedicação semanal (recomendado mínimo de 12h/semana) e justificativa de concomitância, se houver APR vigente",
+        "Duração e orçamento total previsto em R$ (sem descritivo)",
+        "Título da proposta, nome e instituição do coordenador do consórcio",
+        "Pré-proposta no formulário da Biodiversa+, enviada pelo coordenador do consórcio",
+        "Consortium Agreement em caso de aprovação"
+      ],
+      "preProposta": true,
+      "etapaPrazo": "Pré-proposta",
+      "elegibilidade": [
+        {
+          "pergunta": "Você é pesquisador com vínculo a instituição no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu consórcio tem pelo menos outros 2 parceiros, de países diferentes, que financiem a chamada?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Pelo menos 2 desses parceiros são de Estados-Membros da UE ou Países Associados?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "por-proposta",
+      "fluxoContinuo": false
+    },
+    "130": {
+      "id": 130,
+      "titulo": "Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "nacional",
+      "tema": "Cultura",
+      "tags": [
+        "museus",
+        "bolsa",
+        "FAPESP",
+        "acervos",
+        "capacitação",
+        "São Paulo"
+      ],
+      "modalidade": "Bolsa de Aperfeiçoamento de Especialistas",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorTotal": 4000000,
+      "valorNota": "Bolsas para estágios técnicos de 30 a 90 dias (até 2 períodos em 12 ou 24 meses), no estado de SP, em outros estados ou no exterior. Cobrem mensalidades, transporte e seguro viagem (só exterior); os valores das mensalidades são consultados no SAGe.",
+      "contrapartida": "A Instituição Sede deve liberar o bolsista sem prejuízo de vencimentos e apoiar o compartilhamento do conhecimento adquirido. Essa contrapartida deve constar no Plano de Atividades.",
+      "publicadoEm": "2026-09-11",
+      "abertura": "2026-09-15",
+      "encerramento": "2026-11-23",
+      "prazoNota": "Prazo ampliado até 23/11/2026 (o horário-limite não consta no texto). Submissão apenas pelo SAGe; resultados a partir de 08/03/2027.",
+      "resumo": "A FAPESP oferece bolsas para técnicos de museus e instituições de salvaguarda e comunicação de acervos de SP fazerem estágios de 30 a 90 dias. Os estágios podem ser em SP, em outros estados ou no exterior. As áreas são educação museal, conservação, documentação museológica e expografia. O bolsista deve ter diploma de nível superior e vínculo empregatício com a instituição sede, em SP. O estágio deve ser em cidade diferente da do vínculo.",
+      "link": "https://fapesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-especialistas-que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-de-acervos-sediadas-no-estado-de-sao-paulo",
+      "fonte": "https://fapesp.br/18387",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Relevância do estágio técnico para a qualificação profissional do bolsista",
+          "peso": null
+        },
+        {
+          "nome": "Contribuição do compartilhamento do conhecimento adquirido à Instituição Sede",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Carta de Anuência da Instituição Sede",
+        "Carta de Anuência da Instituição Parceira",
+        "Declaração de responsabilidade do bolsista sobre a manutenção do vínculo com a instituição sede",
+        "Plano de Atividades (modelo no SAGe)",
+        "Declaração de Proficiência em Língua Estrangeira (estágios no exterior)"
+      ],
+      "numero": "Chamada FAPESP – Aperfeiçoamento de especialistas em museus",
+      "elegibilidade": [
+        {
+          "pergunta": "Você tem diploma de nível superior?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Você tem vínculo empregatício com museu ou instituição de acervos sediada no estado de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O estágio será em cidade diferente da do seu vínculo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Sua instituição vai liberá-lo sem prejuízo de vencimentos e dar carta de anuência?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O estágio terá de 30 a 90 dias?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "131": {
+      "id": 131,
+      "titulo": "Bolsas de Pós-Doutorado UNESCO-TWAS/FAPESP para pesquisadores de países em desenvolvimento",
+      "instituicao": "FAPESP",
+      "agencia": "fapesp",
+      "procedencia": "internacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "pós-doutorado",
+        "UNESCO-TWAS",
+        "cooperação internacional",
+        "países em desenvolvimento",
+        "São Paulo",
+        "bolsas",
+        "Candidatos estrangeiros de países em desenvolvimento"
+      ],
+      "modalidade": "Bolsa de Pós-Doutorado",
+      "publico": [
+        "pesquisador"
+      ],
+      "abrangencia": "São Paulo",
+      "ufs": [
+        "SP"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Até 20 bolsas de pós-doutorado de 12 meses, sem renovação. A FAPESP paga mensalidades (Tabela de Valores de Bolsas no País), auxílio instalação e passagens; a UNESCO-TWAS cobre as despesas de visto; não há Reserva Técnica nem BEPE.",
+      "contrapartida": "Não informada",
+      "publicadoEm": "2026-09-02",
+      "abertura": "2026-09-02",
+      "encerramento": "2026-11-01",
+      "prazoNota": "Manifestação de interesse do supervisor por e-mail (chamada-twas@fapesp.br) até 01/11/2026. O SAGe abre em 01/12/2026 e a proposta completa deve ser submetida até 01/04/2027. O horário limite não é informado.",
+      "resumo": "A FAPESP e a UNESCO-TWAS oferecem até 20 bolsas de pós-doutorado de 12 meses para pesquisadores de países em desenvolvimento (exceto o Brasil), em todas as áreas das ciências naturais, aplicadas e sociais. Os supervisores são pesquisadores responsáveis ou principais de auxílios FAPESP vigentes em instituições de São Paulo. Os candidatos a bolsista devem ter doutorado há no máximo 7 anos e não podem estar no Brasil nem ter visto de residência no Brasil ou em país desenvolvido. Devem também ter proficiência em inglês e se comprometer a voltar ao país de origem ao fim da bolsa.",
+      "link": "https://fapesp.br/18365/chamada-de-propostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisadores-de-paises-em-desenvolvimento",
+      "fonte": "https://fapesp.br/18365",
+      "verificadoEm": "2026-10-31",
+      "criterios": [
+        {
+          "nome": "Mérito e relevância da proposta (projeto de pesquisa)",
+          "peso": null
+        },
+        {
+          "nome": "Perfil do candidato a bolsista",
+          "peso": null
+        },
+        {
+          "nome": "Perfil do supervisor",
+          "peso": null
+        },
+        {
+          "nome": "Relação com o projeto vigente apoiado pela FAPESP",
+          "peso": null
+        },
+        {
+          "nome": "Equilíbrio de gênero entre os selecionados (decisão final)",
+          "peso": null
+        }
+      ],
+      "docsExtras": [
+        "Formulário de manifestação de interesse enviado por e-mail (nome, nº do auxílio FAPESP vigente, vigência, resumo em inglês)",
+        "Auxílio FAPESP vigente indicado como processo vinculado, ativo por pelo menos 6 meses após o início do pós-doc",
+        "Declaração de Apoio Institucional assinada pelo Dirigente da Instituição Sede",
+        "Projeto de pesquisa do bolsista em até 4 páginas, em inglês, e Plano de Gestão de Dados de até 2 páginas",
+        "Declaração do supervisor atestando a proficiência em inglês do bolsista",
+        "Anexo II sobre a infraestrutura institucional e manifestação do Dirigente da Instituição Sede"
+      ],
+      "preProposta": true,
+      "numero": "Chamada UNESCO-TWAS/FAPESP 2026",
+      "etapaPrazo": "Manifestação de interesse",
+      "propostaCompleta": "2027-04-01",
+      "elegibilidade": [
+        {
+          "pergunta": "Você (supervisor) é pesquisador responsável ou principal de auxílio FAPESP vigente em instituição de São Paulo?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "Seu auxílio FAPESP ficará ativo por pelo menos 6 meses após o início do pós-doutorado?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O candidato é de país em desenvolvimento (que não o Brasil) e doutor há no máximo 7 anos?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O candidato está fora do Brasil e não tem visto de residência no Brasil nem em país desenvolvido?",
+          "esperado": true,
+          "eliminatoria": true
+        },
+        {
+          "pergunta": "O candidato tem proficiência em inglês e vai voltar ao país de origem ao fim da bolsa?",
+          "esperado": true,
+          "eliminatoria": true
+        }
+      ],
+      "fonteRecurso": "misto",
+      "tipoValor": "bolsa",
+      "fluxoContinuo": false
+    },
+    "1055941": {
+      "id": 1055941,
+      "numero": "Programa Transferegov 2629820260001",
+      "titulo": "Programa SIMEC/PAR",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de compromisso"
+      ],
+      "modalidade": "Termo de compromisso",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-10-27",
+      "abertura": "2026-01-02",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2629820260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Atendimento das demandas do PAR 4 por meio do Sistema Integrado de Monitoramento, Execu??o e Controle do MEC - SIMEC.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2629820260001.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55941",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Estados e munic?pios que tenham realizado o diagn?stico da sua rede educacional e enviado planejamentos para an?lise do FNDE, por meio do m?dulo PAR - SIMEC, visando a melhoria dos indicadores educaci"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2629820260001",
+      "objeto": "Atendimento das demandas do PAR 4 por meio do Sistema Integrado de Monitoramento, Execu??o e Controle do MEC - SIMEC.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "ES",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica ES. Confira no programa antes de propor."
+    },
+    "1055945": {
+      "id": 1055945,
+      "numero": "Programa Transferegov 2629120260001",
+      "titulo": "Programa Brasileiro de Professores no CERN",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de fomento"
+      ],
+      "modalidade": "Termo de fomento",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-01-15",
+      "abertura": "2026-01-02",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2629120260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "O Programa Brasileiro de Professores no CERN é voltado à formação de professores brasileiros que lecionam Física e Ciências na rede pública de educação básica, mediante oferta de atividades formativas realizadas no Laboratório Europeu de Física de Partículas (CERN), em Genebra, Suíça. O Programa CERN visa fortalecer a formação científica de docentes brasileiros, promover o intercâmbio internacional em ciência e educação, ampliar o impacto na educação básica do conhecimento produzido na área da física contemporânea e fomentar o interesse dos estudantes pela ciência e pela tecnologia, em benefíc",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260001.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55945",
+      "verificadoEm": "2026-11-01",
+      "criterios": [],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2629120260001",
+      "objeto": "O Programa Brasileiro de Professores no CERN é voltado à formação de professores brasileiros que lecionam Física e Ciências na rede pública de educação básica, mediante oferta de atividades formativas realizadas no Laboratório Europeu de Física de Partículas (CERN), em Genebra, Suíça. O Programa CERN visa fortalecer a formação científica de docentes brasileiros, promover o intercâmbio internacional em ciência e educação, ampliar o impacto na educação básica do conhecimento produzido na área da física contemporânea e fomentar o interesse dos estudantes pela ciência e pela tecnologia, em benefíc",
+      "abrangencia": "Não informada",
+      "ufCadastro": "MT",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor."
+    },
+    "1055966": {
+      "id": 1055966,
+      "numero": "Programa Transferegov 2629120260002",
+      "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de fomento"
+      ],
+      "modalidade": "Termo de fomento",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-01-16",
+      "abertura": "2026-01-16",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2629120260002. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente:- a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica;- a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos;- o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Univ",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260002.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55966",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB), do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB)"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2629120260002",
+      "objeto": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente:- a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica;- a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos;- o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Univ",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PA. Confira no programa antes de propor."
+    },
+    "1055990": {
+      "id": 1055990,
+      "numero": "Programa Transferegov 5300020260001",
+      "titulo": "Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2",
+      "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-19",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "prazoNota": "Código do programa: 5300020260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260001.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55990",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "5300020260001",
+      "objeto": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor."
+    },
+    "1055992": {
+      "id": 1055992,
+      "numero": "Programa Transferegov 5300020260002",
+      "titulo": "Ação 214S - Rotas de Integração Nacional - RP2",
+      "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "estado"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-19",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "prazoNota": "Código do programa: 5300020260002. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "As Rotas de Integração Nacional são redes de Arranjos Produtivos Locais - APLs. Os beneficiários da Ação são produtores e população das áreas de abrangência dos Polos das Rotas de Integração Nacional. Poderão ser apoiadas ações de qualificação técnica e gerencial dos atores vinculados às cadeias produtivas apoiadas pela iniciativa Rotas de Integração Nacional (Portaria nº 080/2018-MI): cursos, palestras, capacitações, oficinas, workshop, treinamentos e dias de campo, como: a) Fortalecimento do cooperativismo e associativismo: cursos, palestras, capacitações, oficinas, workshop, treinamentos e ",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260002.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55992",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "5300020260002",
+      "objeto": "As Rotas de Integração Nacional são redes de Arranjos Produtivos Locais - APLs. Os beneficiários da Ação são produtores e população das áreas de abrangência dos Polos das Rotas de Integração Nacional. Poderão ser apoiadas ações de qualificação técnica e gerencial dos atores vinculados às cadeias produtivas apoiadas pela iniciativa Rotas de Integração Nacional (Portaria nº 080/2018-MI): cursos, palestras, capacitações, oficinas, workshop, treinamentos e dias de campo, como: a) Fortalecimento do cooperativismo e associativismo: cursos, palestras, capacitações, oficinas, workshop, treinamentos e ",
+      "abrangencia": "Não informada",
+      "ufCadastro": "SE",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SE. Confira no programa antes de propor."
+    },
+    "1055995": {
+      "id": 1055995,
+      "numero": "Programa Transferegov 5300020260004",
+      "titulo": "Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2",
+      "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "estado"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-19",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "prazoNota": "Código do programa: 5300020260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Apoio à implantação de infraestrutura básica, produtiva e social nos municípios da área de abrangência do Programa Calha Norte, compreendendo, de forma não exaustiva, a construção, ampliação ou adequação de obras de infraestrutura viária e produtiva, incluindo pavimentação de vias urbanas e rurais, obras rodoviárias estaduais e municipais, estruturas de engenharia, de apoio à produção sustentável e de integração urbana, a exemplo de orlas públicas em áreas ribeirinhas e costeiras. Abrange, ainda, a aquisição de máquinas, equipamentos, veículos e outros bens permanentes de interesse público; o ",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260004.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55995",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "5300020260004",
+      "objeto": "Apoio à implantação de infraestrutura básica, produtiva e social nos municípios da área de abrangência do Programa Calha Norte, compreendendo, de forma não exaustiva, a construção, ampliação ou adequação de obras de infraestrutura viária e produtiva, incluindo pavimentação de vias urbanas e rurais, obras rodoviárias estaduais e municipais, estruturas de engenharia, de apoio à produção sustentável e de integração urbana, a exemplo de orlas públicas em áreas ribeirinhas e costeiras. Abrange, ainda, a aquisição de máquinas, equipamentos, veículos e outros bens permanentes de interesse público; o ",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PA. Confira no programa antes de propor."
+    },
+    "1056045": {
+      "id": 1056045,
+      "numero": "Programa Transferegov 2200020260004",
+      "titulo": "Fomento ao Setor Agropecuário - Propostas Voluntárias",
+      "instituicao": "Ministério da Agricultura e Pecuária",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Contrato de repasse"
+      ],
+      "modalidade": "Contrato de repasse",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-09",
+      "abertura": "2026-02-09",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2200020260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de ações de custeio e investimentos em infraestrutura, capacitação, insumos, máquinas e equipamentos. As ações contempladas incluem: Custeio de atividades agropecuárias, por meio do financiamento de: Realização de eventos técnicos e promocionais; Programas de capacitação para produtores; Aquisição de insumos agropecuários. Aquisição de máquinas e equipamentos agrícolas e agroindustriais, com foco no fortalecimento da produção, transformação, comercialização e distribuição de produtos, ",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260004.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56045",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2200020260004",
+      "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de ações de custeio e investimentos em infraestrutura, capacitação, insumos, máquinas e equipamentos. As ações contempladas incluem: Custeio de atividades agropecuárias, por meio do financiamento de: Realização de eventos técnicos e promocionais; Programas de capacitação para produtores; Aquisição de insumos agropecuários. Aquisição de máquinas e equipamentos agrícolas e agroindustriais, com foco no fortalecimento da produção, transformação, comercialização e distribuição de produtos, ",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor."
+    },
+    "1056046": {
+      "id": 1056046,
+      "numero": "Programa Transferegov 2200020260005",
+      "titulo": "Fomento ao Setor Agropecuário - Propostas Voluntárias - Termo de Fomento",
+      "instituicao": "Ministério da Agricultura e Pecuária",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de fomento"
+      ],
+      "modalidade": "Termo de fomento",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-02-09",
+      "abertura": "2026-02-09",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2200020260005. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "O Programa tem como objetivo apoiar e incentivar projetos de fomento ao setor agropecuário, por meio de investimentos na aquisição e fornecimento de máquinas e equipamentos agrícolas, bem como de ações de custeio voltadas à realização de eventos, capacitações, aquisição de insumos agrícolas e implantação de hortas comunitárias. As iniciativas devem estar em conformidade com os objetos financiáveis definidos na Ação 20ZV – Fomento ao Setor Agropecuário, na Instrução Normativa MAPA nº 25, de 12 de julho de 2023, na Lei nº 13.019/2014 e no Decreto nº 8.726/2016. A principal finalidade do Programa",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260005.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56046",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2200020260005",
+      "objeto": "O Programa tem como objetivo apoiar e incentivar projetos de fomento ao setor agropecuário, por meio de investimentos na aquisição e fornecimento de máquinas e equipamentos agrícolas, bem como de ações de custeio voltadas à realização de eventos, capacitações, aquisição de insumos agrícolas e implantação de hortas comunitárias. As iniciativas devem estar em conformidade com os objetos financiáveis definidos na Ação 20ZV – Fomento ao Setor Agropecuário, na Instrução Normativa MAPA nº 25, de 12 de julho de 2023, na Lei nº 13.019/2014 e no Decreto nº 8.726/2016. A principal finalidade do Programa",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor."
+    },
+    "1056079": {
+      "id": 1056079,
+      "numero": "Programa Transferegov 2200020260006",
+      "titulo": "Programa Nacional de Estradas Rurais - PRONER",
+      "instituicao": "Ministério da Agricultura e Pecuária",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-09",
+      "abertura": "2026-02-11",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2200020260006. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260006.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56079",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "As propostas apresentadas no âmbito do Programa Nacional de Estradas Rurais – PRONER serão analisadas e priorizadas conforme os critérios técnicos estabelecidos na Portaria MAPA nº 915, de 1º de junho"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2200020260006",
+      "objeto": "O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor."
+    },
+    "1056107": {
+      "id": 1056107,
+      "numero": "Programa Transferegov 2200020260018",
+      "titulo": "Fomento ao Setor Agropecuário - Proposta Voluntária - Obras de Fomento",
+      "instituicao": "Ministério da Agricultura e Pecuária",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Contrato de repasse"
+      ],
+      "modalidade": "Contrato de repasse",
+      "publico": [
+        "estado"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-10",
+      "abertura": "2026-02-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2200020260018. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260018.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56107",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2200020260018",
+      "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor."
+    },
+    "1056156": {
+      "id": 1056156,
+      "numero": "Programa Transferegov 2200020260022",
+      "titulo": "Programa Nacional de Modernização e Apoio à Produção Agrícola - PROMAQ",
+      "instituicao": "Ministério da Agricultura e Pecuária",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de compromisso"
+      ],
+      "modalidade": "Termo de compromisso",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-02-11",
+      "abertura": "2026-02-11",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2200020260022. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "O Programa Nacional de Modernização e Apoio à Produção Agrícola (PROMAQ), instituído pela Portaria MAPA nº 775/2025, é uma política pública estratégica voltada para o desenvolvimento do agronegócio brasileiro através da modernização tecnológica do campo. Coordenado pela Subsecretaria de Orçamento, Planejamento e Administração do MAPA, o programa atua em todo o território nacional com ênfase nas regiões de menor desenvolvimento agrícola. Seus objetivos principais incluem ampliar o acesso a tecnologias agrícolas modernas, aumentar a produtividade rural por meio da mecanização, promover práticas ",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260022.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56156",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Conforme critérios e procedimentos estabelecidos na Instrução Normativa SPOA/SE/MAPA n° 2, de 11 de abril de 2025, são eles: 1) Foco em regiões com menor índice de mecanização agrícola e menor partici"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2200020260022",
+      "objeto": "O Programa Nacional de Modernização e Apoio à Produção Agrícola (PROMAQ), instituído pela Portaria MAPA nº 775/2025, é uma política pública estratégica voltada para o desenvolvimento do agronegócio brasileiro através da modernização tecnológica do campo. Coordenado pela Subsecretaria de Orçamento, Planejamento e Administração do MAPA, o programa atua em todo o território nacional com ênfase nas regiões de menor desenvolvimento agrícola. Seus objetivos principais incluem ampliar o acesso a tecnologias agrícolas modernas, aumentar a produtividade rural por meio da mecanização, promover práticas ",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor."
+    },
+    "1056385": {
+      "id": 1056385,
+      "numero": "Programa Transferegov 2629120260003",
+      "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-05-03",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2629120260003. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente: - a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica; - a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260003.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56385",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Instituições de ensino partícipes do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB), e dos projetos especiais voltados para a inova"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2629120260003",
+      "objeto": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente: - a indução do aprimoramento, da proposição e da disseminação de tecnologias inovadoras nos contextos educacionais, por meio de programas estratégicos na educação superior e na educação profissional e tecnológica; - a disseminação de tecnologias educacionais inovadoras com vistas ao aprimoramento dos profissionais da educação básica e demais agentes públicos.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PA. Confira no programa antes de propor."
+    },
+    "1056386": {
+      "id": 1056386,
+      "numero": "Programa Transferegov 2629120260004",
+      "titulo": "Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-03-12",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2629120260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Universidade Aberta do Brasil - UAB.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260004.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56386",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB)."
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2629120260004",
+      "objeto": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Universidade Aberta do Brasil - UAB.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "BA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica BA. Confira no programa antes de propor."
+    },
+    "1056398": {
+      "id": 1056398,
+      "numero": "Programa Transferegov 2220120260010",
+      "titulo": "Infra-Estrutura Básica – SR(BA) Superintendência Regional do INCRA na Bahia– Convênio.",
+      "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-05-26",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220120260010. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260010.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56398",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220120260010",
+      "objeto": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "abrangencia": "BA",
+      "ufs": [
+        "BA"
+      ]
+    },
+    "1056401": {
+      "id": 1056401,
+      "numero": "Programa Transferegov 2220120260013",
+      "titulo": "Infra-Estrutura Básica – SR(SP) Superintendência Regional do INCRA de São Paulo– Convênio",
+      "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-06-25",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220120260013. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260013.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56401",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220120260013",
+      "objeto": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "abrangencia": "SP",
+      "ufs": [
+        "SP"
+      ]
+    },
+    "1056402": {
+      "id": 1056402,
+      "numero": "Programa Transferegov 2220120260014",
+      "titulo": "Infra-Estrutura Básica – SR(PR) Superintendência Regional do INCRA no Paraná– Convênio.",
+      "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-04-09",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220120260014. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260014.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56402",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220120260014",
+      "objeto": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "abrangencia": "PR",
+      "ufs": [
+        "PR"
+      ]
+    },
+    "1056404": {
+      "id": 1056404,
+      "numero": "Programa Transferegov 2220120260016",
+      "titulo": "Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.",
+      "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Infraestrutura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-05-07",
+      "abertura": "2026-03-10",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220120260016. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260016.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56404",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220120260016",
+      "objeto": "Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.",
+      "abrangencia": "RS",
+      "ufs": [
+        "RS"
+      ]
+    },
+    "1056427": {
+      "id": 1056427,
+      "numero": "Programa Transferegov 2800020260010",
+      "titulo": "Industrialização da Cadeia Produtiva do Pirarucu",
+      "instituicao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de colaboração"
+      ],
+      "modalidade": "Termo de colaboração",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-10-16",
+      "abertura": "2026-10-16",
+      "encerramento": "2026-11-16",
+      "prazoNota": "Código do programa: 2800020260010. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "O termo de colaboração terá por objeto a concessão de apoio da Administração Pública para a execução de projeto voltado ao desenvolvimento alternativo na região do Vale do Javari, por meio de atividades de industrialização da cadeia produtiva do pirarucu, com a finalidade de diminuir a vulnerabilidade dos povos indígenas e comunidades ribeirinhas aos riscos associados ao tráfico de drogas e crimes correlatos, conforme diretrizes do Programa Território Seguro, Amazônia Soberana.Objetivos específicos da parceria:a) Implementação de estrutura física para pré-processamento industrial do Pirarucu, ",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2800020260010.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56427",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "(A) Informações sobre ações a serem executadas, metas a serem atingidas, indicadores que aferirão o cumprimento das metas e prazos para a execução das ações e para o cumprimento das metas.(B) Descriçã"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2800020260010",
+      "objeto": "O termo de colaboração terá por objeto a concessão de apoio da Administração Pública para a execução de projeto voltado ao desenvolvimento alternativo na região do Vale do Javari, por meio de atividades de industrialização da cadeia produtiva do pirarucu, com a finalidade de diminuir a vulnerabilidade dos povos indígenas e comunidades ribeirinhas aos riscos associados ao tráfico de drogas e crimes correlatos, conforme diretrizes do Programa Território Seguro, Amazônia Soberana.Objetivos específicos da parceria:a) Implementação de estrutura física para pré-processamento industrial do Pirarucu, ",
+      "abrangencia": "Não informada",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor."
+    },
+    "1056676": {
+      "id": 1056676,
+      "numero": "Programa Transferegov 2220120260048",
+      "titulo": "Fomento ao Setor Agropecuário – Investimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(11)Rs– Convênio.",
+      "instituicao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Agronegocio",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-06-30",
+      "abertura": "2026-06-30",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220120260048. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260048.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56676",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220120260048",
+      "objeto": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural.",
+      "abrangencia": "PA",
+      "ufs": [
+        "PA"
+      ]
+    },
+    "1056721": {
+      "id": 1056721,
+      "numero": "Programa Transferegov 2220320260043",
+      "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
+      "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "municipio"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-07-13",
+      "abertura": "2026-07-13",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220320260043. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "O Programa 2321 - Recursos Hídricos: Água em Quantidade e Qualidade para sempre: PT 18.544.2321.7G88.0022 por intermédio da Ação: Construção da Barragem Atalaia no Estado do Piauí, tem por finalidade a implantação da Barragem Atalaia e suas estruturas associadas, bem como ações e estudos complementares, regularização fundiária, jurídica, ambiental, socioeconômica, dentre outras ações para abastecimento de água dos Municípios circunvizinhos de Sebastião Barros, Corrente e Cristalândia do Piauí, irrigação à montante e jusante da barragem, aproveitamento hidroagrícola em torno lago, implantação d",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260043.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56721",
+      "verificadoEm": "2026-11-01",
+      "criterios": [],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220320260043",
+      "objeto": "O Programa 2321 - Recursos Hídricos: Água em Quantidade e Qualidade para sempre: PT 18.544.2321.7G88.0022 por intermédio da Ação: Construção da Barragem Atalaia no Estado do Piauí, tem por finalidade a implantação da Barragem Atalaia e suas estruturas associadas, bem como ações e estudos complementares, regularização fundiária, jurídica, ambiental, socioeconômica, dentre outras ações para abastecimento de água dos Municípios circunvizinhos de Sebastião Barros, Corrente e Cristalândia do Piauí, irrigação à montante e jusante da barragem, aproveitamento hidroagrícola em torno lago, implantação d",
+      "abrangencia": "Não informada",
+      "ufCadastro": "PI",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PI. Confira no programa antes de propor."
+    },
+    "1056725": {
+      "id": 1056725,
+      "numero": "Programa Transferegov 2220320260044",
+      "titulo": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp",
+      "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Desenvolvimento",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "estado"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-07-14",
+      "abertura": "2026-07-14",
+      "encerramento": "2026-12-31",
+      "prazoNota": "Código do programa: 2220320260044. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: PT 15.244.2317.00SX.0001 por intermédio da Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado, tem por finalidade o apoio à infraestrutura produtiva, compreendendo: construção e pavimentação de vias (estradas vicinais) e obras rodoviárias estaduais e municipais destinadas à integração de modais de transporte ou ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnolo",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260044.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56725",
+      "verificadoEm": "2026-11-01",
+      "criterios": [],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2220320260044",
+      "objeto": "2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e Ordenamento Territorial: PT 15.244.2317.00SX.0001 por intermédio da Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado, tem por finalidade o apoio à infraestrutura produtiva, compreendendo: construção e pavimentação de vias (estradas vicinais) e obras rodoviárias estaduais e municipais destinadas à integração de modais de transporte ou ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnolo",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor."
+    },
+    "1056755": {
+      "id": 1056755,
+      "numero": "Programa Transferegov 4400020260013",
+      "titulo": "Prospera Amazônia",
+      "instituicao": "Ministério do Meio Ambiente",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de colaboração"
+      ],
+      "modalidade": "Termo de colaboração",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-07-02",
+      "abertura": "2026-08-03",
+      "encerramento": "2026-12-01",
+      "prazoNota": "Código do programa: 4400020260013. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "O objetivo do presente edital é a seleção de redes multi-institucionais para implementação de núcleos de desenvolvimento da sociobioeconomia na Amazônia-Prospera Amazônia, para submissão de projetos ao Fundo Amazônia, gerido pelo BNDES.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 4400020260013.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56755",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "conforme Edital nº 2/2026 - Prospera Amazônia (anexo), nos itens:2. Objetivo do Edital, Público Beneficiário final e incidência territorial;3. Aspectos conceituais e operacionais sobre sociobioeconomi"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "4400020260013",
+      "objeto": "O objetivo do presente edital é a seleção de redes multi-institucionais para implementação de núcleos de desenvolvimento da sociobioeconomia na Amazônia-Prospera Amazônia, para submissão de projetos ao Fundo Amazônia, gerido pelo BNDES.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "RO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RO. Confira no programa antes de propor."
+    },
+    "1056835": {
+      "id": 1056835,
+      "numero": "Programa Transferegov 2041120260009",
+      "titulo": "Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional",
+      "instituicao": "Ministério da Cultura",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Cultura",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de colaboração"
+      ],
+      "modalidade": "Termo de colaboração",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-09-30",
+      "abertura": "2026-09-30",
+      "encerramento": "2026-11-03",
+      "prazoNota": "Código do programa: 2041120260009. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "Execução de projeto de produção de documentário audiovisual de caráter educativo, científico e institucional, que evidencie como os arranjos institucionais associados ao desenvolvimento do setor espacial brasileiro, com destaque para a trajetória da Alcântara Cyclone Space, contribuíram para a formação de capacidades científicas, tecnológicas e organizacionais no país, e para a promoção da educação científica, da cultura de inovação e do interesse de estudantes e jovens por áreas STEM (ciência, tecnologia, engenharia e matemática), sobretudo com reflexos no município de Alcântara/MA.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2041120260009.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56835",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Conforme Edital de Chamamento Público nº 1/2026"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2041120260009",
+      "objeto": "Execução de projeto de produção de documentário audiovisual de caráter educativo, científico e institucional, que evidencie como os arranjos institucionais associados ao desenvolvimento do setor espacial brasileiro, com destaque para a trajetória da Alcântara Cyclone Space, contribuíram para a formação de capacidades científicas, tecnológicas e organizacionais no país, e para a promoção da educação científica, da cultura de inovação e do interesse de estudantes e jovens por áreas STEM (ciência, tecnologia, engenharia e matemática), sobretudo com reflexos no município de Alcântara/MA.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "SP",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SP. Confira no programa antes de propor."
+    },
+    "1056851": {
+      "id": 1056851,
+      "numero": "Programa Transferegov 2624920260003",
+      "titulo": "Rede Multidisciplinar de Atenção a Mães e Familiares Vítimas de Desaparecimentos Forçados e da Violência de Estado na Baixada Fluminense",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de colaboração"
+      ],
+      "modalidade": "Termo de colaboração",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-10-14",
+      "abertura": "2026-10-14",
+      "encerramento": "2026-11-13",
+      "prazoNota": "Código do programa: 2624920260003. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "O projeto tem por objetivo oferecer atendimentos psicossocial, jurídico e assistencia social qualificados a mães e familiares de vítimas de violencia estatal e desaparecimentos forçados, incluindo em ambos os casos a violencia na o estatal resultante da conivencia, participação direta ou omissa o do Estado, fortalecendo redes de apoio, analisar pra ticas de cuidado existentes, identificando desafios teoricos e metodologicos, identificar redes de atenção psicosssocial com as quais se possa desenvolver interações e parcerias, e desenvolver ações no campo da arteterapia, escrevive ncia (escrita d",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260003.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56851",
+      "verificadoEm": "2026-11-01",
+      "criterios": [],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2624920260003",
+      "objeto": "O projeto tem por objetivo oferecer atendimentos psicossocial, jurídico e assistencia social qualificados a mães e familiares de vítimas de violencia estatal e desaparecimentos forçados, incluindo em ambos os casos a violencia na o estatal resultante da conivencia, participação direta ou omissa o do Estado, fortalecendo redes de apoio, analisar pra ticas de cuidado existentes, identificando desafios teoricos e metodologicos, identificar redes de atenção psicosssocial com as quais se possa desenvolver interações e parcerias, e desenvolver ações no campo da arteterapia, escrevive ncia (escrita d",
+      "abrangencia": "Não informada",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor."
+    },
+    "1056853": {
+      "id": 1056853,
+      "numero": "Programa Transferegov 4420520260001",
+      "titulo": "Recursos Hídricos: Água em Quantidade e Qualidade para Sempre",
+      "instituicao": "Ministério da Integração e do Desenvolvimento Regional",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Meio Ambiente",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de colaboração"
+      ],
+      "modalidade": "Termo de colaboração",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-10-21",
+      "abertura": "2026-10-21",
+      "encerramento": "2026-11-23",
+      "prazoNota": "Código do programa: 4420520260001. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "Assegurar a disponibilidade de água em padrões de qualidade e quantidade adequados aos usos múltiplos (como abastecimento humano, dessedentação animal, agricultura e indústria), por meio de infraestrutura adequada, conservação, recuperação e uso racional dos recursos naturais.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 4420520260001.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56853",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Critérios de seleção descritos no item 7 do Edital do Chamamento Público"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "4420520260001",
+      "objeto": "Assegurar a disponibilidade de água em padrões de qualidade e quantidade adequados aos usos múltiplos (como abastecimento humano, dessedentação animal, agricultura e indústria), por meio de infraestrutura adequada, conservação, recuperação e uso racional dos recursos naturais.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor."
+    },
+    "1056868": {
+      "id": 1056868,
+      "numero": "Programa Transferegov 2624920260004",
+      "titulo": "Ri para Todos: Diplomacia Popular, Cidadania Global e Democratização das Relações Internacionais",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Termo de colaboração"
+      ],
+      "modalidade": "Termo de colaboração",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Não é exigida em dinheiro nas parcerias com OSC (MROSC); pode haver em bens e serviços. Confira as regras do programa",
+      "publicadoEm": "2026-10-28",
+      "abertura": "2026-10-28",
+      "encerramento": "2026-11-28",
+      "prazoNota": "Código do programa: 2624920260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "RI para todos: diplomacia popular, cidadania global e democratização das Relações Internacionais. O projeto parte da premissa que vivemos em um contexto internacional caracterizado por profundas transformaçoes geopolíticas, marcado pelo recrudescimento de conflitos armados, crises humanitarias, deslocamentos forçados, mudanças clima ticas, insegurança alimentar, pandemias, avanço da desinformaçao e crescimento de discursos de intolerancia e polarizaçao. Essas questoes, antes percebidas como distantes do cotidiano, produzem impactos diretos sobre a vida das pessoas, das cidades e das instituiço",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260004.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56868",
+      "verificadoEm": "2026-11-01",
+      "criterios": [],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2624920260004",
+      "objeto": "RI para todos: diplomacia popular, cidadania global e democratização das Relações Internacionais. O projeto parte da premissa que vivemos em um contexto internacional caracterizado por profundas transformaçoes geopolíticas, marcado pelo recrudescimento de conflitos armados, crises humanitarias, deslocamentos forçados, mudanças clima ticas, insegurança alimentar, pandemias, avanço da desinformaçao e crescimento de discursos de intolerancia e polarizaçao. Essas questoes, antes percebidas como distantes do cotidiano, produzem impactos diretos sobre a vida das pessoas, das cidades e das instituiço",
+      "abrangencia": "Não informada",
+      "ufCadastro": "RN",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RN. Confira no programa antes de propor."
+    },
+    "1056871": {
+      "id": 1056871,
+      "numero": "Programa Transferegov 2624420260017",
+      "titulo": "Edupol-IA: Pesquisa Educação, Cultura Política, Democracia e Inteligência Artificial no Brasil de Hoje: Valores em Mudança",
+      "instituicao": "Ministério da Educação",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Educação",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "osc"
+      ],
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-10-29",
+      "abertura": "2026-10-29",
+      "encerramento": "2026-11-06",
+      "prazoNota": "Código do programa: 2624420260017. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "resumo": "Execução do Projeto, conforme Plano de Trabalho aprovado pelo órgão financiador e pela UFRGS a serexecutado por uma fundação de apoio - Serviços de Terceiros – Pessoa Jurídica.",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 2624420260017.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56871",
+      "verificadoEm": "2026-11-01",
+      "criterios": [
+        {
+          "nome": "Fundação de Apoio, devidamente credenciada na UFRGS como fundação de apoio, nos termos da Decisão 049/2014, de 10 de janeiro de 2014, do egrégio Conselho Universitário da UFRGS.Fundação de apoio devid"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "2624420260017",
+      "objeto": "Execução do Projeto, conforme Plano de Trabalho aprovado pelo órgão financiador e pela UFRGS a serexecutado por uma fundação de apoio - Serviços de Terceiros – Pessoa Jurídica.",
+      "abrangencia": "Não informada",
+      "ufCadastro": "RS",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RS. Confira no programa antes de propor."
+    }
+  }
+}

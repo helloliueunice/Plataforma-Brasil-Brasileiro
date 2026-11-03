@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-UBggQf1pc7yOuWksQjNkoYPxs8LXddcY2c9Lr+9wJDs=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-1wDYZpINE1qzktjwHkjdBBIdA2MR1FPZO9Y8byZszPg=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +65,8 @@
             <li><strong>Apoio voluntário.</strong> Contribuições por Pix ou Apoia.se são doações ao projeto: não dão acesso a serviços, prioridade na curadoria nem tratamento diferenciado. O plano Pro anunciado como “em breve” ainda não é vendido; a lista de espera não gera cobrança.</li>
             <li><strong>Serviços (consultorias e softwares)</strong> só são anunciados no espaço “Serviços”, com o selo “Publicidade · Serviço”, separado das listas de editais e nunca ao lado de uma chamada.</li>
             <li><strong>Licença dos dados abertos.</strong> A licença CC BY 4.0 cobre a seleção, a organização e os textos próprios do Fundos Brasil. Textos oficiais, nomes e marcas de terceiros não são licenciados por nós; atos oficiais são de domínio público (Lei 9.610/1998, art. 8º, IV). Detalhes em <a href="../dados/">Dados abertos</a>.</li>
-            <li><strong>Resumo semanal</strong> é a página <a href="../semana/">Resumo da semana</a> e os feeds RSS do site: não há envio por e-mail nem lista de contatos.</li>
+            <li><strong>Resumo semanal</strong> é a página <a href="../semana/">Resumo da semana</a> e os feeds RSS do site. Ainda não há envio por e-mail nem lista de contatos.</li>
+            <li><strong>Nunca cobramos</strong> para você se inscrever em edital, “liberar” recurso ou garantir aprovação. Quem pedir dinheiro em nome do Fundos Brasil está tentando aplicar um golpe: veja <a href="../nunca-cobramos/">Nunca cobramos</a>.</li>
             <li><strong>Seus dados:</strong> não insira dados de terceiros nem dados sensíveis. Veja a <a href="../privacidade/">Política de Privacidade</a>.</li>
             <li>Aplica-se a lei brasileira.</li>
         </ul>
@@ -83,6 +84,7 @@
             <nav aria-labelledby="rodape-sobre"><h2 id="rodape-sobre">Sobre</h2><ul>
                 <li><a href="../anuncie/">Anuncie</a></li>
                 <li><a href="../apoie/">Apoie</a></li>
+                <li><a href="../nunca-cobramos/">Nunca cobramos</a></li>
                 <li><a href="../dados/">Dados abertos</a></li>
                 <li><a href="../acessibilidade/">Acessibilidade</a></li>
                 <li><a href="../privacidade/">Privacidade</a></li>
@@ -102,7 +104,7 @@
             var et = el.dataset.etapa ? el.dataset.etapa + ': ' : '';
             if (h < a) { var n = Math.round((Date.parse(a) - t0) / dia); txt = 'Abre em ' + n + (n === 1 ? ' dia' : ' dias'); cls = 'em-breve'; }
             else if (h <= z) { var m = Math.round((Date.parse(z) - t0) / dia); txt = m === 0 ? et + (et ? 'encerra hoje' : 'Encerra hoje') : (m <= 7 ? et + (et ? 'encerra em ' : 'Encerra em ') : (et || 'Aberto · ')) + m + (m === 1 ? ' dia' : ' dias') + (m > 7 && !et ? ' restantes' : ''); cls = m <= 7 ? 'urgente' : 'aberto'; }
-            else { txt = 'Encerrado'; cls = 'fechado'; }
+            else { txt = 'Encerrado em ' + z.split('-').reverse().join('/'); cls = 'fechado'; }
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();

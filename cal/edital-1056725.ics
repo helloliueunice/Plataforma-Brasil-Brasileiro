@@ -3,20 +3,18 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e… —
-  Fundos Brasil
-NAME:2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional e… — Fundos 
- Brasil
-X-WR-CALDESC:Prazos de 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regiona
- l e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Pro
- jetos de Desenvolvimento Sustentável Local Integrado/ Rp (Ministério da 
- Integração e do Desenvolvimento Regional). Confirme sempre no edital ofi
- cial.
-DESCRIPTION:Prazos de 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional
-  e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Proj
- etos de Desenvolvimento Sustentável Local Integrado/ Rp (Ministério da I
- ntegração e do Desenvolvimento Regional). Confirme sempre no edital ofic
- ial.
+X-WR-CALNAME:Desenvolvimento Regional e Ordenamento Territorial — Apoio
+ … — Fundos Brasil
+NAME:Desenvolvimento Regional e Ordenamento Territorial — Apoio… — Fu
+ ndos Brasil
+X-WR-CALDESC:Prazos de Desenvolvimento Regional e Ordenamento Territorial 
+ — Apoio a Projetos de Desenvolvimento Sustentável Local Integrado (Mini
+ stério da Integração e do Desenvolvimento Regional). Confirme sempre no
+  edital oficial.
+DESCRIPTION:Prazos de Desenvolvimento Regional e Ordenamento Territorial 
+ — Apoio a Projetos de Desenvolvimento Sustentável Local Integrado (Mini
+ stério da Integração e do Desenvolvimento Regional). Confirme sempre no
+  edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
@@ -25,37 +23,35 @@ UID:edital-1056725-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: 2317 - (TED 7AADAF SDR/MIDR) Desenvolvimento Regional 
- e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Ação: Apoio a Proje
- tos de Desenvolvimento Sustentável Local Integrado/ Rp
+SUMMARY:Prazo final: Desenvolvimento Regional e Ordenamento Territorial —
+  Apoio a Projetos de Desenvolvimento Sustentável Local Integrado
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 2220320260044\nValor: valor não informado pela fonte\
- nQuem pode participar: Governo do estado\nCódigo do programa: 22203202600
- 44. A proposta é cadastrada no Transferegov.br (módulo Discricionárias)
- \, buscando por esse código. É preciso ter cadastro no Transferegov.br e
- \, para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro 
- Nacional que mostra se o ente pode receber repasses).\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317
- -ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConf
- irme data e horário limite no edital oficial: https://www.gov.br/transfer
- egov/pt-br
+ ograma Transferegov 2220320260044 · 2317 · (TED 7AADAF SDR/MIDR) · PT 1
+ 5.244.2317.00SX.0001\nValor: valor não informado pela fonte\nQuem pode pa
+ rticipar: Governo do estado\nCódigo do programa: 2220320260044. A propost
+ a é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando p
+ or esse código. É preciso ter cadastro no Transferegov.br e\, para prefe
+ ituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que 
+ mostra se o ente pode receber repasses).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-s
+ dr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConfirme data e h
+ orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
  317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Des
- envolvimento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/
-  Ação: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/
-  Rp
+DESCRIPTION:Faltam 7 dias: Prazo final — Desenvolvimento Regional e Orden
+ amento Territorial — Apoio a Projetos de Desenvolvimento Sustentável Lo
+ cal Integrado
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — 2317 - (TED 7AADAF SDR/MIDR) Desenvolv
- imento Regional e Ordenamento Territorial: Pt 15.244.2317.00SX.0001/ Açã
- o: Apoio a Projetos de Desenvolvimento Sustentável Local Integrado/ Rp
+DESCRIPTION:Amanhã: Prazo final — Desenvolvimento Regional e Ordenamento
+  Territorial — Apoio a Projetos de Desenvolvimento Sustentável Local In
+ tegrado
 END:VALARM
 END:VEVENT
 END:VCALENDAR

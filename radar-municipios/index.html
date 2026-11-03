@@ -2,20 +2,20 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-JyMe5wB345YJcbPrD2oSiszqg4WNFHI4Ds+MCaJ7N8A=' 'sha256-UBggQf1pc7yOuWksQjNkoYPxs8LXddcY2c9Lr+9wJDs=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5JWz2pFlxEjBn60lOlhminb3At6YloWzeus5DqPU7W8=' 'sha256-JyMe5wB345YJcbPrD2oSiszqg4WNFHI4Ds+MCaJ7N8A=' 'sha256-1wDYZpINE1qzktjwHkjdBBIdA2MR1FPZO9Y8byZszPg=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <script>document.documentElement.className+=' js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radar de captação para municípios (em preparação) | Fundos Brasil</title>
-    <meta name="description" content="Programas federais e editais abertos para cada município do seu grupo, com prazos, documentos e relatório mensal. Piloto com associações e consórcios de…">
+    <title>Radar para municípios pequenos de SP: CAUC, programas e emendas</title>
+    <meta name="description" content="Toda semana, para cada município: programas abertos, pendências no CAUC, emendas e prazos, e o que fazer até cada prazo. Piloto gratuito com prefeituras…">
     
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/radar-municipios/">
     <meta name="theme-color" content="#1351B4">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Fundos Brasil">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:title" content="Radar de captação para municípios (em preparação) | Fundos Brasil">
-    <meta property="og:description" content="Programas federais e editais abertos para cada município do seu grupo, com prazos, documentos e relatório mensal. Piloto com associações e consórcios de…">
+    <meta property="og:title" content="Radar para municípios pequenos de SP: CAUC, programas e emendas">
+    <meta property="og:description" content="Toda semana, para cada município: programas abertos, pendências no CAUC, emendas e prazos, e o que fazer até cada prazo. Piloto gratuito com prefeituras…">
     <meta property="og:url" content="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/radar-municipios/">
     <meta property="og:image" content="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -53,35 +53,68 @@
     </header>
     <main id="conteudo" class="pagina">
 
-        <nav class="migalhas" aria-label="Você está em"><a href="../">Início</a> <span class="sep" aria-hidden="true">›</span> <span aria-current="page">Radar para municípios</span></nav>
-        <p class="selos"><span class="selo neutro">Em preparação</span></p>
-        <h1>Radar de captação para municípios</h1>
-        <p class="sub">Para associações de municípios, consórcios públicos e governos estaduais que apoiam prefeituras a buscar recursos. Hoje o site já reúne 12 programas e editais abertos para municípios; o Radar organiza isso por município, com prazos e avisos.</p>
-        <section aria-labelledby="radar-inclui"><h2 id="radar-inclui">O que o Radar vai fazer</h2><ul class="lista">
-            <li>Mostrar, para cada município do grupo, os programas federais e editais abertos em que ele pode entrar.</li>
-            <li>Avisar prazos com antecedência e listar os documentos de cada programa.</li>
-            <li>Gerar um relatório mensal simples, pronto para enviar a prefeitos e câmaras.</li>
-            <li>Uma página com o nome da associação ou do consórcio, para compartilhar com as prefeituras.</li>
+        <nav class="migalhas" aria-label="Você está em"><a href="../">Início</a> <span class="sep" aria-hidden="true">›</span> <a href="../para/municipios-e-prefeituras/">Municípios</a> <span class="sep" aria-hidden="true">›</span> <span aria-current="page">Radar para municípios</span></nav>
+        <p class="selos"><span class="selo neutro">Em construção</span> <span class="selo neutro">Piloto gratuito em São Paulo</span></p>
+        <h1>Radar para municípios pequenos</h1>
+        <p class="sub">Para prefeituras pequenas e associações de municípios de São Paulo. Toda semana, para cada município: programas abertos em que pode entrar, pendências no CAUC que bloqueiam repasses, emendas destinadas e prazos, e o que fazer até cada prazo.</p>
+        <div class="acoes"><a class="btn primario" href="#radar-contato" data-evento="radar-quero">Quero participar do piloto</a> <a class="btn" href="#modelo" data-evento="radar-modelo">Ver modelo de relatório</a></div>
+        <section aria-labelledby="radar-para-quem"><h2 id="radar-para-quem">Para quem é</h2><ul class="lista">
+            <li><strong>Prefeituras pequenas</strong>, que muitas vezes têm uma ou duas pessoas cuidando de convênios, sem tempo para acompanhar todos os sistemas.</li>
+            <li><strong>Associações e consórcios de municípios</strong>, que apoiam várias prefeituras ao mesmo tempo.</li>
+            <li>No piloto: municípios paulistas com até 20 mil habitantes (são 393 no estado).</li>
         </ul></section>
-        <section aria-labelledby="radar-piloto"><h2 id="radar-piloto">Piloto</h2>
-            <p>Estamos escolhendo até 3 associações ou consórcios para construir o Radar junto, com condições especiais para quem participar do piloto.</p>
-            <p class="nota">A contratação por órgãos públicos depende do CNPJ do projeto, que está em preparação. Entrar na lista não gera cobrança nem compromisso.</p></section>
-        <section class="chamada" id="espera-radar" aria-labelledby="espera-radar-titulo">
-            <h2 id="espera-radar-titulo">Quero participar ou saber mais</h2>
-            <form class="formulario" data-espera data-email="contatofundosbrasil@gmail.com" data-assunto="Lista de espera — Radar para municípios" data-evento="radar-lista-espera" action="mailto:contatofundosbrasil@gmail.com" method="get" enctype="text/plain">
-                <div class="campo"><label for="espera-radar-organizacao">Entidade <span class="obrig">(obrigatório)</span></label><input id="espera-radar-organizacao" name="organizacao" type="text" required autocomplete="organization" data-rotulo="Entidade"><p class="dica">Ex.: Associação dos Municípios do …, Consórcio …, Prefeitura de …</p></div>
-                <div class="campo"><label for="espera-radar-tipo">Tipo</label><select id="espera-radar-tipo" name="tipo" data-rotulo="Tipo"><option>Associação de municípios</option><option>Consórcio público</option><option>Prefeitura</option><option>Governo estadual</option><option>Consultoria que atende municípios</option><option>Outro</option></select></div>
-                <div class="campo"><label for="espera-radar-uf">Estado (UF) <span class="obrig">(obrigatório)</span></label><input id="espera-radar-uf" name="uf" type="text" required autocomplete="address-level1" data-rotulo="Estado (UF)"></div>
-                <div class="campo"><label for="espera-radar-municipios">Quantos municípios a entidade atende?</label><select id="espera-radar-municipios" name="municipios" data-rotulo="Quantos municípios a entidade atende?"><option>1</option><option>2 a 10</option><option>11 a 30</option><option>Mais de 30</option></select></div>
-                <div class="campo"><label for="espera-radar-funcao">Sua função</label><input id="espera-radar-funcao" name="funcao" type="text" data-rotulo="Sua função"></div>
-                <fieldset class="campo" data-rotulo="Interesse"><legend>Interesse</legend><div class="opcoes"><label><input type="radio" name="interesse" value="Participar do piloto"> Participar do piloto</label><label><input type="radio" name="interesse" value="Receber uma proposta"> Receber uma proposta</label><label><input type="radio" name="interesse" value="Só conhecer por enquanto"> Só conhecer por enquanto</label></div></fieldset>
+        <section aria-labelledby="radar-semana"><h2 id="radar-semana">O que chega toda semana</h2>
+            <ul class="grade-blocos">
+                <li><h3>Programas abertos</h3><p>Programas federais e editais em que o município pode entrar, com prazo e próximo passo. Hoje o site já reúne 12 programas e editais abertos para municípios.</p></li>
+                <li><h3>Semáforo do CAUC</h3><p>O que está regular, o que vence logo e o que já bloqueia repasses, explicado em linguagem simples.</p></li>
+                <li><h3>Emendas e propostas</h3><p>Emendas destinadas ao município, propostas em andamento e o que falta em cada uma.</p></li>
+                <li><h3>O que fazer até cada prazo</h3><p>Uma lista curta, em ordem de data, para a equipe agir antes de perder o recurso.</p></li>
+            </ul></section>
+        <section aria-labelledby="radar-piloto"><h2 id="radar-piloto">Piloto em São Paulo</h2>
+            <ul class="lista">
+                <li>Até <strong>3 associações ou consórcios</strong>, ou até <strong>10 municípios</strong>.</li>
+                <li><strong>Gratuito durante o piloto.</strong> Em troca, pedimos retorno sobre o relatório (o que ajuda, o que falta) e, se o Radar for útil, uma carta de apoio.</li>
+                <li>O relatório usa só dados públicos oficiais: não pedimos senha nem acesso aos sistemas da prefeitura.</li>
+            </ul>
+            <p class="aviso"><strong>Em construção.</strong> O Radar está sendo construído junto com quem participar do piloto. A contratação depois do piloto exige CNPJ, que está em preparação. Participar do piloto não gera cobrança nem compromisso de contratar. O resto do site continua gratuito para todos.</p></section>
+        <section id="modelo" aria-labelledby="modelo-titulo"><h2 id="modelo-titulo">Modelo de relatório (exemplo fictício)</h2>
+            <p>Assim deve ficar o relatório semanal de cada município: uma página, com a fonte e a data de cada informação.</p>
+            <article class="relatorio" aria-labelledby="relatorio-titulo">
+            <p class="relatorio-rotulo"><strong>Exemplo fictício</strong> · município, números, valores e datas inventados para mostrar o formato. Não são dados reais.</p>
+            <header class="relatorio-topo">
+                <h3 id="relatorio-titulo">Radar semanal · Município Exemplo (SP)</h3>
+                <p class="nota">Semana de 02/11/2026 · cerca de 9 mil habitantes · 1 página</p>
+            </header>
+            <section aria-labelledby="rel-cauc"><h4 id="rel-cauc">1. Semáforo do CAUC</h4>
+                <p class="nota">O CAUC é o cadastro do Tesouro Nacional que diz se a prefeitura pode receber dinheiro de convênios e transferências da União. Um item pendente basta para travar repasses.</p>
+                <ul class="semaforo"><li class="sinal-regular"><span class="sinal">Regular</span><div><strong>Dívidas com a Receita Federal e a Dívida Ativa da União</strong> <span class="nota">· válida até 15/01</span><p>Certidão em dia: nada a fazer agora.</p></div></li><li class="sinal-atencao"><span class="sinal">Atenção</span><div><strong>FGTS (certificado de regularidade)</strong> <span class="nota">· vence em 08/11</span><p>O certificado vence em 6 dias. Peça a renovação na Caixa antes de 08/11 para não travar repasses.</p></div></li><li class="sinal-bloqueia"><span class="sinal">Pendente: bloqueia repasses</span><div><strong>Relatórios fiscais no Siconfi (RREO do bimestre)</strong> <span class="nota">· pendente desde 03/10</span><p>O relatório do último bimestre não foi enviado ao Tesouro. Enquanto faltar, a prefeitura não pode receber transferências voluntárias da União. Fale com a contabilidade.</p></div></li><li class="sinal-regular"><span class="sinal">Regular</span><div><strong>Prestação de contas de convênios antigos</strong> <span class="nota">· conferido em 01/11</span><p>Nenhuma prestação de contas atrasada.</p></div></li><li class="sinal-regular"><span class="sinal">Regular</span><div><strong>Gasto mínimo em educação e saúde (Siope e Siops)</strong> <span class="nota">· conferido em 01/11</span><p>Os dados do ano anterior foram enviados e cumprem o mínimo.</p></div></li></ul></section>
+            <section aria-labelledby="rel-prog"><h4 id="rel-prog">2. Programas abertos em que o município pode entrar</h4>
+                <div class="tabela-rolagem" role="region" aria-label="Programas abertos (exemplo)" tabindex="0"><table class="tabela"><thead><tr><th scope="col">Programa</th><th scope="col">Órgão</th><th scope="col">Prazo</th><th scope="col">Pode entrar?</th><th scope="col">Próximo passo</th></tr></thead><tbody><tr><td>Programa federal de estradas vicinais (exemplo)</td><td>Ministério da área</td><td>14/11</td><td>Sim: municípios de até 50 mil habitantes</td><td>Enviar a proposta no Transferegov</td></tr><tr><td>Equipamentos para a agricultura familiar (exemplo)</td><td>Ministério da área</td><td>28/11</td><td>Sim, com contrapartida de 1%</td><td>Separar orçamentos de 3 fornecedores</td></tr><tr><td>Reforma de unidades básicas de saúde (exemplo)</td><td>Ministério da área</td><td>12/12</td><td>Depende: exige terreno regularizado</td><td>Confirmar a matrícula do terreno</td></tr></tbody></table></div></section>
+            <section aria-labelledby="rel-emendas"><h4 id="rel-emendas">3. Emendas destinadas e situação</h4>
+                <div class="tabela-rolagem" role="region" aria-label="Emendas (exemplo)" tabindex="0"><table class="tabela"><thead><tr><th scope="col">Emenda</th><th scope="col">Valor</th><th scope="col">Para quê</th><th scope="col">Situação</th></tr></thead><tbody><tr><td>Emenda individual nº 0000.0000 (fictícia)</td><td>R$ 350 mil</td><td>Pavimentação de vias urbanas</td><td>Aguardando o plano de trabalho até 11/11</td></tr><tr><td>Emenda de bancada nº 0000.0001 (fictícia)</td><td>R$ 120 mil</td><td>Compra de ambulância</td><td>Plano de trabalho aprovado; aguardando empenho</td></tr></tbody></table></div></section>
+            <section aria-labelledby="rel-propostas"><h4 id="rel-propostas">4. Propostas em andamento</h4>
+                <div class="tabela-rolagem" role="region" aria-label="Propostas (exemplo)" tabindex="0"><table class="tabela"><thead><tr><th scope="col">Proposta</th><th scope="col">Situação</th><th scope="col">Pendência</th></tr></thead><tbody><tr><td>Proposta 000000/2026 (fictícia)</td><td>Em análise no ministério</td><td>Responder à diligência: anexar o orçamento detalhado até 07/11</td></tr><tr><td>Proposta 000001/2026 (fictícia)</td><td>Rascunho no Transferegov</td><td>Só pode ser enviada com o CAUC regular</td></tr></tbody></table></div></section>
+            <section aria-labelledby="rel-fazer"><h4 id="rel-fazer">5. O que fazer até cada prazo</h4>
+                <ol class="tarefas"><li><span class="data">Hoje</span> <span>Pedir à contabilidade o envio do RREO ao Siconfi: sem isso, nenhum repasse novo sai.</span></li><li><span class="data">Até 07/11</span> <span>Anexar o orçamento detalhado na proposta 000000/2026 (responde à diligência).</span></li><li><span class="data">Até 08/11</span> <span>Renovar o certificado do FGTS na Caixa.</span></li><li><span class="data">Até 11/11</span> <span>Cadastrar o plano de trabalho da emenda de pavimentação.</span></li><li><span class="data">Até 14/11</span> <span>Enviar a proposta do programa de estradas vicinais.</span></li></ol></section>
+            <section aria-labelledby="rel-fontes"><h4 id="rel-fontes">6. Fontes e data de cada fonte</h4>
+                <ul class="lista"><li><strong>CAUC (Tesouro Nacional)</strong>: situação do município para receber transferências · consultado em 01/11/2026</li><li><strong>Transferegov.br</strong>: programas abertos, propostas e planos de trabalho · consultado em 01/11/2026</li><li><strong>Portal da Transparência e Transferegov.br</strong>: emendas parlamentares destinadas ao município · consultado em 31/10/2026</li><li><strong>Siconfi (Tesouro Nacional)</strong>: envio dos relatórios fiscais · consultado em 01/11/2026</li></ul>
+                <p class="nota">Cada informação do relatório leva a fonte oficial e a data da consulta. Confirme sempre na fonte antes de agir.</p></section>
+        </article></section>
+        <section class="chamada" id="radar-contato" aria-labelledby="radar-contato-titulo">
+            <h2 id="radar-contato-titulo">Quero participar ou saber mais</h2>
+            <form class="formulario" data-espera data-email="contatofundosbrasil@gmail.com" data-assunto="Radar para municípios — piloto SP" data-evento="radar-lista-espera" action="mailto:contatofundosbrasil@gmail.com" method="get" enctype="text/plain">
+                <div class="campo"><label for="radar-contato-organizacao">Município ou entidade <span class="obrig">(obrigatório)</span></label><input id="radar-contato-organizacao" name="organizacao" type="text" required autocomplete="organization" data-rotulo="Município ou entidade"><p class="dica">Ex.: Prefeitura de …, Associação dos Municípios de …, Consórcio Intermunicipal …</p></div>
+                <div class="campo"><label for="radar-contato-tipo">Tipo</label><select id="radar-contato-tipo" name="tipo" data-rotulo="Tipo"><option>Prefeitura</option><option>Associação de municípios</option><option>Consórcio público</option><option>Câmara municipal</option><option>Outro</option></select></div>
+                <div class="campo"><label for="radar-contato-municipios">Quantos municípios?</label><select id="radar-contato-municipios" name="municipios" data-rotulo="Quantos municípios?"><option>1</option><option>2 a 10</option><option>11 a 30</option><option>Mais de 30</option></select></div>
+                <div class="campo"><label for="radar-contato-funcao">Sua função</label><input id="radar-contato-funcao" name="funcao" type="text" autocomplete="organization-title" data-rotulo="Sua função"><p class="dica">Ex.: secretária de planejamento, assessor de convênios, prefeito</p></div>
+                <fieldset class="campo" data-rotulo="Interesse"><legend>Interesse <span class="obrig">(obrigatório)</span></legend><div class="opcoes"><label><input type="radio" name="interesse" value="Participar do piloto" required> Participar do piloto</label><label><input type="radio" name="interesse" value="Receber uma proposta"> Receber uma proposta</label><label><input type="radio" name="interesse" value="Só conhecer por enquanto"> Só conhecer por enquanto</label></div></fieldset>
                 <div class="campo"><label><input type="checkbox" name="consentimento" value="Sim" required data-rotulo="Consentimento"> Aceito ser contatado(a) sobre o Radar. Posso sair da lista quando quiser.</label></div>
                 <div class="acoes"><button type="submit" class="btn primario" data-evento="radar-lista-espera">Montar e-mail de inscrição</button></div>
                 <p class="nota">Nada é enviado por este site: o botão abre o seu programa de e-mail com as respostas prontas para contatofundosbrasil@gmail.com. Você revisa e envia. Seu e-mail de contato é o próprio remetente.</p>
                 <p class="nota" role="status" aria-live="polite"></p>
             </form>
         </section>
-        <p class="nota">Como tratamos os dados da lista de espera: veja a <a href="../privacidade/#lista-espera">Política de Privacidade</a>.</p>
+        <p class="nota">Como tratamos os dados deste contato: veja a <a href="../privacidade/#lista-espera">Política de Privacidade</a>.</p>
         <script>document.querySelectorAll('form[data-espera]').forEach(function(f){var st=f.querySelector('[role=status]');f.addEventListener('submit',function(ev){ev.preventDefault();if(!f.reportValidity())return;var linhas=[],vistos={};[].forEach.call(f.elements,function(el){if(!el.name||vistos[el.name]||el.type==='submit')return;var r=el.getAttribute('data-rotulo')||el.name;var v;if(el.type==='checkbox'||el.type==='radio'){vistos[el.name]=1;v=[].filter.call(f.querySelectorAll('[name="'+el.name+'"]'),function(x){return x.checked;}).map(function(x){return x.value;}).join('; ');r=(f.querySelector('[name="'+el.name+'"]').closest('fieldset')||{}).getAttribute?f.querySelector('[name="'+el.name+'"]').closest('fieldset').getAttribute('data-rotulo')||r:r;}else{v=String(el.value||'').trim();}if(v)linhas.push(r.replace(/[?:]s*$/,'')+': '+v);});var org=(f.elements.organizacao||{}).value||'';var assunto=f.getAttribute('data-assunto')+(org?' — '+org.trim():'');var url='mailto:'+f.getAttribute('data-email')+'?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(linhas.join('\n')+'\n');if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:f.getAttribute('data-evento')+'-enviar',title:f.getAttribute('data-evento'),event:true});st.textContent='Abrimos o seu e-mail com as respostas prontas. Revise e envie. Se nada abriu, escreva para '+f.getAttribute('data-email')+'.';window.location.href=url;});});</script>
     </main>
     <footer class="rodape">
@@ -97,6 +130,7 @@
             <nav aria-labelledby="rodape-sobre"><h2 id="rodape-sobre">Sobre</h2><ul>
                 <li><a href="../anuncie/">Anuncie</a></li>
                 <li><a href="../apoie/">Apoie</a></li>
+                <li><a href="../nunca-cobramos/">Nunca cobramos</a></li>
                 <li><a href="../dados/">Dados abertos</a></li>
                 <li><a href="../acessibilidade/">Acessibilidade</a></li>
                 <li><a href="../privacidade/">Privacidade</a></li>
@@ -116,7 +150,7 @@
             var et = el.dataset.etapa ? el.dataset.etapa + ': ' : '';
             if (h < a) { var n = Math.round((Date.parse(a) - t0) / dia); txt = 'Abre em ' + n + (n === 1 ? ' dia' : ' dias'); cls = 'em-breve'; }
             else if (h <= z) { var m = Math.round((Date.parse(z) - t0) / dia); txt = m === 0 ? et + (et ? 'encerra hoje' : 'Encerra hoje') : (m <= 7 ? et + (et ? 'encerra em ' : 'Encerra em ') : (et || 'Aberto · ')) + m + (m === 1 ? ' dia' : ' dias') + (m > 7 && !et ? ' restantes' : ''); cls = m <= 7 ? 'urgente' : 'aberto'; }
-            else { txt = 'Encerrado'; cls = 'fechado'; }
+            else { txt = 'Encerrado em ' + z.split('-').reverse().join('/'); cls = 'fechado'; }
             el.textContent = txt; el.className = 'selo ' + cls;
         });
     })();

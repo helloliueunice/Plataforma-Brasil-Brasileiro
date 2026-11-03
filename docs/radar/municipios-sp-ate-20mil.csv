@@ -1,0 +1,394 @@
+codigo_ibge,municipio,pop_censo_2022,pop_estimada_2025,criterio_20mil,faixa_pop_2025,regiao_geografica_imediata,regiao_geografica_intermediaria
+3500204,Adolfo,4351,4505,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3500758,Alambari,6141,6373,ambos,5_a_10mil,Itapetininga,Sorocaba
+3500808,Alfredo Marcondes,4445,4574,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3500907,Altair,3451,3467,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3501004,Altinópolis,16818,17197,ambos,10_a_20mil,Ribeirão Preto,Ribeirão Preto
+3501103,Alto Alegre,3841,3874,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3501152,Alumínio,17301,17607,ambos,10_a_20mil,Sorocaba,Sorocaba
+3501509,Alvinlândia,2885,2919,ambos,ate_5mil,Marília,Marília
+3501806,Américo de Campos,5870,5981,ambos,5_a_10mil,Votuporanga,São José do Rio Preto
+3502002,Analândia,4589,4694,ambos,ate_5mil,Rio Claro,Campinas
+3502309,Anhembi,5674,5766,ambos,5_a_10mil,Botucatu,Bauru
+3502408,Anhumas,4023,4118,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3502606,Aparecida d'Oeste,4086,4112,ambos,ate_5mil,Jales,São José do Rio Preto
+3503000,Aramina,5420,5535,ambos,5_a_10mil,Ituverava,Ribeirão Preto
+3503109,Arandu,6885,7076,ambos,5_a_10mil,Avaré,Sorocaba
+3503158,Arapeí,2330,2355,ambos,ate_5mil,Cruzeiro,São José dos Campos
+3503356,Arco-Íris,2044,2089,ambos,ate_5mil,Tupã,Marília
+3503406,Arealva,8130,8290,ambos,5_a_10mil,Bauru,Bauru
+3503505,Areias,3577,3617,ambos,ate_5mil,Cruzeiro,São José dos Campos
+3503604,Areiópolis,10130,10242,ambos,10_a_20mil,Botucatu,Bauru
+3503703,Ariranha,7602,7621,ambos,5_a_10mil,Catanduva,São José do Rio Preto
+3503950,Aspásia,1842,1875,ambos,ate_5mil,Jales,São José do Rio Preto
+3504206,Auriflama,13692,13856,ambos,10_a_20mil,Araçatuba,Araçatuba
+3504404,Avanhandava,11263,11436,ambos,10_a_20mil,Birigui - Penápolis,Araçatuba
+3504305,Avaí,4483,4503,ambos,ate_5mil,Bauru,Bauru
+3504701,Balbinos,3887,3969,ambos,ate_5mil,Bauru,Bauru
+3504909,Bananal,9969,10097,ambos,10_a_20mil,Cruzeiro,São José dos Campos
+3505104,Barbosa,5640,5627,ambos,5_a_10mil,Birigui - Penápolis,Araçatuba
+3505351,Barra do Chapéu,5162,5254,ambos,5_a_10mil,Itapeva,Sorocaba
+3505401,Barra do Turvo,6875,6894,ambos,5_a_10mil,Registro,Sorocaba
+3505005,Barão de Antonina,3531,3632,ambos,ate_5mil,Itapeva,Sorocaba
+3506201,Bento de Abreu,2606,2640,ambos,ate_5mil,Araçatuba,Araçatuba
+3506300,Bernardino de Campos,11607,11881,ambos,10_a_20mil,Ourinhos,Marília
+3506409,Bilac,7319,7464,ambos,5_a_10mil,Birigui - Penápolis,Araçatuba
+3506706,Boa Esperança do Sul,12978,13113,ambos,10_a_20mil,Araraquara,Araraquara
+3506805,Bocaina,11259,11480,ambos,10_a_20mil,Jaú,Bauru
+3506904,Bofete,10460,10710,ambos,10_a_20mil,Botucatu,Bauru
+3507159,Bom Sucesso de Itararé,3555,3609,ambos,ate_5mil,Itapeva,Sorocaba
+3507308,Boracéia,4715,4838,ambos,ate_5mil,Jaú,Bauru
+3507407,Borborema,14226,14405,ambos,10_a_20mil,Araraquara,Araraquara
+3507456,Borebi,2713,2801,ambos,ate_5mil,Bauru,Bauru
+3507209,Borá,907,932,ambos,ate_5mil,Assis,Marília
+3507704,Braúna,5356,5477,ambos,5_a_10mil,Birigui - Penápolis,Araçatuba
+3507753,Brejo Alegre,2565,2605,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3508108,Buritama,17210,17658,ambos,10_a_20mil,Birigui - Penápolis,Araçatuba
+3508207,Buritizal,4356,4458,ambos,ate_5mil,Ituverava,Ribeirão Preto
+3504800,Bálsamo,9596,9902,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3508306,Cabrália Paulista,4299,4360,ambos,ate_5mil,Bauru,Bauru
+3508702,Caconde,17101,17228,ambos,10_a_20mil,São José do Rio Pardo - Mococa,Campinas
+3508801,Cafelândia,16654,16907,ambos,10_a_20mil,Lins,Bauru
+3508900,Caiabu,3712,3726,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3509106,Caiuá,5466,5599,ambos,5_a_10mil,Presidente Epitácio-Presidente Venceslau,Presidente Prudente
+3509304,Cajobi,9133,9210,ambos,5_a_10mil,Barretos,Ribeirão Preto
+3509452,Campina do Monte Alegre,5954,6090,ambos,5_a_10mil,Itapetininga,Sorocaba
+3509809,Campos Novos Paulista,4888,5003,ambos,5_a_10mil,Marília,Marília
+3509908,Cananéia,12289,12491,ambos,10_a_20mil,Registro,Sorocaba
+3509957,Canas,4931,5068,ambos,5_a_10mil,Guaratinguetá,São José dos Campos
+3510153,Canitar,6283,6589,ambos,5_a_10mil,Ourinhos,Marília
+3510708,Cardoso,11345,11476,ambos,10_a_20mil,Votuporanga,São José do Rio Preto
+3511003,Castilho,19977,20485,so_censo2022,10_a_20mil,Andradina,Araçatuba
+3511201,Catiguá,7003,7101,ambos,5_a_10mil,Catanduva,São José do Rio Preto
+3511300,Cedral,12618,13314,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3511607,Cesário Lange,19048,19707,ambos,10_a_20mil,Tatuí,Sorocaba
+3511706,Charqueada,15535,15814,ambos,10_a_20mil,Piracicaba,Campinas
+3557204,Chavantes,12211,12415,ambos,10_a_20mil,Ourinhos,Marília
+3511904,Clementina,6982,7084,ambos,5_a_10mil,Birigui - Penápolis,Araçatuba
+3512001,Colina,18487,18880,ambos,10_a_20mil,Barretos,Ribeirão Preto
+3512100,Colômbia,6629,6802,ambos,5_a_10mil,Barretos,Ribeirão Preto
+3512308,Conchas,15232,15345,ambos,10_a_20mil,Botucatu,Bauru
+3512506,Coroados,5400,5504,ambos,5_a_10mil,Birigui - Penápolis,Araçatuba
+3512605,Coronel Macedo,4280,4271,ambos,ate_5mil,Avaré,Sorocaba
+3512704,Corumbataí,4195,4296,ambos,ate_5mil,Rio Claro,Campinas
+3512902,Cosmorama,8719,9019,ambos,5_a_10mil,Votuporanga,São José do Rio Preto
+3513207,Cristais Paulista,9272,9600,ambos,5_a_10mil,Franca,Ribeirão Preto
+3513306,Cruzália,2108,2123,ambos,ate_5mil,Assis,Marília
+3510906,Cássia dos Coqueiros,2799,2861,ambos,ate_5mil,Ribeirão Preto,Ribeirão Preto
+3510104,Cândido Rodrigues,2889,2959,ambos,ate_5mil,Araraquara,Araraquara
+3513850,Dirce Reis,1620,1639,ambos,ate_5mil,Jales,São José do Rio Preto
+3513900,Divinolândia,11158,11305,ambos,10_a_20mil,São José do Rio Pardo - Mococa,Campinas
+3514007,Dobrada,8759,8986,ambos,5_a_10mil,Araraquara,Araraquara
+3514205,Dolcinópolis,2207,2254,ambos,ate_5mil,Jales,São José do Rio Preto
+3514304,Dourado,8096,8169,ambos,5_a_10mil,São Carlos,Araraquara
+3514502,Duartina,12328,12532,ambos,10_a_20mil,Bauru,Bauru
+3514601,Dumont,9471,9764,ambos,5_a_10mil,Ribeirão Preto,Ribeirão Preto
+3514700,Echaporã,6205,6291,ambos,5_a_10mil,Marília,Marília
+3514809,Eldorado,13069,13109,ambos,10_a_20mil,Registro,Sorocaba
+3514908,Elias Fausto,17699,18168,ambos,10_a_20mil,Campinas,Campinas
+3514924,Elisiário,3138,3190,ambos,ate_5mil,Catanduva,São José do Rio Preto
+3514957,Embaúba,2323,2349,ambos,ate_5mil,Catanduva,São José do Rio Preto
+3515129,Emilianópolis,3014,3061,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3515152,Engenheiro Coelho,19566,20261,so_censo2022,10_a_20mil,Limeira,Campinas
+3515194,Espírito Santo do Turvo,4157,4214,ambos,ate_5mil,Ourinhos,Marília
+3557303,Estiva Gerbi,11295,11609,ambos,10_a_20mil,Mogi Guaçu,Campinas
+3515202,Estrela d'Oeste,9417,9696,ambos,5_a_10mil,Fernandópolis,São José do Rio Preto
+3515301,Estrela do Norte,2703,2751,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3515350,Euclides da Cunha Paulista,7924,7883,ambos,5_a_10mil,Presidente Prudente,Presidente Prudente
+3515400,Fartura,16641,17029,ambos,10_a_20mil,Piraju,Marília
+3515608,Fernando Prestes,5942,6080,ambos,5_a_10mil,Catanduva,São José do Rio Preto
+3515657,Fernão,1656,1692,ambos,ate_5mil,Marília,Marília
+3515806,Flora Rica,1487,1483,ambos,ate_5mil,Dracena,Presidente Prudente
+3515905,Floreal,2733,2747,ambos,ate_5mil,Votuporanga,São José do Rio Preto
+3516101,Florínea,3851,4022,ambos,ate_5mil,Assis,Marília
+3516002,Flórida Paulista,12958,13175,ambos,10_a_20mil,Adamantina - Lucélia,Presidente Prudente
+3516507,Gabriel Monteiro,2763,2813,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3516804,Gastão Vidigal,3252,3203,ambos,ate_5mil,Araçatuba,Araçatuba
+3516853,Gavião Peixoto,4702,4806,ambos,ate_5mil,Araraquara,Araraquara
+3516903,General Salgado,10312,10437,ambos,10_a_20mil,Araçatuba,Araçatuba
+3517000,Getulina,10232,10337,ambos,10_a_20mil,Marília,Marília
+3517109,Glicério,4138,4158,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3517307,Guaimbê,5512,5609,ambos,5_a_10mil,Marília,Marília
+3517208,Guaiçara,11239,11478,ambos,10_a_20mil,Lins,Bauru
+3517604,Guapiara,17071,17225,ambos,10_a_20mil,Itapeva,Sorocaba
+3517901,Guaraci,10350,10554,ambos,10_a_20mil,Barretos,Ribeirão Preto
+3518008,Guarani d'Oeste,1968,1999,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3518107,Guarantã,6427,6532,ambos,5_a_10mil,Lins,Bauru
+3517802,Guaraçaí,7441,7453,ambos,5_a_10mil,Andradina,Araçatuba
+3518503,Guareí,15013,15285,ambos,10_a_20mil,Itapetininga,Sorocaba
+3517703,Guará,18606,18748,ambos,10_a_20mil,Ituverava,Ribeirão Preto
+3518859,Guatapará,7320,7474,ambos,5_a_10mil,Ribeirão Preto,Ribeirão Preto
+3518909,Guzolândia,4246,4259,ambos,ate_5mil,Araçatuba,Araçatuba
+3516606,Gália,6380,6413,ambos,5_a_10mil,Marília,Marília
+3519006,Herculândia,9125,9316,ambos,5_a_10mil,Tupã,Marília
+3519055,Holambra,15119,15718,ambos,10_a_20mil,Campinas,Campinas
+3519105,Iacanga,10437,10648,ambos,10_a_20mil,Bauru,Bauru
+3519204,Iacri,6131,6197,ambos,5_a_10mil,Tupã,Marília
+3519253,Iaras,8010,8313,ambos,5_a_10mil,Avaré,Sorocaba
+3519501,Ibirarema,6385,6450,ambos,5_a_10mil,Ourinhos,Marília
+3519402,Ibirá,11690,11952,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3519808,Icém,7819,7982,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3519907,Iepê,7619,7739,ambos,5_a_10mil,Presidente Prudente,Presidente Prudente
+3520202,Igaratá,10605,10984,ambos,10_a_20mil,São José dos Campos,São José dos Campos
+3520426,Ilha Comprida,13419,14104,ambos,10_a_20mil,Registro,Sorocaba
+3520608,Indiana,5090,5200,ambos,5_a_10mil,Presidente Prudente,Presidente Prudente
+3520707,Indiaporã,4035,4113,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3520806,Inúbia Paulista,3615,3671,ambos,ate_5mil,Adamantina - Lucélia,Presidente Prudente
+3520905,Ipaussu,13712,13935,ambos,10_a_20mil,Ourinhos,Marília
+3521101,Ipeúna,6831,7027,ambos,5_a_10mil,Rio Claro,Campinas
+3521150,Ipiguá,6761,7115,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3521200,Iporanga,4046,4083,ambos,ate_5mil,Registro,Sorocaba
+3521309,Ipuã,14454,14701,ambos,10_a_20mil,São Joaquim da Barra – Orlândia,Ribeirão Preto
+3521606,Irapuru,5938,7120,ambos,5_a_10mil,Dracena,Presidente Prudente
+3521507,Irapuã,6867,6932,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3521705,Itaberá,17983,18263,ambos,10_a_20mil,Itapeva,Sorocaba
+3521903,Itajobi,16989,17502,ambos,10_a_20mil,Catanduva,São José do Rio Preto
+3522000,Itaju,3618,3715,ambos,ate_5mil,Jaú,Bauru
+3522158,Itaoca,3421,3497,ambos,ate_5mil,Itapeva,Sorocaba
+3522653,Itapirapuã Paulista,4306,4420,ambos,ate_5mil,Itapeva,Sorocaba
+3522802,Itaporanga,14085,14245,ambos,10_a_20mil,Itapeva,Sorocaba
+3523008,Itapura,3979,4002,ambos,ate_5mil,Andradina,Araçatuba
+3522901,Itapuí,13659,14035,ambos,10_a_20mil,Jaú,Bauru
+3523305,Itariri,15528,15916,ambos,10_a_20mil,Santos,São Paulo
+3523503,Itatinga,19070,19462,ambos,10_a_20mil,Botucatu,Bauru
+3523602,Itirapina,16148,16454,ambos,10_a_20mil,São Carlos,Araraquara
+3523701,Itirapuã,5779,5857,ambos,5_a_10mil,Franca,Ribeirão Preto
+3523800,Itobi,8046,8227,ambos,5_a_10mil,São José do Rio Pardo - Mococa,Campinas
+3524204,Jaborandi,6221,6280,ambos,5_a_10mil,Barretos,Ribeirão Preto
+3524501,Jaci,7613,7944,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3524600,Jacupiranga,16116,16216,ambos,10_a_20mil,Registro,Sorocaba
+3524907,Jambeiro,6397,6611,ambos,5_a_10mil,São José dos Campos,São José dos Campos
+3525409,Jeriquara,3863,4000,ambos,ate_5mil,Franca,Ribeirão Preto
+3525508,Joanópolis,12815,13131,ambos,10_a_20mil,Bragança Paulista,Campinas
+3525607,João Ramalho,4371,4464,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3525854,Jumirim,3059,3132,ambos,ate_5mil,Sorocaba,Sorocaba
+3526100,Juquiá,17154,17184,ambos,10_a_20mil,Registro,Sorocaba
+3525805,Júlio Mesquita,4254,4302,ambos,ate_5mil,Marília,Marília
+3526308,Lagoinha,5083,5183,ambos,5_a_10mil,Taubaté - Pindamonhangaba,São José dos Campos
+3526605,Lavrinhas,7171,7348,ambos,5_a_10mil,Cruzeiro,São José dos Campos
+3526506,Lavínia,9689,9940,ambos,5_a_10mil,Andradina,Araçatuba
+3527009,Lindóia,7010,7158,ambos,5_a_10mil,Amparo,Campinas
+3527256,Lourdes,1950,1962,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3527504,Lucianópolis,2372,2423,ambos,ate_5mil,Bauru,Bauru
+3527702,Luiziânia,4701,4740,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3527801,Lupércio,3981,4004,ambos,ate_5mil,Marília,Marília
+3527900,Lutécia,2666,2697,ambos,ate_5mil,Assis,Marília
+3527603,Luís Antônio,12265,12564,ambos,10_a_20mil,Ribeirão Preto,Ribeirão Preto
+3528007,Macatuba,16829,17140,ambos,10_a_20mil,Bauru,Bauru
+3528106,Macaubal,7481,7581,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3528205,Macedônia,3963,4058,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3528304,Magda,3165,3211,ambos,ate_5mil,Araçatuba,Araçatuba
+3528601,Manduri,9871,10122,ambos,10_a_20mil,Avaré,Sorocaba
+3528700,Marabá Paulista,4573,4619,ambos,ate_5mil,Presidente Epitácio-Presidente Venceslau,Presidente Prudente
+3528809,Maracaí,12673,12804,ambos,10_a_20mil,Assis,Marília
+3528858,Marapoama,3292,3415,ambos,ate_5mil,Catanduva,São José do Rio Preto
+3529104,Marinópolis,1860,1862,ambos,ate_5mil,Jales,São José do Rio Preto
+3528908,Mariápolis,3513,3526,ambos,ate_5mil,Adamantina - Lucélia,Presidente Prudente
+3529500,Mendonça,6159,6420,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3529609,Meridiano,4572,4721,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3529658,Mesópolis,1952,1990,ambos,ate_5mil,Jales,São José do Rio Preto
+3529708,Miguelópolis,19441,19621,ambos,10_a_20mil,Ituverava,Ribeirão Preto
+3529807,Mineiros do Tietê,11230,11322,ambos,10_a_20mil,Jaú,Bauru
+3530003,Mira Estrela,3126,3209,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3529906,Miracatu,18553,18610,ambos,10_a_20mil,Registro,Sorocaba
+3530201,Mirante do Paranapanema,15917,16031,ambos,10_a_20mil,Presidente Prudente,Presidente Prudente
+3530409,Mirassolândia,4669,4783,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3530904,Mombuca,3722,3830,ambos,ate_5mil,Piracicaba,Campinas
+3531209,Monte Alegre do Sul,8627,8923,ambos,5_a_10mil,Amparo,Campinas
+3531506,Monte Azul Paulista,18151,18337,ambos,10_a_20mil,Barretos,Ribeirão Preto
+3531605,Monte Castelo,4222,4306,ambos,ate_5mil,Dracena,Presidente Prudente
+3531704,Monteiro Lobato,4138,4205,ambos,ate_5mil,São José dos Campos,São José dos Campos
+3531001,Monções,1937,1947,ambos,ate_5mil,Araçatuba,Araçatuba
+3532009,Morungaba,13788,14147,ambos,10_a_20mil,Jundiaí,Campinas
+3532058,Motuca,4034,4071,ambos,ate_5mil,Araraquara,Araraquara
+3532108,Murutinga do Sul,3737,3748,ambos,ate_5mil,Andradina,Araçatuba
+3532157,Nantes,2660,2697,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3532207,Narandiba,5713,5956,ambos,5_a_10mil,Presidente Prudente,Presidente Prudente
+3532306,Natividade da Serra,6999,7155,ambos,5_a_10mil,Taubaté - Pindamonhangaba,São José dos Campos
+3532405,Nazaré Paulista,18217,18675,ambos,10_a_20mil,Bragança Paulista,Campinas
+3532504,Neves Paulista,9690,9953,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3532603,Nhandeara,9852,9915,ambos,5_a_10mil,Votuporanga,São José do Rio Preto
+3532702,Nipoã,4750,4876,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3532801,Nova Aliança,6693,6885,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3532827,Nova Campina,8497,8630,ambos,5_a_10mil,Itapeva,Sorocaba
+3532843,Nova Canaã Paulista,2032,2055,ambos,ate_5mil,Santa Fé do Sul,São José do Rio Preto
+3532868,Nova Castilho,1062,1072,ambos,ate_5mil,Araçatuba,Araçatuba
+3532900,Nova Europa,9311,9459,ambos,5_a_10mil,Araraquara,Araraquara
+3533007,Nova Granada,19419,19733,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3533106,Nova Guataporanga,2156,2188,ambos,ate_5mil,Dracena,Presidente Prudente
+3533205,Nova Independência,4609,4847,ambos,ate_5mil,Andradina,Araçatuba
+3533304,Nova Luzitânia,2837,2817,ambos,ate_5mil,Araçatuba,Araçatuba
+3533254,Novais,4412,4463,ambos,ate_5mil,Catanduva,São José do Rio Preto
+3533601,Nuporanga,7391,7570,ambos,5_a_10mil,São Joaquim da Barra – Orlândia,Ribeirão Preto
+3533700,Ocauçu,4331,4418,ambos,ate_5mil,Marília,Marília
+3534005,Onda Verde,4771,4942,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3534104,Oriente,6085,6180,ambos,5_a_10mil,Marília,Marília
+3534203,Orindiúva,6024,6157,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3534500,Oscar Bressane,2470,2502,ambos,ate_5mil,Marília,Marília
+3534807,Ouro Verde,7779,7900,ambos,5_a_10mil,Dracena,Presidente Prudente
+3534757,Ouroeste,10294,10660,ambos,10_a_20mil,Fernandópolis,São José do Rio Preto
+3534906,Pacaembu,14877,15273,ambos,10_a_20mil,Adamantina - Lucélia,Presidente Prudente
+3535002,Palestina,11476,11704,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3535101,Palmares Paulista,9650,9666,ambos,5_a_10mil,Catanduva,São José do Rio Preto
+3535200,Palmeira d'Oeste,8903,8971,ambos,5_a_10mil,Jales,São José do Rio Preto
+3535309,Palmital,19594,19714,ambos,10_a_20mil,Assis,Marília
+3535408,Panorama,14964,15227,ambos,10_a_20mil,Dracena,Presidente Prudente
+3535606,Paraibuna,17667,17959,ambos,10_a_20mil,São José dos Campos,São José dos Campos
+3535804,Paranapanema,19395,19853,ambos,10_a_20mil,Avaré,Sorocaba
+3535903,Paranapuã,4031,4118,ambos,ate_5mil,Jales,São José do Rio Preto
+3536000,Parapuã,10580,10720,ambos,10_a_20mil,Tupã,Marília
+3535705,Paraíso,6099,6218,ambos,5_a_10mil,Catanduva,São José do Rio Preto
+3536109,Pardinho,7153,7435,ambos,5_a_10mil,Botucatu,Bauru
+3536208,Pariquera-Açu,19233,19603,ambos,10_a_20mil,Registro,Sorocaba
+3536257,Parisi,2892,3030,ambos,ate_5mil,Votuporanga,São José do Rio Preto
+3536307,Patrocínio Paulista,14488,14888,ambos,10_a_20mil,Franca,Ribeirão Preto
+3536406,Paulicéia,7955,8255,ambos,5_a_10mil,Dracena,Presidente Prudente
+3536570,Paulistânia,2090,2156,ambos,ate_5mil,Bauru,Bauru
+3536604,Paulo de Faria,7400,7390,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3536802,Pedra Bela,6557,6745,ambos,5_a_10mil,Bragança Paulista,Campinas
+3536901,Pedranópolis,2787,2856,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3537008,Pedregulho,15525,15737,ambos,10_a_20mil,Franca,Ribeirão Preto
+3537156,Pedrinhas Paulista,2804,2833,ambos,ate_5mil,Assis,Marília
+3537206,Pedro de Toledo,11281,11617,ambos,10_a_20mil,Santos,São Paulo
+3537503,Pereiras,8659,9013,ambos,5_a_10mil,Tatuí,Sorocaba
+3537701,Piacatu,5519,5631,ambos,5_a_10mil,Birigui - Penápolis,Araçatuba
+3538105,Pindorama,14542,14704,ambos,10_a_20mil,Catanduva,São José do Rio Preto
+3538204,Pinhalzinho,15219,15676,ambos,10_a_20mil,Bragança Paulista,Campinas
+3538303,Piquerobi,3264,3287,ambos,ate_5mil,Presidente Epitácio-Presidente Venceslau,Presidente Prudente
+3538501,Piquete,12490,12516,ambos,10_a_20mil,Guaratinguetá,São José dos Campos
+3539004,Pirangi,10885,11085,ambos,10_a_20mil,Catanduva,São José do Rio Preto
+3539103,Pirapora do Bom Jesus,18370,18925,ambos,10_a_20mil,São Paulo,São Paulo
+3539400,Piratininga,15107,15657,ambos,10_a_20mil,Bauru,Bauru
+3539608,Planalto,4389,4451,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3539707,Platina,3030,3055,ambos,ate_5mil,Assis,Marília
+3539905,Poloni,5592,5702,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3540101,Pongaí,3395,3440,ambos,ate_5mil,Lins,Bauru
+3540259,Pontalinda,4127,4198,ambos,ate_5mil,Jales,São José do Rio Preto
+3540309,Pontes Gestal,2387,2411,ambos,ate_5mil,Votuporanga,São José do Rio Preto
+3540408,Populina,4127,4182,ambos,ate_5mil,Jales,São José do Rio Preto
+3540507,Porangaba,10451,10850,ambos,10_a_20mil,Tatuí,Sorocaba
+3540804,Potirendaba,18496,19097,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3540853,Pracinha,2578,2589,ambos,ate_5mil,Adamantina - Lucélia,Presidente Prudente
+3540903,Pradópolis,17078,17299,ambos,10_a_20mil,Ribeirão Preto,Ribeirão Preto
+3541059,Pratânia,5126,5264,ambos,5_a_10mil,Botucatu,Bauru
+3541109,Presidente Alves,3804,3830,ambos,ate_5mil,Bauru,Bauru
+3541208,Presidente Bernardes,14490,14803,ambos,10_a_20mil,Presidente Prudente,Presidente Prudente
+3541653,Quadra,3405,3477,ambos,ate_5mil,Tatuí,Sorocaba
+3541703,Quatá,13163,13412,ambos,10_a_20mil,Presidente Prudente,Presidente Prudente
+3541802,Queiroz,3265,3366,ambos,ate_5mil,Tupã,Marília
+3541901,Queluz,9159,9074,ambos,5_a_10mil,Cruzeiro,São José dos Campos
+3542008,Quintana,7038,7260,ambos,5_a_10mil,Marília,Marília
+3542107,Rafard,8965,9145,ambos,5_a_10mil,Piracicaba,Campinas
+3542305,Redenção da Serra,4494,4637,ambos,ate_5mil,Taubaté - Pindamonhangaba,São José dos Campos
+3542503,Reginópolis,7662,7820,ambos,5_a_10mil,Bauru,Bauru
+3542701,Restinga,6404,6486,ambos,5_a_10mil,Franca,Ribeirão Preto
+3542800,Ribeira,3132,3158,ambos,ate_5mil,Itapeva,Sorocaba
+3542909,Ribeirão Bonito,10989,11040,ambos,10_a_20mil,São Carlos,Araraquara
+3543006,Ribeirão Branco,18627,18942,ambos,10_a_20mil,Itapeva,Sorocaba
+3543105,Ribeirão Corrente,4608,4717,ambos,ate_5mil,Franca,Ribeirão Preto
+3543253,Ribeirão Grande,7450,7571,ambos,5_a_10mil,Itapeva,Sorocaba
+3543204,Ribeirão do Sul,4677,4776,ambos,ate_5mil,Ourinhos,Marília
+3543238,Ribeirão dos Índios,2025,2040,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3543600,Rifaina,4049,4179,ambos,ate_5mil,Franca,Ribeirão Preto
+3543709,Rincão,9098,9101,ambos,5_a_10mil,Araraquara,Araraquara
+3543808,Rinópolis,9259,9334,ambos,5_a_10mil,Tupã,Marília
+3544202,Riolândia,10309,10444,ambos,10_a_20mil,Votuporanga,São José do Rio Preto
+3543501,Riversul,5599,5628,ambos,5_a_10mil,Itapeva,Sorocaba
+3544251,Rosana,17440,17434,ambos,10_a_20mil,Presidente Prudente,Presidente Prudente
+3544301,Roseira,10832,11137,ambos,10_a_20mil,Guaratinguetá,São José dos Campos
+3544509,Rubinéia,3833,3998,ambos,ate_5mil,Santa Fé do Sul,São José do Rio Preto
+3544400,Rubiácea,2700,2740,ambos,ate_5mil,Araçatuba,Araçatuba
+3544608,Sabino,5112,5182,ambos,5_a_10mil,Lins,Bauru
+3544707,Sagres,2474,2522,ambos,ate_5mil,Adamantina - Lucélia,Presidente Prudente
+3544806,Sales,6437,6645,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3544905,Sales Oliveira,11411,11683,ambos,10_a_20mil,São Joaquim da Barra – Orlândia,Ribeirão Preto
+3545001,Salesópolis,15202,15381,ambos,10_a_20mil,São Paulo,São Paulo
+3545100,Salmourão,4808,4883,ambos,ate_5mil,Adamantina - Lucélia,Presidente Prudente
+3545159,Saltinho,8161,8407,ambos,5_a_10mil,Piracicaba,Campinas
+3545407,Salto Grande,9050,9221,ambos,5_a_10mil,Ourinhos,Marília
+3545506,Sandovalina,3645,3697,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3545605,Santa Adélia,14018,14193,ambos,10_a_20mil,Catanduva,São José do Rio Preto
+3545704,Santa Albertina,6393,6566,ambos,5_a_10mil,Jales,São José do Rio Preto
+3546009,Santa Branca,13975,14219,ambos,10_a_20mil,São José dos Campos,São José dos Campos
+3546108,Santa Clara d'Oeste,2598,2694,ambos,ate_5mil,Santa Fé do Sul,São José do Rio Preto
+3546207,Santa Cruz da Conceição,4277,4375,ambos,ate_5mil,Araras,Campinas
+3546256,Santa Cruz da Esperança,2116,2168,ambos,ate_5mil,Ribeirão Preto,Ribeirão Preto
+3546504,Santa Ernestina,6118,6274,ambos,5_a_10mil,Ribeirão Preto,Ribeirão Preto
+3546900,Santa Lúcia,7149,7144,ambos,5_a_10mil,Araraquara,Araraquara
+3547007,Santa Maria da Serra,5243,5308,ambos,5_a_10mil,Piracicaba,Campinas
+3547106,Santa Mercedes,2956,3017,ambos,ate_5mil,Dracena,Presidente Prudente
+3547403,Santa Rita d'Oeste,2733,2796,ambos,ate_5mil,Santa Fé do Sul,São José do Rio Preto
+3547650,Santa Salete,1645,1692,ambos,ate_5mil,Jales,São José do Rio Preto
+3547205,Santana da Ponte Pensa,1670,1699,ambos,ate_5mil,Santa Fé do Sul,São José do Rio Preto
+3547700,Santo Anastácio,17963,17960,ambos,10_a_20mil,Presidente Prudente,Presidente Prudente
+3547908,Santo Antônio da Alegria,6775,6933,ambos,5_a_10mil,Ribeirão Preto,Ribeirão Preto
+3548054,Santo Antônio do Aracanguá,8379,8593,ambos,5_a_10mil,Araçatuba,Araçatuba
+3548104,Santo Antônio do Jardim,6126,6243,ambos,5_a_10mil,São João da Boa Vista,Campinas
+3548203,Santo Antônio do Pinhal,7133,7314,ambos,5_a_10mil,Taubaté - Pindamonhangaba,São José dos Campos
+3548302,Santo Expedito,3000,3069,ambos,ate_5mil,Presidente Prudente,Presidente Prudente
+3548401,Santópolis do Aguapeí,3899,3921,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3551108,Sarapuí,10369,10677,ambos,10_a_20mil,Sorocaba,Sorocaba
+3551207,Sarutaiá,3704,3772,ambos,ate_5mil,Piraju,Marília
+3551306,Sebastianópolis do Sul,3130,3191,ambos,ate_5mil,Votuporanga,São José do Rio Preto
+3551405,Serra Azul,12746,13108,ambos,10_a_20mil,Ribeirão Preto,Ribeirão Preto
+3551801,Sete Barras,12730,12903,ambos,10_a_20mil,Registro,Sorocaba
+3551900,Severínia,14576,14693,ambos,10_a_20mil,Barretos,Ribeirão Preto
+3552007,Silveiras,6186,6329,ambos,5_a_10mil,Cruzeiro,São José dos Campos
+3552304,Sud Mennucci,7355,7464,ambos,5_a_10mil,Andradina,Araçatuba
+3552551,Suzanápolis,3365,3465,ambos,ate_5mil,Jales,São José do Rio Preto
+3548609,São Bento do Sapucaí,11684,11989,ambos,10_a_20mil,Taubaté - Pindamonhangaba,São José dos Campos
+3549003,São Francisco,2602,2623,ambos,ate_5mil,Jales,São José do Rio Preto
+3549508,São José da Bela Vista,7626,7664,ambos,5_a_10mil,Franca,Ribeirão Preto
+3549607,São José do Barreiro,3853,3888,ambos,ate_5mil,Cruzeiro,São José dos Campos
+3549201,São João das Duas Pontes,2580,2623,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3549250,São João de Iracema,1846,1882,ambos,ate_5mil,Fernandópolis,São José do Rio Preto
+3549300,São João do Pau d'Alho,2242,2293,ambos,ate_5mil,Dracena,Presidente Prudente
+3549953,São Lourenço da Serra,15984,16479,ambos,10_a_20mil,São Paulo,São Paulo
+3550001,São Luiz do Paraitinga,10337,10487,ambos,10_a_20mil,Taubaté - Pindamonhangaba,São José dos Campos
+3550506,São Pedro do Turvo,7214,7333,ambos,5_a_10mil,Ourinhos,Marília
+3550803,São Sebastião da Grama,10441,10428,ambos,10_a_20mil,São José do Rio Pardo - Mococa,Campinas
+3550902,São Simão,13442,13560,ambos,10_a_20mil,Ribeirão Preto,Ribeirão Preto
+3552601,Tabapuã,11323,11498,ambos,10_a_20mil,Catanduva,São José do Rio Preto
+3552700,Tabatinga,14769,14997,ambos,10_a_20mil,Araraquara,Araraquara
+3552908,Taciba,6260,6418,ambos,5_a_10mil,Presidente Prudente,Presidente Prudente
+3553005,Taguaí,12669,13068,ambos,10_a_20mil,Avaré,Sorocaba
+3553104,Taiaçu,5677,5744,ambos,5_a_10mil,Barretos,Ribeirão Preto
+3553203,Taiúva,6548,6770,ambos,5_a_10mil,Barretos,Ribeirão Preto
+3553609,Tapiratiba,11816,11903,ambos,10_a_20mil,São José do Rio Pardo - Mococa,Campinas
+3553500,Tapiraí,7996,8122,ambos,5_a_10mil,Sorocaba,Sorocaba
+3553658,Taquaral,2619,2649,ambos,ate_5mil,Barretos,Ribeirão Preto
+3553856,Taquarivaí,6876,7170,ambos,5_a_10mil,Itapeva,Sorocaba
+3553906,Tarabai,6536,6633,ambos,5_a_10mil,Presidente Prudente,Presidente Prudente
+3553955,Tarumã,14882,15315,ambos,10_a_20mil,Assis,Marília
+3554201,Tejupá,4127,4119,ambos,ate_5mil,Piraju,Marília
+3554409,Terra Roxa,7904,7965,ambos,5_a_10mil,Barretos,Ribeirão Preto
+3554607,Timburi,2464,2484,ambos,ate_5mil,Piraju,Marília
+3554656,Torre de Pedra,2046,2056,ambos,ate_5mil,Tatuí,Sorocaba
+3554706,Torrinha,9335,9484,ambos,5_a_10mil,Jaú,Bauru
+3554755,Trabiju,1682,1724,ambos,ate_5mil,Araraquara,Araraquara
+3554904,Três Fronteiras,6804,7060,ambos,5_a_10mil,Santa Fé do Sul,São José do Rio Preto
+3554953,Tuiuti,6778,6976,ambos,5_a_10mil,Bragança Paulista,Campinas
+3555109,Tupi Paulista,15854,16259,ambos,10_a_20mil,Dracena,Presidente Prudente
+3555208,Turiúba,1818,1835,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3555307,Turmalina,1669,1662,ambos,ate_5mil,Jales,São José do Rio Preto
+3555356,Ubarana,5365,5458,ambos,5_a_10mil,São José do Rio Preto,São José do Rio Preto
+3555505,Ubirajara,5132,5289,ambos,5_a_10mil,Bauru,Bauru
+3555604,Uchoa,10394,10670,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3555703,União Paulista,1603,1628,ambos,ate_5mil,São José do Rio Preto,São José do Rio Preto
+3555901,Uru,1387,1424,ambos,ate_5mil,Lins,Bauru
+3556008,Urupês,13744,14073,ambos,10_a_20mil,São José do Rio Preto,São José do Rio Preto
+3555802,Urânia,8833,8973,ambos,5_a_10mil,Jales,São José do Rio Preto
+3556107,Valentim Gentil,14098,14634,ambos,10_a_20mil,Votuporanga,São José do Rio Preto
+3556354,Vargem,10512,10863,ambos,10_a_20mil,Bragança Paulista,Campinas
+3556602,Vera Cruz,10176,10274,ambos,10_a_20mil,Marília,Marília
+3556800,Viradouro,17414,17685,ambos,10_a_20mil,Barretos,Ribeirão Preto
+3556909,Vista Alegre do Alto,8109,8368,ambos,5_a_10mil,Catanduva,São José do Rio Preto
+3556958,Vitória Brasil,1794,1828,ambos,ate_5mil,Jales,São José do Rio Preto
+3557154,Zacarias,2692,2773,ambos,ate_5mil,Birigui - Penápolis,Araçatuba
+3500402,Águas da Prata,7369,7463,ambos,5_a_10mil,São João da Boa Vista,Campinas
+3500501,Águas de Lindóia,17829,18257,ambos,10_a_20mil,Amparo,Campinas
+3500550,Águas de Santa Bárbara,7177,7460,ambos,5_a_10mil,Avaré,Sorocaba
+3500600,Águas de São Pedro,2780,2928,ambos,ate_5mil,Piracicaba,Campinas
+3501202,Álvares Florence,3915,3979,ambos,ate_5mil,Votuporanga,São José do Rio Preto
+3501400,Álvaro de Carvalho,4808,4901,ambos,ate_5mil,Marília,Marília
+3533809,Óleo,2509,2535,ambos,ate_5mil,Avaré,Sorocaba

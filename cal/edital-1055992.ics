@@ -3,15 +3,12 @@ VERSION:2.0
 PRODID:-//Fundos Brasil//Prazos de editais//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Ação 214S - Rotas de Integração Nacional - RP2 — Fundos 
- Brasil
-NAME:Ação 214S - Rotas de Integração Nacional - RP2 — Fundos Brasil
-X-WR-CALDESC:Prazos de Ação 214S - Rotas de Integração Nacional - RP2 (
- Ministério da Integração e do Desenvolvimento Regional). Confirme sempr
- e no edital oficial.
-DESCRIPTION:Prazos de Ação 214S - Rotas de Integração Nacional - RP2 (M
- inistério da Integração e do Desenvolvimento Regional). Confirme sempre
-  no edital oficial.
+X-WR-CALNAME:Rotas de Integração Nacional — Fundos Brasil
+NAME:Rotas de Integração Nacional — Fundos Brasil
+X-WR-CALDESC:Prazos de Rotas de Integração Nacional (Ministério da Integ
+ ração e do Desenvolvimento Regional). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Rotas de Integração Nacional (Ministério da Integr
+ ação e do Desenvolvimento Regional). Confirme sempre no edital oficial.
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
@@ -20,31 +17,30 @@ UID:edital-1055992-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: Ação 214S - Rotas de Integração Nacional - RP2
+SUMMARY:Prazo final: Rotas de Integração Nacional
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 5300020260002\nValor: valor não informado pela fonte\
- nQuem pode participar: Governo do estado\nCódigo do programa: 53000202600
- 02. A proposta é cadastrada no Transferegov.br (módulo Discricionárias)
- \, buscando por esse código. É preciso ter cadastro no Transferegov.br e
- \, para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro 
- Nacional que mostra se o ente pode receber repasses).\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao
- -214s-rotas-de-integracao-nacional-rp2-1055992/\nConfirme data e horário 
- limite no edital oficial: https://www.gov.br/transferegov/pt-br
+ ograma Transferegov 5300020260002 · Ação 214S\nValor: valor não inform
+ ado pela fonte\nQuem pode participar: Governo do estado\nCódigo do progra
+ ma: 5300020260002. A proposta é cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, buscando por esse código. É preciso ter cadastro no Tr
+ ansferegov.br e\, para prefeituras e estados\, estar em dia no CAUC (servi
+ ço do Tesouro Nacional que mostra se o ente pode receber repasses).\nPág
+ ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
+ ro/editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  cao-214s-rotas-de-integracao-nacional-rp2-1055992/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Ação 214S - Rotas de Integraç
- ão Nacional - RP2
+DESCRIPTION:Faltam 7 dias: Prazo final — Rotas de Integração Nacional
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Ação 214S - Rotas de Integração Na
- cional - RP2
+DESCRIPTION:Amanhã: Prazo final — Rotas de Integração Nacional
 END:VALARM
 END:VEVENT
 END:VCALENDAR
