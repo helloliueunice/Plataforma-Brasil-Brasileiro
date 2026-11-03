@@ -324,7 +324,7 @@
 }
 
 /* ---------- "Posso concorrer?" ---------- */
-.modal-section.posso { margin-top: var(--s-5); padding: var(--s-4) var(--s-5); border: 0; border-top: var(--rule); border-radius: 0; background: var(--surface); }
+.modal-section.posso { margin-top: var(--s-5); padding: var(--s-5); border: 0; border-radius: var(--r-lg); background: var(--surface); }
 .modal-section.posso h3 { font-size: var(--fs-18); margin-bottom: var(--s-2); }
 .modal-section.posso h3:focus, .plano h3:focus { outline: none; }
 .modal-section.posso h3:focus-visible, .plano h3:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
@@ -391,11 +391,11 @@
     .prazo-valor { grid-template-columns: 1fr 1fr; gap: var(--s-2) var(--s-4); padding: var(--s-3) 0; }
     .prazo-valor dd { font-size: var(--fs-16); }
 }
-.onb-card { padding: var(--s-5) var(--s-6); border: var(--bw) solid var(--border); border-top: var(--rule); border-radius: 0; background: var(--card); }
+.onb-card { padding: var(--s-6); border: 0; border-radius: var(--r-xl); background: var(--card); }
 .onb-compacto { padding: var(--s-4) var(--s-5); background: var(--surface); border-color: var(--border); }
 .onb-topo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--s-1) var(--s-4); margin-bottom: var(--s-3); }
-.onb-titulo { font-family: var(--font-serif); font-weight: 400; letter-spacing: 0; font-size: 1.75rem; line-height: 1.15; }
-.onb-compacto .onb-titulo { font-family: var(--font); font-weight: var(--fw-semibold); font-size: var(--fs-16); margin-bottom: var(--s-2); }
+.onb-titulo { font-weight: var(--fw-black, 800); letter-spacing: -0.03em; font-size: 1.625rem; line-height: 1.12; }
+.onb-compacto .onb-titulo { font-weight: var(--fw-bold, 700); letter-spacing: -0.015em; font-size: var(--fs-16); margin-bottom: var(--s-2); }
 .onb-progresso { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--fs-14); color: var(--text-2); font-variant-numeric: tabular-nums; }
 .onb-barra { display: inline-block; width: 80px; height: 6px; border-radius: var(--r-full); background: var(--card); overflow: hidden; border: var(--bw) solid var(--border); }
 .onb-barra span { display: block; height: 100%; background: var(--signal); }
@@ -445,7 +445,7 @@
 
 /* ---------- "Desde sua última visita" ---------- */
 .desde { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-2) var(--s-4);
-    margin-bottom: var(--s-6); padding: var(--s-3) var(--s-4); border: 0; border-top: var(--rule); border-radius: 0; background: var(--surface); }
+    margin-bottom: var(--s-6); padding: var(--s-4) var(--s-5); border: 0; border-radius: var(--r-lg); background: var(--card); }
 .desde p { flex: 1 1 280px; font-size: var(--fs-16); color: var(--text); }
 .desde-acoes { display: flex; gap: var(--s-2); }
 .desde-acoes .btn { min-height: 44px; }
@@ -464,7 +464,7 @@
 .mapa-carregando { padding: var(--s-10) var(--s-4); text-align: center; }
 
 /* Edital oficial: sempre visível e destacado no cartão (a fonte oficial é o que vale) */
-.edital-card .edital-actions .btn.btn-oficial { height: 44px; border: 2px solid var(--brand); background: var(--card); color: var(--brand); font-weight: 600; padding: 0 var(--s-4); }
+.edital-card .edital-actions .btn.btn-oficial { height: 44px; border: 2px solid var(--brand); border-radius: var(--r-full); background: var(--card); color: var(--brand); font-weight: 600; padding: 0 var(--s-4); }
 .edital-card .edital-actions .btn.btn-oficial:hover { background: var(--brand-subtle); border-color: var(--brand-hover); color: var(--brand-hover); }
 @media (max-width: 640px) { .edital-card .edital-actions .btn.btn-oficial { height: 44px; } }
 
@@ -477,7 +477,7 @@
 .aviso-sistema.aviso-erro { background: var(--urgent-bg); border-color: var(--urgent-bd); border-left-color: var(--urgent-fg); }
 .aviso-sistema a, .aviso-sistema .link-btn { color: var(--text); text-decoration: underline; font-weight: var(--fw-semibold); }
 @media (max-width: 640px) { .avisos-sistema { padding: 0 var(--s-4); } }
-/* Foco visível nos campos: contorno de 2 px na cor da tinta (18:1 sobre o papel) */
+/* Foco visível nos campos: contorno de 2 px em carvão (15,9:1 sobre a areia) */
 input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--focus) !important; outline-offset: 1px; }
 /* Alvos: "Desfazer"/"Ver" do aviso e links-botão com pelo menos 24 px (desktop) e 44 px (toque) */
 .toast-action { min-height: 44px; min-width: 44px; padding: 0 var(--s-2); margin-block: -11px; align-self: center; }

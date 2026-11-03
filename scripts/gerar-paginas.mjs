@@ -401,7 +401,7 @@ function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', js
     <meta name="description" content="${esc(descricao)}">
     ${robots ? `<meta name="robots" content="${robots}">` : ''}
     <link rel="canonical" href="${esc(url)}">
-    <meta name="theme-color" content="#111111">
+    <meta name="theme-color" content="#1B1B1B">
     <meta property="og:type" content="${tipo}">
     <meta property="og:site_name" content="${NOME}">
     <meta property="og:locale" content="pt_BR">
@@ -416,7 +416,7 @@ function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', js
     <link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=Inter:wght@400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
     <link rel="stylesheet" href="${rel}assets/paginas.css">
     <link rel="alternate" type="application/rss+xml" title="${NOME} — novos editais" href="${SITE}/feed.xml">
     ${assinatura ? `<link rel="alternate" type="application/rss+xml" title="${esc(`${NOME} — ${assinatura.nome}`)}" href="${SITE}/feeds/${assinatura.chave}.xml">
@@ -427,7 +427,7 @@ function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', js
 <body>
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
     <header class="topo">
-        <a class="marca" href="${rel}"><span class="marca-icone" aria-hidden="true"></span>${NOME}</a>
+        <a class="marca" href="${rel}"><span class="marca-icone" aria-hidden="true"></span><span>${NOME.replace(/^(\S+)/, '<b>$1</b>')}</span></a>
         ${menuPrincipal(rel, ativo)}
     </header>
     <main id="conteudo" class="pagina">
@@ -1934,7 +1934,7 @@ const seoHome = `<!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
     ${metasSeguranca}
     <meta name="description" content="${esc(corta(`Encontre editais e chamadas públicas compatíveis com seu perfil (${plural(abertosHoje, 'aberto', 'abertos')} agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.`, 158))}">
     <link rel="canonical" href="${SITE}/">
-    <meta name="theme-color" content="#111111">
+    <meta name="theme-color" content="#1B1B1B">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="${NOME}">
     <meta property="og:locale" content="pt_BR">
