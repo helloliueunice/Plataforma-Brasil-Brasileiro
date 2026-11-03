@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capta Brasil — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-nm4K1HG3leddAgUM8n7DiosIIIqEb7Fo8U5lG9o3keo=' 'sha256-GhiuDhLY1ktu6mtrTSJxGgVr/bTBC1Ffsm66sPApLRU=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-nm4K1HG3leddAgUM8n7DiosIIIqEb7Fo8U5lG9o3keo=' 'sha256-xJMCtrlJM+jYpgd8as9nmOqdILWzXi3XnU9fvnd1pDc=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
-    <meta name="theme-color" content="#1351B4">
+    <meta name="theme-color" content="#0B4F9C">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capta Brasil">
     <meta property="og:locale" content="pt_BR">
@@ -53,10 +53,10 @@
     --text-3: #6B6B74;           /* 5.3:1  — metadados (só sobre --bg/--surface) */
 
     /* Marca (azul gov.br, mantido por reconhecimento) */
-    --brand: #1351B4;            /* 7.3:1 sobre branco */
-    --brand-hover: #0C3F8F;
-    --brand-subtle: #EDF3FC;     /* fundo de item selecionado */
-    --brand-border: #A9C2EC;
+    --brand: #0B4F9C;            /* 8:1 sobre branco */
+    --brand-hover: #083A73;
+    --brand-subtle: #E3EDF9;     /* fundo de item selecionado */
+    --brand-border: #A9C2E4;
     --on-brand: #FFFFFF;
 
     /* Semânticas — texto/fundo/borda, todas AA (≥4.5:1 texto sobre fundo) */
@@ -67,7 +67,7 @@
     --info-fg: var(--brand); --info-bg: var(--brand-subtle);
 
     /* Tipografia */
-    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --fs-12: 0.75rem;   /* metadados, badges */
     --fs-13: 0.8125rem; /* rótulos, botões pequenos */
     --fs-14: 0.875rem;  /* UI padrão, tabelas */
@@ -203,11 +203,11 @@ header {
 }
 .logo, a.logo {
     display: inline-flex; align-items: center; gap: var(--s-2);
-    font-size: var(--fs-16); font-weight: var(--fw-semibold); letter-spacing: -0.01em;
+    font-size: var(--fs-18, 1.125rem); font-weight: 700; letter-spacing: -0.01em;
     color: var(--text); text-decoration: none; white-space: nowrap;
 }
-.logo-icon { width: 24px; height: 24px; border-radius: var(--r-sm); background: var(--brand);
-    color: var(--on-brand); display: grid; place-items: center; font-size: 13px; font-weight: var(--fw-semibold); }
+.logo-icon { width: 28px; height: 28px; border-radius: 7px; background: url("assets/marca.svg") center / contain no-repeat;
+    display: inline-block; flex: none; }
 .header-right { display: flex; align-items: center; gap: var(--s-6); min-width: 0; }
 .main-nav { display: flex; align-items: center; gap: var(--s-1); }
 .main-nav a {
@@ -1903,7 +1903,7 @@ body.comparando .toasts { bottom: 88px; }
             });
             return recursosCarregados[src];
         }
-        carregarRecurso('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap').catch(() => { /* fica a fonte do sistema */ });
+        carregarRecurso('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap').catch(() => { /* fica a fonte do sistema */ });
         const VENDOR = { leafletCss: 'assets/vendor/leaflet-1.9.4/leaflet.css', leaflet: 'assets/vendor/leaflet-1.9.4/leaflet.js', chart: 'assets/vendor/chartjs-3.9.1/chart.min.js' };
 
         /* =====================================================================
@@ -8550,7 +8550,7 @@ body.comparando .toasts { bottom: 88px; }
                 const proc = procAgencia(a);
                 if (mapaFiltro && proc !== mapaFiltro) continue;
                 const ab = abertosDaAgencia(k);
-                L.circleMarker([a.lat, a.lng], { radius: 9, color: '#FFFFFF', weight: 2, fillColor: proc === 'nacional' ? '#1351B4' : '#7C3AED', fillOpacity: 0.9 })
+                L.circleMarker([a.lat, a.lng], { radius: 9, color: '#FFFFFF', weight: 2, fillColor: proc === 'nacional' ? '#0B4F9C' : '#7C3AED', fillOpacity: 0.9 })
                     .bindTooltip(a.sigla)
                     .bindPopup(`<strong>${esc(a.sigla)}</strong><br>${esc(a.cidade)}<br>${plural(ab, 'edital aberto', 'editais abertos')}<br><a href="#agencia-${k}">Ver instituição →</a>`)
                     .addTo(mapaCamada);
@@ -9230,7 +9230,7 @@ body.comparando .toasts { bottom: 88px; }
                         labels: usadas.map(k => AREAS[k]),
                         datasets: [{
                             data: porArea.filter(v => v > 0).map(v => Math.round(v)),
-                            backgroundColor: ['#1351B4', '#168821', '#FFCD07', '#7C3AED', '#E52207', '#0EA5E9', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6']
+                            backgroundColor: ['#0B4F9C', '#168821', '#FFCD07', '#7C3AED', '#E52207', '#0EA5E9', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6']
                         }]
                     },
                     options: {

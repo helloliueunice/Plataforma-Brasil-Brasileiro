@@ -42,26 +42,26 @@ function dados(e) {
 }
 // O nome do site entra na assinatura: trocar a marca regenera as imagens de prévia
 const MARCA = (() => { try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', 'site.json'), 'utf8')).nome || 'Capta Brasil'; } catch (_) { return 'Capta Brasil'; } })();
-const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA })).digest('hex').slice(0, 16);
+const assinatura = d => crypto.createHash('sha256').update(JSON.stringify({ ...d, marca: MARCA, identidade: 'sinal-verde-1' })).digest('hex').slice(0, 16);
 
 function html(d) {
     const tam = d.titulo.length > 90 ? 50 : d.titulo.length > 60 ? 58 : 66;
     return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;font-family:'DejaVu Sans','Liberation Sans',Arial,sans-serif;background:linear-gradient(135deg,#071D41 0%,#1351B4 60%,#2F6FD6 100%);color:#fff;padding:56px 72px;position:relative;overflow:hidden}
-.circ{position:absolute;right:-140px;top:-140px;width:440px;height:440px;border-radius:50%;background:#FFCD07;opacity:.16}
+body{width:1200px;height:630px;font-family:'DejaVu Sans','Liberation Sans',Arial,sans-serif;background:linear-gradient(135deg,#0E1B2C 0%,#0B4F9C 62%,#1F6BC4 100%);color:#fff;padding:56px 72px;position:relative;overflow:hidden}
+.circ{position:absolute;right:-140px;top:-140px;width:440px;height:440px;border-radius:50%;background:#2BB673;opacity:.18}
 .marca{display:flex;align-items:center;gap:14px;font-size:28px;font-weight:700}
-.topo{margin-top:34px;font-size:24px;font-weight:700;color:#FFE27A;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:1056px}
+.topo{margin-top:34px;font-size:24px;font-weight:700;color:#A7E9C8;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:1056px}
 h1{margin-top:12px;font-size:${tam}px;line-height:1.1;font-weight:800;letter-spacing:-1px;max-width:1056px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .base{position:absolute;left:72px;right:72px;bottom:52px;display:flex;gap:18px;align-items:stretch}
 .box{background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);border-radius:18px;padding:14px 22px;min-width:0}
 .box b{display:block;font-size:34px;font-weight:800;white-space:nowrap}
 .box span{display:block;font-size:19px;opacity:.9;margin-top:2px;white-space:nowrap}
-.prazo{background:#FFCD07;color:#071D41;border-color:#FFCD07}
+.prazo{background:#F2A900;color:#0E1B2C;border-color:#F2A900}
 .pub{flex:1;overflow:hidden}
 .pub b{font-size:24px;white-space:normal;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style></head><body><div class="circ"></div>
-<div class="marca"><svg width="52" height="52" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#168821"/><path d="M32 10 56 32 32 54 8 32z" fill="#FFCD07"/><circle cx="32" cy="32" r="11" fill="#1351B4"/></svg>${esc(MARCA)} · Edital de fomento</div>
+<div class="marca"><svg width="52" height="52" viewBox="0 0 88 88"><rect width="88" height="88" rx="22" fill="#FFFFFF"/><path d="M60 30a20 20 0 1 0 0 28" fill="none" stroke="#0B4F9C" stroke-width="9" stroke-linecap="round"/><path d="M40 44l7 7 14-15" fill="none" stroke="#2BB673" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>${esc(MARCA)} · Edital de fomento</div>
 <div class="topo">${esc(d.topo)}</div>
 <h1>${esc(d.titulo)}</h1>
 <div class="base">

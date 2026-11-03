@@ -6,12 +6,12 @@
     --bg: #FFFFFF; --surface: #F7F7F8; --surface-2: #EFEFF1;
     --border: #E4E4E7; --border-strong: #C9C9CF;
     --text: #18181B; --text-2: #52525B; --text-3: #6B6B74;
-    --brand: #1351B4; --brand-hover: #0C3F8F; --brand-subtle: #EDF3FC; --brand-border: #A9C2EC; --on-brand: #FFFFFF;
+    --brand: #0B4F9C; --brand-hover: #083A73; --brand-subtle: #E3EDF9; --brand-border: #A9C2E4; --on-brand: #FFFFFF;
     --open-fg: #146C2E;   --open-bg: #E9F5EC;   --open-bd: #B7DEC1;
     --soon-fg: #7A4D00;   --soon-bg: #FDF3DC;   --soon-bd: #EED29A;
     --closed-fg: #52525B; --closed-bg: #F1F1F3; --closed-bd: #DCDCE0;
     --urgent-fg: #B3261E; --urgent-bg: #FCECEA; --urgent-bd: #F2B8B3;
-    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     /* Legibilidade: nada abaixo de 14 px (selos, notas); texto corrido em 16 px. --fs-12 e --fs-13 ficam como aliases. */
     --fs-12: .875rem; --fs-13: .875rem; --fs-14: .875rem; --fs-16: 1rem; --fs-18: 1.125rem; --fs-20: 1.25rem; --fs-24: 1.5rem; --fs-30: 1.875rem; --fs-36: 2.25rem;
     --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px;
@@ -219,7 +219,7 @@ section, .aviso { margin-top: var(--s-10); }
 }
 
 /* Complementos */
-.marca-icone { width: 20px; height: 20px; border-radius: var(--r-sm); background: var(--brand); display: inline-block; }
+.marca-icone { width: 24px; height: 24px; border-radius: 6px; background: url("marca.svg") center / contain no-repeat; display: inline-block; }
 .pular { top: auto; transform: translateY(-200%); display: inline-flex; align-items: center; min-height: 44px; }
 .pular:focus { transform: none; top: var(--s-2); }
 .selo { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }

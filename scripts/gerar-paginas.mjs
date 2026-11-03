@@ -400,7 +400,7 @@ function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', js
     <meta name="description" content="${esc(descricao)}">
     ${robots ? `<meta name="robots" content="${robots}">` : ''}
     <link rel="canonical" href="${esc(url)}">
-    <meta name="theme-color" content="#1351B4">
+    <meta name="theme-color" content="#0B4F9C">
     <meta property="og:type" content="${tipo}">
     <meta property="og:site_name" content="${NOME}">
     <meta property="og:locale" content="pt_BR">
@@ -413,6 +413,8 @@ function layout({ rel, titulo: tituloBruto, descricao, url, tipo = 'website', js
     <meta property="og:image:alt" content="${ogImagem ? esc(titulo) : `${NOME} — editais e fundos de financiamento`}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
     <link rel="stylesheet" href="${rel}assets/paginas.css">
     <link rel="alternate" type="application/rss+xml" title="${NOME} — novos editais" href="${SITE}/feed.xml">
     ${assinatura ? `<link rel="alternate" type="application/rss+xml" title="${esc(`${NOME} — ${assinatura.nome}`)}" href="${SITE}/feeds/${assinatura.chave}.xml">
@@ -1922,7 +1924,7 @@ const seoHome = `<!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
     ${metasSeguranca}
     <meta name="description" content="${esc(corta(`Encontre editais e chamadas públicas compatíveis com seu perfil (${plural(abertosHoje, 'aberto', 'abertos')} agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.`, 158))}">
     <link rel="canonical" href="${SITE}/">
-    <meta name="theme-color" content="#1351B4">
+    <meta name="theme-color" content="#0B4F9C">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="${NOME}">
     <meta property="og:locale" content="pt_BR">
