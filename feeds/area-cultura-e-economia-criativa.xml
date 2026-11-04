@@ -2,25 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Radar Fomento — editais de Cultura e Economia Criativa</title>
-  <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/area/cultura-e-economia-criativa/</link>
-  <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/area-cultura-e-economia-criativa.xml" rel="self" type="application/rss+xml"/>
+  <link>https://radarfomento.com.br/area/cultura-e-economia-criativa/</link>
+  <atom:link href="https://radarfomento.com.br/feeds/area-cultura-e-economia-criativa.xml" rel="self" type="application/rss+xml"/>
   <description>Editais com inscrições abertas ou previstas (editais de Cultura e Economia Criativa), com link para a fonte oficial. Confirme sempre no edital oficial.</description>
   <language>pt-BR</language>
   <ttl>720</ttl>
   <lastBuildDate>Sat, 31 Oct 2026 15:00:00 GMT</lastBuildDate>
   <item>
-    <title>Produção de Documentário Audiovisual de Caráter Educativo, Científico e Institucional — Ministério da Cultura</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/producao-de-documentario-audiovisual-de-carater-educativo-cientifico-e-1056835/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/producao-de-documentario-audiovisual-de-carater-educativo-cientifico-e-1056835/</guid>
-    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
-    <category>Cultura e Economia Criativa</category>
-    <category>ONG/associação</category>
-    <description>Programa Transferegov 2041120260009. valor não informado pela fonte · ONG/associação · inscrições de 30/09/2026 a 03/11/2026. Execução de projeto de produção de documentário audiovisual de caráter educativo, científico e institucional, que evidencie como os arranjos institucionais associados ao desenvolvimento do setor espacial brasileiro, com destaque para a trajetória da Alcântara Cyclone Space, contribuíram para a formação de capacidades científicas, tecnológicas e organizacionais no país, e para a promoção da educação científica, da cultura de inovação e do interesse de estudantes e jovens por áreas STEM (ciência, tecnologia, engenharia e matemática), sobretudo com reflexos no município de Alcântara/MA.</description>
-  </item>
-  <item>
     <title>Bolsas de aperfeiçoamento para especialistas que atuam em museus e instituições de acervos de São Paulo — FAPESP</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/</guid>
+    <link>https://radarfomento.com.br/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/</link>
+    <guid isPermaLink="true">https://radarfomento.com.br/editais/bolsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/</guid>
     <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
     <category>Cultura e Economia Criativa</category>
     <category>Pesquisador(a)</category>

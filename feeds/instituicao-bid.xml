@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Radar Fomento — editais BID</title>
-  <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/instituicoes/bid/</link>
-  <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/instituicao-bid.xml" rel="self" type="application/rss+xml"/>
+  <link>https://radarfomento.com.br/instituicoes/bid/</link>
+  <atom:link href="https://radarfomento.com.br/feeds/instituicao-bid.xml" rel="self" type="application/rss+xml"/>
   <description>Editais com inscrições abertas ou previstas (editais BID), com link para a fonte oficial. Confirme sempre no edital oficial.</description>
   <language>pt-BR</language>
   <ttl>720</ttl>

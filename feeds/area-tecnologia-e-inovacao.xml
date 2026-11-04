@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Radar Fomento — editais de Tecnologia e Inovação</title>
-  <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/area/tecnologia-e-inovacao/</link>
-  <atom:link href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/feeds/area-tecnologia-e-inovacao.xml" rel="self" type="application/rss+xml"/>
+  <link>https://radarfomento.com.br/area/tecnologia-e-inovacao/</link>
+  <atom:link href="https://radarfomento.com.br/feeds/area-tecnologia-e-inovacao.xml" rel="self" type="application/rss+xml"/>
   <description>Editais com inscrições abertas ou previstas (editais de Tecnologia e Inovação), com link para a fonte oficial. Confirme sempre no edital oficial.</description>
   <language>pt-BR</language>
   <ttl>720</ttl>
   <lastBuildDate>Sat, 31 Oct 2026 15:00:00 GMT</lastBuildDate>
   <item>
     <title>Plataformas digitais baseadas em software livre e protocolos abertos — FAPESP</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/</guid>
+    <link>https://radarfomento.com.br/editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/</link>
+    <guid isPermaLink="true">https://radarfomento.com.br/editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/</guid>
     <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
     <category>Tecnologia e Inovação</category>
     <category>Pesquisador(a)</category>
@@ -20,8 +20,8 @@
   </item>
   <item>
     <title>Cooperação Brasil–França em pesquisa: Saúde Única e continuum digital — CNPq</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/</guid>
+    <link>https://radarfomento.com.br/editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/</link>
+    <guid isPermaLink="true">https://radarfomento.com.br/editais/cooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <category>Tecnologia e Inovação</category>
     <category>Pesquisador(a)</category>
@@ -30,8 +30,8 @@
   </item>
   <item>
     <title>Mestrado e Doutorado Acadêmico para Inovação (MAI/DAI) — CNPq</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/</guid>
+    <link>https://radarfomento.com.br/editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/</link>
+    <guid isPermaLink="true">https://radarfomento.com.br/editais/mestrado-e-doutorado-academico-para-inovacao-mai-dai-106/</guid>
     <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
     <category>Tecnologia e Inovação</category>
     <category>Pesquisador(a)</category>
@@ -40,8 +40,8 @@
   </item>
   <item>
     <title>Dr. Empreendedor Capixaba: apoio a doutores empreendedores com projetos de inovação — FAPES</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/</guid>
+    <link>https://radarfomento.com.br/editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/</link>
+    <guid isPermaLink="true">https://radarfomento.com.br/editais/dr-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/</guid>
     <pubDate>Thu, 30 Apr 2026 15:00:00 GMT</pubDate>
     <category>Tecnologia e Inovação</category>
     <category>Pesquisador(a)</category>

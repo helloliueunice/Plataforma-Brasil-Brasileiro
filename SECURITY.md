@@ -40,7 +40,7 @@ Aceitamos relatos em português, inglês ou espanhol.
 
 **Dentro do escopo**
 
-- O site publicado em `https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/` (plataforma e páginas estáticas).
+- O site publicado em `https://radarfomento.com.br/` (plataforma e páginas estáticas).
 - O código deste repositório, incluindo os scripts em `scripts/` e as automações em `.github/workflows/`.
 - A integridade da chave Pix, do código "copia e cola" e do QR Code da página Apoie.
 - Os dados publicados (`editais.json`, `data/*.json`, feeds RSS e calendários).
@@ -71,7 +71,7 @@ Esta autorização não alcança sistemas de terceiros e não substitui a permis
 
 ## Dados pessoais e incidentes
 
-A plataforma guarda perfil, propostas e documentos **apenas no navegador de quem usa**; esses dados não chegam até nós. Tratamos poucos dados pessoais: e-mails recebidos e informações de pagamentos Pix, conforme a [Política de Privacidade](https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/privacidade/).
+A plataforma guarda perfil, propostas e documentos **apenas no navegador de quem usa**; esses dados não chegam até nós. Tratamos poucos dados pessoais: e-mails recebidos e informações de pagamentos Pix, conforme a [Política de Privacidade](https://radarfomento.com.br/privacidade/).
 
 Se um incidente de segurança puder causar risco ou dano relevante aos titulares, comunicaremos a **Autoridade Nacional de Proteção de Dados (ANPD)** e os titulares afetados em até **3 dias úteis** do conhecimento, conforme o art. 48 da LGPD e a Resolução CD/ANPD nº 15/2024, e manteremos o registro do incidente.
 

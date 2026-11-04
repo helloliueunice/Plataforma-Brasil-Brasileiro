@@ -16,39 +16,6 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:edital-1056835-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261103
-DTEND;VALUE=DATE:20261104
-SUMMARY:Prazo final: Produção de Documentário Audiovisual de Caráter Ed
- ucativo\, Científico e Institucional
-DESCRIPTION:Ministério da Cultura · Programa Transferegov 2041120260009\n
- Valor: valor não informado pela fonte\nQuem pode participar: ONG/associa
- ção\nCódigo do programa: 2041120260009. A proposta é cadastrada no Tra
- nsferegov.br (módulo Discricionárias)\, buscando por esse código. É pr
- eciso ter cadastro no Transferegov.br.\nPágina do edital: https://helloli
- ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/producao-de-documen
- tario-audiovisual-de-carater-educativo-cientifico-e-1056835/\nConfirme dat
- a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
- br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- roducao-de-documentario-audiovisual-de-carater-educativo-cientifico-e-1056
- 835/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Produção de Documentário Audi
- ovisual de Caráter Educativo\, Científico e Institucional
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Produção de Documentário Audiovisua
- l de Caráter Educativo\, Científico e Institucional
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-130-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261123
@@ -59,14 +26,14 @@ DESCRIPTION:FAPESP · Chamada FAPESP – Aperfeiçoamento de especialistas
  em museus\nValor: bolsas: valores no edital oficial\nQuem pode participar:
   Pesquisador(a)\nPrazo ampliado até 23/11/2026 (o horário-limite não co
  nsta no texto). Submissão apenas pelo SAGe\; resultados a partir de 08/03
- /2027.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Bra
- sil-Brasileiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-at
- uam-em-museus-e-130/\nConfirme data e horário limite no edital oficial: h
- ttps://fapesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-espe
- cialistas-que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-
- de-acervos-sediadas-no-estado-de-sao-paulo
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/
+ /2027.\nPágina do edital: https://radarfomento.com.br/editais/bolsas-de-a
+ perfeicoamento-para-especialistas-que-atuam-em-museus-e-130/\nConfirme dat
+ a e horário limite no edital oficial: https://fapesp.br/18387/chamada-de-
+ propostas-para-o-aperfeicoamento-de-especialistas-que-atuam-em-museus-e-in
+ stituicoes-de-salvaguarda-e-comunicacao-de-acervos-sediadas-no-estado-de-s
+ ao-paulo
+URL:https://radarfomento.com.br/editais/bolsas-de-aperfeicoamento-para-espe
+ cialistas-que-atuam-em-museus-e-130/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -24,14 +24,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262442026001
  7\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2624420260017. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/edupol-ia-pesquis
- a-educacao-cultura-politica-democracia-e-inteligencia-1056871/\nConfirme d
- ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
- t-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/e
- dupol-ia-pesquisa-educacao-cultura-politica-democracia-e-inteligencia-1056
- 871/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/edupol-ia-pesquisa-educacao-cultura-politica-democr
+ acia-e-inteligencia-1056871/\nConfirme data e horário limite no edital of
+ icial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/edupol-ia-pesquisa-educacao-cultura
+ -politica-democracia-e-inteligencia-1056871/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -58,12 +56,11 @@ SUMMARY:Pré-proposta: PIPE Jornada Tecnológica – Tecnologias Educaciona
 DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
  il por proposta\nQuem pode participar: Empresa\nPrazo da pré-proposta. As
   pré-propostas consideradas elegíveis enviam a proposta completa até 13
- /01/2027.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
- Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-educacionai
- s-fase-1-102/\nConfirme data e horário limite no edital oficial: https://
- fapesp.br/18434
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+ /01/2027.\nPágina do edital: https://radarfomento.com.br/editais/pipe-jor
+ nada-tecnologica-tecnologias-educacionais-fase-1-102/\nConfirme data e hor
+ ário limite no edital oficial: https://fapesp.br/18434
+URL:https://radarfomento.com.br/editais/pipe-jornada-tecnologica-tecnologia
+ s-educacionais-fase-1-102/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -90,12 +87,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262492026000
  3\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2624920260003. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/rede-multidiscipl
- inar-de-atencao-a-maes-e-familiares-vitimas-de-1056851/\nConfirme data e h
- orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
- ede-multidisciplinar-de-atencao-a-maes-e-familiares-vitimas-de-1056851/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/rede-multidisciplinar-de-atencao-a-maes-e-familiare
+ s-vitimas-de-1056851/\nConfirme data e horário limite no edital oficial: 
+ https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/rede-multidisciplinar-de-atencao-a-
+ maes-e-familiares-vitimas-de-1056851/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -126,12 +123,12 @@ DESCRIPTION:FAPES · Edital Fapes nº 26/2026\nValor: bolsas: valores no ed
  ma só proposta\; vale a última enviada. Recurso administrativo em até 5
   dias úteis após o resultado preliminar (a partir de 14/12/2026)\; indic
  ação regular de bolsistas de março a novembro de 2027.\nPágina do edit
- al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
- procap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/\nCo
- nfirme data e horário limite no edital oficial: https://fapes.es.gov.br/m
- edia/Editais/procap-2027-mestrado.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rocap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/
+ al: https://radarfomento.com.br/editais/procap-2027-bolsas-de-mestrado-par
+ a-programas-de-pos-graduacao-do-119/\nConfirme data e horário limite no e
+ dital oficial: https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.
+ pdf
+URL:https://radarfomento.com.br/editais/procap-2027-bolsas-de-mestrado-para
+ -programas-de-pos-graduacao-do-119/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -159,13 +156,12 @@ DESCRIPTION:FAPES · Edital Fapes nº 27/2026\nValor: bolsas: valores no ed
  \, com login do coordenador\; cada PPG envia apenas uma proposta (vale a 
  última). Resultado preliminar a partir de 14/12/2026\, recurso em 5 dias 
  úteis\, homologação a partir de 21/12/2026\; indicação de bolsistas d
- e março a novembro de 2027.\nPágina do edital: https://helloliueunice.gi
- thub.io/Plataforma-Brasil-Brasileiro/editais/procap-2027-bolsas-de-doutora
- do-para-programas-de-pos-graduacao-do-120/\nConfirme data e horário limit
- e no edital oficial: https://fapes.es.gov.br/media/Editais/procap-2027-dou
- torado.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rocap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/
+ e março a novembro de 2027.\nPágina do edital: https://radarfomento.com.
+ br/editais/procap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao
+ -do-120/\nConfirme data e horário limite no edital oficial: https://fapes
+ .es.gov.br/media/Editais/procap-2027-doutorado.pdf
+URL:https://radarfomento.com.br/editais/procap-2027-bolsas-de-doutorado-par
+ a-programas-de-pos-graduacao-do-120/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -190,12 +186,11 @@ SUMMARY:Prazo final: Jovens Pesquisadores – chamada para pesquisadores no
 DESCRIPTION:FAPESP · Chamada FAPESP nº 47/2026\nValor: até R$ 2\,5 mi 
  por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da proposta comp
  leta. Depois há avaliação por painel externo\, apresentação oral e en
- trevista on-line.\nPágina do edital: https://helloliueunice.github.io/Pla
- taforma-Brasil-Brasileiro/editais/jovens-pesquisadores-chamada-para-pesqui
- sadores-no-exterior-103/\nConfirme data e horário limite no edital oficia
- l: https://fapesp.br/18389
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/j
- ovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/
+ trevista on-line.\nPágina do edital: https://radarfomento.com.br/editais/
+ jovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/\nConfirme
+  data e horário limite no edital oficial: https://fapesp.br/18389
+URL:https://radarfomento.com.br/editais/jovens-pesquisadores-chamada-para-p
+ esquisadores-no-exterior-103/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -221,14 +216,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262492026000
  4\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2624920260004. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/ri-para-todos-dip
- lomacia-popular-cidadania-global-e-democratizacao-das-1056868/\nConfirme d
- ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
- t-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
- i-para-todos-diplomacia-popular-cidadania-global-e-democratizacao-das-1056
- 868/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/ri-para-todos-diplomacia-popular-cidadania-global-e
+ -democratizacao-das-1056868/\nConfirme data e horário limite no edital of
+ icial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/ri-para-todos-diplomacia-popular-ci
+ dadania-global-e-democratizacao-das-1056868/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -253,13 +246,12 @@ SUMMARY:Prazo final: Auxílio à Promoção de Eventos Científicos\, Tecno
 DESCRIPTION:CNPq · Chamada CNPq nº 34/2026\nValor: até R$ 200\,0 mil p
  or proposta\nQuem pode participar: Pesquisador(a)\, Universidade ou instit
  uto\nAté 23h59 (Brasília). Resultado preliminar em 15/03/2027.\nPágina 
- do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/e
- ditais/auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovaca
- o-105/\nConfirme data e horário limite no edital oficial: https://www.gov
- .br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026
- /chamada-publica-cnpq-N-34-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- uxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/
+ do edital: https://radarfomento.com.br/editais/auxilio-a-promocao-de-event
+ os-cientificos-tecnologicos-e-de-inovacao-105/\nConfirme data e horário l
+ imite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-c
+ hamadas/chamadas-2026/chamada-no-34-2026/chamada-publica-cnpq-N-34-2026
+URL:https://radarfomento.com.br/editais/auxilio-a-promocao-de-eventos-cient
+ ificos-tecnologicos-e-de-inovacao-105/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -286,13 +278,13 @@ DESCRIPTION:FAPESP · Chamada de Propostas BEPE Mestrado – 2026\nValor: b
  bmissão exclusivamente pelo SAGe até 11/12/2026 (horário limite não in
  formado). A instituição e o supervisor no exterior precisam estar cadast
  rados no SAGe\; o cadastro da instituição leva cerca de 2 dias úteis. R
- esultados previstos para março de 2027.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsa-estagio-de-
- pesquisa-no-exterior-bepe-mestrado-2026-125/\nConfirme data e horário lim
- ite no edital oficial: https://fapesp.br/18417/chamada-de-propostas-bolsa-
- estagio-de-pesquisa-no-exterior-bepe-mestrado-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026-125/
+ esultados previstos para março de 2027.\nPágina do edital: https://radar
+ fomento.com.br/editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado
+ -2026-125/\nConfirme data e horário limite no edital oficial: https://fap
+ esp.br/18417/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-be
+ pe-mestrado-2026
+URL:https://radarfomento.com.br/editais/bolsa-estagio-de-pesquisa-no-exteri
+ or-bepe-mestrado-2026-125/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -320,13 +312,13 @@ DESCRIPTION:FAPESP · Chamada de Propostas BEPE Iniciação Científica –
  e o supervisor no exterior precisam estar cadastrados no SAGe antes (o cad
  astro da instituição leva cerca de 2 dias úteis). Carta da instituiçã
  o estrangeira\, procuração e declaração de retorno podem ser entregues
-  na contratação.\nPágina do edital: https://helloliueunice.github.io/Pl
- ataforma-Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-no-exterior-b
- epe-para-iniciacao-cientifica-126/\nConfirme data e horário limite no edi
- tal oficial: https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de
- -pesquisa-no-exterior-bepe-iniciacao-cientifica-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+  na contratação.\nPágina do edital: https://radarfomento.com.br/editais
+ /bolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+ \nConfirme data e horário limite no edital oficial: https://fapesp.br/184
+ 16/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-iniciac
+ ao-cientifica-2026
+URL:https://radarfomento.com.br/editais/bolsa-estagio-de-pesquisa-no-exteri
+ or-bepe-para-iniciacao-cientifica-126/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -353,11 +345,10 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262982026000
  regov.br (módulo Discricionárias)\, buscando por esse código. É precis
  o ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar e
  m dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rece
- ber repasses).\nPágina do edital: https://helloliueunice.github.io/Plataf
- orma-Brasil-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data 
- e horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-simec-par-1055941/
+ ber repasses).\nPágina do edital: https://radarfomento.com.br/editais/pro
+ grama-simec-par-1055941/\nConfirme data e horário limite no edital oficia
+ l: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/programa-simec-par-1055941/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -380,12 +371,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  1\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2629120260001. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-brasilei
- ro-de-professores-no-cern-1055945/\nConfirme data e horário limite no edi
- tal oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-brasileiro-de-professores-no-cern-1055945/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/programa-brasileiro-de-professores-no-cern-1055945/
+ \nConfirme data e horário limite no edital oficial: https://www.gov.br/tr
+ ansferegov/pt-br
+URL:https://radarfomento.com.br/editais/programa-brasileiro-de-professores-
+ no-cern-1055945/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -411,14 +402,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  2\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2629120260002. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretori
- a-de-articulacao-e-inovacao-em-educacao-aberta-diea-1055966/\nConfirme dat
- a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
- br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105596
- 6/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-edu
+ cacao-aberta-diea-1055966/\nConfirme data e horário limite no edital ofic
+ ial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acoes-da-diretoria-de-articulacao-e
+ -inovacao-em-educacao-aberta-diea-1055966/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -446,13 +435,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  regov.br (módulo Discricionárias)\, buscando por esse código. É precis
  o ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar e
  m dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rece
- ber repasses).\nPágina do edital: https://helloliueunice.github.io/Plataf
- orma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovaca
- o-em-educacao-aberta-diea-1056385/\nConfirme data e horário limite no edi
- tal oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
- 5/
+ ber repasses).\nPágina do edital: https://radarfomento.com.br/editais/aco
+ es-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056385/
+ \nConfirme data e horário limite no edital oficial: https://www.gov.br/tr
+ ansferegov/pt-br
+URL:https://radarfomento.com.br/editais/acoes-da-diretoria-de-articulacao-e
+ -inovacao-em-educacao-aberta-diea-1056385/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -480,14 +468,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  4\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2629120260004. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretori
- a-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/\nConfirme dat
- a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
- br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
- 6/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-edu
+ cacao-aberta-diea-1056386/\nConfirme data e horário limite no edital ofic
+ ial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acoes-da-diretoria-de-articulacao-e
+ -inovacao-em-educacao-aberta-diea-1056386/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -512,13 +498,13 @@ SUMMARY:Prazo final: Bolsas de Produtividade em Pesquisa e em Desenvolvimen
 DESCRIPTION:CNPq · Chamada CNPq nº 33/2026\nValor: bolsas: valores no edi
  tal oficial\nQuem pode participar: Pesquisador(a)\nAté 23h59 (Brasília).
   Resultado preliminar em 05/05/2027\; bolsas a partir de 01/08/2027.\nPág
- ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
- ro/editais/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnol
- ogico-104/\nConfirme data e horário limite no edital oficial: https://www
- .gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-
- 2026/chamada-publica-cnpq-N-33-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/
+ ina do edital: https://radarfomento.com.br/editais/bolsas-de-produtividade
+ -em-pesquisa-e-em-desenvolvimento-tecnologico-104/\nConfirme data e horár
+ io limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-
+ as-chamadas/chamadas-2026/chamada-no-33-2026/chamada-publica-cnpq-N-33-202
+ 6
+URL:https://radarfomento.com.br/editais/bolsas-de-produtividade-em-pesquisa
+ -e-em-desenvolvimento-tecnologico-104/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -543,12 +529,11 @@ SUMMARY:Proposta completa: PIPE Jornada Tecnológica – Tecnologias Educac
 DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
  il por proposta\nQuem pode participar: Empresa\nPrazo da pré-proposta. As
   pré-propostas consideradas elegíveis enviam a proposta completa até 13
- /01/2027.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
- Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-educacionai
- s-fase-1-102/\nConfirme data e horário limite no edital oficial: https://
- fapesp.br/18434
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+ /01/2027.\nPágina do edital: https://radarfomento.com.br/editais/pipe-jor
+ nada-tecnologica-tecnologias-educacionais-fase-1-102/\nConfirme data e hor
+ ário limite no edital oficial: https://fapesp.br/18434
+URL:https://radarfomento.com.br/editais/pipe-jornada-tecnologica-tecnologia
+ s-educacionais-fase-1-102/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -573,11 +558,11 @@ SUMMARY:Prazo final: SPRINT 2026 – colaboração internacional (edição
 DESCRIPTION:FAPESP · Chamada FAPESP nº 48/2026\nValor: até US$ 50\,0 m
  il por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da edição 2
   (a edição 1 encerrou em 26/10/2026). Submissão pelo SAGe.\nPágina do 
- edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
- ais/sprint-2026-colaboracao-internacional-edicao-2-111/\nConfirme data e h
- orário limite no edital oficial: https://fapesp.br/sprint/chamada2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/s
- print-2026-colaboracao-internacional-edicao-2-111/
+ edital: https://radarfomento.com.br/editais/sprint-2026-colaboracao-intern
+ acional-edicao-2-111/\nConfirme data e horário limite no edital oficial: 
+ https://fapesp.br/sprint/chamada2026
+URL:https://radarfomento.com.br/editais/sprint-2026-colaboracao-internacion
+ al-edicao-2-111/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -605,12 +590,12 @@ DESCRIPTION:FAPES · Edital FAPES nº 01/2026\nValor: até R$ 11\,0 mil p
   1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026)\; resta a 3ª
   chamada (02/02/2027 a 30/03/2027)\, com resultado preliminar a partir de 
  24/05/2027 e homologação a partir de 22/06/2027.\nPágina do edital: htt
- ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/tcc-emp
- reendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/\nConfi
- rme data e horário limite no edital oficial: https://fapes.es.gov.br/medi
- a/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
- cc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/
+ ps://radarfomento.com.br/editais/tcc-empreendedor-inovador-bolsas-para-tra
+ balhos-de-conclusao-de-curso-117/\nConfirme data e horário limite no edit
+ al oficial: https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.
+ 2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
+URL:https://radarfomento.com.br/editais/tcc-empreendedor-inovador-bolsas-pa
+ ra-trabalhos-de-conclusao-de-curso-117/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

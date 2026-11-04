@@ -13,39 +13,6 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:edital-1056835-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261103
-DTEND;VALUE=DATE:20261104
-SUMMARY:Prazo final: Produção de Documentário Audiovisual de Caráter Ed
- ucativo\, Científico e Institucional
-DESCRIPTION:Ministério da Cultura · Programa Transferegov 2041120260009\n
- Valor: valor não informado pela fonte\nQuem pode participar: ONG/associa
- ção\nCódigo do programa: 2041120260009. A proposta é cadastrada no Tra
- nsferegov.br (módulo Discricionárias)\, buscando por esse código. É pr
- eciso ter cadastro no Transferegov.br.\nPágina do edital: https://helloli
- ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/producao-de-documen
- tario-audiovisual-de-carater-educativo-cientifico-e-1056835/\nConfirme dat
- a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
- br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- roducao-de-documentario-audiovisual-de-carater-educativo-cientifico-e-1056
- 835/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Produção de Documentário Audi
- ovisual de Caráter Educativo\, Científico e Institucional
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Produção de Documentário Audiovisua
- l de Caráter Educativo\, Científico e Institucional
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056871-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261106
@@ -57,14 +24,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262442026001
  7\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2624420260017. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/edupol-ia-pesquis
- a-educacao-cultura-politica-democracia-e-inteligencia-1056871/\nConfirme d
- ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
- t-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/e
- dupol-ia-pesquisa-educacao-cultura-politica-democracia-e-inteligencia-1056
- 871/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/edupol-ia-pesquisa-educacao-cultura-politica-democr
+ acia-e-inteligencia-1056871/\nConfirme data e horário limite no edital of
+ icial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/edupol-ia-pesquisa-educacao-cultura
+ -politica-democracia-e-inteligencia-1056871/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -93,13 +58,13 @@ DESCRIPTION:Prefeitura de São Paulo (SMDHC) · Edital de Chamamento Públi
  pode participar: ONG/associação\nInscrição e entrega das propostas at
  é 06/11/2026. Até 3 propostas por OSC\; projetos de 12 a 24 meses. Só p
  ara OSCs que atuam na cidade de São Paulo\, com registro (ou pedido) no C
- onselho Municipal da Pessoa Idosa.\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/fundo-municipal-do-idos
- o-projetos-para-a-pessoa-idosa-cidade-de-sao-115/\nConfirme data e horári
- o limite no edital oficial: https://prefeitura.sp.gov.br/direitos_humanos/
- w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- undo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/
+ onselho Municipal da Pessoa Idosa.\nPágina do edital: https://radarfoment
+ o.com.br/editais/fundo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cid
+ ade-de-sao-115/\nConfirme data e horário limite no edital oficial: https:
+ //prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumca
+ d/fundo_municipal_do_idoso/269573
+URL:https://radarfomento.com.br/editais/fundo-municipal-do-idoso-projetos-p
+ ara-a-pessoa-idosa-cidade-de-sao-115/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -125,13 +90,12 @@ DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
  iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
  e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
   10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
- ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
- onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
- ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
- trizes-biodiversa-2026.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://radar
+ fomento.com.br/editais/chamada-transnacional-conjunta-biodiversa-biodivfut
+ ure-2026-2027-122/\nConfirme data e horário limite no edital oficial: htt
+ ps://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-conjunta-biod
+ iversa-biodivfuture-2026-2027-122/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -158,13 +122,12 @@ DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
  dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
  gatória para a 2ª fase. Seleção das pré-propostas no início de fever
  eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
-  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
- ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
- 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
- l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
- df
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+  em setembro/2027.\nPágina do edital: https://radarfomento.com.br/editais
+ /chamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/\n
+ Confirme data e horário limite no edital oficial: https://fapes.es.gov.br
+ /media/Editais/Diretrizes%20W4ALL.2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-confap-water4
+ all-2026-gestao-sustentavel-dos-123/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -195,13 +158,13 @@ DESCRIPTION:FAPESP · Chamada Conjunta de Propostas FAPESP/CONFAP/Water4All
  r do consórcio\, e o pesquisador de SP envia à FAPESP\, por e-mail\, sú
  mula curricular em inglês\, dedicação semanal\, duração e orçamento\
  , e título e coordenador. A proposta completa vai depois pelo SAGe\, só 
- para quem tiver pré-proposta aprovada.\nPágina do edital: https://hellol
- iueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-conjunta-f
- apesp-confap-water4all-sobre-gestao-sustentavel-da-128/\nConfirme data e h
- orário limite no edital oficial: https://fapesp.br/18414/chamada-conjunta
- -de-propostas-fapespconfapwater4all-2026-2027
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-conjunta-fapesp-confap-water4all-sobre-gestao-sustentavel-da-128/
+ para quem tiver pré-proposta aprovada.\nPágina do edital: https://radarf
+ omento.com.br/editais/chamada-conjunta-fapesp-confap-water4all-sobre-gesta
+ o-sustentavel-da-128/\nConfirme data e horário limite no edital oficial: 
+ https://fapesp.br/18414/chamada-conjunta-de-propostas-fapespconfapwater4al
+ l-2026-2027
+URL:https://radarfomento.com.br/editais/chamada-conjunta-fapesp-confap-wate
+ r4all-sobre-gestao-sustentavel-da-128/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -229,12 +192,12 @@ DESCRIPTION:FAPESP · Chamada Conjunta FAPESP/CONFAP/Biodiversa+ 2026-2027\
   do consórcio submete a pré-proposta na plataforma da Biodiversa+ e o pe
  squisador de SP envia as informações por e-mail à FAPESP. Só quem tive
  r pré-proposta aprovada pode enviar a proposta completa pelo SAGe.\nPági
- na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
- o/editais/chamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistem
- as-129/\nConfirme data e horário limite no edital oficial: https://fapesp
- .br/18366/chamada-conjunta-de-propostas-fapespconfapbiodiversa-2026-2027
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-conjunta-fapesp-confap-biodiversa-sobre-novos-ecossistemas-129/
+ na do edital: https://radarfomento.com.br/editais/chamada-conjunta-fapesp-
+ confap-biodiversa-sobre-novos-ecossistemas-129/\nConfirme data e horário 
+ limite no edital oficial: https://fapesp.br/18366/chamada-conjunta-de-prop
+ ostas-fapespconfapbiodiversa-2026-2027
+URL:https://radarfomento.com.br/editais/chamada-conjunta-fapesp-confap-biod
+ iversa-sobre-novos-ecossistemas-129/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -259,12 +222,11 @@ SUMMARY:Pré-proposta: PIPE Jornada Tecnológica – Tecnologias Educaciona
 DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
  il por proposta\nQuem pode participar: Empresa\nPrazo da pré-proposta. As
   pré-propostas consideradas elegíveis enviam a proposta completa até 13
- /01/2027.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
- Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-educacionai
- s-fase-1-102/\nConfirme data e horário limite no edital oficial: https://
- fapesp.br/18434
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+ /01/2027.\nPágina do edital: https://radarfomento.com.br/editais/pipe-jor
+ nada-tecnologica-tecnologias-educacionais-fase-1-102/\nConfirme data e hor
+ ário limite no edital oficial: https://fapesp.br/18434
+URL:https://radarfomento.com.br/editais/pipe-jornada-tecnologica-tecnologia
+ s-educacionais-fase-1-102/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -291,12 +253,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262492026000
  3\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2624920260003. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/rede-multidiscipl
- inar-de-atencao-a-maes-e-familiares-vitimas-de-1056851/\nConfirme data e h
- orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
- ede-multidisciplinar-de-atencao-a-maes-e-familiares-vitimas-de-1056851/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/rede-multidisciplinar-de-atencao-a-maes-e-familiare
+ s-vitimas-de-1056851/\nConfirme data e horário limite no edital oficial: 
+ https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/rede-multidisciplinar-de-atencao-a-
+ maes-e-familiares-vitimas-de-1056851/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -324,12 +286,11 @@ DESCRIPTION:Ministério do Desenvolvimento\, Indústria\, Comércio e Servi
  ela fonte\nQuem pode participar: ONG/associação\nCódigo do programa: 28
  00020260010. A proposta é cadastrada no Transferegov.br (módulo Discrici
  onárias)\, buscando por esse código. É preciso ter cadastro no Transfer
- egov.br.\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
- rasil-Brasileiro/editais/industrializacao-da-cadeia-produtiva-do-pirarucu-
- 1056427/\nConfirme data e horário limite no edital oficial: https://www.g
- ov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- ndustrializacao-da-cadeia-produtiva-do-pirarucu-1056427/
+ egov.br.\nPágina do edital: https://radarfomento.com.br/editais/industria
+ lizacao-da-cadeia-produtiva-do-pirarucu-1056427/\nConfirme data e horário
+  limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/industrializacao-da-cadeia-produtiv
+ a-do-pirarucu-1056427/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -358,12 +319,12 @@ DESCRIPTION:FAPES · Edital Fapes nº 26/2026\nValor: bolsas: valores no ed
  ma só proposta\; vale a última enviada. Recurso administrativo em até 5
   dias úteis após o resultado preliminar (a partir de 14/12/2026)\; indic
  ação regular de bolsistas de março a novembro de 2027.\nPágina do edit
- al: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/
- procap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/\nCo
- nfirme data e horário limite no edital oficial: https://fapes.es.gov.br/m
- edia/Editais/procap-2027-mestrado.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rocap-2027-bolsas-de-mestrado-para-programas-de-pos-graduacao-do-119/
+ al: https://radarfomento.com.br/editais/procap-2027-bolsas-de-mestrado-par
+ a-programas-de-pos-graduacao-do-119/\nConfirme data e horário limite no e
+ dital oficial: https://fapes.es.gov.br/media/Editais/procap-2027-mestrado.
+ pdf
+URL:https://radarfomento.com.br/editais/procap-2027-bolsas-de-mestrado-para
+ -programas-de-pos-graduacao-do-119/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -391,13 +352,12 @@ DESCRIPTION:FAPES · Edital Fapes nº 27/2026\nValor: bolsas: valores no ed
  \, com login do coordenador\; cada PPG envia apenas uma proposta (vale a 
  última). Resultado preliminar a partir de 14/12/2026\, recurso em 5 dias 
  úteis\, homologação a partir de 21/12/2026\; indicação de bolsistas d
- e março a novembro de 2027.\nPágina do edital: https://helloliueunice.gi
- thub.io/Plataforma-Brasil-Brasileiro/editais/procap-2027-bolsas-de-doutora
- do-para-programas-de-pos-graduacao-do-120/\nConfirme data e horário limit
- e no edital oficial: https://fapes.es.gov.br/media/Editais/procap-2027-dou
- torado.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rocap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao-do-120/
+ e março a novembro de 2027.\nPágina do edital: https://radarfomento.com.
+ br/editais/procap-2027-bolsas-de-doutorado-para-programas-de-pos-graduacao
+ -do-120/\nConfirme data e horário limite no edital oficial: https://fapes
+ .es.gov.br/media/Editais/procap-2027-doutorado.pdf
+URL:https://radarfomento.com.br/editais/procap-2027-bolsas-de-doutorado-par
+ a-programas-de-pos-graduacao-do-120/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -423,12 +383,12 @@ DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
  l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
  ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
  opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
- na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
- o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
- \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
- br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ na do edital: https://radarfomento.com.br/editais/chamada-transnacional-co
+ njunta-da-parceria-de-economia-azul-124/\nConfirme data e horário limite 
+ no edital oficial: https://fapes.es.gov.br/media/Portif%C3%B3lios/diretriz
+ es-da-fapes-chamada-sbep-2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-conjunta-da-p
+ arceria-de-economia-azul-124/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -456,12 +416,12 @@ DESCRIPTION:FAPESP · Chamada Conjunta de Propostas FAPESP/CONFAP/SBEP 2026
  quisador(a)\nA data limite de 16/11/2026 vale tanto para a FAPESP quanto p
  ara a SBEP\; não há horário informado. Só quem tiver pré-proposta apr
  ovada pode enviar a proposta completa pelo SAGe.\nPágina do edital: https
- ://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-c
- onjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/\nConfirme
-  data e horário limite no edital oficial: https://fapesp.br/18415/chamada
- -conjunta-de-propostas-fapespconfapsbep-20262027
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-conjunta-fapesp-confap-sbep-para-economia-azul-sustentavel-e-127/
+ ://radarfomento.com.br/editais/chamada-conjunta-fapesp-confap-sbep-para-ec
+ onomia-azul-sustentavel-e-127/\nConfirme data e horário limite no edital 
+ oficial: https://fapesp.br/18415/chamada-conjunta-de-propostas-fapespconfa
+ psbep-20262027
+URL:https://radarfomento.com.br/editais/chamada-conjunta-fapesp-confap-sbep
+ -para-economia-azul-sustentavel-e-127/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -486,12 +446,11 @@ SUMMARY:Prazo final: Jovens Pesquisadores – chamada para pesquisadores no
 DESCRIPTION:FAPESP · Chamada FAPESP nº 47/2026\nValor: até R$ 2\,5 mi 
  por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da proposta comp
  leta. Depois há avaliação por painel externo\, apresentação oral e en
- trevista on-line.\nPágina do edital: https://helloliueunice.github.io/Pla
- taforma-Brasil-Brasileiro/editais/jovens-pesquisadores-chamada-para-pesqui
- sadores-no-exterior-103/\nConfirme data e horário limite no edital oficia
- l: https://fapesp.br/18389
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/j
- ovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/
+ trevista on-line.\nPágina do edital: https://radarfomento.com.br/editais/
+ jovens-pesquisadores-chamada-para-pesquisadores-no-exterior-103/\nConfirme
+  data e horário limite no edital oficial: https://fapesp.br/18389
+URL:https://radarfomento.com.br/editais/jovens-pesquisadores-chamada-para-p
+ esquisadores-no-exterior-103/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -518,12 +477,11 @@ DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  nQuem pode participar: ONG/associação\nCódigo do programa: 442052026000
  1. A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\
  , buscando por esse código. É preciso ter cadastro no Transferegov.br.\n
- Página do edital: https://helloliueunice.github.io/Plataforma-Brasil-Bras
- ileiro/editais/recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempr
- e-1056853/\nConfirme data e horário limite no edital oficial: https://www
- .gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
- ecursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-1056853/
+ Página do edital: https://radarfomento.com.br/editais/recursos-hidricos-a
+ gua-em-quantidade-e-qualidade-para-sempre-1056853/\nConfirme data e horár
+ io limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/recursos-hidricos-agua-em-quantidad
+ e-e-qualidade-para-sempre-1056853/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -549,14 +507,14 @@ DESCRIPTION:FAPESP · Chamada FAPESP – Aperfeiçoamento de especialistas
  em museus\nValor: bolsas: valores no edital oficial\nQuem pode participar:
   Pesquisador(a)\nPrazo ampliado até 23/11/2026 (o horário-limite não co
  nsta no texto). Submissão apenas pelo SAGe\; resultados a partir de 08/03
- /2027.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Bra
- sil-Brasileiro/editais/bolsas-de-aperfeicoamento-para-especialistas-que-at
- uam-em-museus-e-130/\nConfirme data e horário limite no edital oficial: h
- ttps://fapesp.br/18387/chamada-de-propostas-para-o-aperfeicoamento-de-espe
- cialistas-que-atuam-em-museus-e-instituicoes-de-salvaguarda-e-comunicacao-
- de-acervos-sediadas-no-estado-de-sao-paulo
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsas-de-aperfeicoamento-para-especialistas-que-atuam-em-museus-e-130/
+ /2027.\nPágina do edital: https://radarfomento.com.br/editais/bolsas-de-a
+ perfeicoamento-para-especialistas-que-atuam-em-museus-e-130/\nConfirme dat
+ a e horário limite no edital oficial: https://fapesp.br/18387/chamada-de-
+ propostas-para-o-aperfeicoamento-de-especialistas-que-atuam-em-museus-e-in
+ stituicoes-de-salvaguarda-e-comunicacao-de-acervos-sediadas-no-estado-de-s
+ ao-paulo
+URL:https://radarfomento.com.br/editais/bolsas-de-aperfeicoamento-para-espe
+ cialistas-que-atuam-em-museus-e-130/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -583,14 +541,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262492026000
  4\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2624920260004. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/ri-para-todos-dip
- lomacia-popular-cidadania-global-e-democratizacao-das-1056868/\nConfirme d
- ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
- t-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/r
- i-para-todos-diplomacia-popular-cidadania-global-e-democratizacao-das-1056
- 868/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/ri-para-todos-diplomacia-popular-cidadania-global-e
+ -democratizacao-das-1056868/\nConfirme data e horário limite no edital of
+ icial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/ri-para-todos-diplomacia-popular-ci
+ dadania-global-e-democratizacao-das-1056868/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -619,12 +575,11 @@ DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  nárias)\, buscando por esse código. É preciso ter cadastro no Transfere
  gov.br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do 
  Tesouro Nacional que mostra se o ente pode receber repasses).\nPágina do 
- edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
- ais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-105599
- 0/\nConfirme data e horário limite no edital oficial: https://www.gov.br/
- transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- cao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/
+ edital: https://radarfomento.com.br/editais/acao-00sx-apoio-a-projetos-de-
+ desenvolvimento-sustentavel-local-1055990/\nConfirme data e horário limit
+ e no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acao-00sx-apoio-a-projetos-de-desen
+ volvimento-sustentavel-local-1055990/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -652,12 +607,11 @@ DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  scricionárias)\, buscando por esse código. É preciso ter cadastro no Tr
  ansferegov.br e\, para prefeituras e estados\, estar em dia no CAUC (servi
  ço do Tesouro Nacional que mostra se o ente pode receber repasses).\nPág
- ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
- ro/editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/\nConfirme d
- ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
- t-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- cao-214s-rotas-de-integracao-nacional-rp2-1055992/
+ ina do edital: https://radarfomento.com.br/editais/acao-214s-rotas-de-inte
+ gracao-nacional-rp2-1055992/\nConfirme data e horário limite no edital of
+ icial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acao-214s-rotas-de-integracao-nacio
+ nal-rp2-1055992/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -684,12 +638,11 @@ DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  scricionárias)\, buscando por esse código. É preciso ter cadastro no Tr
  ansferegov.br e\, para prefeituras e estados\, estar em dia no CAUC (servi
  ço do Tesouro Nacional que mostra se o ente pode receber repasses).\nPág
- ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
- ro/editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios
- -da-1055995/\nConfirme data e horário limite no edital oficial: https://w
- ww.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- cao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/
+ ina do edital: https://radarfomento.com.br/editais/acao-1211-implementacao
+ -de-infraestrutura-basica-nos-municipios-da-1055995/\nConfirme data e hor
+ ário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acao-1211-implementacao-de-infraest
+ rutura-basica-nos-municipios-da-1055995/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -714,12 +667,10 @@ DESCRIPTION:Ministério do Meio Ambiente · Programa Transferegov 440002026
  0013\nValor: valor não informado pela fonte\nQuem pode participar: ONG/as
  sociação\nCódigo do programa: 4400020260013. A proposta é cadastrada n
  o Transferegov.br (módulo Discricionárias)\, buscando por esse código. 
- É preciso ter cadastro no Transferegov.br.\nPágina do edital: https://he
- lloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/prospera-amazo
- nia-1056755/\nConfirme data e horário limite no edital oficial: https://w
- ww.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rospera-amazonia-1056755/
+ É preciso ter cadastro no Transferegov.br.\nPágina do edital: https://ra
+ darfomento.com.br/editais/prospera-amazonia-1056755/\nConfirme data e hor
+ ário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/prospera-amazonia-1056755/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -741,12 +692,12 @@ SUMMARY:Prazo final: Floresta Viva – Águas do São Francisco
 DESCRIPTION:Funbio / BNDES · Edital Funbio nº 04/2026\nValor: total de R$
   17\,8 mi no edital\nQuem pode participar: ONG/associação\nAté 02/12/
  2026\, 19h\, no Portal de Chamadas do Funbio. Dúvidas até 25/11\; reuni
- ão on-line de esclarecimento em 13/11.\nPágina do edital: https://hellol
- iueunice.github.io/Plataforma-Brasil-Brasileiro/editais/floresta-viva-agua
- s-do-sao-francisco-114/\nConfirme data e horário limite no edital oficial
- : https://chamadas.funbio.org.br/floresta-viva-sao-francisco
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- loresta-viva-aguas-do-sao-francisco-114/
+ ão on-line de esclarecimento em 13/11.\nPágina do edital: https://radarf
+ omento.com.br/editais/floresta-viva-aguas-do-sao-francisco-114/\nConfirme 
+ data e horário limite no edital oficial: https://chamadas.funbio.org.br/f
+ loresta-viva-sao-francisco
+URL:https://radarfomento.com.br/editais/floresta-viva-aguas-do-sao-francisc
+ o-114/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -772,13 +723,12 @@ DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
  OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
  r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
  )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
- bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
- ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
- al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
- orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
- retrizes-forest-pathways-2026.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://radarfo
+ mento.com.br/editais/chamada-transnacional-conjunta-forest-2026-forest-pat
+ hways-diretrizes-121/\nConfirme data e horário limite no edital oficial: 
+ https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-conjunta-fore
+ st-2026-forest-pathways-diretrizes-121/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -803,13 +753,12 @@ SUMMARY:Prazo final: Auxílio à Promoção de Eventos Científicos\, Tecno
 DESCRIPTION:CNPq · Chamada CNPq nº 34/2026\nValor: até R$ 200\,0 mil p
  or proposta\nQuem pode participar: Pesquisador(a)\, Universidade ou instit
  uto\nAté 23h59 (Brasília). Resultado preliminar em 15/03/2027.\nPágina 
- do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/e
- ditais/auxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovaca
- o-105/\nConfirme data e horário limite no edital oficial: https://www.gov
- .br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-34-2026
- /chamada-publica-cnpq-N-34-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- uxilio-a-promocao-de-eventos-cientificos-tecnologicos-e-de-inovacao-105/
+ do edital: https://radarfomento.com.br/editais/auxilio-a-promocao-de-event
+ os-cientificos-tecnologicos-e-de-inovacao-105/\nConfirme data e horário l
+ imite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-c
+ hamadas/chamadas-2026/chamada-no-34-2026/chamada-publica-cnpq-N-34-2026
+URL:https://radarfomento.com.br/editais/auxilio-a-promocao-de-eventos-cient
+ ificos-tecnologicos-e-de-inovacao-105/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -835,12 +784,10 @@ DESCRIPTION:FAPESP · Chamada FAPESP nº 57/2026\nValor: total de R$ 15\,0
  de elegibilidade e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2
  026\; só quem for considerado elegível submete a proposta completa no SA
  Ge até 22/02/2027. Uma proposta por pesquisador\, em um único eixo (Sín
- tese ou Transformação).\nPágina do edital: https://helloliueunice.githu
- b.io/Plataforma-Brasil-Brasileiro/editais/biota-sintese-e-transformacao-10
- 9/\nConfirme data e horário limite no edital oficial: https://fapesp.br/1
- 8456
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- iota-sintese-e-transformacao-109/
+ tese ou Transformação).\nPágina do edital: https://radarfomento.com.br/
+ editais/biota-sintese-e-transformacao-109/\nConfirme data e horário limit
+ e no edital oficial: https://fapesp.br/18456
+URL:https://radarfomento.com.br/editais/biota-sintese-e-transformacao-109/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -865,12 +812,12 @@ DESCRIPTION:Finep · Chamada Pública MCTI/Finep/FNDCT – CT-Agro\nValor:
  até R$ 15\,0 mi\nQuem pode participar: Universidade ou instituto\nAté 
  08/12/2026\, 18h\, pelo sistema SISGON. Cada ICT pode ser executora princi
  pal de uma só proposta. O projeto deve partir de TRL 3 ou superior (elimi
- natório).\nPágina do edital: https://helloliueunice.github.io/Plataforma
- -Brasil-Brasileiro/editais/cooperamais-tecnologia-icts-com-cooperativas-da
- -agricultura-familiar-113/\nConfirme data e horário limite no edital ofic
- ial: https://www.finep.gov.br/e/chamada-publica/222684/1060260
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- ooperamais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/
+ natório).\nPágina do edital: https://radarfomento.com.br/editais/coopera
+ mais-tecnologia-icts-com-cooperativas-da-agricultura-familiar-113/\nConfir
+ me data e horário limite no edital oficial: https://www.finep.gov.br/e/ch
+ amada-publica/222684/1060260
+URL:https://radarfomento.com.br/editais/cooperamais-tecnologia-icts-com-coo
+ perativas-da-agricultura-familiar-113/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -896,13 +843,13 @@ DESCRIPTION:CNPq · Chamada Pública CNPq/Petrobras nº 31/2026\nValor: bol
  sas: valores no edital oficial\nQuem pode participar: Universidade ou inst
  ituto\nInscrições até 08/12/2026. Exige indicação de um Representante
   Institucional pela Pró-Reitoria de Extensão (ou cargo equivalente).\nP
- ágina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasi
- leiro/editais/projeto-inspiracao-jovens-mulheres-negras-na-industria-de-en
- ergia-116/\nConfirme data e horário limite no edital oficial: https://www
- .gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-
- 2026/chamada-publica-cnpq-N-31-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rojeto-inspiracao-jovens-mulheres-negras-na-industria-de-energia-116/
+ ágina do edital: https://radarfomento.com.br/editais/projeto-inspiracao-j
+ ovens-mulheres-negras-na-industria-de-energia-116/\nConfirme data e horár
+ io limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-
+ as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-202
+ 6
+URL:https://radarfomento.com.br/editais/projeto-inspiracao-jovens-mulheres-
+ negras-na-industria-de-energia-116/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -927,13 +874,13 @@ SUMMARY:Prazo final: Mestrado e Doutorado Acadêmico para Inovação (MAI/D
 DESCRIPTION:CNPq · Chamada Pública CNPq/CAPES nº 30/2026\nValor: bolsas:
   valores no edital oficial\nQuem pode participar: Pesquisador(a)\, Univers
  idade ou instituto\nAté 23h59 (Brasília). Julgamento em janeiro e decis
- ão final prevista para fevereiro de 2027.\nPágina do edital: https://hel
- loliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/mestrado-e-dout
- orado-academico-para-inovacao-mai-dai-106/\nConfirme data e horário limit
- e no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chama
- das/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/m
- estrado-e-doutorado-academico-para-inovacao-mai-dai-106/
+ ão final prevista para fevereiro de 2027.\nPágina do edital: https://rad
+ arfomento.com.br/editais/mestrado-e-doutorado-academico-para-inovacao-mai-
+ dai-106/\nConfirme data e horário limite no edital oficial: https://www.g
+ ov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-20
+ 26/chamada-publica-cnpq-N-30-2026
+URL:https://radarfomento.com.br/editais/mestrado-e-doutorado-academico-para
+ -inovacao-mai-dai-106/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -960,13 +907,13 @@ DESCRIPTION:FAPESP · Chamada de Propostas BEPE Mestrado – 2026\nValor: b
  bmissão exclusivamente pelo SAGe até 11/12/2026 (horário limite não in
  formado). A instituição e o supervisor no exterior precisam estar cadast
  rados no SAGe\; o cadastro da instituição leva cerca de 2 dias úteis. R
- esultados previstos para março de 2027.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bolsa-estagio-de-
- pesquisa-no-exterior-bepe-mestrado-2026-125/\nConfirme data e horário lim
- ite no edital oficial: https://fapesp.br/18417/chamada-de-propostas-bolsa-
- estagio-de-pesquisa-no-exterior-bepe-mestrado-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsa-estagio-de-pesquisa-no-exterior-bepe-mestrado-2026-125/
+ esultados previstos para março de 2027.\nPágina do edital: https://radar
+ fomento.com.br/editais/bolsa-estagio-de-pesquisa-no-exterior-bepe-mestrado
+ -2026-125/\nConfirme data e horário limite no edital oficial: https://fap
+ esp.br/18417/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-be
+ pe-mestrado-2026
+URL:https://radarfomento.com.br/editais/bolsa-estagio-de-pesquisa-no-exteri
+ or-bepe-mestrado-2026-125/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -994,13 +941,13 @@ DESCRIPTION:FAPESP · Chamada de Propostas BEPE Iniciação Científica –
  e o supervisor no exterior precisam estar cadastrados no SAGe antes (o cad
  astro da instituição leva cerca de 2 dias úteis). Carta da instituiçã
  o estrangeira\, procuração e declaração de retorno podem ser entregues
-  na contratação.\nPágina do edital: https://helloliueunice.github.io/Pl
- ataforma-Brasil-Brasileiro/editais/bolsa-estagio-de-pesquisa-no-exterior-b
- epe-para-iniciacao-cientifica-126/\nConfirme data e horário limite no edi
- tal oficial: https://fapesp.br/18416/chamada-de-propostas-bolsa-estagio-de
- -pesquisa-no-exterior-bepe-iniciacao-cientifica-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+  na contratação.\nPágina do edital: https://radarfomento.com.br/editais
+ /bolsa-estagio-de-pesquisa-no-exterior-bepe-para-iniciacao-cientifica-126/
+ \nConfirme data e horário limite no edital oficial: https://fapesp.br/184
+ 16/chamada-de-propostas-bolsa-estagio-de-pesquisa-no-exterior-bepe-iniciac
+ ao-cientifica-2026
+URL:https://radarfomento.com.br/editais/bolsa-estagio-de-pesquisa-no-exteri
+ or-bepe-para-iniciacao-cientifica-126/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1028,13 +975,12 @@ DESCRIPTION:FAPES · Edital FAPES nº 10/2026\nValor: até R$ 355\,4 mil
  17h59 (Brasília) de 15/12/2026. Resultado preliminar de habilitação a p
  artir de 08/01/2027\, apresentação oral entre 03/02 e 18/03/2027 e resul
  tado homologado previsto a partir de 27/04/2027.\nPágina do edital: https
- ://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/dr-empree
- ndedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/\nConfirm
- e data e horário limite no edital oficial: https://fapes.es.gov.br/media/
- Portif%C3%B3lios/edital_fapes_no_10-2026_-_dr-_empreendedor_capixaba_-_1a_
- alteracao_.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/d
- r-empreendedor-capixaba-apoio-a-doutores-empreendedores-com-projetos-118/
+ ://radarfomento.com.br/editais/dr-empreendedor-capixaba-apoio-a-doutores-e
+ mpreendedores-com-projetos-118/\nConfirme data e horário limite no edital
+  oficial: https://fapes.es.gov.br/media/Portif%C3%B3lios/edital_fapes_no_1
+ 0-2026_-_dr-_empreendedor_capixaba_-_1a_alteracao_.pdf
+URL:https://radarfomento.com.br/editais/dr-empreendedor-capixaba-apoio-a-do
+ utores-empreendedores-com-projetos-118/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1061,11 +1007,10 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262982026000
  regov.br (módulo Discricionárias)\, buscando por esse código. É precis
  o ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar e
  m dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rece
- ber repasses).\nPágina do edital: https://helloliueunice.github.io/Plataf
- orma-Brasil-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data 
- e horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-simec-par-1055941/
+ ber repasses).\nPágina do edital: https://radarfomento.com.br/editais/pro
+ grama-simec-par-1055941/\nConfirme data e horário limite no edital oficia
+ l: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/programa-simec-par-1055941/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1088,12 +1033,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  1\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2629120260001. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-brasilei
- ro-de-professores-no-cern-1055945/\nConfirme data e horário limite no edi
- tal oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-brasileiro-de-professores-no-cern-1055945/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/programa-brasileiro-de-professores-no-cern-1055945/
+ \nConfirme data e horário limite no edital oficial: https://www.gov.br/tr
+ ansferegov/pt-br
+URL:https://radarfomento.com.br/editais/programa-brasileiro-de-professores-
+ no-cern-1055945/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1119,14 +1064,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  2\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2629120260002. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretori
- a-de-articulacao-e-inovacao-em-educacao-aberta-diea-1055966/\nConfirme dat
- a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
- br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105596
- 6/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-edu
+ cacao-aberta-diea-1055966/\nConfirme data e horário limite no edital ofic
+ ial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acoes-da-diretoria-de-articulacao-e
+ -inovacao-em-educacao-aberta-diea-1055966/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1154,12 +1097,12 @@ DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
  da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
  go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
  dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
- nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
- hub.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-
- propostas-voluntarias-1056045/\nConfirme data e horário limite no edital 
- oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-propostas-voluntarias-1056045/
+ nte pode receber repasses).\nPágina do edital: https://radarfomento.com.b
+ r/editais/fomento-ao-setor-agropecuario-propostas-voluntarias-1056045/\nCo
+ nfirme data e horário limite no edital oficial: https://www.gov.br/transf
+ eregov/pt-br
+URL:https://radarfomento.com.br/editais/fomento-ao-setor-agropecuario-propo
+ stas-voluntarias-1056045/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1186,13 +1129,11 @@ DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
  ar: ONG/associação\nCódigo do programa: 2200020260005. A proposta é ca
  dastrada no Transferegov.br (módulo Discricionárias)\, buscando por esse
   código. É preciso ter cadastro no Transferegov.br.\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/fome
- nto-ao-setor-agropecuario-propostas-voluntarias-termo-de-fomento-1056046/\
- nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
- nsferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-propostas-voluntarias-termo-de-fomento-105604
- 6/
+ https://radarfomento.com.br/editais/fomento-ao-setor-agropecuario-proposta
+ s-voluntarias-termo-de-fomento-1056046/\nConfirme data e horário limite n
+ o edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/fomento-ao-setor-agropecuario-propo
+ stas-voluntarias-termo-de-fomento-1056046/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1219,12 +1160,12 @@ DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
  da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
  go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
  dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
- nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
- hub.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-
- rurais-proner-1056079/\nConfirme data e horário limite no edital oficial:
-  https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-nacional-de-estradas-rurais-proner-1056079/
+ nte pode receber repasses).\nPágina do edital: https://radarfomento.com.b
+ r/editais/programa-nacional-de-estradas-rurais-proner-1056079/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
+URL:https://radarfomento.com.br/editais/programa-nacional-de-estradas-rurai
+ s-proner-1056079/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1252,12 +1193,12 @@ DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
  adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
  e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
   e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
-  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agrope
- cuario-proposta-voluntaria-obras-de-fomento-1056107/\nConfirme data e hor
- ário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/
+  se o ente pode receber repasses).\nPágina do edital: https://radarfoment
+ o.com.br/editais/fomento-ao-setor-agropecuario-proposta-voluntaria-obras-d
+ e-fomento-1056107/\nConfirme data e horário limite no edital oficial: htt
+ ps://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/fomento-ao-setor-agropecuario-propo
+ sta-voluntaria-obras-de-fomento-1056107/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1285,13 +1226,12 @@ DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
  da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
  go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
  dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
- nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
- hub.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-moderniza
- cao-e-apoio-a-producao-agricola-promaq-1056156/\nConfirme data e horário 
- limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-105615
- 6/
+ nte pode receber repasses).\nPágina do edital: https://radarfomento.com.b
+ r/editais/programa-nacional-de-modernizacao-e-apoio-a-producao-agricola-pr
+ omaq-1056156/\nConfirme data e horário limite no edital oficial: https://
+ www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/programa-nacional-de-modernizacao-e
+ -apoio-a-producao-agricola-promaq-1056156/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1319,13 +1259,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  regov.br (módulo Discricionárias)\, buscando por esse código. É precis
  o ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar e
  m dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rece
- ber repasses).\nPágina do edital: https://helloliueunice.github.io/Plataf
- orma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovaca
- o-em-educacao-aberta-diea-1056385/\nConfirme data e horário limite no edi
- tal oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
- 5/
+ ber repasses).\nPágina do edital: https://radarfomento.com.br/editais/aco
+ es-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056385/
+ \nConfirme data e horário limite no edital oficial: https://www.gov.br/tr
+ ansferegov/pt-br
+URL:https://radarfomento.com.br/editais/acoes-da-diretoria-de-articulacao-e
+ -inovacao-em-educacao-aberta-diea-1056385/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1353,14 +1292,12 @@ DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
  4\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
  iação\nCódigo do programa: 2629120260004. A proposta é cadastrada no T
  ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretori
- a-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/\nConfirme dat
- a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
- br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
- 6/
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://radar
+ fomento.com.br/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-edu
+ cacao-aberta-diea-1056386/\nConfirme data e horário limite no edital ofic
+ ial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/acoes-da-diretoria-de-articulacao-e
+ -inovacao-em-educacao-aberta-diea-1056386/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1389,12 +1326,11 @@ DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar
   buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
   para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
  cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/\nCon
- firme data e horário limite no edital oficial: https://www.gov.br/transfe
- regov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- nfra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/
+ tps://radarfomento.com.br/editais/infra-estrutura-basica-sr-ba-superintend
+ encia-regional-do-incra-na-1056398/\nConfirme data e horário limite no ed
+ ital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/infra-estrutura-basica-sr-ba-superi
+ ntendencia-regional-do-incra-na-1056398/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1423,13 +1359,11 @@ DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar
   buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
   para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
  cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/\
- nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
- nsferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- nfra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056
- 401/
+ tps://radarfomento.com.br/editais/infra-estrutura-basica-sr-sp-superintend
+ encia-regional-do-incra-de-sao-1056401/\nConfirme data e horário limite n
+ o edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/infra-estrutura-basica-sr-sp-superi
+ ntendencia-regional-do-incra-de-sao-1056401/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1458,12 +1392,11 @@ DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar
   buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
   para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
  cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/\nCon
- firme data e horário limite no edital oficial: https://www.gov.br/transfe
- regov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- nfra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/
+ tps://radarfomento.com.br/editais/infra-estrutura-basica-sr-pr-superintend
+ encia-regional-do-incra-no-1056402/\nConfirme data e horário limite no ed
+ ital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/infra-estrutura-basica-sr-pr-superi
+ ntendencia-regional-do-incra-no-1056402/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1492,13 +1425,11 @@ DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar
   buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
   para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
  cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/\
- nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
- nsferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- nfra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056
- 404/
+ tps://radarfomento.com.br/editais/infra-estrutura-basica-sr-rs-superintend
+ encia-regional-do-incra-no-rio-1056404/\nConfirme data e horário limite n
+ o edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/infra-estrutura-basica-sr-rs-superi
+ ntendencia-regional-do-incra-no-rio-1056404/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1528,12 +1459,11 @@ DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar
   buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
   para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
  cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/foment
- o-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/\nConf
- irme data e horário limite no edital oficial: https://www.gov.br/transfer
- egov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/
+ tps://radarfomento.com.br/editais/fomento-ao-setor-agropecuario-investimen
+ to-sr-pa-superintendencia-1056676/\nConfirme data e horário limite no edi
+ tal oficial: https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/fomento-ao-setor-agropecuario-inves
+ timento-sr-pa-superintendencia-1056676/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1564,13 +1494,12 @@ DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  br (módulo Discricionárias)\, buscando por esse código. É preciso ter 
  cadastro no Transferegov.br e\, para prefeituras e estados\, estar em dia 
  no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber re
- passes).\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
- rasil-Brasileiro/editais/2321-recursos-hidricos-agua-em-quantidade-e-quali
- dade-para-sempre-pt-1056721/\nConfirme data e horário limite no edital of
- icial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
- 321-recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-105672
- 1/
+ passes).\nPágina do edital: https://radarfomento.com.br/editais/2321-recu
+ rsos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-1056721/\nConf
+ irme data e horário limite no edital oficial: https://www.gov.br/transfer
+ egov/pt-br
+URL:https://radarfomento.com.br/editais/2321-recursos-hidricos-agua-em-quan
+ tidade-e-qualidade-para-sempre-pt-1056721/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1601,12 +1530,12 @@ DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  a é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando p
  or esse código. É preciso ter cadastro no Transferegov.br e\, para prefe
  ituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que 
- mostra se o ente pode receber repasses).\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-s
- dr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConfirme data e h
- orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
- 317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/
+ mostra se o ente pode receber repasses).\nPágina do edital: https://radar
+ fomento.com.br/editais/2317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e
+ -ordenamento-1056725/\nConfirme data e horário limite no edital oficial: 
+ https://www.gov.br/transferegov/pt-br
+URL:https://radarfomento.com.br/editais/2317-ted-7aadaf-sdr-midr-desenvolvi
+ mento-regional-e-ordenamento-1056725/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1633,13 +1562,13 @@ SUMMARY:Prazo final: Bolsas de Produtividade em Pesquisa e em Desenvolvimen
 DESCRIPTION:CNPq · Chamada CNPq nº 33/2026\nValor: bolsas: valores no edi
  tal oficial\nQuem pode participar: Pesquisador(a)\nAté 23h59 (Brasília).
   Resultado preliminar em 05/05/2027\; bolsas a partir de 01/08/2027.\nPág
- ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
- ro/editais/bolsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnol
- ogico-104/\nConfirme data e horário limite no edital oficial: https://www
- .gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-33-
- 2026/chamada-publica-cnpq-N-33-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsas-de-produtividade-em-pesquisa-e-em-desenvolvimento-tecnologico-104/
+ ina do edital: https://radarfomento.com.br/editais/bolsas-de-produtividade
+ -em-pesquisa-e-em-desenvolvimento-tecnologico-104/\nConfirme data e horár
+ io limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamadas/todas-
+ as-chamadas/chamadas-2026/chamada-no-33-2026/chamada-publica-cnpq-N-33-202
+ 6
+URL:https://radarfomento.com.br/editais/bolsas-de-produtividade-em-pesquisa
+ -e-em-desenvolvimento-tecnologico-104/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1664,12 +1593,11 @@ SUMMARY:Proposta completa: PIPE Jornada Tecnológica – Tecnologias Educac
 DESCRIPTION:FAPESP · Chamada FAPESP nº 53/2026\nValor: até R$ 500\,0 m
  il por proposta\nQuem pode participar: Empresa\nPrazo da pré-proposta. As
   pré-propostas consideradas elegíveis enviam a proposta completa até 13
- /01/2027.\nPágina do edital: https://helloliueunice.github.io/Plataforma-
- Brasil-Brasileiro/editais/pipe-jornada-tecnologica-tecnologias-educacionai
- s-fase-1-102/\nConfirme data e horário limite no edital oficial: https://
- fapesp.br/18434
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- ipe-jornada-tecnologica-tecnologias-educacionais-fase-1-102/
+ /01/2027.\nPágina do edital: https://radarfomento.com.br/editais/pipe-jor
+ nada-tecnologica-tecnologias-educacionais-fase-1-102/\nConfirme data e hor
+ ário limite no edital oficial: https://fapesp.br/18434
+URL:https://radarfomento.com.br/editais/pipe-jornada-tecnologica-tecnologia
+ s-educacionais-fase-1-102/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1694,12 +1622,12 @@ SUMMARY:Prazo final: PRONINC 2026 – Tecnologias e inovação social para
 DESCRIPTION:FINEP · Chamada Pública PRONINC 2026\nValor: até R$ 5\,0 m
  i\nQuem pode participar: Universidade ou instituto\nAtenção: instituiç
  ões sem cadastro aprovado na Finep precisavam se cadastrar até 16/10/202
- 6.\nPágina do edital: https://helloliueunice.github.io/Plataforma-Brasil-
- Brasileiro/editais/proninc-2026-tecnologias-e-inovacao-social-para-a-econo
- mia-solidaria-108/\nConfirme data e horário limite no edital oficial: htt
- ps://www.finep.gov.br/e/chamada-publica/222684/1057230
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- roninc-2026-tecnologias-e-inovacao-social-para-a-economia-solidaria-108/
+ 6.\nPágina do edital: https://radarfomento.com.br/editais/proninc-2026-te
+ cnologias-e-inovacao-social-para-a-economia-solidaria-108/\nConfirme data 
+ e horário limite no edital oficial: https://www.finep.gov.br/e/chamada-pu
+ blica/222684/1057230
+URL:https://radarfomento.com.br/editais/proninc-2026-tecnologias-e-inovacao
+ -social-para-a-economia-solidaria-108/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1724,12 +1652,11 @@ SUMMARY:Prazo final: Plataformas digitais baseadas em software livre e prot
 DESCRIPTION:FAPESP · Chamada FAPESP/MCTI/MCom/CGI.br nº 55/2026\nValor: a
  té R$ 5\,0 mi por proposta\nQuem pode participar: Pesquisador(a)\, Univ
  ersidade ou instituto\nSubmissão pelo SAGe a partir de 05/11/2026.\nPági
- na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
- o/editais/plataformas-digitais-baseadas-em-software-livre-e-protocolos-abe
- rtos-101/\nConfirme data e horário limite no edital oficial: https://fape
- sp.br/18444
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- lataformas-digitais-baseadas-em-software-livre-e-protocolos-abertos-101/
+ na do edital: https://radarfomento.com.br/editais/plataformas-digitais-bas
+ eadas-em-software-livre-e-protocolos-abertos-101/\nConfirme data e horári
+ o limite no edital oficial: https://fapesp.br/18444
+URL:https://radarfomento.com.br/editais/plataformas-digitais-baseadas-em-so
+ ftware-livre-e-protocolos-abertos-101/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1755,12 +1682,10 @@ DESCRIPTION:FAPESP · Chamada FAPESP nº 57/2026\nValor: total de R$ 15\,0
  de elegibilidade e pré-proposta por e-mail (biota@fapesp.br) até 04/12/2
  026\; só quem for considerado elegível submete a proposta completa no SA
  Ge até 22/02/2027. Uma proposta por pesquisador\, em um único eixo (Sín
- tese ou Transformação).\nPágina do edital: https://helloliueunice.githu
- b.io/Plataforma-Brasil-Brasileiro/editais/biota-sintese-e-transformacao-10
- 9/\nConfirme data e horário limite no edital oficial: https://fapesp.br/1
- 8456
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- iota-sintese-e-transformacao-109/
+ tese ou Transformação).\nPágina do edital: https://radarfomento.com.br/
+ editais/biota-sintese-e-transformacao-109/\nConfirme data e horário limit
+ e no edital oficial: https://fapesp.br/18456
+URL:https://radarfomento.com.br/editais/biota-sintese-e-transformacao-109/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1785,11 +1710,11 @@ SUMMARY:Prazo final: SPRINT 2026 – colaboração internacional (edição
 DESCRIPTION:FAPESP · Chamada FAPESP nº 48/2026\nValor: até US$ 50\,0 m
  il por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da edição 2
   (a edição 1 encerrou em 26/10/2026). Submissão pelo SAGe.\nPágina do 
- edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
- ais/sprint-2026-colaboracao-internacional-edicao-2-111/\nConfirme data e h
- orário limite no edital oficial: https://fapesp.br/sprint/chamada2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/s
- print-2026-colaboracao-internacional-edicao-2-111/
+ edital: https://radarfomento.com.br/editais/sprint-2026-colaboracao-intern
+ acional-edicao-2-111/\nConfirme data e horário limite no edital oficial: 
+ https://fapesp.br/sprint/chamada2026
+URL:https://radarfomento.com.br/editais/sprint-2026-colaboracao-internacion
+ al-edicao-2-111/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1814,12 +1739,11 @@ SUMMARY:Prazo final: FAPESP e Instituto Pasteur de Montevideo – Jovem Pes
 DESCRIPTION:FAPESP · Chamada FAPESP nº 56/2026\nValor: valor: veja no edi
  tal oficial\nQuem pode participar: Pesquisador(a)\nSubmissão só pelo SAG
  e. Os pré-selecionados fazem entrevista on-line a partir de julho de 2027
- .\nPágina do edital: https://helloliueunice.github.io/Plataforma-Brasil-B
- rasileiro/editais/fapesp-e-instituto-pasteur-de-montevideo-jovem-pesquisad
- or-110/\nConfirme data e horário limite no edital oficial: https://fapesp
- .br/18455
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- apesp-e-instituto-pasteur-de-montevideo-jovem-pesquisador-110/
+ .\nPágina do edital: https://radarfomento.com.br/editais/fapesp-e-institu
+ to-pasteur-de-montevideo-jovem-pesquisador-110/\nConfirme data e horário 
+ limite no edital oficial: https://fapesp.br/18455
+URL:https://radarfomento.com.br/editais/fapesp-e-instituto-pasteur-de-monte
+ video-jovem-pesquisador-110/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1847,12 +1771,12 @@ DESCRIPTION:FAPES · Edital FAPES nº 01/2026\nValor: até R$ 11\,0 mil p
   1ª e 2ª chamadas já encerraram (30/03/2026 e 27/10/2026)\; resta a 3ª
   chamada (02/02/2027 a 30/03/2027)\, com resultado preliminar a partir de 
  24/05/2027 e homologação a partir de 22/06/2027.\nPágina do edital: htt
- ps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/tcc-emp
- reendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/\nConfi
- rme data e horário limite no edital oficial: https://fapes.es.gov.br/medi
- a/Editais/EDITAL_FAPES_N%C2%BA_01.2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
- cc-empreendedor-inovador-bolsas-para-trabalhos-de-conclusao-de-curso-117/
+ ps://radarfomento.com.br/editais/tcc-empreendedor-inovador-bolsas-para-tra
+ balhos-de-conclusao-de-curso-117/\nConfirme data e horário limite no edit
+ al oficial: https://fapes.es.gov.br/media/Editais/EDITAL_FAPES_N%C2%BA_01.
+ 2026_TCC_EMPREENDEDOR_INOVADOR-2.pdf
+URL:https://radarfomento.com.br/editais/tcc-empreendedor-inovador-bolsas-pa
+ ra-trabalhos-de-conclusao-de-curso-117/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1877,14 +1801,13 @@ SUMMARY:Prazo final: Cooperação Brasil–França em pesquisa: Saúde Úni
 DESCRIPTION:CNPq · Chamada Pública MCTI/CNPq/ANR nº 32/2026\nValor: até
   R$ 1\,5 mi por proposta\nQuem pode participar: Pesquisador(a)\, Univers
  idade ou instituto\nAté 23h59 (Brasília). Resultado a partir de outubro 
- de 2027\; contratação em janeiro de 2028.\nPágina do edital: https://he
- lloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/cooperacao-bra
- sil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/\nConfirme data
-  e horário limite no edital oficial: https://www.gov.br/cnpq/pt-br/chamad
- as/todas-as-chamadas/chamadas-2026/chamada-no-32-2026/chamada-publica-cnpq
- -N-32-2026
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- ooperacao-brasil-franca-em-pesquisa-saude-unica-e-continuum-digital-107/
+ de 2027\; contratação em janeiro de 2028.\nPágina do edital: https://ra
+ darfomento.com.br/editais/cooperacao-brasil-franca-em-pesquisa-saude-unica
+ -e-continuum-digital-107/\nConfirme data e horário limite no edital ofici
+ al: https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026
+ /chamada-no-32-2026/chamada-publica-cnpq-N-32-2026
+URL:https://radarfomento.com.br/editais/cooperacao-brasil-franca-em-pesquis
+ a-saude-unica-e-continuum-digital-107/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1911,13 +1834,12 @@ DESCRIPTION:FAPESP · Chamada UNESCO-TWAS/FAPESP 2026\nValor: bolsas: valor
   de interesse do supervisor por e-mail (chamada-twas@fapesp.br) até 01/11
  /2026. O SAGe abre em 01/12/2026 e a proposta completa deve ser submetida 
  até 01/04/2027. O horário limite não é informado.\nPágina do edital: 
- https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/bols
- as-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/\nConfirm
- e data e horário limite no edital oficial: https://fapesp.br/18365/chamad
- a-de-propostas-unesco-twasfapesp-para-bolsas-de-pos-doutorado-a-pesquisado
- res-de-paises-em-desenvolvimento
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/b
- olsas-de-pos-doutorado-unesco-twas-fapesp-para-pesquisadores-de-131/
+ https://radarfomento.com.br/editais/bolsas-de-pos-doutorado-unesco-twas-fa
+ pesp-para-pesquisadores-de-131/\nConfirme data e horário limite no edital
+  oficial: https://fapesp.br/18365/chamada-de-propostas-unesco-twasfapesp-p
+ ara-bolsas-de-pos-doutorado-a-pesquisadores-de-paises-em-desenvolvimento
+URL:https://radarfomento.com.br/editais/bolsas-de-pos-doutorado-unesco-twas
+ -fapesp-para-pesquisadores-de-131/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1944,13 +1866,12 @@ DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Water4All 2026
  dor(a)\nPré-proposta (1ª fase) até 10/11/2026\, às 15h00 (CEST)\, obri
  gatória para a 2ª fase. Seleção das pré-propostas no início de fever
  eiro/2027\; propostas completas até 06/04/2027 às 15h (CEST)\; resultado
-  em setembro/2027.\nPágina do edital: https://helloliueunice.github.io/Pl
- ataforma-Brasil-Brasileiro/editais/chamada-transnacional-confap-water4all-
- 2026-gestao-sustentavel-dos-123/\nConfirme data e horário limite no edita
- l oficial: https://fapes.es.gov.br/media/Editais/Diretrizes%20W4ALL.2026.p
- df
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/
+  em setembro/2027.\nPágina do edital: https://radarfomento.com.br/editais
+ /chamada-transnacional-confap-water4all-2026-gestao-sustentavel-dos-123/\n
+ Confirme data e horário limite no edital oficial: https://fapes.es.gov.br
+ /media/Editais/Diretrizes%20W4ALL.2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-confap-water4
+ all-2026-gestao-sustentavel-dos-123/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -1978,13 +1899,12 @@ DESCRIPTION:FAPES · Chamada Transnacional Conjunta CONFAP & Biodiversa+ (B
  iodivFuture) 2026-2027\nValor: até € 75\,0 mil por proposta\nQuem pod
  e participar: Pesquisador(a)\nPré-proposta (1ª fase\, obrigatória) até
   10/11/2026 às 12h00 (CEST)\, em inglês\, pelo sistema EPSS. Propostas c
- ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnaci
- onal-conjunta-biodiversa-biodivfuture-2026-2027-122/\nConfirme data e hor
- ário limite no edital oficial: https://fapes.es.gov.br/media/Editais/dire
- trizes-biodiversa-2026.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-conjunta-biodiversa-biodivfuture-2026-2027-122/
+ ompletas até 16/04/2027 às 12h (CEST).\nPágina do edital: https://radar
+ fomento.com.br/editais/chamada-transnacional-conjunta-biodiversa-biodivfut
+ ure-2026-2027-122/\nConfirme data e horário limite no edital oficial: htt
+ ps://fapes.es.gov.br/media/Editais/diretrizes-biodiversa-2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-conjunta-biod
+ iversa-biodivfuture-2026-2027-122/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -2009,12 +1929,12 @@ DESCRIPTION:Finep · Seleção Pública MCTI/Finep/FNDCT – Fluxo Contínu
  o\nValor: até R$ 20\,0 mi\nQuem pode participar: Empresa\nFluxo contín
  uo até 30/04/2027\, 17h\, pela Plataforma de Apoio e Financiamento da Fin
  ep. A empresa precisa de parceria formalizada com cooperativa com CAF e pe
- lo menos 70% de agricultores familiares.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/finep-cooperamais
- -brasil-tecnologias-empresas-112/\nConfirme data e horário limite no edit
- al oficial: https://www.finep.gov.br/e/chamada-publica/222684/1060720
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- inep-cooperamais-brasil-tecnologias-empresas-112/
+ lo menos 70% de agricultores familiares.\nPágina do edital: https://radar
+ fomento.com.br/editais/finep-cooperamais-brasil-tecnologias-empresas-112/\
+ nConfirme data e horário limite no edital oficial: https://www.finep.gov.
+ br/e/chamada-publica/222684/1060720
+URL:https://radarfomento.com.br/editais/finep-cooperamais-brasil-tecnologia
+ s-empresas-112/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -2040,13 +1960,12 @@ DESCRIPTION:FAPES · Chamada Transnacional Conjunta FOREST 2026 (CONFAP & F
  OREST 2026)\nValor: até € 75\,0 mil por proposta\nQuem pode participa
  r: Pesquisador(a)\nPré-proposta (1ª fase) até 02/12/2026 às 13:00 (CET
  )\, obrigatória para a 2ª fase. Propostas completas até 02/06/2027\; su
- bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://helloli
- ueunice.github.io/Plataforma-Brasil-Brasileiro/editais/chamada-transnacion
- al-conjunta-forest-2026-forest-pathways-diretrizes-121/\nConfirme data e h
- orário limite no edital oficial: https://fapes.es.gov.br/media/Editais/di
- retrizes-forest-pathways-2026.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-conjunta-forest-2026-forest-pathways-diretrizes-121/
+ bmissão em inglês pelo sistema EPSS.\nPágina do edital: https://radarfo
+ mento.com.br/editais/chamada-transnacional-conjunta-forest-2026-forest-pat
+ hways-diretrizes-121/\nConfirme data e horário limite no edital oficial: 
+ https://fapes.es.gov.br/media/Editais/diretrizes-forest-pathways-2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-conjunta-fore
+ st-2026-forest-pathways-diretrizes-121/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -2072,12 +1991,12 @@ DESCRIPTION:FAPES · Chamada CONFAP & SBEP 2026\nValor: até € 75\,0 mi
  l por proposta\nQuem pode participar: Pesquisador(a)\nPrazo da pré-propos
  ta (1ª fase): 16/11/2026 às 15:00 CET\, obrigatória para a 2ª fase. Pr
  opostas completas até 14/06/2027\, em inglês\, pelo sistema EPSS.\nPági
- na do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileir
- o/editais/chamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
- \nConfirme data e horário limite no edital oficial: https://fapes.es.gov.
- br/media/Portif%C3%B3lios/diretrizes-da-fapes-chamada-sbep-2026.pdf
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- hamada-transnacional-conjunta-da-parceria-de-economia-azul-124/
+ na do edital: https://radarfomento.com.br/editais/chamada-transnacional-co
+ njunta-da-parceria-de-economia-azul-124/\nConfirme data e horário limite 
+ no edital oficial: https://fapes.es.gov.br/media/Portif%C3%B3lios/diretriz
+ es-da-fapes-chamada-sbep-2026.pdf
+URL:https://radarfomento.com.br/editais/chamada-transnacional-conjunta-da-p
+ arceria-de-economia-azul-124/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
