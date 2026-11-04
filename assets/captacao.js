@@ -11,7 +11,8 @@
    5. Cofre de certidões e documentos (com aviso de vencimento x prazo)
    6. (Quem pode participar: agora no index.html, uma pergunta por vez — aqui só backup)
    7. Backup (JSON) e exportação do quadro (CSV)
-   8. As 3 perguntas da primeira visita (bloco no início, com entradas por situação)
+   8. Primeiro resultado em 1 toque ("Quem vai pedir o recurso?"), "Afinar" e "Seu próximo passo"
+   8b. Trilha, conquistas e celebração (gamificação honesta, só com ações reais)
    9. "Desde sua última visita" (faixa no início)
   10. Pesquisa de 1 pergunta (CES) depois de "Portal oficial" / "Quero participar"
   11. Lista compartilhável (#lista?ids=…) e "Compartilhar minha lista"
@@ -809,7 +810,7 @@
     function exportarJSON() {
         const dados = {
             formato: FORMATO, versao: 1, exportadoEm: new Date().toISOString(),
-            propostas, checklists: checklistsAtuais(), gonogo, cofre, elegibilidade: lerElegib(), buscas
+            propostas, checklists: checklistsAtuais(), gonogo, cofre, elegibilidade: lerElegib(), buscas, plano: objeto(store.get('fb:plano', {})) ? store.get('fb:plano', {}) : {}
         };
         downloadFile(`radar-fomento-backup-${hojeISO()}.json`, JSON.stringify(dados, null, 2), 'application/json');
         track('backup-exportar');
@@ -904,7 +905,7 @@
     const idEdital = k => /^\d{1,9}$/.test(k);
 
     function validarBackup(d) {
-        const r = { propostas: {}, checklists: {}, gonogo: {}, cofre: [], elegibilidade: {}, buscas: [], ignorados: 0 };
+        const r = { propostas: {}, checklists: {}, gonogo: {}, cofre: [], elegibilidade: {}, buscas: [], plano: {}, ignorados: 0 };
         if (!objeto(d) || d.formato !== FORMATO) return null;
 
         if (objeto(d.propostas)) for (const [k, v] of Object.entries(d.propostas).slice(0, 1000)) {
@@ -933,8 +934,14 @@
         if (objeto(d.elegibilidade)) for (const [k, v] of Object.entries(d.elegibilidade).slice(0, 1000)) {
             if (!idEdital(k) || !objeto(v)) { r.ignorados++; continue; }
             const resp = {};
-            Object.entries(v).slice(0, 10).forEach(([q, b]) => { if (q.length <= 200 && typeof b === 'boolean') resp[q] = b; });
+            Object.entries(v).slice(0, 12).forEach(([q, b]) => { if (q.length <= 200 && (typeof b === 'boolean' || b === 'ns')) resp[q] = b; });
             r.elegibilidade[k] = resp;
+        }
+        if (objeto(d.plano)) for (const [k, v] of Object.entries(d.plano).slice(0, 1000)) {
+            if (!idEdital(k) || !objeto(v)) { r.ignorados++; continue; }
+            const m = {};
+            ['cadastro', 'orcamento'].forEach(c => { if (v[c] === true) m[c] = true; });
+            if (Object.keys(m).length) r.plano[k] = m;
         }
         if (Array.isArray(d.buscas)) for (const v of d.buscas.slice(0, MAX_BUSCAS)) {
             const nome = objeto(v) ? texto(v.nome, 80).trim() : '';
@@ -979,6 +986,7 @@
             Object.entries(v.checklists).forEach(([k, lista]) => store.set(`checklist-${k}`, lista));
             Object.assign(gonogo, v.gonogo); salvarGonogo();
             store.set(K.elegib, { ...lerElegib(), ...v.elegibilidade });
+            { const pl = store.get('fb:plano', {}); store.set('fb:plano', { ...(objeto(pl) ? pl : {}), ...v.plano }); }
             v.cofre.forEach(doc => {
                 const i = cofre.findIndex(d => d.id === doc.id);
                 if (i >= 0) cofre[i] = doc; else if (cofre.length < 200) cofre.push(doc);
@@ -1001,133 +1009,232 @@
     }
 
     /* ---------------------------------------------------------------------
-       8. AS 3 PERGUNTAS DA PRIMEIRA VISITA — bloco no início (não é modal, dá para pular)
-       1 "Quem vai pedir o recurso?"  2 "Onde vocês atuam?"  3 "Para quê?" (opcional, até 3 áreas)
-       As respostas viram o perfil (o mesmo de "Sobre você"), com "Desfazer".
+       8. PRIMEIRO RESULTADO EM 1 TOQUE — "Quem vai pedir o recurso?" no início
+       Um toque grava o perfil (com "Desfazer") e já mostra os editais. Estado e tema
+       viram "Afinar" (opcional) acima dos resultados, com o Estado sugerido pelo fuso
+       horário do aparelho (sem pedir permissão, sem localização).
+       Quem já usou vê "Seu próximo passo", com uma ação só.
     --------------------------------------------------------------------- */
-    const SITUACOES = [
-        { k: 'pesquisador', txt: 'Preciso de bolsa de pesquisa' },
-        { k: 'osc', txt: 'Projeto social da minha ONG' },
-        { k: 'municipio', txt: 'Obra ou serviço na minha cidade' },
-        { k: 'empresa', txt: 'Inovação na minha empresa' }
-    ];
-    const MAX_AREAS_ONB = 3;
-    const onb = { passo: 1, pub: '', uf: '', ufSel: '', areas: [], forcar: false };
-
-    function situacoesHTML(sozinhas) {
-        return `<div class="onb-situacoes">
-                ${sozinhas ? '<h2 class="onb-titulo" id="onbTitulo">Comece pela sua situação</h2>' : '<p class="onb-sit-tit">Ou comece pela sua situação:</p>'}
-                <div class="onb-sit-lista">${SITUACOES.map(s => `<button type="button" class="onb-sit" data-cap="onb-situacao" data-valor="${s.k}">${esc(s.txt)}</button>`).join('')}</div>
-                ${sozinhas ? '<p class="nota"><button type="button" class="link-btn" data-cap="onb-abrir">Ou responda as 3 perguntas</button> · fica só neste aparelho.</p>' : ''}
-            </div>`;
-    }
-
-    function perguntaHTML() {
-        if (onb.passo === 1) return `
-            <fieldset class="onb-pergunta">
-                <legend class="onb-legenda" tabindex="-1">Quem vai pedir o recurso?</legend>
-                <div class="onb-opcoes">${Object.entries(PUBLICOS_PERGUNTA).map(([k, t]) => `<button type="button" class="onb-op" data-cap="onb-pub" data-valor="${k}" aria-pressed="${onb.pub === k}">${esc(t)}</button>`).join('')}</div>
-            </fieldset>
-            ${situacoesHTML(false)}`;
-        if (onb.passo === 2) return `
-            <fieldset class="onb-pergunta">
-                <legend class="onb-legenda" tabindex="-1">Onde vocês atuam?</legend>
-                <div class="onb-uf">
-                    <div class="form-group"><label for="onbUF">Estado</label>
-                        <select id="onbUF"><option value="">Escolha o estado</option>${Object.entries(UFS).map(([k, t]) => `<option value="${k}"${(onb.ufSel || onb.uf) === k ? ' selected' : ''}>${esc(t)}</option>`).join('')}</select></div>
-                    <button type="button" class="btn btn-primary" data-cap="onb-uf-ok">Continuar</button>
-                </div>
-                <p class="onb-ou">ou</p>
-                <button type="button" class="btn btn-outline onb-brasil" data-cap="onb-uf-brasil">Todo o Brasil</button>
-            </fieldset>`;
-        return `
-            <fieldset class="onb-pergunta">
-                <legend class="onb-legenda" tabindex="-1">Para quê? <span class="onb-opcional">(opcional, até ${MAX_AREAS_ONB} áreas)</span></legend>
-                <div class="onb-areas">${Object.entries(AREAS).map(([k, t]) => `<label class="onb-area"><input type="checkbox" name="onbArea" value="${esc(k)}"${onb.areas.includes(k) ? ' checked' : ''}> <span>${esc(t)}</span></label>`).join('')}</div>
-                <p class="nota" id="onbAreasAviso" aria-live="polite"></p>
-            </fieldset>
-            <div class="onb-acoes">
-                <button type="button" class="btn btn-primary" data-cap="onb-concluir">Ver os editais que servem</button>
-                <button type="button" class="btn btn-outline" data-cap="onb-concluir" data-sem-areas="1">Pular</button>
-            </div>`;
-    }
+    const DICA_PUBLICO = {
+        pesquisador: 'Bolsas e auxílio para pesquisa', ict: 'Projetos da universidade ou instituto', empresa: 'Inovação e dinheiro que não precisa devolver',
+        osc: 'Projetos sociais, cultura, meio ambiente', municipio: 'Obras e serviços na cidade', estado: 'Programas para o governo estadual'
+    };
+    const jaUsou = () => perfilAtivo() || itensPropostas().length > 0;
 
     function renderOnboarding(focar) {
         const box = document.getElementById('capOnboarding');
         if (!box) return;
-        const estado = ler(K.onboarding, '');
-        const perguntas = onb.forcar || (!estado && !perfilAtivo());
-        if (!perguntas) {
-            // Sem perfil e já pulou: ficam só as entradas por situação (abrem as perguntas com a 1ª respondida)
-            box.hidden = perfilAtivo();
-            box.innerHTML = perfilAtivo() ? '' : `<div class="onb-card onb-compacto">${situacoesHTML(true)}</div>`;
-            return;
-        }
-        // Não redesenha debaixo do dedo de quem está respondendo (atualizações de dados chamam isto de novo)
-        if (!focar && box.contains(document.activeElement) && box.dataset.passo === String(onb.passo)) return;
+        if (jaUsou()) { box.hidden = true; box.innerHTML = ''; return; }
+        if (!focar && box.contains(document.activeElement)) return; // não redesenha debaixo do dedo
         box.hidden = false;
-        box.dataset.passo = String(onb.passo);
         box.innerHTML = `
-            <div class="onb-card" data-passo="${onb.passo}">
-                <div class="onb-topo">
-                    <h2 class="onb-titulo" id="onbTitulo">Responda 3 perguntas e veja só o que serve para você</h2>
-                    <p class="onb-progresso"><span class="sr-only">Pergunta </span>${onb.passo} de 3
-                        <span class="onb-barra" aria-hidden="true"><span style="width:${Math.round(onb.passo / 3 * 100)}%"></span></span></p>
-                </div>
-                ${perguntaHTML()}
-                <div class="onb-rodape">
-                    ${onb.passo > 1 ? '<button type="button" class="btn btn-ghost btn-small" data-cap="onb-voltar"><span aria-hidden="true">←</span> Voltar</button>' : ''}
-                    <p class="onb-privacidade">Suas respostas ficam só neste aparelho. Você pode <a href="#meus-dados">apagar quando quiser</a>.</p>
-                    <button type="button" class="btn btn-ghost btn-small" data-cap="onb-pular">Agora não</button>
-                </div>
-            </div>`;
-        if (focar) {
-            const l = box.querySelector('.onb-legenda');
-            if (l) {
-                l.focus({ preventScroll: true });
-                const topo = box.getBoundingClientRect().top;
-                if (topo < 72 || topo > innerHeight * 0.6) box.scrollIntoView({ block: 'start' }); // scroll-margin-top: abaixo do cabeçalho fixo
-            }
-        }
+            <h2 class="onb-titulo" id="onbTitulo">Quem vai pedir o recurso?</h2>
+            <p class="onb-sub">Escolha uma opção e veja na hora os editais que servem.</p>
+            <div class="onb-opcoes">${Object.entries(PUBLICOS_PERGUNTA).map(([k, t]) => `
+                <button type="button" class="onb-op" data-cap="onb-pub" data-valor="${k}"><span class="onb-op-nome">${esc(t)}</span><span class="onb-op-dica">${esc(DICA_PUBLICO[k] || '')}</span></button>`).join('')}</div>
+            <p class="onb-privacidade">Fica só neste aparelho. Você pode <a href="#meus-dados">ver ou apagar</a> quando quiser.</p>`;
+        if (focar) { const b = box.querySelector('.onb-op'); if (b) b.focus(); }
     }
 
     function onbEscolherPub(k) {
         if (!PUBLICOS[k]) return;
-        onb.pub = k;
-        onb.passo = 2;
-        renderOnboarding(true);
-    }
-    function onbSituacao(k) {
-        if (!PUBLICOS[k]) return;
-        track('onboarding-situacao');
-        onb.forcar = true;
-        onb.pub = k;
-        onb.passo = 2;
-        if (paginaAtual() !== 'dashboard') location.hash = 'dashboard';
-        renderOnboarding(true);
-    }
-    function onbEscolherUF(uf) {
-        onb.uf = UFS[uf] ? uf : '';
-        onb.passo = 3;
-        renderOnboarding(true);
-    }
-    function onbConcluir(semAreas) {
-        const areas = semAreas ? [] : [...document.querySelectorAll('#capOnboarding input[name="onbArea"]:checked')].map(i => i.value).filter(a => AREAS[a]).slice(0, MAX_AREAS_ONB);
         naoLembrarPerfil = false;
-        atualizarPerfil({ publico: onb.pub || (perfil && perfil.publico) || '', uf: onb.uf, areas });
+        atualizarPerfil({ publico: k });
         store.set(K.onboarding, 'feito');
         track('onboarding-concluir');
-        onb.forcar = false;
         refreshAll();
-        location.hash = 'editais';
+        location.hash = `editais?publico=${k}`;
     }
-    function onbPular() {
-        store.set(K.onboarding, 'pulado');
-        track('onboarding-pular');
-        onb.forcar = false;
-        renderOnboarding(false);
-        const alvo = document.querySelector('#capOnboarding .onb-sit') || document.getElementById('homeSearchInput');
-        if (alvo) alvo.focus();
+
+    // Afinar (opcional): Estado e tema em chips, acima dos resultados
+    function chipAfinar(cap, valor, rotulo, ativo, extra = '') {
+        return `<button type="button" class="chip-toggle afinar-chip" data-cap="${cap}" data-valor="${esc(valor)}" aria-pressed="${ativo}"${extra}>${rotulo}</button>`;
+    }
+    function renderAfinar() {
+        const box = document.getElementById('capAfinar');
+        if (!box) return;
+        if (!perfilAtivo() || paginaAtual() !== 'editais') { box.innerHTML = ''; return; }
+        const foco = document.activeElement && box.contains(document.activeElement)
+            ? (document.activeElement.id ? '#' + document.activeElement.id : `[data-cap="${document.activeElement.dataset.cap}"][data-valor="${CSS.escape(document.activeElement.dataset.valor || '')}"]`) : null;
+        const f = getFiltros();
+        const sug = ufsSugeridas();
+        const ufs = [...new Set([f.uf, perfil && perfil.uf, ...sug].filter(u => u && UFS[u]))].slice(0, 4);
+        const unica = sug.length === 1 && !f.uf && !(perfil && perfil.uf);
+        const areas = Object.keys(AREAS)
+            .map(a => [a, aplicarFiltros({ ...f, area: a }).length])
+            .filter(([a, n]) => n > 0 || a === f.area)
+            .sort((x, y) => (y[0] === f.area) - (x[0] === f.area) || y[1] - x[1])
+            .slice(0, 6);
+        const curto = a => (AREAS[a] || a).split(' e ')[0];
+        box.innerHTML = `
+            <section class="afinar" aria-labelledby="afinarTit">
+                <h2 class="afinar-tit" id="afinarTit">Afinar <span class="afinar-opc">(opcional)</span></h2>
+                <div class="afinar-linha" role="group" aria-labelledby="afinarUFRot">
+                    <span class="afinar-rot" id="afinarUFRot">Estado</span>
+                    <div class="afinar-chips">
+                        ${ufs.map(u => chipAfinar('afinar-uf', u, `${esc(UFS[u])}${unica && u === sug[0] ? ' <span class="sugestao">sugestão</span>' : ''}`, f.uf === u)).join('')}
+                        ${chipAfinar('afinar-uf', '', 'Todo o Brasil', !f.uf)}
+                        <label class="sr-only" for="afinarUFSel">Outro estado</label>
+                        <select id="afinarUFSel" class="afinar-sel"><option value="">Outro estado…</option>${Object.entries(UFS).filter(([k]) => !ufs.includes(k)).map(([k, t]) => `<option value="${k}">${esc(t)}</option>`).join('')}</select>
+                    </div>
+                </div>
+                ${unica ? '<p class="afinar-nota">Sugerido pelo fuso do aparelho, sem usar sua localização.</p>' : ''}
+                <div class="afinar-linha" role="group" aria-labelledby="afinarTemaRot">
+                    <span class="afinar-rot" id="afinarTemaRot">Tema</span>
+                    <div class="afinar-chips">
+                        ${areas.map(([a, n]) => chipAfinar('afinar-area', a, `${esc(curto(a))} <span class="afinar-n">${n}</span>`, f.area === a, ` aria-label="${esc(AREAS[a] || a)}: ${plural(n, 'edital', 'editais')}"`)).join('')}
+                    </div>
+                </div>
+            </section>`;
+        if (foco) { const el = box.querySelector(foco); if (el) el.focus(); }
+    }
+    function afinarUF(u) {
+        const sel = document.getElementById('filterUF');
+        if (!sel) return;
+        sel.value = UFS[u] ? u : '';
+        track('afinar-uf');
+        filterEditais();
+        anunciar(`${document.getElementById('resultsCount').textContent || ''}`.trim() || 'Resultados atualizados.');
+    }
+    function afinarArea(a) {
+        if (!AREAS[a]) return;
+        track('afinar-tema');
+        escolherFaceta('area', a);
+        anunciar(`${document.getElementById('resultsCount').textContent || ''}`.trim() || 'Resultados atualizados.');
+    }
+
+    // "Seu próximo passo": uma ação só, a partir do que a pessoa já fez
+    function proximoPasso() {
+        const ativos = itensPropostas().filter(x => ['interesse', 'preparando'].includes(x.p.etapa) && statusEdital(x.e) !== 'fechado')
+            .sort((a, b) => a.e.encerramento.localeCompare(b.e.encerramento));
+        if (ativos.length) {
+            const { e } = ativos[0];
+            const t = trilhaDe(e);
+            const d = diasAte(e.encerramento);
+            const prazo = statusEdital(e) === 'em-breve' ? `Abre em ${fmtDate(e.abertura)}` : d === 0 ? 'Encerra hoje' : d === 1 ? 'Encerra amanhã' : `Encerra em ${d} dias (${fmtDate(e.encerramento)})`;
+            let txt, btn, foco;
+            if (!t.etapas[1].feito && t.v.estado !== 'nao') { txt = 'Confira se você pode concorrer. Uma pergunta por vez.'; btn = 'Conferir agora'; foco = 'posso'; }
+            else if (t.v.estado === 'nao' && !t.etapas[1].feito) { txt = 'Pelo que você respondeu, este edital não serve. Veja outros parecidos.'; btn = 'Ver o edital'; foco = 'posso'; }
+            else if (t.docs < t.tot) { txt = `Marque os documentos que você já tem (${t.docs} de ${t.tot}).`; btn = 'Abrir o checklist'; foco = 'checklist'; }
+            else if (!t.marcas.cadastro) { txt = `Faça o cadastro em ${sistemaDe(e)} e marque como feito.`; btn = 'Ver o passo a passo'; foco = 'plano'; }
+            else if (!t.marcas.orcamento) { txt = 'Escreva a proposta, com orçamento e cronograma.'; btn = 'Ver o passo a passo'; foco = 'plano'; }
+            else { txt = `Envie a proposta no portal oficial até ${fmtDate(e.encerramento)}. Depois, marque aqui.`; btn = 'Ver o passo a passo'; foco = 'plano'; }
+            return { e, t, prazo, txt, btn, foco, urgente: d <= 7 && statusEdital(e) === 'aberto' };
+        }
+        const espera = itensPropostas().find(x => x.p.etapa === 'submetida');
+        if (espera) return { e: espera.e, t: trilhaDe(espera.e), prazo: espera.e.resultado ? `Resultado previsto para ${fmtDate(espera.e.resultado)}` : 'Aguardando o resultado',
+            txt: 'Quando sair o resultado, registre em Minhas propostas.', btn: 'Abrir Minhas propostas', href: '#propostas' };
+        if (perfilAtivo() && perfil.publico) {
+            const n = editais.filter(e => statusEdital(e) !== 'fechado' && e.publico.includes(perfil.publico) && (!perfil.uf || atendeUF(e, perfil.uf))).length;
+            return { txt: n ? `Escolha um edital para começar. ${n === 1 ? 'Um serve' : `${n} servem`} para ${PUBLICOS[perfil.publico]}${perfil.uf ? ` em ${UFS[perfil.uf]}` : ''}.` : 'Nada aberto para você hoje. Veja os que abrem em breve.',
+                btn: n ? `Ver ${n === 1 ? 'o edital' : `os ${n} editais`}` : 'Ver editais', href: `#editais?publico=${perfil.publico}${perfil.uf ? `&uf=${perfil.uf}` : ''}` };
+        }
+        return null;
+    }
+    function renderProximo() {
+        const box = document.getElementById('capProximo');
+        if (!box) return;
+        const pp = jaUsou() ? proximoPasso() : null;
+        if (!pp) { box.innerHTML = ''; return; }
+        const acao = pp.href
+            ? `<a class="btn btn-primary proximo-btn" href="${esc(pp.href)}" data-evento="proximo-passo">${esc(pp.btn)} <span aria-hidden="true">→</span></a>`
+            : `<button type="button" class="btn btn-primary proximo-btn" data-cap="proximo-abrir" data-id="${pp.e.id}" data-foco="${pp.foco}">${esc(pp.btn)} <span aria-hidden="true">→</span></button>`;
+        box.innerHTML = `
+            <section class="proximo" aria-labelledby="proximoTit">
+                <h2 class="proximo-tit" id="proximoTit">Seu próximo passo</h2>
+                ${pp.e ? `<p class="proximo-edital"><strong>${esc(pp.e.titulo)}</strong> <span class="proximo-prazo${pp.urgente ? ' urgente' : ''}">${esc(pp.prazo)}</span></p>
+                    ${trilhaHTML(pp.e, { compacta: true })}` : ''}
+                <p class="proximo-txt">${esc(pp.txt)}</p>
+                ${acao}
+            </section>`;
+    }
+    function abrirProximo(id, foco) {
+        openEdital(id);
+        const alvo = foco === 'posso' ? document.getElementById(`possoTitulo-${id}`)
+            : foco === 'checklist' ? document.getElementById(`checklistTitulo-${id}`)
+            : document.getElementById(`planoTitulo-${id}`);
+        if (alvo) { alvo.scrollIntoView({ block: 'start' }); alvo.focus({ preventScroll: true }); }
+    }
+
+    /* ---------------------------------------------------------------------
+       8b. CONQUISTAS E CELEBRAÇÃO — ligadas a ações reais; sem pontos, ranking ou sequência
+       fb:conquistas = { chave: data ISO da primeira vez }. fb:trilha = { id: etapas feitas }.
+    --------------------------------------------------------------------- */
+    K.conquistas = 'fb:conquistas';
+    K.conquistasOcultas = 'fb:conquistasOcultas';
+    K.trilha = 'fb:trilha';
+    K.planoIcs = 'fb:planoIcs';
+    const CONQUISTAS = [
+        { k: 'salvo', nome: 'Primeiro edital salvo', como: 'Toque em “Quero participar” ou na estrela de um edital.', tem: () => itensPropostas().length > 0 || favorites.length > 0 },
+        { k: 'pode', nome: 'Você pode concorrer!', como: 'Responda “Posso concorrer?” até ver “Sim”.', tem: () => itensPropostas().some(x => trilhaDe(x.e).v.estado === 'sim') },
+        { k: 'plano', nome: 'Plano no calendário', como: 'No passo a passo, toque em “Pôr tudo no meu calendário”.', tem: () => !!ler(K.planoIcs, null) },
+        { k: 'docs', nome: 'Documentos prontos', como: 'Marque todos os documentos do checklist de um edital.', tem: () => itensPropostas().some(x => x.e.documentos.length && docsProntos(x.e) === x.e.documentos.length) },
+        { k: 'cofre', nome: 'Certidão no cofre', como: 'Guarde a validade de uma certidão no cofre, abaixo.', tem: () => cofre.length > 0 },
+        { k: 'enviada', nome: 'Proposta enviada — marcada por você', como: 'Depois de enviar no portal oficial, toque em “Já enviei”.', tem: () => itensPropostas().some(x => ENVIADAS.includes(x.p.etapa)) }
+    ];
+    function conquistasGuardadas() { const v = ler(K.conquistas, {}); return objeto(v) ? v : {}; }
+    // Registra as conquistas novas e devolve os nomes (uma conquista não "some" se a pessoa desfaz depois)
+    function verificarConquistas(extra) {
+        const g = { ...conquistasGuardadas() };
+        const novas = [];
+        for (const c of CONQUISTAS) {
+            if (g[c.k]) continue;
+            let tem = false;
+            try { tem = (extra && extra[c.k]) || c.tem(); } catch (_) { tem = false; }
+            if (tem) { g[c.k] = new Date().toISOString(); novas.push(c.nome); }
+        }
+        if (novas.length) store.set(K.conquistas, g);
+        return novas;
+    }
+    function conquistasHTML() {
+        const g = conquistasGuardadas();
+        if (ler(K.conquistasOcultas, null) === '1') return `<p class="conq-oculta nota">Conquistas escondidas. <button type="button" class="link-btn" data-cap="conq-mostrar">Mostrar</button></p>`;
+        const n = CONQUISTAS.filter(c => g[c.k]).length;
+        return `
+            <section class="conq" aria-labelledby="conqTit">
+                <div class="conq-topo">
+                    <h2 class="conq-tit" id="conqTit">Minhas conquistas <span class="conq-n">${n} de ${CONQUISTAS.length}</span></h2>
+                    <button type="button" class="btn btn-ghost btn-small" data-cap="conq-esconder">Esconder</button>
+                </div>
+                <ul class="conq-lista">${CONQUISTAS.map(c => g[c.k]
+                    ? `<li class="conq-item tem"><span class="conq-selo" aria-hidden="true"></span><span><strong>${esc(c.nome)}</strong><span class="nota">em ${dataBR(g[c.k])}</span></span></li>`
+                    : `<li class="conq-item"><span class="conq-selo" aria-hidden="true"></span><span><strong><span class="sr-only">Ainda não: </span>${esc(c.nome)}</strong><span class="nota">${esc(c.como)}</span></span></li>`).join('')}</ul>
+                <p class="nota conq-rodape">Cada conquista vem de algo útil que você fez. Sem pontos, ranking ou prazo. Fica só neste aparelho.</p>
+            </section>`;
+    }
+    function renderConquistas() {
+        const box = document.getElementById('capConquistas');
+        if (box) box.innerHTML = conquistasHTML();
+    }
+
+    // Região viva própria: a celebração não atropela o anúncio da resposta
+    function anunciarCelebracao(msg) {
+        let r = document.getElementById('capCelebra');
+        if (!r) { r = document.createElement('div'); r.id = 'capCelebra'; r.className = 'sr-only'; r.setAttribute('role', 'status'); r.setAttribute('aria-live', 'polite'); document.body.appendChild(r); }
+        r.textContent = '';
+        setTimeout(() => { r.textContent = msg; }, 250);
+    }
+    // Etapa da trilha concluída: pontos do radar se acendem (sem animação com movimento reduzido) e anúncio aria-live
+    function celebrarTrilha(e) {
+        if (!e) return;
+        const mem = { ...(objeto(ler(K.trilha, {})) ? ler(K.trilha, {}) : {}) };
+        const t = trilhaDe(e);
+        const antes = Number(mem[e.id]) || 0;
+        const novas = verificarConquistas();
+        if (t.feitas !== antes) { mem[e.id] = t.feitas; store.set(K.trilha, mem); }
+        const partes = [];
+        if (t.feitas > antes) {
+            const feita = [...t.etapas].reverse().find(x => x.feito);
+            partes.push(`Etapa feita: ${feita.nome}. Prontidão: ${t.pct}%.`);
+            const el = document.getElementById(`trilha-${e.id}`);
+            if (el) { el.classList.remove('celebra'); void el.offsetWidth; el.classList.add('celebra'); }
+        }
+        if (novas.length) {
+            partes.push(`Nova conquista: ${novas.join(', ')}.`);
+            const el = document.getElementById(`trilha-${e.id}`);
+            if (el && !el.querySelector('.trilha-conquista')) el.insertAdjacentHTML('beforeend', `<p class="trilha-conquista">Nova conquista: <strong>${esc(novas.join(', '))}</strong> · <a href="#propostas">ver em Minhas propostas</a></p>`);
+        }
+        if (partes.length) anunciarCelebracao(partes.join(' '));
     }
 
     /* ---------------------------------------------------------------------
@@ -1345,6 +1452,7 @@
             ['Buscas salvas', plural(buscas.length, 'busca', 'buscas'), buscas.length ? dataBR(maisRecente(buscas.map(x => x.criadoEm))) : '—', ''],
             ['Respostas de “quem pode participar”', plural(Object.keys(eleg).length, 'edital respondido', 'editais respondidos'), '—', ''],
             ['Última visita', objeto(d) && isoValido(d.data) ? `antes de hoje: ${fmtDate(d.data)}` : 'Primeira visita neste aparelho', dataBR(ler(K.ultimaVisita, '') ? ler(K.ultimaVisita, '') + 'T12:00:00' : ''), ''],
+            ['Passos marcados e conquistas', plural(Object.keys(conquistasGuardadas()).length, 'conquista', 'conquistas'), maisRecente(Object.values(conquistasGuardadas())) ? dataBR(maisRecente(Object.values(conquistasGuardadas()))) : '—', '<a href="#propostas">Ver</a>'],
             ['Seu nome nos relatórios', usuario ? usuario.nome : 'Não informado', '—', ''],
             ['Aviso neste navegador', ler(K.notificar, null) === '1' ? 'Ligado' : 'Desligado', '—', '']
         ];
@@ -1362,7 +1470,7 @@
                 <button type="button" class="btn btn-outline" data-cap="meus-exportar">${ICONE.baixar} Exportar</button>
                 <button type="button" class="btn btn-danger" data-cap="meus-apagar">Apagar tudo</button>
             </div>
-            <p class="nota">Exportar baixa um arquivo .json com tudo isso. Apagar tudo remove os dados deste aparelho e volta para as 3 perguntas do início. Para levar só as propostas para outro aparelho, use o <a href="#propostas">backup de Minhas propostas</a>.</p>`;
+            <p class="nota">Exportar baixa um arquivo .json com tudo isso. Apagar tudo remove os dados deste aparelho e volta ao início, como na primeira visita. Para levar só as propostas para outro aparelho, use o <a href="#propostas">backup de Minhas propostas</a>.</p>`;
     }
     function exportarMeusDados() {
         const dados = {};
@@ -1375,7 +1483,7 @@
     }
     function apagarTudo() {
         track('meus-dados-apagar');
-        limparDados(); // confirma, apaga as chaves deste site e recarrega no início (as 3 perguntas voltam)
+        limparDados(); // confirma, apaga as chaves deste site e recarrega no início ("Quem vai pedir o recurso?" volta)
     }
     window.renderMeusDados = () => seguro(renderMeusDados);
     window.renderLista = () => seguro(renderLista);
@@ -1385,25 +1493,47 @@
        Funções globais do index.html são reatribuídas por invólucros que chamam a
        original e depois acrescentam o que é desta camada.
     --------------------------------------------------------------------- */
-    const original = { openEdital, renderPropostas, syncUrl, renderDashboardStats };
+    const original = { openEdital, renderPropostas, syncUrl, renderDashboardStats, toggleChecklist, toggleFavorite, baixarPlanoICS };
 
     openEdital = function (id) {
         original.openEdital(id);
         seguro(() => reinserirCES(id));
+        seguro(() => celebrarTrilha(editais.find(x => x.id === id)));
+        // O cabeçalho do modal fica preso no topo: o que rolamos até ele (Posso concorrer?, plano, checklist) não some atrás dele
+        seguro(() => { const m = document.getElementById('editalModal'), c = m && m.querySelector('.modal-header'); if (c) m.style.setProperty('--cab', c.offsetHeight + 'px'); });
     };
 
     // syncUrl roda ao fim de todo filterEditais (inclusive na busca com atraso): ponto único para "filtros mudaram"
     syncUrl = function (f) {
         original.syncUrl(f);
         seguro(() => atualizarFerramentasBusca(f));
+        seguro(renderAfinar);
     };
 
     renderDashboardStats = function () {
         original.renderDashboardStats();
         seguro(renderBuscas);
         seguro(() => renderOnboarding(false));
+        seguro(renderProximo);
         seguro(renderDesde);
         seguro(guardarVistos);
+    };
+
+    // Checklist muda sem redesenhar o modal: atualiza a trilha e celebra se uma etapa fechou
+    toggleChecklist = function (id, index, checked) {
+        original.toggleChecklist(id, index, checked);
+        seguro(() => { atualizarTrilha(id); celebrarTrilha(editais.find(x => x.id === id)); });
+    };
+    toggleFavorite = function (id) {
+        original.toggleFavorite(id);
+        seguro(() => verificarConquistas());
+    };
+    baixarPlanoICS = function (id) {
+        original.baixarPlanoICS(id);
+        seguro(() => {
+            if (!ler(K.planoIcs, null)) store.set(K.planoIcs, new Date().toISOString());
+            celebrarTrilha(editais.find(x => x.id === id));
+        });
     };
 
     renderPropostas = function () {
@@ -1422,6 +1552,7 @@
             document.getElementById('capCofre').innerHTML = cofreHTML();
             document.getElementById('capBackup').innerHTML = backupHTML();
         });
+        seguro(() => { verificarConquistas(); renderConquistas(); });
     };
 
     /* ---------------------------------------------------------------------
@@ -1489,19 +1620,12 @@
             case 'pedir-notificacao': pedirNotificacao(); break;
             case 'parar-notificacao': store.set(K.notificar, null); showNotification('Pronto: não vamos mais avisar neste navegador.'); renderPropostas(); if (paginaAtual() === 'meus-dados') renderMeusDados(); break;
             case 'onb-pub': onbEscolherPub(el.dataset.valor); break;
-            case 'onb-uf-brasil': onbEscolherUF(''); break;
-            case 'onb-voltar': onb.passo = Math.max(1, onb.passo - 1); renderOnboarding(true); break;
-            case 'onb-pular': onbPular(); break;
-            case 'onb-concluir': onbConcluir(el.dataset.semAreas === '1'); break;
-            case 'onb-uf-ok': {
-                const s = document.getElementById('onbUF');
-                if (!s || !s.value) { if (s) { s.setAttribute('aria-invalid', 'true'); s.focus(); } anunciar('Escolha o estado ou toque em Todo o Brasil.'); break; }
-                onbEscolherUF(s.value);
-                break;
-            }
+            case 'afinar-uf': afinarUF(el.dataset.valor); break;
+            case 'afinar-area': afinarArea(el.dataset.valor); break;
+            case 'proximo-abrir': abrirProximo(Number(id), el.dataset.foco); break;
+            case 'conq-esconder': store.set(K.conquistasOcultas, '1'); renderConquistas(); { const b = document.querySelector('[data-cap="conq-mostrar"]'); if (b) b.focus(); } break;
+            case 'conq-mostrar': store.set(K.conquistasOcultas, null); renderConquistas(); { const t = document.getElementById('conqTit'); if (t) { t.setAttribute('tabindex', '-1'); t.focus(); } } break;
             case 'lista-copiar': compartilharLink(location.href, 'Lista de editais', 'Editais no Radar Fomento'); break;
-            case 'onb-situacao': onbSituacao(el.dataset.valor); break;
-            case 'onb-abrir': onb.passo = 1; onb.forcar = true; renderOnboarding(true); break;
             case 'desde-ver': desdeVer(); break;
             case 'desde-fechar': desdeFechar(); break;
             case 'ces': responderCES(el.dataset.valor); break;
@@ -1562,14 +1686,7 @@
         if (el.id === 'capImportFile' && el.files && el.files[0]) importarArquivo(el.files[0]);
         if (el.id === 'capDocTipo' || el.id === 'capDocEmissao') sugerirValidade();
         if (el.id === 'capDocValidade') validadeAuto = !el.value; // a pessoa digitou: não recalcula mais
-        if (el.id === 'onbUF') { onb.ufSel = el.value; el.removeAttribute('aria-invalid'); }
-        if (el.name === 'onbArea') {
-            const marcadas = [...document.querySelectorAll('#capOnboarding input[name="onbArea"]:checked')];
-            const aviso = document.getElementById('onbAreasAviso');
-            if (marcadas.length > MAX_AREAS_ONB) { el.checked = false; if (aviso) aviso.textContent = `Escolha até ${MAX_AREAS_ONB} áreas.`; }
-            else if (aviso) aviso.textContent = '';
-            onb.areas = [...document.querySelectorAll('#capOnboarding input[name="onbArea"]:checked')].map(i => i.value);
-        }
+        if (el.id === 'afinarUFSel' && el.value) afinarUF(el.value);
         if (el.dataset && el.dataset.capGng === 'nota' && el.checked) {
             const id = Number(el.dataset.id);
             const g = gonogo[id] || { notas: {}, justificativa: '' };

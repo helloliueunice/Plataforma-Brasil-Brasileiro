@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Fomento — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-/KYxGJSIAeIcqwWwpFEd+Btgw50Xmg3xY48v3tWCviA=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-OjdMHh07BYqpUIYSzWX3h4E3XES6XvtLXHs6CGnXzMU=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
@@ -1311,7 +1311,7 @@ body.comparando .toasts { bottom: 88px; }
 
     <!-- DASHBOARD PAGE -->
     <div id="page-dashboard" class="page-content active">
-        <!-- Ordem: título → busca (quem pede + Estado) → resumo em uma linha → 3 perguntas (1ª visita) / desde a última visita → Encerram em breve → Suas propostas → jornadas -->
+        <!-- Ordem: título → 1 toque em "quem vai pedir" (1ª visita) ou "Seu próximo passo" (quem volta) → busca por palavra → resumo → desde a última visita → Encerram em breve → Suas propostas → jornadas -->
         <div class="hero-section home-hero">
             <h1 class="hero-title">Descubra quais editais você pode disputar</h1>
             <noscript>
@@ -1320,33 +1320,28 @@ body.comparando .toasts { bottom: 88px; }
                     para <a href="para/pesquisadores/">pesquisadores</a>, <a href="para/universidades-e-icts/">universidades</a>, <a href="para/empresas-e-startups/">empresas</a>,
                     <a href="para/oscs-e-ongs/">ONGs e associações</a>, <a href="para/municipios-e-prefeituras/">prefeituras</a> e <a href="para/governos-estaduais/">governos estaduais</a>.</p>
             </noscript>
-            <form class="home-busca" id="homeSearchForm" role="search" aria-label="Buscar editais">
+            <!-- 1 toque: "quem vai pedir" já mostra os editais (1ª visita); quem volta vê "Seu próximo passo" (assets/captacao.js) -->
+            <section id="capOnboarding" class="onb" aria-labelledby="onbTitulo" hidden></section>
+            <div id="capProximo"></div>
+            <form class="home-busca home-busca-simples" id="homeSearchForm" role="search" aria-label="Buscar editais por palavra">
                 <div class="home-busca-campo home-busca-q">
-                    <label for="homeSearchInput">Palavra-chave</label>
+                    <label for="homeSearchInput">Prefere buscar por palavra?</label>
                     <input type="search" id="homeSearchInput" placeholder="Tema, instituição ou programa (ex.: saúde, amazônia)" autocomplete="off">
                 </div>
-                <div class="home-busca-campo">
-                    <label for="homeFilterPublico">Quem vai pedir o recurso?</label>
-                    <select id="homeFilterPublico">
-                        <option value="">Escolha</option>
-                    </select>
+                <!-- Quem pede e Estado vêm do perfil (1 toque acima e "Afinar" nos resultados): não perguntamos duas vezes -->
+                <div hidden>
+                    <select id="homeFilterPublico" aria-hidden="true" tabindex="-1"><option value="">Escolha</option></select>
+                    <select id="homeFilterUF" aria-hidden="true" tabindex="-1"><option value="">Todo o Brasil</option></select>
                 </div>
-                <div class="home-busca-campo">
-                    <label for="homeFilterUF">Estado (UF)</label>
-                    <select id="homeFilterUF">
-                        <option value="">Todo o Brasil</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary home-busca-btn" type="submit">Buscar</button>
+                <button class="btn btn-outline home-busca-btn" type="submit">Buscar</button>
             </form>
             <!-- Contagens da mesma lista usada em #editais (editais[]) -->
             <p class="home-resumo" id="heroValor" aria-live="polite">—</p>
         </div>
 
         <div class="container">
-            <!-- Ferramentas do captador (assets/captacao.js): "Desde sua última visita" e as 3 perguntas da primeira visita -->
+            <!-- Ferramentas do captador (assets/captacao.js): "Desde sua última visita" -->
             <div id="capDesde"></div>
-            <section id="capOnboarding" class="onb" aria-labelledby="onbTitulo" hidden></section>
 
             <div class="card">
                 <div class="card-title">
@@ -1431,13 +1426,15 @@ body.comparando .toasts { bottom: 88px; }
 
             <div class="perfil-card" id="perfilCard">
                 <div class="perfil-texto">
-                    <strong id="perfilTitulo">Responda 3 perguntas e veja só o que serve para você</strong>
+                    <strong id="perfilTitulo">Diga quem vai pedir o recurso e veja só o que serve para você</strong>
                     <p id="perfilResumo"></p>
                 </div>
                 <div class="perfil-acoes">
                     <button class="chip-toggle" id="toggleRecomendados" aria-pressed="false" hidden>Só os que servem para mim</button>
                     <button class="btn btn-primary btn-small" id="perfilBtn" data-action="edit-perfil">Responder</button>
                 </div>
+                <!-- Afinar (opcional): Estado e tema em chips, com o Estado sugerido sem pedir permissão (assets/captacao.js) -->
+                <div id="capAfinar"></div>
             </div>
 
             <div class="editais-layout" id="editaisLayout">
@@ -1594,6 +1591,8 @@ body.comparando .toasts { bottom: 88px; }
             <p class="aviso-local" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Seus dados <a href="#meus-dados">ficam só neste aparelho</a> — <a href="#capBackupTitulo" data-action="ir-backup">faça backup</a>.</span></p>
             <!-- Ferramentas do captador (assets/captacao.js): Lista | Quadro, avisos de certidões -->
             <div id="capPropostasBarra"></div>
+            <!-- Minhas conquistas: cantinho discreto, ligado a ações reais (assets/captacao.js) -->
+            <div id="capConquistas"></div>
             <div class="pipeline" id="pipelineResumo" role="group" aria-label="Filtrar por etapa"></div>
             <div id="propostasList"></div>
             <div id="capQuadro" hidden></div>
@@ -1712,7 +1711,7 @@ body.comparando .toasts { bottom: 88px; }
                 <div class="card ajuda-passos">
                     <h2 class="card-title">Captar recursos</h2>
                     <ol>
-                        <li><a href="#editais">Responda 3 perguntas</a> (quem vai pedir o recurso, onde atua e para quê): os editais que servem para você aparecem primeiro.</li>
+                        <li><a href="#dashboard">Toque em quem vai pedir o recurso</a>: os editais que servem para você aparecem na hora. Depois, se quiser, afine por estado e tema.</li>
                         <li>Abra um edital e veja <strong>Posso concorrer?</strong>: responda sim ou não aos pontos de quem pode participar.</li>
                         <li>Clique em <strong>Quero participar</strong>: montamos seu passo a passo com datas e o checklist de documentos.</li>
                         <li>Exporte o prazo para sua agenda e submeta no <strong>portal oficial</strong>.</li>
@@ -2009,7 +2008,7 @@ body.comparando .toasts { bottom: 88px; }
             pesquisador: 'pesquisador pesquisadora', ict: 'ICT universidade instituto de pesquisa', empresa: 'empresa startup',
             osc: 'OSC ONG associação cooperativa', municipio: 'município prefeitura', estado: 'estado DF governo estadual'
         };
-        // Texto das opções nas 3 perguntas da primeira visita
+        // Texto das opções de "Quem vai pedir o recurso?" (início e Posso concorrer?)
         const PUBLICOS_PERGUNTA = {
             pesquisador: 'Pesquisador(a)', ict: 'Universidade ou instituto', empresa: 'Empresa',
             osc: 'ONG, associação ou cooperativa', municipio: 'Prefeitura', estado: 'Governo do estado'
@@ -6157,7 +6156,7 @@ body.comparando .toasts { bottom: 88px; }
                 return parseDate(b.encerramento) - parseDate(a.encerramento);
             };
             if (ordem === 'compat' && perfilAtivo()) {
-                const score = e => { const c = avaliarCompat(e); return c.elegivel ? c.score : -1; };
+                const score = e => { const c = avaliarCompat(e); return c.elegivel ? c.score - (abrangenciaIncerta(e) ? 15 : 0) : -1; };
                 return copia.sort((a, b) => (score(b) - score(a)) || porPrazo(a, b));
             }
             return copia.sort(porPrazo);
@@ -6549,6 +6548,9 @@ body.comparando .toasts { bottom: 88px; }
                         <a class="btn btn-oficial" href="${esc(urlSegura(linkOficial))}" target="_blank" rel="noopener noreferrer" data-action="external" data-id="${e.id}">Abrir edital oficial <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
                     </div>` : ''}
 
+                    <!-- Trilha do edital: Encontrar → Conferir se pode → Preparar → Enviar, com a prontidão calculada do que você marcou -->
+                    ${trilhaHTML(e)}
+
                     <!-- 2. Posso concorrer? vem antes de qualquer link para fora (o botão principal fica aqui dentro) -->
                     ${possoConcorrerHTML(e)}
                     <div class="ces-slot no-print" data-ces-slot="${e.id}"></div>
@@ -6621,8 +6623,8 @@ body.comparando .toasts { bottom: 88px; }
                         ${e.criterios.some(c => c.peso == null) ? '<p class="nota">Pesos não divulgados no material oficial consultado.</p>' : ''}
                     </div>
 
-                    <div class="modal-section">
-                        <h3>Checklist de documentos</h3>
+                    <div class="modal-section" id="checklist-${e.id}">
+                        <h3 id="checklistTitulo-${e.id}" tabindex="-1">Checklist de documentos</h3>
                         <div class="checklist-progress">
                             <span id="checklistCount">${feitos}/${e.documentos.length} prontos</span>
                             <div class="window-bar"><span id="checklistBar" style="width:${pctDocs}%"></span></div>
@@ -6880,20 +6882,52 @@ body.comparando .toasts { bottom: 88px; }
             if (!cacheEleg) { const v = store.get(ELEG_KEY, {}); cacheEleg = v && typeof v === 'object' && !Array.isArray(v) ? v : {}; }
             return cacheEleg;
         }
-        function respostasEleg(e) {
-            const r = todasRespostasEleg()[e.id];
-            return (e.elegibilidade || []).map(q => (r && typeof r === 'object' && typeof r[q.pergunta] === 'boolean' ? r[q.pergunta] : null));
+        /* "Uma vez só": perguntas sobre a pessoa ("Você tem título de doutor?") valem para todos os editais que as fazem.
+           Perguntas sobre esta chamada, o projeto ou parceiros nunca são reaproveitadas.
+           Valores guardados: true | false | 'ns' (não sei) | '?' (a pessoa pediu para responder de novo aqui). */
+        const ELEG_DA_CHAMADA = /\b(nesta chamada|chamada|projeto|proposta|cons[oó]rcio|evento|programa|parceir|est[aá]gio|linhas?|supervisor|coordenador franc)/i;
+        function respostaReaproveitada(e, q) {
+            if (ELEG_DA_CHAMADA.test(q.pergunta)) return null;
+            for (const [id, r] of Object.entries(todasRespostasEleg())) {
+                if (Number(id) !== e.id && r && typeof r === 'object' && typeof r[q.pergunta] === 'boolean') return r[q.pergunta];
+            }
+            return null;
         }
-        function responderEleg(id, i, valor) {
-            const e = editais.find(x => x.id === id);
-            if (!e || !e.elegibilidade || !e.elegibilidade[i]) return;
+        function respostaBruta(e, q) { const r = todasRespostasEleg()[e.id]; return r && typeof r === 'object' ? r[q.pergunta] : undefined; }
+        function respostasEleg(e) {
+            return (e.elegibilidade || []).map(q => {
+                const v = respostaBruta(e, q);
+                if (typeof v === 'boolean') return v;
+                if (v === 'ns' || v === '?') return null;
+                return respostaReaproveitada(e, q);
+            });
+        }
+        // De onde veio cada resposta: 'aqui' | 'outro' (reaproveitada) | 'ns' | null
+        function origemEleg(e) {
+            return (e.elegibilidade || []).map(q => {
+                const v = respostaBruta(e, q);
+                if (typeof v === 'boolean') return 'aqui';
+                if (v === 'ns') return 'ns';
+                if (v === '?') return null;
+                return respostaReaproveitada(e, q) === null ? null : 'outro';
+            });
+        }
+        function gravarEleg(id, chave, valor) {
             const todas = { ...todasRespostasEleg() };
             const r = todas[id] && typeof todas[id] === 'object' ? { ...todas[id] } : {};
-            if (valor === null) delete r[e.elegibilidade[i].pergunta]; else r[e.elegibilidade[i].pergunta] = valor;
+            if (valor === undefined) delete r[chave]; else r[chave] = valor;
             if (Object.keys(r).length) todas[id] = r; else delete todas[id];
             store.set(ELEG_KEY, todas);
             cacheEleg = null;
         }
+        // valor: true | false | 'ns' | null (= "Mudar": pergunta de novo neste edital, sem reaproveitar)
+        function responderEleg(id, i, valor) {
+            const e = editais.find(x => x.id === id);
+            if (!e || !e.elegibilidade || !e.elegibilidade[i]) return;
+            gravarEleg(id, e.elegibilidade[i].pergunta, valor === null ? '?' : valor);
+        }
+        // Resposta sobre o Estado num edital restrito, quando a pessoa ainda não disse onde atua: false (outro estado) | 'ns'
+        const ufRespEdital = e => { const r = todasRespostasEleg()[e.id]; return r && typeof r === 'object' ? r.__uf : undefined; };
         function elimFalha(e) {
             const resp = respostasEleg(e);
             return (e.elegibilidade || []).find((q, i) => q.eliminatoria && resp[i] !== null && resp[i] !== q.esperado) || null;
@@ -6901,6 +6935,20 @@ body.comparando .toasts { bottom: 88px; }
         function elimPendentes(e) {
             const resp = respostasEleg(e);
             return (e.elegibilidade || []).filter((q, i) => q.eliminatoria && resp[i] === null).length;
+        }
+        // O edital vale para todo o Brasil? Então não precisamos perguntar o Estado
+        const precisaUF = e => !!ufsDoEdital(e) && !abrangenciaIncerta(e);
+
+        // Estado sugerido sem pedir permissão: o fuso horário configurado no aparelho (não usa localização; nada sai do navegador)
+        const FUSO_UF = {
+            'America/Manaus': ['AM'], 'America/Eirunepe': ['AM'], 'America/Belem': ['PA', 'AP'], 'America/Santarem': ['PA'],
+            'America/Fortaleza': ['CE', 'MA', 'PI', 'RN', 'PB'], 'America/Recife': ['PE'], 'America/Noronha': ['PE'], 'America/Maceio': ['AL', 'SE'],
+            'America/Bahia': ['BA'], 'America/Araguaina': ['TO'], 'America/Cuiaba': ['MT'], 'America/Campo_Grande': ['MS'],
+            'America/Porto_Velho': ['RO'], 'America/Boa_Vista': ['RR'], 'America/Rio_Branco': ['AC'],
+            'America/Sao_Paulo': ['SP', 'MG', 'RJ', 'PR', 'RS', 'SC', 'GO', 'DF', 'ES']
+        };
+        function ufsSugeridas() {
+            try { return FUSO_UF[Intl.DateTimeFormat().resolvedOptions().timeZone] || []; } catch (_) { return []; }
         }
 
         /* "Posso concorrer?" honesto — quatro respostas:
@@ -6910,7 +6958,9 @@ body.comparando .toasts { bottom: 88px; }
            nao      → algo não bate (com o motivo e N editais parecidos). */
         function vereditoPosso(e, pub, uf) {
             const motivos = [];
-            const fim = (estado, extra = {}) => ({ estado, motivos, pendentes: 0, faltaPub: !pub, faltaUF: !uf, ...extra });
+            const restrito = precisaUF(e);
+            const ufR = ufRespEdital(e);
+            const fim = (estado, extra = {}) => ({ estado, motivos, pendentes: 0, faltaPub: !pub, faltaUF: restrito && !uf && ufR !== 'ns', ufNaoSei: restrito && !uf && ufR === 'ns', ...extra });
             if (pub) {
                 if (e.publico.includes(pub)) motivos.push({ ok: true, txt: `Aceita ${PUBLICOS[pub]}` });
                 else {
@@ -6919,7 +6969,12 @@ body.comparando .toasts { bottom: 88px; }
                 }
             }
             const incerta = abrangenciaIncerta(e);
-            if (uf && !incerta) {
+            if (!restrito && !incerta) motivos.push({ ok: true, txt: 'Vale para todo o Brasil' });
+            else if (restrito && !uf && ufR === false) {
+                motivos.push({ ok: false, txt: `Vale só para: ${e.abrangencia}` });
+                return fim('nao', { motivo: 'não vale para o estado onde você atua' });
+            }
+            if (uf && restrito) {
                 if (atendeUF(e, uf)) motivos.push({ ok: true, txt: !ufsDoEdital(e) ? `Vale para todo o Brasil, inclusive ${UFS[uf]}` : `Vale para ${UFS[uf]} (${e.abrangencia})` });
                 else {
                     motivos.push({ ok: false, txt: `Vale só para: ${e.abrangencia}` });
@@ -6931,13 +6986,14 @@ body.comparando .toasts { bottom: 88px; }
                 motivos.push({ ok: false, txt: `Você respondeu “não”: ${falha.pergunta}` });
                 return fim('nao', { motivo: 'um ponto obrigatório não foi atendido' });
             }
-            if (!pub && !uf) return fim('vazio');
+            if (!pub && !(uf && restrito)) return fim('vazio');
             const pendentes = elimPendentes(e);
             if (incerta) {
                 motivos.push({ ok: null, txt: e.abrangenciaNota || 'A fonte não informa em quais estados o programa vale.' });
                 return fim('talvez', { pendentes });
             }
-            if (!pub || !uf || pendentes) return fim('provavel', { pendentes });
+            const naoSei = (e.elegibilidade || []).filter((q, i) => q.eliminatoria && origemEleg(e)[i] === 'ns').length;
+            if (!pub || (restrito && !uf) || pendentes) return fim('provavel', { pendentes, naoSei });
             return fim('sim');
         }
         // Quantos pontos faltam confirmar (pontos eliminatórios sem resposta + campos não informados)
@@ -6958,71 +7014,152 @@ body.comparando .toasts { bottom: 88px; }
         const testeRapido = { publico: '', uf: '' };
         const motivosHTML = ms => ms.length ? `<ul class="motivos">${ms.map(m => `<li class="${m.ok === true ? 'ok' : m.ok === false ? 'no' : 'talvez'}"><span class="sr-only">${m.ok === true ? 'Atende: ' : m.ok === false ? 'Não atende: ' : 'Atenção: '}</span>${esc(m.txt)}</li>`).join('')}</ul>` : '';
 
-        // Uma pergunta por vez, sim ou não; as respondidas ficam numa lista com "Mudar"
-        function elegPassosHTML(e, parar) {
+        /* Explicação em linha (não depende de passar o mouse): o primeiro termo técnico da pergunta ganha uma frase curta */
+        const EXPLICA = [
+            ['stricto sensu', 'mestrado ou doutorado'], ['CNPJ', 'o cadastro da entidade ou empresa na Receita Federal'],
+            ['NIT', 'Núcleo de Inovação Tecnológica: o setor que cuida de patentes e parcerias com empresas'],
+            ['P&D', 'pesquisa e desenvolvimento'], ['Capes', 'a agência federal que avalia os cursos de pós-graduação'],
+            ['ações afirmativas', 'vagas reservadas para grupos como pessoas negras, indígenas ou com deficiência'],
+            ['Horizon Europe', 'o programa de pesquisa da União Europeia'], ['inadimplência', 'dívida ou prestação de contas em atraso'],
+            ['contrapartida', 'a parte do custo que você paga, em dinheiro ou em bens e serviços'], ['Lattes', 'o currículo de pesquisa na Plataforma Lattes, do CNPq'],
+            ['ICT', 'universidade ou instituto de pesquisa'], ['OSC', 'ONG, associação ou cooperativa'], ['MAI/DAI', 'programa do CNPq que paga bolsas para mestrado e doutorado feitos com empresas']
+        ];
+        function explicacaoEmLinha(texto) {
+            for (const [t, d] of EXPLICA) if (new RegExp(`(^|[^\\wÀ-ÿ])${t.replace(/[.*+?^${}()|[\]\\/&]/g, '\\$&')}(?![\\wÀ-ÿ])`, 'i').test(texto)) return `<p class="posso-explica"><strong>${esc(t)}</strong> é ${esc(d)}.</p>`;
+            return '';
+        }
+
+        // Quem vai pedir e Estado: o que já se sabe (perfil, teste rápido, filtros) não é perguntado de novo
+        function possoContexto(e) {
+            const pub = (perfil && perfil.publico) || testeRapido.publico || val('filterPublico');
+            const uf = (perfil && perfil.uf) || testeRapido.uf || val('filterUF');
+            return { pub, uf, v: vereditoPosso(e, pub, uf) };
+        }
+
+        // Ordem fixa: quem pede → Estado (só se o edital for restrito) → pontos eliminatórios → os demais
+        function ordemEleg(e) {
             const elig = e.elegibilidade || [];
-            if (!elig.length) return '';
-            const resp = respostasEleg(e);
-            const ordem = elig.map((_, i) => i).sort((a, b) => (Number(elig[b].eliminatoria) - Number(elig[a].eliminatoria)) || a - b);
-            const feitas = ordem.filter(i => resp[i] !== null);
-            const prox = parar ? undefined : ordem.find(i => resp[i] === null);
-            return `<div class="eleg-passos no-print">
-                <h4 class="eleg-titulo">Quem pode participar <span class="nota">(${feitas.length} de ${elig.length} respondidos)</span></h4>
-                ${feitas.length ? `<ul class="eleg-feitas">${feitas.map(i => `
-                    <li class="${resp[i] === elig[i].esperado ? 'ok' : 'no'}"><span class="eleg-q">${esc(elig[i].pergunta)}</span>
-                        <span class="eleg-r"><strong>${resp[i] ? 'Sim' : 'Não'}</strong>
-                        <button type="button" class="link-btn" data-action="eleg-mudar" data-id="${e.id}" data-index="${i}" aria-label="Mudar a resposta: ${esc(elig[i].pergunta)}">Mudar</button></span></li>`).join('')}</ul>` : ''}
-                ${prox !== undefined ? `
-                <fieldset class="eleg-atual">
-                    <legend><span class="eleg-n">Ponto ${feitas.length + 1} de ${elig.length}</span> ${esc(elig[prox].pergunta)}</legend>
-                    ${elig[prox].eliminatoria ? `<p class="eleg-aviso">Se for “${elig[prox].esperado ? 'não' : 'sim'}”, você não pode concorrer.</p>` : '<p class="nota">Não elimina, mas pode contar pontos na avaliação.</p>'}
+            return elig.map((_, i) => i).sort((a, b) => (Number(elig[b].eliminatoria) - Number(elig[a].eliminatoria)) || a - b);
+        }
+        function perguntaAtualPosso(e, ctx) {
+            const { pub, uf, v } = ctx;
+            if (!pub) return { tipo: 'pub' };
+            if (v.estado === 'nao') return null;
+            if (precisaUF(e) && !uf && ufRespEdital(e) === undefined) return { tipo: 'uf' };
+            const resp = respostasEleg(e), orig = origemEleg(e);
+            const i = ordemEleg(e).find(k => resp[k] === null && orig[k] !== 'ns');
+            return i === undefined ? null : { tipo: 'eleg', i };
+        }
+        // Quantas perguntas este edital tem, ao todo, e quantas já estão respondidas (inclusive pelo perfil)
+        function contagemPosso(e, ctx) {
+            const elig = e.elegibilidade || [];
+            const orig = origemEleg(e);
+            const total = 1 + (precisaUF(e) ? 1 : 0) + elig.length;
+            const feitas = (ctx.pub ? 1 : 0) + (precisaUF(e) && (ctx.uf || ufRespEdital(e) !== undefined) ? 1 : 0) + orig.filter(o => o).length;
+            return { total, feitas };
+        }
+
+        const botaoResp = (acao, id, extra, rotulo, cls = '') => `<button type="button" class="btn btn-outline btn-resp ${cls}" data-action="${acao}" data-id="${id}" ${extra}>${rotulo}</button>`;
+        function perguntaPossoHTML(e, ctx, q) {
+            if (!q) return '';
+            const { total, feitas } = contagemPosso(e, ctx);
+            const n = `<span class="eleg-n">Pergunta ${Math.min(feitas + 1, total)} de ${total}</span>`;
+            if (q.tipo === 'pub') return `
+                <fieldset class="eleg-atual posso-pergunta">
+                    <legend>${n} Quem vai pedir o recurso?</legend>
+                    <div class="eleg-botoes eleg-botoes-lista">${Object.entries(PUBLICOS_PERGUNTA).map(([k, t]) => botaoResp('posso-pub', e.id, `data-valor="${k}"`, esc(t))).join('')}</div>
+                    <p class="nota">Guardamos só neste aparelho, para não perguntar de novo.</p>
+                </fieldset>`;
+            if (q.tipo === 'uf') {
+                const ufs = ufsDoEdital(e);
+                const sug = ufsSugeridas().filter(u => ufs.includes(u));
+                if (ufs.length === 1) return `
+                <fieldset class="eleg-atual posso-pergunta">
+                    <legend>${n} Você atua em ${esc(UFS[ufs[0]])}?</legend>
+                    <p class="eleg-aviso">Este edital vale só para ${esc(e.abrangencia)}.</p>
                     <div class="eleg-botoes">
-                        <button type="button" class="btn btn-outline" data-action="eleg-resp" data-id="${e.id}" data-index="${prox}" data-valor="sim">Sim</button>
-                        <button type="button" class="btn btn-outline" data-action="eleg-resp" data-id="${e.id}" data-index="${prox}" data-valor="nao">Não</button>
+                        ${botaoResp('posso-uf', e.id, `data-valor="${ufs[0]}" data-sim="1"`, 'Sim')}
+                        ${botaoResp('posso-uf', e.id, 'data-valor="fora"', 'Não')}
+                        ${botaoResp('posso-uf', e.id, 'data-valor="ns"', 'Não sei', 'btn-resp-ns')}
                     </div>
-                </fieldset>` : ''}
-            </div>`;
+                </fieldset>`;
+                const ordem = [...sug, ...ufs.filter(u => !sug.includes(u)).sort((a, b) => UFS[a].localeCompare(UFS[b], 'pt-BR'))];
+                return `
+                <fieldset class="eleg-atual posso-pergunta">
+                    <legend>${n} Em qual estado você atua?</legend>
+                    <p class="eleg-aviso">Este edital vale só para ${esc(e.abrangencia)}.</p>
+                    <div class="eleg-botoes eleg-botoes-lista">
+                        ${ordem.map(u => botaoResp('posso-uf', e.id, `data-valor="${u}"`, `${esc(UFS[u])}${sug.includes(u) && sug.length === 1 ? ' <span class="sugestao">sugestão</span>' : ''}`)).join('')}
+                        ${botaoResp('posso-uf', e.id, 'data-valor="fora"', 'Outro estado')}
+                        ${botaoResp('posso-uf', e.id, 'data-valor="ns"', 'Não sei', 'btn-resp-ns')}
+                    </div>
+                    ${sug.length === 1 ? '<p class="nota">Sugerimos pelo fuso horário do seu aparelho. Não usamos sua localização.</p>' : ''}
+                </fieldset>`;
+            }
+            const q2 = e.elegibilidade[q.i];
+            return `
+                <fieldset class="eleg-atual posso-pergunta">
+                    <legend>${n} ${esc(q2.pergunta)}</legend>
+                    ${explicacaoEmLinha(q2.pergunta)}
+                    ${q2.eliminatoria ? `<p class="eleg-aviso">Se for “${q2.esperado ? 'não' : 'sim'}”, você não pode concorrer.</p>` : '<p class="nota">Não tira você do edital, mas pode contar pontos na avaliação.</p>'}
+                    <div class="eleg-botoes">
+                        ${botaoResp('eleg-resp', e.id, `data-index="${q.i}" data-valor="sim"`, 'Sim')}
+                        ${botaoResp('eleg-resp', e.id, `data-index="${q.i}" data-valor="nao"`, 'Não')}
+                        ${botaoResp('eleg-resp', e.id, `data-index="${q.i}" data-valor="ns"`, 'Não sei', 'btn-resp-ns')}
+                    </div>
+                </fieldset>`;
+        }
+
+        // O que já foi respondido (inclusive o que veio do perfil ou de outro edital), cada um com "Mudar"
+        function respondidasPossoHTML(e, ctx) {
+            const itens = [];
+            if (ctx.pub) itens.push(`<li class="ok"><span class="eleg-q">Quem vai pedir: <strong>${esc(PUBLICOS[ctx.pub])}</strong></span>
+                <span class="eleg-r"><button type="button" class="link-btn" data-action="edit-perfil" aria-label="Mudar quem vai pedir o recurso">Mudar</button></span></li>`);
+            if (precisaUF(e) && (ctx.uf || ufRespEdital(e) !== undefined)) {
+                const r = ufRespEdital(e);
+                const txt = ctx.uf ? `Estado: <strong>${esc(UFS[ctx.uf])}</strong>` : r === 'ns' ? 'Estado: <strong>não sei</strong>' : 'Estado: <strong>outro</strong>';
+                itens.push(`<li class="${ctx.uf ? (atendeUF(e, ctx.uf) ? 'ok' : 'no') : r === 'ns' ? 'ns' : 'no'}"><span class="eleg-q">${txt}</span>
+                    <span class="eleg-r"><button type="button" class="link-btn" data-action="${ctx.uf ? 'edit-perfil' : 'posso-uf-mudar'}" data-id="${e.id}" aria-label="Mudar o estado">Mudar</button></span></li>`);
+            }
+            const elig = e.elegibilidade || [], resp = respostasEleg(e), orig = origemEleg(e);
+            ordemEleg(e).filter(i => orig[i]).forEach(i => {
+                const ns = orig[i] === 'ns';
+                itens.push(`<li class="${ns ? 'ns' : resp[i] === elig[i].esperado ? 'ok' : 'no'}"><span class="eleg-q">${esc(elig[i].pergunta)}</span>
+                    <span class="eleg-r"><strong>${ns ? 'Não sei' : resp[i] ? 'Sim' : 'Não'}</strong>${orig[i] === 'outro' ? ' <span class="nota">(você já respondeu em outro edital)</span>' : ''}
+                    <button type="button" class="link-btn" data-action="eleg-mudar" data-id="${e.id}" data-index="${i}" aria-label="Mudar a resposta: ${esc(elig[i].pergunta)}">Mudar</button></span></li>`);
+            });
+            return itens.length ? `<div class="eleg-passos no-print"><h4 class="eleg-titulo">O que você já respondeu</h4><ul class="eleg-feitas">${itens.join('')}</ul></div>` : '';
         }
 
         function possoCorpoHTML(e) {
-            const pub = (perfil && perfil.publico) || testeRapido.publico || val('filterPublico');
-            const uf = (perfil && perfil.uf) || testeRapido.uf || val('filterUF');
-            const v = vereditoPosso(e, pub, uf);
+            const ctx = possoContexto(e);
+            const { pub, uf, v } = ctx;
             const st = statusEdital(e);
-            const opts = (obj, atual) => Object.entries(obj).map(([k, t]) => `<option value="${esc(k)}"${k === atual ? ' selected' : ''}>${esc(t)}</option>`).join('');
             const n = pontosFaltando(v);
+            const q = perguntaAtualPosso(e, ctx);
             let veredito = '';
-            if (v.estado === 'vazio') veredito = '<p class="nota">Diga quem vai pedir o recurso e o estado onde você atua para saber se este edital serve para você.</p>';
-            else if (v.estado === 'sim') veredito = '<p class="posso-veredito ok"><strong>Sim, você pode</strong> <span class="nota">pelo que você respondeu. Confira no edital oficial antes de enviar.</span></p>';
+            if (v.estado === 'vazio') veredito = '<p class="posso-veredito vazio"><strong>Responda abaixo, uma pergunta por vez.</strong> <span class="nota">Leva menos de um minuto.</span></p>';
+            else if (v.estado === 'sim') veredito = '<p class="posso-veredito ok"><strong>Sim, você pode concorrer</strong> <span class="nota">pelo que você respondeu. Antes de enviar, confira no edital oficial.</span></p>';
             else if (v.estado === 'talvez') veredito = `<p class="posso-veredito talvez"><strong>Talvez: confira no programa</strong></p>
                 <p class="posso-nota">${esc(e.abrangenciaNota || 'A fonte não informa em quais estados o programa vale.')}${e.codigoPrograma ? ` Procure o código ${esc(e.codigoPrograma)} no Transferegov.br.` : ''}</p>`;
             else if (v.estado === 'provavel') {
-                const txt = !v.pendentes && v.faltaUF && !v.faltaPub ? 'Seu tipo é aceito. Falta dizer o estado onde você atua.'
-                    : !v.pendentes && v.faltaPub && !v.faltaUF ? 'Seu estado é atendido. Falta dizer quem vai pedir o recurso.'
-                    : `Provavelmente sim. Confirme ${plural(n, 'ponto', 'pontos')} abaixo`;
-                veredito = `<p class="posso-veredito provavel"><strong>${txt}</strong></p>`;
+                const ns = (v.naoSei || 0) + (v.ufNaoSei ? 1 : 0);
+                const txt = n ? `Provavelmente sim. Confirme ${plural(n, 'ponto', 'pontos')} abaixo` : 'Provavelmente sim';
+                veredito = `<p class="posso-veredito provavel"><strong>${txt}</strong>${ns ? ` <span class="nota">Você marcou “não sei” em ${plural(ns, 'ponto', 'pontos')}: confira no edital oficial.</span>` : ''}</p>`;
             } else if (v.estado === 'nao') {
                 const par = parecidosDe(e, pub, uf);
                 veredito = `<p class="posso-veredito no"><strong>Não desta vez: ${esc(v.motivo)}.</strong></p>
                     ${par.n ? `<p class="no-print"><a class="btn btn-primary btn-small" href="${esc(par.href)}" data-evento="posso-parecidos">Veja ${plural(par.n, 'parecido', 'parecidos')} <span aria-hidden="true">→</span></a></p>` : ''}`;
             }
-            const campos = (!pub || !uf) ? `
-                <div class="posso-campos no-print">
-                    <div class="form-group"><label for="possoPublico-${e.id}">Quem vai pedir o recurso</label>
-                        <select id="possoPublico-${e.id}" data-posso="publico" data-id="${e.id}"><option value="">Escolha</option>${opts(PUBLICOS, pub)}</select></div>
-                    <div class="form-group"><label for="possoUF-${e.id}">Estado onde você atua</label>
-                        <select id="possoUF-${e.id}" data-posso="uf" data-id="${e.id}"><option value="">Escolha</option>${opts(UFS, uf)}</select></div>
-                </div>` : `<p class="posso-quem">Pelo que você contou: <strong>${esc(PUBLICOS[pub])} · ${esc(UFS[uf])}</strong> <button type="button" class="link-btn no-print" data-action="edit-perfil">Mudar</button></p>`;
-            const mostrarPerguntas = v.estado !== 'vazio' && !(v.estado === 'nao' && !elimFalha(e));
-            const cta = st !== 'fechado' && v.estado !== 'nao' && !propostas[e.id]
+            const cta = st !== 'fechado' && !['nao', 'vazio'].includes(v.estado) && !propostas[e.id]
                 ? `<div class="posso-cta no-print"><p>Vai participar? Montamos seu passo a passo com datas.</p>
                     <button type="button" class="btn btn-primary" data-action="follow" data-id="${e.id}">Quero participar</button></div>`
                 : propostas[e.id] ? `<p class="no-print"><a class="link-btn" href="#plano-${e.id}" data-action="ir-plano" data-id="${e.id}">Seu passo a passo está abaixo <span aria-hidden="true">↓</span></a></p>` : '';
             return `<h3 id="possoTitulo-${e.id}" tabindex="-1">Posso concorrer?</h3>
-                ${campos}
                 <div class="posso-resultado" aria-live="polite">${veredito}${v.estado !== 'vazio' ? motivosHTML(v.motivos) : ''}</div>
-                ${mostrarPerguntas ? elegPassosHTML(e, v.estado === 'nao') : ''}
-                ${cta}`;
+                ${cta}
+                ${perguntaPossoHTML(e, ctx, q)}
+                ${respondidasPossoHTML(e, ctx)}`;
         }
         function possoConcorrerHTML(e) {
             return `<section class="modal-section posso" id="posso-${e.id}" aria-labelledby="possoTitulo-${e.id}">${possoCorpoHTML(e)}</section>`;
@@ -7070,8 +7207,8 @@ body.comparando .toasts { bottom: 88px; }
             const card = $('perfilCard');
             if (!perfilAtivo()) {
                 card.classList.remove('tem-perfil');
-                $('perfilTitulo').textContent = 'Responda 3 perguntas e veja só o que serve para você';
-                $('perfilResumo').innerHTML = 'Quem vai pedir o recurso, onde atua e para quê. <a href="#meus-dados">Fica só neste aparelho.</a>';
+                $('perfilTitulo').textContent = 'Diga quem vai pedir o recurso e veja só o que serve para você';
+                $('perfilResumo').innerHTML = 'Um toque basta. Estado e tema são opcionais. <a href="#meus-dados">Fica só neste aparelho.</a>';
                 btn.textContent = 'Responder';
                 tog.hidden = true;
                 return;
@@ -7117,7 +7254,7 @@ body.comparando .toasts { bottom: 88px; }
         }
 
         /* Perfil único ("once-only"): toda escolha de quem pede e do estado — busca do início, filtros, chegada de
-           para/<publico>/, "Posso concorrer?" e as 3 perguntas — grava o perfil, com "Desfazer". */
+           para/<publico>/, "Posso concorrer?" e o toque do início — grava o perfil, com "Desfazer". */
         let naoLembrarPerfil = false; // a pessoa desfez ou apagou: não grava de novo sozinho nesta sessão
         function atualizarPerfil(parcial, { silencioso = false } = {}) {
             const limpo = {};
@@ -8043,7 +8180,8 @@ body.comparando .toasts { bottom: 88px; }
                 </div>
                 ${stepperHTML(e, p)}
                 <div class="proxima-acao ${acao.alerta ? 'alerta' : ''}"><strong>Próximo passo:</strong> ${esc(acao.txt)}</div>
-                ${['interesse', 'preparando'].includes(p.etapa) && planoDe(e) ? `<details class="plano-det"><summary>O que fazer agora (datas)</summary>${planoHTML(e, planoDe(e))}</details>` : ''}
+                ${trilhaHTML(e, { compacta: true })}
+                ${['interesse', 'preparando'].includes(p.etapa) && planoDe(e) ? `<details class="plano-det"><summary>O que fazer agora (datas)</summary>${planoHTML(e, planoDe(e), 'lista')}</details>` : ''}
                 <div class="proposta-grid">
                     <div>
                         <div class="progress-label" style="margin-top:0;"><span>Documentos prontos</span><span>${prontos}/${total}</span></div>
@@ -8088,7 +8226,7 @@ body.comparando .toasts { bottom: 88px; }
                         <p style="margin-bottom:16px;">Abra um edital e clique em <strong>Quero participar</strong>: montamos seu passo a passo com datas.</p>
                         <div class="modal-actions" style="justify-content:center;">
                             <a class="btn btn-primary" href="${perfilAtivo() ? '#editais?ordem=compat' : '#editais'}">Comece pelos que combinam com você <span aria-hidden="true">→</span></a>
-                            ${perfilAtivo() ? '' : '<button class="btn btn-outline" data-action="edit-perfil">Responder 3 perguntas</button>'}
+                            ${perfilAtivo() ? '' : '<a class="btn btn-outline" href="#dashboard">Dizer quem vai pedir o recurso</a>'}
                         </div>
                     </div>`;
             } else if (!lista.length) {
@@ -8136,13 +8274,78 @@ body.comparando .toasts { bottom: 88px; }
                 </section>`;
         }
 
+        /* TRILHA E PRONTIDÃO — gamificação honesta: só passos reais, marcados por você, neste aparelho.
+           Encontrar (salvou o edital) → Conferir se pode (veredito "sim") → Preparar (documentos, cadastro, proposta escrita) → Enviar (marcado por você).
+           Prontidão: salvo 10 + conferido 20 (provável/talvez 10) + documentos 30 × fração + cadastro 10 + proposta escrita 20 + envio 10. */
+        const PLANO_KEY = 'fb:plano'; // { id: { cadastro: true, orcamento: true } }
+        function marcasPlano(id) { const t = store.get(PLANO_KEY, {}); const m = t && typeof t === 'object' && !Array.isArray(t) ? t[id] : null; return m && typeof m === 'object' ? m : {}; }
+        function marcarPlano(id, k, v) {
+            const t = store.get(PLANO_KEY, {});
+            const todas = t && typeof t === 'object' && !Array.isArray(t) ? { ...t } : {};
+            const m = { ...(todas[id] || {}) };
+            if (v) m[k] = true; else delete m[k];
+            if (Object.keys(m).length) todas[id] = m; else delete todas[id];
+            store.set(PLANO_KEY, todas);
+        }
+        const ENVIADAS = ['submetida', 'aprovada', 'nao-aprovada'];
+        const TRILHA_PESOS = { salvo: 10, conferido: 20, documentos: 30, cadastro: 10, proposta: 20, envio: 10 };
+        function trilhaDe(e) {
+            const p = propostas[e.id];
+            const v = possoContexto(e).v;
+            const tot = e.documentos.length, docs = docsProntos(e);
+            const m = marcasPlano(e.id);
+            const enviada = !!p && ENVIADAS.includes(p.etapa);
+            const salvo = !!p || favorites.includes(e.id);
+            const pode = v.estado === 'sim', quase = ['provavel', 'talvez'].includes(v.estado);
+            const docsOk = !tot || docs === tot;
+            const pronto = docsOk && !!m.cadastro && !!m.orcamento;
+            const etapas = [
+                { k: 'encontrar', nome: 'Encontrar', feito: salvo, falta: 'Toque em “Quero participar” ou na estrela para salvar.' },
+                { k: 'conferir', nome: 'Conferir se pode', feito: pode, parcial: quase, falta: v.estado === 'nao' ? 'Pelo que você respondeu, este não serve.' : 'Responda “Posso concorrer?”.' },
+                { k: 'preparar', nome: 'Preparar', feito: enviada || pronto, parcial: docs > 0 || !!m.cadastro || !!m.orcamento, falta: 'Marque documentos, cadastro e proposta escrita.' },
+                { k: 'enviar', nome: 'Enviar', feito: enviada, falta: 'Envie no portal oficial e marque aqui.' }
+            ];
+            const pts = enviada ? 100 : Math.round((salvo ? TRILHA_PESOS.salvo : 0) + (pode ? TRILHA_PESOS.conferido : quase ? TRILHA_PESOS.conferido / 2 : 0)
+                + (tot ? TRILHA_PESOS.documentos * docs / tot : TRILHA_PESOS.documentos) + (m.cadastro ? TRILHA_PESOS.cadastro : 0) + (m.orcamento ? TRILHA_PESOS.proposta : 0));
+            return { etapas, feitas: etapas.filter(x => x.feito).length, pct: Math.min(100, pts), docs, tot, marcas: m, enviada, salvo, v };
+        }
+        function trilhaHTML(e, { compacta = false } = {}) {
+            const t = trilhaDe(e);
+            const atual = t.etapas.findIndex(x => !x.feito);
+            const mostrarPct = t.salvo || t.feitas > 0;
+            return `<div class="trilha${compacta ? ' trilha-compacta' : ''} no-print" ${compacta ? '' : `id="trilha-${e.id}"`} data-feitas="${t.feitas}">
+                <ol class="trilha-etapas" aria-label="Trilha deste edital: ${t.feitas} de 4 etapas feitas">
+                    ${t.etapas.map((x, i) => `<li class="${x.feito ? 'feito' : x.parcial ? 'parcial' : ''}${i === atual ? ' atual' : ''}"${i === atual ? ' aria-current="step"' : ''}>
+                        <span class="trilha-ponto" aria-hidden="true"></span><span class="trilha-nome">${esc(x.nome)}</span><span class="sr-only">: ${x.feito ? 'feito' : x.parcial ? 'em andamento' : 'a fazer'}</span></li>`).join('')}
+                </ol>
+                ${mostrarPct ? `<div class="prontidao">
+                    <span class="prontidao-rot" id="prontRot-${e.id}${compacta ? '-c' : ''}">Prontidão</span>
+                    <span class="prontidao-barra" role="progressbar" aria-labelledby="prontRot-${e.id}${compacta ? '-c' : ''}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${t.pct}" aria-valuetext="${t.pct}%${t.enviada ? ', marcada como enviada por você' : ''}"><span style="width:${t.pct}%"></span></span>
+                    <strong class="prontidao-pct">${t.pct}%</strong>
+                </div>` : ''}
+                ${!compacta && atual >= 0 ? `<p class="trilha-falta"><strong>Agora:</strong> ${esc(t.etapas[atual].falta)}</p>` : ''}
+                ${!compacta && t.enviada ? '<p class="trilha-falta"><strong>Marcada como enviada por você.</strong> O Radar não vê o portal oficial: guarde o número de protocolo.</p>' : ''}
+                ${!compacta && mostrarPct ? `<details class="trilha-como"><summary>Como calculamos a prontidão</summary>
+                    <p>Só conta o que você fez e marcou neste aparelho: salvar o edital (${TRILHA_PESOS.salvo}), ver que pode concorrer (${TRILHA_PESOS.conferido}), documentos do checklist (${TRILHA_PESOS.documentos}), cadastro no sistema (${TRILHA_PESOS.cadastro}), proposta escrita (${TRILHA_PESOS.proposta}) e envio (${TRILHA_PESOS.envio}). Não é nota de avaliação nem chance de aprovação.</p></details>` : ''}
+                <span class="trilha-festa" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>`;
+        }
+        // Redesenha só a trilha (o checklist muda sem redesenhar o modal inteiro)
+        function atualizarTrilha(id) {
+            const e = editais.find(x => x.id === id);
+            const el = $(`trilha-${id}`);
+            if (e && el) el.outerHTML = trilhaHTML(e);
+            const docs = $(`planoDocs-${id}`);
+            if (e && docs) docs.textContent = `${docsProntos(e)} de ${e.documentos.length} marcados`;
+        }
+
         /* Plano "O que fazer agora": datas contadas de trás para frente a partir do prazo.
            Folga padrão: certidões até prazo−12, cadastro até −8, orçamento e cronograma até −5, enviar até −2.
            Com pouco tempo, as folgas encolhem na mesma proporção; nunca há data no passado. */
         const PLANO_PASSOS = [
-            { k: 'docs', folga: 12, txt: () => 'Separar as certidões e os documentos do checklist' },
+            { k: 'docs', folga: 12, txt: () => 'Separar os documentos do checklist (certidões e outros)' },
             { k: 'cadastro', folga: 8, txt: e => `Fazer o cadastro em ${sistemaDe(e)}` },
-            { k: 'orcamento', folga: 5, txt: () => 'Montar o orçamento e o cronograma' },
+            { k: 'orcamento', folga: 5, txt: () => 'Escrever a proposta, com orçamento e cronograma' },
             { k: 'enviar', folga: 2, txt: e => `Enviar a proposta${exigePreProposta(e) ? ' (ou a pré-proposta)' : ''}` }
         ];
         function sistemaDe(e) {
@@ -8172,13 +8375,25 @@ body.comparando .toasts { bottom: 88px; }
             passos.push({ k: 'prazo', txt: `Prazo final${e.etapaPrazo ? ` (${e.etapaPrazo})` : ''}: confirme o horário no edital`, data: prazo, final: true });
             return { passos, apertado: escala < 1, dias };
         }
-        function planoHTML(e, pl) {
+        function planoHTML(e, pl, onde = 'modal') {
             const hoje = isoDe(HOJE);
+            const m = marcasPlano(e.id);
+            const docsOk = docsProntos(e) === e.documentos.length;
+            const feito = k => (k === 'docs' ? docsOk : k === 'enviar' ? !!(propostas[e.id] && ENVIADAS.includes(propostas[e.id].etapa)) : !!m[k]);
+            const marca = p => {
+                if (p.final) return '';
+                if (p.k === 'docs') return `<a class="link-btn plano-marca" href="#checklist-${e.id}" data-action="ir-checklist" data-id="${e.id}"><span ${onde === 'modal' ? `id="planoDocs-${e.id}"` : ''}>${docsProntos(e)} de ${e.documentos.length} marcados</span> <span aria-hidden="true">→</span></a>`;
+                if (p.k === 'enviar') return feito('enviar') ? '<span class="plano-marca">Marcada como enviada por você</span>'
+                    : `<button type="button" class="btn btn-outline btn-small plano-marca" data-action="marcar-enviada" data-id="${e.id}">Já enviei</button>`;
+                const idc = `plano-${onde}-${e.id}-${p.k}`;
+                return `<label class="plano-marca plano-check" for="${idc}"><input type="checkbox" id="${idc}" data-action="plano-passo" data-id="${e.id}" data-k="${p.k}"${m[p.k] ? ' checked' : ''}> Feito</label>`;
+            };
             return `${pl.apertado ? `<p class="plano-apertado"><strong>Prazo apertado:</strong> ${pl.dias <= 2 ? 'faça hoje o que puder.' : 'encurtamos as folgas para caber até o prazo.'}</p>` : ''}
                 <ol class="plano-lista">${pl.passos.map(p => `
-                    <li class="${p.final ? 'final' : ''}${p.data === hoje ? ' hoje' : ''}">
+                    <li class="${p.final ? 'final' : ''}${p.data === hoje ? ' hoje' : ''}${!p.final && feito(p.k) ? ' feito' : ''}">
                         <span class="plano-data">${p.data === hoje && !p.final ? (pl.apertado ? 'Prazo apertado: faça hoje' : 'Hoje') : `${p.final ? '' : 'Até '}${fmtDate(p.data)}`}</span>
-                        <span class="plano-txt">${esc(p.txt)}</span>
+                        <span class="plano-txt">${!p.final && feito(p.k) ? '<span class="sr-only">Feito: </span>' : ''}${esc(p.txt)}</span>
+                        ${marca(p)}
                     </li>`).join('')}</ol>
                 <div class="modal-actions plano-acoes">
                     <button type="button" class="btn btn-outline btn-small" data-action="plano-ics" data-id="${e.id}">Pôr tudo no meu calendário</button>
@@ -9073,24 +9288,44 @@ body.comparando .toasts { bottom: 88px; }
                     if (el.dataset.foco === 'posso') { const h = $(`possoTitulo-${id}`); if (h) { h.scrollIntoView({ block: 'start' }); h.focus({ preventScroll: true }); } }
                     break;
                 }
-                case 'eleg-resp': case 'eleg-mudar': {
-                    const i = Number(el.dataset.index);
-                    responderEleg(id, i, action === 'eleg-mudar' ? null : el.dataset.valor === 'sim');
-                    if (action === 'eleg-resp') track('requisito-respondido');
+                case 'eleg-resp': case 'eleg-mudar': case 'posso-pub': case 'posso-uf': case 'posso-uf-mudar': {
+                    // "Posso concorrer?": uma pergunta por vez; cada resposta redesenha o bloco e o foco vai para a próxima
+                    if (action === 'posso-pub') {
+                        if (!PUBLICOS[el.dataset.valor]) break;
+                        testeRapido.publico = el.dataset.valor;
+                        if (!naoLembrarPerfil) atualizarPerfil({ publico: el.dataset.valor }, { silencioso: true });
+                    } else if (action === 'posso-uf') {
+                        const u = el.dataset.valor;
+                        if (UFS[u]) { testeRapido.uf = u; gravarEleg(id, '__uf', undefined); if (!naoLembrarPerfil) atualizarPerfil({ uf: u }, { silencioso: true }); }
+                        else gravarEleg(id, '__uf', u === 'ns' ? 'ns' : false);
+                    } else if (action === 'posso-uf-mudar') gravarEleg(id, '__uf', undefined);
+                    else {
+                        const i = Number(el.dataset.index);
+                        responderEleg(id, i, action === 'eleg-mudar' ? null : el.dataset.valor === 'ns' ? 'ns' : el.dataset.valor === 'sim');
+                    }
+                    if (action !== 'eleg-mudar' && action !== 'posso-uf-mudar') track('requisito-respondido');
                     refreshAll();
                     openEdital(id);
-                    // Foco: próxima pergunta (ou o resultado, quando acabaram)
-                    const prox = document.querySelector('#editalModal .eleg-atual [data-valor="sim"]');
-                    const alvo = action === 'eleg-mudar' ? prox : (prox || $(`possoTitulo-${id}`));
-                    if (alvo) alvo.focus();
                     const e = editais.find(x => x.id === id);
-                    const pub = (perfil && perfil.publico) || testeRapido.publico || val('filterPublico');
-                    const uf = (perfil && perfil.uf) || testeRapido.uf || val('filterUF');
-                    const v = e && vereditoPosso(e, pub, uf);
-                    if (v) anunciar({ sim: 'Sim, você pode.', provavel: 'Resposta guardada. Próximo ponto.', talvez: 'Talvez: confira no programa.', nao: 'Não desta vez.' }[v.estado] || 'Resposta guardada.');
+                    const v = e && possoContexto(e).v;
+                    // Foco: próxima pergunta; quando acabam, o resultado
+                    const prox = document.querySelector('#editalModal .eleg-atual .btn-resp');
+                    const alvo = prox || $(`possoTitulo-${id}`);
+                    if (alvo) alvo.focus();
+                    if (v) anunciar((el.dataset.valor === 'ns' ? 'Tudo bem: confira esse ponto no edital oficial. ' : '') + ({ sim: 'Sim, você pode concorrer.', provavel: prox ? 'Resposta guardada. Próxima pergunta.' : 'Provavelmente sim.', talvez: 'Talvez: confira no programa.', nao: 'Não desta vez.', vazio: 'Resposta guardada.' }[v.estado] || 'Resposta guardada.'));
                     break;
                 }
                 case 'plano-ics': baixarPlanoICS(id); break;
+                case 'ir-checklist': { ev.preventDefault(); const h = $(`checklistTitulo-${id}`); if (h) { h.scrollIntoView({ block: 'start' }); h.focus({ preventScroll: true }); } else openEdital(id); break; }
+                case 'marcar-enviada': {
+                    // Honesto: o Radar não vê o portal oficial — fica "marcada como enviada por você"
+                    const antes = propostas[id] ? propostas[id].etapa : null;
+                    acompanhar(id, 'submetida', true);
+                    showNotification('Marcada como enviada por você. Guarde o número de protocolo.', 'success', antes ? { label: 'Desfazer', fn: () => acompanhar(id, antes, true) } : null);
+                    const h = $(`planoTitulo-${id}`);
+                    if (h) { h.scrollIntoView({ block: 'start' }); h.focus({ preventScroll: true }); }
+                    break;
+                }
                 case 'ir-plano': { ev.preventDefault(); const h = $(`planoTitulo-${id}`); if (h) { h.scrollIntoView({ block: 'start' }); h.focus({ preventScroll: true }); } break; }
                 case 'alternar-vista': setView(viewMode === 'calendario' ? 'lista' : 'calendario'); break;
                 case 'receber-aviso': {
@@ -9160,6 +9395,16 @@ body.comparando .toasts { bottom: 88px; }
             const el = ev.target;
             if (el.dataset.action === 'compare') toggleCompare(Number(el.dataset.id), el.checked, el);
             if (el.dataset.action === 'check') toggleChecklist(Number(el.dataset.id), Number(el.dataset.index), el.checked);
+            if (el.dataset.action === 'plano-passo') {
+                // Passo do plano feito: conta na prontidão; o primeiro passo marcado leva a proposta para "Em preparação"
+                const id = Number(el.dataset.id), k = el.dataset.k, idEl = el.id;
+                if (!['cadastro', 'orcamento'].includes(k)) return;
+                marcarPlano(id, k, el.checked);
+                if (el.checked && propostas[id] && propostas[id].etapa === 'interesse') acompanhar(id, 'preparando', true);
+                else { refreshAll(); reabrirModalSe(id); }
+                const volta = $(idEl);
+                if (volta) volta.focus();
+            }
             if (el.id === 'geImportFile' && el.files[0]) importarJSON(el.files[0]);
             if (el.id === 'pcArquivos' && el.files.length) adicionarArquivos(el.files);
             if (el.dataset.posso) {
