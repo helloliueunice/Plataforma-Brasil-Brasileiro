@@ -684,3 +684,44 @@ body.rota-dashboard .busca-topo-btn { display: none; } /* no início a barra já
     .atalhos-busca { margin-bottom: var(--s-3); }
 }
 @media (prefers-reduced-motion: reduce) { .sug { transition: none; } }
+
+/* ---------- Linha única de chips (aplicados + atalhos) e barra de resultados ---------- */
+.chips-linha { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); margin-bottom: var(--s-3); }
+.chips-linha:has(.active-filters:empty):has(.atalhos-busca:empty) { display: none; }
+.chips-linha .active-filters, .chips-linha .atalhos-busca { margin: 0; }
+.rc-n { font-weight: var(--fw-semibold); }
+.rc-extra { font-weight: var(--fw-regular); color: var(--text-2); }
+/* Tipo e abrangência viram metadados abaixo do título (os selos ficam só para veredito e prazo) */
+.edital-meta { display: flex; flex-wrap: wrap; gap: 2px var(--s-2); margin-top: var(--s-1); font-size: var(--fs-14); font-weight: var(--fw-regular); letter-spacing: 0; color: var(--text-2); }
+.edital-meta > span:not(:last-child)::after { content: " ·"; color: var(--text-3); }
+.edital-meta .meta-etapa { color: var(--brand); font-weight: var(--fw-medium); }
+#filtrosDrawerCorpo .perfil-card { display: flex !important; margin-bottom: var(--s-4); }
+@media (max-width: 1023px) {
+    /* Celular/tablet: perfil e "Afinar" moram na gaveta "Filtros" */
+    #page-editais .container > .perfil-card { display: none; }
+    .chips-linha { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px; margin: 0 -2px var(--s-2); }
+    .chips-linha::-webkit-scrollbar { display: none; }
+    .chips-linha .active-filters, .chips-linha .atalhos-busca { display: flex; flex: 0 0 auto; flex-wrap: nowrap; overflow: visible; padding: 0; }
+    .chips-linha .active-filters:empty, .chips-linha .atalhos-busca:empty { display: none; }
+    /* Uma linha: "N editais · Filtros (N) · Ordenar · ⋯" */
+    .results-toolbar { grid-template-columns: auto auto minmax(0, 1fr) auto !important; row-gap: 0 !important; border-bottom: 0; padding-bottom: var(--s-2); }
+    .results-count { grid-column: 1 !important; grid-row: 1 !important; white-space: nowrap !important; font-size: var(--fs-14) !important; }
+    .rc-extra { display: none; }
+    .toolbar-actions .filtros-fab { grid-column: 2 !important; grid-row: 1 !important; }
+    .toolbar-actions select { grid-column: 3 !important; grid-row: 1 !important; }
+    .toolbar-actions details.menu { grid-column: 4 !important; grid-row: 1 !important; }
+    #page-editais .hero-section { padding-top: var(--s-2) !important; padding-bottom: var(--s-2) !important; }
+    #page-editais .hero-title { font-size: 1.375rem; }
+    .busca-editais { margin-bottom: var(--s-2); }
+}
+@media (max-width: 640px) {
+    /* Cartão: só veredito e prazo como selos, numa linha */
+    .edital-card .edital-badges { flex-wrap: nowrap; gap: var(--s-1); padding-right: 40px; }
+    .edital-card .badge-extra { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* leitor de tela ainda ouve "faltam N" */
+    .edital-card .edital-badges .badge { flex: 0 1 auto; min-width: 0; font-size: var(--fs-13); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 3px 8px; }
+}
+@media (max-width: 400px) {
+    .results-toolbar { column-gap: 4px !important; }
+    .results-count { font-size: var(--fs-13) !important; }
+    .toolbar-actions .filtros-fab { padding: 0 var(--s-2) !important; }
+}

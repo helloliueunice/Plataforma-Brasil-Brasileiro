@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Fomento — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-ey5owYJLv484EXXXbhNP/81Wpqn2M5c0LffuunI8HMs=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-u4xFjiFsWMJObYJ9TsiKMyu6WZsxAfP7n3Vut9YuO6k=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
@@ -1554,6 +1554,11 @@ body.comparando .toasts { bottom: 88px; }
             </div>
 
             <div class="editais-resultados">
+            <!-- Uma linha de chips: primeiro os aplicados (removíveis, "do seu perfil"), depois os atalhos de 1 toque -->
+            <div class="chips-linha" id="chipsLinha">
+                <div class="active-filters" id="activeFilters" role="group" aria-label="Filtros aplicados"></div>
+                <div class="atalhos-busca" id="atalhosBusca" role="group" aria-label="Atalhos de 1 toque"></div>
+            </div>
             <div class="results-toolbar">
                 <div class="results-count" id="resultsCount" aria-live="polite"></div>
                 <div class="toolbar-actions">
@@ -1588,9 +1593,6 @@ body.comparando .toasts { bottom: 88px; }
             <!-- Ferramentas do captador (assets/captacao.js): assinar alertas e salvar a busca -->
             <div id="capAcoesBusca"></div>
             <h2 class="sr-only" id="resultadosTitulo" tabindex="-1">Resultados</h2>
-            <!-- Filtros aplicados (removíveis) e atalhos de 1 toque, com a contagem de cada um -->
-            <div class="active-filters" id="activeFilters" role="group" aria-label="Filtros aplicados"></div>
-            <div class="atalhos-busca" id="atalhosBusca" role="group" aria-label="Atalhos de 1 toque"></div>
 
             <div id="editaisList"></div>
             <div id="calendarView" hidden></div>
@@ -6401,8 +6403,9 @@ body.comparando .toasts { bottom: 88px; }
         function renderAtalhos(f) {
             const box = $('atalhosBusca');
             if (!box) return;
-            box.innerHTML = atalhosDisponiveis().map(a => {
-                const ativo = String(f[a.k]) === a.v;
+            // Atalho ligado já aparece como chip aplicado (com ×): não repete na linha
+            box.innerHTML = atalhosDisponiveis().filter(a => String(f[a.k]) !== a.v).map(a => {
+                const ativo = false;
                 const n = aplicarFiltros({ ...f, [a.k]: ativo ? '' : a.v }).length;
                 return `<button type="button" class="chip-toggle atalho-chip" data-action="atalho" data-k="${a.k}" data-v="${esc(a.v)}" aria-pressed="${ativo}"${!ativo && n === 0 ? ' disabled' : ''} aria-label="${esc(a.txt)}: ${ativo ? 'ligado' : plural(n, 'edital', 'editais')}">${esc(a.txt)}${ativo ? '' : ` <span class="afinar-n">${n}</span>`}</button>`;
             }).join('');
@@ -6445,13 +6448,10 @@ body.comparando .toasts { bottom: 88px; }
                     ${compatBadge(e)}
                     ${propostas[e.id] && !['interesse', 'preparando'].includes(propostas[e.id].etapa) ? '' : prazoBadge(e)}
                     ${propostas[e.id] ? `<span class="badge badge-neutral">${ETAPA[propostas[e.id].etapa].icone} ${ETAPA[propostas[e.id].etapa].nome}</span>` : ''}
-                    <span class="badge badge-neutral" title="Tipo de apoio: ${esc(TIPOS_APOIO[tipoApoio(e)].nome)}${modalidadeTxt(e) !== e.modalidade ? ` (${esc(e.modalidade)})` : ''}">${TIPOS_APOIO[tipoApoio(e)].icone} ${esc(modalidadeTxt(e))}</span>
-                    ${e.fluxoContinuo ? '<span class="badge badge-neutral">Recebe propostas a qualquer momento</span>' : ''}
-                    ${exigePreProposta(e) ? '<span class="badge badge-etapa" title="Há uma etapa antes da proposta completa: veja o prazo de cada etapa nos detalhes">Pré-proposta</span>' : ''}
-                    <span class="badge badge-${e.procedencia}">${esc(seloAbrangencia(e))}</span>
                 </div>
                 <div class="edital-header">
-                    <div class="edital-title">${esc(e.titulo)}${e.numero ? `<small class="edital-numero">${esc(e.numero)}</small>` : ''}</div>
+                    <div class="edital-title">${esc(e.titulo)}${e.numero ? `<small class="edital-numero">${esc(e.numero)}</small>` : ''}
+                        <span class="edital-meta"><span title="Tipo de apoio: ${esc(TIPOS_APOIO[tipoApoio(e)].nome)}${modalidadeTxt(e) !== e.modalidade ? ` (${esc(e.modalidade)})` : ''}">${esc(modalidadeTxt(e))}</span>${e.fluxoContinuo ? '<span>Recebe propostas a qualquer momento</span>' : ''}${exigePreProposta(e) ? '<span class="meta-etapa" title="Há uma etapa antes da proposta completa: veja o prazo de cada etapa nos detalhes">Pré-proposta</span>' : ''}<span>${esc(seloAbrangencia(e))}</span></span></div>
                     <div class="edital-value">
                         ${temValor(e) ? fmtValor(e.valorMax, e.moeda) : (/bolsa/i.test(e.modalidade) ? 'Bolsas' : e.origem === 'transferegov' ? '<span class="valor-ausente">Valor não informado pela fonte</span>' : '<span class="valor-ausente">Valor: veja no edital oficial</span>')}
                         <small>${[temValor(e) ? 'por proposta' : e.origem === 'transferegov' ? (e.numero ? '' : `— veja o programa${e.codigoPrograma ? ' ' + esc(e.codigoPrograma) : ''}`) : /bolsa/i.test(e.modalidade) ? 'veja no edital oficial' : '', e.valorTotal > 0 ? `total ${fmtValor(e.valorTotal, e.moeda)}` : ''].filter(Boolean).join(' · ')}</small>
@@ -6499,7 +6499,8 @@ body.comparando .toasts { bottom: 88px; }
             const total = editais.length;
             $('editaisCount').textContent = total;
             $('editaisSubtitle').textContent = fraseContagem(editais);
-            $('resultsCount').textContent = lista.length === total ? fraseContagem(lista) : fraseContagem(lista, total);
+            const abertosN = lista.filter(e => statusEdital(e) === 'aberto').length;
+            $('resultsCount').innerHTML = `<span class="rc-n">${plural(lista.length, 'edital', 'editais')}</span><span class="rc-extra">${lista.length === total ? '' : ` de ${total}`} · ${abertosN} recebendo propostas</span>`;
             atualizarFiltrosFab(f, lista.length);
 
             const container = $('editaisList');
@@ -6540,14 +6541,16 @@ body.comparando .toasts { bottom: 88px; }
         const mqDesktop = window.matchMedia ? window.matchMedia('(min-width: 1024px)') : { matches: true, addEventListener() {} };
         function abrirGavetaFiltros() {
             const d = $('filtrosDrawer');
+            $('filtrosDrawerCorpo').appendChild($('perfilCard')); // celular: perfil e "Afinar" ficam dentro da gaveta
             $('filtrosDrawerCorpo').appendChild($('filtrosPainel'));
             abrirDialog(d);
             const alvo = d.querySelector('#filterUF');
             if (alvo) alvo.focus();
         }
         function devolverPainelFiltros() {
-            const layout = $('editaisLayout'), painel = $('filtrosPainel');
+            const layout = $('editaisLayout'), painel = $('filtrosPainel'), cartao = $('perfilCard');
             if (painel.parentElement !== layout) layout.insertBefore(painel, layout.firstChild);
+            if (cartao.parentElement !== layout.parentElement) layout.parentElement.insertBefore(cartao, layout);
         }
 
         /* Destaque patrocinado — mesmas regras de scripts/patrocinio.mjs: período (patrocinioInicio..patrocinioAte),
@@ -7171,20 +7174,26 @@ body.comparando .toasts { bottom: 88px; }
             const i = ordemEleg(e).find(k => resp[k] === null && orig[k] !== 'ns');
             return i === undefined ? null : { tipo: 'eleg', i };
         }
-        // Quantas perguntas este edital tem, ao todo, e quantas já estão respondidas (inclusive pelo perfil)
+        /* Uma só referência para o veredito, o passo e o selo do cartão: o que já se sabe pelo perfil ou por
+           outro edital não conta; conta o que falta perguntar e o que foi respondido aqui. */
         function contagemPosso(e, ctx) {
-            const elig = e.elegibilidade || [];
-            const orig = origemEleg(e);
-            const total = 1 + (precisaUF(e) ? 1 : 0) + elig.length;
-            const feitas = (ctx.pub ? 1 : 0) + (precisaUF(e) && (ctx.uf || ufRespEdital(e) !== undefined) ? 1 : 0) + orig.filter(o => o).length;
-            return { total, feitas };
+            const orig = origemEleg(e), resp = respostasEleg(e);
+            const ufAqui = precisaUF(e) && ufRespEdital(e) !== undefined && !ctx.uf;
+            const faltaUF = precisaUF(e) && !ctx.uf && ufRespEdital(e) === undefined;
+            const faltam = (ctx.pub ? 0 : 1) + (faltaUF ? 1 : 0) + (e.elegibilidade || []).filter((_, i) => resp[i] === null && orig[i] !== 'ns').length;
+            const feitas = (ufAqui ? 1 : 0) + orig.filter(o => o === 'aqui' || o === 'ns').length;
+            return { faltam, feitas, total: feitas + faltam };
         }
+        const faltamTxt = n => (n === 1 ? 'Falta 1 resposta' : `Faltam ${n} respostas`);
+        // Edital de uma cidade (ex.: "Cidade de São Paulo"): a pergunta cita a cidade, não o Estado
+        const cidadeDoEdital = e => { const m = /^(?:cidade|munic[íi]pio) de (.+)$/i.exec(String(e.abrangencia || '').trim()); return m ? m[1] : ''; };
 
         const botaoResp = (acao, id, extra, rotulo, cls = '') => `<button type="button" class="btn btn-outline btn-resp ${cls}" data-action="${acao}" data-id="${id}" ${extra}>${rotulo}</button>`;
         function perguntaPossoHTML(e, ctx, q) {
             if (!q) return '';
             const { total, feitas } = contagemPosso(e, ctx);
             const n = `<span class="eleg-n">Pergunta ${Math.min(feitas + 1, total)} de ${total}</span>`;
+            const sujeito = ctx.pub === 'pesquisador' ? 'Você atua' : 'Sua organização atua';
             if (q.tipo === 'pub') return `
                 <fieldset class="eleg-atual posso-pergunta">
                     <legend>${n} Quem vai pedir o recurso?</legend>
@@ -7194,10 +7203,11 @@ body.comparando .toasts { bottom: 88px; }
             if (q.tipo === 'uf') {
                 const ufs = ufsDoEdital(e);
                 const sug = ufsSugeridas().filter(u => ufs.includes(u));
+                const cidade = cidadeDoEdital(e);
                 if (ufs.length === 1) return `
                 <fieldset class="eleg-atual posso-pergunta">
-                    <legend>${n} Você atua em ${esc(UFS[ufs[0]])}?</legend>
-                    <p class="eleg-aviso">Este edital vale só para ${esc(e.abrangencia)}.</p>
+                    <legend>${n} ${sujeito} ${cidade ? `na cidade de ${esc(cidade)}` : `em ${esc(UFS[ufs[0]])}`}?</legend>
+                    <p class="eleg-aviso">Este edital vale só para ${cidade ? `quem atua na cidade de ${esc(cidade)}` : esc(e.abrangencia)}.</p>
                     <div class="eleg-botoes">
                         ${botaoResp('posso-uf', e.id, `data-valor="${ufs[0]}" data-sim="1"`, 'Sim')}
                         ${botaoResp('posso-uf', e.id, 'data-valor="fora"', 'Não')}
@@ -7207,7 +7217,7 @@ body.comparando .toasts { bottom: 88px; }
                 const ordem = [...sug, ...ufs.filter(u => !sug.includes(u)).sort((a, b) => UFS[a].localeCompare(UFS[b], 'pt-BR'))];
                 return `
                 <fieldset class="eleg-atual posso-pergunta">
-                    <legend>${n} Em qual estado você atua?</legend>
+                    <legend>${n} Em qual estado ${ctx.pub === 'pesquisador' ? 'você atua' : 'sua organização atua'}?</legend>
                     <p class="eleg-aviso">Este edital vale só para ${esc(e.abrangencia)}.</p>
                     <div class="eleg-botoes eleg-botoes-lista">
                         ${ordem.map(u => botaoResp('posso-uf', e.id, `data-valor="${u}"`, `${esc(UFS[u])}${sug.includes(u) && sug.length === 1 ? ' <span class="sugestao">sugestão</span>' : ''}`)).join('')}
@@ -7265,7 +7275,8 @@ body.comparando .toasts { bottom: 88px; }
                 <p class="posso-nota">${esc(e.abrangenciaNota || 'A fonte não informa em quais estados o programa vale.')}${e.codigoPrograma ? ` Procure o código ${esc(e.codigoPrograma)} no Transferegov.br.` : ''}</p>`;
             else if (v.estado === 'provavel') {
                 const ns = (v.naoSei || 0) + (v.ufNaoSei ? 1 : 0);
-                const txt = n ? `Provavelmente sim. Confirme ${plural(n, 'ponto', 'pontos')} abaixo` : 'Provavelmente sim';
+                const falta = contagemPosso(e, ctx).faltam;
+                const txt = falta ? `Provavelmente sim. ${faltamTxt(falta)}` : 'Provavelmente sim';
                 veredito = `<p class="posso-veredito provavel"><strong>${txt}</strong>${ns ? ` <span class="nota">Você marcou “não sei” em ${plural(ns, 'ponto', 'pontos')}: confira no edital oficial.</span>` : ''}</p>`;
             } else if (v.estado === 'nao') {
                 const par = parecidosDe(e, pub, uf);
@@ -7307,8 +7318,8 @@ body.comparando .toasts { bottom: 88px; }
                 const porque = /^Vale só/.test(m.txt || '') ? 'Fora da sua região' : /^Aceita só/.test(m.txt || '') ? 'Não aceita quem vai pedir' : 'Fora do seu perfil';
                 return `<span class="badge badge-match-fora" title="${esc(m.txt || '')}">${porque}</span>`;
             }
-            if (v.estado === 'talvez') return '<span class="badge badge-match-talvez">Talvez: confira no programa</span>';
-            if (v.estado === 'provavel') { const n = pontosFaltando(v); return `<span class="badge badge-match-medio">Provável · confirme ${plural(n, 'ponto', 'pontos')}</span>`; }
+            if (v.estado === 'talvez') return '<span class="badge badge-match-talvez" title="Talvez: confira no programa">Talvez · confira</span>';
+            if (v.estado === 'provavel') { const n = contagemPosso(e, { pub: perfil.publico, uf: perfil.uf, v }).faltam; return `<span class="badge badge-match-medio" title="${n ? faltamTxt(n) : ''}">Provável${n ? `<span class="badge-extra"> · faltam ${n}</span><span class="sr-only"> ${n === 1 ? 'resposta' : 'respostas'}${''}</span>` : ''}</span>`; }
             const c = avaliarCompat(e);
             return `<span class="badge ${c.score >= 75 ? 'badge-match-alto' : 'badge-match-medio'}">Você pode · ${c.score}% compatível</span>`;
         }
@@ -9498,7 +9509,7 @@ body.comparando .toasts { bottom: 88px; }
                     if (alvo && paginaAtual() === 'editais' && !$('filtrosDrawer').open) alvo.focus();
                     break;
                 }
-                case 'atalho': alternarAtalho(el.dataset.k, el.dataset.v); { const b = document.querySelector(`#atalhosBusca [data-k="${el.dataset.k}"][data-v="${CSS.escape(el.dataset.v)}"]`); if (b) b.focus(); } break;
+                case 'atalho': alternarAtalho(el.dataset.k, el.dataset.v); { const b = document.querySelector(`#activeFilters [data-key="${el.dataset.k}"]`) || document.querySelector('#atalhosBusca .atalho-chip'); if (b) b.focus(); anunciar(`${rotuloFiltro(el.dataset.k, el.dataset.v)}. ${$('resultsCount').textContent}`); } break;
                 case 'close-modal': closeModal(el.closest('dialog')); break;
                 case 'edit-perfil': openPerfil(); break;
                 case 'clear-perfil': limparPerfil(); break;
