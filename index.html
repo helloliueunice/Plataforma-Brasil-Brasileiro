@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Fomento — editais de fomento abertos</title>
     <!-- seo:inicio (gerado por scripts/gerar-paginas.mjs) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-OjdMHh07BYqpUIYSzWX3h4E3XES6XvtLXHs6CGnXzMU=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jY+ilZL7i+Pr6xbqk6UGd8MQlb6i5ThNbfoCNPA5Zro=' 'sha256-ey5owYJLv484EXXXbhNP/81Wpqn2M5c0LffuunI8HMs=' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.goatcounter.com; connect-src 'self' https://*.goatcounter.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Encontre editais e chamadas públicas compatíveis com seu perfil (53 abertos agora), organize documentos e prazos, preste contas e acompanhe recursos públicos.">
     <link rel="canonical" href="https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/">
@@ -1281,6 +1281,8 @@ body.comparando .toasts { bottom: 88px; }
                 </ul>
             </nav>
             <div class="header-actions">
+                <!-- Busca em todas as telas: leva à barra de busca do início ou de #editais -->
+                <button type="button" class="busca-topo-btn" id="buscaTopoBtn" data-cap="busca-topo" aria-label="Buscar editais"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="busca-topo-rot">Buscar</span></button>
                 <button class="bell-btn" id="alertBadge" data-action="show-alertas" aria-label="Alertas de prazo" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg> <span id="alertCount">0</span></button>
                 <!-- Não é conta: só um nome guardado neste navegador para assinar relatórios e comprovantes -->
                 <button class="btn btn-outline btn-small" id="loginBtn" data-action="open-login" aria-label="Seu nome (para relatórios)" hidden><span class="rotulo-longo">Seu nome (para relatórios)</span><span class="rotulo-curto" aria-hidden="true">Seu nome</span></button>
@@ -1320,21 +1322,26 @@ body.comparando .toasts { bottom: 88px; }
                     para <a href="para/pesquisadores/">pesquisadores</a>, <a href="para/universidades-e-icts/">universidades</a>, <a href="para/empresas-e-startups/">empresas</a>,
                     <a href="para/oscs-e-ongs/">ONGs e associações</a>, <a href="para/municipios-e-prefeituras/">prefeituras</a> e <a href="para/governos-estaduais/">governos estaduais</a>.</p>
             </noscript>
-            <!-- 1 toque: "quem vai pedir" já mostra os editais (1ª visita); quem volta vê "Seu próximo passo" (assets/captacao.js) -->
-            <section id="capOnboarding" class="onb" aria-labelledby="onbTitulo" hidden></section>
-            <div id="capProximo"></div>
-            <form class="home-busca home-busca-simples" id="homeSearchForm" role="search" aria-label="Buscar editais por palavra">
-                <div class="home-busca-campo home-busca-q">
-                    <label for="homeSearchInput">Prefere buscar por palavra?</label>
-                    <input type="search" id="homeSearchInput" placeholder="Tema, instituição ou programa (ex.: saúde, amazônia)" autocomplete="off">
+            <!-- Barra de busca única (linguagem simples: "ong de cultura em SP até 200 mil" vira filtros) -->
+            <form class="busca-pilula-form" id="homeSearchForm" role="search" aria-label="Buscar editais">
+                <label class="busca-rotulo" for="homeSearchInput">O que você procura?</label>
+                <div class="busca-combo">
+                    <span class="busca-lupa" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+                    <input type="search" id="homeSearchInput" class="busca-pilula" placeholder="Ex.: ong de cultura em SP até 200 mil" autocomplete="off" spellcheck="false"
+                        role="combobox" aria-expanded="false" aria-controls="homeSugestoes" aria-autocomplete="list" aria-describedby="homeBuscaAjuda">
+                    <button class="btn btn-primary busca-ir" type="submit">Buscar</button>
+                    <div class="busca-pop" id="homeSugestoesPop" hidden><ul class="busca-sugestoes" id="homeSugestoes" role="listbox" aria-label="Sugestões"></ul></div>
                 </div>
-                <!-- Quem pede e Estado vêm do perfil (1 toque acima e "Afinar" nos resultados): não perguntamos duas vezes -->
+                <p class="busca-ajuda" id="homeBuscaAjuda">Escreva como falaria: quem pede, tema, estado, valor ou prazo.</p>
+                <!-- Quem pede e Estado vêm do perfil (1 toque abaixo e "Afinar" nos resultados): não perguntamos duas vezes -->
                 <div hidden>
                     <select id="homeFilterPublico" aria-hidden="true" tabindex="-1"><option value="">Escolha</option></select>
                     <select id="homeFilterUF" aria-hidden="true" tabindex="-1"><option value="">Todo o Brasil</option></select>
                 </div>
-                <button class="btn btn-outline home-busca-btn" type="submit">Buscar</button>
             </form>
+            <!-- 1 toque: "quem vai pedir" já mostra os editais (1ª visita); quem volta vê "Seu próximo passo" (assets/captacao.js) -->
+            <section id="capOnboarding" class="onb" aria-labelledby="onbTitulo" hidden></section>
+            <div id="capProximo"></div>
             <!-- Contagens da mesma lista usada em #editais (editais[]) -->
             <p class="home-resumo" id="heroValor" aria-live="polite">—</p>
         </div>
@@ -1423,6 +1430,16 @@ body.comparando .toasts { bottom: 88px; }
 
         <div class="container">
             <a class="pular-resultados" href="#resultadosTitulo" data-action="pular-resultados">Pular para os resultados</a>
+            <div class="busca-editais" role="search" aria-label="Buscar editais">
+                <label class="busca-rotulo" for="searchInput">Buscar editais <span class="atalho-teclado">· atalho: tecla /</span></label>
+                <div class="busca-combo">
+                    <span class="busca-lupa" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+                    <input type="search" id="searchInput" class="busca-pilula" placeholder="Ex.: ong de cultura em SP até 200 mil" autocomplete="off" spellcheck="false"
+                        role="combobox" aria-expanded="false" aria-controls="editaisSugestoes" aria-autocomplete="list" aria-describedby="editaisEntendi">
+                    <div class="busca-pop" id="editaisSugestoesPop" hidden><ul class="busca-sugestoes" id="editaisSugestoes" role="listbox" aria-label="Sugestões"></ul></div>
+                </div>
+                <p class="busca-entendi" id="editaisEntendi"></p>
+            </div>
 
             <div class="perfil-card" id="perfilCard">
                 <div class="perfil-texto">
@@ -1480,6 +1497,11 @@ body.comparando .toasts { bottom: 88px; }
                     <select id="filterPublico" aria-hidden="true" tabindex="-1"><option value="">Escolha</option></select>
                     <select id="filterArea" aria-hidden="true" tabindex="-1"><option value="">Todas as áreas</option></select>
                     <select id="filterModalidade" aria-hidden="true" tabindex="-1"><option value="">Todos os tipos</option></select>
+                    <!-- Filtros que vêm da busca em frase e dos atalhos (também vão para a URL) -->
+                    <input id="filterValorMax" aria-hidden="true" tabindex="-1">
+                    <input id="filterNovos" aria-hidden="true" tabindex="-1">
+                    <input id="filterContra" aria-hidden="true" tabindex="-1">
+                    <input id="filterPosso" aria-hidden="true" tabindex="-1">
                 </div>
 
                 <details class="mais-filtros" id="maisFiltros">
@@ -1515,6 +1537,7 @@ body.comparando .toasts { bottom: 88px; }
                             <select id="filterPrazo">
                                 <option value="">Qualquer prazo</option>
                                 <option value="7">Encerra em até 7 dias</option>
+                                <option value="15">Encerra em até 15 dias</option>
                                 <option value="30">Encerra em até 30 dias</option>
                                 <option value="90">Encerra em até 90 dias</option>
                             </select>
@@ -1531,10 +1554,6 @@ body.comparando .toasts { bottom: 88px; }
             </div>
 
             <div class="editais-resultados">
-            <div class="filter-item busca-editais">
-                <label for="searchInput">Buscar editais <span class="atalho-teclado">· atalho: tecla /</span></label>
-                <input type="search" id="searchInput" placeholder="Título, instituição ou tema (ex.: saúde digital, amazônia)" autocomplete="off">
-            </div>
             <div class="results-toolbar">
                 <div class="results-count" id="resultsCount" aria-live="polite"></div>
                 <div class="toolbar-actions">
@@ -1569,7 +1588,9 @@ body.comparando .toasts { bottom: 88px; }
             <!-- Ferramentas do captador (assets/captacao.js): assinar alertas e salvar a busca -->
             <div id="capAcoesBusca"></div>
             <h2 class="sr-only" id="resultadosTitulo" tabindex="-1">Resultados</h2>
-            <div class="active-filters" id="activeFilters"></div>
+            <!-- Filtros aplicados (removíveis) e atalhos de 1 toque, com a contagem de cada um -->
+            <div class="active-filters" id="activeFilters" role="group" aria-label="Filtros aplicados"></div>
+            <div class="atalhos-busca" id="atalhosBusca" role="group" aria-label="Atalhos de 1 toque"></div>
 
             <div id="editaisList"></div>
             <div id="calendarView" hidden></div>
@@ -1890,7 +1911,7 @@ body.comparando .toasts { bottom: 88px; }
         <div class="gaveta-corpo" id="filtrosDrawerCorpo"></div>
         <div class="gaveta-rodape">
             <button type="button" class="btn btn-secondary" data-action="clear-filters">Limpar filtros</button>
-            <button type="button" class="btn btn-primary" data-action="close-modal" id="filtrosVerBtn">Ver resultados</button>
+            <button type="button" class="btn btn-primary" data-action="close-modal" id="filtrosVerBtn" aria-live="polite">Ver resultados</button>
         </div>
     </dialog>
 
@@ -6096,8 +6117,12 @@ body.comparando .toasts { bottom: 88px; }
 
         const FILTER_FIELDS = {
             q: 'searchInput', status: 'filterStatus', publico: 'filterPublico', area: 'filterArea',
-            modalidade: 'filterModalidade', formato: 'filterFormato', procedencia: 'filterProcedencia', uf: 'filterUF', valor: 'filterValor', prazo: 'filterPrazo', ordem: 'sortSelect'
+            modalidade: 'filterModalidade', formato: 'filterFormato', procedencia: 'filterProcedencia', uf: 'filterUF', valor: 'filterValor', prazo: 'filterPrazo', ordem: 'sortSelect',
+            valorMax: 'filterValorMax', novos: 'filterNovos', contra: 'filterContra', posso: 'filterPosso'
         };
+        // Filtros que a busca em frase entende (o resto do texto vira busca livre)
+        const CHAVES_FRASE = ['publico', 'uf', 'area', 'valor', 'valorMax', 'prazo', 'novos', 'contra', 'status'];
+        const semContrapartida = e => /^(n[ãa]o se aplica|n[ãa]o exigida|sem contrapartida|dispensad|isent)/i.test(String(e.contrapartida || '').trim());
 
         const PRESETS = {
             abertos: { status: 'aberto' },
@@ -6108,13 +6133,40 @@ body.comparando .toasts { bottom: 88px; }
         /* =====================================================================
            FILTROS, BUSCA E ORDENAÇÃO
         ===================================================================== */
-        function getFiltros() {
+        // Prévia da frase digitada: o que foi entendido já filtra (resultado instantâneo); Enter fixa os chips
+        let cacheFrase = { q: null, r: null };
+        function interpretarFrase(q) {
+            if (!q || !window.RadarBusca) return null;
+            if (cacheFrase.q !== q) cacheFrase = { q, r: window.RadarBusca.interpretar(q, { ufPerfil: perfil && perfil.uf }) };
+            return cacheFrase.r;
+        }
+        function getFiltros({ previa = true } = {}) {
             const f = {};
             for (const [k, id] of Object.entries(FILTER_FIELDS)) f[k] = val(id);
             f.ordem = f.ordem || 'prazo';
             f.fav = somenteFavoritos;
             f.rec = somenteRecomendados && perfilAtivo();
+            const r = previa ? interpretarFrase(f.q) : null;
+            if (r && r.entendidos.length) {
+                f.previa = {};
+                for (const ent of r.entendidos) { f[ent.k] = String(ent.v); f.previa[ent.k] = ent.trecho; }
+                f.q = r.resto;
+            }
             return f;
+        }
+        // Enter (ou escolher "Aplicar"): a prévia vira filtros de verdade e o texto fica só com o resto
+        function fixarFrase() {
+            const r = interpretarFrase(val('searchInput'));
+            if (!r || !r.entendidos.length) return false;
+            for (const ent of r.entendidos) garantirOpcao($(FILTER_FIELDS[ent.k]), String(ent.v), ent.rotulo.replace(/^[^:]+: /, ''));
+            for (const ent of r.entendidos) $(FILTER_FIELDS[ent.k]).value = String(ent.v);
+            $('searchInput').value = r.resto;
+            return true;
+        }
+        // Valor vindo da URL ou da frase que o <select> ainda não tem (ex.: "até 15 dias", "acima de R$ 2 milhões")
+        function garantirOpcao(sel, v, rotulo) {
+            if (!sel || sel.tagName !== 'SELECT' || !v || [...sel.options].some(o => o.value === v)) return;
+            sel.add(new Option(rotulo || v, v));
         }
 
         function aplicarFiltros(f) {
@@ -6136,6 +6188,13 @@ body.comparando .toasts { bottom: 88px; }
                 if (f.rec) { const c = avaliarCompat(e); if (!c || !c.elegivel || st === 'fechado') return false; }
                 if (f.valor && valorRef(e) < Number(f.valor)) return false;
                 if (f.prazo && !(st === 'aberto' && diasAte(e.encerramento) <= Number(f.prazo))) return false;
+                if (f.valorMax && temValor(e) && valorRef(e) > Number(f.valorMax)) return false; // valor não informado fica (não dá para dizer que passa)
+                if (f.novos && !(e.publicadoEm && diasAte(e.publicadoEm) >= -Number(f.novos))) return false;
+                if (f.contra && !semContrapartida(e)) return false;
+                if (f.posso) {
+                    if (!perfil || !perfil.publico || st === 'fechado') return false;
+                    if (!['sim', 'provavel'].includes(vereditoPosso(e, perfil.publico, perfil.uf).estado)) return false;
+                }
                 if (f.fav && !favorites.includes(e.id)) return false;
                 return true;
             });
@@ -6201,6 +6260,7 @@ body.comparando .toasts { bottom: 88px; }
                 const n = aplicarFiltros({ ...f, [k]: v }).length;
                 btn.setAttribute('aria-pressed', String(ativo));
                 btn.classList.toggle('vazio', n === 0);
+                btn.disabled = n === 0 && !ativo; // não leva a um beco sem saída
                 btn.querySelector('.facet-count').textContent = n;
                 const nome = btn.querySelector('.facet-nome').textContent;
                 btn.setAttribute('aria-label', `${nome}: ${plural(n, 'edital', 'editais')}${ativo ? ' (filtro ativo, clique para remover)' : ''}`);
@@ -6235,13 +6295,14 @@ body.comparando .toasts { bottom: 88px; }
                 if (pub) acoes.push(`<a class="btn btn-outline" href="para/${HUB_PUBLICO[pub]}/">Página de ${esc(PUBLICOS[pub])}</a>`);
                 acoes.push(`<a class="btn btn-outline" href="sugerir-edital/" data-evento="sugerir-vazio">Conhece um edital? Sugira</a>`);
             } else {
-                const nomes = { q: 'a busca', status: 'a situação', publico: 'quem vai pedir', area: 'a área', modalidade: 'o tipo de apoio', formato: 'o formato', procedencia: 'a procedência', uf: 'o estado', valor: 'o valor mínimo', prazo: 'o prazo', fav: 'os favoritos', rec: 'só os que servem' };
-                const alternativas = Object.keys(nomes).filter(k => f[k]).map(k => {
-                    const g = { ...f, [k]: (k === 'fav' || k === 'rec') ? false : '' };
-                    return { k, n: aplicarFiltros(g).length };
+                // Sugere tirar o filtro que mais devolve resultados, dizendo quantos voltam
+                const alternativas = chipsAtivos(f).map(c => {
+                    const g = { ...f, [c.k]: (c.k === 'fav' || c.k === 'rec') ? false : '' };
+                    return { ...c, txt: c.txt.replace(/^“|”$/g, ''), n: aplicarFiltros(g).length };
                 }).filter(x => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 3);
-                if (alternativas.length) texto = 'Remova um filtro para ver resultados:';
-                alternativas.forEach(x => acoes.push(`<button class="btn btn-outline btn-small" data-action="remove-filter" data-key="${x.k}">Sem ${nomes[x.k]} → ${plural(x.n, 'edital', 'editais')}</button>`));
+                titulo = 'Nenhum edital com tudo isso';
+                if (alternativas.length) texto = esc(`Tirar “${alternativas[0].txt}” mostra ${plural(alternativas[0].n, 'edital', 'editais')}.`);
+                alternativas.forEach((x, i) => acoes.push(`<button class="btn ${i ? 'btn-outline' : 'btn-primary'} btn-small" data-action="remove-filter" data-key="${x.k}">Tirar “${esc(x.txt)}” → ${plural(x.n, 'edital', 'editais')}</button>`));
             }
             return `
                 <div class="empty-state">
@@ -6286,25 +6347,85 @@ body.comparando .toasts { bottom: 88px; }
             filterEditais();
         }
 
-        function renderActiveFilters(f) {
-            const labelDe = (id) => { const s = $(id); return s && s.selectedIndex > 0 ? s.options[s.selectedIndex].text : ''; };
-            const chips = [];
-            if (f.q) chips.push({ k: 'q', txt: `“${f.q}”` });
-            for (const k of ['status', 'publico', 'area', 'modalidade', 'formato', 'procedencia', 'uf', 'valor', 'prazo']) {
-                if (f[k]) chips.push({ k, txt: labelDe(FILTER_FIELDS[k]) });
+        // Rótulo curto de cada filtro aplicado (chips, estado vazio, atalhos)
+        function rotuloFiltro(k, v) {
+            const sel = $(FILTER_FIELDS[k]);
+            const doSelect = () => { const o = sel && sel.tagName === 'SELECT' ? [...sel.options].find(x => x.value === v) : null; return o ? o.text : v; };
+            switch (k) {
+                case 'q': return `“${v}”`;
+                case 'publico': return PUBLICOS[v] || v;
+                case 'uf': return UFS[v] || v;
+                case 'area': return (AREAS[v] || v).split(' e ')[0];
+                case 'modalidade': return (TIPOS_APOIO[tipoDoFiltro(v)] || {}).nome || v;
+                case 'valor': return `A partir de ${fmtValor(Number(v))}`;
+                case 'valorMax': return `Até ${fmtValor(Number(v))}`;
+                case 'prazo': return Number(v) === 0 ? 'Fecham hoje' : `Fecham em até ${v} dias`;
+                case 'novos': return Number(v) <= 7 ? 'Novos esta semana' : `Novos em ${v} dias`;
+                case 'contra': return 'Sem contrapartida';
+                case 'posso': return 'Posso concorrer';
+                case 'fav': return 'Favoritos';
+                case 'rec': return 'Só os que servem para mim';
+                default: return doSelect();
             }
-            if (f.fav) chips.push({ k: 'fav', txt: 'Favoritos' });
-            if (f.rec) chips.push({ k: 'rec', txt: 'Só os que servem para mim' });
+        }
+        const CHAVES_CHIP = ['q', 'publico', 'uf', 'area', 'modalidade', 'status', 'valor', 'valorMax', 'prazo', 'novos', 'contra', 'posso', 'formato', 'procedencia'];
+        function chipsAtivos(f) {
+            const out = [];
+            for (const k of CHAVES_CHIP) if (f[k]) out.push({ k, txt: rotuloFiltro(k, f[k]), previa: !!(f.previa && f.previa[k]),
+                perfil: !!(perfil && ((k === 'publico' && perfil.publico === f[k]) || (k === 'uf' && perfil.uf === f[k]))) });
+            if (f.fav) out.push({ k: 'fav', txt: 'Favoritos' });
+            if (f.rec) out.push({ k: 'rec', txt: 'Só os que servem para mim' });
+            return out;
+        }
+        function renderActiveFilters(f) {
+            const chips = chipsAtivos(f);
             $('activeFilters').innerHTML = chips.map(c =>
-                `<button class="active-filter" data-action="remove-filter" data-key="${c.k}" aria-label="Remover filtro ${esc(c.txt)}">${esc(c.txt)} <span aria-hidden="true">✕</span></button>`
-            ).join('');
+                `<button type="button" class="active-filter${c.previa ? ' previa' : ''}${c.perfil ? ' do-perfil' : ''}" data-action="remove-filter" data-key="${c.k}" aria-label="Tirar o filtro ${esc(c.txt)}${c.perfil ? ' (do seu perfil)' : ''}">${esc(c.txt)}${c.perfil ? ' <span class="chip-origem">do seu perfil</span>' : ''} <span aria-hidden="true" class="chip-x">×</span></button>`
+            ).join('') + (chips.length >= 2 ? '<button type="button" class="link-btn limpar-tudo" data-action="clear-filters">Limpar tudo</button>' : '');
+            const r = f.previa ? interpretarFrase(val('searchInput')) : null;
+            $('editaisEntendi').innerHTML = r && r.entendidos.length
+                ? `Entendi: <strong>${r.entendidos.map(x => esc(x.rotulo.replace(/^[^:]+: /, ''))).join(' · ')}</strong>${r.resto ? ` + “${esc(r.resto)}”` : ''}. <span class="nota">Enter fixa os filtros.</span>` : '';
+            renderAtalhos(f);
+        }
+
+        // Atalhos de 1 toque (cada um com a contagem que daria se fosse ligado)
+        function atalhosDisponiveis() {
+            const a = [];
+            if (perfil && perfil.publico) a.push({ id: 'posso', txt: 'Posso concorrer', k: 'posso', v: '1' });
+            a.push({ id: 'fecham15', txt: 'Fecham em 15 dias', k: 'prazo', v: '15' });
+            a.push({ id: 'novos', txt: 'Novos esta semana', k: 'novos', v: '7' });
+            if (editais.some(semContrapartida)) a.push({ id: 'contra', txt: 'Sem contrapartida', k: 'contra', v: '1' });
+            if (perfil && perfil.uf) a.push({ id: 'meuuf', txt: `Para o meu Estado (${perfil.uf})`, k: 'uf', v: perfil.uf });
+            return a;
+        }
+        function renderAtalhos(f) {
+            const box = $('atalhosBusca');
+            if (!box) return;
+            box.innerHTML = atalhosDisponiveis().map(a => {
+                const ativo = String(f[a.k]) === a.v;
+                const n = aplicarFiltros({ ...f, [a.k]: ativo ? '' : a.v }).length;
+                return `<button type="button" class="chip-toggle atalho-chip" data-action="atalho" data-k="${a.k}" data-v="${esc(a.v)}" aria-pressed="${ativo}"${!ativo && n === 0 ? ' disabled' : ''} aria-label="${esc(a.txt)}: ${ativo ? 'ligado' : plural(n, 'edital', 'editais')}">${esc(a.txt)}${ativo ? '' : ` <span class="afinar-n">${n}</span>`}</button>`;
+            }).join('');
+        }
+        function alternarAtalho(k, v) {
+            const f = getFiltros();
+            if (String(f[k]) === v) removeFilter(k);
+            else { garantirOpcao($(FILTER_FIELDS[k]), v, rotuloFiltro(k, v)); $(FILTER_FIELDS[k]).value = v; track(`atalho-${k}`); filtrarEEmpilhar(); }
         }
 
         function removeFilter(k) {
+            const f = getFiltros();
+            if (f.previa && f.previa[k]) {
+                // Veio da frase digitada: tira o trecho do texto (senão a frase o traria de volta)
+                const t = f.previa[k];
+                $('searchInput').value = val('searchInput').replace(t, ' ').replace(/\s+/g, ' ').trim();
+            }
             if (k === 'fav') { somenteFavoritos = false; $('toggleFavoritos').setAttribute('aria-pressed', 'false'); }
             else if (k === 'rec') { somenteRecomendados = false; $('toggleRecomendados').setAttribute('aria-pressed', 'false'); }
+            else if (k === 'q') { const r = interpretarFrase(val('searchInput')); $('searchInput').value = r ? r.entendidos.map(e => e.trecho).join(' ') : ''; }
             else $(FILTER_FIELDS[k]).value = '';
-            filterEditais();
+            if (k === 'publico' || k === 'uf') perfilFiltrosTirados.add(k); // a pessoa tirou: não volta a pré-aplicar nesta sessão
+            filtrarEEmpilhar();
         }
 
         /* =====================================================================
@@ -6406,13 +6527,13 @@ body.comparando .toasts { bottom: 88px; }
 
         // Celular: "Filtros (n)" conta os filtros ativos da gaveta (a busca por palavra fica fora dela)
         function filtrosAtivosN(f) {
-            return ['status', 'publico', 'area', 'modalidade', 'formato', 'procedencia', 'uf', 'valor', 'prazo'].filter(k => f[k]).length + (f.fav ? 1 : 0) + (f.rec ? 1 : 0);
+            return ['status', 'publico', 'area', 'modalidade', 'formato', 'procedencia', 'uf', 'valor', 'prazo', 'valorMax', 'novos', 'contra', 'posso'].filter(k => f[k]).length + (f.fav ? 1 : 0) + (f.rec ? 1 : 0);
         }
         function atualizarFiltrosFab(f, nResultados) {
             const n = filtrosAtivosN(f);
             $('filtrosFabN').textContent = `(${n})`;
             $('filtrosFab').setAttribute('aria-label', n ? `Filtros: ${plural(n, 'filtro ativo', 'filtros ativos')}` : 'Filtros: nenhum ativo');
-            $('filtrosVerBtn').textContent = `Ver ${plural(nResultados, 'resultado', 'resultados')}`;
+            $('filtrosVerBtn').textContent = `Ver ${plural(nResultados, 'edital', 'editais')}`;
         }
 
         /* Gaveta de filtros (celular): o mesmo painel #filtrosPainel é movido para o <dialog> e devolvido ao fechar */
@@ -9134,6 +9255,13 @@ body.comparando .toasts { bottom: 88px; }
             }
             if (page === 'editais') {
                 if (qs) setFiltrosFromParams(new URLSearchParams(qs)); // URLSearchParams já decodifica (preserva "P&D")
+                else if (perfil && !naoLembrarPerfil && paginaAtual() !== 'editais') {
+                    // Perfil uma vez só: quem pede e Estado já entram como filtros, marcados "do seu perfil" e fáceis de tirar
+                    clearFilters(true);
+                    if (perfil.publico && !perfilFiltrosTirados.has('publico')) $('filterPublico').value = perfil.publico;
+                    if (perfil.uf && !perfilFiltrosTirados.has('uf')) $('filterUF').value = perfil.uf;
+                }
+                else if (paginaAtual() === 'editais') clearFilters(true); // "voltar" até a lista sem filtros
                 showPage('editais');
                 filterEditais();
                 return;
@@ -9175,7 +9303,11 @@ body.comparando .toasts { bottom: 88px; }
 
         function setFiltrosFromParams(params) {
             clearFilters(true);
-            for (const [k, id] of Object.entries(FILTER_FIELDS)) if (params.has(k)) $(id).value = k === 'modalidade' ? tipoDoFiltro(params.get(k)) : params.get(k);
+            for (const [k, id] of Object.entries(FILTER_FIELDS)) if (params.has(k)) {
+                const v = k === 'modalidade' ? tipoDoFiltro(params.get(k)) : params.get(k);
+                garantirOpcao($(id), v, k === 'prazo' ? `Encerra em até ${v} dias` : k === 'valor' ? `A partir de ${fmtValor(Number(v))}` : v);
+                $(id).value = v;
+            }
             somenteFavoritos = params.get('fav') === '1';
             somenteRecomendados = params.get('rec') === '1';
             $('toggleFavoritos').setAttribute('aria-pressed', String(somenteFavoritos));
@@ -9195,17 +9327,28 @@ body.comparando .toasts { bottom: 88px; }
             if (f.rec) params.set('rec', '1');
             if (viewMode === 'calendario') params.set('view', 'calendario');
             const qs = params.toString();
-            history.replaceState(null, '', `#editais${qs ? '?' + qs : ''}`);
+            const destino = `#editais${qs ? '?' + qs : ''}`;
+            if (empilharHistorico && location.hash !== destino) history.pushState(null, '', destino);
+            else history.replaceState(null, '', destino);
+            empilharHistorico = false;
         }
+        let empilharHistorico = false;
+        const perfilFiltrosTirados = new Set();
+        // Filtros mudaram por uma escolha (chip, atalho, Enter): vira um passo no histórico do navegador
+        function filtrarEEmpilhar() { empilharHistorico = true; filterEditais(); }
 
 
         // Busca do início: palavra-chave + "Sou…" + Estado viram parâmetros da URL de #editais (a rota aplica os filtros)
         function searchFromHome() {
             const params = new URLSearchParams();
-            const q = val('homeSearchInput').trim(), pub = val('homeFilterPublico'), uf = val('homeFilterUF');
+            const bruto = val('homeSearchInput').trim(), pub = val('homeFilterPublico'), uf = val('homeFilterUF');
+            const r = bruto && window.RadarBusca ? window.RadarBusca.interpretar(bruto, { ufPerfil: perfil && perfil.uf }) : null;
+            const q = r ? r.resto : bruto;
+            if (r) for (const ent of r.entendidos) params.set(ent.k, String(ent.v));
+            if (bruto && window.lembrarBusca) window.lembrarBusca(bruto);
             if (q) params.set('q', q);
-            if (pub) params.set('publico', pub);
-            if (uf) params.set('uf', uf);
+            if (pub && !params.has('publico')) params.set('publico', pub);
+            if (uf && !params.has('uf')) params.set('uf', uf);
             track('busca-inicio');
             const destino = `#editais${params.toString() ? '?' + params : ''}`;
             if (location.hash === destino) route(); else location.hash = destino;
@@ -9345,8 +9488,17 @@ body.comparando .toasts { bottom: 88px; }
                 case 'share': shareEdital(id); break;
                 case 'agencia': closeModal($('editalModal')); showAgenciaPage(el.dataset.key); break;
                 case 'export-csv': exportCSV(); break;
-                case 'clear-filters': clearFilters(); break;
-                case 'remove-filter': removeFilter(el.dataset.key); break;
+                case 'clear-filters': clearFilters(true); perfilFiltrosTirados.add('publico'); perfilFiltrosTirados.add('uf'); filtrarEEmpilhar(); anunciar(`Filtros limpos. ${$('resultsCount').textContent}`); if (paginaAtual() === 'editais' && !$('filtrosDrawer').open) $('searchInput').focus(); break;
+                case 'remove-filter': {
+                    const k = el.dataset.key;
+                    const prox = el.nextElementSibling && el.nextElementSibling.matches('[data-action="remove-filter"]') ? el.nextElementSibling.dataset.key : null;
+                    removeFilter(k);
+                    anunciar(`Filtro tirado. ${$('resultsCount').textContent}`);
+                    const alvo = (prox && document.querySelector(`#activeFilters [data-key="${prox}"]`)) || document.querySelector('#activeFilters [data-action="remove-filter"]') || $('searchInput');
+                    if (alvo && paginaAtual() === 'editais' && !$('filtrosDrawer').open) alvo.focus();
+                    break;
+                }
+                case 'atalho': alternarAtalho(el.dataset.k, el.dataset.v); { const b = document.querySelector(`#atalhosBusca [data-k="${el.dataset.k}"][data-v="${CSS.escape(el.dataset.v)}"]`); if (b) b.focus(); } break;
                 case 'close-modal': closeModal(el.closest('dialog')); break;
                 case 'edit-perfil': openPerfil(); break;
                 case 'clear-perfil': limparPerfil(); break;
@@ -9482,18 +9634,18 @@ body.comparando .toasts { bottom: 88px; }
         document.addEventListener('DOMContentLoaded', () => {
             popularSelects();
 
-            $('searchInput').addEventListener('input', debouncedFilter);
+            $('searchInput').addEventListener('input', debounce(filterEditais, 150)); // resultado instantâneo
             ['filterStatus', 'filterPublico', 'filterArea', 'filterModalidade', 'filterFormato', 'filterProcedencia', 'filterUF', 'filterValor', 'filterPrazo', 'sortSelect']
                 .forEach(id => $(id).addEventListener('change', filterEditais));
             $('facetas').addEventListener('click', ev => {
                 const b = ev.target.closest('[data-facet]');
-                if (b) escolherFaceta(b.dataset.facet, b.dataset.value);
+                if (b) { empilharHistorico = true; escolherFaceta(b.dataset.facet, b.dataset.value); }
             });
             if (mqDesktop.matches) $('maisFiltros').open = true;
             // Ao passar para o desktop com a gaveta aberta, fecha a gaveta (o painel volta para a lateral)
             mqDesktop.addEventListener('change', () => { if (mqDesktop.matches && $('filtrosDrawer').open) closeModal($('filtrosDrawer')); if (mqDesktop.matches && document.body.classList.contains('menu-aberto')) alternarMenu(false); });
             $('filtrosDrawer').addEventListener('close', devolverPainelFiltros);
-            document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => applyPreset(btn.dataset.preset)));
+            document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => { empilharHistorico = true; applyPreset(btn.dataset.preset); }));
             $('toggleFavoritos').addEventListener('click', () => {
                 somenteFavoritos = !somenteFavoritos;
                 $('toggleFavoritos').setAttribute('aria-pressed', String(somenteFavoritos));
@@ -9598,6 +9750,7 @@ body.comparando .toasts { bottom: 88px; }
         }
     </script>
     <!-- Ferramentas do captador: alertas, buscas salvas, quadro, go/no-go, cofre, elegibilidade e backup -->
+    <script defer src="assets/busca.js"></script>
     <script defer src="assets/captacao.js"></script>
 </body>
 </html>

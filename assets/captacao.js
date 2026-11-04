@@ -1079,12 +1079,12 @@
                     </div>
                 </div>
                 ${unica ? '<p class="afinar-nota">Sugerido pelo fuso do aparelho, sem usar sua localização.</p>' : ''}
-                <div class="afinar-linha" role="group" aria-labelledby="afinarTemaRot">
+                ${areas.length ? `<div class="afinar-linha" role="group" aria-labelledby="afinarTemaRot">
                     <span class="afinar-rot" id="afinarTemaRot">Tema</span>
                     <div class="afinar-chips">
                         ${areas.map(([a, n]) => chipAfinar('afinar-area', a, `${esc(curto(a))} <span class="afinar-n">${n}</span>`, f.area === a, ` aria-label="${esc(AREAS[a] || a)}: ${plural(n, 'edital', 'editais')}"`)).join('')}
                     </div>
-                </div>
+                </div>` : ''}
             </section>`;
         if (foco) { const el = box.querySelector(foco); if (el) el.focus(); }
     }
@@ -1236,6 +1236,158 @@
         }
         if (partes.length) anunciarCelebracao(partes.join(' '));
     }
+
+    /* ---------------------------------------------------------------------
+       8c. BARRA DE BUSCA — combobox acessível (ARIA 1.2) no início e em #editais
+       Sugestões: "Aplicar" (o que a frase quer dizer), filtros ("Filtrar: Estado = São Paulo"),
+       editais, instituições e buscas recentes (só neste aparelho, apagáveis).
+       Setas movem, Enter escolhe (ou aplica a frase), Esc fecha (de novo: limpa).
+    --------------------------------------------------------------------- */
+    K.recentes = 'fb:buscasRecentes';
+    const recentes = () => { const v = ler(K.recentes, []); return Array.isArray(v) ? v.filter(x => typeof x === 'string' && x.trim()).slice(0, 6) : []; };
+    window.lembrarBusca = function (t) {
+        t = String(t || '').trim().slice(0, 120);
+        if (t.length < 2) return;
+        store.set(K.recentes, [t, ...recentes().filter(x => norm(x) !== norm(t))].slice(0, 6));
+    };
+    const COMBOS = [
+        { input: 'homeSearchInput', lista: 'homeSugestoes', pop: 'homeSugestoesPop', onde: 'home' },
+        { input: 'searchInput', lista: 'editaisSugestoes', pop: 'editaisSugestoesPop', onde: 'editais' }
+    ];
+    const estadoCombo = {}; // por input: { ops, ativo }
+    const rotuloCurto = r => r.replace(/^[^:]+: /, '');
+
+    function opcoesBusca(texto) {
+        const t = texto.trim();
+        const out = [];
+        if (!t) { recentes().forEach(x => out.push({ tipo: 'recente', rotulo: x, txt: x })); return out; }
+        const RB = window.RadarBusca;
+        const r = RB ? RB.interpretar(t, { ufPerfil: perfil && perfil.uf }) : { entendidos: [], resto: t };
+        if (r.entendidos.length) out.push({ tipo: 'aplicar', rotulo: `${r.entendidos.map(e => rotuloCurto(e.rotulo)).join(' · ')}${r.resto ? ` + “${r.resto}”` : ''}` });
+        if (RB) RB.sugerirFiltros(t.split(/\s+/).pop(), 6).filter(x => String(r[x.k]) !== String(x.v)).slice(0, 3)
+            .forEach(x => out.push({ tipo: 'filtro', k: x.k, v: x.v, rotulo: x.rotulo.replace(': ', ' = ') }));
+        const termos = norm(r.resto || '').split(/\s+/).filter(x => x.length >= 2);
+        if (termos.length) {
+            const casa = txt => { const n = norm(txt); return termos.every(x => n.includes(x)); };
+            editais.filter(e => casa(`${e.titulo} ${e.instituicao} ${e.numero || ''} ${(e.tags || []).join(' ')}`))
+                .sort((a, b) => (statusEdital(a) === 'fechado') - (statusEdital(b) === 'fechado'))
+                .slice(0, 4).forEach(e => out.push({ tipo: 'edital', id: e.id, rotulo: e.titulo, extra: `${e.instituicao} · ${STATUS_LABEL[statusEdital(e)]}` }));
+            Object.entries(agencias).filter(([, a]) => casa(`${a.sigla} ${a.nome}`)).slice(0, 2)
+                .forEach(([key, a]) => out.push({ tipo: 'inst', key, rotulo: `${a.sigla} — ${a.nome}` }));
+        }
+        return out;
+    }
+    const TIPO_TXT = { aplicar: 'Aplicar', filtro: 'Filtrar', edital: 'Edital', inst: 'Instituição', recente: 'Busca recente' };
+
+    function abrirCombo(c, texto) {
+        const inp = document.getElementById(c.input), ul = document.getElementById(c.lista), pop = document.getElementById(c.pop);
+        if (!inp || !ul || !pop) return;
+        const ops = opcoesBusca(texto);
+        estadoCombo[c.input] = { ops, ativo: -1 };
+        if (!ops.length) { fecharCombo(c); return; }
+        ul.innerHTML = ops.map((o, i) => `<li role="option" id="${c.lista}-${i}" class="sug sug-${o.tipo}" aria-selected="false" data-i="${i}">
+            <span class="sug-tipo">${TIPO_TXT[o.tipo]}<span class="sr-only">:</span></span>
+            <span class="sug-txt">${o.tipo === 'filtro' ? esc(o.rotulo) : esc(o.rotulo)}${o.extra ? `<span class="sug-extra">${esc(o.extra)}</span>` : ''}</span></li>`).join('');
+        const rodape = !texto.trim() && recentes().length ? '<button type="button" class="link-btn sug-apagar" data-cap="apagar-recentes" tabindex="-1">Apagar buscas recentes</button>' : '';
+        pop.querySelector('.sug-apagar') && pop.querySelector('.sug-apagar').remove();
+        if (rodape) pop.insertAdjacentHTML('beforeend', rodape);
+        pop.hidden = false;
+        inp.setAttribute('aria-expanded', 'true');
+        inp.removeAttribute('aria-activedescendant');
+    }
+    function fecharCombo(c) {
+        const inp = document.getElementById(c.input), pop = document.getElementById(c.pop);
+        if (pop) pop.hidden = true;
+        if (inp) { inp.setAttribute('aria-expanded', 'false'); inp.removeAttribute('aria-activedescendant'); }
+        if (estadoCombo[c.input]) estadoCombo[c.input].ativo = -1;
+    }
+    function moverCombo(c, delta) {
+        const st = estadoCombo[c.input];
+        if (!st || !st.ops.length) return;
+        st.ativo = st.ativo < 0 && delta < 0 ? st.ops.length - 1 : (st.ativo + delta + st.ops.length) % st.ops.length;
+        const ul = document.getElementById(c.lista);
+        ul.querySelectorAll('[role=option]').forEach((li, i) => li.setAttribute('aria-selected', String(i === st.ativo)));
+        const ativo = document.getElementById(`${c.lista}-${st.ativo}`);
+        document.getElementById(c.input).setAttribute('aria-activedescendant', ativo.id);
+        ativo.scrollIntoView({ block: 'nearest' });
+    }
+    // Enter sem sugestão escolhida: a frase vira filtros (no início, vai para #editais)
+    function aplicarFrase(c) {
+        const inp = document.getElementById(c.input);
+        fecharCombo(c);
+        track('busca-frase');
+        if (c.onde === 'home') { searchFromHome(); return; }
+        window.lembrarBusca(inp.value);
+        fixarFrase();
+        filtrarEEmpilhar();
+        anunciar(document.getElementById('resultsCount').textContent);
+    }
+    function escolherOpcao(c, i) {
+        const st = estadoCombo[c.input];
+        const o = st && st.ops[i];
+        if (!o) return;
+        const inp = document.getElementById(c.input);
+        fecharCombo(c);
+        track(`busca-sugestao-${o.tipo}`);
+        if (o.tipo === 'aplicar') return aplicarFrase(c);
+        if (o.tipo === 'recente') { inp.value = o.txt; return aplicarFrase(c); }
+        if (o.tipo === 'edital') { window.lembrarBusca(inp.value); if (c.onde === 'home') location.hash = `edital-${o.id}`; else openEdital(o.id); return; }
+        if (o.tipo === 'inst') { location.hash = `agencia-${o.key}`; return; }
+        if (o.tipo === 'filtro') {
+            // Tira do texto a palavra que estava sendo digitada e aplica o filtro sugerido
+            const palavras = inp.value.trim().split(/\s+/); palavras.pop();
+            inp.value = palavras.join(' ');
+            if (c.onde === 'home') {
+                const r = inp.value && window.RadarBusca ? window.RadarBusca.interpretar(inp.value) : { entendidos: [], resto: '' };
+                const p = new URLSearchParams();
+                r.entendidos.forEach(e => p.set(e.k, String(e.v)));
+                p.set(o.k, String(o.v));
+                if (r.resto) p.set('q', r.resto);
+                location.hash = `editais?${p}`;
+                return;
+            }
+            fixarFrase();
+            const sel = document.getElementById(FILTER_FIELDS[o.k]);
+            if (sel) sel.value = String(o.v);
+            filtrarEEmpilhar();
+            inp.focus();
+            anunciar(`${o.rotulo}. ${document.getElementById('resultsCount').textContent}`);
+        }
+    }
+    function comboDe(el) { return el && COMBOS.find(c => c.input === el.id); }
+
+    document.addEventListener('input', ev => { const c = comboDe(ev.target); if (c) abrirCombo(c, ev.target.value); });
+    document.addEventListener('focusin', ev => { const c = comboDe(ev.target); if (c && !ev.target.value.trim() && recentes().length) abrirCombo(c, ''); });
+    document.addEventListener('focusout', ev => { const c = comboDe(ev.target); if (c) setTimeout(() => { if (document.activeElement !== ev.target) fecharCombo(c); }, 120); });
+    document.addEventListener('keydown', ev => {
+        const c = comboDe(ev.target);
+        if (!c) return;
+        const aberto = ev.target.getAttribute('aria-expanded') === 'true';
+        const st = estadoCombo[c.input];
+        if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+            ev.preventDefault();
+            if (!aberto) abrirCombo(c, ev.target.value);
+            moverCombo(c, ev.key === 'ArrowDown' ? 1 : -1);
+        } else if (ev.key === 'Enter') {
+            ev.preventDefault();
+            if (aberto && st && st.ativo >= 0) escolherOpcao(c, st.ativo);
+            else aplicarFrase(c);
+        } else if (ev.key === 'Escape') {
+            if (aberto) { ev.preventDefault(); ev.stopPropagation(); fecharCombo(c); }
+            else if (ev.target.value) { ev.preventDefault(); ev.target.value = ''; if (c.onde === 'editais') filtrarEEmpilhar(); }
+        } else if (ev.key === 'Tab') fecharCombo(c);
+    }, true);
+    // Clique/toque numa sugestão (mousedown: o campo não perde o foco antes)
+    document.addEventListener('mousedown', ev => {
+        const li = ev.target.closest && ev.target.closest('.busca-sugestoes [role=option], .sug-apagar');
+        if (li) ev.preventDefault();
+    });
+    document.addEventListener('click', ev => {
+        const li = ev.target.closest && ev.target.closest('.busca-sugestoes [role=option]');
+        if (!li) return;
+        const c = COMBOS.find(x => x.lista === li.parentElement.id);
+        if (c) escolherOpcao(c, Number(li.dataset.i));
+    });
 
     /* ---------------------------------------------------------------------
        9. "DESDE SUA ÚLTIMA VISITA" — faixa no início
@@ -1449,6 +1601,7 @@
             ['Favoritos', plural(favs.length, 'edital', 'editais'), favs.length ? dataBR(ler('fb:favoritosEm', '')) : '—', favs.length ? '<a href="#editais?fav=1">Ver</a>' : ''],
             ['Minhas propostas', plural(props.length, 'edital escolhido', 'editais escolhidos'), props.length ? dataBR(maisRecente(props.map(x => x.p.atualizadoEm))) : '—', props.length ? '<a href="#propostas">Ver</a>' : ''],
             ['Cofre de certidões', plural(cofre.length, 'documento', 'documentos'), cofre.length ? dataBR(maisRecente(cofre.map(x => x.atualizadoEm))) : '—', cofre.length ? '<a href="#propostas">Ver</a>' : ''],
+            ['Buscas recentes', plural(recentes().length, 'busca', 'buscas'), '—', recentes().length ? '<button type="button" class="link-btn" data-cap="apagar-recentes-md">Apagar</button>' : ''],
             ['Buscas salvas', plural(buscas.length, 'busca', 'buscas'), buscas.length ? dataBR(maisRecente(buscas.map(x => x.criadoEm))) : '—', ''],
             ['Respostas de “quem pode participar”', plural(Object.keys(eleg).length, 'edital respondido', 'editais respondidos'), '—', ''],
             ['Última visita', objeto(d) && isoValido(d.data) ? `antes de hoje: ${fmtDate(d.data)}` : 'Primeira visita neste aparelho', dataBR(ler(K.ultimaVisita, '') ? ler(K.ultimaVisita, '') + 'T12:00:00' : ''), ''],
@@ -1620,6 +1773,19 @@
             case 'pedir-notificacao': pedirNotificacao(); break;
             case 'parar-notificacao': store.set(K.notificar, null); showNotification('Pronto: não vamos mais avisar neste navegador.'); renderPropostas(); if (paginaAtual() === 'meus-dados') renderMeusDados(); break;
             case 'onb-pub': onbEscolherPub(el.dataset.valor); break;
+            case 'apagar-recentes': {
+                store.set(K.recentes, null);
+                const c = COMBOS.find(x => document.getElementById(x.pop) && document.getElementById(x.pop).contains(el));
+                if (c) { fecharCombo(c); document.getElementById(c.input).focus(); }
+                anunciar('Buscas recentes apagadas.');
+                break;
+            }
+            case 'busca-topo': {
+                const casa = paginaAtual() === 'dashboard';
+                if (!casa && paginaAtual() !== 'editais') location.hash = 'editais';
+                setTimeout(() => { const i = document.getElementById(casa ? 'homeSearchInput' : 'searchInput'); if (i) { i.scrollIntoView({ block: 'center' }); i.focus(); } }, 60);
+                break;
+            }
             case 'afinar-uf': afinarUF(el.dataset.valor); break;
             case 'afinar-area': afinarArea(el.dataset.valor); break;
             case 'proximo-abrir': abrirProximo(Number(id), el.dataset.foco); break;
@@ -1631,6 +1797,7 @@
             case 'ces': responderCES(el.dataset.valor); break;
             case 'meus-exportar': exportarMeusDados(); break;
             case 'meus-apagar': apagarTudo(); break;
+            case 'apagar-recentes-md': store.set(K.recentes, null); renderMeusDados(); anunciar('Buscas recentes apagadas.'); break;
         }
     });
 
