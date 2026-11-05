@@ -369,8 +369,8 @@
     <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/</guid>
     <pubDate>Tue, 26 May 2026 15:00:00 GMT</pubDate>
     <category>Infraestrutura e Desenvolvimento</category>
-    <category>Município</category>
-    <description>Programa Transferegov 2220120260010. valor não informado pela fonte · Município · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
+    <category>Governo do estado</category>
+    <description>Programa Transferegov 2220120260010. valor não informado pela fonte · Governo do estado · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
   </item>
   <item>
     <title>Apoio a Projetos de Desenvolvimento Sustentável Local Integrado — Ministério da Integração e do Desenvolvimento Regional</title>
@@ -378,8 +378,8 @@
     <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1056567/</guid>
     <pubDate>Fri, 15 May 2026 15:00:00 GMT</pubDate>
     <category>Desenvolvimento Social</category>
-    <category>Município</category>
-    <description>Programa Transferegov 5300020260036 · Ação 00SX. valor não informado pela fonte · Município · inscrições de 15/05/2026 a 30/11/2026. A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção</description>
+    <category>ONG/associação</category>
+    <description>Programa Transferegov 5300020260036 · Ação 00SX. valor não informado pela fonte · ONG/associação · inscrições de 15/05/2026 a 30/11/2026. A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção</description>
   </item>
   <item>
     <title>Infra-Estrutura Básica – SR(RS) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio. — Ministério do Desenvolvimento Agrário e Agricultura Familiar</title>
@@ -419,6 +419,15 @@
     <description>Programa Transferegov 2220120260014. valor não informado pela fonte · Governo do estado · inscrições de 10/03/2026 a 31/12/2026. Priorização, a partir do levantamento das demandas de infraestrutura, dos Projetos de Assentamento a serem beneficiados com a implantação ou recuperação de estradas vicinais, rede elétrica, saneamento básico e sistemas de captação e distribuição de água etc., visando proporcionar as condições físicas necessárias para o desenvolvimento sustentável dos assentamentos.</description>
   </item>
   <item>
+    <title>Terra Sol — Ministério do Desenvolvimento Agrário e Agricultura Familiar</title>
+    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/terra-sol-1056440/</link>
+    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/terra-sol-1056440/</guid>
+    <pubDate>Fri, 13 Mar 2026 15:00:00 GMT</pubDate>
+    <category>Cultura e Economia Criativa</category>
+    <category>Governo do estado</category>
+    <description>Programa Transferegov 2220120260035. valor não informado pela fonte · Governo do estado · inscrições de 13/03/2026 a 18/12/2026. Programa voltado a recepcionar propostas de fomento à agroindustrialização, comercialização, agroecologia e atividades pluriativas e solidárias, no âmbito do Programa Terra Sol.</description>
+  </item>
+  <item>
     <title>Ações da Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab — Ministério da Educação</title>
     <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/</link>
     <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/</guid>
@@ -428,31 +437,13 @@
     <description>Programa Transferegov 2629120260004. valor não informado pela fonte · ONG/associação · inscrições de 10/03/2026 a 31/12/2026. Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Universidade Aberta do Brasil - UAB.</description>
   </item>
   <item>
-    <title>Apoio a Projetos de Desenvolvimento Sustentável Local Integrado — Ministério da Integração e do Desenvolvimento Regional</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1055990/</guid>
-    <pubDate>Thu, 19 Feb 2026 15:00:00 GMT</pubDate>
-    <category>Desenvolvimento Social</category>
-    <category>Governo do estado</category>
-    <description>Programa Transferegov 5300020260001 · Ação 00SX. valor não informado pela fonte · Governo do estado · inscrições de 19/02/2026 a 30/11/2026. A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção</description>
-  </item>
-  <item>
-    <title>Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte — Ministério da Integração e do Desenvolvimento Regional</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/</guid>
-    <pubDate>Thu, 19 Feb 2026 15:00:00 GMT</pubDate>
-    <category>Infraestrutura e Desenvolvimento</category>
-    <category>Município</category>
-    <description>Programa Transferegov 5300020260004 · Ação 1211. valor não informado pela fonte · Município · inscrições de 19/02/2026 a 30/11/2026. Apoio à implantação de infraestrutura básica, produtiva e social nos municípios da área de abrangência do Programa Calha Norte, compreendendo, de forma não exaustiva, a construção, ampliação ou adequação de obras de infraestrutura viária e produtiva, incluindo pavimentação de vias urbanas e rurais, obras rodoviárias estaduais e municipais, estruturas de engenharia, de apoio à produção sustentável e de integração urbana, a exemplo de orlas públicas em áreas ribeirinhas e costeiras. Abrange, ainda, a aquisição de máquinas, equipamentos, veículos e outros bens permanentes de interesse público; o</description>
-  </item>
-  <item>
     <title>Rotas de Integração Nacional — Ministério da Integração e do Desenvolvimento Regional</title>
     <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/</link>
     <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acao-214s-rotas-de-integracao-nacional-rp2-1055992/</guid>
     <pubDate>Thu, 19 Feb 2026 15:00:00 GMT</pubDate>
     <category>Desenvolvimento Social</category>
-    <category>Governo do estado</category>
-    <description>Programa Transferegov 5300020260002 · Ação 214S. valor não informado pela fonte · Governo do estado · inscrições de 19/02/2026 a 30/11/2026. As Rotas de Integração Nacional são redes de Arranjos Produtivos Locais - APLs. Os beneficiários da Ação são produtores e população das áreas de abrangência dos Polos das Rotas de Integração Nacional. Poderão ser apoiadas ações de qualificação técnica e gerencial dos atores vinculados às cadeias produtivas apoiadas pela iniciativa Rotas de Integração Nacional (Portaria nº 080/2018-MI): cursos, palestras, capacitações, oficinas, workshop, treinamentos e dias de campo, como: a) Fortalecimento do cooperativismo e associativismo: cursos, palestras, capacitações, oficinas, workshop, treinamentos e</description>
+    <category>Município</category>
+    <description>Programa Transferegov 5300020260002 · Ação 214S. valor não informado pela fonte · Município · inscrições de 19/02/2026 a 30/11/2026. As Rotas de Integração Nacional são redes de Arranjos Produtivos Locais - APLs. Os beneficiários da Ação são produtores e população das áreas de abrangência dos Polos das Rotas de Integração Nacional. Poderão ser apoiadas ações de qualificação técnica e gerencial dos atores vinculados às cadeias produtivas apoiadas pela iniciativa Rotas de Integração Nacional (Portaria nº 080/2018-MI): cursos, palestras, capacitações, oficinas, workshop, treinamentos e dias de campo, como: a) Fortalecimento do cooperativismo e associativismo: cursos, palestras, capacitações, oficinas, workshop, treinamentos e</description>
   </item>
   <item>
     <title>Programa Nacional de Modernização e Apoio à Produção Agrícola - PROMAQ — Ministério da Agricultura e Pecuária</title>
@@ -469,8 +460,8 @@
     <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/</guid>
     <pubDate>Tue, 10 Feb 2026 15:00:00 GMT</pubDate>
     <category>Agronegócio e Segurança Alimentar</category>
-    <category>Município</category>
-    <description>Programa Transferegov 2200020260018. valor não informado pela fonte · Município · inscrições de 10/02/2026 a 31/12/2026. O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor</description>
+    <category>Governo do estado</category>
+    <description>Programa Transferegov 2200020260018. valor não informado pela fonte · Governo do estado · inscrições de 10/02/2026 a 31/12/2026. O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor</description>
   </item>
   <item>
     <title>Fomento ao Setor Agropecuário - Propostas Voluntárias — Ministério da Agricultura e Pecuária</title>
@@ -489,15 +480,6 @@
     <category>Agronegócio e Segurança Alimentar</category>
     <category>ONG/associação</category>
     <description>Programa Transferegov 2200020260005. valor não informado pela fonte · ONG/associação · inscrições de 09/02/2026 a 31/12/2026. O Programa tem como objetivo apoiar e incentivar projetos de fomento ao setor agropecuário, por meio de investimentos na aquisição e fornecimento de máquinas e equipamentos agrícolas, bem como de ações de custeio voltadas à realização de eventos, capacitações, aquisição de insumos agrícolas e implantação de hortas comunitárias. As iniciativas devem estar em conformidade com os objetos financiáveis definidos na Ação 20ZV – Fomento ao Setor Agropecuário, na Instrução Normativa MAPA nº 25, de 12 de julho de 2023, na Lei nº 13.019/2014 e no Decreto nº 8.726/2016. A principal finalidade do Programa</description>
-  </item>
-  <item>
-    <title>Programa Nacional de Estradas Rurais - PRONER — Ministério da Agricultura e Pecuária</title>
-    <link>https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-rurais-proner-1056079/</link>
-    <guid isPermaLink="true">https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-rurais-proner-1056079/</guid>
-    <pubDate>Mon, 09 Feb 2026 15:00:00 GMT</pubDate>
-    <category>Infraestrutura e Desenvolvimento</category>
-    <category>Município</category>
-    <description>Programa Transferegov 2200020260006. valor não informado pela fonte · Município · inscrições de 11/02/2026 a 31/12/2026. O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis</description>
   </item>
   <item>
     <title>TCC Empreendedor Inovador: bolsas para Trabalhos de Conclusão de Curso com foco em inovação — FAPES</title>

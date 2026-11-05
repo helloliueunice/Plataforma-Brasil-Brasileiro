@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Terra Sol — Radar Fomento
+NAME:Terra Sol — Radar Fomento
+X-WR-CALDESC:Prazos de Terra Sol (Ministério do Desenvolvimento Agrário e
+  Agricultura Familiar). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Terra Sol (Ministério do Desenvolvimento Agrário e 
+ Agricultura Familiar). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056440-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Prazo final: Terra Sol
+DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+ · Programa Transferegov 2220120260035\nValor: valor não informado pela f
+ onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
+ 0260035. A proposta é cadastrada no Transferegov.br (módulo Discricioná
+ rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
+ .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
+ ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
+ tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
+ /terra-sol-1056440/\nConfirme data e horário limite no edital oficial: ht
+ tps://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/t
+ erra-sol-1056440/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Terra Sol
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Terra Sol
+END:VALARM
+END:VEVENT
+END:VCALENDAR
