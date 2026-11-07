@@ -341,6 +341,26 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "etapaPrazo": null
     },
+    "1055990": {
+      "titulo": "Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1055992": {
+      "titulo": "Ação 214S - Rotas de Integração Nacional - RP2",
+      "abertura": "2026-02-19",
+      "encerramento": "2026-11-30",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
     "1055995": {
       "titulo": "Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2",
       "abertura": "2026-02-19",
@@ -364,6 +384,16 @@
     "1056046": {
       "titulo": "Fomento ao Setor Agropecuário - Propostas Voluntárias - Termo de Fomento",
       "abertura": "2026-02-09",
+      "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056079": {
+      "titulo": "Programa Nacional de Estradas Rurais - PRONER",
+      "abertura": "2026-02-11",
       "encerramento": "2026-12-31",
       "propostaCompleta": null,
       "valorMax": null,
@@ -471,26 +501,6 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "etapaPrazo": null
     },
-    "1056567": {
-      "titulo": "Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2",
-      "abertura": "2026-05-15",
-      "encerramento": "2026-11-30",
-      "propostaCompleta": null,
-      "valorMax": null,
-      "valorTotal": null,
-      "link": "https://www.gov.br/transferegov/pt-br",
-      "etapaPrazo": null
-    },
-    "1056676": {
-      "titulo": "Fomento ao Setor Agropecuário – Investimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(11)Rs– Convênio.",
-      "abertura": "2026-06-30",
-      "encerramento": "2026-12-31",
-      "propostaCompleta": null,
-      "valorMax": null,
-      "valorTotal": null,
-      "link": "https://www.gov.br/transferegov/pt-br",
-      "etapaPrazo": null
-    },
     "1056721": {
       "titulo": "2321 - Recursos Hídricos: Água em Quantidade e Qualidade para Sempre: Pt 18.544.2321.7G88.0022/ Ação: Construção da Barragem Atalaia no Estado do Piauí/ Rp (3)",
       "abertura": "2026-07-13",
@@ -575,6 +585,46 @@
       "titulo": "Parcerias Ded/Capes - Seb/MEC - Gepem",
       "abertura": "2026-11-05",
       "encerramento": "2026-12-31",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056877": {
+      "titulo": "Seminário de Ensino, Pesquisa, Extensão e Cultura em Memória a Luiza Bairros",
+      "abertura": "2026-11-06",
+      "encerramento": "2026-11-13",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056879": {
+      "titulo": "Observatório das Migrações, Mobilidades e Fronteiras do Sul (Obmisul)",
+      "abertura": "2026-11-06",
+      "encerramento": "2026-11-13",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056880": {
+      "titulo": "Caminhos Seguros: Urbanismo Tático Ufrgs & Ufcspa",
+      "abertura": "2026-11-06",
+      "encerramento": "2026-11-13",
+      "propostaCompleta": null,
+      "valorMax": null,
+      "valorTotal": null,
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "etapaPrazo": null
+    },
+    "1056882": {
+      "titulo": "Relatórios Antropológicos de Comunidades Quilombolas do Rio Grande do Sul",
+      "abertura": "2026-11-06",
+      "encerramento": "2026-11-13",
       "propostaCompleta": null,
       "valorMax": null,
       "valorTotal": null,

@@ -56,14 +56,14 @@ SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Propostas Voluntária
  s
 DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
   2200020260004\nValor: valor não informado pela fonte\nQuem pode particip
- ar: Governo do estado\nCódigo do programa: 2200020260004. A proposta é c
- adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
- e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
-  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
-  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agrope
- cuario-propostas-voluntarias-1056045/\nConfirme data e horário limite no 
- edital oficial: https://www.gov.br/transferegov/pt-br
+ ar: Município\nCódigo do programa: 2200020260004. A proposta é cadastra
+ da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
+ go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
+ dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
+ nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
+ hub.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-
+ propostas-voluntarias-1056045/\nConfirme data e horário limite no edital 
+ oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
  omento-ao-setor-agropecuario-propostas-voluntarias-1056045/
 TRANSP:TRANSPARENT
@@ -155,14 +155,14 @@ SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio à Produç
  ão Agrícola - PROMAQ
 DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
   2200020260022\nValor: valor não informado pela fonte\nQuem pode particip
- ar: Governo do estado\nCódigo do programa: 2200020260022. A proposta é c
- adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
- e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
-  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
-  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-mo
- dernizacao-e-apoio-a-producao-agricola-promaq-1056156/\nConfirme data e ho
- rário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+ ar: Município\nCódigo do programa: 2200020260022. A proposta é cadastra
+ da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
+ go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
+ dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
+ nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
+ hub.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-moderniza
+ cao-e-apoio-a-producao-agricola-promaq-1056156/\nConfirme data e horário 
+ limite no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
  rograma-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-105615
  6/
@@ -178,43 +178,6 @@ ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Modernização e 
  Apoio à Produção Agrícola - PROMAQ
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:edital-1056676-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento SR(PA)
-  Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(1
- 1)Rs– Convênio.
-DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
- · Programa Transferegov 2220120260048\nValor: valor não informado pela f
- onte\nQuem pode participar: Município\nCódigo do programa: 2220120260048
- . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
-  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
-  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
- cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/foment
- o-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/\nConf
- irme data e horário limite no edital oficial: https://www.gov.br/transfer
- egov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário 
- – Investimento SR(PA) Superintendência Regional do INCRA no Estado do R
- io Grande do Sul - SR(11)Rs– Convênio.
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário – Inv
- estimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Gran
- de do Sul - SR(11)Rs– Convênio.
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

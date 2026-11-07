@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Seminário de Ensino\, Pesquisa\, Extensão e Cultura em… 
+ — Radar Fomento
+NAME:Seminário de Ensino\, Pesquisa\, Extensão e Cultura em… — Radar 
+ Fomento
+X-WR-CALDESC:Prazos de Seminário de Ensino\, Pesquisa\, Extensão e Cultur
+ a em Memória a Luiza Bairros (Ministério da Educação). Confirme sempre
+  no edital oficial.
+DESCRIPTION:Prazos de Seminário de Ensino\, Pesquisa\, Extensão e Cultura
+  em Memória a Luiza Bairros (Ministério da Educação). Confirme sempre 
+ no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056877-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Prazo final: Seminário de Ensino\, Pesquisa\, Extensão e Cultura 
+ em Memória a Luiza Bairros
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262442026001
+ 8\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
+ iação\nCódigo do programa: 2624420260018. A proposta é cadastrada no T
+ ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/seminario-de-ensi
+ no-pesquisa-extensao-e-cultura-em-memoria-a-luiza-1056877/\nConfirme data 
+ e horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/s
+ eminario-de-ensino-pesquisa-extensao-e-cultura-em-memoria-a-luiza-1056877/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Seminário de Ensino\, Pesquisa\
+ , Extensão e Cultura em Memória a Luiza Bairros
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Seminário de Ensino\, Pesquisa\, Exte
+ nsão e Cultura em Memória a Luiza Bairros
+END:VALARM
+END:VEVENT
+END:VCALENDAR
