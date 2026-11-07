@@ -14,39 +14,6 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:edital-115-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261106
-DTEND;VALUE=DATE:20261107
-SUMMARY:Prazo final: Fundo Municipal do Idoso – projetos para a pessoa id
- osa (cidade de São Paulo)
-DESCRIPTION:Prefeitura de São Paulo (SMDHC) · Edital de Chamamento Públi
- co nº 008/2026/SMDHC/FMID\nValor: total de R$ 12\,8 mi no edital\nQuem 
- pode participar: ONG/associação\nInscrição e entrega das propostas at
- é 06/11/2026. Até 3 propostas por OSC\; projetos de 12 a 24 meses. Só p
- ara OSCs que atuam na cidade de São Paulo\, com registro (ou pedido) no C
- onselho Municipal da Pessoa Idosa.\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/fundo-municipal-do-idos
- o-projetos-para-a-pessoa-idosa-cidade-de-sao-115/\nConfirme data e horári
- o limite no edital oficial: https://prefeitura.sp.gov.br/direitos_humanos/
- w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- undo-municipal-do-idoso-projetos-para-a-pessoa-idosa-cidade-de-sao-115/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Fundo Municipal do Idoso – pro
- jetos para a pessoa idosa (cidade de São Paulo)
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Fundo Municipal do Idoso – projetos 
- para a pessoa idosa (cidade de São Paulo)
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056427-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261116
