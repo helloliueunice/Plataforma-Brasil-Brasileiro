@@ -376,94 +376,94 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18038": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18063/edital-de-credenciamento-de-empresas-do-pipe-para-participacao-em-eventos-nacionais-e-internacionais-de-interesse-da-fapesp": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18059": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18052": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18030": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/17975": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/17977": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/17974": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/17961": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/17952": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-36-2026/chamada-publica-cnpq-N-36-2026": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "cnpq",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_01_2026_-_Apoio_%C3%A0_Recupera%C3%A7%C3%A3o_e_Moderniza%C3%A7%C3%A3o_da_Infraestrutura_de_Hospitais_Universit%C3%A1rios_Sediados_no_RJ.pdf": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "faperj",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_02_2026_%E2%80%93_Programa_de_Apoio_a_Projetos_de_Inova%C3%A7%C3%A3o_no_Campo_da_Seguran%C3%A7a_P%C3%BAblica_-_Ci%C3%AAncias_Forenses,_Ci%C3%AAncias_Policiais_e_Sa%C3%BAde_Policial.pdf": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "faperj",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_03_2026_%E2%80%93_Programa_de_Apoio_%C3%A0_Editora%C3%A7%C3%A3o.pdf": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "faperj",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_04_2026_%E2%80%93_Bolsa_Nota_10_Mestrado_e_Doutorado.pdf": {
-      "em": "2026-11-07",
+      "em": "2026-11-08",
       "fonte": "faperj",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     }
   },
   "paginas": {
@@ -597,6 +597,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-08",
+      "fontes": 14,
+      "linksNovos": 255,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 18,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-07",
       "fontes": 14,
