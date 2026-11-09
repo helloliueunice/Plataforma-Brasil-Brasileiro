@@ -1,8 +1,8 @@
 {
-  "geradoEm": "2026-11-08",
+  "geradoEm": "2026-11-09",
   "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas",
   "atualizacaoBase": {
-    "data_ultima_atualizacao": "2026-11-08T11:24:39"
+    "data_ultima_atualizacao": "2026-11-09T11:25:21"
   },
   "editais": [
     {
@@ -37,7 +37,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260003.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56851",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -81,7 +81,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624420260019.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56879",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Fundação de Apoio, devidamente credenciada na UFRGS como fundação de apoio, nos termos daDecisão 049/2014, de 10 de janeiro de 2014, do egrégio Conselho Universitário da UFRGS.Fundação de apoio devida"
@@ -129,7 +129,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624420260021.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56882",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Fundação de Apoio, devidamente credenciada na UFRGS como fundação de apoio, nos termos daDecisão 049/2014, de 10 de janeiro de 2014, do egrégio Conselho Universitário da UFRGS.Fundação de apoio devida"
@@ -177,7 +177,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624420260018.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56877",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Fundação de Apoio, devidamente credenciada na UFRGS como fundação de apoio, nos termos daDecisão 049/2014, de 10 de janeiro de 2014, do egrégio Conselho Universitário da UFRGS.Fundação de apoio devida"
@@ -225,7 +225,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624420260020.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56880",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Fundação de Apoio, devidamente credenciada na UFRGS como fundação de apoio, nos termos daDecisão 049/2014, de 10 de janeiro de 2014, do egrégio Conselho Universitário da UFRGS.Fundação de apoio devida"
@@ -273,7 +273,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2800020260010.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56427",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "(A) Informações sobre ações a serem executadas, metas a serem atingidas, indicadores que aferirão o cumprimento das metas e prazos para a execução das ações e para o cumprimento das metas.(B) Descriçã"
@@ -321,7 +321,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 4420520260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56853",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Critérios de seleção descritos no item 7 do Edital do Chamamento Público"
@@ -369,7 +369,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56868",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -413,7 +413,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260002.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55992",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -461,7 +461,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55990",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -509,7 +509,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55995",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -557,7 +557,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 4400020260013.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56755",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "conforme Edital nº 2/2026 - Prospera Amazônia (anexo), nos itens:2. Objetivo do Edital, Público Beneficiário final e incidência territorial;3. Aspectos conceituais e operacionais sobre sociobioeconomi"
@@ -605,7 +605,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260035.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56440",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -649,7 +649,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56045",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -697,7 +697,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260006.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56079",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "As propostas apresentadas no âmbito do Programa Nacional de Estradas Rurais – PRONER serão analisadas e priorizadas conforme os critérios técnicos estabelecidos na Portaria MAPA nº 915, de 1º de junho"
@@ -745,7 +745,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260022.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56156",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Conforme critérios e procedimentos estabelecidos na Instrução Normativa SPOA/SE/MAPA n° 2, de 11 de abril de 2025, são eles: 1) Foco em regiões com menor índice de mecanização agrícola e menor partici"
@@ -793,7 +793,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260018.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56107",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -841,7 +841,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260005.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56046",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -889,7 +889,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260003.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56385",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB), e dos projetos especiais voltados para a inova"
@@ -937,7 +937,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629820260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55941",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Estados e munic?pios que tenham realizado o diagn?stico da sua rede educacional e enviado planejamentos para an?lise do FNDE, por meio do m?dulo PAR - SIMEC, visando a melhoria dos indicadores educaci"
@@ -985,7 +985,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260002.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55966",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB), do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB)"
@@ -1033,7 +1033,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260008.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56876",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes das ações promovidas pela Diretoria de Educação a Distância (DED) da CAPES em parceria com a Secretaria de Educação Básica (SEB) do Ministério da Educação (MEC) para "
@@ -1081,7 +1081,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56386",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB)."
@@ -1129,7 +1129,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55945",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -1174,7 +1174,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260014.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56402",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -1223,7 +1223,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260010.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56398",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -1272,7 +1272,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260016.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56404",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -1321,7 +1321,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260013.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56401",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -1369,7 +1369,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260043.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56721",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -1413,7 +1413,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260044.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56725",
-      "verificadoEm": "2026-11-08",
+      "verificadoEm": "2026-11-09",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
