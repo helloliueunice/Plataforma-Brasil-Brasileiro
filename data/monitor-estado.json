@@ -466,94 +466,94 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18498": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "fapesp",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_05_2026_-_Programa_Pesquisador_Visitante_(PV).pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_06_2026_-_Programa_Pesquisador_Visitante_Em%C3%A9rito_(PVE).pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%B007_2026_Programa_Agro_do_Futuro_%E2%80%93_Tecnologia_e_Soberania_Alimentar_(Foodtechs_e_Agritechs).pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_08_2026_%E2%80%93_Programa_de_Apoio_%C3%A0_Jovem_Cientista_Mulher_Dra_Tatiana_Sampaio.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_09_2026_%E2%80%93_Pr%C3%AAmio_Transforma.RJ_Reconhecimento_%C3%A0_Inova%C3%A7%C3%A3o_%E2%80%93_2026.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_10_2026_%E2%80%93_Programa_Jovens_Talentos.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_11_2026_%E2%80%93_Chamada_P%C3%BAblica_Para_Composi%C3%A7%C3%A3o_de_Listas_Tr%C3%ADplices_Para_o_Conselho_Superior_da_FAPERJ.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_12_2026_Programa_CENTELHA_3_16_jun_2026.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_13_2026_%E2%80%93_Programa_de_Apoio_%C3%A0s_Academias_Nacionais_Sediadas_no_Estado_do_Rio_de_Janeiro.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_14_2026_%E2%80%93_Treinamento_e_Capacita%C3%A7%C3%A3o_T%C3%A9cnica_(TCT).pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA15_2026_%E2%80%93_Programa_Prioridade_Ind%C3%BAstria_RJ_4.0.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_16_2026_%E2%80%93_Ra%C3%ADzes_Estudos_sobre_a_diversidade_%C3%A9tnico-racial_e_religiosa_no_Estado_do_RJ.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_17_2026_%E2%80%93_Programa_de_Apoio_ao_Observat%C3%B3rio_Fluminense_de_Pol%C3%ADticas_Sociais_Carlos_Walter_Porto-Gon%C3%A7alves_da_UFF.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_18_2026_%E2%80%93_Programa_de_Aux%C3%ADlio_%C3%A0_Pesquisa_em_Obesidade_Para_Pesquisadores_CNE-FAPERJ_ou_CNPq_N%C3%ADveis_A_ou_B.pdf": {
-      "em": "2026-11-09",
+      "em": "2026-11-10",
       "fonte": "faperj",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     }
   },
   "paginas": {
@@ -687,6 +687,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-10",
+      "fontes": 14,
+      "linksNovos": 244,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 18,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-09",
       "fontes": 14,
