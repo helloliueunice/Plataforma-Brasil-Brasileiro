@@ -43,37 +43,135 @@ DESCRIPTION:Amanhã: Prazo final — Terra Sol
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1056386-encerramento@fundosbrasil
+UID:edital-1055941-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Ações da Diretoria de Articulação e Inovação em 
- Educação Aberta (DIEA) da Capes - Sistema Uab
-DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
- 4\nValor: valor não informado pela fonte\nQuem pode participar: Governo d
- o estado\nCódigo do programa: 2629120260004. A proposta é cadastrada no 
+SUMMARY:Prazo final: Programa SIMEC/PAR
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262982026000
+ 1\nValor: valor não informado pela fonte\nQuem pode participar: Governo d
+ o estado\nCódigo do programa: 2629820260001. A proposta é cadastrada no 
  Transferegov.br (módulo Discricionárias)\, buscando por esse código. É
   preciso ter cadastro no Transferegov.br e\, para prefeituras e estados\, 
  estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente po
  de receber repasses).\nPágina do edital: https://helloliueunice.github.io
- /Plataforma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-
- inovacao-em-educacao-aberta-diea-1056386/\nConfirme data e horário limite
-  no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
+ /Plataforma-Brasil-Brasileiro/editais/programa-simec-par-1055941/\nConfirm
+ e data e horário limite no edital oficial: https://www.gov.br/transferego
+ v/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-simec-par-1055941/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa SIMEC/PAR
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa SIMEC/PAR
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056079-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - PRONER
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260006\nValor: valor não informado pela fonte\nQuem pode particip
+ ar: Governo do estado\nCódigo do programa: 2200020260006. A proposta é c
+ adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
+ e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
+  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
+  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
+ ice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-es
+ tradas-rurais-proner-1056079/\nConfirme data e horário limite no edital o
+ ficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-nacional-de-estradas-rurais-proner-1056079/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
+ rais - PRONER
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
+  PRONER
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056156-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio à Produç
+ ão Agrícola - PROMAQ
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260022\nValor: valor não informado pela fonte\nQuem pode particip
+ ar: Governo do estado\nCódigo do programa: 2200020260022. A proposta é c
+ adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
+ e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
+  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
+  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
+ ice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-mo
+ dernizacao-e-apoio-a-producao-agricola-promaq-1056156/\nConfirme data e ho
+ rário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-105615
  6/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Modernizaç
+ ão e Apoio à Produção Agrícola - PROMAQ
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Modernização e 
+ Apoio à Produção Agrícola - PROMAQ
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056385-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Ações da Diretoria de Articulação e Inovação em 
+ Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica
+DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
+ 3\nValor: valor não informado pela fonte\nQuem pode participar: Governo d
+ o estado\nCódigo do programa: 2629120260003. A proposta é cadastrada no 
+ Transferegov.br (módulo Discricionárias)\, buscando por esse código. É
+  preciso ter cadastro no Transferegov.br e\, para prefeituras e estados\, 
+ estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente po
+ de receber repasses).\nPágina do edital: https://helloliueunice.github.io
+ /Plataforma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-
+ inovacao-em-educacao-aberta-diea-1056385/\nConfirme data e horário limite
+  no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
+ 5/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
 DESCRIPTION:Faltam 7 dias: Prazo final — Ações da Diretoria de Articula
- ção e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab
+ ção e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovaç
+ ão Tecnológica
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Ações da Diretoria de Articulação 
- e Inovação em Educação Aberta (DIEA) da Capes - Sistema Uab
+ e Inovação em Educação Aberta (DIEA) da Capes - Proeb e Inovação Tec
+ nológica
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -111,41 +209,6 @@ DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(BA) Sup
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1056404-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Infra-Estrutura Básica – SR(RS) Superintendência R
- egional do INCRA no Rio Grande do Sul– Convênio.
-DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
- · Programa Transferegov 2220120260016\nValor: valor não informado pela f
- onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
- 0260016. A proposta é cadastrada no Transferegov.br (módulo Discricioná
- rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
- .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
- ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
- tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
- /infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-10
- 56404/\nConfirme data e horário limite no edital oficial: https://www.gov
- .br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- nfra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056
- 404/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(R
- S) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(RS) Sup
- erintendência Regional do INCRA no Rio Grande do Sul– Convênio.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056721-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
@@ -180,6 +243,42 @@ TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Recursos Hídricos: Água em Quantidad
  e e Qualidade para Sempre — Construção da Barragem Atalaia no Estado d
  o Piauí
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056725-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Desenvolvimento Regional e Ordenamento Territorial —
+  Apoio a Projetos de Desenvolvimento Sustentável Local Integrado
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 2220320260044 · 2317 · (TED 7AADAF SDR/MIDR) · PT 1
+ 5.244.2317.00SX.0001\nValor: valor não informado pela fonte\nQuem pode pa
+ rticipar: Governo do estado\nCódigo do programa: 2220320260044. A propost
+ a é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando p
+ or esse código. É preciso ter cadastro no Transferegov.br e\, para prefe
+ ituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que 
+ mostra se o ente pode receber repasses).\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-s
+ dr-midr-desenvolvimento-regional-e-ordenamento-1056725/\nConfirme data e h
+ orário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
+ 317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Desenvolvimento Regional e Orden
+ amento Territorial — Apoio a Projetos de Desenvolvimento Sustentável Lo
+ cal Integrado
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Desenvolvimento Regional e Ordenamento
+  Territorial — Apoio a Projetos de Desenvolvimento Sustentável Local In
+ tegrado
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

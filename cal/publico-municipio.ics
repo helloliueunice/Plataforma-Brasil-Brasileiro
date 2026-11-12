@@ -111,32 +111,37 @@ DESCRIPTION:Amanhã: Prazo final — Implementação de Infraestrutura Bás
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1055941-encerramento@fundosbrasil
+UID:edital-1056567-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa SIMEC/PAR
-DESCRIPTION:Ministério da Educação · Programa Transferegov 262982026000
- 1\nValor: valor não informado pela fonte\nQuem pode participar: Municípi
- o\nCódigo do programa: 2629820260001. A proposta é cadastrada no Transfe
- regov.br (módulo Discricionárias)\, buscando por esse código. É precis
- o ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar e
- m dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rece
- ber repasses).\nPágina do edital: https://helloliueunice.github.io/Plataf
- orma-Brasil-Brasileiro/editais/programa-simec-par-1055941/\nConfirme data 
- e horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-simec-par-1055941/
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Prazo final: Apoio a Projetos de Desenvolvimento Sustentável Local
+  Integrado
+DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
+ ograma Transferegov 5300020260036 · Ação 00SX\nValor: valor não inform
+ ado pela fonte\nQuem pode participar: Município\nCódigo do programa: 530
+ 0020260036. A proposta é cadastrada no Transferegov.br (módulo Discricio
+ nárias)\, buscando por esse código. É preciso ter cadastro no Transfere
+ gov.br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do 
+ Tesouro Nacional que mostra se o ente pode receber repasses).\nPágina do 
+ edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
+ ais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-105656
+ 7/\nConfirme data e horário limite no edital oficial: https://www.gov.br/
+ transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
+ cao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1056567/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Programa SIMEC/PAR
+DESCRIPTION:Faltam 7 dias: Prazo final — Apoio a Projetos de Desenvolvime
+ nto Sustentável Local Integrado
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Programa SIMEC/PAR
+DESCRIPTION:Amanhã: Prazo final — Apoio a Projetos de Desenvolvimento Su
+ stentável Local Integrado
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -170,72 +175,6 @@ ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
  stas Voluntárias
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:edital-1056079-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - PRONER
-DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
-  2200020260006\nValor: valor não informado pela fonte\nQuem pode particip
- ar: Município\nCódigo do programa: 2200020260006. A proposta é cadastra
- da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
- go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
- dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
- nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
- hub.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-estradas-
- rurais-proner-1056079/\nConfirme data e horário limite no edital oficial:
-  https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-nacional-de-estradas-rurais-proner-1056079/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
- rais - PRONER
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
-  PRONER
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:edital-1056156-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Nacional de Modernização e Apoio à Produç
- ão Agrícola - PROMAQ
-DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
-  2200020260022\nValor: valor não informado pela fonte\nQuem pode particip
- ar: Município\nCódigo do programa: 2200020260022. A proposta é cadastra
- da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
- go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
- dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
- nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
- hub.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-moderniza
- cao-e-apoio-a-producao-agricola-promaq-1056156/\nConfirme data e horário 
- limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-nacional-de-modernizacao-e-apoio-a-producao-agricola-promaq-105615
- 6/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Modernizaç
- ão e Apoio à Produção Agrícola - PROMAQ
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Modernização e 
- Apoio à Produção Agrícola - PROMAQ
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -308,76 +247,38 @@ DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(PR) Sup
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1056676-encerramento@fundosbrasil
+UID:edital-1056404-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento SR(PA)
-  Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(1
- 1)Rs– Convênio.
+SUMMARY:Prazo final: Infra-Estrutura Básica – SR(RS) Superintendência R
+ egional do INCRA no Rio Grande do Sul– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
- · Programa Transferegov 2220120260048\nValor: valor não informado pela f
- onte\nQuem pode participar: Município\nCódigo do programa: 2220120260048
+ · Programa Transferegov 2220120260016\nValor: valor não informado pela f
+ onte\nQuem pode participar: Município\nCódigo do programa: 2220120260016
  . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
   buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
   para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
  cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/foment
- o-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/\nConf
- irme data e horário limite no edital oficial: https://www.gov.br/transfer
- egov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/
+ tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
+ estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/\
+ nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
+ nsferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ nfra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056
+ 404/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário 
- – Investimento SR(PA) Superintendência Regional do INCRA no Estado do R
- io Grande do Sul - SR(11)Rs– Convênio.
+DESCRIPTION:Faltam 7 dias: Prazo final — Infra-Estrutura Básica – SR(R
+ S) Superintendência Regional do INCRA no Rio Grande do Sul– Convênio.
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário – Inv
- estimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Gran
- de do Sul - SR(11)Rs– Convênio.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:edital-1056725-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Desenvolvimento Regional e Ordenamento Territorial —
-  Apoio a Projetos de Desenvolvimento Sustentável Local Integrado
-DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 2220320260044 · 2317 · (TED 7AADAF SDR/MIDR) · PT 1
- 5.244.2317.00SX.0001\nValor: valor não informado pela fonte\nQuem pode pa
- rticipar: Município\nCódigo do programa: 2220320260044. A proposta é ca
- dastrada no Transferegov.br (módulo Discricionárias)\, buscando por esse
-  código. É preciso ter cadastro no Transferegov.br e\, para prefeituras 
- e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra 
- se o ente pode receber repasses).\nPágina do edital: https://helloliueuni
- ce.github.io/Plataforma-Brasil-Brasileiro/editais/2317-ted-7aadaf-sdr-midr
- -desenvolvimento-regional-e-ordenamento-1056725/\nConfirme data e horário
-  limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
- 317-ted-7aadaf-sdr-midr-desenvolvimento-regional-e-ordenamento-1056725/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Desenvolvimento Regional e Orden
- amento Territorial — Apoio a Projetos de Desenvolvimento Sustentável Lo
- cal Integrado
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Desenvolvimento Regional e Ordenamento
-  Territorial — Apoio a Projetos de Desenvolvimento Sustentável Local In
- tegrado
+DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(RS) Sup
+ erintendência Regional do INCRA no Rio Grande do Sul– Convênio.
 END:VALARM
 END:VEVENT
 END:VCALENDAR
