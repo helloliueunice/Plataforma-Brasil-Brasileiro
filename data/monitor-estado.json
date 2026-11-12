@@ -550,14 +550,92 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_18_2026_%E2%80%93_Programa_de_Aux%C3%ADlio_%C3%A0_Pesquisa_em_Obesidade_Para_Pesquisadores_CNE-FAPERJ_ou_CNPq_N%C3%ADveis_A_ou_B.pdf": {
-      "em": "2026-11-10",
+      "em": "2026-11-12",
       "fonte": "faperj",
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
+    },
+    "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-37-2026/chamada-publica-cnpq-N-37-2026": {
+      "em": "2026-11-12",
+      "fonte": "cnpq",
       "resultado": "erro",
       "tentativas": 2
     },
-    "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-37-2026/chamada-publica-cnpq-N-37-2026": {
-      "em": "2026-11-11",
-      "fonte": "cnpq",
+    "https://www.faperj.br/rp/downloads/EDITAL_FAPERJ_N%C2%BA_19_2026_%E2%80%93_Programa_de_Aux%C3%ADlio_%C3%A0_Pesquisa_em_Obesidade_Para_Pesquisadores_JCNE-FAPERJ_ou_CNPq_N%C3%ADveis_C_ou_D.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_20_2026_%E2%80%93_Programa_de_Apoio_ao_Envelhecimento_com_Qualidade_de_Vida_Para_Pesquisadores_CNE-FAPERJ_OU_CNPq_N%C3%ADveis_A_ou_B.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_21_2026_%E2%80%93_Programa_de_Apoio_ao_Envelhecimento_com_Qualidade_de_Vida_Para_Pesquisadores_JCNE-FAPERJ_OU_CNPq_N%C3%ADveis_C_ou_D.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_22_2026_%E2%80%93_Programa_de_Apoio_%C3%A0s_Mudan%C3%A7as_Clim%C3%A1ticas,_Impacto_Ambiental_na_Ind%C3%BAstria_de_Alimentos_e_Difus%C3%A3o_de_Geoci%C3%AAncias.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_23_2026_%E2%80%93_Programa_de_Apoio_ao_Desenvolvimento_e_Valida%C3%A7%C3%A3o_de_Protocolo_Integrado_de_Interven%C3%A7%C3%A3o_em_Sa%C3%BAde_Mental.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_24_2026_%E2%80%93_Programa_de_Apoio_%C3%A0_Escolariza%C3%A7%C3%A3o_Inclusiva_de_Crian%C3%A7as_com_S%C3%ADndrome_Cong%C3%AAnita_do_Zika_V%C3%ADrus.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_25_2026_%E2%80%93_Programa_de_Apoio_ao_Observat%C3%B3rio_de_Educa%C3%A7%C3%A3o_e_Participa%C3%A7%C3%A3o_de_Pessoas_com_Defici%C3%AAncia_na_RFEPCT-RJ.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPPERJ_N%C2%BA_26_2026_%E2%80%93_Bolsa_de_Inova%C3%A7%C3%A3o_Tecnol%C3%B3gica_(INT).pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_27_2026_%E2%80%93_Bolsa_de_Inicia%C3%A7%C3%A3o_Tecnol%C3%B3gica_(IT).pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_30_2026_%E2%80%93_Programa_de_Apoio_a_Projetos_para_Manuten%C3%A7%C3%A3o_de_Biot%C3%A9rios_de_Pesquisa_NB-3.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_31_2026_%E2%80%93_Programa_de_Apoio_%C3%A0_Infraestrutura_de_Biot%C3%A9rios_em_Institui%C3%A7%C3%B5es_de_Ensino_e_Pesquisa_Sediadas_no_Estado_do_Rio_de_Janeiro.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_32_2026_%E2%80%93_Programa_de_Apoio_a_Projetos_de_Pesquisa_na_%C3%81rea_de_Humanidades.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_33_2026_%E2%80%93_Apoio_%C3%A0_Divulga%C3%A7%C3%A3o_Cient%C3%ADfica_e_Populariza%C3%A7%C3%A3o_da_Ci%C3%AAncia_no_Estado_do_Rio_de_Janeiro.pdf": {
+      "em": "2026-11-12",
+      "fonte": "faperj",
       "resultado": "erro",
       "tentativas": 1
     }
@@ -693,6 +771,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-12",
+      "fontes": 14,
+      "linksNovos": 233,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 18,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-11",
       "fontes": 14,
