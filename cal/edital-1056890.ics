@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Implementação Ou Ampliação dos Núcleos de Atenção à Sa
+ úde… — Radar Fomento
+NAME:Implementação Ou Ampliação dos Núcleos de Atenção à Saúde… 
+ — Radar Fomento
+X-WR-CALDESC:Prazos de Implementação Ou Ampliação dos Núcleos de Aten
+ ção à Saúde do Servidor Penitenciário (Nassp) - 2026 (Ministério da 
+ Justiça e Segurança Pública). Confirme sempre no edital oficial.
+DESCRIPTION:Prazos de Implementação Ou Ampliação dos Núcleos de Atenç
+ ão à Saúde do Servidor Penitenciário (Nassp) - 2026 (Ministério da Ju
+ stiça e Segurança Pública). Confirme sempre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056890-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Prazo final: Implementação Ou Ampliação dos Núcleos de Atenç
+ ão à Saúde do Servidor Penitenciário (Nassp) - 2026
+DESCRIPTION:Ministério da Justiça e Segurança Pública · Programa Trans
+ feregov 3000020260030\nValor: valor não informado pela fonte\nQuem pode p
+ articipar: Governo do estado\nCódigo do programa: 3000020260030. A propos
+ ta é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando 
+ por esse código. É preciso ter cadastro no Transferegov.br e\, para pref
+ eituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que
+  mostra se o ente pode receber repasses).\nPágina do edital: https://hell
+ oliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/implementacao-ou
+ -ampliacao-dos-nucleos-de-atencao-a-saude-do-servidor-1056890/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ mplementacao-ou-ampliacao-dos-nucleos-de-atencao-a-saude-do-servidor-10568
+ 90/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Implementação Ou Ampliação d
+ os Núcleos de Atenção à Saúde do Servidor Penitenciário (Nassp) - 20
+ 26
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Implementação Ou Ampliação dos Nú
+ cleos de Atenção à Saúde do Servidor Penitenciário (Nassp) - 2026
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar Fomento//Prazos de editais//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Fomento ao Setor Agropecuário - Proposta Voluntária -… —
+  Radar Fomento
+NAME:Fomento ao Setor Agropecuário - Proposta Voluntária -… — Radar F
+ omento
+X-WR-CALDESC:Prazos de Fomento ao Setor Agropecuário - Proposta Voluntári
+ a - Obras de Fomento (Ministério da Agricultura e Pecuária). Confirme se
+ mpre no edital oficial.
+DESCRIPTION:Prazos de Fomento ao Setor Agropecuário - Proposta Voluntária
+  - Obras de Fomento (Ministério da Agricultura e Pecuária). Confirme sem
+ pre no edital oficial.
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:edital-1056107-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Proposta Voluntária 
+ - Obras de Fomento
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260018\nValor: valor não informado pela fonte\nQuem pode particip
+ ar: Governo do estado\nCódigo do programa: 2200020260018. A proposta é c
+ adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
+ e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
+  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
+  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
+ ice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agrope
+ cuario-proposta-voluntaria-obras-de-fomento-1056107/\nConfirme data e hor
+ ário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário -
+  Proposta Voluntária - Obras de Fomento
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
+ sta Voluntária - Obras de Fomento
+END:VALARM
+END:VEVENT
+END:VCALENDAR

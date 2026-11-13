@@ -13,6 +13,76 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
+UID:edital-1056884-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Prazo final: Programa de Aparelhamento de Espaços de Saúde no Sis
+ tema Prisional (Ubss) - Pnaisp 2026
+DESCRIPTION:Ministério da Justiça e Segurança Pública · Programa Trans
+ feregov 3000020260028\nValor: valor não informado pela fonte\nQuem pode p
+ articipar: Governo do estado\nCódigo do programa: 3000020260028. A propos
+ ta é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando 
+ por esse código. É preciso ter cadastro no Transferegov.br e\, para pref
+ eituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que
+  mostra se o ente pode receber repasses).\nPágina do edital: https://hell
+ oliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-de-apar
+ elhamento-de-espacos-de-saude-no-sistema-prisional-1056884/\nConfirme data
+  e horário limite no edital oficial: https://www.gov.br/transferegov/pt-b
+ r
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-de-aparelhamento-de-espacos-de-saude-no-sistema-prisional-1056884/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa de Aparelhamento de Esp
+ aços de Saúde no Sistema Prisional (Ubss) - Pnaisp 2026
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa de Aparelhamento de Espaços 
+ de Saúde no Sistema Prisional (Ubss) - Pnaisp 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edital-1056890-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Prazo final: Implementação Ou Ampliação dos Núcleos de Atenç
+ ão à Saúde do Servidor Penitenciário (Nassp) - 2026
+DESCRIPTION:Ministério da Justiça e Segurança Pública · Programa Trans
+ feregov 3000020260030\nValor: valor não informado pela fonte\nQuem pode p
+ articipar: Governo do estado\nCódigo do programa: 3000020260030. A propos
+ ta é cadastrada no Transferegov.br (módulo Discricionárias)\, buscando 
+ por esse código. É preciso ter cadastro no Transferegov.br e\, para pref
+ eituras e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que
+  mostra se o ente pode receber repasses).\nPágina do edital: https://hell
+ oliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/implementacao-ou
+ -ampliacao-dos-nucleos-de-atencao-a-saude-do-servidor-1056890/\nConfirme d
+ ata e horário limite no edital oficial: https://www.gov.br/transferegov/p
+ t-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
+ mplementacao-ou-ampliacao-dos-nucleos-de-atencao-a-saude-do-servidor-10568
+ 90/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Implementação Ou Ampliação d
+ os Núcleos de Atenção à Saúde do Servidor Penitenciário (Nassp) - 20
+ 26
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Implementação Ou Ampliação dos Nú
+ cleos de Atenção à Saúde do Servidor Penitenciário (Nassp) - 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:edital-110-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20270304

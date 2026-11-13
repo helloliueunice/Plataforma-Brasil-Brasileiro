@@ -2543,11 +2543,11 @@
       ],
       "modalidade": "Termo de compromisso",
       "publico": [
-        "estado"
+        "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "AM",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AM. Confira no programa antes de propor.",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2560,7 +2560,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629820260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55941",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Estados e munic?pios que tenham realizado o diagn?stico da sua rede educacional e enviado planejamentos para an?lise do FNDE, por meio do m?dulo PAR - SIMEC, visando a melhoria dos indicadores educaci"
@@ -2594,8 +2594,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MT",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
+      "ufCadastro": "SE",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SE. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2608,7 +2608,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55945",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -2638,8 +2638,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RO",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RO. Confira no programa antes de propor.",
+      "ufCadastro": "ES",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica ES. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2652,7 +2652,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260002.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55966",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB), do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB)"
@@ -2714,7 +2714,8 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "5300020260001",
-      "objeto": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção"
+      "objeto": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção",
+      "arquivoSaiuEm": "2026-11-13"
     },
     "1055992": {
       "id": 1055992,
@@ -2734,8 +2735,8 @@
         "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "BA",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica BA. Confira no programa antes de propor.",
+      "ufCadastro": "MT",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2748,7 +2749,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260002.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55992",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -2782,8 +2783,8 @@
         "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "AP",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AP. Confira no programa antes de propor.",
+      "ufCadastro": "RO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RO. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2796,7 +2797,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55995",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -2858,7 +2859,8 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260004",
-      "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de ações de custeio e investimentos em infraestrutura, capacitação, insumos, máquinas e equipamentos. As ações contempladas incluem: Custeio de atividades agropecuárias, por meio do financiamento de: Realização de eventos técnicos e promocionais; Programas de capacitação para produtores; Aquisição de insumos agropecuários. Aquisição de máquinas e equipamentos agrícolas e agroindustriais, com foco no fortalecimento da produção, transformação, comercialização e distribuição de produtos, "
+      "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de ações de custeio e investimentos em infraestrutura, capacitação, insumos, máquinas e equipamentos. As ações contempladas incluem: Custeio de atividades agropecuárias, por meio do financiamento de: Realização de eventos técnicos e promocionais; Programas de capacitação para produtores; Aquisição de insumos agropecuários. Aquisição de máquinas e equipamentos agrícolas e agroindustriais, com foco no fortalecimento da produção, transformação, comercialização e distribuição de produtos, ",
+      "arquivoSaiuEm": "2026-11-13"
     },
     "1056046": {
       "id": 1056046,
@@ -2878,8 +2880,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MT",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
+      "ufCadastro": "AP",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AP. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2892,7 +2894,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260005.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56046",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -2954,7 +2956,8 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260006",
-      "objeto": "O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis"
+      "objeto": "O Programa Nacional de Estradas Rurais – PRONER foi originalmente instituído pela Portaria MAPA nº 777, de 25 de fevereiro de 2025. Posteriormente, a referida norma foi revogada pela Portaria MAPA nº 915, de 1º de junho de 2026, atualmente vigente, que reinstiuiu o Programa no âmbito do Ministério da Agricultura e Pecuária e estabeleceu novas diretrizes para o fomento, a execução e a gestão de intervenções em vias rurais. Nos termos da regulamentação vigente, a Secretaria-Executiva do MAPA atua como órgão gestor nacional do Programa, cabendo à Subsecretaria de Planejamento, Orçamento e Adminis",
+      "arquivoSaiuEm": "2026-11-13"
     },
     "1056107": {
       "id": 1056107,
@@ -2974,8 +2977,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "AC",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2988,7 +2991,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260018.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56107",
-      "verificadoEm": "2026-11-05",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -3002,8 +3005,7 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2200020260018",
-      "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor",
-      "arquivoSaiuEm": "2026-11-10"
+      "objeto": "O programa tem como objetivo principal o apoio e incentivo ao desenvolvimento do setor agropecuário, por meio de investimentos em infraestrutura. As ações contempladas incluem: Execução de obras e serviços de engenharia civil, incluindo: Construções e ampliações de edificações de interesse coletivo voltadas à agropecuária; Reformas de estruturas existentes; Obras de irrigação e outras intervenções de infraestrutura rural. Obras de Fomento à agroindústria, por meio do incentivo à transformação e beneficiamento de produtos agropecuários (de origem vegetal ou animal), com foco na geração de valor"
     },
     "1056156": {
       "id": 1056156,
@@ -3020,11 +3022,11 @@
       ],
       "modalidade": "Termo de compromisso",
       "publico": [
-        "estado"
+        "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "PR",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PR. Confira no programa antes de propor.",
+      "ufCadastro": "RJ",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RJ. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3037,7 +3039,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260022.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56156",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Conforme critérios e procedimentos estabelecidos na Instrução Normativa SPOA/SE/MAPA n° 2, de 11 de abril de 2025, são eles: 1) Foco em regiões com menor índice de mecanização agrícola e menor partici"
@@ -3068,11 +3070,11 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "estado"
+        "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MT",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
+      "ufCadastro": "PI",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PI. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3085,7 +3087,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260003.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56385",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB), e dos projetos especiais voltados para a inova"
@@ -3116,11 +3118,11 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "osc"
+        "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RN",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RN. Confira no programa antes de propor.",
+      "ufCadastro": "RJ",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RJ. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3128,12 +3130,12 @@
       "publicadoEm": "2026-03-12",
       "abertura": "2026-03-10",
       "encerramento": "2026-12-31",
-      "prazoNota": "Código do programa: 2629120260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
+      "prazoNota": "Código do programa: 2629120260004. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
       "resumo": "Fomentar exclusivamente as ações promovidas pela Diretoria de Articulação e Inovação em Educação Aberta (DIEA) da Capes, especialmente o fomento às atividades da rede de instituições públicas de ensino superior integrantes do Sistema Universidade Aberta do Brasil - UAB.",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56386",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB)."
@@ -3213,7 +3215,7 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "estado"
       ],
       "abrangencia": "SP",
       "ufs": [
@@ -3231,7 +3233,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260013.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56401",
-      "verificadoEm": "2026-11-07",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -3262,7 +3264,7 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "estado"
       ],
       "abrangencia": "PR",
       "ufs": [
@@ -3280,7 +3282,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260014.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56402",
-      "verificadoEm": "2026-11-06",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -3363,8 +3365,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "PR",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PR. Confira no programa antes de propor.",
+      "ufCadastro": "CE",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica CE. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3377,7 +3379,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2800020260010.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56427",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "(A) Informações sobre ações a serem executadas, metas a serem atingidas, indicadores que aferirão o cumprimento das metas e prazos para a execução das ações e para o cumprimento das metas.(B) Descriçã"
@@ -3452,11 +3454,11 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "SE",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SE. Confira no programa antes de propor.",
+      "ufCadastro": "MG",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MG. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3464,12 +3466,12 @@
       "publicadoEm": "2026-05-15",
       "abertura": "2026-05-15",
       "encerramento": "2026-11-30",
-      "prazoNota": "Código do programa: 5300020260036. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "prazoNota": "Código do programa: 5300020260036. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260036.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56567",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -3514,7 +3516,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260048.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56676",
-      "verificadoEm": "2026-11-10",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -3528,8 +3530,7 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2220120260048",
-      "objeto": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural.",
-      "arquivoSaiuEm": "2026-11-12"
+      "objeto": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural."
     },
     "1056721": {
       "id": 1056721,
@@ -3590,7 +3591,7 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "estado"
+        "municipio"
       ],
       "abrangencia": "Não informada",
       "ufCadastro": "AL",
@@ -3607,7 +3608,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220320260044.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56725",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -3734,8 +3735,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RO",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RO. Confira no programa antes de propor.",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3748,7 +3749,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260003.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56851",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -3778,8 +3779,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "SC",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SC. Confira no programa antes de propor.",
+      "ufCadastro": "RJ",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RJ. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3792,7 +3793,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 4420520260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56853",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Critérios de seleção descritos no item 7 do Edital do Chamamento Público"
@@ -3826,8 +3827,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "GO",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica GO. Confira no programa antes de propor.",
+      "ufCadastro": "RJ",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RJ. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3840,7 +3841,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56868",
-      "verificadoEm": "2026-11-10",
+      "verificadoEm": "2026-11-13",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -3919,8 +3920,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "SE",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SE. Confira no programa antes de propor.",
+      "ufCadastro": "CE",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica CE. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3933,7 +3934,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260008.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56876",
-      "verificadoEm": "2026-11-12",
+      "verificadoEm": "2026-11-13",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes das ações promovidas pela Diretoria de Educação a Distância (DED) da CAPES em parceria com a Secretaria de Educação Básica (SEB) do Ministério da Educação (MEC) para "
@@ -4140,6 +4141,102 @@
       "origem": "transferegov",
       "codigoPrograma": "2624420260021",
       "objeto": "Execução do Projeto, conforme Plano de Trabalho aprovado pelo órgão financiador e pela UFRGS a serexecutado por uma fundação de apoio - Serviços de Terceiros – Pessoa Jurídica."
+    },
+    "1056884": {
+      "id": 1056884,
+      "numero": "Programa Transferegov 3000020260028",
+      "titulo": "Programa de Aparelhamento de Espaços de Saúde no Sistema Prisional (Ubss) - Pnaisp 2026",
+      "instituicao": "Ministério da Justiça e Segurança Pública",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Saúde",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "estado"
+      ],
+      "abrangencia": "Não informada",
+      "ufCadastro": "MT",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-11-12",
+      "abertura": "2026-11-13",
+      "encerramento": "2026-11-27",
+      "prazoNota": "Código do programa: 3000020260028. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Objetivo Geral: Fortalecer ações assistenciais à saúde das pessoas privadas de liberdade do sistema penitenciário dos Estados e do Distrito Federal por meio do aparelhamento dos espaços de saúde prisional das unidades básicas de saúde no âmbito das unidades penais.Objetivos Específicos: Viabilizar o aparelhamento dos espaços de saúde prisional em todas as unidades penais das Unidades Federativas; Viabilizar a aquisição de insumos de saúde de consumo diretamente relacionados às ações e aos serviços de saúde desenvolvidos nos espaços de saúde prisional, indispensáveis à execução do objeto aprova",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 3000020260028.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56884",
+      "verificadoEm": "2026-11-13",
+      "criterios": [
+        {
+          "nome": "O processo de seleção das propostas será realizado em duas etapas: Habilitação e Avaliação de Mérito/Classificação, conduzidas por Comissão de Avaliação previamente instituída por ato da autoridade co"
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "3000020260028",
+      "objeto": "Objetivo Geral: Fortalecer ações assistenciais à saúde das pessoas privadas de liberdade do sistema penitenciário dos Estados e do Distrito Federal por meio do aparelhamento dos espaços de saúde prisional das unidades básicas de saúde no âmbito das unidades penais.Objetivos Específicos: Viabilizar o aparelhamento dos espaços de saúde prisional em todas as unidades penais das Unidades Federativas; Viabilizar a aquisição de insumos de saúde de consumo diretamente relacionados às ações e aos serviços de saúde desenvolvidos nos espaços de saúde prisional, indispensáveis à execução do objeto aprova"
+    },
+    "1056890": {
+      "id": 1056890,
+      "numero": "Programa Transferegov 3000020260030",
+      "titulo": "Implementação Ou Ampliação dos Núcleos de Atenção à Saúde do Servidor Penitenciário (Nassp) - 2026",
+      "instituicao": "Ministério da Justiça e Segurança Pública",
+      "agencia": null,
+      "procedencia": "nacional",
+      "tema": "Saúde",
+      "tags": [
+        "Transferegov",
+        "Transferência voluntária",
+        "Convênio"
+      ],
+      "modalidade": "Convênio",
+      "publico": [
+        "estado"
+      ],
+      "abrangencia": "Não informada",
+      "ufCadastro": "ES",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica ES. Confira no programa antes de propor.",
+      "moeda": "BRL",
+      "valorMax": null,
+      "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
+      "contrapartida": "Conforme a Lei de Diretrizes Orçamentárias (LDO) e as regras do programa",
+      "publicadoEm": "2026-11-12",
+      "abertura": "2026-11-14",
+      "encerramento": "2026-11-30",
+      "prazoNota": "Código do programa: 3000020260030. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "resumo": "Objetivo Geral:Fortalecer ações de proteção à saúde e qualidade de vida do servidor do sistema penitenciário dos Estados e do Distrito Federal por meio da Implementação ou Ampliação dos Núcleos de Atenção à Saúde do Servidor Penitenciário (NASSP) e estruturas congêneres.Objetivos Específicos:Operacionalizar o NASSP em todas as Unidades Federativas; Fortalecer e aprimorar as ações de promoção de saúde e qualidade de vida no trabalho do servidor do sistema penitenciário; Coordenar e articular ações de promoção e proteção à saúde dos servidores penitenciários junto à rede de saúde pública, estabe",
+      "link": "https://www.gov.br/transferegov/pt-br",
+      "linkNota": "No Transferegov.br, procure o programa pelo código 3000020260030.",
+      "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56890",
+      "verificadoEm": "2026-11-13",
+      "criterios": [
+        {
+          "nome": "O processo de seleção das propostas será realizado em duas etapas: Habilitação e Classificação, conforme item 8 do Edital."
+        }
+      ],
+      "docsExtras": [
+        "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
+      ],
+      "fonteRecurso": "publico",
+      "tipoValor": "nao-informado",
+      "fluxoContinuo": false,
+      "origem": "transferegov",
+      "codigoPrograma": "3000020260030",
+      "objeto": "Objetivo Geral:Fortalecer ações de proteção à saúde e qualidade de vida do servidor do sistema penitenciário dos Estados e do Distrito Federal por meio da Implementação ou Ampliação dos Núcleos de Atenção à Saúde do Servidor Penitenciário (NASSP) e estruturas congêneres.Objetivos Específicos:Operacionalizar o NASSP em todas as Unidades Federativas; Fortalecer e aprimorar as ações de promoção de saúde e qualidade de vida no trabalho do servidor do sistema penitenciário; Coordenar e articular ações de promoção e proteção à saúde dos servidores penitenciários junto à rede de saúde pública, estabe"
     }
   }
 }

@@ -112,38 +112,6 @@ DESCRIPTION:Amanhã: Prazo final — Implementação de Infraestrutura Bás
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1056079-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - PRONER
-DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
-  2200020260006\nValor: valor não informado pela fonte\nQuem pode particip
- ar: Governo do estado\nCódigo do programa: 2200020260006. A proposta é c
- adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
- e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
-  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
-  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-es
- tradas-rurais-proner-1056079/\nConfirme data e horário limite no edital o
- ficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
- rograma-nacional-de-estradas-rurais-proner-1056079/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
- rais - PRONER
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
-  PRONER
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056398-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
@@ -186,15 +154,15 @@ SUMMARY:Prazo final: Infra-Estrutura Básica – SR(SP) Superintendência R
  egional do INCRA de São Paulo– Convênio
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260013\nValor: valor não informado pela f
- onte\nQuem pode participar: Município\nCódigo do programa: 2220120260013
- . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
-  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
-  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
- cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/\
- nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
- nsferegov/pt-br
+ onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
+ 0260013. A proposta é cadastrada no Transferegov.br (módulo Discricioná
+ rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
+ .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
+ ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
+ tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
+ /infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-10
+ 56401/\nConfirme data e horário limite no edital oficial: https://www.gov
+ .br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
  nfra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056
  401/
@@ -221,15 +189,15 @@ SUMMARY:Prazo final: Infra-Estrutura Básica – SR(PR) Superintendência R
  egional do INCRA no Paraná– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260014\nValor: valor não informado pela f
- onte\nQuem pode participar: Município\nCódigo do programa: 2220120260014
- . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
-  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
-  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
- cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/\nCon
- firme data e horário limite no edital oficial: https://www.gov.br/transfe
- regov/pt-br
+ onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
+ 0260014. A proposta é cadastrada no Transferegov.br (módulo Discricioná
+ rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
+ .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
+ ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
+ tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
+ /infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-105640
+ 2/\nConfirme data e horário limite no edital oficial: https://www.gov.br/
+ transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
  nfra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/
 TRANSP:TRANSPARENT
