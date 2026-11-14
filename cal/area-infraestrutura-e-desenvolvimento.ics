@@ -17,67 +17,6 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:edital-1056879-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261113
-DTEND;VALUE=DATE:20261114
-SUMMARY:Prazo final: Observatório das Migrações\, Mobilidades e Fronteir
- as do Sul (Obmisul)
-DESCRIPTION:Ministério da Educação · Programa Transferegov 262442026001
- 9\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
- iação\nCódigo do programa: 2624420260019. A proposta é cadastrada no T
- ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/observatorio-das-
- migracoes-mobilidades-e-fronteiras-do-sul-obmisul-1056879/\nConfirme data 
- e horário limite no edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/o
- bservatorio-das-migracoes-mobilidades-e-fronteiras-do-sul-obmisul-1056879/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Observatório das Migrações\, 
- Mobilidades e Fronteiras do Sul (Obmisul)
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Observatório das Migrações\, Mobili
- dades e Fronteiras do Sul (Obmisul)
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:edital-1056880-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261113
-DTEND;VALUE=DATE:20261114
-SUMMARY:Prazo final: Caminhos Seguros: Urbanismo Tático Ufrgs & Ufcspa
-DESCRIPTION:Ministério da Educação · Programa Transferegov 262442026002
- 0\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
- iação\nCódigo do programa: 2624420260020. A proposta é cadastrada no T
- ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
- preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
- liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/caminhos-seguros-
- urbanismo-tatico-ufrgs-ufcspa-1056880/\nConfirme data e horário limite no
-  edital oficial: https://www.gov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/c
- aminhos-seguros-urbanismo-tatico-ufrgs-ufcspa-1056880/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Caminhos Seguros: Urbanismo Tát
- ico Ufrgs & Ufcspa
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Caminhos Seguros: Urbanismo Tático Uf
- rgs & Ufcspa
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1055995-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
