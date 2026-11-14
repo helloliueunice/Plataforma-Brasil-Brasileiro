@@ -369,40 +369,6 @@ DESCRIPTION:Amanhã: Prazo final — Rotas de Integração Nacional
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1055995-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261130
-DTEND;VALUE=DATE:20261201
-SUMMARY:Prazo final: Implementação de Infraestrutura Básica nos Municíp
- ios da Região do Calha Norte
-DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
- ograma Transferegov 5300020260004 · Ação 1211\nValor: valor não inform
- ado pela fonte\nQuem pode participar: Município\nCódigo do programa: 530
- 0020260004. A proposta é cadastrada no Transferegov.br (módulo Discricio
- nárias)\, buscando por esse código. É preciso ter cadastro no Transfere
- gov.br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do 
- Tesouro Nacional que mostra se o ente pode receber repasses).\nPágina do 
- edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/edit
- ais/acao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-105
- 5995/\nConfirme data e horário limite no edital oficial: https://www.gov.
- br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
- cao-1211-implementacao-de-infraestrutura-basica-nos-municipios-da-1055995/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Implementação de Infraestrutur
- a Básica nos Municípios da Região do Calha Norte
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Implementação de Infraestrutura Bás
- ica nos Municípios da Região do Calha Norte
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056567-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261130
@@ -411,13 +377,15 @@ SUMMARY:Prazo final: Apoio a Projetos de Desenvolvimento Sustentável Local
   Integrado
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 5300020260036 · Ação 00SX\nValor: valor não inform
- ado pela fonte\nQuem pode participar: ONG/associação\nCódigo do program
- a: 5300020260036. A proposta é cadastrada no Transferegov.br (módulo Dis
- cricionárias)\, buscando por esse código. É preciso ter cadastro no Tra
- nsferegov.br.\nPágina do edital: https://helloliueunice.github.io/Platafo
- rma-Brasil-Brasileiro/editais/acao-00sx-apoio-a-projetos-de-desenvolviment
- o-sustentavel-local-1056567/\nConfirme data e horário limite no edital of
- icial: https://www.gov.br/transferegov/pt-br
+ ado pela fonte\nQuem pode participar: Governo do estado\nCódigo do progra
+ ma: 5300020260036. A proposta é cadastrada no Transferegov.br (módulo Di
+ scricionárias)\, buscando por esse código. É preciso ter cadastro no Tr
+ ansferegov.br e\, para prefeituras e estados\, estar em dia no CAUC (servi
+ ço do Tesouro Nacional que mostra se o ente pode receber repasses).\nPág
+ ina do edital: https://helloliueunice.github.io/Plataforma-Brasil-Brasilei
+ ro/editais/acao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local
+ -1056567/\nConfirme data e horário limite no edital oficial: https://www.
+ gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  cao-00sx-apoio-a-projetos-de-desenvolvimento-sustentavel-local-1056567/
 TRANSP:TRANSPARENT
@@ -938,6 +906,39 @@ DESCRIPTION:Amanhã: Prazo final — Ações da Diretoria de Articulação
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:edital-1056045-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Propostas Voluntária
+ s
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260004\nValor: valor não informado pela fonte\nQuem pode particip
+ ar: Governo do estado\nCódigo do programa: 2200020260004. A proposta é c
+ adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
+ e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
+  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
+  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
+ ice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agrope
+ cuario-propostas-voluntarias-1056045/\nConfirme data e horário limite no 
+ edital oficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
+ omento-ao-setor-agropecuario-propostas-voluntarias-1056045/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário -
+  Propostas Voluntárias
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
+ stas Voluntárias
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:edital-1056046-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
@@ -971,6 +972,38 @@ DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário - Propo
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:edital-1056079-encerramento@fundosbrasil
+DTSTAMP:20261031T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Prazo final: Programa Nacional de Estradas Rurais - PRONER
+DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
+  2200020260006\nValor: valor não informado pela fonte\nQuem pode particip
+ ar: Governo do estado\nCódigo do programa: 2200020260006. A proposta é c
+ adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
+ e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
+  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
+  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
+ ice.github.io/Plataforma-Brasil-Brasileiro/editais/programa-nacional-de-es
+ tradas-rurais-proner-1056079/\nConfirme data e horário limite no edital o
+ ficial: https://www.gov.br/transferegov/pt-br
+URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/p
+ rograma-nacional-de-estradas-rurais-proner-1056079/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:Faltam 7 dias: Prazo final — Programa Nacional de Estradas Ru
+ rais - PRONER
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Amanhã: Prazo final — Programa Nacional de Estradas Rurais -
+  PRONER
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:edital-1056107-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
@@ -979,14 +1012,14 @@ SUMMARY:Prazo final: Fomento ao Setor Agropecuário - Proposta Voluntária
  - Obras de Fomento
 DESCRIPTION:Ministério da Agricultura e Pecuária · Programa Transferegov
   2200020260018\nValor: valor não informado pela fonte\nQuem pode particip
- ar: Governo do estado\nCódigo do programa: 2200020260018. A proposta é c
- adastrada no Transferegov.br (módulo Discricionárias)\, buscando por ess
- e código. É preciso ter cadastro no Transferegov.br e\, para prefeituras
-  e estados\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra
-  se o ente pode receber repasses).\nPágina do edital: https://helloliueun
- ice.github.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agrope
- cuario-proposta-voluntaria-obras-de-fomento-1056107/\nConfirme data e hor
- ário limite no edital oficial: https://www.gov.br/transferegov/pt-br
+ ar: Município\nCódigo do programa: 2200020260018. A proposta é cadastra
+ da no Transferegov.br (módulo Discricionárias)\, buscando por esse códi
+ go. É preciso ter cadastro no Transferegov.br e\, para prefeituras e esta
+ dos\, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o e
+ nte pode receber repasses).\nPágina do edital: https://helloliueunice.git
+ hub.io/Plataforma-Brasil-Brasileiro/editais/fomento-ao-setor-agropecuario-
+ proposta-voluntaria-obras-de-fomento-1056107/\nConfirme data e horário li
+ mite no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
  omento-ao-setor-agropecuario-proposta-voluntaria-obras-de-fomento-1056107/
 TRANSP:TRANSPARENT
@@ -1045,15 +1078,15 @@ DTEND;VALUE=DATE:20270101
 SUMMARY:Prazo final: Ações da Diretoria de Articulação e Inovação em 
  Educação Aberta (DIEA) da Capes - Proeb e Inovação Tecnológica
 DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
- 3\nValor: valor não informado pela fonte\nQuem pode participar: Municípi
- o\nCódigo do programa: 2629120260003. A proposta é cadastrada no Transfe
- regov.br (módulo Discricionárias)\, buscando por esse código. É precis
- o ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar e
- m dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rece
- ber repasses).\nPágina do edital: https://helloliueunice.github.io/Plataf
- orma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-inovaca
- o-em-educacao-aberta-diea-1056385/\nConfirme data e horário limite no edi
- tal oficial: https://www.gov.br/transferegov/pt-br
+ 3\nValor: valor não informado pela fonte\nQuem pode participar: Governo d
+ o estado\nCódigo do programa: 2629120260003. A proposta é cadastrada no 
+ Transferegov.br (módulo Discricionárias)\, buscando por esse código. É
+  preciso ter cadastro no Transferegov.br e\, para prefeituras e estados\, 
+ estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente po
+ de receber repasses).\nPágina do edital: https://helloliueunice.github.io
+ /Plataforma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-
+ inovacao-em-educacao-aberta-diea-1056385/\nConfirme data e horário limite
+  no edital oficial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
  5/
@@ -1081,15 +1114,14 @@ DTEND;VALUE=DATE:20270101
 SUMMARY:Prazo final: Ações da Diretoria de Articulação e Inovação em 
  Educação Aberta (DIEA) da Capes - Sistema Uab
 DESCRIPTION:Ministério da Educação · Programa Transferegov 262912026000
- 4\nValor: valor não informado pela fonte\nQuem pode participar: Governo d
- o estado\nCódigo do programa: 2629120260004. A proposta é cadastrada no 
- Transferegov.br (módulo Discricionárias)\, buscando por esse código. É
-  preciso ter cadastro no Transferegov.br e\, para prefeituras e estados\, 
- estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente po
- de receber repasses).\nPágina do edital: https://helloliueunice.github.io
- /Plataforma-Brasil-Brasileiro/editais/acoes-da-diretoria-de-articulacao-e-
- inovacao-em-educacao-aberta-diea-1056386/\nConfirme data e horário limite
-  no edital oficial: https://www.gov.br/transferegov/pt-br
+ 4\nValor: valor não informado pela fonte\nQuem pode participar: ONG/assoc
+ iação\nCódigo do programa: 2629120260004. A proposta é cadastrada no T
+ ransferegov.br (módulo Discricionárias)\, buscando por esse código. É 
+ preciso ter cadastro no Transferegov.br.\nPágina do edital: https://hello
+ liueunice.github.io/Plataforma-Brasil-Brasileiro/editais/acoes-da-diretori
+ a-de-articulacao-e-inovacao-em-educacao-aberta-diea-1056386/\nConfirme dat
+ a e horário limite no edital oficial: https://www.gov.br/transferegov/pt-
+ br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/a
  coes-da-diretoria-de-articulacao-e-inovacao-em-educacao-aberta-diea-105638
  6/
@@ -1116,15 +1148,15 @@ SUMMARY:Prazo final: Infra-Estrutura Básica – SR(BA) Superintendência R
  egional do INCRA na Bahia– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260010\nValor: valor não informado pela f
- onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
- 0260010. A proposta é cadastrada no Transferegov.br (módulo Discricioná
- rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
- .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
- ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
- tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
- /infra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-105639
- 8/\nConfirme data e horário limite no edital oficial: https://www.gov.br/
- transferegov/pt-br
+ onte\nQuem pode participar: Município\nCódigo do programa: 2220120260010
+ . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
+  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
+  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
+ cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
+ tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
+ estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/\nCon
+ firme data e horário limite no edital oficial: https://www.gov.br/transfe
+ regov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
  nfra-estrutura-basica-sr-ba-superintendencia-regional-do-incra-na-1056398/
 TRANSP:TRANSPARENT
@@ -1150,15 +1182,15 @@ SUMMARY:Prazo final: Infra-Estrutura Básica – SR(SP) Superintendência R
  egional do INCRA de São Paulo– Convênio
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260013\nValor: valor não informado pela f
- onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
- 0260013. A proposta é cadastrada no Transferegov.br (módulo Discricioná
- rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
- .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
- ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
- tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
- /infra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-10
- 56401/\nConfirme data e horário limite no edital oficial: https://www.gov
- .br/transferegov/pt-br
+ onte\nQuem pode participar: Município\nCódigo do programa: 2220120260013
+ . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
+  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
+  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
+ cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
+ tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
+ estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056401/\
+ nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
+ nsferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
  nfra-estrutura-basica-sr-sp-superintendencia-regional-do-incra-de-sao-1056
  401/
@@ -1185,15 +1217,15 @@ SUMMARY:Prazo final: Infra-Estrutura Básica – SR(PR) Superintendência R
  egional do INCRA no Paraná– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260014\nValor: valor não informado pela f
- onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
- 0260014. A proposta é cadastrada no Transferegov.br (módulo Discricioná
- rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
- .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
- ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
- tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
- /infra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-105640
- 2/\nConfirme data e horário limite no edital oficial: https://www.gov.br/
- transferegov/pt-br
+ onte\nQuem pode participar: Município\nCódigo do programa: 2220120260014
+ . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
+  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
+  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
+ cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
+ tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
+ estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/\nCon
+ firme data e horário limite no edital oficial: https://www.gov.br/transfe
+ regov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
  nfra-estrutura-basica-sr-pr-superintendencia-regional-do-incra-no-1056402/
 TRANSP:TRANSPARENT
@@ -1219,15 +1251,15 @@ SUMMARY:Prazo final: Infra-Estrutura Básica – SR(RS) Superintendência R
  egional do INCRA no Rio Grande do Sul– Convênio.
 DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
  · Programa Transferegov 2220120260016\nValor: valor não informado pela f
- onte\nQuem pode participar: Município\nCódigo do programa: 2220120260016
- . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
-  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
-  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
- cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/infra-
- estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056404/\
- nConfirme data e horário limite no edital oficial: https://www.gov.br/tra
- nsferegov/pt-br
+ onte\nQuem pode participar: Governo do estado\nCódigo do programa: 222012
+ 0260016. A proposta é cadastrada no Transferegov.br (módulo Discricioná
+ rias)\, buscando por esse código. É preciso ter cadastro no Transferegov
+ .br e\, para prefeituras e estados\, estar em dia no CAUC (serviço do Tes
+ ouro Nacional que mostra se o ente pode receber repasses).\nPágina do edi
+ tal: https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais
+ /infra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-10
+ 56404/\nConfirme data e horário limite no edital oficial: https://www.gov
+ .br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
  nfra-estrutura-basica-sr-rs-superintendencia-regional-do-incra-no-rio-1056
  404/
@@ -1246,43 +1278,6 @@ DESCRIPTION:Amanhã: Prazo final — Infra-Estrutura Básica – SR(RS) Sup
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:edital-1056676-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261231
-DTEND;VALUE=DATE:20270101
-SUMMARY:Prazo final: Fomento ao Setor Agropecuário – Investimento SR(PA)
-  Superintendência Regional do INCRA no Estado do Rio Grande do Sul - SR(1
- 1)Rs– Convênio.
-DESCRIPTION:Ministério do Desenvolvimento Agrário e Agricultura Familiar 
- · Programa Transferegov 2220120260048\nValor: valor não informado pela f
- onte\nQuem pode participar: Município\nCódigo do programa: 2220120260048
- . A proposta é cadastrada no Transferegov.br (módulo Discricionárias)\,
-  buscando por esse código. É preciso ter cadastro no Transferegov.br e\,
-  para prefeituras e estados\, estar em dia no CAUC (serviço do Tesouro Na
- cional que mostra se o ente pode receber repasses).\nPágina do edital: ht
- tps://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/foment
- o-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/\nConf
- irme data e horário limite no edital oficial: https://www.gov.br/transfer
- egov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/f
- omento-ao-setor-agropecuario-investimento-sr-pa-superintendencia-1056676/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Fomento ao Setor Agropecuário 
- – Investimento SR(PA) Superintendência Regional do INCRA no Estado do R
- io Grande do Sul - SR(11)Rs– Convênio.
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Fomento ao Setor Agropecuário – Inv
- estimento SR(PA) Superintendência Regional do INCRA no Estado do Rio Gran
- de do Sul - SR(11)Rs– Convênio.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056721-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261231
@@ -1291,15 +1286,15 @@ SUMMARY:Prazo final: Recursos Hídricos: Água em Quantidade e Qualidade pa
  ra Sempre — Construção da Barragem Atalaia no Estado do Piauí
 DESCRIPTION:Ministério da Integração e do Desenvolvimento Regional · Pr
  ograma Transferegov 2220320260043 · 2321 · PT 18.544.2321.7G88.0022\nVal
- or: valor não informado pela fonte\nQuem pode participar: Governo do esta
- do\nCódigo do programa: 2220320260043. A proposta é cadastrada no Transf
- eregov.br (módulo Discricionárias)\, buscando por esse código. É preci
- so ter cadastro no Transferegov.br e\, para prefeituras e estados\, estar 
- em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode rec
- eber repasses).\nPágina do edital: https://helloliueunice.github.io/Plata
- forma-Brasil-Brasileiro/editais/2321-recursos-hidricos-agua-em-quantidade-
- e-qualidade-para-sempre-pt-1056721/\nConfirme data e horário limite no ed
- ital oficial: https://www.gov.br/transferegov/pt-br
+ or: valor não informado pela fonte\nQuem pode participar: Município\nCó
+ digo do programa: 2220320260043. A proposta é cadastrada no Transferegov.
+ br (módulo Discricionárias)\, buscando por esse código. É preciso ter 
+ cadastro no Transferegov.br e\, para prefeituras e estados\, estar em dia 
+ no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber re
+ passes).\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
+ rasil-Brasileiro/editais/2321-recursos-hidricos-agua-em-quantidade-e-quali
+ dade-para-sempre-pt-1056721/\nConfirme data e horário limite no edital of
+ icial: https://www.gov.br/transferegov/pt-br
 URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/2
  321-recursos-hidricos-agua-em-quantidade-e-qualidade-para-sempre-pt-105672
  1/
