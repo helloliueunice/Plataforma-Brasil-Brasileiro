@@ -646,86 +646,98 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.faperj.br/rp/downloads/Edital_FAPERJ_N%C2%BA_35_2026_%E2%80%93_Programa_de_Atra%C3%A7%C3%A3o_de_Grupos_de_Pesquisa_do_Cone_Sul.pdf": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "faperj",
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
+    },
+    "https://fapes.es.gov.br/fapes-lanca-edital-inedito-que-apoia-ideias-e-negocios-liderados-por-mulheres-no-espirito-santo": {
+      "em": "2026-11-16",
+      "fonte": "fapes",
       "resultado": "erro",
       "tentativas": 2
     },
-    "https://fapes.es.gov.br/fapes-lanca-edital-inedito-que-apoia-ideias-e-negocios-liderados-por-mulheres-no-espirito-santo": {
-      "em": "2026-11-15",
-      "fonte": "fapes",
-      "resultado": "erro",
-      "tentativas": 1
-    },
     "https://fapes.es.gov.br/sete-pesquisadores-capixabas-sao-aprovados-na-chamada-mobility-confap-italy-2026-e-vao-desenvolver-pesquisas-em-universidades-italianas": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/edital_28_25_publicacao_artigo_tecnico_cientifico_4a_chamada_resultado_preliminar.pdf?v=1794513617106": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/edital_fapes_25_2026_-_ciencia_aberta_capixaba_resultado_final_habilitacao.pdf?v=1794513462208": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/edital_fapes_n_23-2026_-_incubadoras_-_resultado_preliminar_-_habilitacao_e_analise_de_merito.pdf?v=1794513479550": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/edital_fapes_n_28-2026_-_elas_inovam_-lancamento.pdf?v=1794337738426": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/1o-resultado-chamada-mci-mobility-confap-italy-2026.pdf": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/edital_fapes_n_29-2026_-_programa_inovajr_-_lancamento.pdf": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://fapes.es.gov.br/media/Editais/edital_fapes_30_2026_manutencao_de_equipamentos_06nov2026.pdf": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "fapes",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.gov.br/palmares/pt-br/assuntos/noticias-defeso-eleitoral/fundacao-cultural-palmares-abre-selecao-para-ocupacao-cultural-do-espaco-mario-gusmao": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "palmares",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.gov.br/palmares/pt-br/acesso-a-informacao/Como_inscrever_propostas_em_um_edital___Palmares.pdf": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "palmares",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www2.facepe.br/wp-content/uploads/2025/09/2025.09.25-Manual-de-Presta%C3%A7%C3%A3o-de-Contas-FACEPE-1.pdf": {
-      "em": "2026-11-15",
+      "em": "2026-11-16",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www2.facepe.br/wp-content/uploads/2026/11/36_2026_EDITAL_FACEPE_CTI-nos-Museus-de-PE-2027.pdf": {
       "em": "2026-11-15",
       "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://fapesp.br/18515": {
+      "em": "2026-11-16",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-fundo-socioambiental?1dmy&urile=wcm%3apath%3a%2Fbndes_institucional%2Fhome%2Fonde-atuamos%2Fmeio-ambiente%2Fbndes-azul%2Fbndes-corais": {
+      "em": "2026-11-16",
+      "fonte": "bndes-socioambiental",
       "resultado": "erro",
       "tentativas": 1
     }
@@ -861,6 +873,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-16",
+      "fontes": 14,
+      "linksNovos": 223,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 18,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-15",
       "fontes": 14,
