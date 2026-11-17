@@ -13,37 +13,6 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:edital-1056427-encerramento@fundosbrasil
-DTSTAMP:20261031T120000Z
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261117
-SUMMARY:Prazo final: Industrialização da Cadeia Produtiva do Pirarucu
-DESCRIPTION:Ministério do Desenvolvimento\, Indústria\, Comércio e Servi
- ços · Programa Transferegov 2800020260010\nValor: valor não informado p
- ela fonte\nQuem pode participar: ONG/associação\nCódigo do programa: 28
- 00020260010. A proposta é cadastrada no Transferegov.br (módulo Discrici
- onárias)\, buscando por esse código. É preciso ter cadastro no Transfer
- egov.br.\nPágina do edital: https://helloliueunice.github.io/Plataforma-B
- rasil-Brasileiro/editais/industrializacao-da-cadeia-produtiva-do-pirarucu-
- 1056427/\nConfirme data e horário limite no edital oficial: https://www.g
- ov.br/transferegov/pt-br
-URL:https://helloliueunice.github.io/Plataforma-Brasil-Brasileiro/editais/i
- ndustrializacao-da-cadeia-produtiva-do-pirarucu-1056427/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:Faltam 7 dias: Prazo final — Industrialização da Cadeia Pro
- dutiva do Pirarucu
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:Amanhã: Prazo final — Industrialização da Cadeia Produtiva
-  do Pirarucu
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:edital-1056853-encerramento@fundosbrasil
 DTSTAMP:20261031T120000Z
 DTSTART;VALUE=DATE:20261123
