@@ -724,22 +724,94 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/11/36_2026_EDITAL_FACEPE_CTI-nos-Museus-de-PE-2027.pdf": {
-      "em": "2026-11-17",
+      "em": "2026-11-18",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18515": {
-      "em": "2026-11-17",
+      "em": "2026-11-18",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-fundo-socioambiental?1dmy&urile=wcm%3apath%3a%2Fbndes_institucional%2Fhome%2Fonde-atuamos%2Fmeio-ambiente%2Fbndes-azul%2Fbndes-corais": {
-      "em": "2026-11-17",
+      "em": "2026-11-18",
       "fonte": "bndes-socioambiental",
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/Edital_FACEPE_35_2026_PBPG_2027.1.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 2
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/2026.10.22-Pro-Startups-Operacao-Atualizado.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/2026.10.22-DesafiosGov-Atualizado.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/2026.10.22-Cientista-Arretado-Atualizado.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/2026.09.30-Cientista-Arretado.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/11/2026.11.03-Adendo-01-Prorrogacao.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/2026.09.30-Cientista-Arretado-Adendo-01-Monitoramento-Geotecnico-e-Hidrometeorologico.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/09/Edital_30_2026_Redes__CAPES-1.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/10/Edital_FACEPE_30-2026-PDPG-Redes-CAPES-ADENDO_01-1.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/08/Edital_FACEPE___28_2026___APQ_Universal_Final__2_.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/09/ATENCAO-Prorrogacao-do-prazo-de-submissao-APQ-Universal.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/08/2026.08.27-Solano-Trindade.pdf": {
+      "em": "2026-11-18",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
     }
   },
   "paginas": {
@@ -873,6 +945,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-18",
+      "fontes": 14,
+      "linksNovos": 212,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 18,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-17",
       "fontes": 14,
