@@ -355,5 +355,33 @@
     "de": null,
     "para": "Ação 214S - Rotas de Integração Nacional - RP2",
     "em": "2026-11-19"
+  },
+  {
+    "id": 1055995,
+    "campo": "novo",
+    "de": null,
+    "para": "Ação 1211 - Implementação de Infraestrutura Básica nos Municípios da Região do Calha Norte - RP2",
+    "em": "2026-11-20"
+  },
+  {
+    "id": 1056045,
+    "campo": "novo",
+    "de": null,
+    "para": "Fomento ao Setor Agropecuário - Propostas Voluntárias",
+    "em": "2026-11-20"
+  },
+  {
+    "id": 1056107,
+    "campo": "novo",
+    "de": null,
+    "para": "Fomento ao Setor Agropecuário - Proposta Voluntária - Obras de Fomento",
+    "em": "2026-11-20"
+  },
+  {
+    "id": 1056567,
+    "campo": "novo",
+    "de": null,
+    "para": "Ação 00SX - Apoio a Projetos de Desenvolvimento Sustentável Local Integrado - RP2",
+    "em": "2026-11-20"
   }
 ]
