@@ -4214,8 +4214,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "SC",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SC. Confira no programa antes de propor.",
+      "ufCadastro": "MS",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MS. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -4228,7 +4228,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 3000020260030.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56890",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-21",
       "criterios": [
         {
           "nome": "O processo de seleção das propostas será realizado em duas etapas: Habilitação e Classificação, conforme item 8 do Edital."
