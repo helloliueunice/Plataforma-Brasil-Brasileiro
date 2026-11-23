@@ -838,79 +838,97 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/10/2026.10.15-POM-SEPLAG-3.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/11/2026.11.05_Edital_25.2026_Missoes.SEPLAG___Prorrogacao-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/07/2026.07.01-Desafios-Digitais-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/08/2026.08.07-Desafios-Digitais-Ajustado-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/07/2026.07.15-Global-PE-Espanha-Ajustado.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/06/PROFIX_20_2026.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/06/2026.06.07-Espacos-CRIA-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/06/Edital_FACEPE_SNCT-2026.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/05/2026.05.27-Compet-Medio.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/05/Edital-FACEPE-16-2026-APQ-Maes-Cientistas-Pernambucanas_FINAL.docx-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/08/Edital_FACEPE_16-2026-APQ-Maes-Cientistas-Pernambucanas-PRORROGACAO-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/07/Edital-15-2026-FACEPE-FAPESP-Final-1.pdf": {
-      "em": "2026-11-22",
+      "em": "2026-11-23",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/05/2026.04.28-Compet-Superior.pdf": {
       "em": "2026-11-22",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/11/Prorrogacao-Cronograma-Pro-Startups-Operacao.docx.pdf": {
+      "em": "2026-11-23",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/11/2026.11.19_Edital_32.2026___Desafios.GOV___Prorrogacao.pdf": {
+      "em": "2026-11-23",
+      "fonte": "facepe",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/11/2026.11.19_Adendo_01___2__Prorrogacao.pdf": {
+      "em": "2026-11-23",
       "fonte": "facepe",
       "resultado": "erro",
       "tentativas": 1
@@ -1047,6 +1065,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-23",
+      "fontes": 14,
+      "linksNovos": 198,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 26,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-22",
       "fontes": 14,
@@ -1317,14 +1345,6 @@
       "em": "2026-10-31",
       "fontes": 5,
       "linksNovos": 0,
-      "candidatos": 0,
-      "descartados": 0,
-      "erros": 0
-    },
-    {
-      "em": "2026-10-31",
-      "fontes": 5,
-      "linksNovos": 49,
       "candidatos": 0,
       "descartados": 0,
       "erros": 0
