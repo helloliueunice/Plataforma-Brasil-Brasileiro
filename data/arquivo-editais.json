@@ -2546,8 +2546,8 @@
         "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "AL",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor.",
+      "ufCadastro": "SC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SC. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2560,7 +2560,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629820260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55941",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Estados e munic?pios que tenham realizado o diagn?stico da sua rede educacional e enviado planejamentos para an?lise do FNDE, por meio do m?dulo PAR - SIMEC, visando a melhoria dos indicadores educaci"
@@ -2594,8 +2594,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RS",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RS. Confira no programa antes de propor.",
+      "ufCadastro": "AP",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AP. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2608,7 +2608,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260001.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55945",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -2638,8 +2638,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "TO",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor.",
+      "ufCadastro": "PB",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PB. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2652,7 +2652,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260002.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55966",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB), do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB)"
@@ -2735,8 +2735,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "AC",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2749,7 +2749,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260002.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55992",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -2783,8 +2783,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MA",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MA. Confira no programa antes de propor.",
+      "ufCadastro": "MS",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MS. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2797,7 +2797,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=55995",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Existência de dotação orçamentária; disponibilização de limite orçamentário pelos órgãos setoriais responsáveis; atendimento às diretrizes e procedimentos estabelecidos em Portaria e aos princípios da"
@@ -2828,11 +2828,11 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RJ",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RJ. Confira no programa antes de propor.",
+      "ufCadastro": "MG",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MG. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2845,7 +2845,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56045",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -2879,8 +2879,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "PI",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PI. Confira no programa antes de propor.",
+      "ufCadastro": "AC",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AC. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2893,7 +2893,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260005.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56046",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -2927,8 +2927,8 @@
         "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RN",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RN. Confira no programa antes de propor.",
+      "ufCadastro": "ES",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica ES. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2941,7 +2941,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260006.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56079",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "As propostas apresentadas no âmbito do Programa Nacional de Estradas Rurais – PRONER serão analisadas e priorizadas conforme os critérios técnicos estabelecidos na Portaria MAPA nº 915, de 1º de junho"
@@ -2975,8 +2975,8 @@
         "municipio"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MT",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MT. Confira no programa antes de propor.",
+      "ufCadastro": "PE",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PE. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -2989,7 +2989,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2200020260018.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56107",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "A seleção da proposta de trabalho será feita mediante a verificação da concordância do objeto pretendido com o enquadramento do programa, juntamente com a existência de dotação e disponibilidade orçam"
@@ -3072,8 +3072,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MS",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MS. Confira no programa antes de propor.",
+      "ufCadastro": "GO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica GO. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3086,7 +3086,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260003.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56385",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Programa de Pós-Graduação stricto sensu para Qualificação de Professores da Rede Pública da Educação Básica (PROEB), e dos projetos especiais voltados para a inova"
@@ -3117,11 +3117,11 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RS",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RS. Confira no programa antes de propor.",
+      "ufCadastro": "PR",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica PR. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3134,7 +3134,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56386",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes do Sistema Universidade Aberta do Brasil (UAB)."
@@ -3214,7 +3214,7 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "estado"
       ],
       "abrangencia": "SP",
       "ufs": [
@@ -3232,7 +3232,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260013.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56401",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -3263,7 +3263,7 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "estado"
+        "municipio"
       ],
       "abrangencia": "PR",
       "ufs": [
@@ -3281,7 +3281,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260014.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56402",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -3454,11 +3454,11 @@
       ],
       "modalidade": "Convênio",
       "publico": [
-        "municipio"
+        "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "SP",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SP. Confira no programa antes de propor.",
+      "ufCadastro": "AL",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica AL. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3466,12 +3466,12 @@
       "publicadoEm": "2026-05-15",
       "abertura": "2026-05-15",
       "encerramento": "2026-11-30",
-      "prazoNota": "Código do programa: 5300020260036. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br e, para prefeituras e estados, estar em dia no CAUC (serviço do Tesouro Nacional que mostra se o ente pode receber repasses).",
+      "prazoNota": "Código do programa: 5300020260036. A proposta é cadastrada no Transferegov.br (módulo Discricionárias), buscando por esse código. É preciso ter cadastro no Transferegov.br.",
       "resumo": "A Ação atende a projetos para o Desenvolvimento Sustentável constantes no Manual de Ações do MIDR: aquisição de máquinas e equipamentos de apoio à produção; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção; obras de pavimentação de estradas vicinais destinadas à integração com rodovias estaduais e municipais; obras de pavimentação de rodovias estaduais e municipais destinadas ao escoamento produtivo; implantação de infraestrutura produtiva e obras complementares; desenvolvimento e implantação de tecnologias sustentáveis e inovadoras de apoio à produção",
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 5300020260036.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56567",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -3516,7 +3516,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2220120260048.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56676",
-      "verificadoEm": "2026-11-13",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "A Superintendência Regional do Incra no Estado tem autonomia operacional em sua área de jurisdição, sendo de sua competência e responsabilidade julgar a pertinência e a oportunidade acerca da prioriza"
@@ -3530,8 +3530,7 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "2220120260048",
-      "objeto": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural.",
-      "arquivoSaiuEm": "2026-11-14"
+      "objeto": "Promover, incentivar e supervisionar a produção agrícola e pecuária, com o emprego de técnicas que possibilitem conjugar maior produtividade com melhoria da qualidade de vida das famílias assentadas. Inclui, ainda, as ações destinadas a garantir o abastecimento e escoamento de produtos agropecuários e de incentivo ao cooperativismo rural."
     },
     "1056721": {
       "id": 1056721,
@@ -3809,7 +3808,8 @@
       "fluxoContinuo": false,
       "origem": "transferegov",
       "codigoPrograma": "4420520260001",
-      "objeto": "Assegurar a disponibilidade de água em padrões de qualidade e quantidade adequados aos usos múltiplos (como abastecimento humano, dessedentação animal, agricultura e indústria), por meio de infraestrutura adequada, conservação, recuperação e uso racional dos recursos naturais."
+      "objeto": "Assegurar a disponibilidade de água em padrões de qualidade e quantidade adequados aos usos múltiplos (como abastecimento humano, dessedentação animal, agricultura e indústria), por meio de infraestrutura adequada, conservação, recuperação e uso racional dos recursos naturais.",
+      "arquivoSaiuEm": "2026-11-24"
     },
     "1056868": {
       "id": 1056868,
@@ -3829,8 +3829,8 @@
         "osc"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "DF",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica DF. Confira no programa antes de propor.",
+      "ufCadastro": "RN",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RN. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3843,7 +3843,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2624920260004.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56868",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [],
       "docsExtras": [
         "Cadastro de quem vai pedir o recurso atualizado no Transferegov.br"
@@ -3922,8 +3922,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "MS",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MS. Confira no programa antes de propor.",
+      "ufCadastro": "MA",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica MA. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -3936,7 +3936,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 2629120260008.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56876",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "Instituições de ensino partícipes das ações promovidas pela Diretoria de Educação a Distância (DED) da CAPES em parceria com a Secretaria de Educação Básica (SEB) do Ministério da Educação (MEC) para "
@@ -4166,8 +4166,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "RN",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica RN. Confira no programa antes de propor.",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -4180,7 +4180,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 3000020260028.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56884",
-      "verificadoEm": "2026-11-20",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "O processo de seleção das propostas será realizado em duas etapas: Habilitação e Avaliação de Mérito/Classificação, conduzidas por Comissão de Avaliação previamente instituída por ato da autoridade co"
@@ -4214,8 +4214,8 @@
         "estado"
       ],
       "abrangencia": "Não informada",
-      "ufCadastro": "SC",
-      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica SC. Confira no programa antes de propor.",
+      "ufCadastro": "TO",
+      "abrangenciaNota": "A fonte não informa onde o programa vale. O cadastro indica TO. Confira no programa antes de propor.",
       "moeda": "BRL",
       "valorMax": null,
       "valorNota": "Valores, contrapartida e limites por proposta estão nas regras do programa no Transferegov.br.",
@@ -4228,7 +4228,7 @@
       "link": "https://www.gov.br/transferegov/pt-br",
       "linkNota": "No Transferegov.br, procure o programa pelo código 3000020260030.",
       "fonte": "https://api-publica.transferegov.gestao.gov.br/discricionarias/todos-programas?id_programa=56890",
-      "verificadoEm": "2026-11-23",
+      "verificadoEm": "2026-11-24",
       "criterios": [
         {
           "nome": "O processo de seleção das propostas será realizado em duas etapas: Habilitação e Classificação, conforme item 8 do Edital."
