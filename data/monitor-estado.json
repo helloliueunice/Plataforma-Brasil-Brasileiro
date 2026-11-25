@@ -910,94 +910,94 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/05/2026.04.28-Compet-Superior.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/11/Prorrogacao-Cronograma-Pro-Startups-Operacao.docx.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/11/2026.11.19_Edital_32.2026___Desafios.GOV___Prorrogacao.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/11/2026.11.19_Adendo_01___2__Prorrogacao.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
+      "fonte": "facepe",
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
+    },
+    "https://fapesp.br/18531": {
+      "em": "2026-11-25",
+      "fonte": "fapesp",
+      "resultado": "erro",
+      "tentativas": 2
+    },
+    "https://www2.facepe.br/wp-content/uploads/2026/07/Prorrogacao-de-submissao-do-Edital-14.2026-COMPET-Superior-1.pdf": {
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
       "tentativas": 2
     },
-    "https://fapesp.br/18531": {
-      "em": "2026-11-24",
-      "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 1
-    },
-    "https://www2.facepe.br/wp-content/uploads/2026/07/Prorrogacao-de-submissao-do-Edital-14.2026-COMPET-Superior-1.pdf": {
-      "em": "2026-11-24",
-      "fonte": "facepe",
-      "resultado": "erro",
-      "tentativas": 1
-    },
     "https://www.facepe.br/wp-content/uploads/2026/04/Edital-13_2026_PBPG_2026.2.docx-2.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.facepe.br/wp-content/uploads/2026/03/Edital-12-2026-BFP_2026-03-30FNAL-1.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.facepe.br/wp-content/uploads/2026/04/2026.04.06_Global_PE_UK.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www2.facepe.br/wp-content/uploads/2026/05/Global-PE-UK_Enquadramento-da-Inscricao.docx-Google-Docs-1.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.facepe.br/wp-content/uploads/2026/03/Edital_Catedras__FACEPE.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.facepe.br/wp-content/uploads/2026/03/Edital_PBPP_09_2026-2.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www2.facepe.br/wp-content/uploads/2026/08/Edital-FACEPE-09-2026-PBPP-Int-Convocacao-da-Lista-de-Espera.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www.facepe.br/wp-content/uploads/2026/03/2026.03.03-Compet-Mulheres-31.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     },
     "https://www2.facepe.br/wp-content/uploads/2026/05/Prorrogacao-Cronograma-_-Edital-08_2026-Compet-Mulheres.docx-CORRETO.pdf": {
-      "em": "2026-11-24",
+      "em": "2026-11-25",
       "fonte": "facepe",
       "resultado": "erro",
-      "tentativas": 1
+      "tentativas": 2
     }
   },
   "paginas": {
@@ -1054,8 +1054,8 @@
       "em": "2026-10-31"
     },
     "https://chamadas.funbio.org.br/floresta-viva-sao-francisco": {
-      "hash": "05393e1cb4a9521b",
-      "em": "2026-10-31"
+      "hash": "b6a3a5f3d2231431",
+      "em": "2026-11-25"
     },
     "https://prefeitura.sp.gov.br/direitos_humanos/w/participacao_social/fundos/fumcad/fundo_municipal_do_idoso/269573": {
       "hash": "6ad9ea189df349c5",
@@ -1131,6 +1131,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-25",
+      "fontes": 14,
+      "linksNovos": 187,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 27,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-24",
       "fontes": 14,
@@ -1408,14 +1418,6 @@
       "candidatos": 9,
       "descartados": 67,
       "erros": 0
-    },
-    {
-      "em": "2026-10-31",
-      "fontes": 5,
-      "linksNovos": 76,
-      "candidatos": 0,
-      "descartados": 0,
-      "erros": 76
     }
   ]
 }
