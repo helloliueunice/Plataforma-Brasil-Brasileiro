@@ -814,10 +814,10 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-23-2026/chamada-publica-cnpq-N-23-2026": {
-      "em": "2026-11-20",
+      "em": "2026-11-26",
       "fonte": "cnpq",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/09/2026.09.21-Solano-Trindade-Atualizado.pdf": {
       "em": "2026-11-21",
@@ -934,10 +934,10 @@
       "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://fapesp.br/18531": {
-      "em": "2026-11-25",
+      "em": "2026-11-26",
       "fonte": "fapesp",
-      "resultado": "erro",
-      "tentativas": 2
+      "resultado": "erro-definitivo",
+      "erro": "API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\""
     },
     "https://www2.facepe.br/wp-content/uploads/2026/07/Prorrogacao-de-submissao-do-Edital-14.2026-COMPET-Superior-1.pdf": {
       "em": "2026-11-25",
@@ -998,6 +998,84 @@
       "fonte": "facepe",
       "resultado": "erro",
       "tentativas": 2
+    },
+    "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-38-2026/chamada-publica-cnpq-N-38-2026": {
+      "em": "2026-11-26",
+      "fonte": "cnpq",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.itausocial.org.br/editais/fomento-a-estudos-e-pesquisas-sobre-educacao-integral-em-tempo-integral-nos-anos-finais-do-ensino-fundamental/": {
+      "em": "2026-11-26",
+      "fonte": "itau-social",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://www.itausocial.org.br/editais/edital-fundos-da-infancia-e-da-adolescencia-2026/": {
+      "em": "2026-11-26",
+      "fonte": "itau-social",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/apoio-emergencial-incendios-e-resiliencia-climatica-2026/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/mulheres-que-transformam-o-futuro-apoio-a-solucoes-comunitarias-para-a-resiliencia-climatica-e-a-justica-socioambiental/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/chamada-simplificada-apoio-direto-a-iniciativas-comunitarias/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/juventudes-e-justica-climatica-apoio-a-solucoes-lideradas-por-juventudes-perifericas-e-de-comunidades-tradicionais/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/territorios-vivos-da-amazonia-apoio-a-solucoes-comunitarias/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/fortalecimento-dos-direitos-territoriais/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/chamada-educacao-para-o-bem-viver-2026-fortalecendo-organizacoes-indigenas-e-quilombolas-pela-equidade-na-educacao/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/credito-comunitario-sustentavel-ccs-ampliando-o-acesso-ao-credito-rural-para-agricultores-e-agricultoras-familiares-por-meio-de-organizacoes-comunitarias/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/mata-atlantica-viva-apoiando-solucoes-para-conservacao-e-regeneracao-2026/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
+    },
+    "https://casa.org.br/chamadas/apoio-a-acoes-comunitarias-frente-aos-incendios-florestais/": {
+      "em": "2026-11-26",
+      "fonte": "fundo-casa",
+      "resultado": "erro",
+      "tentativas": 1
     }
   },
   "paginas": {
@@ -1131,6 +1209,16 @@
     }
   },
   "execucoes": [
+    {
+      "em": "2026-11-26",
+      "fontes": 14,
+      "linksNovos": 71,
+      "candidatos": 0,
+      "descartados": 0,
+      "erros": 19,
+      "pulados": 0,
+      "chamadasApi": 15
+    },
     {
       "em": "2026-11-25",
       "fontes": 14,
@@ -1409,14 +1497,6 @@
       "linksNovos": 0,
       "candidatos": 0,
       "descartados": 0,
-      "erros": 0
-    },
-    {
-      "em": "2026-10-31",
-      "fontes": 5,
-      "linksNovos": 76,
-      "candidatos": 9,
-      "descartados": 67,
       "erros": 0
     }
   ]
